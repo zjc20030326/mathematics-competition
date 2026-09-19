@@ -1,0 +1,1408 @@
+\chapter{函数项级数、幂级数、Fourier 级数}
+
+\newpage
+
+\section{一致收敛性}
+
+判断函数列或函数项级数一致收敛性的方法如下.
+
+判断一致收敛性:
+\begin{enumerate}[label=\textcircled{\arabic*},leftmargin=2.2em]
+    \item 定义(三分法);
+    \item 验证 $\displaystyle\lim\limits_{n\to\infty}M_n=0$,其中
+    $M_n=\displaystyle\sup\limits_{x\in I}|f_n(x)-f(x)|$.验证时通常计算极值点,或直接放缩为趋于 $0$ 的常数列;
+    \item Cauchy 收敛准则;
+    \item Weierstrass、Abel、Dirichlet 判别法;
+    \item Dini 定理;
+    \item 利用等度连续.
+\end{enumerate}
+
+判别非一致收敛性:
+\begin{enumerate}[label=\textcircled{\arabic*},leftmargin=2.2em]
+    \item 通项不一致趋于 $0$;
+    \item 端点法(一般用于有限区间):若 $f_n\in C\lbrack a,b\rbrack$,且 $\displaystyle\sum\limits_{n=1}^{\infty}f_n(x)$ 在 $(a,b)$ 上一致收敛,则必可延拓为在 $\lbrack a,b\rbrack$ 上一致收敛.因此若级数在端点发散,则在 $(a,b)$ 上非一致收敛;
+    \item 利用一致收敛传递连续性:若连续函数列的极限函数在 $I$ 上不连续,则在 $I$ 上非一致收敛;
+    \item Cauchy 收敛准则,其优点在于不必考虑或计算极限函数.
+\end{enumerate}
+
+\begin{remark}
+函数列 $\{f_n(x)\}$ 的问题可通过考虑 $\displaystyle\sum\limits_n[f_{n+1}(x)-f_n(x)]$ 转化为函数项级数问题,而函数项级数可通过考虑前 $n$ 项和 $\{s_n(x)\}$ 转化为函数列问题.
+\end{remark}
+
+\begin{example}
+试判断下列函数列在指定区间上的一致收敛性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $f_n(x)=x^n-x^{n+1}$, $x\in\lbrack 0,1\rbrack$;
+    \item $f_n(x)=\dfrac{x}{1+nx^2}$, $x\in(-\infty,+\infty)$;
+    \item $f_n(x)=n^\alpha e^{-nx}$, $x\in\lbrack 0,1\rbrack$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+试判断下列函数列在指定区间上的一致收敛性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $f_n(x)=\sin\dfrac{1+nx}{2n}$, $x\in(-\infty,+\infty)$;
+    \item $f_n(x)=n\sin\dfrac{1}{nx}$, $x\in\lbrack 1,+\infty)$;
+    \item $f_n(x)=\dfrac{\ln(nx)}{nx^2}$, $x\in(1,+\infty)$;
+    \item $f_n(x)=\dfrac{n}{x}\ln\left(1+\dfrac{x}{n}\right)$, $x\in(0,10)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+证明下列函数列在指定区间上的非一致收敛性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $f_n(x)=x^n-x^{2n}$, $x\in\lbrack 0,1\rbrack$;
+    \item $f_n(x)=x^n+x^{2n}-2x^{3n}$, $x\in\lbrack 0,1\rbrack$;
+    \item $f_n(x)=nx(1-x)^n$, $x\in\lbrack 0,1\rbrack$;
+    \item $f_n(x)=n\left(\sqrt{x+\dfrac{1}{n}}-\sqrt{x}\right)$, $x\in(0,+\infty)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+试判断下列级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}f_n(x)$ 在指定区间上的一致收敛性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}x^\alpha e^{-nx^2}$, $x\in(0,+\infty)$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}e^{-(x-n)^2}$, $x\in\lbrack a,b\rbrack$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{x^n}{4^n}\ln\left(1+\dfrac{x^2}{n^2}\right)$, $x\in\lbrack -4,4\rbrack$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{x}{n^p+n^q x^2}$, $x\in\lbrack 0,+\infty)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+试判断下列级数在指定区间上的一致收敛性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{2nx}{1+n^\alpha x}$, $-\infty<x<+\infty$, $\alpha>\varphi$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{x\sin nx}{\sqrt{1+n^2(1+nx^2)}}$, $x\in(-\infty,+\infty)$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{x^2}{1+n^2x}\sin\dfrac{n}{x}$, $x\in(0,1)$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{(-1)^{n+1}}{2n+\sin x}$, $x\in(-\infty,+\infty)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+试判断下列级数在指定区间上的非一致收敛性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{x^3}{(1+x^3)^n}$, $x\in(0,+\infty)$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{x}{1+n^3x^3}$, $x\in(0,+\infty)$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}nx^2e^{-nx}$, $x\in(0,+\infty)$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{x}{x^2-nx+n^2}$, $x\in(1,+\infty)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+试用 Cauchy 收敛准则判别下列级数在指定区间上的非一致收敛性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{n}{x}e^{-n^2/x}$, $x\in(0,+\infty)$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{\sin nx}{n}$, $x\in\lbrack 0,2\pi\rbrack$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{\sin nx}{e^{n^2x}}$, $x\in(0,+\infty)$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{\sqrt{\pi}}{n^2}\sin\dfrac{\pi}{n^2}$, $x\in(0,+\infty)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+试用端点法判别下列级数在指定区间上的非一致收敛性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}e^{-nx}\cos nx$, $x\in(0,1)$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{\ln(nx)}{1+n^3\ln^2x}$, $x\in\left(\dfrac{1}{2},1\right)$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{1}{(1+nx)^2}$, $x\in(0,1)$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\left(1+n\dfrac{\sin x}{x}\right)^2$, $x\in(0,\pi)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+试用 Abel--Dirichlet 判别法判别下列级数在指定区间上的一致收敛性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{(-1)^n(x^2+n)}{n^2}$, $x\in\lbrack a,b\rbrack$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{(-1)^{n+1}e^{-nx}}{\sqrt{n+x^2}}$, $x\in\lbrack 0,+\infty)$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{(-1)^n}{\sqrt n}\sin\left(1+\dfrac{x}{n}\right)$, $x\in\lbrack a,b\rbrack$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{\cos nx}{n^p}$, $x\in\lbrack \delta,2\pi-\delta\rbrack$, $p\in(0,1\rbrack$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+试由和函数的不连续性判别下列级数在指定区间上的非一致收敛性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle S(x)=\sum\limits_{n=0}^{\infty}\dfrac{x^4}{(1+x^4)^n}$, $x\in\lbrack 0,1\rbrack$;
+    \item $\displaystyle S(x)=\sum\limits_{n=0}^{\infty}x^n(1-x)$, $x\in\lbrack 0,1\rbrack$;
+    \item $\displaystyle S(x)=\sum\limits_{n=1}^{\infty}x^n\ln x$, $x\in(0,1\rbrack$;
+    \item $\displaystyle S(x)=\sum\limits_{n=2}^{\infty}\left(x^{\frac{1}{2n-1}}-x^{\frac{1}{2n-3}}\right)$, $x\in\lbrack -1,1\rbrack$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 是 $(-\infty,+\infty)$ 上的连续函数,
+\[
+    f_n(x)=\sum\limits_{k=0}^{n-1}\dfrac{1}{n}f\left(x+\dfrac{k}{n}\right).
+\]
+证明:函数列 $\{f_n(x)\}$ 在任何有限区间上一致收敛.
+\end{example}
+\exampleblank
+
+\begin{example}
+设函数 $f(x)$ 在 $(-\infty,+\infty)$ 上有连续导函数 $f'(x)$,
+\[
+    f_n(x)=e^n\left[f(x+e^{-n})-f(x)\right].
+\]
+证明:$\{f_n(x)\}$ 在任一有限开区间 $(a,b)$ 内一致收敛于 $f'(x)$.
+\end{example}
+\exampleblank
+
+\begin{example}[Heine 定理的推广]
+试证:$x\to a$ 时 $f(x,y)\rightrightarrows\varphi(y)$ 的充要条件是对任意 $\{x_n\}\to a$,有 $f(x_n,y)\rightrightarrows\varphi(y)$ $(n\to\infty)$.
+\end{example}
+\exampleblank
+
+\begin{example}
+若 $f_n(x)$ 在 $\lbrack a,b\rbrack$ 上可积,$f(x)$ 与 $g(x)$ 在 $\lbrack a,b\rbrack$ 上都可积,且
+\[
+    \lim\limits_{n\to\infty}\int_a^b|f_n(x)-f(x)|^2\,\mathrm{d}x=0.
+\]
+设
+\[
+    h(x)=\int_a^x f(t)g(t)\,\mathrm{d}t,
+    \qquad
+    h_n(x)=\int_a^x f_n(t)g(t)\,\mathrm{d}t.
+\]
+证明:$h_n(x)$ 在 $\lbrack a,b\rbrack$ 上一致收敛于 $h(x)$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f_1(x)$ 在 $\lbrack a,b\rbrack$ 上正常可积,
+\[
+    f_{n+1}(x)=\int_a^x f_n(t)\,\mathrm{d}t,
+    \qquad n=1,2,\ldots.
+\]
+证明:函数序列 $\{f_n(x)\}$ 在 $\lbrack a,b\rbrack$ 上一致收敛于零.
+\end{example}
+\exampleblank
+
+\begin{example}
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $f_n(x)$ 在 $\lbrack a,b\rbrack$ 上可微,且存在 $M>0$,使 $|f_n'(x)|\leq M$.若 $f_n(x)$ 在 $\lbrack a,b\rbrack$ 上逐点收敛于 $f(x)$,则必一致收敛;
+    \item 设定义在 $\lbrack 0,1\rbrack$ 上的函数列 $\{f_n(x)\}$ 满足存在 $M>0$ 使得
+    $|f_n(x)-f_n(y)|\leq M|x-y|$,且 $\displaystyle\lim\limits_{n\to\infty}f_n(x)=f(x)$,则 $f_n(x)$ 在 $\lbrack 0,1\rbrack$ 上一致收敛于 $f(x)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $\{f_n(x)\}$ 是 $\lbrack 0,1\rbrack$ 上由递增函数组成的序列,若存在 $f\in C\lbrack 0,1\rbrack$ 使得 $\displaystyle\lim\limits_{n\to\infty}f_n(x)=f(x)$,则 $f_n(x)$ 在 $\lbrack 0,1\rbrack$ 上一致收敛于 $f(x)$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $\{a_n\}$ 是单调收敛于 $0$ 的数列,则
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}(-1)^{n-1}a_n\cos nx$ 在 $\lbrack -\pi+\delta,\pi-\delta\rbrack$ $(\delta>0)$ 上一致收敛;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}a_nx\sin nx$ 在 $\lbrack -\pi+\delta,\pi-\delta\rbrack$ $(\delta>0)$ 上一致收敛.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+\begin{enumerate}[label=(\arabic*)]
+    \item 若 $\{na_n\}$ 是单调收敛于 $0$ 的数列,则 $\displaystyle\sum\limits_{n=1}^{\infty}a_n\sin nx$ 在 $(-\infty,+\infty)$ 上一致收敛;
+    \item 设 $\{a_n\}$ 是递减正数列.若 $\displaystyle\sum\limits_{n=1}^{\infty}a_n\sin nx$ 在 $\lbrack -a,a\rbrack$ 上一致收敛,则 $na_n\to0$ $(n\to\infty)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 收敛,且 $\{f_n(x)\}$ 满足
+\[
+    M\geq f_1(x)\geq f_2(x)\geq\cdots\geq f_n(x)\geq\cdots\geq0.
+\]
+证明:$\displaystyle\sum\limits_{n=1}^{\infty}a_nf_n(x)$ 在 $\lbrack a,b\rbrack$ 上一致收敛.
+\end{example}
+\exampleblank
+
+\begin{example}
+设定义在区间 $I$ 上的 $\{f_n(x)\},\{g_n(x)\}$ 满足:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}|f_{n+1}(x)-f_n(x)|$ 在 $I$ 上一致收敛;
+    \item $\displaystyle\lim\limits_{n\to\infty}\sup\limits_I|f_n(x)|=0$;
+    \item $G_n=\displaystyle\sum\limits_{k=1}^n g_k(x)$ 在 $I$ 上一致有界.
+\end{enumerate}
+则 $\displaystyle\sum\limits_{n=1}^{\infty}f_n(x)g_n(x)$ 在 $I$ 上一致收敛.
+\end{example}
+\exampleblank
+
+\begin{definition}
+设 $\{f_n(x)\}$ 是定义在区间 $I$ 上的函数列.若对任给 $\varepsilon>0$,存在 $\delta>0$,使得当 $I$ 中的点 $x',x''$ 满足 $|x'-x''|<\delta$ 时,对一切正整数 $n$,都有 $|f_n(x')-f_n(x'')|<\varepsilon$,则称 $\{f_n(x)\}$ 在 $I$ 上是等度连续的.
+\end{definition}
+
+\begin{remark}
+易知等度连续函数列中的每一个函数都在 $I$ 上一致连续.
+\end{remark}
+
+\begin{theorem}[
+\markstar]
+设 $\{f_n(x)\}$ 为 $I$ 上函数列,$E$ 在 $I$ 中稠密且 $\{f_n(x)\}$ 在 $E$ 上逐点收敛,则存在子列 $\{f_{n_k}(x)\}$ 在 $E$ 上逐点收敛.
+\end{theorem}
+
+\begin{theorem}[\markstar]
+\begin{enumerate}[label=(\arabic*)]
+    \item 若 $\lbrack a,b\rbrack$ 上连续函数列 $\{f_n(x)\}$ 一致收敛,则 $\{f_n(x)\}$ 等度连续;
+    \item 若 $\lbrack a,b\rbrack$ 上等度连续函数列 $\{f_n(x)\}$ 满足 $f_n(x)\to f(x)$ $(n\to\infty)$,则 $f_n(x)\rightrightarrows f(x)$ $(n\to\infty)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[\markstar]
+设 $\lbrack a,b\rbrack$ 上等度连续函数列 $\{f_n(x)\}$ 在 $\lbrack a,b\rbrack$ 逐点有界,则
+\begin{enumerate}[label=(\arabic*)]
+    \item $\{f_n(x)\}$ 在 $\lbrack a,b\rbrack$ 上一致有界;
+    \item $\{f_n(x)\}$ 有一致收敛的子列 $\{f_{n_k}(x)\}$.
+\end{enumerate}
+\end{theorem}
+
+\begin{example}
+设 $\{f_n(x)\}$ 是区间 $(a,b)$ 内的连续函数序列,并且对任意 $x_0\in(a,b)$,$\{f_n(x_0)\}$ 都是有界的.证明:$\{f_n(x)\}$ 在 $(a,b)$ 的某一非空子区间上一致有界.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $\{f_n(x)\}$ 在区间 $\lbrack 0,1\rbrack$ 上一致有界,试证存在一子列,其在 $\lbrack 0,1\rbrack$ 的一切有理点上收敛.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $\mathscr R$ 是区间 $I$ 上的函数族,对任意 $f\in\mathscr R$ 都在 $I$ 上可微,且 $\{f'(x)\mid f\in\mathscr R\}$ 在 $I$ 上一致有界.证明:$\mathscr R$ 在 $I$ 上等度连续.
+\end{example}
+\exampleblank
+
+\begin{example}
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $\{f_n(x)\}$ 是 $\lbrack 0,1\rbrack$ 上二次可导的函数列,且 $f_n(0)=f_n'(0)=0$.若 $|f_n''(x)|\leq1$,则存在子列 $\{f_{n_k}(x)\}$ 在 $\lbrack 0,1\rbrack$ 上一致收敛;
+    \item 设 $f_n\in C^{(1)}\lbrack 0,1\rbrack$,且 $|f_n'(x)|\leq x^{-\frac{1}{2}}$ $(0<x\leq1)$,并且 $\displaystyle\int_0^1f_n(x)\,\mathrm{d}x=0$,则存在子列 $\{f_{n_k}(x)\}$ 在 $\lbrack 0,1\rbrack$ 上一致收敛.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\newpage
+
+\section{函数性质的传递——极限换序}
+
+\newpage
+
+\subsection{连续性质的传递}
+
+\begin{theorem}[\markstar]
+若 $u_n(x)$ 在区间 $I$ 上连续,$\displaystyle\sum\limits_{n=1}^{\infty}u_n(x)$ 在 $I$ 上一致收敛,则
+\[
+    S(x)=\sum\limits_{n=1}^{\infty}u_n(x)
+\]
+在 $I$ 上连续.
+\end{theorem}
+
+\begin{theorem}[\markstar]
+若 $u_n(x)$ 在 $x=x_0$ 处连续,$\displaystyle\sum\limits_{n=1}^{\infty}u_n(x)$ 在 $x_0$ 的某个邻域里一致收敛,则 $S(x)=\displaystyle\sum\limits_{n=1}^{\infty}u_n(x)$ 在 $x=x_0$ 处连续.
+\end{theorem}
+
+\begin{theorem}[\markstar]
+若 $u_n(x)$ 在 $(a,b)$ 内连续,$\displaystyle\sum\limits_{n=1}^{\infty}u_n(x)$ 在 $(a,b)$ 内闭一致收敛,则 $S(x)=\displaystyle\sum\limits_{n=1}^{\infty}u_n(x)$ 在 $(a,b)$ 内连续.
+\end{theorem}
+
+\begin{remark}
+一致收敛是和函数连续的充分不必要条件.例如 $\lbrack 0,1\rbrack$ 上的 $f_n(x)=nxe^{-nx^2}$ 收敛到 $f(x)=0$,但非一致收敛.
+\end{remark}
+
+\begin{example}
+判别下列级数 $\displaystyle S(x)=\sum\limits_{n=1}^{\infty}f_n(x)$ 在指定区间上的连续性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{\ln^n x}{n^2}$, $x\in\lbrack e^{-1},e\rbrack$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{x+n(-1)^n}{n^2+x^2}$, $x\in\lbrack -a,a\rbrack$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{x^n\sin nx}{n!}$, $x\in\lbrack a,b\rbrack$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\left(\dfrac{1}{n}+x\right)^n$, $x\in(-1,1)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+试求下列极限值:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\lim\limits_{x\to0^+}\sum\limits_{n=1}^{\infty}\dfrac{1}{2^n n^x}$;
+    \item $\displaystyle\lim\limits_{x\to+\infty}\sum\limits_{n=1}^{\infty}\dfrac{x^2}{1+n^2x^2}$;
+    \item $\displaystyle\lim\limits_{x\to1^-}\sum\limits_{n=1}^{\infty}\dfrac{(-1)^{n+1}}{n}\dfrac{x^n}{1+x^n}$;
+    \item $\displaystyle\lim\limits_{x\to1}\sum\limits_{n=1}^{\infty}\dfrac{x^n\sin\left(\dfrac{n\pi x}{2}\right)}{2^n}$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $g_n,h_n\in C\lbrack a,b\rbrack$,且 $g_n(x)\leq g_{n+1}(x)$,$h_n(x)\geq h_{n+1}(x)$,
+\[
+    \lim\limits_{n\to\infty}g_n(x)=f(x)=\lim\limits_{n\to\infty}h_n(x).
+\]
+则 $f\in C\lbrack a,b\rbrack$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f_n,F_n\in C\lbrack a,b\rbrack$ 且 $|f_n(x)|\leq F_n(x)$.若
+\[
+    \sigma(x)=\sum\limits_{n=1}^{\infty}F_n(x)
+\]
+在 $\lbrack a,b\rbrack$ 上连续,则 $S(x)=\displaystyle\sum\limits_{n=1}^{\infty}f_n(x)$ 在 $\lbrack a,b\rbrack$ 上连续.
+\end{example}
+\exampleblank
+
+\begin{example}
+证明:$\displaystyle\sum\limits_{n=-\infty}^{+\infty}\dfrac{1}{(n-x)^2}$ 当 $x$ 不为整数时收敛,周期为 $1$,并且当 $x$ 非整数时和函数连续.
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+设 $\{x_n\}$ 是 $(0,1)$ 内的一个序列:$0<x_n<1$ 且 $x_i\neq x_j$ $(i\neq j)$.试讨论函数
+\[
+    f(x)=\sum\limits_{n=1}^{\infty}\dfrac{\operatorname{sgn}(x-x_n)}{2^n}
+\]
+在 $(0,1)$ 内的连续性.
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{积分性质的传递}
+
+一致收敛性只是积分换序的充分不必要条件.换序的优越性在于不必求出和函数而可以计算它的积分值.进一步,
+\[
+\begin{aligned}
+    \int_a^b\sum\limits_{k=1}^{\infty}u_k(x)\,\mathrm{d}x
+    &=\sum\limits_{k=1}^{\infty}\int_a^b u_k(x)\,\mathrm{d}x\\
+    &\iff \lim\limits_{n\to\infty}\left|\int_a^b\left(\sum\limits_{k=1}^{\infty}u_k(x)-\sum\limits_{k=1}^{n}u_k(x)\right)\mathrm{d}x\right|=0\\
+    &\iff \lim\limits_{n\to\infty}\int_a^bR_n(x)\,\mathrm{d}x=0.
+\end{aligned}
+\]
+
+\begin{example}
+设 $f\in C^{\infty}(-\infty,+\infty)$,函数列 $\{f^{(n)}(x)\}$ 在任意区间 $\lbrack a,b\rbrack$ 上一致收敛于 $g(x)$,则 $g(x)=Ce^x$.
+\end{example}
+\exampleblank
+
+\begin{example}
+证明下列命题:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_0^1\sum\limits_{n=1}^{\infty}\dfrac{x}{n(n+x)}\,\mathrm{d}x=\gamma$,其中 $\gamma$ 为 Euler 常数;
+    \item $\displaystyle\int_{\ln2}^{\ln5}\sum\limits_{n=1}^{\infty}ne^{-nx}\,\mathrm{d}x=\dfrac{3}{4}$;
+    \item
+    \[
+        \int_0^{+\infty}\dfrac{x^{a-1}}{1+x}\,\mathrm{d}x
+        =\dfrac{1}{a}+\sum\limits_{k=1}^{\infty}(-1)^k
+        \left(\dfrac{1}{a+k}-\dfrac{1}{a-k}\right),
+        \qquad 0<a<1.
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+证明下列命题:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\lim\limits_{n\to\infty}\int_0^1\dfrac{\mathrm{d}x}{1+\left(\dfrac{x}{n}+1\right)^n}=\ln\dfrac{2e}{e+1}$;
+    \item $\displaystyle\int_0^1x^{-x}\,\mathrm{d}x=\sum\limits_{n=1}^{\infty}\dfrac{1}{n^n}$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f,g\in C(-\infty,+\infty)$,且 $f(x+1)=f(x)$,$g(x+1)=g(x)$.证明:
+\[
+    \lim\limits_{n\to\infty}\int_0^1f(x)g(nx)\,\mathrm{d}x
+    =\left(\int_0^1f(x)\,\mathrm{d}x\right)
+     \left(\int_0^1g(x)\,\mathrm{d}x\right).
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $h(x),f_n'(x)$ 在 $\lbrack a,b\rbrack$ 上连续,又对 $\lbrack a,b\rbrack$ 中任意 $x_1,x_2$ 和正整数 $n$,有
+\[
+    |f_n(x_1)-f_n(x_2)|\leq\dfrac{M}{n}|x_1-x_2|,
+    \qquad M>0.
+\]
+证明:
+\[
+    \lim\limits_{n\to\infty}\int_a^bh(x)f_n'(x)\,\mathrm{d}x=0.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $g(x),f_n(x)$ 在 $\lbrack a,b\rbrack$ 上有界可积,且对任意 $c\in(a,b)$,$f_n(x)\rightrightarrows0$ 于 $\lbrack c,b\rbrack$ 上,
+\[
+    \lim\limits_{n\to\infty}\int_a^bf_n(x)\,\mathrm{d}x=1,
+    \qquad
+    \lim\limits_{x\to a^+}g(x)=A.
+\]
+试证:
+\[
+    \lim\limits_{n\to\infty}\int_a^bg(x)f_n(x)\,\mathrm{d}x=A.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $\{f_n(x)\}$ 是定义在 $\lbrack -1,1\rbrack$ 上的连续函数序列,在原点附近一致有界.若对任意 $0<\delta<1$,$f_n(x)$ 在 $\lbrack -1,-\delta\rbrack\cup\lbrack \delta,1\rbrack$ 上一致收敛于零,且 $g\in C\lbrack -1,1\rbrack$, $g(0)=0$,证明:
+\[
+    \lim\limits_{n\to\infty}\int_{-1}^{1}f_n(x)g(x)\,\mathrm{d}x=g(0).
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{微分性质的传递}
+
+一致收敛对于微分性质的传递只是充分不必要条件.例如 $\displaystyle f(x)=\sum\limits_{n=1}^{\infty}ne^{-nx}$ 在 $(0,+\infty)$ 上非一致收敛,但和函数在其上无穷次可微.
+
+\begin{example}
+讨论下列级数 $\displaystyle S(x)=\sum\limits_{n=1}^{\infty}f_n(x)$ 在指定区域的可微性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $f_n(x)=\arctan\dfrac{x}{n^2}$, $x\in(0,+\infty)$;
+    \item $f_n(x)=\dfrac{\sin nx}{n^3}$, $x\in(-\infty,+\infty)$;
+    \item $f_n(x)=\sqrt n\tan^n x$, $x\in\left(-\dfrac{\pi}{4},\dfrac{\pi}{4}\right)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $(-\infty,+\infty)$ 内有任意阶导数,级数
+\[
+\begin{aligned}
+    \cdots+f^{(n)}(x)+\cdots+f''(x)+f'(x)+f(x)
+    &+\int_0^xf(t_1)\,\mathrm{d}t_1\\
+    &+\int_0^x\mathrm{d}t_2\int_0^{t_2}f(t_1)\,\mathrm{d}t_1+\cdots
+\end{aligned}
+\]
+按两个方向在 $(-\infty,+\infty)$ 内一致收敛.求该级数的和函数 $F(x)$.
+\end{example}
+\exampleblank
+
+\begin{example}
+证明:存在 $\xi\in(0,1)$,使得
+\[
+    \sum\limits_{n=1}^{\infty}\dfrac{\xi^{n-1}}{n+1}=1.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+设 $f_n$ 均在 $\lbrack a,b\rbrack$ 上有原函数,且在 $\lbrack a,b\rbrack$ 上一致收敛于 $f(x)$,则 $f(x)$ 在 $\lbrack a,b\rbrack$ 上也有原函数.
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+设 $f_n$ 在 $\lbrack a,b\rbrack$ 上可积,且在 $\lbrack a,b\rbrack$ 上 $f_n(x)\rightrightarrows f(x)$,则 $f(x)$ 在 $\lbrack a,b\rbrack$ 上可积.
+\end{example}
+\exampleblank
+
+\newpage
+
+\section{连续函数的逼近定理}
+
+\begin{proposition}[\markstar\ Weierstrass 多项式逼近定理]
+有界闭区间 $\lbrack a,b\rbrack$ 上的连续函数 $f$ 一定可以用多项式一致逼近到任意程度,即对任意 $\varepsilon>0$,存在 $n=n(\varepsilon)$ 次多项式 $p_n$,使得
+\[
+    |f(x)-p_n(x)|\leq\varepsilon.
+\]
+\end{proposition}
+
+\begin{proposition}[\markstar\ Weierstrass 三角多项式逼近定理]
+周期为 $2\pi$ 的连续函数 $f$ 一定可以用三角多项式一致逼近到任意程度,即对任意 $\varepsilon>0$,存在三角多项式
+\[
+    S_n(x)=\dfrac{a_0}{2}+\sum\limits_{k=1}^{n}(a_k\cos kx+b_k\sin kx),
+    \qquad n=n(\varepsilon),
+\]
+使得 $|f(x)-S_n(x)|<\varepsilon$.
+\end{proposition}
+
+\begin{example}
+设 $f\in C\lbrack a,b\rbrack$,且对每个非负整数 $n$,满足
+\[
+    \int_a^bx^nf(x)\,\mathrm{d}x=0.
+\]
+证明:$f\equiv0$.又若条件改为对大于某个正整数 $n_0$ 的所有 $n$ 成立,则也有相同结论.
+\end{example}
+\exampleblank
+
+\begin{example}
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $f\in C\lbrack -1,1\rbrack$,且对每个非负整数 $n$ 满足 $\displaystyle\int_{-1}^{1}x^{2n}f(x)\,\mathrm{d}x=0$,则 $f$ 必为奇函数;
+    \item 设 $f\in C\lbrack -1,1\rbrack$,且对每个非负整数 $n$ 满足 $\displaystyle\int_{-1}^{1}x^{2n+1}f(x)\,\mathrm{d}x=0$,则 $f$ 必为偶函数.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+若实系数多项式序列 $\{p_n(x)\}$ 在 $\mathbb R$ 上一致收敛于函数 $f(x)$,证明:$f(x)$ 必是多项式函数.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in R\lbrack a,b\rbrack$,则对于每个 $\varepsilon>0$,存在两个多项式 $p(x)$ 和 $P(x)$,使得
+\begin{enumerate}[label=(\arabic*)]
+    \item $p(x)\leq f(x)\leq P(x)$, $x\in\lbrack a,b\rbrack$;
+    \item $\displaystyle\int_a^b[P(x)-p(x)]\,\mathrm{d}x<\varepsilon$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in C\lbrack 0,1\rbrack$,证明:存在每项为奇数项的多项式序列在 $\lbrack 0,1\rbrack$ 上一致收敛于 $f$ 的充分必要条件为 $f(0)=0$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in R\lbrack a,b\rbrack$,且对每个非负整数 $n$ 满足 $\displaystyle\int_a^bx^nf(x)\,\mathrm{d}x=0$,证明:$f$ 在每个连续点上等于 $0$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in C\lbrack 0,1\rbrack$,若
+\[
+    \int_0^1f\left(x^{\frac{1}{2n+1}}\right)\,\mathrm{d}x=0,
+\]
+则 $f(x)\equiv0$.
+\end{example}
+\exampleblank
+
+\begin{example}
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $f$ 在 $\lbrack a,b\rbrack$ 上有界且有原函数,$g\in C\lbrack a,b\rbrack$,则 $f(x)g(x)$ 在 $\lbrack a,b\rbrack$ 上有原函数;
+    \item 设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上有界且有原函数,$g:\lbrack 0,1\rbrack\to\lbrack a,b\rbrack$ 有连续导数且 $g'(x)>0$,则 $f[g(x)]$ 在 $\lbrack 0,1\rbrack$ 上有原函数.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\newpage
+
+\section{幂级数}
+
+\newpage
+
+\subsection{收敛半径与收敛域}
+
+\begin{theorem}[\markstar]
+对于幂级数 $\displaystyle\sum\limits_{n=0}^{\infty}a_nx^n$:
+\begin{enumerate}[label=(\arabic*)]
+    \item 若该幂级数在 $x=x_1\neq0$ 处收敛,则对 $|x|<|x_1|$,幂级数绝对收敛;
+    \item 若该幂级数在 $x=x_2$ 处发散,则对 $|x|>|x_2|$,幂级数发散.
+\end{enumerate}
+\end{theorem}
+
+\begin{corollary}[\markstar]
+当幂级数 $\displaystyle\sum\limits_{n=0}^{\infty}a_nx^n$ 具有收敛点 $x_1\neq0$、发散点 $x_2$ 时,必存在正数 $R$,使得 $|x|<R$ 时级数收敛,$|x|>R$ 时级数发散.
+\end{corollary}
+
+\begin{theorem}[\markstar]
+若
+\[
+    \lim\limits_{n\to\infty}\left|\dfrac{a_{n+1}}{a_n}\right|=\rho,
+\]
+则收敛半径 $R=\dfrac{1}{\rho}$.进一步,
+\[
+    R=\dfrac{1}{\displaystyle\lim\limits_{n\to\infty}\sqrt[n]{|a_n|}}
+\]
+在相应极限存在时成立.
+\end{theorem}
+
+\begin{proposition}[\markstar]
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $\{a_n\}$ 是有界列,则 $\displaystyle\sum\limits_{n=0}^{\infty}a_nx^n$ 的收敛半径 $R\geq1$.设该幂级数收敛半径 $R>0$,则对于 $|A|>R$,数列 $\{a_nA^n\}$ 无界;
+    \item
+    \[
+        R=\sup\{r\geq0\mid \{|a_n|r^n\}\text{ 是有界列}\}.
+    \]
+\end{enumerate}
+\end{proposition}
+
+\begin{proposition}[\markstar]
+设 $\displaystyle\sum\limits_{n=1}^{\infty}a_nx^n$ 与 $\displaystyle\sum\limits_{n=1}^{\infty}b_nx^n$ 的收敛半径分别为正数 $R_1,R_2$,则
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=0}^{\infty}a_nb_nx^n$ 的收敛半径 $R\geq R_1R_2$,而 $\displaystyle\sum\limits_{n=0}^{\infty}\dfrac{b_n}{a_n}x^n$ 的收敛半径 $R\leq\dfrac{R_1}{R_2}$;
+    \item $R_1\neq R_2$ 时,$\displaystyle\sum\limits_{n=0}^{\infty}(a_n+b_n)x^n$ 的收敛半径 $R=\min\{R_1,R_2\}$;
+    \item 两幂级数的 Cauchy 乘积的收敛半径 $R\geq\min\{R_1,R_2\}$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proposition}[\markstar]
+设 $\displaystyle\sum\limits_{n=0}^{\infty}a_nx^n$ 的收敛半径为 $R$,则 $\displaystyle\sum\limits_{n=0}^{\infty}a_n^kx^n$ 的收敛半径为 $R^k$,而 $\displaystyle\sum\limits_{n=0}^{\infty}a_nx^{kn}$ 的收敛半径为 $\sqrt[k]{R}$.
+\end{proposition}
+
+\begin{example}
+试求下列幂级数的收敛半径 $R$:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{(n!)^2}{(2n)!}x^n$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\ln\dfrac{3n-2}{3n+2}x^n$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\ln\left(\cos\dfrac{1}{3n}\right)x^n$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{1}{n!}\left(\dfrac{nx}{e}\right)^n$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{n^n}{n!}e^{-n\alpha}x^n$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{x^n}{a^n+b^n}$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+试求下列幂级数的收敛半径 $R$:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=0}^{\infty}5^n x^{3n}$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}n^n x^{n^2}$;
+    \item $\displaystyle\sum\limits_{n=0}^{\infty}n!x^{n!}$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+若存在 $\alpha>0,l>0$,使得
+\[
+    \lim\limits_{n\to\infty}|a_nn^\alpha|=l,
+\]
+则 $\displaystyle\sum\limits_{n=0}^{\infty}a_nx^n$ 的收敛半径 $R=1$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $a_n>0$, $S_n=\displaystyle\sum\limits_{k=0}^{n}a_k$.若
+\[
+    \lim\limits_{n\to\infty}S_n=+\infty,
+    \qquad
+    \lim\limits_{n\to\infty}\dfrac{a_n}{S_n}=0,
+\]
+则 $\displaystyle\sum\limits_{n=0}^{\infty}a_nx^n$ 的收敛半径 $R=1$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $a_n>0$, $\displaystyle\sum\limits_{n=0}^{\infty}a_nx^n$ 的收敛半径是 $1$,则
+\[
+    I=\sum\limits_{n=0}^{\infty}S_nx^n,
+    \qquad
+    S_n=\sum\limits_{k=0}^{n}a_k,
+\]
+的收敛半径也是 $1$.
+\end{example}
+\exampleblank
+
+\begin{example}
+证明:
+\[
+    \sum\limits_{\substack{k+j=n\\0\leq k,j\leq n}}C_{2k}^{k}C_{2j}^{j}=4^n,
+    \qquad n=0,1,2,\ldots.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+试求下列幂级数的收敛域:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{x^n}{1+\dfrac{1}{2}+\cdots+\dfrac{1}{n}}$;
+    \item $\displaystyle\sum\limits_{n=0}^{\infty}C_{\alpha}^{n}x^n$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+试求下列幂级数的收敛区域:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}(-1)^{n-1}\dfrac{2n+3}{3n^2+4}x^{2n+1}$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}(\sqrt[n]{a}-1)x^n$, $a>0$;
+    \item $\displaystyle\sum\limits_{n=0}^{\infty}\sqrt{2-2\cos\dfrac{\pi}{2n}}\,x^n$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{x^n}{n^p\ln n}$, $p>0$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{[2+(-1)^n]^n}{n}x^n$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{(1+\dfrac{1}{n})(-1)^n}{n^2}x^n$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+试用变量替换,并借助幂级数法求下列函数项级数的收敛域:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{\sqrt[3]{2n+1}-\sqrt[3]{2n-1}}{\sqrt n}(x+3)^n$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{n+2}{2^n}e^{-nx}$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{1}{3+2n}\left(\dfrac{1-x}{1+x}\right)^n$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\sqrt n(\tan x)^n$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{n4^n}{3^n}\dfrac{x^n}{(1-x)^n}$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{2^{-n}}{\sqrt n}x^n$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $a_0=0,a_1=1,a_{n+1}=a_{n-1}+a_n$,则 $\displaystyle\sum\limits_{n=0}^{\infty}a_nx^n$ 在 $|x|<\dfrac{1}{2}$ 时收敛.
+\end{example}
+\exampleblank
+
+\begin{example}
+若 $\displaystyle\sum\limits_{n=0}^{\infty}a_n^2x^n$ 的收敛域为 $\lbrack -1,1\rbrack$,则 $\displaystyle\sum\limits_{n=0}^{\infty}\dfrac{a_n}{n}x^n$ 的收敛域为 $\lbrack -1,1\rbrack$.
+\end{example}
+\exampleblank
+
+\begin{example}
+若 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 在 Cesaro 意义下可求和,则 $\displaystyle\sum\limits_{n=1}^{\infty}a_nx^n$ 在 $(-1,1)$ 收敛.
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{幂级数求和}
+
+\begin{theorem}[Tauber 定理 $*$]
+设
+\[
+    f(x)=\sum\limits_{n=0}^{\infty}a_nx^n,
+    \qquad -1<x<1,
+\]
+且 $na_n\to0$.若 $\displaystyle\lim\limits_{x\to1^-}f(x)=S$,则
+\[
+    \sum\limits_{n=0}^{\infty}a_n=S.
+\]
+\end{theorem}
+
+\begin{remark}
+Abel 第二定理的逆形式一般并不成立.例如
+\[
+    f(x)=\dfrac{1}{1+x}=\sum\limits_{n=0}^{\infty}(-1)^nx^n,
+    \qquad -1<x<1,
+\]
+有 $f(x)\to\dfrac{1}{2}$ $(x\to1^-)$,但 $\displaystyle\sum\limits_{n=0}^{\infty}(-1)^n$ 发散.Tauber 定理表明,对系数增加 $na_n\to0$ 的限制后,逆命题成立.
+\end{remark}
+
+幂级数的求和方法主要有两种:逐项积分与求导、Abel 第二定理.
+
+\begin{example}
+设 $a_n>0$.若
+\[
+    \lim\limits_{x\to1^-}\sum\limits_{n=0}^{\infty}a_nx^n=S,
+\]
+则 $\displaystyle\sum\limits_{n=0}^{\infty}a_n=S$.
+\end{example}
+\exampleblank
+
+\begin{example}[Tauber 定理的推广 $*$]
+设 $f(x)=\displaystyle\sum\limits_{n=0}^{\infty}a_nx^n$ 的收敛半径为 $1$.若
+\[
+    \lim\limits_{n\to\infty}\dfrac{1}{n}\sum\limits_{k=1}^{n}ka_k=0,
+    \qquad
+    \lim\limits_{x\to1^-}f(x)=l,
+\]
+则 $\displaystyle\sum\limits_{n=0}^{\infty}a_n=l$.
+\end{example}
+\exampleblank
+
+\begin{remark}
+若将 $\displaystyle\dfrac{1}{n}\sum\limits_{k=1}^{n}ka_k\to0$ 换成 $\displaystyle\sum\limits_{n=1}^{\infty}na_n^2$ 收敛,结论依旧成立.
+\end{remark}
+
+\begin{example}
+求下列幂级数的和 $S(x)$:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}nx^n$, $|x|<1$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{x^n}{n}$, $-1\leq x<1$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{x^n}{n(n+1)(n+2)}$, $|x|\leq1$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{x^{2n-1}}{2n-1}$, $|x|<1$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+求下列幂级数的和 $S(x)$:
+\begin{enumerate}[label=(\arabic*)]
+    \item $1+2x-4x^3-5x^4+7x^6+8x^7-\cdots$, $|x|<1$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}n^3x^n$, $|x|<1$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{(-1)^{n-1}x^{2n}}{n(2n-1)}$, $|x|<1$;
+    \item 设 $\displaystyle S(x)=\sum\limits_{n=1}^{\infty}\dfrac{x^n}{n^2}$,求 $S(x)+S(1-x)$, $0<x<1$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+试用幂级数法求下列常数项级数的和 $S$:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle S=\sum\limits_{n=2}^{\infty}\dfrac{(-1)^n}{n^2+n-2}$;
+    \item $\displaystyle S=\sum\limits_{n=1}^{\infty}\dfrac{1}{n(2n+1)2^n}$;
+    \item $\displaystyle S=\sum\limits_{n=0}^{\infty}\dfrac{(-1)^n}{3n+1}$;
+    \item $\displaystyle S=1-\dfrac{1}{5}+\dfrac{1}{7}-\dfrac{1}{11}+\cdots+\dfrac{1}{6n-5}-\dfrac{1}{6n-1}+\cdots$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+试用公式
+\[
+    \dfrac{1}{k(k+1)\cdots(k+n)}
+    =\dfrac{1}{n!}\int_0^1(1-x)^nx^{k-1}\,\mathrm{d}x
+\]
+求下列级数的和:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\dfrac{1}{1\cdot2\cdot3}+\dfrac{1}{3\cdot4\cdot5}+\dfrac{1}{5\cdot6\cdot7}+\cdots$;
+    \item $\displaystyle\dfrac{1}{1\cdot2\cdot3\cdot4}+\dfrac{1}{4\cdot5\cdot6\cdot7}+\dfrac{1}{7\cdot8\cdot9\cdot10}+\cdots$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+计算极限
+\[
+    \lim\limits_{\substack{n\to\infty\\m\to\infty}}
+    \sum\limits_{i=1}^{m}\sum\limits_{j=1}^{n}\dfrac{(-1)^{i+j}}{i+j}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $\displaystyle\lim\limits_{n\to\infty}a_n=l$,则 $\displaystyle S(x)=\sum\limits_{n=1}^{\infty}a_nx^n$ 在 $(-1,1)$ 上收敛,且
+\[
+    \lim\limits_{x\to1^-}(1-x)S(x)=l.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $a_n>0,b_n>0$,且
+\[
+    S_1(x)=\sum\limits_{n=0}^{\infty}a_nx^n,
+    \qquad
+    S_2(x)=\sum\limits_{n=0}^{\infty}b_nx^n
+\]
+的收敛半径均为 $1$.如果
+\[
+    \lim\limits_{x\to1^-}S_1(x)=\lim\limits_{x\to1^-}S_2(x)=+\infty,
+    \qquad
+    \lim\limits_{n\to\infty}\dfrac{a_n}{b_n}=l,
+\]
+则
+\[
+    \lim\limits_{x\to1^-}\dfrac{S_1(x)}{S_2(x)}=l.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+设幂级数 $\displaystyle\sum\limits_{n=0}^{\infty}a_nx^n$ 的系数满足
+\[
+    a_n+Aa_{n-1}+Ba_{n-2}=0,
+\]
+且此幂级数在点 $x=x_0$ 处收敛.证明:
+\[
+    S=\sum\limits_{n=0}^{\infty}a_nx_0^n
+    =\dfrac{a_0+(a_1+Aa_0)x_0}{1+Ax_0+Bx_0^2}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar\ 母函数法]
+设 $a_0=1,a_1=0,a_2=-5$,
+\[
+    a_n=4a_{n-1}-5a_{n-2}+2a_{n-3}.
+\]
+证明:
+\[
+    a_n=-2^{n+2}+3n+5.
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{幂级数展开——Taylor 级数}
+
+\begin{theorem}[\marktwostar\ 常用初等函数的 Maclaurin 级数展式]
+\begin{align*}
+    \sin x&=x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\cdots+(-1)^n\dfrac{x^{2n+1}}{(2n+1)!}+\cdots,\\
+    \cos x&=1-\dfrac{x^2}{2!}+\dfrac{x^4}{4!}-\cdots+(-1)^n\dfrac{x^{2n}}{(2n)!}+\cdots,\\
+    \tan x&=x+\dfrac{x^3}{3}+\dfrac{2x^5}{15}+\dfrac{17x^7}{315}+\cdots,\\
+    e^x&=1+x+\dfrac{x^2}{2!}+\cdots+\dfrac{x^n}{n!}+\cdots,\\
+    \ln(1+x)&=x-\dfrac{x^2}{2}+\dfrac{x^3}{3}-\cdots+(-1)^{n+1}\dfrac{x^n}{n}+\cdots,\\
+    \arcsin x&=x+\sum\limits_{n=1}^{\infty}\dfrac{(2n-1)!!}{(2n)!!}\dfrac{x^{2n+1}}{2n+1},\\
+    \arctan x&=x-\dfrac{x^3}{3}+\dfrac{x^5}{5}-\cdots+(-1)^n\dfrac{x^{2n+1}}{2n+1}+\cdots,\\
+    (1+x)^\alpha&=\sum\limits_{n=0}^{\infty}C_{\alpha}^{n}x^n,\\
+    \dfrac{1}{\sqrt{1-x^2}}&=1+\sum\limits_{n=1}^{\infty}\dfrac{(2n-1)!!}{(2n)!!}x^{2n}.
+\end{align*}
+相应收敛区间与原书一致.
+\end{theorem}
+
+\begin{remark}
+若 $f(x)$ 在 $x=x_0$ 处可幂级数展开,则
+\[
+    f(x)=\sum\limits_{n=0}^{\infty}a_n(x-x_0)^n
+    =\sum\limits_{n=0}^{\infty}\dfrac{f^{(n)}(x_0)}{n!}(x-x_0)^n,
+\]
+即为 Taylor 级数.幂级数展开常见方法有三种:分解合成法、微分积分法、待定系数法.
+\end{remark}
+
+\begin{example}
+求下列函数在 $x=0$ 处的 Taylor 级数展式:
+\begin{enumerate}[label=(\arabic*)]
+    \item $f(x)=\dfrac{3x+8}{(2x-3)(x^2+4)}$;
+    \item $f(x)=\ln(4+3x-x^2)$;
+    \item $f(x)=\sin^4x$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+求下列函数的 Maclaurin 展开式:
+\begin{enumerate}[label=(\arabic*)]
+    \item $f(x)=\ln(1+x+x^2+x^3)$;
+    \item $f(x)=\ln^2(1+x)$;
+    \item $f(x)=\dfrac{\ln(1+x)}{1+x}$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+利用待定系数法求下列函数的 Maclaurin 级数展开式:
+\begin{enumerate}[label=(\arabic*)]
+    \item $f(x)=\dfrac{x\sin\alpha}{1-2x\cos\alpha+x^2}$;
+    \item $f(x)=\dfrac{\arcsin x}{\sqrt{1-x^2}}$;
+    \item $f(x)=\dfrac{1}{\sqrt{1-2ax+x^2}}$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+利用微分积分法求下列函数的 Maclaurin 级数展开式:
+\begin{enumerate}[label=(\arabic*)]
+    \item $f(x)=\arctan\dfrac{x+3}{x-3}$;
+    \item $f(x)=\ln\left(x+\sqrt{x^2+1}\right)$;
+    \item $f(x)=\arccos(1-2x^2)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{幂级数展开式的应用}
+
+\newpage
+
+\methodsection{(A) 求级数的和}
+
+\begin{example}
+试求下列级数的和:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle S(x)=\sum\limits_{n=0}^{\infty}\dfrac{\ln^n x}{n!}$, $x>0$;
+    \item $\displaystyle S(x)=\sum\limits_{n=0}^{\infty}\dfrac{(-1)^n\ln^n x}{2^n n!}$;
+    \item $\displaystyle S(x)=\sum\limits_{n=0}^{\infty}\dfrac{2^n(n+1)}{n!}$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $\dfrac{1}{1-x-x^2}$ 的 Maclaurin 级数为 $\displaystyle\sum\limits_{n=0}^{\infty}a_nx^n$,试证明:
+\[
+    \sum\limits_{n=0}^{\infty}\dfrac{a_{n+1}}{a_na_{n+2}}=2.
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\methodsection{(B) 求积分值}
+
+\begin{example}
+求下列积分值:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_0^1e^x\ln x\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{x}{e^{2\pi x}-1}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^x\dfrac{\sin t}{t}\,\mathrm{d}t$;
+    \item $\displaystyle\int_0^1\ln x\ln(1-x)\,\mathrm{d}x$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+证明下列等式:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_0^1\dfrac{\ln(1+x)}{x}\,\mathrm{d}x=\dfrac{\pi^2}{12}$;
+    \item $\displaystyle\int_0^{\frac{\pi}{2}}\dfrac{\mathrm{d}\theta}{\sqrt{1-k^2\sin^2\theta}}$, $0\leq k<1$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\newpage
+
+\methodsection{(C) 求导数 $f^{(n)}(0)$}
+
+\begin{example}
+设
+\[
+    f(x)=\dfrac{1-x+x^2}{1+x+x^2},
+\]
+试求 $f^{(n)}(0)$.
+\end{example}
+\exampleblank
+
+\newpage
+
+\section{Fourier 级数}
+
+\newpage
+
+\subsection{Fourier 系数}
+
+设 $f(x)$ 以 $2\pi$ 为周期,在区间 $\lbrack -\pi,\pi\rbrack$ 上可积,则
+\[
+    a_n=\dfrac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos nx\,\mathrm{d}x,
+    \qquad
+    b_n=\dfrac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin nx\,\mathrm{d}x.
+\]
+称为 $f(x)$ 的 Fourier 系数,
+\[
+    \dfrac{a_0}{2}+\sum\limits_{n=1}^{\infty}(a_n\cos nx+b_n\sin nx)
+\]
+称为 $f(x)$ 在 $\lbrack -\pi,\pi\rbrack$ 上的 Fourier 级数.
+
+\begin{proposition}[\markstar]
+Fourier 系数具有如下性质:
+\begin{enumerate}[label=(\arabic*)]
+    \item 线性性:若 $f_1,f_2$ 的 Fourier 系数分别为 $a_n^{(1)},b_n^{(1)}$ 与 $a_n^{(2)},b_n^{(2)}$,则 $\alpha f_1\pm\beta f_2$ 的系数为
+    \[
+        a_n=\alpha a_n^{(1)}\pm\beta a_n^{(2)},
+        \qquad
+        b_n=\alpha b_n^{(1)}\pm\beta b_n^{(2)}.
+    \]
+    \item 若 $f$ 在 $\lbrack -\pi,\pi\rbrack$ 上连续、分段光滑,则 $f'$ 的 Fourier 系数满足 $b_n'=-na_n$;当 $f(-\pi)=f(\pi)$ 时,$a_0'=0$, $a_n'=nb_n$.
+    \item 若 $f$ 在 $\lbrack -\pi,\pi\rbrack$ 上分段连续,设 $a_n,b_n$ 为其 Fourier 系数,则
+    \[
+        F(x)=\int_0^x\left(f(t)-\dfrac{a_0}{2}\right)\mathrm{d}t
+    \]
+    的 Fourier 系数为
+    \[
+        A_n=-\dfrac{b_n}{n},
+        \qquad
+        B_n=\dfrac{a_n}{n},
+        \qquad
+        A_0=2\sum\limits_{n=1}^{\infty}\dfrac{b_n}{n}.
+    \]
+\end{enumerate}
+\end{proposition}
+
+\begin{proposition}[\markstar]
+设 $f(x)$ 以 $2\pi$ 为周期,$\lbrack -\pi,\pi\rbrack$ 上可积,$a_n,b_n$ 是它的 Fourier 系数,则:
+\begin{enumerate}[label=(\arabic*)]
+    \item 若 $f(-x)=f(x)$ 且 $f(\pi-x)=-f(x)$,则 $b_n=0$,且 $a_{2n}=0$;
+    \item 若 $f(-x)=f(x)$ 且 $f(\pi-x)=f(x)$,则 $b_n=0$,且 $a_{2n-1}=0$;
+    \item 若 $f(-x)=-f(x)$ 且 $f(\pi-x)=-f(x)$,则 $a_n=0$,且 $b_{2n-1}=0$;
+    \item 若 $f(-x)=-f(x)$ 且 $f(\pi-x)=f(x)$,则 $a_n=0$,且 $b_{2n}=0$.
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}
+$f(\pi-x)=-f(x)$ 表明图像关于点 $\left(\dfrac{\pi}{2},0\right)$ 中心对称,$f(\pi-x)=f(x)$ 表明图像关于直线 $x=\dfrac{\pi}{2}$ 轴对称.可用``偶心奇轴皆无偶,奇心偶轴皆无奇''记忆.
+\end{remark}
+
+\begin{example}
+设
+\[
+    \dfrac{a_0}{2}+\sum\limits_{k=1}^{\infty}(a_k\cos kx+b_k\sin kx)
+\]
+在 $\lbrack -\pi,\pi\rbrack$ 上一致收敛,试证它必是 $\lbrack -\pi,\pi\rbrack$ 上其和函数的 Fourier 级数.
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+三角多项式
+\[
+    \dfrac{a_0}{2}+\sum\limits_{k=1}^{n}(a_k\cos kx+b_k\sin kx)
+\]
+的 Fourier 级数是它本身.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)=\pi-x$, $x\in(0,\pi)$.
+\begin{enumerate}[label=(\arabic*)]
+    \item 将 $f(x)$ 展开为正弦级数;
+    \item 判断该级数在 $(0,\pi)$ 内是否一致收敛.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+试将
+\[
+    f(x)=
+    \begin{cases}
+        1-x,&0\leq x\leq2,\\
+        x-3,&2<x\leq4
+    \end{cases}
+\]
+在 $\lbrack 0,4\rbrack$ 上展开为余弦级数,并证明
+\[
+    \sum\limits_{n=0}^{\infty}\dfrac{1}{(2n+1)^2}=\dfrac{\pi^2}{8}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+求
+\[
+    f(x)=
+    \begin{cases}
+        x,&0\leq x<1,\\
+        2-x,&1\leq x\leq2
+    \end{cases}
+\]
+在 $\lbrack 0,2\rbrack$ 上的 Fourier 展开式.
+\end{example}
+\exampleblank
+
+\begin{example}
+求
+\[
+    f(x)=
+    \begin{cases}
+        0,&-\pi\leq x\leq0,\\
+        \sin x,&0<x\leq\pi
+    \end{cases}
+\]
+在 $\lbrack -\pi,\pi\rbrack$ 上的 Fourier 展开式.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)=x$, $x\in\lbrack 0,\dfrac{\pi}{2}\rbrack$,试将 $f(x)$ 展开为
+\[
+    \sum\limits_{n=1}^{\infty}b_{2n-1}\sin(2n-1)x
+\]
+型的三角级数.
+\end{example}
+\exampleblank
+
+\begin{example}
+已知 $f(x)=x$ 在 $(-\pi,\pi)$ 上的 Fourier 级数展开式为
+\[
+    x=\sum\limits_{n=1}^{\infty}\dfrac{2(-1)^{n-1}}{n}\sin nx,
+    \qquad |x|<\pi.
+\]
+试求函数 $\varphi(x)=x\sin x$ 在 $\lbrack -\pi,\pi\rbrack$ 上的 Fourier 展开式.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 有 Fourier 系数
+\[
+    f(x)\sim\dfrac{a_0}{2}+\sum\limits_{n=1}^{\infty}(a_n\cos nx+b_n\sin nx).
+\]
+试证逐项乘 $\sin x$ 可得 $f(x)\sin x$ 的 Fourier 级数.
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $f(x)$ 以 $2\pi$ 为周期,在 $(0,2\pi)$ 内有界.若 $f(x)$ 单调递减,试证 $b_n\geq0$;若单调递增,则 $b_n\leq0$;
+    \item 设 $f'(x)$ 在 $(0,2\pi)$ 内有界.若 $f'(x)$ 单调递增,试证 $a_n\geq0$;若单调递减,则 $a_n\leq0$;
+    \item 设 $f(x)$ 在 $(0,2\pi)$ 内可积.若 $F(x)=\displaystyle\int_0^x\left(f(t)-\dfrac{a_0}{2}\right)\mathrm{d}t$ 单调递减,试证 $a_n\geq0$;若 $F$ 单调递增,则 $a_n\leq0$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{proposition}[\markstar]
+若 $f$ 为周期 $2\pi$ 的可积和绝对可积函数,则其 Fourier 系数 $\{a_n\}$ 和 $\{b_n\}$ 必为无穷小量:
+\[
+    \lim\limits_{n\to\infty}a_n=\lim\limits_{n\to\infty}b_n=0.
+\]
+\end{proposition}
+
+\begin{proposition}[\markstar]
+设以 $2\pi$ 为周期的函数 $f$ 在 $\lbrack -\pi,\pi\rbrack$ 上除了有限个点以外均有 $k+1$ 阶导数.如果 $f^{(k)}$ 在 $\lbrack -\pi,\pi\rbrack$ 上处处连续且 $f^{(k+1)}$ 可积和绝对可积,则
+\[
+    a_n=o\left(\dfrac{1}{n^{k+1}}\right),
+    \qquad
+    b_n=o\left(\dfrac{1}{n^{k+1}}\right).
+\]
+\end{proposition}
+
+\begin{example}
+设 $f$ 是以 $2\pi$ 为周期的函数且存在 $\alpha\in(0,1\rbrack$,使 $f$ 满足 $\alpha$ 阶 Lipschitz 条件
+\[
+    |f(x)-f(y)|\leq L|x-y|^\alpha.
+\]
+证明:
+\[
+    a_n=o\left(\dfrac{1}{n^\alpha}\right),
+    \qquad
+    b_n=o\left(\dfrac{1}{n^\alpha}\right).
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{收敛定理}
+
+\begin{theorem}[Fejer 定理 $*$]
+如果以 $2\pi$ 为周期的函数 $f$ 在 $\lbrack -\pi,\pi\rbrack$ 上可积和绝对可积,并且在点 $x_0$ 处有左、右极限 $f(x_0^+)$ 与 $f(x_0^-)$,则 $f$ 的 Fourier 级数在点 $x_0$ 处在 Cesaro 意义下收敛于
+\[
+    \dfrac{1}{2}[f(x_0^+)+f(x_0^-)].
+\]
+特别地,当 $f$ 在 $x_0$ 连续时,Cesaro 和等于 $f(x_0)$.
+\end{theorem}
+
+\begin{theorem}[\markstar]
+设以 $2\pi$ 为周期的函数 $f$ 在 $\lbrack -\pi,\pi\rbrack$ 上可积和绝对可积,点 $x_0$ 是 $f$ 的连续点或第一类间断点.如果 $f$ 的 Fourier 级数在点 $x_0$ 处收敛,则它一定收敛于 $f(x_0)$ 或 $\dfrac{1}{2}[f(x_0^+)+f(x_0^-)]$.
+\end{theorem}
+
+\begin{theorem}[\markstar\ 唯一性定理]
+设 $f$ 为周期 $2\pi$ 的连续函数,且其 Fourier 系数均等于零,则 $f\equiv0$.
+\end{theorem}
+
+\begin{theorem}[$*$]
+如果 $f$ 是以 $2\pi$ 为周期的连续函数,则它的 Fourier 级数在 Cesaro 意义下一致收敛于 $f$.
+\end{theorem}
+
+\begin{remark}
+此定理也给出了 Weierstrass 三角多项式逼近定理中的三角多项式构造
+\[
+    \sigma_n(x)=\dfrac{1}{n}\sum\limits_{k=1}^{n}S_k(x).
+\]
+\end{remark}
+
+\begin{example}
+证明:若 $f(x)$ 是周期为 $2\pi$ 的连续函数,在 $\lbrack -\pi,\pi\rbrack$ 上分段光滑,则 $f(x)$ 的 Fourier 级数一致收敛于 $f(x)$.
+\end{example}
+\exampleblank
+
+\begin{example}
+构造两个以 $2\pi$ 为周期的连续函数,使得其 Fourier 级数在 $\lbrack 0,\pi\rbrack$ 上一致收敛于 $0$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in C\lbrack 0,1\rbrack$ 且 $f(0)=0$.若
+\[
+    \int_0^1f(x)\sin(n\pi x)\,\mathrm{d}x=0,
+\]
+则 $f\equiv0$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 是以 $2\pi$ 为周期的函数,在 $\lbrack -\pi,\pi\rbrack$ 上可积.已知其 Fourier 级数部分和可表示为 Dirichlet 积分
+\[
+    S_n(x)=\dfrac{1}{\pi}\int_{-\pi}^{\pi}f(x+t)
+    \dfrac{\sin\left((n+\dfrac{1}{2})t\right)}{2\sin\dfrac{t}{2}}\,\mathrm{d}t,
+\]
+其中
+\[
+    D_n(t)=\dfrac{\sin\left((n+\dfrac{1}{2})t\right)}{2\sin\dfrac{t}{2}}
+    =\dfrac{1}{2}+\cos t+\cos2t+\cdots+\cos nt.
+\]
+又令 $\displaystyle\sigma_n(x)=\dfrac{1}{n}\sum\limits_{k=0}^{n-1}S_k(x)$.试证:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{k=0}^{n-1}D_k(x)=\dfrac{1}{2}\left(\dfrac{\sin\dfrac{nx}{2}}{\sin\dfrac{x}{2}}\right)^2$;
+    \item $\displaystyle\dfrac{1}{2n\pi}\int_{-\pi}^{\pi}\left(\dfrac{\sin\dfrac{nx}{2}}{\sin\dfrac{x}{2}}\right)^2\mathrm{d}x=1$;
+    \item 对任意 $\delta>0$,
+    \[
+        \dfrac{1}{n\pi}\int_{\delta}^{\pi}\left(\dfrac{\sin\dfrac{nx}{2}}{\sin\dfrac{x}{2}}\right)^2\mathrm{d}x\to0,
+        \qquad n\to\infty;
+    \]
+    \item 若 $f(x)$ 是以 $2\pi$ 为周期的连续函数,则 $\sigma_n(x)\rightrightarrows f(x)$ 于 $\lbrack -\pi,\pi\rbrack$ 上.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{theorem}[\markstar\ Fourier 级数的逐项积分定理]
+设 $f$ 为周期 $2\pi$ 的函数,在 $\lbrack -\pi,\pi\rbrack$ 上可积和绝对可积,且
+\[
+    f(x)\sim\dfrac{a_0}{2}+\sum\limits_{n=1}^{\infty}(a_n\cos nx+b_n\sin nx).
+\]
+则 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{b_n}{n}$ 收敛,并且
+\[
+    \int_a^bf(t)\,\mathrm{d}t
+    =\int_a^b\dfrac{a_0}{2}\,\mathrm{d}t
+    +\sum\limits_{n=1}^{\infty}\int_a^b(a_n\cos nt+b_n\sin nt)\,\mathrm{d}t.
+\]
+对于 $a=0,b=x$ 可得
+\[
+    \int_0^x\left(f(t)-\dfrac{a_0}{2}\right)\mathrm{d}t
+    =\sum\limits_{n=1}^{\infty}\dfrac{b_n}{n}
+    +\sum\limits_{n=1}^{\infty}\left(-\dfrac{b_n}{n}\cos nx+\dfrac{a_n}{n}\sin nx\right).
+\]
+\end{theorem}
+
+\begin{remark}
+由此可知一个三角级数绝对可积的必要条件为 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{b_n}{n}$ 收敛.该结论区别于一般函数项级数情形:不论 $f$ 的 Fourier 级数收敛情况如何,都可以逐项积分.
+\end{remark}
+
+\begin{theorem}[\markstar\ Fourier 级数的逐项求导定理]
+设 $f$ 是以 $2\pi$ 为周期的连续函数,在 $\lbrack -\pi,\pi\rbrack$ 上除有限个点外处处可导,又设
+\[
+    f(x)\sim\dfrac{a_0}{2}+\sum\limits_{n=1}^{\infty}(a_n\cos nx+b_n\sin nx),
+\]
+且 $f'(x)$ 在 $\lbrack -\pi,\pi\rbrack$ 上分段光滑,则
+\[
+    \dfrac{f'(x^+)+f'(x^-)}{2}
+    =\sum\limits_{n=1}^{\infty}(a_n\cos nx+b_n\sin nx)'
+    =\sum\limits_{n=1}^{\infty}(nb_n\cos nx-na_n\sin nx).
+\]
+\end{theorem}
+
+\begin{example}
+求
+\[
+    f(x)=\ln(1+2r\cos x+r^2),
+    \qquad |r|<1,
+\]
+的 Fourier 级数展开式.
+\end{example}
+\exampleblank
+
+\begin{example}
+已知
+\[
+    x=2\sum\limits_{n=1}^{\infty}\dfrac{(-1)^{n+1}\sin nx}{n},
+    \qquad -\pi<x<\pi.
+\]
+试求函数 $x^2,x^3$ 的 Fourier 级数展开式.
+\end{example}
+\exampleblank
+
+\begin{example}
+\begin{enumerate}[label=(\arabic*)]
+    \item 证明 $\displaystyle\sum\limits_{n=2}^{\infty}\dfrac{1}{\ln n}\sin nx$ 不可能为某函数的 Fourier 级数;
+    \item 证明 $\displaystyle\sum\limits_{n=9}^{\infty}\dfrac{\sin nx}{\ln\ln n}$ 不可能为某函数的 Fourier 级数.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{Parseval 等式}
+
+\begin{example}
+求函数
+\[
+    f(x)=\left(x-\dfrac{\pi}{2}\right)^2,
+    \qquad x\in\lbrack 0,2\pi\rbrack,
+\]
+的 Fourier 级数,并求级数 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{1}{n^4}$ 的和.
+\end{example}
+\exampleblank
+
+\begin{example}
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $f(x)$ 在 $\lbrack 0,\pi\rbrack$ 上有连续导数,且 $f'(x)$ 在 $\lbrack 0,\pi\rbrack$ 上分段光滑,$\displaystyle\int_0^\pi f(x)\,\mathrm{d}x=0$.证明相应 Wirtinger 型不等式;
+    \item 设 $f(x)$ 在 $\mathbb R$ 上有连续导数,周期为 $l>0$,且 $\displaystyle\int_0^lf(x)\,\mathrm{d}x=0$.证明
+    \[
+        \int_0^l|f'(x)|^2\,\mathrm{d}x
+        \geq\dfrac{4\pi^2}{l^2}\int_0^l|f(x)|^2\,\mathrm{d}x.
+    \]
+    等号成立当且仅当
+    \[
+        f(x)=a_1\cos\dfrac{2\pi x}{l}+b_1\sin\dfrac{2\pi x}{l}.
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank

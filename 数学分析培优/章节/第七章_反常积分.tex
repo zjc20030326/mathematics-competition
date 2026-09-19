@@ -1,0 +1,699 @@
+\chapter{反常积分}
+
+\newpage
+
+\section{积分计算}
+
+本节基本方法前文都已介绍过,包括 N-L 公式、换元、分部积分、拟合法等等,差别仅在套上了反常积分的语言而已.
+
+\newpage
+
+\subsection{基本积分计算}
+
+\begin{example}
+计算下列积分:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_0^{+\infty}\dfrac{x^2}{1+x^4}\,\mathrm{d}x$;
+    \item $\displaystyle\int_{-\infty}^{+\infty}|t-x|^{\frac{1}{2}}
+    \dfrac{y\,\mathrm{d}t}{(t-x^2)+y^2}$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\ln x}{1+x^2}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\mathrm{d}x}{(1+x^2)(1+x^\alpha)}$;
+    \item $\displaystyle\int_0^{+\infty}f(x^p+x^{-p})\dfrac{\ln x}{1+x^2}\,\mathrm{d}x$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+计算下列积分:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_0^{\frac{\pi}{2}}\cos(2nx)\ln(\cos x)\,\mathrm{d}x$;
+    \item $\displaystyle\int_a^b\dfrac{\mathrm{d}x}{\sqrt{(x-a)(b-x)}}\quad(b>a)$;
+    \item $\displaystyle\int_{-1}^{1}\dfrac{\mathrm{d}x}{(a-x)\sqrt{1-x^2}}\quad(a>1)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+计算下列积分:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_{-\infty}^{+\infty}\dfrac{\mathrm{d}x}{(x^2+2x+2)^n}$;
+    \item $\displaystyle\int_0^1x^n\left(\ln\dfrac{1}{x}\right)^m\,\mathrm{d}x\quad(n,m\in\mathbb{N})$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+证明:
+\begin{enumerate}[label=(\arabic*)]
+    \item
+    \[
+        \int_0^{+\infty}f\left(ax+\dfrac{b}{x}\right)\,\mathrm{d}x
+        =\dfrac{1}{a}\int_0^{+\infty}f\left(\sqrt{t^2+4ab}\right)\,\mathrm{d}t,
+        \qquad a,b>0,
+    \]
+    假定两积分有意义;
+    \item
+    \[
+        \int_0^{+\infty}f\left(\left(Ax-\dfrac{B}{x}\right)^2\right)\,\mathrm{d}x
+        =\dfrac{1}{A}\int_0^{+\infty}f(y^2)\,\mathrm{d}y,
+        \qquad A,B>0,
+    \]
+    假定两积分有意义.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+证明:
+\[
+    \int_1^{+\infty}\left(\dfrac{1}{[x]}-\dfrac{1}{x}\right)\,\mathrm{d}x
+    =\lim\limits_{n\to\infty}\left(1+\dfrac{1}{2}+\cdots+\dfrac{1}{n}-\ln n\right)
+    =\gamma,
+\]
+其中 $\gamma$ 为 Euler 常数.
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{特殊积分计算}
+
+Froullani 积分、Euler 积分、Dirichlet 积分、概率积分均已在基础教材中介绍,故不再赘述,它们的证明、形式及应用均需熟练掌握.
+
+\begin{example}
+利用 Euler 积分,计算下列积分:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_0^{\frac{\pi}{2}}\ln\tan x\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^1\dfrac{\ln x}{\sqrt{1-x^2}}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^1\dfrac{\arcsin x}{x}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{\frac{\pi}{2}}x\cot x\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^\pi x\ln\sin x\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^\pi\dfrac{x\sin x}{1-\cos x}\,\mathrm{d}x$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+利用 Froullani 积分,计算下列积分($a,b>0$):
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\arctan ax-\arctan bx}{x}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{e^{-ax}-e^{-bx}}{x}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\cos ax-\cos bx}{x}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\sin ax\sin bx}{x}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^1\dfrac{x^{a-1}-x^{b-1}}{\ln x}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{b\sin ax-a\sin bx}{x^2}\,\mathrm{d}x$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+利用 Dirichlet 积分,计算下列积分:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\sin^2x}{x^2}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\sin^4x}{x^2}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\sin^4x}{x^4}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{x-\sin x}{x^3}\,\mathrm{d}x$;
+    \item $\displaystyle\int_{-\infty}^{+\infty}\dfrac{\sin x}{x(x-\pi)}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\sin x^2}{x}\,\mathrm{d}x$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+利用概率积分,计算下列积分:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_0^{+\infty}e^{-x^2}\left(x^2+\dfrac{1}{2}\right)^2\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\left(e^{-a^2x^2}-e^{-b^2x^2}\right)\,\mathrm{d}x$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+证明:
+\begin{enumerate}[label=(\arabic*)]
+    \item $1-x^2\leq e^{-x^2}\leq\dfrac{1}{1+x^2}$;
+    \item 由 (1) 计算概率积分.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{积分与极限}
+
+该类问题大多利用拟合法结合反常积分收敛的定义或性质分段分析即可.
+
+\begin{example}
+设 $f:\mathbb{R}\to\mathbb{R}$ 是有界连续函数,求
+\[
+    \lim\limits_{t\to0^+}\int_{-\infty}^{+\infty}\dfrac{t}{t^2+x^2}f(x)\,\mathrm{d}x.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+求极限
+\[
+    \lim\limits_{x\to0^+}x^\alpha\int_x^1\dfrac{f(t)}{t^{\alpha+1}}\,\mathrm{d}t,
+\]
+其中 $\alpha>0$,$f(x)\in C\lbrack 0,1\rbrack$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设当 $x>a$ 时,$\varphi(x)>0$,$f(x),\varphi(x)$ 在任何有限区间 $\lbrack a,b\rbrack$ 上可积,
+\[
+    \int_a^{+\infty}\varphi(t)\,\mathrm{d}t
+\]
+发散,当 $x\to+\infty$ 时,$f(x)=o(\varphi(x))$.证明:
+\[
+    \int_a^{+\infty}f(t)\,\mathrm{d}t
+    =o\left(\int_a^{+\infty}\varphi(t)\,\mathrm{d}t\right).
+\]
+\end{example}
+\exampleblank
+
+\begin{proposition}[\markstar\ Riemann 引理]
+设 $f(x)$ 在 $\lbrack a,+\infty)$ 上绝对可积,$g(x)$ 是周期为 $T$ 的函数,在 $\lbrack 0,T\rbrack$ 上正常可积,则
+\[
+    \lim\limits_{n\to\infty}\int_a^{+\infty}f(x)g(nx)\,\mathrm{d}x
+    =\dfrac{1}{T}\int_0^Tg(x)\,\mathrm{d}x\int_a^{+\infty}f(x)\,\mathrm{d}x.
+\]
+\end{proposition}
+
+\begin{example}
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $\varphi(x)$ 为有界周期函数,周期为 $T$,且
+    \[
+        \dfrac{1}{T}\int_0^T\varphi(x)\,\mathrm{d}x=C,
+    \]
+    求证:
+    \[
+        \lim\limits_{n\to\infty}n\int_0^{+\infty}\dfrac{\varphi(t)}{t^2}\,\mathrm{d}t=C;
+    \]
+    \item 设 $\displaystyle\varphi(x)=\int_0^x\cos\dfrac{1}{t}\,\mathrm{d}t$,求 $\varphi'(0)$;
+    \item 设 $\displaystyle F(x)=\int_0^x\left(\dfrac{1}{t}-\left[\dfrac{1}{t}\right]\right)\,\mathrm{d}t$,试证 $F'(0)=\dfrac{1}{2}$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在任一有限区间 $\lbrack 0,a\rbrack$($a>0$)上正常可积,在 $(0,+\infty)$ 上绝对可积,证明:
+\[
+    \lim\limits_{n\to\infty}\int_0^{+\infty}f(x)|\sin nx|\,\mathrm{d}x
+    =\dfrac{2}{\pi}\int_0^{+\infty}f(x)\,\mathrm{d}x.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $p(t)$ 为 $\mathbb{R}$ 上连续函数满足:
+\begin{enumerate}[label=(\arabic*)]
+    \item $p(t)=0$,$|t|\geq1$;
+    \item $\displaystyle\int_{-\infty}^{+\infty}p(t)\,\mathrm{d}t=0$;
+    \item $\displaystyle\int_{-\infty}^{+\infty}tp(t)\,\mathrm{d}t=1$.
+\end{enumerate}
+又 $f(x)$ 为 $\mathbb{R}$ 上可微函数,证明:
+\[
+    \lim\limits_{\lambda\to0}\int_{-\infty}^{+\infty}
+    \dfrac{1}{\lambda^2}p\left(\dfrac{t-x}{\lambda}\right)f(t)\,\mathrm{d}t
+    =f'(x).
+\]
+\end{example}
+\exampleblank
+
+我们知道,反常积分不能像常义积分那样定义为积分和的极限.接下来这个命题说明:对于单调无界反常积分,我们可以用类似于积分和的和式来逼近.
+
+\begin{proposition}[\markstar]
+设 $f(x)$ 在 $(0,1)$ 上单调,$x=0,1$ 为奇点,$\displaystyle\int_0^1f(x)\,\mathrm{d}x$ 存在.证明:
+\[
+    \lim\limits_{n\to\infty}
+    \dfrac{f\left(\dfrac{1}{n}\right)+f\left(\dfrac{2}{n}\right)+\cdots+f\left(\dfrac{n-1}{n}\right)}{n}
+    =\int_0^1f(x)\,\mathrm{d}x.
+\]
+\end{proposition}
+
+\begin{remark}
+\begin{enumerate}[label=\textcircled{\arabic*}]
+    \item 单调性条件可减弱为只在奇点某邻域内单调;
+    \item 该结论还可推广为更一般的情况,$f$ 条件同上,$\varphi(x)$ 在 $\lbrack 0,1\rbrack$ 上常义可积,则
+    \[
+        \lim\limits_{n\to\infty}\dfrac{1}{n}\sum\limits_{i=1}^{n-1}
+        \varphi\left(\dfrac{i}{n}\right)f\left(\dfrac{i}{n}\right)
+        =\int_0^1\varphi(x)f(x)\,\mathrm{d}x;
+    \]
+    \item 逆命题不成立,例如 $f(x)=\dfrac{1}{x}-\dfrac{1}{1-x}$.
+\end{enumerate}
+\end{remark}
+
+\begin{example}
+设 $0<a<d$,
+\[
+    A_n=\dfrac{a+(a+d)+\cdots+[a+(n-1)d]}{n},
+\]
+\[
+    G_n=\sqrt[n]{a(a+d)\cdots[a+(n-1)d]}.
+\]
+试证:
+\[
+    \lim\limits_{n\to\infty}\dfrac{G_n}{A_n}=\dfrac{2}{e}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+$\{C_{n}^{k}\}_{k=0}^n$ 为二项式系数,$A_n,G_n$ 分别表示它们的算术平均值与几何平均值,试证:
+\[
+    \lim\limits_{n\to\infty}\sqrt[n]{A_n}=2,
+    \qquad
+    \lim\limits_{n\to\infty}\sqrt[n]{G_n}=\sqrt{e}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack 1,+\infty)$ 上可微,$f(1)=1$,若有
+\[
+    f'(x)=\dfrac{1}{x^2+f^2(x)},
+    \qquad 1\leq x<\infty,
+\]
+则
+\[
+    \lim\limits_{x\to+\infty}f(x)<1+\dfrac{\pi}{4}.
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\section{敛散性判别}
+
+\begin{remark}
+判别反常积分敛散性的常用方法:
+\begin{enumerate}[label=(\arabic*)]
+    \item 设当 $x$ 充分大时 $f(x)\geq0$:
+    \begin{enumerate}[label=\textcircled{\arabic*}]
+        \item 若 $\displaystyle\lim\limits_{x\to+\infty}f(x)=0$,可考察 $x\to+\infty$ 时无穷小量 $f(x)$ 的阶:若阶数 $\lambda>1$,则收敛;当 $\lambda\leq1$ 时,发散;
+        \item 利用比较判别法或其极限形式;
+        \item 可考察 $\displaystyle\int_a^Af(x)\,\mathrm{d}x$ 是否有界.
+    \end{enumerate}
+    \item 设 $x\to+\infty$ 时,$f(x)$ 无穷次变号,则考虑用 Abel 或 Dirichlet 判别法;
+    \item 若前述方法均失效,可考虑用 Cauchy 收敛准则或定义;
+    \item 利用分部积分或换元转化为熟悉或容易判断的积分;
+    \item 利用级数(下一章详细介绍).
+\end{enumerate}
+\end{remark}
+
+\newpage
+
+\subsection{非负函数积分敛散性判别}
+
+\begin{example}
+讨论下列反常积分的敛散性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\mathrm{d}x}{\sqrt[3]{x^4+1}}$;
+    \item $\displaystyle\int_0^{\frac{\pi}{2}}\dfrac{1-\cos x}{x^p}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{x\arctan x}{1+x^p}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\mathrm{d}x}{x^p+x^q}$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{x^p}{1+x^q}\,\mathrm{d}x$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+讨论下列积分的敛散性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_1^{+\infty}\dfrac{\mathrm{d}x}{\sqrt[r]{\ln x}}\quad(r>0)$;
+    \item $\displaystyle\int_2^{+\infty}\dfrac{\mathrm{d}x}{(\ln x)^{\ln x}}$;
+    \item $\displaystyle\int_3^{+\infty}\dfrac{\mathrm{d}x}{(\ln x)^{\ln\ln x}}$;
+    \item $\displaystyle\int_2^{+\infty}\dfrac{\mathrm{d}x}{(\ln x)(\ln x)^\alpha}$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+如果反常积分 $\displaystyle\int_a^bf^2$ 收敛,则称 $f$ 在 $\lbrack a,b\rbrack$ 上平方可积.分无穷积分与瑕积分两种情况讨论平方可积性与绝对可积性之间的关系.
+\end{example}
+\exampleblank
+
+\begin{example}
+讨论
+\[
+    \int_0^\pi\dfrac{\sin^{\alpha-1}x}{|1+k\cos x|^\alpha}\,\mathrm{d}x
+\]
+的敛散性.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack 1,+\infty)$ 上连续,对任意 $x\in\lbrack 1,+\infty)$ 有 $f(x)>0$,且
+\[
+    \lim\limits_{x\to+\infty}\dfrac{\ln f(x)}{\ln x}=\lambda.
+\]
+证明:$\lambda>1$ 时,$\displaystyle\int_1^{+\infty}f(x)\,\mathrm{d}x$ 收敛.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $(-\infty,+\infty)$ 上有定义,$f(x)>0$,且在任意有限区间 $\lbrack -A,B\rbrack$ 上可积($A,B>0$);又有定数 $M$,使得
+\[
+    \int_{-\infty}^{+\infty}f(x)e^{-\frac{|x|}{k}}\,\mathrm{d}x<M
+\]
+对任意 $k>0$ 成立.证明:$\displaystyle\int_{-\infty}^{+\infty}f(x)\,\mathrm{d}x$ 收敛.
+\end{example}
+\exampleblank
+
+\begin{example}
+设函数 $f(x)$ 在 $\lbrack 0,1\rbrack$ 上连续,且 $\displaystyle\lim\limits_{x\to0}f(x)=\pm\infty$.对任意 $N\in\mathbb{Z}^+$,令
+\[
+    f_N=\min\{f(x),N\}.
+\]
+证明:
+\[
+    \int_0^1f(x)\,\mathrm{d}x\text{ 收敛}
+    \quad\Longleftrightarrow\quad
+    \lim\limits_{N\to+\infty}\int_0^1f_N(x)\,\mathrm{d}x\text{ 存在}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 是 $\lbrack 1,+\infty)$ 上的正值函数,若 $\displaystyle\int_1^{+\infty}f(x)\,\mathrm{d}x$ 收敛,则:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_1^{+\infty}\dfrac{\sqrt{f(x)}}{x^p}\,\mathrm{d}x$($p>\dfrac{1}{2}$)收敛;
+    \item $\displaystyle\int_1^{+\infty}\dfrac{\mathrm{d}x}{x^2f(x)}$ 发散;
+    \item $\displaystyle\int_1^{+\infty}\sqrt{f(x)f(x+x_0)}\,\mathrm{d}x$ 收敛.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $f\in C\lbrack 1,+\infty)$,$f(x)>0$,$\displaystyle F(x)=\int_1^xf(t)\,\mathrm{d}t$,若 $\displaystyle\int_1^{+\infty}f(x)\,\mathrm{d}x=+\infty$,则
+    \[
+        \int_1^{+\infty}\dfrac{f(x)}{F(x)\ln F(x)}\,\mathrm{d}x
+    \]
+    发散,而
+    \[
+        \int_2^{+\infty}\dfrac{f(x)}{F(x)\ln^2F(x)}\,\mathrm{d}x
+    \]
+    收敛;
+    \item 设 $F(x)$ 在 $\lbrack 1,+\infty)$ 上递减趋于 $0$,则 $\displaystyle\int_1^{+\infty}f(x)\,\mathrm{d}x$ 与 $\displaystyle\int_1^{+\infty}a^xf(a^x)\,\mathrm{d}x$($a>1$)同敛散.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack 0,+\infty)$ 上是正值递增函数,$\displaystyle F(x)=\int_0^xf(t)\,\mathrm{d}t$,$\displaystyle\lim\limits_{x\to0^+}\dfrac{x}{F(x)}=1$,则
+\[
+    \int_0^{+\infty}\dfrac{1}{f(x)}\,\mathrm{d}x\text{ 收敛}
+    \quad\Longleftrightarrow\quad
+    \int_0^{+\infty}\dfrac{x}{F(x)}\,\mathrm{d}x\text{ 收敛}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in C^{(2)}\lbrack a,+\infty)$,若积分
+\[
+    \int_a^{+\infty}f^2(x)\,\mathrm{d}x,
+    \qquad
+    \int_a^{+\infty}[f''(x)]^2\,\mathrm{d}x
+\]
+均收敛,则 $\displaystyle\int_a^{+\infty}[f'(x)]^2\,\mathrm{d}x$ 收敛.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)>0$,$\displaystyle\int_1^{+\infty}f(x)\,\mathrm{d}x$ 收敛.证明:$[f(x)]^{1-\frac{1}{x}}$ 收敛.
+\end{example}
+\exampleblank
+
+\begin{example}
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $f(x)>0$($a\leq x<+\infty$),且对任意 $b>a$ 有 $f\in R\lbrack a,b\rbrack$.若对 $x_0>a$,有
+    \[
+        \lim\limits_{x\to+\infty}\dfrac{f(x+x_0)}{f(x)}=l,
+    \]
+    则
+    \[
+        \int_a^{+\infty}f(x)\,\mathrm{d}x
+        \begin{cases}
+            \text{收敛},&l<1,\\
+            \text{发散},&l>1;
+        \end{cases}
+    \]
+    \item 设 $f\in R\lbrack a,b\rbrack$($\forall b>a$),且 $f(x)>0$($a\leq x<+\infty$),
+    \[
+        \lim\limits_{x\to+\infty}\dfrac{f(kx)}{f(x)}=l,
+        \qquad k>1,
+    \]
+    则
+    \[
+        \int_a^{+\infty}f(x)\,\mathrm{d}x
+        \begin{cases}
+            \text{收敛},&l<\dfrac{1}{k},\\
+            \text{发散},&l>\dfrac{1}{k}.
+        \end{cases}
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+类似于级数中判别法的讨论,比较判别法中常用的比较对象是 $p$ 积分 $\displaystyle\int_1^{+\infty}\dfrac{\mathrm{d}x}{x^p}$.那么,是否有一个普遍适用的比较标准呢?回答是否定的.
+
+\begin{proposition}[\markstar]
+设 $f(x)\in C\lbrack a,+\infty)$ 且 $f(x)>0$,则:
+\begin{enumerate}[label=(\arabic*)]
+    \item 若 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 发散,令 $\displaystyle F(x)=\int_a^xf(t)\,\mathrm{d}t$,则
+    \begin{enumerate}[label=\textcircled{\arabic*}]
+        \item $\displaystyle\int_a^{+\infty}\dfrac{f(x)}{F(x)}\,\mathrm{d}x$ 发散;
+        \item $\displaystyle\int_a^{+\infty}\dfrac{f(x)}{F^{1+\delta}(x)}\,\mathrm{d}x$($\delta>0$)收敛.
+    \end{enumerate}
+    \item 若 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛,令 $\displaystyle R(x)=\int_x^{+\infty}f(t)\,\mathrm{d}t$,则
+    \begin{enumerate}[label=\textcircled{\arabic*}]
+        \item $\displaystyle\int_a^{+\infty}\dfrac{f(x)}{R(x)}\,\mathrm{d}x$ 发散;
+        \item $\displaystyle\int_a^{+\infty}\dfrac{f(x)}{R^{1-\delta}(x)}\,\mathrm{d}x$($\delta>0$)收敛.
+    \end{enumerate}
+\end{enumerate}
+\end{proposition}
+
+\newpage
+
+\subsection{一般函数积分敛散性判别}
+
+\begin{proposition}[\markstar]
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_1^{+\infty}\dfrac{\sin x}{x^p}\,\mathrm{d}x$ 与 $\displaystyle\int_1^{+\infty}\dfrac{\cos x}{x^p}\,\mathrm{d}x$ 敛散性相同,且
+    \[
+        \begin{cases}
+            \text{绝对收敛},&p>1,\\
+            \text{条件收敛},&0<p\leq1,\\
+            \text{发散},&p\leq0;
+        \end{cases}
+    \]
+    \item
+    \[
+        \int_0^\infty\dfrac{\sin x}{x^p}\,\mathrm{d}x
+        \begin{cases}
+            \text{绝对收敛},&1<p<2,\\
+            \text{条件收敛},&0<p\leq1,\\
+            \text{发散},&\text{其它},
+        \end{cases}
+    \]
+    而
+    \[
+        \int_0^{+\infty}\dfrac{\cos x}{x^p}\,\mathrm{d}x
+        \begin{cases}
+            \text{条件收敛},&0<p<1,\\
+            \text{发散},&\text{其它}.
+        \end{cases}
+    \]
+\end{enumerate}
+\end{proposition}
+
+\begin{example}
+证明:积分
+\[
+    \int_0^1\left(x\sin\dfrac{1}{x^2}-\dfrac{1}{x}\cos\dfrac{1}{x^2}\right)\,\mathrm{d}x
+\]
+收敛.
+\end{example}
+\exampleblank
+
+\begin{example}
+讨论下列反常积分的条件收敛与绝对收敛性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_0^{+\infty}\sin x^2\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\cos^2x\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}x\sin^4x\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^1\dfrac{1}{x^p}\sin\dfrac{1}{x}\,\mathrm{d}x$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+积分
+\[
+    \int_0^{+\infty}\left[\left(1-\dfrac{\sin x}{x}\right)^{-\frac{1}{3}}-1\right]\,\mathrm{d}x
+\]
+是否收敛?是否绝对收敛?
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $\alpha,\beta\in\mathbb{R}$,讨论积分
+\[
+    \int_0^{+\infty}x^\alpha\sin(x^\beta)\,\mathrm{d}x
+\]
+的绝对收敛性与条件收敛性.
+\end{example}
+\exampleblank
+
+\begin{example}
+讨论下列积分的绝对收敛性与条件收敛性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\sin\left(x+\dfrac{1}{x}\right)}{x^\alpha}\,\mathrm{d}x$;
+    \item $\displaystyle\int_1^{+\infty}\sin\left(\dfrac{\sin x}{\sqrt{x}}\right)\dfrac{\mathrm{d}x}{\sqrt{x}}$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+判断下列积分的敛散性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_1^{+\infty}\tan\left(\dfrac{\sin x}{x}\right)\,\mathrm{d}x$;
+    \item $\displaystyle\int_1^{+\infty}\dfrac{\ln\cos\dfrac{1}{x}}{x^p}\,\mathrm{d}x$;
+    \item $\displaystyle\int_1^{+\infty}\dfrac{\sin x}{x^\alpha-\sin x}\,\mathrm{d}x$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)>0$ 单调递减,试证:
+\[
+    \int_a^{+\infty}f(x)\,\mathrm{d}x
+    \quad\text{与}\quad
+    \int_a^{+\infty}f(x)\sin^2x\,\mathrm{d}x
+\]
+同敛散.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack a,+\infty)$ 上可微,且 $x\to+\infty$ 时 $f'(x)$ 单调递增趋于 $+\infty$.证明:
+\[
+    \int_a^{+\infty}\sin(f(x))\,\mathrm{d}x
+    \quad\text{和}\quad
+    \int_a^{+\infty}\cos(f(x))\,\mathrm{d}x
+\]
+都收敛.
+\end{example}
+\exampleblank
+
+对于周期函数特有的积分性质 $\displaystyle\int_a^{a+T}f(x)\,\mathrm{d}x=\int_0^Tf(x)\,\mathrm{d}x$($T$ 为 $f$ 周期),我们常对周期函数反常积分作周期处理.
+
+\begin{example}
+设 $f\in C\lbrack a,+\infty)$ 且是周期为 $T$ 的周期函数,又 $g(x)$ 是 $\lbrack a,+\infty)$ 上的单调函数,且 $\displaystyle\lim\limits_{x\to+\infty}g(x)=0$,则:
+\begin{enumerate}[label=(\arabic*)]
+    \item 若 $\displaystyle\int_a^{a+T}f(x)\,\mathrm{d}x=0$,则 $\displaystyle\int_a^{+\infty}f(x)g(x)\,\mathrm{d}x$ 收敛;
+    \item 若 $\displaystyle\int_a^{a+T}f(x)\,\mathrm{d}x\neq0$,则 $\displaystyle\int_a^{+\infty}f(x)g(x)\,\mathrm{d}x$ 与 $\displaystyle\int_a^{+\infty}g(x)\,\mathrm{d}x$ 同敛散.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+讨论积分
+\[
+    \int_0^{+\infty}\dfrac{x}{1+x^6\sin^2x}\,\mathrm{d}x
+\]
+的敛散性.
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+讨论积分
+\[
+    \int_0^{+\infty}\dfrac{x}{1+x^4\sin^2x}\,\mathrm{d}x
+\]
+的敛散性.
+\end{example}
+\exampleblank
+
+\newpage
+
+\section{无穷远处性质}
+
+反常积分许多性质可类比于级数,有时甚至完全一样,但有时也天差地别.考虑收敛级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$,有 $\displaystyle\lim\limits_{n\to\infty}a_n=0$.自然的一个疑问是,能否有如下结论:
+\[
+    \int_a^{+\infty}f(x)\,\mathrm{d}x\text{ 收敛}
+    \quad\Longrightarrow\quad
+    \lim\limits_{x\to+\infty}f(x)=0?
+\]
+答案是否定的,上节最后几个例子均为反例,并且一般情况下都得不到如上结论.下面给出一个特殊情况下的成立条件.
+
+\begin{proposition}[\markstar]
+设 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛且 $f\in C\lbrack a,+\infty)$,则
+\[
+    \lim\limits_{x\to+\infty}f(x)=0
+    \quad\Longleftrightarrow\quad
+    f\text{ 在 }\lbrack a,+\infty)\text{ 上一致连续}.
+\]
+\end{proposition}
+
+\begin{corollary}[\markstar]
+设 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛,且 $|f'(x)|\leq M$,则
+\[
+    \lim\limits_{x\to+\infty}f(x)=0.
+\]
+\end{corollary}
+
+\begin{example}
+设 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛,且 $\displaystyle\lim\limits_{x\to+\infty}f(x)$ 存在,则
+\[
+    \lim\limits_{x\to+\infty}f(x)=0.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛,且 $f$ 单调,则 $\displaystyle\lim\limits_{x\to+\infty}xf(x)=0$.逆命题是否成立?
+    \item 设 $\displaystyle\int_a^{+\infty}x^\alpha f(x)\,\mathrm{d}x$ 收敛,且 $f$ 单调,则 $\displaystyle\lim\limits_{x\to+\infty}x^{\alpha+1}f(x)=0$.
+    \item 设 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛,且 $xf(x)$ 单调,则 $\displaystyle\lim\limits_{x\to+\infty}xf(x)\ln x=0$.
+    \item 设 $\displaystyle\int_a^x f(x)\,\mathrm{d}x$ 收敛,且 $\dfrac{f(x)}{x}$ 单调递减($a>0$),则 $\displaystyle\lim\limits_{x\to+\infty}xf(x)=0$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $f\in C\lbrack a,+\infty)$ 且 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛,则存在数列 $\{x_n\}\subseteq\lbrack a,+\infty)$ 满足
+    \[
+        \lim\limits_{n\to\infty}x_n=+\infty,
+        \qquad
+        \lim\limits_{n\to\infty}f(x_n)=0;
+    \]
+    \item 设 $f\in C\lbrack a,+\infty)$ 且 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛,则存在数列 $\{x_n\}\subseteq\lbrack a,+\infty)$ 满足
+    \[
+        \lim\limits_{n\to\infty}x_n=+\infty,
+        \qquad
+        \lim\limits_{n\to\infty}x_nf(x_n)=0;
+    \]
+    \item 设 $f$ 在 $\lbrack a,+\infty)$ 上可微且 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛,证明:存在数列 $\{x_n\}\subseteq\lbrack a,+\infty)$ 满足
+    \[
+        \lim\limits_{n\to\infty}x_n=+\infty,
+        \qquad
+        \lim\limits_{n\to\infty}f'(x_n)=0.
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+证明:若 $f$ 连续可微,$\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 与 $\displaystyle\int_a^{+\infty}f'(x)\,\mathrm{d}x$ 都收敛,则
+\[
+    \lim\limits_{x\to+\infty}f(x)=0.
+\]
+\end{example}
+\exampleblank

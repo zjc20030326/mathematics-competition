@@ -1,5 +1,7 @@
 \chapter{数列极限}
 
+\newpage
+
 \section{预备知识}
 
 作为培优教材,内容可能具有一定的综合性,先介绍可能会用到的几个公式:
@@ -37,7 +39,7 @@ n!\sim \sqrt{2\pi n}\left(\dfrac{n}{e}\right)^n,
 \[
 n!
 =\sqrt{2\pi n}\left(\dfrac{n}{e}\right)^n
- e^{\tfrac{\theta_n}{12n}}.
+ e^{\frac{\theta_n}{12n}}.
 \]
 \end{theorem}
 
@@ -46,9 +48,15 @@ n!
 \end{example}
 \exampleblank
 
+\newpage
+
 \section{收敛数列}
 
+\newpage
+
 \subsection{证明极限存在}
+
+\newpage
 
 \methodsection{(A) 结合拟合法,由定义证明}
 
@@ -129,7 +137,7 @@ x_n=\sum\limits_{i=1}^n f\left(\dfrac{2i-1}{n^2}a\right),
 \[
 \lim\limits_{n\to\infty}\dfrac{1}{2^n}
 \left(
-\binom{n}{0}a_0+\binom{n}{1}a_1+\cdots+\binom{n}{k}a_k+\cdots+\binom{n}{n}a_n
+C_{n}^{0}a_0+C_{n}^{1}a_1+\cdots+C_{n}^{k}a_k+\cdots+C_{n}^{n}a_n
 \right)=a.
 \]
 \end{example}
@@ -166,6 +174,8 @@ g(x)=x+x^2+\dfrac{x^3}{3},\qquad f(x)=x,
 =\dfrac{1}{6}.
 \]
 \end{remark}
+
+\newpage
 
 \methodsection{(B) Cauchy 收敛准则}
 
@@ -223,6 +233,8 @@ x_n=\sum\limits_{k=2}^n\dfrac{\cos k}{k(k-1)},
 试证 $\{x_n\}$ 收敛.
 \end{example}
 \exampleblank
+
+\newpage
 
 \methodsection{(C) Toeplitz 定理}
 
@@ -300,6 +312,8 @@ z_n=x_1y_n+x_2y_{n-1}+\cdots+x_ny_1.
 \end{example}
 \exampleblank
 
+\newpage
+
 \methodsection{(D) 单调有界原理}
 
 \begin{example}
@@ -321,13 +335,19 @@ x_n=\sum\limits_{k=1}^n\dfrac{1}{\sqrt{k}}-2\sqrt{n},
 \end{example}
 \exampleblank
 
+\newpage
+
 \methodsection{(E) 利用上、下极限 *}
 
 这部分方法由于预备知识理论性较强,故放在本章最后一节作为选学内容.
 
+\newpage
+
 \subsection{证明极限不存在}
 
 证明极限不存在,最本源的当然是由定义判断,但事实上,由过程繁琐等原因,反而用的较少.
+
+\newpage
 
 \methodsection{(A) 无界数列发散}
 
@@ -339,6 +359,8 @@ S_n=1+\dfrac{1}{2}+\dfrac{1}{3}+\cdots+\dfrac{1}{n}.
 无界,进而 $\{S_n\}$ 发散.
 \end{example}
 \exampleblank
+
+\newpage
 
 \methodsection{(B) 数列与子列的关系}
 
@@ -365,6 +387,8 @@ a_n=\dfrac{1}{n}-\dfrac{2}{n}+\dfrac{3}{n}+\cdots+(-1)^{n-1}\dfrac{n}{n}
 \end{example}
 \exampleblank
 
+\newpage
+
 \methodsection{(C) 利用恒等式反证得结论}
 
 该方法多用于证关于三角函数列的发散问题.
@@ -388,6 +412,8 @@ a_n=\dfrac{1}{n}-\dfrac{2}{n}+\dfrac{3}{n}+\cdots+(-1)^{n-1}\dfrac{n}{n}
 \end{example}
 \exampleblank
 
+\newpage
+
 \methodsection{(D) Cauchy 收敛准则}
 
 \begin{example}
@@ -408,7 +434,11 @@ x_n=1+\sqrt{\dfrac{1}{2}}+\sqrt{\dfrac{1}{3}}+\cdots+\sqrt{\dfrac{1}{n}},
 \end{example}
 \exampleblank
 
+\newpage
+
 \subsection{求极限值}
+
+\newpage
 
 \methodsection{(A) 迫敛性}
 
@@ -416,7 +446,7 @@ x_n=1+\sqrt{\dfrac{1}{2}}+\sqrt{\dfrac{1}{3}}+\cdots+\sqrt{\dfrac{1}{n}},
 求下列数列 $\{a_n\}$ 的极限 $\displaystyle \lim\limits_{n\to\infty}a_n$:
 \begin{enumerate}[label=(\arabic*)]
   \item $\displaystyle a_n=\sqrt[n]{2\sin^2n+\cos^2n}$;
-  \item $\displaystyle a_n=(n+1+n\cos n)^{\tfrac{1}{2n+n\sin n}}$.
+  \item $\displaystyle a_n=(n+1+n\cos n)^{\frac{1}{2n+n\sin n}}$.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -430,7 +460,7 @@ x_n=1+\sqrt{\dfrac{1}{2}}+\sqrt{\dfrac{1}{3}}+\cdots+\sqrt{\dfrac{1}{n}},
 \end{example}
 \exampleblank
 
-\begin{example}[\marktriangle]
+\begin{example}[\markstar]
 设
 \[
 A=\max\{a_1,a_2,\ldots,a_m\},\qquad a_k>0,
@@ -442,8 +472,8 @@ A=\max\{a_1,a_2,\ldots,a_m\},\qquad a_k>0,
 \end{example}
 \exampleblank
 
-\begin{example}[\marktriangle]
-设 $f(x)>0$ 在 $[0,1]$ 上连续,则
+\begin{example}[\markstar]
+设 $f(x)>0$ 在 $\lbrack 0,1\rbrack$ 上连续,则
 \[
 \lim\limits_{n\to\infty}
 \sqrt[n]{\dfrac{1}{n}\sum\limits_{i=1}^n\left[f\left(\dfrac{i}{n}\right)\right]^n}
@@ -453,14 +483,14 @@ A=\max\{a_1,a_2,\ldots,a_m\},\qquad a_k>0,
 \end{example}
 \exampleblank
 
-\begin{example}[\marktriangle]
+\begin{example}[\markstar]
 设 $\{a_n\}$ 是正实数列,
 \[
 a=\sup\{a_1,a_2,\ldots\},
 \]
 求证:
 \[
-\lim\limits_{n\to\infty}\left(\sum\limits_{k=1}^n a_k^n\right)^{\tfrac{1}{n}}=a.
+\lim\limits_{n\to\infty}\left(\sum\limits_{k=1}^n a_k^n\right)^{\frac{1}{n}}=a.
 \]
 \end{example}
 \exampleblank
@@ -474,6 +504,8 @@ a=\sup\{a_1,a_2,\ldots\},
 \end{enumerate}
 \end{example}
 \exampleblank
+
+\newpage
 
 \methodsection{(B) 利用积分定义}
 
@@ -501,6 +533,8 @@ a=\sup\{a_1,a_2,\ldots\},
 \end{enumerate}
 \end{example}
 \exampleblank
+
+\newpage
 
 \methodsection{(C) 利用级数性质}
 
@@ -534,6 +568,8 @@ x_n=\dfrac{1}{2\ln2}+\cdots+\dfrac{1}{n\ln n}-\ln\ln n,
 \end{example}
 \exampleblank
 
+\newpage
+
 \methodsection{(D) Stolz 定理}
 
 Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0}$、$\dfrac{*}{\infty}$ 未定式极限问题十分有效.
@@ -566,7 +602,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \begin{example}
 设
 \[
-S_n=\dfrac{\sum\limits_{k=0}^n\ln\binom{n}{k}}{n^2},
+S_n=\dfrac{\sum\limits_{k=0}^n\ln C_{n}^{k}}{n^2},
 \]
 求 $\displaystyle \lim\limits_{n\to\infty}S_n$.
 \end{example}
@@ -652,13 +688,19 @@ a_{n+1}=\ln(1+a_n),
 \end{example}
 \exampleblank
 
+\newpage
+
 \methodsection{(E) 利用函数极限}
 
 结合海涅归结原理,可将数列极限问题转化为函数极限问题,而函数极限求法留在下章重点介绍.
 
+\newpage
+
 \section{递推数列}
 
 假设用某种方法证明了递推数列的极限存在,则在递推公式里取极限,便可得极限值 $A$ 应满足的方程.当然,若能求得数列通项,极限值当然可以直接求得,求通项技巧高中大多已经学习过,就不再介绍了,接下来介绍几种不需要通项就可得到极限存在性的常用方法.
+
+\newpage
 
 \subsection{单调有界原理}
 
@@ -682,7 +724,7 @@ x_0=1,\qquad x_{n+1}=\sqrt{2x_n},\qquad n=0,1,2,\ldots.
 \exampleblank
 
 \begin{example}
-已知连续函数 $f(x)$ 在 $[1,+\infty)$ 单调递减,且 $f(x)>0$,证明数列
+已知连续函数 $f(x)$ 在 $\lbrack 1,+\infty)$ 单调递减,且 $f(x)>0$,证明数列
 \[
 a_n=\sum\limits_{k=1}^n f(k)-\int_1^n f(x)\,\mathrm{d}x.
 \]
@@ -757,6 +799,8 @@ x_{n+1}+\dfrac{4}{x_n}<4,
 \end{example}
 \exampleblank
 
+\newpage
+
 \subsection{压缩映像原理}
 
 \begin{theorem}[\markstar]
@@ -768,7 +812,7 @@ x_{n+1}+\dfrac{4}{x_n}<4,
 则数列 $\{x_n\}$ 收敛.
 \end{theorem}
 
-\begin{corollary}[\markstartriangle]
+\begin{corollary}[\markstar]
 若数列 $\{x_n\}$ 利用递推公式给出:$x_{n+1}=f(x_n)$,其中 $f$ 可微且存在 $0<r<1$,使得
 \[
 |f'(x)|\leq r<1\qquad(\forall x\in\mathbb R),
@@ -818,11 +862,13 @@ x_{n+1}=\dfrac{1+2x_n}{1+x_n}\qquad(n=1,2,\ldots),
 \end{example}
 \exampleblank
 
+\newpage
+
 \subsection{不动点法}
 
 事实上,前面两种方法已知能解决绝大部分问题,但对于部分难题,不动点法尤为有效.
 
-\begin{proposition}[\marktriangle]
+\begin{proposition}[\markstar]
 已知数列 $\{x_n\}$ 在区间 $I$ 上由
 \[
 x_{n+1}=f(x_n)\qquad(n=1,2,\ldots).
@@ -871,11 +917,11 @@ x_{n+1}=\dfrac{1}{1+x_n},
 \exampleblank
 
 \begin{example}
-设 $f(x)$ 映 $[a,b]$ 为自身,且
+设 $f(x)$ 映 $\lbrack a,b\rbrack$ 为自身,且
 \[
 |f(x)-f(y)|\leq|x-y|.
 \]
-任取 $x_1\in[a,b]$,令
+任取 $x_1\in\lbrack a,b\rbrack$,令
 \[
 x_{n+1}=\dfrac{1}{2}[x_n+f(x_n)],
 \]
@@ -895,9 +941,13 @@ x_{n+1}=\dfrac{x_n(x_n^2+3a)}{3x_n^2+a}\qquad(a\geq0).
 \end{example}
 \exampleblank
 
+\newpage
+
 \subsection{利用上下极限 *}
 
 这部分方法由于预备知识理论性较强,故放在本章最后一节作为选学内容.
+
+\newpage
 
 \section{上、下极限 *}
 
@@ -1006,7 +1056,7 @@ $\displaystyle \varlimsup\limits_{n\to\infty}x_n$
 \end{enumerate}
 \end{theorem}
 
-\begin{proposition}[\markstartriangle]
+\begin{proposition}[\markstar]
 设 $\{a_n\}$ 为正数列,则有
 \[
 \varliminf\limits_{n\to\infty}\dfrac{a_{n+1}}{a_n}

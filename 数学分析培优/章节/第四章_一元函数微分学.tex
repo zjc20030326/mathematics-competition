@@ -1,0 +1,1446 @@
+\chapter{一元函数微分学}
+
+\newpage
+
+\section{导数}
+
+\newpage
+
+\subsection{导数的定义及可微性验证}
+
+\begin{example}
+设 $f(x)=|x|$,则 $f(x)$ 在 $x\neq0$ 处可导,且
+\[
+    f'(x)=\dfrac{|x|}{x}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+证明:$f(x)=|x|^3$ 在 $x=0$ 处的三阶导数 $f'''(0)$ 不存在.
+\end{example}
+\exampleblank
+
+\begin{example}
+设
+\[
+f(x)=
+\begin{cases}
+    x^2\sin\dfrac{\pi}{x}, & x<0,\\
+    A, & x=0,\\
+    ax^2+b, & x>0,
+\end{cases}
+\]
+其中 $A,a,b$ 为常数,试问 $A,a,b$ 为何值时 $f(x)$ 在 $x=0$ 处可导,为什么?并求 $f'(0)$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设函数 $f(x)$ 在闭区间 $\lbrack 0,1\rbrack$ 上四次连续可微,$f(0)=0,f'(0)=0$,证明函数
+\[
+F(x)=
+\begin{cases}
+    \dfrac{f(x)}{x^2}, & 0<x\leq1,\\
+    \dfrac{f''(0)}{2}, & x=0,
+\end{cases}
+\]
+在 $\lbrack 0,1\rbrack$ 上二次连续可微.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $x_0$ 的某邻域内有定义.
+\begin{enumerate}[label=(\arabic*)]
+    \item 若 $f(x)$ 在 $x_0$ 处可导,试证
+    \[
+        \lim\limits_{h\to0}
+        \dfrac{f(x_0+h)-f(x_0-h)}{2h}=f'(x_0);
+    \]
+    \item 反之,若上式左端极限存在,是否能推出 $f'(x_0)$ 存在?若结论成立,请证明;不成立请给出反例.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+证明 Riemann 函数
+\[
+R(x)=
+\begin{cases}
+    \dfrac{1}{q}, & x=\dfrac{p}{q},\\
+    0, & x=0,1\text{ 或无理数},
+\end{cases}
+\]
+处处不可微.
+\end{example}
+\exampleblank
+
+\begin{proposition}[\markstar]
+设函数
+\[
+f(x)=
+\begin{cases}
+    x^\alpha\sin\dfrac{1}{x}, & x\neq0,\\
+    0, & x=0,
+\end{cases}
+\]
+则:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\alpha>0$ 时,在点 $x=0$ 连续;
+    \item $\alpha>1$ 时,在点 $x=0$ 处可导;
+    \item $\alpha>2$ 时,在点 $x=0$ 处连续可导.
+\end{enumerate}
+\end{proposition}
+
+\begin{example}
+求 $f(x)=[x]\sin\pi x$ 的单侧导数,并讨论可微性.
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{高阶导数}
+
+\newpage
+
+\methodsection{(A) 利用已知结论}
+
+\begin{theorem}[\markstar]
+常用的 $n$ 阶导数公式为
+\[
+    (x^k)^{(n)}=k(k-1)\cdots(k-n+1)x^{k-n},
+    \qquad n\leq k,
+\]
+\[
+    (e^x)^{(n)}=e^x,
+    \qquad
+    (a^x)^{(n)}=a^x(\ln a)^n,
+\]
+\[
+    (\ln x)^{(n)}=(-1)^{n-1}\dfrac{(n-1)!}{x^n},
+\]
+\[
+    (\sin x)^{(n)}=\sin\left(x+\dfrac{n\pi}{2}\right),
+    \qquad
+    (\cos x)^{(n)}=\cos\left(x+\dfrac{n\pi}{2}\right).
+\]
+\end{theorem}
+
+\begin{remark}
+因此有了以上常见 $n$ 阶导数公式,对于一般不易直接求 $n$ 阶导数的函数,我们优先考虑转化成如上形式函数.
+\end{remark}
+
+\begin{example}
+计算 $y^{(n)}$,设
+\begin{enumerate}[label=(\arabic*)]
+    \item $y=\sin^6x+\cos^6x$;
+    \item $y=\sin ax\cdot\sin bx$;
+    \item $y=\dfrac{x^2+x+1}{x^2-5x+6}$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\newpage
+
+\methodsection{(B) 利用 Leibniz 公式}
+
+\begin{example}
+设 $f_1(x),f_2(x)$ 在 $x_0$ 及其附近有定义,在 $x_0$ 处有直到 $n$ 阶导数,记
+\[
+    N(f)=\sum\limits_{k=0}^n\dfrac{1}{k!}|f^{(k)}(x_0)|.
+\]
+试证明:
+\[
+    N(f_1f_2)\leq N(f_1)N(f_2).
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+试证:
+\[
+    (a^2+b^2)^{\frac{n}{2}}e^{ax}\sin(bx+n\varphi)
+    =\sum\limits_{i=0}^n C_{n}^{i}a^{n-i}b^i e^{ax}
+    \sin\left(bx+\dfrac{\pi i}{2}\right),
+\]
+其中
+\[
+    \varphi=\arctan\dfrac{b}{a}.
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\methodsection{(C) 利用数学归纳法}
+
+当高阶导数不易求出时,可考虑先求出前几阶导数,观察得出规律,进而利用数学归纳法证明.
+
+\begin{example}[\markstar]
+证明:若函数
+\[
+f(x)=
+\begin{cases}
+    e^{-\frac{1}{x^2}}, & x\neq0,\\
+    0, & x=0,
+\end{cases}
+\]
+则在 $x=0$ 处,
+\[
+    f^{(n)}(0)=0,
+    \qquad n=1,2,\ldots.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}[推广的 Leibniz]
+设 $u_1(x),u_2(x),\ldots,u_k(x)$ 都是 $x$ 的 $n$ 次可微函数,试证:
+\[
+    (u_1u_2\cdots u_k)^{(n)}
+    =\sum\limits_{r_1+\cdots+r_k=n}
+    \dfrac{n!}{r_1!r_2!\cdots r_k!}
+    u_1^{(r_1)}\cdots u_k^{(r_k)}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+$f(x)$ 有任意阶导数,$f'(x)=(f(x))^2$,求 $f^{(n)}(x)\ (n>2)$.
+\end{example}
+\exampleblank
+
+\newpage
+
+\methodsection{(D) 利用递推公式}
+
+当更高阶导数可以用低阶导数表示且易于推广到一般情况时,可考虑利用递推关系求更高阶导数.
+
+\begin{example}
+设 $f(x)=(\arcsin x)^2$,求 $f^{(n)}(0)$.
+\end{example}
+\exampleblank
+
+\begin{example}
+证明 Legendre 多项式
+\[
+    p_n(x)=\dfrac{1}{2^n n!}\bigl[(x^2-1)^n\bigr]^{(n)},
+    \qquad n=0,1,2,\ldots,
+\]
+满足方程
+\[
+    (1-x^2)p_n''(x)-2xp_n'(x)+n(n+1)p_n(x)=0.
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\methodsection{(E) 利用 Taylor 展开}
+
+\begin{example}
+求 $f(x)=\arctan x$ 在 $x=0$ 处的各阶导数.
+\end{example}
+\exampleblank
+
+\begin{example}
+设
+\[
+f(x)=
+\begin{cases}
+    \dfrac{\sin x}{x}, & x\neq0,\\
+    1, & x=0,
+\end{cases}
+\]
+求 $f^{(k)}(0)$.
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{利用导数求和}
+
+\begin{example}
+试求下列极限:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle
+    I=\lim\limits_{x\to0}\dfrac{1}{x}\sum\limits_{i=1}^k f\left(\dfrac{x}{i}\right)$,
+    已知 $f'(0)$ 存在,且 $f(0)=0,k\in\mathbb{N}$;
+    \item $\displaystyle
+    I=\lim\limits_{n\to\infty}n\left[\sum\limits_{i=1}^k f\left(a+\dfrac{i}{n}\right)-kf(a)\right]$,
+    已知 $f'(a)$ 存在;
+    \item $\displaystyle
+    I=\lim\limits_{n\to\infty}
+    \dfrac{\left(a+\dfrac{1}{n}\right)^n\left(a+\dfrac{2}{n}\right)^n\cdots\left(a+\dfrac{k}{n}\right)^n}{a^{nk}}$,
+    $k\in\mathbb{N}$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+试求下列和式:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle I_n=\sum\limits_{k=0}^n ke^{kx}$;
+    \item $\displaystyle \theta_n(x)=\sum\limits_{k=1}^n k^2x^{k-1}$;
+    \item $\displaystyle I_n=\sum\limits_{k=1}^n C_{n}^{k}k^2$;
+    \item $\displaystyle I_n=\sum\limits_{k=0}^{2n}(-1)^k C_{2n}^{k}k^n$;
+    \item $\displaystyle S_n(x)=\sum\limits_{k=1}^n\dfrac{1}{2^k}\tan\left(\dfrac{x}{2^k}\right)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f_1(x),f_2(x),\ldots,f_n(x)$ 在 $x=x_0$ 处可导,且 $f_k(x_0)\neq0\ (k=1,2,\ldots,n)$,
+\[
+    F(x)=\prod\limits_{k=1}^n f_k(x),
+\]
+则
+\[
+    \dfrac{F'(x_0)}{F(x_0)}
+    =\sum\limits_{k=1}^n\dfrac{f_k'(x_0)}{f_k(x_0)}.
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{利用导数证恒等式}
+
+\begin{example}
+证明:
+\[
+    2\arctan x+\arcsin\dfrac{2x}{1+x^2}=\pi,
+    \qquad 1<x<\infty.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x),g(x)$ 在 $(-\infty,+\infty)$ 上均不是常数,可导且有
+\[
+\begin{cases}
+    f(x+y)=f(x)f(y)-g(x)g(y),\\
+    g(x+y)=f(x)g(y)+g(x)f(y),
+\end{cases}
+\]
+其中 $x,y\in(-\infty,+\infty)$,若 $f'(0)=0$,则
+\[
+    f^2(x)+g^2(x)=1.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x),g(x)$ 在 $(a,b)$ 上均不是常数,若有
+\[
+    f(x)+g(x)\neq0,
+    \qquad
+    f(x)g'(x)-f'(x)g(x)=0,
+    \qquad x\in(a,b),
+\]
+则 $g(x)\neq0\ (x\in(a,b))$ 且
+\[
+    \dfrac{f(x)}{g(x)}\equiv C\text{(常数)}.
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{导函数的性质}
+
+导函数有两个重要基本定理---Darboux 定理和单侧导数极限定理,进而可得导数的两个重要特性:\textcircled{1} 介值性;\textcircled{2} 无第一类间断点.
+
+\begin{theorem}[\markstar\ Darboux 定理]
+设 $f$ 在区间 $I$ 上可微,则 $f'$ 具有介值性.
+\end{theorem}
+
+\begin{corollary}[\markstar]
+单调的导函数 $f'$ 必连续.
+\end{corollary}
+
+\begin{theorem}[\markstar\ 单侧导数极限定理]
+设在区间 $\lbrack a,b)$ 上有定义的函数 $f$ 在 $(a,b)$ 上可微,又在点 $a$ 右连续,若导函数 $f'(x)$ 在点 $a$ 存在右侧极限
+\[
+    f'(a+0)=A,
+\]
+则 $f$ 在点 $a$ 也一定存在右侧导数 $f'_+(a)$,且成立
+\[
+    f'_+(a)=f'(a+0)=A.
+\]
+即 $f'(x)$ 在点 $a$ 右连续.
+\end{theorem}
+
+\begin{corollary}[\markstar]
+设 $f$ 在 $(a,b)$ 上可微,则导函数 $f'(x)$ 不存在第一类间断点.
+\end{corollary}
+
+\begin{example}
+设函数 $f(x)$ 在区间 $(-\infty,+\infty)$ 上二次可微,且有界,试证存在点 $x_0\in(-\infty,+\infty)$,使得 $f'(x_0)=0$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设函数 $f$ 在 $(0,1)$ 有界、可导,但 $\displaystyle\lim\limits_{x\to0^+}f(x)$ 不存在,试证存在数列 $x_n\to0^+\ (n\to\infty)$,使得
+\[
+    \lim\limits_{n\to+\infty}f'(x_n)=0.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $f(x)$ 在 $(a,b)$ 上可导,且有 $x_i\in(a,b),\lambda_i>0\ (i=1,2,\ldots,n)$,
+    \[
+        \sum\limits_{i=1}^n\lambda_i=1,
+    \]
+    则存在 $\xi\in(a,b)$,使得
+    \[
+        \sum\limits_{i=1}^n\lambda_i f'(x_i)=f'(\xi);
+    \]
+    \item 设 $f(x)$ 在 $(a,b)$ 上可导,且有 $x_i<y_i$,$x_i,y_i\in(a,b)\ (i=1,2,\ldots,n)$,则存在 $\xi\in(a,b)$,使得
+    \[
+        \sum\limits_{i=1}^n[f(y_i)-f(x_i)]
+        =f'(\xi)\sum\limits_{i=1}^n(y_i-x_i).
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上二次可导,若 $f''(x)\neq0\ (a\leq x\leq b)$,则对任意 $\xi\in(a,b)$,存在 $\xi'$ 满足 $a<\xi<\xi'\leq b$,使得
+\[
+    f'(\xi)=\dfrac{f(\xi')-f(a)}{\xi'-a}.
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{广义导数 *}
+
+\begin{definition}
+$\Delta_hf(x)=f(x+h)-f(x-h)$ 称为 $f(x)$ 在点 $x$ 处的对称差,如下极限(若存在)称为 $f(x)$ 在点 $x$ 处的广义导数或对称导数,记作
+\[
+    f^{[\prime]}(x)
+    =\lim\limits_{h\to0^+}\dfrac{\Delta_hf(x)}{2h}
+    =\lim\limits_{h\to0^+}\dfrac{f(x+h)-f(x-h)}{2h}.
+\]
+\end{definition}
+
+\begin{theorem}[\markstar]
+设 $f$ 在点 $x$ 处可导,则 $f^{[\prime]}$ 存在且
+\[
+    f^{[\prime]}(x)=f'(x).
+\]
+\end{theorem}
+
+\begin{remark}
+该定理逆命题不成立,例如
+\[
+f(x)=
+\begin{cases}
+    x\sin\dfrac{1}{x}, & x\neq0,\\
+    0, & x=0,
+\end{cases}
+\]
+或 $f(x)=|x|$.
+\end{remark}
+
+\begin{definition}
+如下的极限存在,称为 $f(x)$ 在点 $x$ 处有二阶广义导数(或称二阶对称导数),记作
+\[
+\begin{aligned}
+    f^{[\prime\prime]}(x)
+    &=f^{[2]}(x)\\
+    &\overset{\triangle}{=}
+    \lim\limits_{h\to0^+}\dfrac{\Delta_h\Delta_hf(x)}{(2h)^2}\\
+    &=\lim\limits_{h\to0^+}
+    \dfrac{\Delta_h[f(x+h)-f(x-h)]}{(2h)^2}\\
+    &=\lim\limits_{h\to0^+}
+    \dfrac{f(x+2h)-2f(x)-f(x-2h)}{4h^2}.
+\end{aligned}
+\]
+\end{definition}
+
+\begin{theorem}[\markstar]
+在某点 $x$,若 $f(x)$ 有二阶导数,则二阶广义导数也存在,且值相等,即
+\[
+    f''(x)=f^{[2]}(x).
+\]
+\end{theorem}
+
+\begin{remark}
+逆命题同样不成立,例如
+\[
+f(x)=
+\begin{cases}
+    x^2\sin\dfrac{1}{x}, & x\neq0,\\
+    0, & x=0,
+\end{cases}
+\]
+或 $f(x)=x|x|$.
+\end{remark}
+
+\begin{example}[\markstar\ Schwarz 定理]
+若 $f(x)$ 在 $\lbrack a,b\rbrack$ 上连续,$f(x)$ 的广义二阶导数 $f^{[2]}(x)$ 存在且恒为零,则 $f(x)$ 是一次线性函数,即 $f(x)=ax+b$.
+\end{example}
+\exampleblank
+
+\begin{example}
+若 $f(x)$ 在 $\lbrack a,b\rbrack$ 上连续,$f(a)<f(b)$,又设对一切 $x\in(a,b)$,
+\[
+    \lim\limits_{t\to0}\dfrac{f(x+t)-f(x-t)}{t}
+\]
+存在,用 $g(x)$ 表示这一极限值,则存在 $c\in(a,b)$,使得 $g(c)\geq0$.
+\end{example}
+\exampleblank
+
+\newpage
+
+\section{微分中值定理}
+
+\newpage
+
+\subsection{构造辅助函数(中值问题)}
+
+\noindent\textbf{(\markstar)} 看到 $f'(\xi)+f(\xi)g(\xi)$,应想到其原函数为
+$\displaystyle f(x)e^{\int g(x)\,\mathrm{d}x}$,这是因为
+\[
+    \left[f(x)e^{\int g(x)\,\mathrm{d}x}\right]'
+    =[f'(x)+f(x)g(x)]e^{\int g(x)\,\mathrm{d}x}.
+\]
+具体地,有如下常见体现:
+\[
+    mf(\xi)+nf'(\xi)
+    \longleftrightarrow
+    f(x)e^{\frac{m}{n}x}.
+\]
+\[
+    mf(\xi)+n\xi f'(\xi)
+    \longleftrightarrow
+    x^m f^n(x).
+\]
+\[
+    mf(\xi)-n\xi f'(\xi)
+    \longleftrightarrow
+    \dfrac{f^n(x)}{x^m}
+    \quad\text{或}\quad
+    \dfrac{x^m}{f^n(x)}.
+\]
+\[
+    nf'(\xi)f(1-\xi)-mf(\xi)f'(1-\xi)
+    \longleftrightarrow
+    f^n(x)f^m(1-x).
+\]
+\[
+    mf'(\xi)g(\xi)+nf(\xi)g'(\xi)
+    \longleftrightarrow
+    f^m(x)g^n(x).
+\]
+\[
+    mf'(\xi)g(\xi)-nf(\xi)g'(\xi)
+    \longleftrightarrow
+    \dfrac{f^m(x)}{g^n(x)}.
+\]
+\[
+    f(\xi)g''(\xi)-g(\xi)f''(\xi)
+    \longleftrightarrow
+    f'(x)g(x)-f(x)g'(x).
+\]
+
+\begin{example}
+设 $f\in C(\lbrack a,b\rbrack)$,$g\in C(\lbrack a,b\rbrack)$,且均在 $(a,b)$ 上可导,若 $f(a)=f(b)=0$,则存在 $\xi\in(a,b)$,使得
+\[
+    f'(\xi)+g'(\xi)f(\xi)=0.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack 0,1\rbrack$ 上二次可导,且 $f(0)=0$,则存在 $\xi\in(0,1)$,使得
+\[
+    f'(\xi)-(\xi-1)^2f''(\xi)=0.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x),g(x)$ 在 $\lbrack a,b\rbrack$ 二次可导,且 $g''(x)\neq0$,若有
+\[
+    f(a)=f(b)=g(a)=g(b)=0,
+\]
+则存在 $\xi\in(a,b)$,使得
+\[
+    \dfrac{f(\xi)}{g(\xi)}=\dfrac{f''(\xi)}{g''(\xi)}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x),g(x)$ 在 $\lbrack a,b\rbrack$ 上可导,且在 $(a,b)$ 上 $g'(x)\neq0$,则存在 $\xi\in(a,b)$,使得
+\[
+    \dfrac{f(a)-f(\xi)}{g(\xi)-g(b)}=\dfrac{f'(\xi)}{g'(\xi)}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in C(\lbrack 0,1\rbrack)$,在 $(0,1)$ 上可导且 $f(1)=0$,则存在 $\xi\in(0,1)$ 使得
+\[
+    f'(\xi)=\left(1-\dfrac{1}{\xi}\right)f(\xi).
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in C(\lbrack a,b\rbrack)$,在 $(a,b)$ 上可导,若有
+\[
+    f(a)f(b)>0,
+    \qquad
+    f(a)f\left(\dfrac{a+b}{2}\right)<0,
+\]
+则对任给的 $\lambda\in(-\infty,+\infty)$,存在 $\xi\in(a,b)$,使得
+\[
+    f'(\xi)=\lambda f(\xi).
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack 0,+\infty)$ 上可导,若
+\[
+    f^2(a)-f^2(b)=b^2-a^2,
+\]
+则存在 $\xi\in(0,+\infty)$,使得
+\[
+    f'(\xi)=\dfrac{1-\xi^2}{(1+\xi^2)^2}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack 0,1\rbrack$ 上二次可导,且 $f(0)=f(1)=0$,则存在 $\xi\in(0,1)$,使得
+\[
+    f''(\xi)=\dfrac{2f'(\xi)}{1-\xi}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack 0,1\rbrack$ 上可导,且 $f(0)=0,f(x)>0\ (0<x<1)$,则存在 $\xi\in(0,1)$,使得
+\[
+    \dfrac{2f'(\xi)}{f(\xi)}
+    =\dfrac{f'(1-\xi)}{f(1-\xi)}.
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{待定常数法(中值问题)}
+
+该方法的本质是将需要证的中值设为常数,而后将原式子中的某个常数设为变量,再根据 Rolle 或 Lagrange 中值定理证明中值点的存在性.
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上二次可导,则存在 $\xi\in(a,b)$,使得
+\[
+    f(b)-2f\left(\dfrac{a+b}{2}\right)+f(a)
+    =\dfrac{(b-a)^2}{4}f''(\xi).
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x),g(x)$ 在 $\lbrack a,b\rbrack$ 上二次可导,则存在 $\xi\in(a,b)$,使得
+\[
+    \dfrac{f(b)-f(a)-(b-a)f'(a)}{g(b)-g(a)-(b-a)g'(a)}
+    =\dfrac{f''(\xi)}{g''(\xi)}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+若存在 $f''(0)$,则
+\[
+    \lim\limits_{h\to0}
+    \dfrac{f(2h)-2f(0)+f(-2h)}{4h^2}
+    =f''(0).
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $h>0$,$f\in C(\lbrack a-h,a+h\rbrack)$,在 $(a-h,a+h)$ 上可导,则存在 $\theta:0<\theta<1$,使得
+\[
+    \dfrac{f(a+h)-f(a-h)}{h}
+    =f'(a+\theta h)+f'(a-\theta h).
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上连续,且在 $(a,b)$ 上二次可导,则对 $x\in(a,b)$,存在 $\xi\in(a,b)$,使得
+\[
+    \dfrac{f(x)-f(a)}{x-a}
+    -\dfrac{f(b)-f(a)}{b-a}
+    =\dfrac{1}{2}(x-b)f''(\xi).
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack a,c\rbrack$ 上二次可导,$a<b<c$,则存在 $\xi\in(a,c)$,使得
+\[
+    \dfrac{f(a)}{(a-b)(a-c)}
+    +\dfrac{f(b)}{(b-c)(b-a)}
+    +\dfrac{f(c)}{(c-a)(c-b)}
+    =\dfrac{1}{2}f''(\xi).
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $(a,b)$ 上三次可导,则存在 $\xi\in(a,b)$,使得
+\[
+    f(a)-f(b)+\dfrac{1}{2}(b-a)[f'(a)+f'(b)]
+    =f'''(\xi)\dfrac{(b-a)^3}{12}.
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{利用几何意义(中值问题)}
+
+Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点之间某点的切线平行.
+
+\begin{example}
+设 $f(x)$ 是可微函数,导函数 $f'(x)$ 严格单调递增,若 $f(a)=f(b)\ (a<b)$,试证明:对一切 $x\in(a,b)$,有
+\[
+    f(x)<f(a)=f(b).
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在区间 $\lbrack 0,1\rbrack$ 上可微,$f(0)=0,f(1)=1$,$k_1,k_2,\ldots,k_n$ 为 $n$ 个正数,证明在区间 $\lbrack 0,1\rbrack$ 上存在一组互不相等的数 $x_1,x_2,\ldots,x_n$,使得
+\[
+    \sum\limits_{i=1}^n\dfrac{k_i}{f'(x_i)}
+    =\sum\limits_{i=1}^n k_i.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设函数 $f(x)$ 在闭区间 $\lbrack a,b\rbrack$ 上连续,在开区间 $(a,b)$ 内可导,又 $f(x)$ 不是线性函数,且 $f(b)>f(a)$,试证:存在 $\xi\in(a,b)$,使得
+\[
+    f'(\xi)>\dfrac{f(b)-f(a)}{b-a}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上连续,在 $(a,b)$ 内可导,$f(x)$ 既不是常数也不是一次函数,试证:存在 $\xi\in(a,b)$,使得
+\[
+    |f'(\xi)|>\left|\dfrac{f(b)-f(a)}{b-a}\right|.
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{多中值问题}
+
+对于多个中值点的问题显然前面的常规方法失效了,此时要用到的是 Cauchy 中值定理:
+\[
+    F(b)-F(a)=\dfrac{F'(\xi)}{G'(\xi)}[G(b)-G(a)].
+\]
+若选取不同的函数 $G$,便可把 $F(b)-F(a)$ 表示成不同的形式.如另取 $G_1(x)$,则存在 $\xi,\eta\in(a,b)$,使得
+\[
+    \dfrac{F'(\xi)}{G'(\xi)}[G(b)-G(a)]
+    =\dfrac{F'(\eta)}{G_1'(\eta)}[G_1(b)-G_1(a)].
+\]
+一般地,当 $G(x)$ 取 $n$ 个不同的函数时,便可得到含 $n$ 个中值的 $n-1$ 个等式.
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上连续,在 $(a,b)$ 内可导,$f(a)\neq f(b)$,证明:存在 $\xi,\eta\in(a,b)$ 使得
+\[
+    f'(\xi)=\dfrac{a+b}{2\eta}f'(\eta).
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack a,b\rbrack\ (b>a>0)$ 上连续,在 $(a,b)$ 内可导,证明:在 $(a,b)$ 内存在两点 $\xi,\eta$,使得
+\[
+    f'(\xi)=\dfrac{\eta^2}{ab}f'(\eta).
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上连续,在 $(a,b)$ 内可导,$0<a<b$,证明:在 $(a,b)$ 内存在 $x_1,x_2,x_3$,使得
+\[
+    \dfrac{f'(x_1)}{2x_1}
+    =(b^2+a^2)\dfrac{f'(x_2)}{4x_3^2}
+    =\dfrac{\ln\dfrac{b}{a}}{b^2-a^2}x_3f'(x_3).
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在区间 $\lbrack a,b\rbrack$ 上连续,在 $(a,b)$ 内可导,且 $a\geq0$(或 $b\leq0$),试证:
+\begin{enumerate}[label=(\arabic*)]
+    \item 存在 $x_1,x_2,x_3\in(a,b)$,使得
+    \[
+        f'(x_1)
+        =(b+a)\dfrac{f'(x_2)}{2x_2}
+        =(b^2+ba+a^2)\dfrac{f'(x_3)}{3x_3^2};
+    \]
+    \item 对任意 $n\in\{1,2,\ldots\}$,存在 $x_1,x_2,\ldots,x_n\in(a,b)$,使得
+    \[
+    \begin{aligned}
+        f'(x_1)
+        &=(b+a)\dfrac{f'(x_2)}{2x_2}
+        =\cdots\\
+        &=(b^{n-1}+b^{n-2}a+\cdots+ba^{n-2}+a^{n-1})
+        \dfrac{f'(x_n)}{nx_n^{n-1}}.
+    \end{aligned}
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in C(\lbrack a,b\rbrack)$,且在 $(a,b)$ 上可导,若 $f(a)=f(b)=1$,则存在 $\xi,\eta\in(a,b)$,使得
+\[
+    e^{\eta-\xi}[f(\eta)+f'(\eta)]=1.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in C(\lbrack a,b\rbrack)$,且在 $(a,b)$ 上可导,若 $f(0)=0,f(1)=1$,则存在 $\xi,\eta\in(a,b)$,使得
+\[
+    f'(\xi)f'(\eta)=1,
+    \qquad \xi\neq\eta.
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{函数与导函数的关系}
+
+设 $f(x)$ 在 $(a,+\infty)$ 上可导,如果只有极限 $\displaystyle\lim\limits_{x\to+\infty}f'(x)=B$ 存在,那么当 $x\to+\infty$ 时,$f(x)$ 不一定存在极限,例如 $f(x)=\sin(\ln x)$;反之,即使存在 $\displaystyle\lim\limits_{x\to+\infty}f(x)$,也不一定存在 $\displaystyle\lim\limits_{x\to+\infty}f'(x)$,例如 $f(x)=\dfrac{\sin x^2}{x}$.但若二者都存在,那么必有 $\displaystyle\lim\limits_{x\to+\infty}f'(x)=0$.
+
+\begin{example}
+设 $f(x)$ 在 $(a,+\infty)$ 上可导,若 $\displaystyle\lim\limits_{x\to+\infty}f'(x)=B>0$,则:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\lim\limits_{x\to+\infty}f(x)=+\infty$;
+    \item $f(x)\sim Bx\ (x\to+\infty)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+设 $f\in C^{(1)}((a,+\infty))$,若 $f'(x)$ 在 $(a,+\infty)$ 上一致连续,且存在 $\displaystyle\lim\limits_{x\to+\infty}f(x)$,则
+\[
+    \lim\limits_{x\to+\infty}f'(x)=0.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+设 $f(x)$ 在 $\lbrack 0,+\infty)$ 上三阶可导,且有
+\[
+    \lim\limits_{x\to+\infty}f(x)=A,
+    \qquad
+    \lim\limits_{x\to+\infty}f'''(x)=0,
+\]
+则
+\[
+    \lim\limits_{x\to+\infty}f'(x)
+    =\lim\limits_{x\to+\infty}f''(x)=0.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+试证明下列命题:
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $f(x)$ 在 $(0,+\infty)$ 上可导,$a>0$,若
+    \[
+        \lim\limits_{x\to+\infty}[af(x)+f'(x)]=l,
+    \]
+    则
+    \[
+        \lim\limits_{x\to+\infty}f(x)=\dfrac{l}{a};
+    \]
+    \item 设 $f(x)$ 在 $(0,+\infty)$ 上可导,$a>0$,若有
+    \[
+        \lim\limits_{x\to+\infty}[af(x)+2\sqrt{x}f'(x)]=l,
+    \]
+    则
+    \[
+        \lim\limits_{x\to+\infty}f(x)=\dfrac{l}{a};
+    \]
+    \item 设 $f(x)$ 在 $(0,+\infty)$ 上二次可导,若有
+    \[
+        \lim\limits_{x\to+\infty}[f(x)+f'(x)+f''(x)]=l,
+    \]
+    则
+    \[
+        \lim\limits_{x\to+\infty}f(x)=l.
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $(0,+\infty)$ 上可导,若 $\displaystyle\lim\limits_{x\to+\infty}f'(x)=l$,则对任意的 $A$ 值,有
+\[
+    \lim\limits_{x\to+\infty}[f(x+A)-f(x)]=lA.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+设 $f(x)$ 在 $\lbrack 0,+\infty)$ 上可微,$f(0)=0$,且
+\[
+    |f'(x)|\leq A|f(x)|,
+    \qquad x\in\lbrack 0,+\infty),
+\]
+则 $f\equiv0$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x),g(x)$ 在 $\lbrack a,b\rbrack$ 上连续,$g(x)$ 在 $(a,b)$ 内可微,$g(a)=0$,若有实数 $\lambda\neq0$,使得
+\[
+    |g(x)f(x)+\lambda g'(x)|\leq|g(x)|,
+    \qquad x\in(a,b),
+\]
+成立,则 $g\equiv0$.
+\end{example}
+\exampleblank
+
+\begin{example}
+证明:在 $\mathbb{R}$ 上的任何可微函数都不可能满足下列函数方程:
+\begin{enumerate}[label=(\arabic*)]
+    \item $g(g(x))=-x^3+x+1$;
+    \item $g(g(x))=-x^3+x^2\pm1$;
+    \item $g(g(x))=x^2-3x+3$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\newpage
+
+\section{Taylor 公式}
+
+\newpage
+
+\subsection{中值等式}
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上三次可导,试证:存在 $c\in(a,b)$,使得
+\[
+    f(b)=f(a)+f'\left(\dfrac{a+b}{2}\right)(b-a)
+    +\dfrac{1}{24}f'''(c)(b-a)^3.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in C^{(3)}(\lbrack -1,1\rbrack)$,且 $f(-1)=0,f(1)=1,f'(0)=0$,则存在 $\xi\in(-1,1)$,使得
+\[
+    f'''(\xi)=3.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack -1,1\rbrack$ 上二次可导,若有 $f(-1)=0,f(0)=0,f(1)=1$,则存在 $\xi\in(-1,1)$,使得
+\[
+    f''(\xi)=1.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack -1,1\rbrack$ 上三次可导,若有 $f(-1)=f(0)=0,f(1)=1,f'(0)=0$,则存在 $\xi\in(-1,1)$,使得
+\[
+    f'''(\xi)\geq 3.
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{界的估计}
+
+\begin{example}
+设 $f(x)$ 二次可微,且 $f(0)=f(1)=0$,又
+$\displaystyle\max\limits_{0\leq x\leq1}f(x)=2$,试证:
+\[
+    \min\limits_{0\leq x\leq1}f''(x)\leq-16.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+已知 $f(x)$ 在 $\lbrack 0,1\rbrack$ 上二阶可导,且 $f(0)=0,f(1)=3$,又
+$\displaystyle\min\limits_{x\in\lbrack 0,1\rbrack}f(x)=-1$,证明:存在 $c\in(0,1)$,使得
+\[
+    f''(c)\geq18.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+设 $f(x)$ 在 $\lbrack 0,1\rbrack$ 上二次可导,若有
+\[
+    |f(x)|\leq A,\qquad |f''(x)|\leq B,\qquad x\in\lbrack 0,1\rbrack,
+\]
+则
+\[
+    |f'(x)|\leq2A+\dfrac{B}{2}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack 0,1\rbrack$ 上二阶可导,且有 $f(0)=f(1)$,$|f''(x)|\leq M$,则
+\[
+    |f'(x)|\leq\dfrac{M}{2}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+设 $f(x)$ 在 $(-\infty,+\infty)$ 上二次可导,且有
+\[
+    M_k=\sup\{|f^{(k)}(x)|:-\infty<x<+\infty\}<+\infty.
+\]
+则
+\[
+    M_1\leq\sqrt{2M_0M_2}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+设 $f(x)$ 在 $(-\infty,+\infty)$ 上 $m$ 次可导,且有
+\[
+    M_k=\sup\{|f^{(k)}(x)|:-\infty<x<+\infty\}<+\infty.
+\]
+则
+\[
+    M_k\leq2^{\frac{k(m-k)}{2}}M_0^{1-\frac{k}{m}}M_m^{\frac{k}{m}},
+    \qquad k=1,2,\ldots,m-1.
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{中值点的极限}
+
+\begin{example}
+证明:对每个 $x>0$,均存在 $\theta(x)\in\lbrack \dfrac{1}{4},\dfrac{1}{2}\rbrack$,使得
+\[
+    \sqrt{x+1}-\sqrt{x}=\dfrac{1}{2\sqrt{x+\theta(x)}}.
+\]
+且
+\[
+    \lim\limits_{x\to0^+}\theta(x)=\dfrac{1}{4},
+    \qquad
+    \lim\limits_{x\to+\infty}\theta(x)=\dfrac{1}{2}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在点 $a$ 的某个邻域上 $n+2$ 阶连续可微,且 $f^{(n+2)}(a)\neq0$,并有
+\[
+    f(a+h)=f(a)+f'(a)h+\cdots+\dfrac{f^{(n)}(a)}{n!}h^n
+    +\dfrac{f^{(n+1)}(a+\theta h)}{(n+1)!}h^{n+1},
+\]
+其中 $h\in(0,\delta)$,$0<\theta<1$.证明:
+\[
+    \lim\limits_{h\to0}\theta=\dfrac{1}{n+2}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $(x_0-\delta,x_0+\delta)$ 上 $n$ 阶连续可微,已知
+\[
+    f^{(2)}(x_0)=f^{(3)}(x_0)=\cdots=f^{(n-1)}(x_0)=0,
+    \qquad f^{(n)}(x_0)\neq0,
+\]
+若 $0<|h|<\delta$ 时有
+\[
+    \dfrac{f(x_0+h)-f(x_0)}{h}=f'(x_0+\theta h),
+\]
+证明:
+\[
+    \lim\limits_{h\to0}\theta
+    =\sqrt[n-1]{\dfrac{1}{n}}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在点 $a$ 处二阶可导,且 $f''(a)=0$.证明当 $h$ 充分小时,有等式
+\[
+    f(a+h)-f(a)=f'(a+\theta h)h,
+\]
+其中 $\theta\in(0,1)$,并且
+\[
+    \lim\limits_{h\to0}\theta=\dfrac{1}{2}.
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{极值问题}
+
+设 $f(x)$ 在 $x_0$ 处二阶可导,且 $f'(x_0)=0$.若 $f''(x_0)<0$($>0$),则 $x_0$ 为 $f(x)$ 的极大(小)值点.
+
+\begin{example}
+设 $f\in C(\lbrack a,b\rbrack)$,且 $f\in C^{(2)}((a,b))$,若有
+\[
+    f''(x)=e^x f(x),\qquad f(a)=f(b)=0,
+\]
+则 $f(x)\equiv0$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in C^{(2)}((-\infty,+\infty))$,若有
+\[
+    [f(0)]^2+[f'(0)]^2=4,
+    \qquad |f(x)|=1\quad(-\infty<x<+\infty),
+\]
+则存在 $\xi$,使得
+\[
+    f(\xi)+f''(\xi)=0.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x),g(x)$ 定义在 $(-\infty,+\infty)$ 上,且 $f(x)$ 二次可导,又有
+\[
+    f(a)=f(b)=0\quad(a<b),
+\]
+且
+\[
+    f''(x)+f'(x)g(x)-f(x)=0,
+    \qquad x\in(-\infty,+\infty),
+\]
+则 $f(x)\equiv0$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in C^{(2)}(\lbrack 0,a\rbrack)$,且 $x_0\in(0,a)$ 是 $f(x)$ 的极小值点,则
+\[
+    |f'(0)|+|f'(a)|
+    \leq a\max\limits_{x\in\lbrack 0,a\rbrack}|f''(x)|.
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\section{凹凸性与不等式}
+
+\newpage
+
+\subsection{凹凸性}
+
+\begin{definition}
+设 $f(x)$ 在区间 $I$ 上有定义,$f(x)$ 在 $I$ 上称为凸函数,当且仅当对任意 $x_1,x_2\in I$ 以及任意 $\lambda\in(0,1)$,有
+\[
+    f(\lambda x_1+(1-\lambda)x_2)
+    \leq\lambda f(x_1)+(1-\lambda)f(x_2).
+\]
+\end{definition}
+
+\begin{definition}
+设 $f(x)$ 在区间 $I$ 上有定义,$f(x)$ 在 $I$ 上称为凸函数,当且仅当对任意 $x_1,x_2\in I$,有
+\[
+    f\left(\dfrac{x_1+x_2}{2}\right)
+    \leq\dfrac{f(x_1)+f(x_2)}{2}.
+\]
+\end{definition}
+
+\begin{definition}
+设 $f(x)$ 在区间 $I$ 上有定义,$f(x)$ 在 $I$ 上称为凸函数,当且仅当对任意 $x_1,x_2,\ldots,x_n\in I$,有
+\[
+    f\left(\dfrac{x_1+x_2+\cdots+x_n}{n}\right)
+    \leq\dfrac{f(x_1)+f(x_2)+\cdots+f(x_n)}{n}.
+\]
+\end{definition}
+
+\begin{definition}
+设 $f(x)$ 在区间 $I$ 上有定义,当且仅当曲线 $y=f(x)$ 的切线保持在曲线以下,称 $f(x)$ 为凸函数.
+\end{definition}
+
+\begin{lemma}[\markstar]
+设 $f(x)$ 是区间 $I$ 上的凸函数,则对 $I$ 的任一内点 $x$,单侧导数 $f'_+(x),f'_-(x)$ 皆存在,皆为增函数,且
+\[
+    f'_-(x)\leq f'_+(x),
+    \qquad x\in\mathring I.
+\]
+\end{lemma}
+
+因此,更一般地,有如下定理.
+
+\begin{theorem}[\markstar]
+$f$ 为凸函数,当且仅当对任意 $x_0\in\mathring I$,存在 $\alpha\in\mathbb{R}$,使得
+\[
+    f(x)\geq\alpha(x-x_0)+f(x_0).
+\]
+\end{theorem}
+
+\begin{remark}
+当 $f$ 可导时,显然可取 $\alpha=f'(x_0)$.
+\end{remark}
+
+\begin{theorem}[\markstar]
+\begin{enumerate}[label=(\arabic*)]
+    \item 一般情况下,定义 4.4.2 与定义 4.4.3 等价;
+    \item $f$ 连续时,定义 4.4.1、定义 4.4.2 与定义 4.4.3 等价;
+    \item $f$ 可导时,定义 4.4.1、定义 4.4.2、定义 4.4.3、定义 4.4.4 与 $f'$ 单增等价;
+    \item $f$ 二阶可导时,定义 4.4.1、定义 4.4.2、定义 4.4.3、定义 4.4.4、$f'$ 单增与 $f''>0$ 等价.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[\markstar]
+设 $f(x)$ 为 $\lbrack a,b\rbrack$ 上的凸函数,则:
+\begin{enumerate}[label=(\arabic*)]
+    \item $f$ 在 $(a,b)$ 上连续;
+    \item $f(x)\leq\max\{f(a),f(b)\}$.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+事实上,凸函数在定义域内部有良好性质,但边界上无法约束(就算端点特别大或特别小,亦不影响其凹凸性).
+\end{remark}
+
+\begin{example}
+设 $f(x)$ 为区间 $(a,b)$ 内的凸函数,试证:$f(x)$ 在 $I$ 的任一闭区间 $\lbrack \alpha,\beta\rbrack\subseteq(a,b)$ 上满足 Lipschitz 条件.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(0)=0$,$f(x)$ 在 $\lbrack 0,+\infty)$ 上为非负的严格凸函数,令
+\[
+    F(x)=\dfrac{f(x)}{x},\qquad x>0,
+\]
+证明:$f(x),F(x)$ 为严格递增的.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x),g(x)$ 在区间 $(a,b)$ 内有定义,且对任意 $x,x_0\in(a,b)$ 有
+\[
+    f(x)-f(x_0)\geq g(x_0)(x-x_0).
+\]
+试证:对任意 $x_0\in(a,b)$,$f(x)$ 在 $x_0$ 处连续,并且有左右单侧导数.
+\end{example}
+\exampleblank
+
+\begin{example}
+证明下列命题成立:
+\begin{enumerate}[label=(\arabic*)]
+    \item 两凸函数之和仍为凸函数;
+    \item 两递增非负凸函数之积仍为凸函数.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in C(\lbrack 0,1\rbrack)$,且在 $(0,1)$ 上二次可导,若有
+\[
+    f(0)=f(1)=0,
+    \qquad f''(x)+2f'(x)+f(x)=0\quad(0<x<1),
+\]
+则 $f(x)\leq0$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $(a,b)$ 上四次可导,$x_0\in(a,b)$,且有
+\[
+    f^{(2)}(x_0)=0,
+    \qquad f^{(3)}(x_0)=0,
+    \qquad f^{(4)}(x_0)>0,
+\]
+则 $f(x)$ 是下凸函数.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $(-\infty,+\infty)$ 上二次可导,且有
+\[
+    f(x)\leq0,
+    \qquad f''(x)\geq0,
+\]
+则 $f(x)\equiv C$(常数).
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $(a,b)$ 上可导,若对 $(a,b)$ 中的 $x,y$($x\neq y$),存在唯一的 $\xi\in(a,b)$,使得
+\[
+    \dfrac{f(y)-f(x)}{y-x}=f'(\xi),
+\]
+则 $f(x)$ 是严格上凸或下凸的.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 是 $(0,1)$ 上三次可导的非负函数,若存在 $x_1,x_2\in(0,1)$ 使得 $f(x_1)=f(x_2)=0$,则存在点 $\xi\in(0,1)$,使得
+\[
+    f'''(\xi)=0.
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{不等式}
+
+基础配套教材已经做了基本方法总结,接下来以实例来讲解具体如何运用.
+
+\newpage
+
+\methodsection{(A) 利用单调性}
+
+\begin{proposition}[\marktwostar]
+当 $x\in\left(0,\dfrac{\pi}{2}\right)$ 时,
+\[
+    \dfrac{2}{\pi}x<\sin x<x.
+\]
+\end{proposition}
+
+\begin{example}
+对任意 $n=1,2,3,\ldots$,求能使不等式
+\[
+    \left(1+\dfrac{1}{n}\right)^{n+\alpha}
+    \leq e
+    \leq\left(1+\dfrac{1}{n}\right)^{n+\beta}
+\]
+成立的 $\alpha$ 的最大值与 $\beta$ 的最小值.
+\end{example}
+\exampleblank
+
+\begin{example}
+证明如下不等式:
+\begin{enumerate}[label=(\arabic*)]
+    \item 当 $0<x_1<x_2<\dfrac{\pi}{2}$ 时,有
+    \[
+        \dfrac{\tan x_2}{\tan x_1}>\dfrac{x_2}{x_1};
+    \]
+    \item 当 $x\in\left(0,\dfrac{\pi}{2}\right)$ 时,有
+    \[
+        \dfrac{\tan x}{x}>\dfrac{x}{\sin x};
+    \]
+    \item 当 $x\in\left(0,\dfrac{\pi}{2}\right)$ 时,有
+    \[
+        2\sin x+3\tan x>3x.
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $b>a>e$,证明 $a^b>b^a$;
+    \item 比较 $\pi^e$ 与 $e^\pi$ 的大小.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\newpage
+
+\methodsection{(B) 利用中值定理}
+
+\begin{example}
+证明:
+\begin{enumerate}[label=(\arabic*)]
+    \item 当 $x>0$ 时,
+    \[
+        \ln\left(1+\dfrac{1}{x}\right)>\dfrac{1}{x+1};
+    \]
+    \item 当 $x>0$ 时,
+    \[
+        \dfrac{x}{1+x^2}<\arctan x<x.
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+\begin{enumerate}[label=(\arabic*)]
+    \item 证明:当 $s>0$ 时,
+    \[
+        \dfrac{n^{s+1}}{s+1}
+        <1^s+2^s+\cdots+n^s
+        <\dfrac{(n+1)^{s+1}}{s+1};
+    \]
+    \item 设 $\displaystyle\lambda=\sum\limits_{k=1}^n\dfrac{1}{k}$,证明
+    \[
+        e^\lambda>n+1.
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\newpage
+
+\methodsection{(C) 利用凹凸性}
+
+\begin{example}
+证明下列不等式:
+\begin{enumerate}[label=(\arabic*)]
+    \item 当 $x\in\lbrack 0,1\rbrack$ 时,
+    \[
+        1+x^2\leq2^x\leq1+x;
+    \]
+    \item 当 $x\in\lbrack 0,1\rbrack$ 时,
+    \[
+        \sin(\pi x)\leq\dfrac{\pi^2}{2}x(1-x).
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+证明下列经典不等式:
+\begin{enumerate}[label=(\arabic*)]
+    \item (平均值不等式)设 $a_i>0$,则
+    \[
+        \dfrac{n}{\displaystyle\sum\limits_{i=1}^n\dfrac{1}{a_i}}
+        \leq\sqrt[n]{a_1a_2\cdots a_n}
+        \leq\dfrac{\displaystyle\sum\limits_{i=1}^n a_i}{n}.
+    \]
+    \item (Young 不等式)设 $a,b>0$,$0<p,q<1$,且 $\dfrac{1}{p}+\dfrac{1}{q}=1$,则
+    \[
+        ab\leq\dfrac{a^p}{p}+\dfrac{b^q}{q}.
+    \]
+    \item (Holder 不等式)设 $a_i,b_i>0$,$0<p,q<1$,且 $\dfrac{1}{p}+\dfrac{1}{q}=1$,则
+    \[
+        \sum\limits_{i=1}^n a_i b_i
+        \leq
+        \left(\sum\limits_{i=1}^n a_i^p\right)^{\frac{1}{p}}
+        \left(\sum\limits_{i=1}^n b_i^q\right)^{\frac{1}{q}}.
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank

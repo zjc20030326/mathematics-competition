@@ -1,0 +1,732 @@
+\chapter{一元函数的连续性}
+
+\newpage
+
+\section{连续性证明}
+
+要证明一个函数 $f$ 在某区间 $I$ 上连续,只要在区间里任意取定一点 $x_0\in I$,证明 $\displaystyle\lim\limits_{x\to x_0}f(x)=f(x_0)$.结合前面的极限知识,有以下几种方法证明:
+\begin{enumerate}[label=\textcircled{\arabic*},leftmargin=2.2em]
+    \item 利用定义---对任意 $\varepsilon>0$,存在 $\delta>0$,当 $|x-x_0|<\delta$ 时,有 $|f(x)-f(x_0)|<\varepsilon$;
+    \item 利用左、右极限---$f(x_0+0)=f(x_0)=f(x_0-0)$;
+    \item 利用数列极限(Heine 归结原理)---对任意 $\{x_n\}\to x_0$,有 $f(x_n)\to f(x_0)$;
+    \item 利用连续函数的运算性质---连续函数的四则运算、复合下仍连续(即如下的两个定理).
+\end{enumerate}
+
+\begin{theorem}[\markstar]
+设 $f(x),g(x)$ 均在 $x_0$ 点连续,则:
+\begin{enumerate}[label=(\arabic*)]
+    \item $f(x)\pm g(x)$ 以及 $f(x),g(x)$ 均在点 $x_0$ 处连续;
+    \item 当 $g(x_0)\neq0$ 时,$\dfrac{f(x)}{g(x)}$ 在点 $x_0$ 处连续.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[\markstar]
+设 $u=g(x)$ 在 $x_0$ 处连续,$y=f(u)$ 在点 $u_0=g(x_0)$ 处连续,则复合函数 $f(g(x))$ 在点 $x_0$ 处连续.
+\end{theorem}
+
+\begin{example}
+研究函数
+\[
+    f(x)=\lim\limits_{n\to\infty}\dfrac{x^n-1}{x^n+1}
+\]
+的连续性.
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+证明 Riemann 函数
+\[
+R(x)=
+\begin{cases}
+    \dfrac{1}{q}, & x=\dfrac{p}{q}\text{ 为既约分数},\ q>0,\\
+    0, & x\text{ 为无理数},
+\end{cases}
+\]
+在无理点上连续,在有理点上间断.
+\end{example}
+\exampleblank
+
+\begin{example}
+讨论函数
+\[
+f(x)=
+\begin{cases}
+    x(1-x), & x\text{ 为有理数},\\
+    x(1+x), & x\text{ 为无理数},
+\end{cases}
+\]
+的连续性.
+\end{example}
+\exampleblank
+
+\begin{example}
+设
+\[
+f(x)=
+\begin{cases}
+    1, & x\geq0,\\
+    -1, & x<0,
+\end{cases}
+\qquad g(x)=\sin x,
+\]
+讨论 $f(g(x))$ 的连续性.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $(0,1)$ 内有定义,且函数 $e^x f(x)$ 与 $e^{-f(x)}$ 在 $(0,1)$ 内都是单调不减的,试证:$f(x)$ 在 $(0,1)$ 内连续.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $(a,b)$ 上至多只有第一类间断点,且对任意 $x,y\in(a,b)$,
+\[
+    f\left(\dfrac{x+y}{2}\right)\leq\dfrac{f(x)+f(y)}{2}.
+\]
+证明:$f(x)$ 在 $(a,b)$ 上连续.
+\end{example}
+\exampleblank
+
+\begin{example}[\markstar]
+\begin{enumerate}[label=(\arabic*)]
+    \item 证明:若函数 $g(x),f(x)$ 连续,则函数
+    \[
+        \varphi(x)=\min\{f(x),g(x)\},
+        \qquad
+        \psi(x)=\max\{f(x),g(x)\}
+    \]
+    连续;
+    \item 设 $f_1(x),f_2(x),f_3(x)$ 在 $\lbrack a,b\rbrack$ 上连续,令函数 $f$ 的值等于三值 $f_1(x),f_2(x),f_3(x)$ 中介于其它两值之间的那个值,证明:$f$ 在 $\lbrack a,b\rbrack$ 上连续.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+是否存在 $\lbrack a,b\rbrack$ 上的连续函数:在有理点上取值为无理数,在无理点上取值为有理数?请作出判断并说明理由.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x),g(x)$ 是定义在 $(a,b)$ 上的单调函数,且对 $\lbrack a,b\rbrack$ 中的任一有理数 $r$,均有 $f(r)=g(r)$,则 $f(x)$ 与 $g(x)$ 的连续点相同,在连续点上的函数值也相同.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 定义在 $(a,b)$ 上,且对 $(a,b)$ 中任一点 $x_0$,均存在极限 $\displaystyle\lim\limits_{x\to x_0}f(x)$.若令
+\[
+    g(x)=\lim\limits_{t\to x}f(t),
+    \qquad x\in(a,b),
+\]
+则 $g(x)\in C((a,b))$.
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{确界函数}
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上有界,函数
+\[
+    M(x)=\sup\limits_{a\leq t\leq x}f(t),
+    \qquad
+    m(x)=\inf\limits_{a\leq t\leq x}f(t).
+\]
+则:
+\begin{enumerate}[label=(\arabic*)]
+    \item $M(x),m(x)$ 在 $\lbrack a,b\rbrack$ 上左连续,并举例说明它们可以不右连续;
+    \item 若 $f(x)$ 在 $\lbrack a,b\rbrack$ 上连续,则 $M(x),m(x)$ 在 $\lbrack a,b\rbrack$ 上连续.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack 0,1\rbrack$ 上连续,且 $f(x)>0$,
+\[
+    R(x)=\sup\limits_{0\leq y\leq x}f(y)\quad(0\leq x\leq1),
+    \qquad
+    G(x)=\lim\limits_{n\to\infty}\left[\dfrac{f(x)}{R(x)}\right]^n.
+\]
+试证:当且仅当 $f(x)$ 在 $\lbrack 0,1\rbrack$ 上单增时,$G$ 是连续的.
+\end{example}
+\exampleblank
+
+\begin{example}
+已知
+\[
+f(x)=
+\begin{cases}
+    x, & 0\leq x<1,\\
+    k+1, & k\leq x<k+1,
+\end{cases}
+\qquad k=1,2,3,\ldots.
+\]
+求函数
+\[
+    g(y)=\sup\limits_{f(x)\leq y}x
+\]
+在 $y\geq0$ 时的具体表达式,并指出 $g(y)$ 在各点处的左右连续性.
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{单射、介值性与单调性的关系}
+
+\begin{proposition}[\markstar]
+设函数 $y=f(x)$ 在 $(a,b)$ 内有定义且为单射,则:
+\begin{enumerate}[label=(\arabic*)]
+    \item $f(x)$ 是严格单调的,值域为某个开区间 $J$;
+    \item $f^{-1}(y)$ 在 $J$ 内单调,而且也有介值性;
+    \item $f(x),f^{-1}(y)$ 连续.
+\end{enumerate}
+\end{proposition}
+
+\begin{corollary}[\markstar]
+若函数 $f(x)$ 在区间 $I$ 上处处连续且为单射,则 $f(x)$ 在 $I$ 上必严格单调.
+\end{corollary}
+
+\newpage
+
+\subsection{与点集结合 *}
+
+\begin{example}
+证明定理:$f(x)$ 在实轴 $x$ 上连续 $\Longleftrightarrow$ 任何开集的逆像仍为开集.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $(-\infty,+\infty)$ 上有定义,证明:$f(x)$ 连续 $\Longleftrightarrow$ 对任意 $c\in(-\infty,+\infty)$,集合
+\[
+    \{x\mid f(x)>c\}
+    \quad\text{与}\quad
+    \{x\mid f(x)<c\}
+\]
+为开集.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f:\lbrack 0,1\rbrack\to\mathbb{R}$ 单调递增,且 $f(\lbrack 0,1\rbrack)$ 是闭集,证明:$f$ 在 $\lbrack 0,1\rbrack$ 上连续.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $y=f(x)$ 是从 $\lbrack 0,1\rbrack$ 到 $\lbrack 0,1\rbrack$ 的函数,其图像
+\[
+    E=\{(x,y)\mid y=f(x),\ x\in\lbrack 0,1\rbrack\}
+\]
+是 $\lbrack 0,1\rbrack\times\lbrack 0,1\rbrack$ 上的闭集,求证:$f$ 是连续函数.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $y=f(x)$ 为 $X\to Y$ 的连续函数,$F$ 为 $Y$ 轴上的闭集,试证:$f^{-1}(F)$ 为 $X$ 轴上的闭集.
+\end{example}
+\exampleblank
+
+\newpage
+
+\section{连续性应用}
+
+\newpage
+
+\subsection{$f(f(x))$ 迭代问题}
+
+\begin{proposition}[\markstar]
+设函数 $f,g$ 满足 $f(f(x))=g(x)$($f,g$ 定义合理),则:
+\begin{enumerate}[label=(\arabic*)]
+    \item 若 $g(x)$ 为单射,则 $f(x)$ 为单射;
+    \item 若 $f(x)$ 为单调函数,则 $g(x)$ 一定为单调递增函数;
+    \item 更一般地,若 $g(x)$ 为单射,且 $f(x)$ 具有介值性,则 $g(x)$ 一定为单调递增函数.
+\end{enumerate}
+\end{proposition}
+
+\begin{corollary}[\markstar]
+若 $g(x)$ 为单射,且 $f(x)$ 为连续函数,仍有 $g(x)$ 为单调递增函数.
+\end{corollary}
+
+\begin{example}
+是否存在 $\mathbb{R}$ 上连续函数 $f(x)$,使得
+\[
+    f(f(x))=e^{-x}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $(-\infty,+\infty)$ 上的函数满足
+\[
+    f(f(x))=-x,
+\]
+则 $f(x)$ 不是连续函数.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f:\lbrack 0,1\rbrack\to\lbrack 0,1\rbrack$ 为连续函数,且 $f(0)=0,f(1)=1,f(f(x))\equiv x$,证明:$f(x)\equiv x$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f$ 是从 $\mathbb{R}$ 到 $\mathbb{R}$ 的一对一连续映射,有不动点,且满足
+\[
+    f(2x-f(x))\equiv x,
+    \qquad \forall x\in\mathbb{R}.
+\]
+试证:$f(x)\equiv x\ (\forall x\in\mathbb{R})$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in C(( -\infty,+\infty))$ 且
+\[
+    f(f(f(x)))=x,
+    \qquad x\in(-\infty,+\infty),
+\]
+则 $f(x)\equiv x$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f:\lbrack 0,1\rbrack\to\lbrack 0,1\rbrack$ 连续,且 $f(0)=0,f(1)=1$,定义
+\[
+    f^n(x)\overset{\triangle}{=}(f\circ f\circ\cdots\circ f)(x)
+    \quad(n\text{ 次复合}).
+\]
+若存在 $n_0$,使得 $f^{n_0}(x)=x\ (0\leq x\leq1)$,则 $f(x)=x$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f:\mathbb{R}\to\mathbb{R}$ 连续,且 $f(x)$ 无不动点,
+\[
+    f^n(x)\overset{\triangle}{=}(f\circ f\circ\cdots\circ f)(x),
+\]
+则对任意 $x_0\in\mathbb{R}$,数列 $x_n=f^n(x_0)$ 无界.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 是 $\mathbb{R}$ 上连续函数,且
+\[
+    \lim\limits_{x\to\infty}f(f(x))=\infty,
+\]
+证明:
+\[
+    \lim\limits_{x\to\infty}f(x)=\infty.
+\]
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{周期函数}
+
+\begin{proposition}[\markstar]
+非常数连续周期函数必有最小正周期.
+\end{proposition}
+
+\begin{corollary}[\markstar]
+\begin{enumerate}[label=(\arabic*)]
+    \item 若 $f$(非常数)是连续函数,有最小正周期 $T_0$,则对任意 $T\in\{f\text{ 的正周期}\}$,必存在 $n\in\mathbb{N}$,使得 $T=nT_0$;
+    \item 设 $f$(非常数)是连续函数,有周期 $T>0$,若 $\alpha T$ 也是 $f$ 的周期,则 $\alpha\in\mathbb{Q}$.
+\end{enumerate}
+\end{corollary}
+
+\begin{example}
+证明命题 3.2.2 及推论 3.2.2.
+\end{example}
+\exampleblank
+
+\begin{example}
+试证明下列命题:
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $f\in C(( -\infty,+\infty))$,若 $T_1,T_2$ 皆为 $f$ 的周期,且 $T_1$ 与 $T_2$ 不可公约(即 $\dfrac{T_1}{T_2}\notin\mathbb{Q}$),则 $f(x)$ 为常数;
+    \item 设 $f\in C(( -\infty,+\infty))$ 是周期函数,设其正周期全体形成的数集的下确界为 $T_0$,若 $T_0=0$,则 $f(x)\equiv C$(常数).
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x),g(x)$ 各有正周期 $T_1,T_2$,若 $\dfrac{T_1}{T_2}\notin\mathbb{Q}$,则 $h(x)=f(x)+g(x)$ 非周期函数.
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{Cauchy 方程}
+
+\begin{proposition}[\markstar]
+设 $f(x)$ 定义在 $(-\infty,+\infty)$ 上满足 Cauchy 方程
+\[
+    f(x+y)=f(x)+f(y),
+    \qquad x,y\in(-\infty,+\infty).
+\]
+则 $f(x)=f(1)x$ 对任意 $x\in\mathbb{Q}$ 成立.进一步,若 $f$ 还满足如下条件之一:
+\begin{enumerate}[label=(\arabic*)]
+    \item $f$ 在某点 $x=x_0$ 处连续;
+    \item $f(x)$ 在某个区间上有界;
+    \item $f(x)$ 单调,
+\end{enumerate}
+则 $f(x)=f(1)x$ 对任意 $x\in\mathbb{R}$ 成立.
+\end{proposition}
+
+\begin{remark}
+事实上由于 Cauchy 方程,$f$ 满足平移性,故 $f$ 在某点的性质可以推广到整个 $\mathbb{R}$ 上,如 $f$ 在 $x=0$ 处连续 $\Longleftrightarrow$ $f$ 在 $\mathbb{R}$ 上处处连续,本质上十分类似后续课程中的线性泛函.
+\end{remark}
+
+\begin{example}
+设 $f\in C(( -\infty,+\infty))$,且
+\[
+    f(x+y)=f(x)+f(y),
+    \qquad \forall x,y\in\mathbb{R},
+\]
+证明:这个函数方程除零解外只有解 $f(x)=ax$,其中 $a=f(1)>0$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in C(( -\infty,+\infty))$,且
+\[
+    f\left(\dfrac{x+y}{2}\right)=\dfrac{1}{2}[f(x)+f(y)],
+    \qquad \forall x,y\in\mathbb{R},
+\]
+证明:
+\[
+    f(x)=[f(1)-f(0)]x+f(0).
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+证明:满足方程
+\[
+    f(x+y)=f(x)+f(y),
+    \qquad \forall x,y>0,
+\]
+的唯一非零解为 $f(x)=b\log_a x\ (a>0,a,b\text{ 为常数})$.
+\end{example}
+\exampleblank
+
+\begin{example}
+函数方程
+\[
+    f(x+y)+f(x-y)=2f(x)f(y),
+    \qquad \forall x,y\in\mathbb{R},
+\]
+在实轴 $\mathbb{R}$ 上的非零连续解为 $f(x)=\cos ax$ 或 $f(x)=\operatorname{ch}ax$($a$ 为常数).
+\end{example}
+\exampleblank
+
+\newpage
+
+\section{闭区间上连续函数性质}
+
+\newpage
+
+\subsection{有界性、最值性}
+
+\begin{example}
+设 $f\in C(\lbrack a,b\rbrack)$,若对任意 $x\in\lbrack a,b\rbrack$,存在 $x'\in\lbrack a,b\rbrack$,使得
+\[
+    |f(x')|\leq\dfrac{|f(x)|}{2},
+\]
+则存在 $x_0\in\lbrack a,b\rbrack$,使得 $f(x_0)=0$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in C(\lbrack a,b\rbrack)$,若 $(a,b)$ 中无 $f(x)$ 的极值点,则 $f(x)$ 在 $\lbrack a,b\rbrack$ 上单调.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in C(( -\infty,+\infty))$,若对任意的开区间 $(a,b)$,其值域 $f((a,b))$ 必是开区间,则 $f(x)$ 必单调.
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{介值性、零点存在性}
+
+\begin{example}
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上单调,若 $f(x)$ 在 $\lbrack a,b\rbrack$ 上具有介值性,则 $f\in C(\lbrack a,b\rbrack)$;
+    \item 设 $f(x)$ 定义在 $\lbrack a,b\rbrack$ 上,若对任意 $x\in(a,b)$,均存在极限 $\displaystyle\lim\limits_{t\to x}f(t)$,且又具有介值性,则 $f\in C(\lbrack a,b\rbrack)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in C(\lbrack a,b\rbrack)$,$x_i\in\lbrack a,b\rbrack\ (i=1,2,\ldots,n)$,则存在 $\xi\in\lbrack a,b\rbrack$,使得
+\[
+    f(\xi)=\dfrac{1}{n}\sum\limits_{i=1}^n f(x_i).
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $f\in C(\lbrack 0,1\rbrack)$,若 $f(0)=f(1)$,则存在 $\alpha,\beta$ 满足
+    \[
+        0\leq\alpha<\beta\leq1,
+        \qquad \beta-\alpha=\dfrac{1}{5},
+    \]
+    使得 $f(\alpha)=f(\beta)$;
+    \item 设 $f(x)$ 在 $(-\infty,+\infty)$ 上以 $T$ 为周期的连续函数,则存在 $\xi\in(-\infty,+\infty)$ 使得
+    \[
+        f\left(\xi+\dfrac{T}{2}\right)=f(\xi).
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in C(\lbrack 0,1\rbrack)$,$n\in\mathbb{N}$.
+\begin{enumerate}[label=(\arabic*)]
+    \item 若 $f(0)=f(1)$,则存在 $\xi_n\in\lbrack 0,\dfrac{1}{n}\rbrack$,使得
+    \[
+        f\left(\xi_n+\dfrac{1}{n}\right)=f(\xi_n);
+    \]
+    \item 若 $f(0)=0,f(1)=1$,则存在 $\xi_n\in(0,1)$,使得
+    \[
+        f\left(\xi_n+\dfrac{1}{n}\right)=f(\xi_n)+\dfrac{1}{n}.
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f\in C(( -\infty,+\infty))$,且以 $1$ 为周期,则存在 $\xi$,使得
+\[
+    f(\xi+\pi)=f(\xi).
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f,g\in C(\lbrack 0,1\rbrack)$,且
+\[
+    \max\limits_{x\in\lbrack 0,1\rbrack}f(x)=\max\limits_{x\in\lbrack 0,1\rbrack}g(x),
+\]
+试证:存在 $x_0\in\lbrack 0,1\rbrack$ 使得
+\[
+    e^{f(x_0)}+3f(x_0)=e^{g(x_0)}+3g(x_0).
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设函数 $f(x)$ 在 $(-\infty,+\infty)$ 上连续,$n$ 为奇数,若
+\[
+    \lim\limits_{x\to+\infty}\dfrac{f(x)}{x^n}
+    =\lim\limits_{x\to-\infty}\dfrac{f(x)}{x^n}=1,
+\]
+试证:方程 $f(x)+x^n=0$ 有实根.
+\end{example}
+\exampleblank
+
+\begin{example}
+设
+\[
+    f_n(x)=x+x^2+\cdots+x^n,
+    \qquad n=2,3,\ldots.
+\]
+\begin{enumerate}[label=(\arabic*)]
+    \item 证明:方程 $f_n(x)=1$ 在 $\lbrack 0,+\infty)$ 上有唯一的实根 $x_n$;
+    \item 证明数列 $\{x_n\}$ 有极限,并求出 $\displaystyle\lim\limits_{n\to+\infty}x_n$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设
+\[
+    f_n(x)=\cos x+\cos^2x+\cdots+\cos^n x,
+\]
+求证:
+\begin{enumerate}[label=(\arabic*)]
+    \item 对任意 $n$,$f_n(x)=1$ 在 $\left[0,\dfrac{\pi}{3}\right)$ 内有且仅有一根;
+    \item 若 $x_n\in\left[0,\dfrac{\pi}{3}\right)$ 是 $f_n(x)=1$ 的根,则
+    \[
+        \lim\limits_{n\to\infty}x_n=\dfrac{\pi}{3}.
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $(0,+\infty)$ 连续有界,试证:对任意 $T$,存在 $x_n\to+\infty$,使得
+\[
+    \lim\limits_{n\to\infty}[f(x_n+T)-f(x_n)]=0.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f$ 在 $\lbrack 0,n\rbrack$ 上连续,$f(0)=f(n)$,试证:至少存在 $n$ 组不同的解 $(x,y)$ 使得 $f(x)=f(y)$,且 $y-x>0$ 为整数.
+\end{example}
+\exampleblank
+
+\newpage
+
+\subsection{一致连续性}
+
+用定义证明 $f$ 在 $I$ 上一致连续,通常的方法是设法证明 $f$ 在 $I$ 满足 Lipschitz 条件:
+\[
+    |f(x')-f(x'')|\leq L|x'-x''|,
+    \qquad \forall x',x''\in I,
+\]
+其中 $L>0$ 为某一常数.特别地,若 $f$ 在 $I$ 上存在有界导函数,则 $f$ 在 $I$ 满足 Lipschitz 条件.
+
+而 $f(x)$ 在 $I$ 上非一致连续 $\Longleftrightarrow$ 存在 $\varepsilon_0>0$,对任意 $\dfrac{1}{n}>0$,存在 $x'_n,x''_n\in I$,虽然
+\[
+    |x'_n-x''_n|<\dfrac{1}{n},
+\]
+但是
+\[
+    |f(x'_n)-f(x''_n)|\geq\varepsilon_0.
+\]
+因此,常见的证非一致连续方法是取出两个充分靠近的数列($n\to\infty$),使得它们对应函数值并不充分接近.
+
+\begin{example}
+判断下列函数在指定区间上的一致连续性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $f(x)=\sin^2x$,$\lbrack 0,+\infty)$;
+    \item $f(x)=\sin x^2$,$\lbrack 0,+\infty)$;
+    \item $f(x)=\sqrt{x}$,$\lbrack 0,+\infty)$;
+    \item $f(x)=\dfrac{1}{x}$,$(0,1)$;
+    \item $g(x)=x^2$,$(1,+\infty)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+一般地,闭区间 $\lbrack a,b\rbrack$ 上连续函数 $f(x)$,由 Cantor 定理知其必一致连续,自然就产生一个问题,连续函数在开区间及无穷区间的情况呢?
+
+\begin{theorem}[\markstar]
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $f(x)$ 在 $(a,b)$ 上连续,则
+    \[
+        f(x)\text{ 在 }(a,b)\text{ 上一致连续}
+        \Longleftrightarrow
+        \lim\limits_{x\to a^+}f(x),\ \lim\limits_{x\to b^-}f(x)\text{ 存在};
+    \]
+    \item 设 $f\in C(\lbrack a,+\infty))$,$\displaystyle\lim\limits_{x\to+\infty}f(x)=A$(有限),则 $f$ 在 $\lbrack a,+\infty)$ 上一致连续;
+    \item 设 $f\in C(( -\infty,+\infty))$,若存在极限
+    \[
+        \lim\limits_{x\to-\infty}f(x)=l,
+        \qquad
+        \lim\limits_{x\to+\infty}f(x)=L,
+    \]
+    则 $f(x)$ 在 $(-\infty,+\infty)$ 上一致连续.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+(1) 与 (2)(3) 的区别在于,无穷区间下必要性不再成立,可考虑反例 $f(x)=x,g(x)=\sin x$ 在 $(-\infty,+\infty)$ 上一致连续,但在端点 $\pm\infty$ 无极限.
+\end{remark}
+
+\begin{example}
+判断下列函数在指定区间上的一致连续性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $f(x)=\ln x$,$(0,1\rbrack$;
+    \item $f(x)=\dfrac{\sin x}{x}$,$(0,1\rbrack$;
+    \item $f(x)=e^x\cos\dfrac{1}{x}$,$(0,1\rbrack$;
+    \item $f(x)=\cos x\cdot\cos\dfrac{\pi}{x}$,$(0,1)$;
+    \item $f(x)=x\sin\dfrac{1}{x}$,$(0,+\infty)$;
+    \item $f(x)=\dfrac{x+2}{x+1}\sin\dfrac{1}{x}$,$(0,1)$ 及 $(1,+\infty)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{proposition}[\markstar]
+设 $f(x)$ 在 $\lbrack a,+\infty)$ 上一致连续,且 $g\in C(\lbrack a,+\infty))$,若有
+\[
+    \lim\limits_{x\to+\infty}[f(x)-g(x)]=0,
+\]
+则 $g(x)$ 在 $\lbrack a,+\infty)$ 上一致连续.
+\end{proposition}
+
+\begin{corollary}[\markstar]
+设 $f\in C(\lbrack a,+\infty))$,且 $f(x)$ 有渐近线 $y=ax+b$,则 $f(x)$ 在 $\lbrack a,+\infty)$ 上一致连续.
+\end{corollary}
+
+\begin{remark}
+此即命题 3.3.1 中取 $f(x)=ax+b$.
+\end{remark}
+
+\begin{example}
+判断下列函数 $f(x)$ 在指定区间上的一致连续性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $f(x)=\dfrac{x^3}{x+1}\sin\dfrac{1}{x}$,$(0,+\infty)$;
+    \item $f(x)=\sqrt{\dfrac{x^4+1}{x^2+1}}$,$(-\infty,+\infty)$;
+    \item $f(x)=\sqrt[3]{x^3-x^2-x+1}$,$(-\infty,+\infty)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{proposition}[\markstar\ 阶的估计]
+设 $f(x)$ 在 $\mathbb{R}$ 上一致连续,则存在 $a,b>0$,使得
+\[
+    |f(x)|\leq a|x|+b.
+\]
+\end{proposition}
+
+\begin{remark}
+对比命题 3.3.1,命题 3.3.1 即若连续函数 $f(x)$ 在无穷远处阶为 $1$,则一致连续;而命题 3.3.2 说一致连续的 $f$ 阶至多为 $1$.
+\end{remark}
+
+\begin{proposition}[\markstar\ 四则运算]
+设 $f(x),g(x)$ 在区间 $I$ 上一致连续,则:
+\begin{enumerate}[label=(\arabic*)]
+    \item 对任意 $k\in\mathbb{R}$,$kf(x)$ 与 $f(x)\pm g(x)$ 在 $I$ 上一致连续;
+    \item $I$ 为有限区间时,$f(x)g(x)$ 在 $I$ 上一致连续;$I$ 为无穷区间时,$f(x)g(x)$ 在 $I$ 上不一定一致连续;
+    \item $f(x)\neq0$ 时,$\dfrac{1}{f(x)}$ 与 $\dfrac{g(x)}{f(x)}$ 在 $I$ 上不一定一致连续.
+\end{enumerate}
+\end{proposition}
+
+\begin{proposition}[\markstar\ 函数复合]
+设 $f(x)$ 在 $I_1$ 上一致连续,$g(x)$ 在 $I_2$ 上一致连续,且 $f(x)$ 的值域包含在 $I_2$ 中,那么 $g(f(x))$ 在 $I_1$ 上也一致连续.
+\end{proposition}
+
+\begin{example}
+设 $f$ 在 $\lbrack 0,+\infty)$ 上满足 Lipschitz 条件,证明:$f(x^\alpha)\ (0<\alpha<1)$ 在 $\lbrack 0,+\infty)$ 上一致连续.
+\end{example}
+\exampleblank
+
+\begin{example}[区间合并]
+\begin{enumerate}[label=(\arabic*)]
+    \item 若函数 $f$ 在区间 $(a,b\rbrack$ 和 $\lbrack b,c)$ 上分别一致连续,证明:$f$ 在 $(a,c)$ 上一致连续;
+    \item 若函数 $f$ 在区间 $(a,b)$ 和 $\lbrack b,c)$ 上分别一致连续,此时 $f$ 在 $(a,c)$ 上是否一致连续?
+    \item 证明:函数 $f(x)=\dfrac{|\sin x|}{x}$ 在区间 $(-1,0)$ 和 $(0,1)$ 均一致连续,但在 $(-1,0)\cup(0,1)$ 上非一致连续.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在 $\lbrack 0,+\infty)$ 上一致连续,且有
+\[
+    \lim\limits_{n\to\infty}f(x+n)=0,
+    \qquad \forall x\in\lbrack 0,+\infty).
+\]
+则
+\[
+    \lim\limits_{x\to+\infty}f(x)=0.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 在区间 $I$ 上有定义,记
+\[
+    w_f(\delta)
+    =\sup\limits_{\substack{x',x''\in I\\|x'-x''|<\delta}}
+    |f(x')-f(x'')|,
+\]
+则 $f$ 在 $I$ 上一致连续的充要条件是
+\[
+    \lim\limits_{\delta\to0^+}w_f(\delta)=0.
+\]
+\end{example}
+\exampleblank
