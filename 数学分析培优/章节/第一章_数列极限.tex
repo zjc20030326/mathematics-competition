@@ -1,0 +1,1123 @@
+\chapter{数列极限}
+
+\section{预备知识}
+
+作为培优教材,内容可能具有一定的综合性,先介绍可能会用到的几个公式:
+
+\begin{proposition}[\marktwostar\ 对数不等式]
+当 $x>-1$ 时,
+\[
+\dfrac{x}{1+x}\leq \ln(1+x)\leq x.
+\]
+等号成立当且仅当 $x=0$ 时成立.
+\end{proposition}
+
+\begin{proposition}[\marktwostar]
+当 $0<x<\dfrac{\pi}{2}$ 时,
+\[
+\dfrac{2}{\pi}x\leq \sin x\leq x.
+\]
+\end{proposition}
+
+\begin{theorem}[\markstar\ Wallis 公式]
+\[
+\lim\limits_{n\to\infty}
+\dfrac{1}{2n+1}
+\left(\dfrac{(2n)!!}{(2n-1)!!}\right)^2
+=\dfrac{\pi}{2}.
+\]
+\end{theorem}
+
+\begin{theorem}[\markstar\ Stirling 公式]
+\[
+n!\sim \sqrt{2\pi n}\left(\dfrac{n}{e}\right)^n,
+\qquad n\to\infty.
+\]
+进一步,$n!$ 的估计还有中值形式:存在 $\theta_n\in(0,1)$,使得
+\[
+n!
+=\sqrt{2\pi n}\left(\dfrac{n}{e}\right)^n
+ e^{\tfrac{\theta_n}{12n}}.
+\]
+\end{theorem}
+
+\begin{example}
+证明命题 1.1.2.
+\end{example}
+\exampleblank
+
+\section{收敛数列}
+
+\subsection{证明极限存在}
+
+\methodsection{(A) 结合拟合法,由定义证明}
+
+首先介绍下拟合法,为了证明 $\displaystyle \lim\limits_{n\to\infty}x_n=A$,很多时候是转化成证明
+$y_n=x_n-A$ 为无穷小(究其原因,主要是这样平移后一般更易放缩).故一般来说尽可能将
+$x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化简成类似 $x_n$ 的形式.
+
+而对于 $\varepsilon-N$ 语言,我们一般有三种方法:
+
+\begin{enumerate}[label=\textcircled{\arabic*},leftmargin=2.2em]
+  \item (直接解不等式)对任意 $\varepsilon>0$,将 $|x_n-A|<\varepsilon$ 解出
+  $n>N(\varepsilon)$,然后令 $N=N(\varepsilon)$ 即可;
+  \item (放大法)有时 $|x_n-A|<\varepsilon$ 很难解出,则须将 $|x_n-A|$ 放缩化简成易于求解的
+  $H(n)$,再解 $H(n)<\varepsilon$ 即可;
+  \item (分段思想)有时 $|x_n-A|$ 特别复杂,我们须将其分为好几段(一般两到三段),再分别证每段为无穷小,而``段''的取法也是为了分段证无穷小的关键.
+\end{enumerate}
+
+\begin{example}
+用 $\varepsilon-N$ 语言证明下列命题:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle \lim\limits_{n\to\infty}\sqrt[n]{n+1}=1$;
+  \item 设 $\displaystyle \lim\limits_{n\to\infty}x_n=a$,则
+  $\displaystyle \lim\limits_{n\to\infty}\sqrt[3]{x_n}=\sqrt[3]{a}$;
+  \item 设 $\displaystyle \lim\limits_{n\to\infty}x_n=A$,则
+  \[
+  \lim\limits_{n\to\infty}\dfrac{x_1+x_2+\cdots+x_n}{n}=A.
+  \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $\displaystyle \lim\limits_{n\to\infty}a_n=a$,
+\[
+x_n=\dfrac{a_1+2a_2+\cdots+na_n}{1+2+\cdots+n},
+\]
+则 $\displaystyle \lim\limits_{n\to\infty}x_n=a$.
+\end{example}
+\exampleblank
+
+\begin{example}
+证明:若 $p_k>0\ (k=1,2,\ldots)$,且
+\[
+\lim\limits_{n\to\infty}\dfrac{p_n}{p_1+p_2+\cdots+p_n}=0,
+\qquad
+\lim\limits_{n\to\infty}a_n=a,
+\]
+则
+\[
+\lim\limits_{n\to\infty}
+\dfrac{p_1a_n+p_2a_{n-1}+\cdots+p_na_1}{p_1+p_2+\cdots+p_n}=a.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $x\to0$ 时 $f(x)\sim x$,
+\[
+x_n=\sum\limits_{i=1}^n f\left(\dfrac{2i-1}{n^2}a\right),
+\]
+试证:
+\[
+\lim\limits_{n\to\infty}x_n=a\qquad(a>0).
+\]
+\end{example}
+\exampleblank
+
+\begin{remark}
+当 $x\to0$ 时,$\sin x,\tan x,\arcsin x,\arctan x,e^x-1,\ln(1+x)$ 都与 $x$ 等价,因此 $f$ 取这些函数时结论都成立,如
+\[
+\lim\limits_{n\to\infty}\sum\limits_{i=1}^n
+\sin\dfrac{2i-1}{n^2}a=a.
+\]
+\end{remark}
+
+\begin{example}
+设 $\displaystyle \lim\limits_{n\to\infty}a_n=a$,试证:
+\[
+\lim\limits_{n\to\infty}\dfrac{1}{2^n}
+\left(
+\binom{n}{0}a_0+\binom{n}{1}a_1+\cdots+\binom{n}{k}a_k+\cdots+\binom{n}{n}a_n
+\right)=a.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设函数 $f(x),g(x)$ 在 $0$ 的某个邻域里有定义,$g(x)>0$,
+\[
+\lim\limits_{x\to0}\dfrac{f(x)}{g(x)}=1,
+\]
+且 $n\to\infty$ 时,$\alpha_{mn}\rightrightarrows0\ (m=1,2,\ldots,n)$,亦即对任意
+$\varepsilon>0$,存在 $N(\varepsilon)>0$,当 $n>N(\varepsilon)$ 时,对一切
+$m=1,2,\ldots,n$,有 $|\alpha_{mn}|<\varepsilon$.另设 $\alpha_{mn}\neq0$,试证:
+\[
+\lim\limits_{n\to\infty}\sum\limits_{m=1}^n f(\alpha_{mn})
+=
+\lim\limits_{n\to\infty}\sum\limits_{m=1}^n g(\alpha_{mn}),
+\]
+当右端极限存在时成立.
+\end{example}
+\exampleblank
+
+\begin{remark}
+取
+\[
+g(x)=x+x^2+\dfrac{x^3}{3},\qquad f(x)=x,
+\]
+则有
+\[
+\lim\limits_{n\to\infty}\sum\limits_{i=1}^n
+\left(\sqrt[3]{1+\dfrac{i}{n^2}}-1\right)
+=
+\lim\limits_{n\to\infty}\sum\limits_{i=1}^n\dfrac{i}{3n^2}
+=\dfrac{1}{6}.
+\]
+\end{remark}
+
+\methodsection{(B) Cauchy 收敛准则}
+
+再回顾一下 Cauchy 收敛准则:
+\[
+\{x_n\}\text{ 收敛}
+\iff
+\forall\varepsilon>0,\ \exists N>0,
+\quad m,n>N\Longrightarrow |x_n-x_m|<\varepsilon,
+\]
+等价地,
+\[
+\{x_n\}\text{ 收敛}
+\iff
+\forall\varepsilon>0,\ \exists N>0,
+\quad n>N\Longrightarrow |x_{n+p}-x_n|<\varepsilon\quad(\forall p>0).
+\]
+
+\begin{remark}
+值得注意的是,后者的 $p$ 应是关于 $p\in\mathbb N$ 一致成立,即
+\[
+\{x_n\}\text{ 收敛}
+\iff
+|x_{n+p}-x_n|\rightrightarrows0\qquad(n\to\infty).
+\]
+关于 $p$ 一致成立,此时的 $N$ 与 $p$ 无关.
+\end{remark}
+
+由于 Cauchy 收敛准则的形式,在判别和式和不易求得极限值的数列敛散性时尤为有效.
+
+\begin{example}
+判断如下命题真伪:
+\[
+\text{数列 }\{a_n\}\text{ 存在极限 }\lim\limits_{n\to\infty}a_n=a
+\iff
+\forall p\in\mathbb N,\ \lim\limits_{n\to\infty}|a_{n+p}-a_n|=0.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设
+\[
+x_n=\dfrac{\sin1}{2}+\dfrac{\sin2}{2^2}+\cdots+\dfrac{\sin n}{2^n},
+\]
+试证 $\{x_n\}$ 收敛.
+\end{example}
+\exampleblank
+
+\begin{example}
+设
+\[
+x_n=\sum\limits_{k=2}^n\dfrac{\cos k}{k(k-1)},
+\]
+试证 $\{x_n\}$ 收敛.
+\end{example}
+\exampleblank
+
+\methodsection{(C) Toeplitz 定理}
+
+\begin{theorem}[\markstar\ Toeplitz 定理]
+设对 $n,k\in\mathbb Z^+$,有 $t_{nk}\geq0$,又
+\[
+\sum\limits_{k=1}^n t_{nk}=1,
+\qquad
+\lim\limits_{n\to\infty}t_{nk}=0.
+\]
+若已知 $\displaystyle \lim\limits_{n\to\infty}a_n=a$,定义
+\[
+x_n=\sum\limits_{k=1}^n t_{nk}a_k,\qquad n\in\mathbb Z^+,
+\]
+则
+\[
+\lim\limits_{n\to\infty}x_n=a.
+\]
+\end{theorem}
+
+\begin{remark}
+该定理还有几种类型:
+\begin{enumerate}[label=(\arabic*)]
+  \item 将 $\displaystyle \sum\limits_{k=1}^n t_{nk}=1$ 改为
+  $\displaystyle \lim\limits_{n\to\infty}\sum\limits_{k=1}^n t_{nk}=1$;
+  \item 不要求 $t_{nk}$ 非负,将 (1) 中的条件改为:存在 $M>0$,使得对任意 $n$,有
+  \[
+  |t_{n1}|+|t_{n2}|+\cdots+|t_{nn}|\leq M.
+  \]
+\end{enumerate}
+\end{remark}
+
+\begin{example}
+由 Toeplitz 定理导出 Stolz 定理.
+\end{example}
+\exampleblank
+
+\begin{remark}
+因此许多 Stolz 定理能求的问题,Toeplitz 也能,甚至还能解决前面定义里分段思想解决的问题.
+\end{remark}
+
+\begin{example}
+设
+\[
+A_n=\sum\limits_{k=1}^n a_k,
+\]
+$\{A_n\}$ 收敛,又正数列 $\{p_n\}$ 单调递增,且为无穷大量,证明:
+\[
+\lim\limits_{n\to\infty}
+\dfrac{p_1a_1+p_2a_2+\cdots+p_na_n}{p_n}=0.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $0<\lambda<1$,$\{a_n\}$ 收敛于 $a$,证明:
+\[
+\lim\limits_{n\to\infty}
+\left(a_n+\lambda a_{n-1}+\lambda^2a_{n-2}+\cdots+\lambda^n a_0\right)
+=\dfrac{a}{1-\lambda}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $\displaystyle \lim\limits_{n\to\infty}x_n=0$,存在 $k$,使得
+\[
+|y_1|+|y_2|+\cdots+|y_n|\leq k.
+\]
+对任意 $n$ 成立,令
+\[
+z_n=x_1y_n+x_2y_{n-1}+\cdots+x_ny_1.
+\]
+证明:$\displaystyle \lim\limits_{n\to\infty}z_n=0$.
+\end{example}
+\exampleblank
+
+\methodsection{(D) 单调有界原理}
+
+\begin{example}
+证明:数列
+\[
+x_n=1+\dfrac{1}{2}+\dfrac{1}{3}+\cdots+\dfrac{1}{n}-\ln n
+\qquad(n=1,2,\ldots).
+\]
+单调递减有界,从而有极限.
+\end{example}
+\exampleblank
+
+\begin{example}
+设
+\[
+x_n=\sum\limits_{k=1}^n\dfrac{1}{\sqrt{k}}-2\sqrt{n},
+\]
+证明:$\displaystyle \lim\limits_{n\to\infty}x_n$ 存在.
+\end{example}
+\exampleblank
+
+\methodsection{(E) 利用上、下极限 *}
+
+这部分方法由于预备知识理论性较强,故放在本章最后一节作为选学内容.
+
+\subsection{证明极限不存在}
+
+证明极限不存在,最本源的当然是由定义判断,但事实上,由过程繁琐等原因,反而用的较少.
+
+\methodsection{(A) 无界数列发散}
+
+\begin{example}
+证明:
+\[
+S_n=1+\dfrac{1}{2}+\dfrac{1}{3}+\cdots+\dfrac{1}{n}.
+\]
+无界,进而 $\{S_n\}$ 发散.
+\end{example}
+\exampleblank
+
+\methodsection{(B) 数列与子列的关系}
+
+\textcircled{1} 存在发散子列;\quad
+\textcircled{2} 存在不收敛于同一极限的两个子列.
+
+\begin{example}
+若 $\{a_n\}$ 中三个子列 $\{a_{2n}\},\{a_{2n-1}\},\{a_{3n}\}$ 皆收敛,则 $\{a_n\}$ 收敛.
+\end{example}
+\exampleblank
+
+\begin{example}
+设
+\[
+a_n=\dfrac{1}{n}-\dfrac{2}{n}+\dfrac{3}{n}+\cdots+(-1)^{n-1}\dfrac{n}{n}
+\qquad(n=1,2,\ldots),
+\]
+则 $\{a_n\}$ 收敛.
+\end{example}
+\exampleblank
+
+\begin{example}
+证明:$\{\sin n\}$ 发散.
+\end{example}
+\exampleblank
+
+\methodsection{(C) 利用恒等式反证得结论}
+
+该方法多用于证关于三角函数列的发散问题.
+
+\begin{example}
+证明:$\{\sin n\}$ 发散.
+\end{example}
+\exampleblank
+
+\begin{example}
+证明:$\{\tan n\}$ 发散.
+\end{example}
+\exampleblank
+
+\begin{example}
+若存在极限
+\[
+\lim\limits_{n\to\infty}(a\sin n+b\cos n)=A,
+\]
+则 $a=b=0$.
+\end{example}
+\exampleblank
+
+\methodsection{(D) Cauchy 收敛准则}
+
+\begin{example}
+证明:数列
+\[
+S_n=\sum\limits_{k=1}^n\dfrac{1}{k}\qquad(n=1,2,\ldots).
+\]
+发散.
+\end{example}
+\exampleblank
+
+\begin{example}
+设
+\[
+x_n=1+\sqrt{\dfrac{1}{2}}+\sqrt{\dfrac{1}{3}}+\cdots+\sqrt{\dfrac{1}{n}},
+\]
+求证:$\{x_n\}$ 发散.
+\end{example}
+\exampleblank
+
+\subsection{求极限值}
+
+\methodsection{(A) 迫敛性}
+
+\begin{example}
+求下列数列 $\{a_n\}$ 的极限 $\displaystyle \lim\limits_{n\to\infty}a_n$:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle a_n=\sqrt[n]{2\sin^2n+\cos^2n}$;
+  \item $\displaystyle a_n=(n+1+n\cos n)^{\tfrac{1}{2n+n\sin n}}$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+求下列数列 $\{a_n\}$ 的极限 $\displaystyle \lim\limits_{n\to\infty}a_n$:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle a_n=\sqrt[n]{1+b^n}\quad(b>0)$;
+  \item $\displaystyle a_n=\sqrt[n]{1+b^n+\left(\dfrac{b^2}{2}\right)^n}\quad(b>0)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}[\marktriangle]
+设
+\[
+A=\max\{a_1,a_2,\ldots,a_m\},\qquad a_k>0,
+\]
+求
+\[
+\lim\limits_{n\to\infty}\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}[\marktriangle]
+设 $f(x)>0$ 在 $[0,1]$ 上连续,则
+\[
+\lim\limits_{n\to\infty}
+\sqrt[n]{\dfrac{1}{n}\sum\limits_{i=1}^n\left[f\left(\dfrac{i}{n}\right)\right]^n}
+=
+\max_{0\leq x\leq1}f(x).
+\]
+\end{example}
+\exampleblank
+
+\begin{example}[\marktriangle]
+设 $\{a_n\}$ 是正实数列,
+\[
+a=\sup\{a_1,a_2,\ldots\},
+\]
+求证:
+\[
+\lim\limits_{n\to\infty}\left(\sum\limits_{k=1}^n a_k^n\right)^{\tfrac{1}{n}}=a.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+求下列数列 $\{a_n\}$ 的极限 $\displaystyle \lim\limits_{n\to\infty}a_n$:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle a_n=\dfrac{1}{n^n}\sum\limits_{k=1}^n k^k$;
+  \item $\displaystyle a_n=\dfrac{\sqrt[n]{\sum\limits_{k=1}^n k^n}}{n}$;
+  \item $\displaystyle a_n=\sum\limits_{k=1}^n\dfrac{k}{n^2+n+k}$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\methodsection{(B) 利用积分定义}
+
+\begin{example}
+求下列极限:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle \lim\limits_{n\to\infty}\sum\limits_{k=1}^n\dfrac{1}{n+k}$;
+  \item $\displaystyle \lim\limits_{n\to\infty}\sum\limits_{k=1}^n
+  \dfrac{\sin\dfrac{k}{n}\pi}{n+\dfrac{k}{n}}$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+求下列极限:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle
+  \lim\limits_{n\to\infty}
+  \dfrac{\sqrt[n]{(n+1)(n+2)\cdots(n+n)}}{n}$;
+  \item $\displaystyle
+  \lim\limits_{n\to\infty}
+  \dfrac{\sqrt[n]{n(n+1)\cdots(2n-1)}}{n}$;
+  \item $\displaystyle
+  \lim\limits_{n\to\infty}\dfrac{\sqrt[n]{n!}}{n}$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\methodsection{(C) 利用级数性质}
+
+主要有两个运用:\textcircled{1} 收敛级数通项趋于零;\textcircled{2}
+$\{x_n-x_{n-1}\}$ 绝对收敛 $\Rightarrow \displaystyle \lim\limits_{n\to\infty}x_n$ 存在.
+
+\begin{example}
+求下列极限 $\displaystyle \lim\limits_{n\to\infty}x_n$:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle x_n=\dfrac{5^n\cdot n!}{(2n)^n}$;
+  \item $\displaystyle x_n=\dfrac{11\cdot12\cdot13\cdots(n+10)}{2\cdot5\cdot8\cdots(3n-1)}$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设
+\[
+x_n=\dfrac{1}{2\ln2}+\cdots+\dfrac{1}{n\ln n}-\ln\ln n,
+\]
+求证:$\{x_n\}$ 收敛.
+\end{example}
+\exampleblank
+
+\begin{example}
+设
+\[
+0\leq x_{n+1}\leq x_n+\dfrac{1}{n^2},
+\]
+则 $\{x_n\}$ 收敛.
+\end{example}
+\exampleblank
+
+\methodsection{(D) Stolz 定理}
+
+Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0}$、$\dfrac{*}{\infty}$ 未定式极限问题十分有效.
+
+\begin{example}
+证明:
+\[
+\lim\limits_{n\to\infty}
+\dfrac{1^p+2^p+\cdots+n^p}{n^{p+1}}
+=\dfrac{1}{p+1}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+计算下列极限:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle
+  I=\lim\limits_{n\to\infty}\dfrac{1}{\sqrt n}\sum\limits_{k=1}^n\dfrac{a_k}{\sqrt k}
+  \quad\text{(其中 }a_k\to a\ (k\to\infty)\text{)}$;
+  \item $\displaystyle
+  I=\lim\limits_{n\to\infty}\dfrac{\sum\limits_{k=1}^n\dfrac{1}{k}}{\ln n}$;
+  \item $\displaystyle
+  I=\lim\limits_{n\to\infty}\dfrac{1+a+2a^2+\cdots+na^n}{na^{n+2}}
+  \quad(a>1)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设
+\[
+S_n=\dfrac{\sum\limits_{k=0}^n\ln\binom{n}{k}}{n^2},
+\]
+求 $\displaystyle \lim\limits_{n\to\infty}S_n$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设
+\[
+\lim\limits_{n\to\infty}\sum\limits_{k=1}^n\dfrac{1}{k^2}=m,
+\]
+求极限
+\[
+\lim\limits_{n\to\infty}
+n^2\left(m-\sum\limits_{k=1}^n\dfrac{1}{k^2}-\dfrac{1}{n}\right).
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设
+\[
+\lim\limits_{n\to\infty}n(A_n-A_{n-1})=0,
+\]
+试证:当
+\[
+\lim\limits_{n\to\infty}\dfrac{A_1+A_2+\cdots+A_n}{n}.
+\]
+存在时,
+\[
+\lim\limits_{n\to\infty}A_n
+=
+\lim\limits_{n\to\infty}\dfrac{A_1+A_2+\cdots+A_n}{n}.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $a_1>1$,
+\[
+a_{n+1}=a_n+\dfrac{1}{a_n},
+\]
+证明:
+\[
+\lim\limits_{n\to\infty}\dfrac{a_n}{\sqrt{2n}}=1.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设数列 $\{a_n\}$ 满足 $0<a_1<\dfrac{\pi}{2}$ 且
+\[
+a_{n+1}=\sin a_n,
+\]
+证明:
+\[
+\lim\limits_{n\to\infty}\sqrt{\dfrac{n}{3}}\,a_n=1.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+设数列 $\{a_n\}$ 满足 $0<a_n<1$,
+\[
+a_{n+1}=a_n(1-a_n),
+\]
+证明:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle \lim\limits_{n\to\infty}na_n=1$;
+  \item $\displaystyle \lim\limits_{n\to\infty}\dfrac{n(1-na_n)}{\ln n}=1$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $0<a_1<1$,
+\[
+a_{n+1}=\ln(1+a_n),
+\]
+则
+\[
+\lim\limits_{n\to\infty}\dfrac{n(na_n-2)}{\ln n}=\dfrac{2}{3}.
+\]
+\end{example}
+\exampleblank
+
+\methodsection{(E) 利用函数极限}
+
+结合海涅归结原理,可将数列极限问题转化为函数极限问题,而函数极限求法留在下章重点介绍.
+
+\section{递推数列}
+
+假设用某种方法证明了递推数列的极限存在,则在递推公式里取极限,便可得极限值 $A$ 应满足的方程.当然,若能求得数列通项,极限值当然可以直接求得,求通项技巧高中大多已经学习过,就不再介绍了,接下来介绍几种不需要通项就可得到极限存在性的常用方法.
+
+\subsection{单调有界原理}
+
+\noindent\textbf{(\markstar)} 单调有界原理是最常见也最常用的方法,要分别证明单调性与有界性.单调性通常有以下几种判断方法:
+
+\begin{enumerate}[label=(\arabic*)]
+  \item 对任意 $n\in\mathbb N$,若 $x_{n+1}-x_n\geq0$,则 $x_n$ 单增;若 $x_{n+1}-x_n\leq0$,则 $x_n$ 单减;
+  \item 对任意 $n\in\mathbb N$,若 $\dfrac{x_{n+1}}{x_n}\geq1$,则 $x_n$ 单增;若 $\dfrac{x_{n+1}}{x_n}\leq1$,则 $x_n$ 单减;
+  \item 若 $x_{n+1}=f(x_n)$,$f'(x)\geq0$,则若 $x_1\leq x_2$,则 $x_n$ 单增;若 $x_1\geq x_2$,则 $x_n$ 单减.
+\end{enumerate}
+
+此外,数学归纳法及常用不等式都是证明单调、有界的重要工具.
+
+\begin{example}
+证明数列
+\[
+x_0=1,\qquad x_{n+1}=\sqrt{2x_n},\qquad n=0,1,2,\ldots.
+\]
+有极限,并求其值.
+\end{example}
+\exampleblank
+
+\begin{example}
+已知连续函数 $f(x)$ 在 $[1,+\infty)$ 单调递减,且 $f(x)>0$,证明数列
+\[
+a_n=\sum\limits_{k=1}^n f(k)-\int_1^n f(x)\,\mathrm{d}x.
+\]
+收敛.
+\end{example}
+\exampleblank
+
+\begin{remark}
+\begin{enumerate}[label=(\arabic*)]
+  \item 取 $f(x)=\dfrac{1}{x}$,则有
+  \[
+  a_n=1+\dfrac{1}{2}+\cdots+\dfrac{1}{n}-\ln n
+  \]
+  是收敛的;
+  \item 取 $f(x)=\sqrt{\dfrac{1}{x}}$,则有
+  \[
+  a_n=1+\sqrt{\dfrac{1}{2}}+\cdots+\sqrt{\dfrac{1}{n}}-2\sqrt n
+  \]
+  是收敛的;
+  \item 取 $f(x)=\dfrac{1}{x\ln x}$,则有
+  \[
+  a_n=\dfrac{1}{2\ln2}+\dfrac{1}{3\ln3}+\cdots+\dfrac{1}{n\ln n}-\ln\ln n
+  \]
+  是收敛的.
+\end{enumerate}
+\end{remark}
+
+\begin{example}
+设 $A>0$,$a_1>0$,
+\[
+a_{n+1}=\dfrac{1}{2}\left(a_n+\dfrac{1}{a_n}\right),
+\]
+证明:$\displaystyle \lim\limits_{n\to\infty}a_n$ 存在,并求其值.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $c>0$,$0<x_1<\dfrac{1}{c}$,且
+\[
+x_{n+1}=x_n(2-cx_n),
+\]
+证明:$\{x_n\}$ 收敛并求其极限.
+\end{example}
+\exampleblank
+
+\begin{example}
+已知数列 $\{a_n\},\{b_n\}$ 满足:$a_1>b_1>0$,
+\[
+a_{n+1}=\dfrac{a_n+b_n}{2},
+\qquad
+b_{n+1}=\sqrt{a_nb_n},
+\]
+证明:$\displaystyle \lim\limits_{n\to\infty}a_n$ 与 $\displaystyle \lim\limits_{n\to\infty}b_n$ 都存在且相等.
+\end{example}
+\exampleblank
+
+\begin{example}
+已知数列 $\{a_n\}$ 满足 $0<a_n<2$ 且
+\[
+(2-a_n)a_{n+1}\geq1,
+\]
+证明:$\{a_n\}$ 收敛,并求其极限.
+\end{example}
+\exampleblank
+
+\begin{example}
+设数列 $\{x_n\}$ 满足 $x_n>0$ 且
+\[
+x_{n+1}+\dfrac{4}{x_n}<4,
+\]
+证明:$\{x_n\}$ 收敛并求其极限.
+\end{example}
+\exampleblank
+
+\subsection{压缩映像原理}
+
+\begin{theorem}[\markstar]
+对于任一数列 $\{x_n\}$ 而言,若存在常数 $r$,使得对任意 $n\in\mathbb N$,恒有
+\[
+|x_{n+1}-x_n|\leq r|x_n-x_{n-1}|,
+\qquad 0<r<1,
+\]
+则数列 $\{x_n\}$ 收敛.
+\end{theorem}
+
+\begin{corollary}[\markstartriangle]
+若数列 $\{x_n\}$ 利用递推公式给出:$x_{n+1}=f(x_n)$,其中 $f$ 可微且存在 $0<r<1$,使得
+\[
+|f'(x)|\leq r<1\qquad(\forall x\in\mathbb R),
+\]
+则数列 $\{x_n\}$ 收敛.
+\end{corollary}
+
+\begin{example}
+证明:
+\begin{enumerate}[label=(\arabic*)]
+  \item 存在唯一的 $c\in(0,1)$,使得 $c=e^{-c}$;
+  \item 设 $x_1\in(0,1)$,$x_{n+1}=e^{-x_n}$,则
+  $\displaystyle \lim\limits_{n\to\infty}x_n=c$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $x_0>0$,
+\[
+x_n=3+\dfrac{1}{\sqrt{x_{n-1}}}\qquad(n=1,2,\ldots),
+\]
+证明:$\{x_n\}$ 收敛并求其极限.
+\end{example}
+\exampleblank
+
+\begin{example}
+设
+\[
+u_1=3,
+\qquad
+u_2=3+\dfrac{4}{3},
+\qquad
+u_3=3+\dfrac{4}{3+\dfrac{4}{3}},
+\qquad\ldots.
+\]
+如果数列 $\{u_n\}$ 收敛,计算其极限,并证明 $\{u_n\}$ 收敛于上述极限.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $x_1=1$,
+\[
+x_{n+1}=\dfrac{1+2x_n}{1+x_n}\qquad(n=1,2,\ldots),
+\]
+证明:$\{x_n\}$ 收敛,并求 $\displaystyle \lim\limits_{n\to\infty}x_n$.
+\end{example}
+\exampleblank
+
+\subsection{不动点法}
+
+事实上,前面两种方法已知能解决绝大部分问题,但对于部分难题,不动点法尤为有效.
+
+\begin{proposition}[\marktriangle]
+已知数列 $\{x_n\}$ 在区间 $I$ 上由
+\[
+x_{n+1}=f(x_n)\qquad(n=1,2,\ldots).
+\]
+给出,$f$ 是 $I$ 上连续增函数.若 $f$ 在 $I$ 上有不动点 $x^*$ 满足
+\[
+(x_1-f(x_1))(x_1-x^*)\geq0,
+\]
+则此时数列 $\{x_n\}$ 必收敛,且极限 $A$ 满足 $A=f(A)$.若上式中的``$\geq$''改为``$>$'',则 $x^*$ 为唯一不动点.
+
+特别地,若 $f$ 可导且 $0<f'(x)<1$,则 $f$ 严格递增,且上式自然成立,这时 $f$ 的不动点存在且唯一,从而 $A=x^*$.
+\end{proposition}
+
+\begin{proposition}[\markstar]
+设数列 $\{x_n\}$ 由 $x_{n+1}=f(x_n)$ 给出,递推下去取范围不超过 $I$,$f(x)$ 在 $I$ 上有 $f'(x)<0$($f$ 严格递减).若 $f$ 有不动点 $x^*$,则 $\{x_{2n}\},\{x_{2n\pm1}\}$ 分别在 $x^*$ 之两侧,且 $\{x_{2n}\},\{x_{2n-1}\}$ 均单调,并且具有相反单调性.
+\end{proposition}
+
+\begin{remark}
+这时 $F(x)=f(f(x))$ 是它们的递推函数,且
+\[
+F'(x)=f'(f(x))f'(x)>0.
+\]
+因此,可按命题 1.3.1 分别处理 $\{x_{2n}\}$ 与 $\{x_{2n-1}\}$.
+\end{remark}
+
+\begin{example}
+设 $x_1>0$,
+\[
+x_{n+1}=\dfrac{c(1+x_n)}{c+x_n}\qquad(c>1),
+\]
+求 $\displaystyle \lim\limits_{n\to\infty}x_n$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设
+\[
+x_1=1,
+\qquad
+x_2=\dfrac{1}{2},
+\qquad
+x_{n+1}=\dfrac{1}{1+x_n},
+\]
+求 $\displaystyle \lim\limits_{n\to\infty}x_n$.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $f(x)$ 映 $[a,b]$ 为自身,且
+\[
+|f(x)-f(y)|\leq|x-y|.
+\]
+任取 $x_1\in[a,b]$,令
+\[
+x_{n+1}=\dfrac{1}{2}[x_n+f(x_n)],
+\]
+求证数列有极限 $x^*$,且 $x^*$ 满足方程
+\[
+f(x^*)=x^*.
+\]
+\end{example}
+\exampleblank
+
+\begin{example}
+证明:数列 $x_0>0$,
+\[
+x_{n+1}=\dfrac{x_n(x_n^2+3a)}{3x_n^2+a}\qquad(a\geq0).
+\]
+的极限存在,并求其极限.
+\end{example}
+\exampleblank
+
+\subsection{利用上下极限 *}
+
+这部分方法由于预备知识理论性较强,故放在本章最后一节作为选学内容.
+
+\section{上、下极限 *}
+
+本节通过几个等价定义由不同角度来刻画上、下极限,其中最直观的是用极限点来定义:
+
+\begin{definition}
+数列的收敛子列的极限称为数列的极值点,而数列的最大(小)极值点称为数列的上(下)极限,记为
+$\displaystyle \varlimsup\limits_{n\to\infty}x_n$
+($\displaystyle \varliminf\limits_{n\to\infty}x_n$).
+\end{definition}
+
+\begin{proposition}[\markstar\ 等价定义 1]
+每个数列 $\{x_n\}$ 都存在上极限和下极限,且成立公式:
+\[
+\varlimsup\limits_{n\to\infty}x_n
+=
+\lim\limits_{n\to\infty}\sup_{k\geq n}\{x_k\},
+\]
+\[
+\varliminf\limits_{n\to\infty}x_n
+=
+\lim\limits_{n\to\infty}\inf_{k\geq n}\{x_k\}.
+\]
+\end{proposition}
+
+\begin{proposition}[\markstar\ 等价定义 2]
+\begin{enumerate}[label=(\arabic*)]
+  \item 有限数 $b$ 是数列 $x_n$ 的下极限,当且仅当 $\{x_n\}$ 满足:
+  \begin{enumerate}[label=(\roman*)]
+    \item 对任意 $\varepsilon>0$,$(b-\varepsilon,b+\varepsilon)$ 中有数列的无穷多项;
+    \item 存在 $N$,当 $n>N$ 时,$x_n>b-\varepsilon$;
+  \end{enumerate}
+  \item $+\infty$ 是 $\{x_n\}$ 的下极限,当且仅当 $\{x_n\}$ 是正无穷大量;
+  \item $-\infty$ 是 $\{x_n\}$ 的下极限,当且仅当 $\{x_n\}$ 无下界.
+\end{enumerate}
+上极限同理.
+\end{proposition}
+
+\begin{theorem}[\markstar]
+上、下极限满足如下性质:
+\begin{enumerate}[label=(\arabic*)]
+  \item
+  \[
+  \varlimsup\limits_{n\to\infty}(-a_n)=-\varliminf\limits_{n\to\infty}a_n,
+  \qquad
+  \varliminf\limits_{n\to\infty}(-a_n)=-\varlimsup\limits_{n\to\infty}a_n;
+  \]
+  \item 若 $a_n\leq b_n$,则
+  \[
+  \varlimsup\limits_{n\to\infty}a_n\leq\varlimsup\limits_{n\to\infty}b_n,
+  \qquad
+  \varliminf\limits_{n\to\infty}a_n\leq\varliminf\limits_{n\to\infty}b_n;
+  \]
+  \item
+  \[
+  \varlimsup\limits_{n\to\infty}(a_n+b_n)
+  \leq
+  \varlimsup\limits_{n\to\infty}a_n+
+  \varlimsup\limits_{n\to\infty}b_n,
+  \]
+  \[
+  \varliminf\limits_{n\to\infty}(a_n+b_n)
+  \geq
+  \varliminf\limits_{n\to\infty}a_n+
+  \varliminf\limits_{n\to\infty}b_n;
+  \]
+  \item
+  \[
+  \varliminf\limits_{n\to\infty}(a_n+b_n)
+  \leq
+  \varliminf\limits_{n\to\infty}a_n+
+  \varlimsup\limits_{n\to\infty}b_n
+  \leq
+  \varlimsup\limits_{n\to\infty}(a_n+b_n);
+  \]
+  \item 若 $a_n,b_n>0$,则
+  \[
+  \varlimsup\limits_{n\to\infty}a_nb_n
+  \leq
+  \left(\varlimsup\limits_{n\to\infty}a_n\right)
+  \left(\varlimsup\limits_{n\to\infty}b_n\right),
+  \]
+  \[
+  \varliminf\limits_{n\to\infty}a_nb_n
+  \geq
+  \left(\varliminf\limits_{n\to\infty}a_n\right)
+  \left(\varliminf\limits_{n\to\infty}b_n\right);
+  \]
+  \item 若 $a_n>0$ 且 $\displaystyle \varliminf\limits_{n\to\infty}a_n>0$,则
+  \[
+  \varlimsup\limits_{n\to\infty}\dfrac{1}{a_n}
+  =
+  \dfrac{1}{\displaystyle \varliminf\limits_{n\to\infty}a_n};
+  \]
+  \item 若 $\{b_n\}$ 收敛,则
+  \[
+  \varliminf\limits_{n\to\infty}(a_n+b_n)
+  =
+  \varliminf\limits_{n\to\infty}a_n+\lim\limits_{n\to\infty}b_n,
+  \]
+  \[
+  \varlimsup\limits_{n\to\infty}(a_n+b_n)
+  =
+  \varlimsup\limits_{n\to\infty}a_n+\lim\limits_{n\to\infty}b_n.
+  \]
+\end{enumerate}
+\end{theorem}
+
+\begin{proposition}[\markstartriangle]
+设 $\{a_n\}$ 为正数列,则有
+\[
+\varliminf\limits_{n\to\infty}\dfrac{a_{n+1}}{a_n}
+\leq
+\varliminf\limits_{n\to\infty}\sqrt[n]{a_n}
+\leq
+\varlimsup\limits_{n\to\infty}\sqrt[n]{a_n}
+\leq
+\varlimsup\limits_{n\to\infty}\dfrac{a_{n+1}}{a_n}.
+\]
+\end{proposition}
+
+\begin{example}
+请求下列数列 $\{a_n\}$ 的上、下极限:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle a_n=\sqrt[n]{1+2^{n(-1)^n}}$;
+  \item $\displaystyle a_n=1+\dfrac{n-\cos\dfrac{n\pi}{2}}{n+1}$;
+  \item $\displaystyle a_n=\dfrac{n}{3}-\left[\dfrac{n}{3}\right]$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $\{a_n\}$ 满足
+\[
+\lim\limits_{n\to\infty}(a_n-2a_{n+1})=A,
+\]
+证明:$\{a_n\}$ 收敛并求其极限.
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $a_n=nb_n$,其中 $\{b_n\}$ 满足 $|nb_n|\leq M$,且存在
+\[
+\lim\limits_{n\to\infty}n(b_n+b_{2n})=l,
+\]
+证明:$\{a_n\}$ 收敛,并求其极限.
+\end{example}
+\exampleblank
+
+\begin{example}
+设
+\[
+a_{n+1}=1-\dfrac{a_n^2}{b^2},
+\qquad 0<a_1<b,
+\qquad b>\sqrt2,
+\]
+讨论 $\{a_n\}$ 的敛散性.
+\end{example}
+\exampleblank
+
+\begin{example}
+讨论下列数列 $\{a_n\}$ 的敛散性:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle a_{n+1}=\sqrt[3]{a_n+6}\quad(a>-6)$;
+  \item $\displaystyle a_{n+1}=A\sqrt{a_n}+B\quad(A,B>0,\ a_1>0)$.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+设 $a_1>0$,
+\[
+a_{n+1}=\dfrac{1}{2}\left(a_n+\dfrac{1}{a_n}\right)+1,
+\]
+讨论 $\{a_n\}$ 敛散性.
+\end{example}
+\exampleblank
+
+\begin{example}
+设
+\[
+y_n=px_n+qx_{n+1},
+\qquad |p|<|q|,
+\]
+证明:$\{x_n\}$ 与 $\{y_n\}$ 同敛散.
+\end{example}
+\exampleblank
+
+\begin{example}
+证明下列命题:
+\begin{enumerate}[label=(\arabic*)]
+  \item 若 $\{a_n\}$ 满足
+  \[
+  0\leq a_{n+m}\leq a_n+a_m\qquad(n,m\in\mathbb N),
+  \]
+  则 $\left\{\dfrac{a_n}{n}\right\}$ 收敛;
+  \item 若 $\{a_n\}$ 满足
+  \[
+  0\leq a_{n+m}\leq a_n-a_m\qquad(n,m\in\mathbb N),
+  \]
+  则 $\{\sqrt[n]{a_n}\}$ 收敛.
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{example}
+证明下列命题:
+\begin{enumerate}[label=(\arabic*)]
+  \item 设 $\{a_n\}$ 是正数列,则
+  \[
+  \varlimsup\limits_{n\to\infty}
+  \left(\dfrac{a_n+a_{n+1}}{a_n}\right)^n
+  \geq e;
+  \]
+  \item 设 $\{a_n\}$ 是正数列,则
+  \[
+  \varliminf\limits_{n\to\infty}
+  n\left(\dfrac{1+a_{n+1}}{a_n}-1\right)
+  \geq1.
+  \]
+\end{enumerate}
+\end{example}
+\exampleblank

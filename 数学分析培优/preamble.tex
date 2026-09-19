@@ -1,0 +1,112 @@
+% ================= 基础工具包 =================
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+% ================= 数学相关宏包 =================
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{extarrows}
+\usepackage{arydshln}
+\usepackage{tikz-cd}
+\usepackage{physics2}
+\usephysicsmodule{ab}
+
+% ================= 页面布局 =================
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    left=2.5cm,
+    right=2.5cm,
+    top=3cm,
+    bottom=2cm
+}
+
+\setlength{\headheight}{14pt}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+% ================= 水印 =================
+\usepackage{draftwatermark}
+\SetWatermarkText{欧拉的小迷弟}
+\SetWatermarkScale{0.4}
+\SetWatermarkLightness{0.9}
+
+% ================= 页眉页脚 =================
+\usepackage{fancyhdr}
+\fancyhf{}
+\lhead{\rightmark}
+\rhead{欧拉的小迷弟}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\fancypagestyle{plain}{%
+    \fancyhf{}
+    \lhead{\rightmark}
+    \rhead{欧拉的小迷弟}
+    \cfoot{\thepage}
+    \renewcommand{\headrulewidth}{0.4pt}%
+}
+
+% ================= 超链接 =================
+\usepackage[
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+]{hyperref}
+
+% ================= 定理环境 =================
+% 各类环境分别编号,并跟随 section,与原讲义编号方式一致.
+\theoremstyle{definition}
+\newtheorem{definition}{定义}[section]
+\newtheorem{example}{例}[section]
+\newtheorem{theorem}{定理}[section]
+\newtheorem{axiom}{公理}[section]
+\newtheorem{lemma}{引理}[section]
+\newtheorem{proposition}{命题}[section]
+\newtheorem{corollary}{推论}[section]
+
+\theoremstyle{remark}
+\newtheorem{remark}{注}[section]
+
+% ================= 重要性标记 =================
+\newcommand{\marktriangle}{\ensuremath{\blacktriangle}}
+\newcommand{\markstar}{\ensuremath{\bigstar}}
+\newcommand{\markstartriangle}{\ensuremath{\bigstar\blacktriangle}}
+\newcommand{\marktwostar}{\ensuremath{\bigstar\bigstar}}
+
+% ================= 章节内部结构 =================
+% 原讲义中的 (A)(B)(C)... 保持为无编号小标题,同时加入目录.
+\newcommand{\methodsection}[1]{%
+    \subsubsection*{#1}%
+    \addcontentsline{toc}{subsubsection}{#1}%
+}
+
+% ================= 例题留白 =================
+% 每道例题后统一留出书写空间. 若后续希望增减留白,只需修改这里的倍数.
+\newcommand{\exampleblank}{\par\vspace{5\baselineskip}}
+
+% 保留通用手动留白命令.
+\newcommand{\myspace}[1]{\par\vspace{#1\baselineskip}}
+
+% ================= 自定义数学算子 =================
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Ree}{Re}
+\DeclareMathOperator{\Imm}{Im}
+\DeclareMathOperator{\Ker}{Ker}
+
+% ================= 中文标题样式 =================
+\ctexset{
+    subsection = {
+        format=\centering\zihao{-4}\bfseries
+    }
+}
