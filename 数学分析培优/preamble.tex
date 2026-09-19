@@ -2,6 +2,7 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{enumitem}
+\usepackage{subfiles} % 允许各章节单独编译
 
 % ================= 数学相关宏包 =================
 \usepackage{amsmath}
@@ -34,7 +35,7 @@
 
 % ================= 水印 =================
 \usepackage{draftwatermark}
-\SetWatermarkText{高斯的小迷弟}
+\SetWatermarkText{欧拉的小迷弟}
 \SetWatermarkScale{0.4}
 \SetWatermarkLightness{0.9}
 
@@ -42,14 +43,14 @@
 \usepackage{fancyhdr}
 \fancyhf{}
 \lhead{\rightmark}
-\rhead{高斯的小迷弟}
+\rhead{欧拉的小迷弟}
 \cfoot{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 
 \fancypagestyle{plain}{%
     \fancyhf{}
     \lhead{\rightmark}
-    \rhead{高斯的小迷弟}
+    \rhead{欧拉的小迷弟}
     \cfoot{\thepage}
     \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -91,7 +92,7 @@
 
 % ================= 例题留白 =================
 % 每道例题后统一留出书写空间. 若后续希望增减留白,只需修改这里的倍数.
-\newcommand{\exampleblank}{\par\vspace{5\baselineskip}}
+\newcommand{\exampleblank}{\par\vspace{10\baselineskip}}
 
 % 保留通用手动留白命令.
 \newcommand{\myspace}[1]{\par\vspace{#1\baselineskip}}

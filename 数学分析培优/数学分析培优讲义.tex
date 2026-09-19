@@ -8,27 +8,31 @@
 
 \begin{document}
 
+% 封面与目录不建立 PDF 页锚点，避免正文重新从第 1 页计数时产生重复锚点。
+\hypersetup{pageanchor=false}
 \frontmatter
 \pagenumbering{gobble}
 \maketitle
 \tableofcontents
+\clearpage
 
 \mainmatter
+\hypersetup{pageanchor=true}
 \pagestyle{fancy}
 
 % ================= 正文 =================
-\include{章节/第一章_数列极限}
-\include{章节/第二章_函数极限与实数基本定理}
-\include{章节/第三章_一元函数的连续性}
-\include{章节/第四章_一元函数微分学}
-\include{章节/第五章_不定积分}
-\include{章节/第六章_定积分}
-\include{章节/第七章_反常积分}
-\include{章节/第八章_数项级数}
-\include{章节/第九章_函数项级数、幂级数、Fourier级数}
-\include{章节/第十章_多元函数微分学}
-\include{章节/第十一章_含参变量积分}
-\include{章节/第十二章_重积分}
-\include{章节/第十三章_曲线积分与曲面积分}
+\subfile{章节/第一章_数列极限}
+\subfile{章节/第二章_函数极限与实数基本定理}
+\subfile{章节/第三章_一元函数的连续性}
+\subfile{章节/第四章_一元函数微分学}
+\subfile{章节/第五章_不定积分}
+\subfile{章节/第六章_定积分}
+\subfile{章节/第七章_反常积分}
+\subfile{章节/第八章_数项级数}
+\subfile{章节/第九章_函数项级数、幂级数、Fourier级数}
+\subfile{章节/第十章_多元函数微分学}
+\subfile{章节/第十一章_含参变量积分}
+\subfile{章节/第十二章_重积分}
+\subfile{章节/第十三章_曲线积分与曲面积分}
 
 \end{document}
