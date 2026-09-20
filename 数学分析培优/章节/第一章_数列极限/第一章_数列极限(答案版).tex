@@ -1,0 +1,2154 @@
+\documentclass[../../数学分析培优讲义(答案版).tex]{subfiles}
+
+\begin{document}
+
+\setcounter{chapter}{0}
+\pagestyle{fancy}
+
+\chapter{数列极限}
+
+\section{预备知识}
+
+\begin{example}
+证明命题 1.1.2.
+\end{example}
+
+\begin{proof}[解]
+命题 1.1.2 断言:当 $0<x<\dfrac{\pi}{2}$ 时,
+\[
+\dfrac{2}{\pi}x\leq \sin x\leq x.
+\]
+令 $f(x)=\sin x$.由于 $f''(x)=-\sin x<0$,故 $f$ 在
+$\lbrack0,\dfrac{\pi}{2}\rbrack$ 上为凹函数.于是其图像位于连接
+$(0,0)$ 与 $(\dfrac{\pi}{2},1)$ 的弦的上方,从而
+\[
+\sin x\geq \dfrac{1-0}{\frac{\pi}{2}-0}x=\dfrac{2}{\pi}x.
+\]
+另一方面,由 Lagrange 中值定理,存在 $\xi\in(0,x)$,使得
+\[
+\sin x-\sin0=x\cos\xi\leq x.
+\]
+两式合并即得结论.
+\end{proof}
+
+\newpage
+
+\section{收敛数列}
+
+\subsection{证明极限存在}
+
+\methodsection{(A) 结合拟合法,由定义证明}
+
+\begin{example}
+用 $\varepsilon-N$ 语言证明下列命题:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle \lim\limits_{n\to\infty}\sqrt[n]{n+1}=1$;
+  \item 设 $\displaystyle \lim\limits_{n\to\infty}x_n=a$,则
+  $\displaystyle \lim\limits_{n\to\infty}\sqrt[3]{x_n}=\sqrt[3]{a}$;
+  \item 设 $\displaystyle \lim\limits_{n\to\infty}x_n=A$,则
+  \[
+  \lim\limits_{n\to\infty}\dfrac{x_1+x_2+\cdots+x_n}{n}=A.
+  \]
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+依次证明三问.
+
+(1) 显然 $\sqrt[n]{n+1}>1$.任给 $\varepsilon>0$,当 $n\geq2$ 时,由二项式展开有
+\[
+(1+\varepsilon)^n
+\geq C_n^2\varepsilon^2
+=\dfrac{n(n-1)}{2}\varepsilon^2.
+\]
+取 $N$ 充分大,使 $n>N$ 时
+$\dfrac{n(n-1)}{2}\varepsilon^2>n+1$,则
+\[
+1<\sqrt[n]{n+1}<1+\varepsilon.
+\]
+故 $\displaystyle \lim\limits_{n\to\infty}\sqrt[n]{n+1}=1$.
+
+(2) 记 $u_n=\sqrt[3]{x_n}$,$b=\sqrt[3]{a}$.若 $a\neq0$,则由
+$u_n^3\to b^3$ 可知 $u_n$ 最终与 $b$ 同号且 $|u_n|\geq\dfrac{|b|}{2}$.因而
+\[
+|u_n-b|
+=\dfrac{|x_n-a|}{u_n^2+u_nb+b^2}
+\leq \dfrac{4}{b^2}|x_n-a|.
+\]
+给定 $\varepsilon>0$,取 $n$ 充分大使右端小于 $\varepsilon$,即得 $u_n\to b$.
+若 $a=0$,则对充分大的 $n$ 有 $|x_n|<\varepsilon^3$,故
+$|u_n|<\varepsilon$.所以结论对一切 $a\in\mathbb R$ 均成立.
+
+(3) 任给 $\varepsilon>0$,取 $N_0$,使得 $k>N_0$ 时
+$|x_k-A|<\dfrac{\varepsilon}{2}$.令
+\[
+M=\sum\limits_{k=1}^{N_0}|x_k-A|.
+\]
+当 $n>N_0$ 时,
+\[
+\left|\dfrac{1}{n}\sum\limits_{k=1}^n x_k-A\right|
+\leq \dfrac{M}{n}+\dfrac{1}{n}\sum\limits_{k=N_0+1}^n|x_k-A|
+<\dfrac{M}{n}+\dfrac{\varepsilon}{2}.
+\]
+再取 $n>\dfrac{2M}{\varepsilon}$,便得所求差小于 $\varepsilon$,故算术平均数收敛于 $A$.
+\end{proof}
+
+\begin{example}
+设 $\displaystyle \lim\limits_{n\to\infty}a_n=a$,
+\[
+x_n=\dfrac{a_1+2a_2+\cdots+na_n}{1+2+\cdots+n},
+\]
+则 $\displaystyle \lim\limits_{n\to\infty}x_n=a$.
+\end{example}
+
+\begin{proof}[解]
+记 $P_n=1+2+\cdots+n=\dfrac{n(n+1)}{2}$.任给 $\varepsilon>0$,取
+$N_0$,使 $k>N_0$ 时 $|a_k-a|<\dfrac{\varepsilon}{2}$.再令
+\[
+C=\sum\limits_{k=1}^{N_0}k|a_k-a|.
+\]
+于是当 $n>N_0$ 时,
+\[
+|x_n-a|
+\leq \dfrac{C}{P_n}
++\dfrac{1}{P_n}\sum\limits_{k=N_0+1}^n k|a_k-a|
+<\dfrac{C}{P_n}+\dfrac{\varepsilon}{2}.
+\]
+由于 $P_n\to+\infty$,上式第一项最终小于 $\dfrac{\varepsilon}{2}$,故
+$|x_n-a|<\varepsilon$.因此 $x_n\to a$.
+\end{proof}
+
+\begin{example}
+证明:若 $p_k>0\ (k=1,2,\ldots)$,且
+\[
+\lim\limits_{n\to\infty}\dfrac{p_n}{p_1+p_2+\cdots+p_n}=0,
+\qquad
+\lim\limits_{n\to\infty}a_n=a,
+\]
+则
+\[
+\lim\limits_{n\to\infty}
+\dfrac{p_1a_n+p_2a_{n-1}+\cdots+p_na_1}{p_1+p_2+\cdots+p_n}=a.
+\]
+\end{example}
+
+\begin{proof}[解]
+记 $P_n=\displaystyle \sum\limits_{k=1}^n p_k$,并把所求表达式改写为
+\[
+T_n=\dfrac{1}{P_n}\sum\limits_{j=1}^n p_{n+1-j}a_j.
+\]
+先注意到,对每个固定的 $j$,令 $m=n+1-j$,则
+\[
+0\leq\dfrac{p_{n+1-j}}{P_n}
+\leq\dfrac{p_m}{P_m}\longrightarrow0.
+\]
+任给 $\varepsilon>0$,取 $N_0$,使 $j>N_0$ 时 $|a_j-a|<\varepsilon$.
+于是
+\[
+|T_n-a|
+\leq \sum\limits_{j=1}^{N_0}
+\dfrac{p_{n+1-j}}{P_n}|a_j-a|
++\varepsilon\sum\limits_{j=N_0+1}^{n}\dfrac{p_{n+1-j}}{P_n}.
+\]
+右端有限项之和趋于 $0$,后一项不超过 $\varepsilon$.因此
+$\varlimsup\limits_{n\to\infty}|T_n-a|\leq\varepsilon$.由 $\varepsilon$ 的任意性知 $T_n\to a$.
+\end{proof}
+
+\begin{example}
+设 $x\to0$ 时 $f(x)\sim x$,
+\[
+x_n=\sum\limits_{i=1}^n f\left(\dfrac{2i-1}{n^2}a\right),
+\]
+试证:
+\[
+\lim\limits_{n\to\infty}x_n=a\qquad(a>0).
+\]
+\end{example}
+
+\begin{proof}[解]
+令
+\[
+t_{i,n}=\dfrac{(2i-1)a}{n^2}.
+\]
+由于 $0<t_{i,n}\leq\dfrac{(2n-1)a}{n^2}\to0$,等价关系
+$f(x)\sim x$ 对这一列参数一致适用.即存在 $\eta_n\to0$,使得对
+$1\leq i\leq n$ 有
+\[
+f(t_{i,n})=t_{i,n}(1+\theta_{i,n}),
+\qquad |\theta_{i,n}|\leq\eta_n.
+\]
+又
+\[
+\sum\limits_{i=1}^n t_{i,n}
+=\dfrac{a}{n^2}\sum\limits_{i=1}^n(2i-1)=a.
+\]
+故
+\[
+|x_n-a|
+\leq\eta_n\sum\limits_{i=1}^n t_{i,n}
+=a\eta_n\longrightarrow0.
+\]
+\end{proof}
+
+\begin{example}
+设 $\displaystyle \lim\limits_{n\to\infty}a_n=a$,试证:
+\[
+\lim\limits_{n\to\infty}\dfrac{1}{2^n}
+\left(
+C_{n}^{0}a_0+C_{n}^{1}a_1+\cdots+C_{n}^{k}a_k+\cdots+C_{n}^{n}a_n
+\right)=a.
+\]
+\end{example}
+
+\begin{proof}[解]
+记
+\[
+T_n=\dfrac{1}{2^n}\sum\limits_{k=0}^n C_n^k a_k.
+\]
+任给 $\varepsilon>0$,取 $N_0$,使 $k>N_0$ 时 $|a_k-a|<\varepsilon$.
+则
+\[
+|T_n-a|
+\leq\dfrac{1}{2^n}\sum\limits_{k=0}^{N_0}C_n^k|a_k-a|
++\varepsilon\dfrac{1}{2^n}\sum\limits_{k=N_0+1}^n C_n^k.
+\]
+第二项不超过 $\varepsilon$.对每个固定的 $k$,
+$C_n^k$ 是关于 $n$ 的 $k$ 次多项式,故 $C_n^k/2^n\to0$;因此第一项也趋于 $0$.
+于是 $\varlimsup\limits_{n\to\infty}|T_n-a|\leq\varepsilon$,从而 $T_n\to a$.
+\end{proof}
+
+\begin{example}
+设函数 $f(x),g(x)$ 在 $0$ 的某个邻域里有定义,$g(x)>0$,
+\[
+\lim\limits_{x\to0}\dfrac{f(x)}{g(x)}=1,
+\]
+且 $n\to\infty$ 时,$\alpha_{mn}\rightrightarrows0\ (m=1,2,\ldots,n)$,亦即对任意
+$\varepsilon>0$,存在 $N(\varepsilon)>0$,当 $n>N(\varepsilon)$ 时,对一切
+$m=1,2,\ldots,n$,有 $|\alpha_{mn}|<\varepsilon$.另设 $\alpha_{mn}\neq0$,试证:
+\[
+\lim\limits_{n\to\infty}\sum\limits_{m=1}^n f(\alpha_{mn})
+=
+\lim\limits_{n\to\infty}\sum\limits_{m=1}^n g(\alpha_{mn}),
+\]
+当右端极限存在时成立.
+\end{example}
+
+\begin{proof}[解]
+由 $f(x)/g(x)\to1$,任给 $\varepsilon>0$,存在 $\delta>0$,使得
+$0<|x|<\delta$ 时
+\[
+|f(x)-g(x)|\leq\varepsilon g(x).
+\]
+由 $\alpha_{mn}\rightrightarrows0$,当 $n$ 充分大时,对所有
+$1\leq m\leq n$ 均有 $0<|\alpha_{mn}|<\delta$.因此
+\[
+\left|\sum\limits_{m=1}^n f(\alpha_{mn})
+-\sum\limits_{m=1}^n g(\alpha_{mn})\right|
+\leq\varepsilon\sum\limits_{m=1}^n g(\alpha_{mn}).
+\]
+若右端原极限为有限值 $L$,则因各项为正必有 $L\geq0$,且右端和式有界.
+所以两列和式之差趋于 $0$,它们的极限相同.
+\end{proof}
+
+\methodsection{(B) Cauchy 收敛准则}
+
+\begin{example}
+判断如下命题真伪:
+\[
+\text{数列 }\{a_n\}\text{ 存在极限 }\lim\limits_{n\to\infty}a_n=a
+\iff
+\forall p\in\mathbb N,\ \lim\limits_{n\to\infty}|a_{n+p}-a_n|=0.
+\]
+\end{example}
+
+\begin{proof}[解]
+命题的充分性错误,必要性正确.
+
+若 $a_n\to a$,则对任意固定的 $p\in\mathbb N$,
+\[
+|a_{n+p}-a_n|
+\leq|a_{n+p}-a|+|a_n-a|\longrightarrow0.
+\]
+反之不成立.取 $a_n=\ln n$,则对任意固定的 $p$,
+\[
+|a_{n+p}-a_n|=\ln\left(1+\dfrac{p}{n}\right)\longrightarrow0,
+\]
+但 $a_n\to+\infty$,故 $\{a_n\}$ 不收敛.问题在于 Cauchy 准则要求对所有
+$m,n$ 同时一致控制,而题设只逐个固定了间隔 $p$.
+\end{proof}
+
+\begin{example}
+设
+\[
+x_n=\dfrac{\sin1}{2}+\dfrac{\sin2}{2^2}+\cdots+\dfrac{\sin n}{2^n},
+\]
+试证 $\{x_n\}$ 收敛.
+\end{example}
+
+\begin{proof}[解]
+当 $m>n$ 时,
+\[
+|x_m-x_n|
+\leq\sum\limits_{k=n+1}^m\dfrac{|\sin k|}{2^k}
+\leq\sum\limits_{k=n+1}^{\infty}\dfrac{1}{2^k}
+=\dfrac{1}{2^n}.
+\]
+右端与 $m$ 无关且趋于 $0$,故 $\{x_n\}$ 满足 Cauchy 收敛准则,从而收敛.
+\end{proof}
+
+\begin{example}
+设
+\[
+x_n=\sum\limits_{k=2}^n\dfrac{\cos k}{k(k-1)},
+\]
+试证 $\{x_n\}$ 收敛.
+\end{example}
+
+\begin{proof}[解]
+当 $m>n\geq2$ 时,
+\[
+|x_m-x_n|
+\leq\sum\limits_{k=n+1}^m\dfrac{1}{k(k-1)}
+=\sum\limits_{k=n+1}^m\left(\dfrac{1}{k-1}-\dfrac{1}{k}\right)
+=\dfrac{1}{n}-\dfrac{1}{m}<\dfrac{1}{n}.
+\]
+故 $\{x_n\}$ 为 Cauchy 数列,所以收敛.
+\end{proof}
+
+\methodsection{(C) Toeplitz 定理}
+
+\begin{example}
+由 Toeplitz 定理导出 Stolz 定理.
+\end{example}
+
+\begin{proof}[解]
+设 $\{y_n\}$ 严格递增且 $y_n\to+\infty$,并设
+\[
+\dfrac{x_n-x_{n-1}}{y_n-y_{n-1}}\longrightarrow A.
+\]
+令
+\[
+d_k=y_k-y_{k-1}>0,
+\qquad
+c_k=\dfrac{x_k-x_{k-1}}{d_k}.
+\]
+则
+\[
+\dfrac{x_n-x_0}{y_n-y_0}
+=\dfrac{\sum\limits_{k=1}^n d_kc_k}{\sum\limits_{k=1}^n d_k}.
+\]
+右端是 $c_1,\ldots,c_n$ 的正权平均,且权和趋于无穷.由 Toeplitz 定理,该式趋于 $A$.
+又因 $y_n\to+\infty$,
+\[
+\dfrac{x_n}{y_n}-\dfrac{x_n-x_0}{y_n-y_0}
+=\dfrac{x_0y_n-x_ny_0}{y_n(y_n-y_0)}\longrightarrow0,
+\]
+其中最后一步可由前式有界推出 $x_n=O(y_n)$.故
+$\dfrac{x_n}{y_n}\to A$,这就是 Stolz 定理的无穷型.
+\end{proof}
+
+\begin{example}
+设
+\[
+A_n=\sum\limits_{k=1}^n a_k,
+\]
+$\{A_n\}$ 收敛,又正数列 $\{p_n\}$ 单调递增,且为无穷大量,证明:
+\[
+\lim\limits_{n\to\infty}
+\dfrac{p_1a_1+p_2a_2+\cdots+p_na_n}{p_n}=0.
+\]
+\end{example}
+
+\begin{proof}[解]
+由分部求和公式,
+\[
+\sum\limits_{k=1}^n p_ka_k
+=p_nA_n-\sum\limits_{k=1}^{n-1}(p_{k+1}-p_k)A_k.
+\]
+设 $A_n\to A$.注意此时还有 $a_n=A_n-A_{n-1}\to0$,但目标并非直接由此得到.
+将上式改写为
+\[
+\dfrac{1}{p_n}\sum\limits_{k=1}^n p_ka_k
+=A_n-\sum\limits_{k=1}^{n-1}
+\dfrac{p_{k+1}-p_k}{p_n}A_k.
+\]
+各权非负,其和为 $\dfrac{p_n-p_1}{p_n}\to1$,且对固定 $k$ 权趋于 $0$.
+由 Toeplitz 定理,右端第二项趋于 $A$,第一项也趋于 $A$,故原式趋于 $0$.
+\end{proof}
+
+\begin{example}
+设 $0<\lambda<1$,$\{a_n\}$ 收敛于 $a$,证明:
+\[
+\lim\limits_{n\to\infty}
+\left(a_n+\lambda a_{n-1}+\lambda^2a_{n-2}+\cdots+\lambda^n a_0\right)
+=\dfrac{a}{1-\lambda}.
+\]
+\end{example}
+
+\begin{proof}[解]
+记
+\[
+S_n=\sum\limits_{j=0}^n\lambda^j a_{n-j}.
+\]
+任给 $\varepsilon>0$,取 $N_0$,使 $k>N_0$ 时
+$|a_k-a|<\varepsilon(1-\lambda)/2$.由于收敛数列有界,可取 $M>0$ 使
+$|a_k-a|\leq M$ 对所有 $k$ 成立.于是
+\[
+\left|S_n-a\sum\limits_{j=0}^n\lambda^j\right|
+\leq \sum\limits_{j=0}^{n-N_0-1}\lambda^j|a_{n-j}-a|
++\sum\limits_{j=n-N_0}^{n}\lambda^j|a_{n-j}-a|.
+\]
+第一项小于 $\varepsilon/2$,第二项不超过
+$M\lambda^{n-N_0}/(1-\lambda)$,因而也最终小于 $\varepsilon/2$.
+再由有限几何级数趋于 $1/(1-\lambda)$,得到
+$S_n\to a/(1-\lambda)$.
+\end{proof}
+
+\begin{example}
+设 $\displaystyle \lim\limits_{n\to\infty}x_n=0$,存在 $k$,使得
+\[
+|y_1|+|y_2|+\cdots+|y_n|\leq k.
+\]
+对任意 $n$ 成立,令
+\[
+z_n=x_1y_n+x_2y_{n-1}+\cdots+x_ny_1.
+\]
+证明:$\displaystyle \lim\limits_{n\to\infty}z_n=0$.
+\end{example}
+
+\begin{proof}[解]
+由题设,级数 $\displaystyle \sum\limits_{j=1}^{\infty}|y_j|$ 收敛,并且其和不超过 $k$;
+特别地 $y_j\to0$.任给 $\varepsilon>0$,取 $N_0$,使
+$j>N_0$ 时 $|x_j|<\varepsilon/(2k)$.
+令 $C=\displaystyle \sum\limits_{j=1}^{N_0}|x_j|$.当 $n$ 充分大时,
+对 $1\leq j\leq N_0$ 均有
+$|y_{n+1-j}|<\varepsilon/[2(C+1)]$.于是
+\[
+|z_n|
+\leq\sum\limits_{j=1}^{N_0}|x_jy_{n+1-j}|
++\sum\limits_{j=N_0+1}^{n}|x_jy_{n+1-j}|
+<\dfrac{\varepsilon}{2}
++\dfrac{\varepsilon}{2k}\sum\limits_{j=1}^{n}|y_j|
+\leq\varepsilon.
+\]
+故 $z_n\to0$.
+\end{proof}
+
+\methodsection{(D) 单调有界原理}
+
+\begin{example}
+证明:数列
+\[
+x_n=1+\dfrac{1}{2}+\dfrac{1}{3}+\cdots+\dfrac{1}{n}-\ln n
+\qquad(n=1,2,\ldots).
+\]
+单调递减有界,从而有极限.
+\end{example}
+
+\begin{proof}[解]
+由 $\ln(1+t)>\dfrac{t}{1+t}$ 对 $t>0$ 成立,
+\[
+x_{n+1}-x_n
+=\dfrac{1}{n+1}-\ln\left(1+\dfrac{1}{n}\right)<0,
+\]
+故 $\{x_n\}$ 单调递减.另一方面,由于 $1/x$ 在 $(0,+\infty)$ 上递减,
+\[
+\ln n=\int_1^n\dfrac{1}{x}\,\mathrm{d}x
+\leq\sum\limits_{k=1}^{n-1}\dfrac{1}{k},
+\]
+从而 $x_n\geq1/n>0$.所以 $\{x_n\}$ 单调递减且有下界,必有有限极限.
+\end{proof}
+
+\begin{example}
+设
+\[
+x_n=\sum\limits_{k=1}^n\dfrac{1}{\sqrt{k}}-2\sqrt{n},
+\]
+证明:$\displaystyle \lim\limits_{n\to\infty}x_n$ 存在.
+\end{example}
+
+\begin{proof}[解]
+先证单调性.由
+\[
+2(\sqrt{n+1}-\sqrt n)
+=\dfrac{2}{\sqrt{n+1}+\sqrt n}
+>\dfrac{1}{\sqrt{n+1}},
+\]
+有
+\[
+x_{n+1}-x_n
+=\dfrac{1}{\sqrt{n+1}}-2(\sqrt{n+1}-\sqrt n)<0.
+\]
+再由 $x^{-1/2}$ 递减,
+\[
+\sum\limits_{k=1}^n\dfrac{1}{\sqrt k}
+\geq\int_1^{n+1}\dfrac{1}{\sqrt x}\,\mathrm{d}x
+=2\sqrt{n+1}-2.
+\]
+故
+\[
+x_n\geq2\sqrt{n+1}-2-2\sqrt n>-2.
+\]
+于是 $\{x_n\}$ 单调递减且有下界,从而极限存在.
+\end{proof}
+
+\methodsection{(E) 利用上、下极限 *}
+
+\subsection{证明极限不存在}
+
+\methodsection{(A) 无界数列发散}
+
+\begin{example}
+证明:
+\[
+S_n=1+\dfrac{1}{2}+\dfrac{1}{3}+\cdots+\dfrac{1}{n}.
+\]
+无界,进而 $\{S_n\}$ 发散.
+\end{example}
+
+\begin{proof}[解]
+取 $n=2^m$.把调和和按二进区间分组,得
+\[
+S_{2^m}
+=1+\sum\limits_{j=1}^m
+\sum\limits_{k=2^{j-1}+1}^{2^j}\dfrac{1}{k}
+\geq1+\sum\limits_{j=1}^m2^{j-1}\dfrac{1}{2^j}
+=1+\dfrac{m}{2}.
+\]
+故子列 $\{S_{2^m}\}$ 无界,从而 $\{S_n\}$ 无界.收敛数列必有界,所以
+$\{S_n\}$ 发散.
+\end{proof}
+
+\methodsection{(B) 数列与子列的关系}
+
+\begin{example}
+若 $\{a_n\}$ 中三个子列 $\{a_{2n}\},\{a_{2n-1}\},\{a_{3n}\}$ 皆收敛,则 $\{a_n\}$ 收敛.
+\end{example}
+
+\begin{proof}[解]
+设
+\[
+a_{2n}\to\alpha,
+\qquad a_{2n-1}\to\beta,
+\qquad a_{3n}\to\gamma.
+\]
+子列 $\{a_{6n}\}$ 既是 $\{a_{2n}\}$ 的子列,又是 $\{a_{3n}\}$ 的子列,故
+$\alpha=\gamma$.子列 $\{a_{6n-3}\}$ 既是 $\{a_{2n-1}\}$ 的子列,又是
+$\{a_{3n}\}$ 的子列,故 $\beta=\gamma$.于是 $\alpha=\beta$.
+原数列的偶数项与奇数项均趋于同一极限,所以 $a_n\to\gamma$.
+\end{proof}
+
+\begin{example}
+设
+\[
+a_n=\dfrac{1}{n}-\dfrac{2}{n}+\dfrac{3}{n}+\cdots+(-1)^{n-1}\dfrac{n}{n}
+\qquad(n=1,2,\ldots),
+\]
+则 $\{a_n\}$ 收敛.
+\end{example}
+
+\begin{proof}[解]
+原命题不成立.当 $n=2m$ 时,
+\[
+a_{2m}=\dfrac{(1-2)+(3-4)+\cdots+((2m-1)-2m)}{2m}
+=-\dfrac{1}{2}.
+\]
+当 $n=2m-1$ 时,
+\[
+a_{2m-1}
+=\dfrac{(1-2)+\cdots+((2m-3)-(2m-2))+(2m-1)}{2m-1}
+=\dfrac{m}{2m-1}\longrightarrow\dfrac{1}{2}.
+\]
+偶子列与奇子列极限不同,故 $\{a_n\}$ 发散.因此本题题面中的“收敛”应核对原始资料.
+\end{proof}
+
+\begin{example}
+证明:$\{\sin n\}$ 发散.
+\end{example}
+
+\begin{proof}[解]
+由 Dirichlet 逼近定理,对无理数 $1/(2\pi)$,存在严格递增的正整数列
+$\{q_j\}$ 与整数列 $\{p_j\}$,使得
+\[
+\left|\dfrac{q_j}{2\pi}-p_j\right|\longrightarrow0.
+\]
+于是 $q_j-2\pi p_j\to0$,从而
+\[
+\sin q_j\longrightarrow0.
+\]
+另一方面,
+\[
+\sin(q_j+1)longrightarrow\sin1\neq0.
+\]
+因此 $\{\sin n\}$ 有两个极限不同的子列,所以它不收敛.
+\end{proof}
+
+\methodsection{(C) 利用恒等式反证得结论}
+
+\begin{example}
+证明:$\{\sin n\}$ 发散.
+\end{example}
+
+\begin{proof}[解]
+反设 $\sin n\to A$.由恒等式
+\[
+\sin(n+2)-2\cos1\sin(n+1)+\sin n=0
+\]
+令 $n\to\infty$,得到 $2A(1-\cos1)=0$,故 $A=0$.
+再由
+\[
+\sin(n+1)-\cos1\sin n=\sin1\cos n
+\]
+知 $\cos n\to0$.这与恒等式 $\sin^2n+\cos^2n=1$ 矛盾.
+故 $\{\sin n\}$ 发散.
+\end{proof}
+
+\begin{example}
+证明:$\{\tan n\}$ 发散.
+\end{example}
+
+\begin{proof}[解]
+反设 $\tan n\to A$.记 $t=\tan1\neq0$.由正切加法公式,
+\[
+\tan(n+1)=\dfrac{\tan n+t}{1-t\tan n}.
+\]
+若 $1-tA=0$,则上式分母趋于 $0$,而分子不可能同时趋于 $0$,这与
+$\tan(n+1)$ 有有限极限矛盾.故 $1-tA\neq0$,令 $n\to\infty$ 得
+\[
+A=\dfrac{A+t}{1-tA}.
+\]
+整理得 $t(A^2+1)=0$,不可能成立.所以 $\{\tan n\}$ 发散.
+\end{proof}
+
+\begin{example}
+若存在极限
+\[
+\lim\limits_{n\to\infty}(a\sin n+b\cos n)=A,
+\]
+则 $a=b=0$.
+\end{example}
+
+\begin{proof}[解]
+记
+\[
+u_n=a\sin n+b\cos n.
+\]
+若 $u_n\to A$,由
+\[
+u_{n+2}-2\cos1\,u_{n+1}+u_n=0
+\]
+可得 $A=0$.又令
+\[
+v_n=a\cos n-b\sin n,
+\]
+则
+\[
+u_{n+1}-\cos1\,u_n=\sin1\,v_n.
+\]
+所以 $v_n\to0$.然而
+\[
+u_n^2+v_n^2=a^2+b^2,
+\]
+令 $n\to\infty$ 得 $a^2+b^2=0$.因此 $a=b=0$.
+\end{proof}
+
+\methodsection{(D) Cauchy 收敛准则}
+
+\begin{example}
+证明:数列
+\[
+S_n=\sum\limits_{k=1}^n\dfrac{1}{k}\qquad(n=1,2,\ldots).
+\]
+发散.
+\end{example}
+
+\begin{proof}[解]
+记 $S_n=\displaystyle \sum\limits_{k=1}^n1/k$.对任意 $n$,
+\[
+S_{2n}-S_n=\sum\limits_{k=n+1}^{2n}\dfrac{1}{k}
+\geq n\dfrac{1}{2n}=\dfrac{1}{2}.
+\]
+因此对 $\varepsilon=1/4$,无论 $N$ 多大,取 $n>N$、$m=2n$,总有
+$|S_m-S_n|\geq1/2>\varepsilon$.故 $\{S_n\}$ 不满足 Cauchy 准则,从而发散.
+\end{proof}
+
+\begin{example}
+设
+\[
+x_n=1+\sqrt{\dfrac{1}{2}}+\sqrt{\dfrac{1}{3}}+\cdots+\sqrt{\dfrac{1}{n}},
+\]
+求证:$\{x_n\}$ 发散.
+\end{example}
+
+\begin{proof}[解]
+当 $m=2n$ 时,
+\[
+x_{2n}-x_n
+=\sum\limits_{k=n+1}^{2n}\dfrac{1}{\sqrt k}
+\geq\dfrac{n}{\sqrt{2n}}=\sqrt{\dfrac{n}{2}}.
+\]
+该差不但不趋于 $0$,反而趋于 $+\infty$,故 $\{x_n\}$ 不满足 Cauchy 准则,
+所以发散.
+\end{proof}
+
+\subsection{求极限值}
+
+\methodsection{(A) 迫敛性}
+
+\begin{example}
+求下列数列 $\{a_n\}$ 的极限 $\displaystyle \lim\limits_{n\to\infty}a_n$:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle a_n=\sqrt[n]{2\sin^2n+\cos^2n}$;
+  \item $\displaystyle a_n=(n+1+n\cos n)^{\frac{1}{2n+n\sin n}}$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+(1) 因为 $1\leq2\sin^2n+\cos^2n\leq2$,所以
+\[
+1\leq\sqrt[n]{2\sin^2n+\cos^2n}\leq\sqrt[n]{2}\longrightarrow1.
+\]
+由夹逼定理,所求极限为 $1$.
+
+(2) 记原式为 $y_n$.由于
+\[
+1\leq n+1+n\cos n\leq2n+1,
+\qquad
+n\leq2n+n\sin n\leq3n,
+\]
+故
+\[
+0\leq\ln y_n
+=\dfrac{\ln(n+1+n\cos n)}{2n+n\sin n}
+\leq\dfrac{\ln(2n+1)}{n}\longrightarrow0.
+\]
+从而 $y_n\to e^0=1$.
+\end{proof}
+
+\begin{example}
+求下列数列 $\{a_n\}$ 的极限 $\displaystyle \lim\limits_{n\to\infty}a_n$:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle a_n=\sqrt[n]{1+b^n}\quad(b>0)$;
+  \item $\displaystyle a_n=\sqrt[n]{1+b^n+\left(\dfrac{b^2}{2}\right)^n}\quad(b>0)$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+(1) 若 $0<b\leq1$,则
+\[
+1\leq\sqrt[n]{1+b^n}\leq\sqrt[n]{2}\longrightarrow1.
+\]
+若 $b>1$,则
+\[
+b\leq\sqrt[n]{1+b^n}\leq b\sqrt[n]{2}\longrightarrow b.
+\]
+故极限为 $\max\{1,b\}$.
+
+(2) 令 $M=\max\{1,b,b^2/2\}$.和式中的三项均不超过 $M^n$,且至少一项等于
+$M^n$,所以
+\[
+M\leq\sqrt[n]{1+b^n+\left(\dfrac{b^2}{2}\right)^n}
+\leq\sqrt[n]{3}\,M.
+\]
+故极限为 $M$.
+\end{proof}
+
+\begin{example}[\markstar]
+设
+\[
+A=\max\{a_1,a_2,\ldots,a_m\},\qquad a_k>0,
+\]
+求
+\[
+\lim\limits_{n\to\infty}\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}.
+\]
+\end{example}
+
+\begin{proof}[解]
+令 $A=\max\{a_1,a_2,\ldots,a_m\}$.因为各 $a_j>0$,有
+\[
+A^n\leq a_1^n+a_2^n+\cdots+a_m^n\leq mA^n.
+\]
+开 $n$ 次方得
+\[
+A\leq\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}\leq\sqrt[n]{m},A.
+\]
+由 $\sqrt[n]{m}\to1$ 及夹逼定理,所求极限为 $A$.
+\end{proof}
+
+\begin{example}[\markstar]
+设 $f(x)>0$ 在 $\lbrack 0,1\rbrack$ 上连续,则
+\[
+\lim\limits_{n\to\infty}
+\sqrt[n]{\dfrac{1}{n}\sum\limits_{i=1}^n\left[f\left(\dfrac{i}{n}\right)\right]^n}
+=
+\max_{0\leq x\leq1}f(x).
+\]
+\end{example}
+
+\begin{proof}[解]
+由连续性,$f$ 在 $\lbrack0,1\rbrack$ 上取得最大值.记
+\[
+M=\max\limits_{0\leq x\leq1}f(x)>0.
+\]
+显然
+\[
+0<\left[\dfrac{1}{n}\sum\limits_{k=1}^n f^n\left(\dfrac{k}{n}\right)\right]^{1/n}
+\leq M.
+\]
+任给 $\varepsilon\in(0,M)$,在某个长度为 $\delta>0$ 的区间上有
+$f(x)>M-\varepsilon$.当 $n$ 充分大时,落在该区间内的分点 $k/n$ 至少有
+$\delta n/2$ 个,故
+\[
+\left[\dfrac{1}{n}\sum\limits_{k=1}^n f^n\left(\dfrac{k}{n}\right)\right]^{1/n}
+\geq\left(\dfrac{\delta}{2}\right)^{1/n}(M-\varepsilon).
+\]
+取下极限得其不小于 $M-\varepsilon$.再令 $\varepsilon\to0^+$,即得极限为 $M$.
+\end{proof}
+
+\begin{example}[\markstar]
+设 $\{a_n\}$ 是正实数列,
+\[
+a=\sup\{a_1,a_2,\ldots\},
+\]
+求证:
+\[
+\lim\limits_{n\to\infty}\left(\sum\limits_{k=1}^n a_k^n\right)^{\frac{1}{n}}=a.
+\]
+\end{example}
+
+\begin{proof}[解]
+先设 $a<+\infty$.因为 $0<a_k\leq a$,有
+\[
+\sqrt[n]{a_1^n+\cdots+a_n^n}\leq\sqrt[n]{na^n}=\sqrt[n]{n}\,a\longrightarrow a.
+\]
+另一方面,对任意固定的 $k$,当 $n\geq k$ 时
+\[
+\sqrt[n]{a_1^n+\cdots+a_n^n}\geq a_k.
+\]
+故其下极限不小于 $\sup_k a_k=a$,从而极限为 $a$.
+
+若 $a=+\infty$,则对任意 $M>0$ 可取固定的 $k$ 使 $a_k>M$;上式说明所求数列的下极限不小于
+$M$.因 $M$ 任意,此时极限为 $+\infty$.
+\end{proof}
+
+\begin{example}
+求下列数列 $\{a_n\}$ 的极限 $\displaystyle \lim\limits_{n\to\infty}a_n$:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle a_n=\dfrac{1}{n^n}\sum\limits_{k=1}^n k^k$;
+  \item $\displaystyle a_n=\dfrac{\sqrt[n]{\sum\limits_{k=1}^n k^n}}{n}$;
+  \item $\displaystyle a_n=\sum\limits_{k=1}^n\dfrac{k}{n^2+n+k}$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+(1) 下界由和式最后一项给出:
+\[
+\dfrac{1}{n^n}\sum\limits_{k=1}^n k^k\geq1.
+\]
+又因 $k^k\leq n^k$,
+\[
+\dfrac{1}{n^n}\sum\limits_{k=1}^n k^k
+\leq\sum\limits_{k=1}^n n^{k-n}
+=\sum\limits_{j=0}^{n-1}\dfrac{1}{n^j}
+\leq\dfrac{1}{1-1/n}\longrightarrow1.
+\]
+故极限为 $1$.
+
+(2) 有
+\[
+n^n\leq\sum\limits_{k=1}^n k^n\leq n\cdot n^n.
+\]
+因此
+\[
+1\leq\dfrac{1}{n}\sqrt[n]{\sum\limits_{k=1}^n k^n}\leq\sqrt[n]{n}\longrightarrow1.
+\]
+
+(3) 对 $1\leq k\leq n$,
+\[
+n^2+n+1\leq n^2+n+k\leq n^2+2n.
+\]
+所以
+\[
+\dfrac{n(n+1)}{2(n^2+2n)}
+\leq\sum\limits_{k=1}^n\dfrac{k}{n^2+n+k}
+\leq\dfrac{n(n+1)}{2(n^2+n+1)}.
+\]
+两端均趋于 $1/2$,故所求极限为 $1/2$.
+\end{proof}
+
+\methodsection{(B) 利用积分定义}
+
+\begin{example}
+求下列极限:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle \lim\limits_{n\to\infty}\sum\limits_{k=1}^n\dfrac{1}{n+k}$;
+  \item $\displaystyle \lim\limits_{n\to\infty}\sum\limits_{k=1}^n
+  \dfrac{\sin\dfrac{k}{n}\pi}{n+\dfrac{k}{n}}$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+(1) 写成 Riemann 和:
+\[
+\sum\limits_{k=1}^n\dfrac{1}{n+k}
+=\dfrac{1}{n}\sum\limits_{k=1}^n\dfrac{1}{1+k/n}
+\longrightarrow\int_0^1\dfrac{1}{1+x}\,\mathrm{d}x=\ln2.
+\]
+
+(2) 同理,
+\[
+\sum\limits_{k=1}^n\dfrac{\sin(k\pi/n)}{n+k/n}
+=\dfrac{1}{n}\sum\limits_{k=1}^n
+\dfrac{\sin(\pi k/n)}{1+k/n^2}.
+\]
+因 $1/(1+k/n^2)\to1$ 对 $1\leq k\leq n$ 一致成立,故上式与
+$\displaystyle \dfrac{1}{n}\sum\limits_{k=1}^n\sin(\pi k/n)$ 之差趋于 $0$.因此极限为
+\[
+\int_0^1\sin(\pi x)\,\mathrm{d}x=\dfrac{2}{\pi}.
+\]
+\end{proof}
+
+\begin{example}
+求下列极限:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle
+  \lim\limits_{n\to\infty}
+  \dfrac{\sqrt[n]{(n+1)(n+2)\cdots(n+n)}}{n}$;
+  \item $\displaystyle
+  \lim\limits_{n\to\infty}
+  \dfrac{\sqrt[n]{n(n+1)\cdots(2n-1)}}{n}$;
+  \item $\displaystyle
+  \lim\limits_{n\to\infty}\dfrac{\sqrt[n]{n!}}{n}$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+(1) 取对数后得到
+\[
+\dfrac{1}{n}\sum\limits_{k=1}^n\ln\left(1+\dfrac{k}{n}\right)
+\longrightarrow\int_0^1\ln(1+x)\,\mathrm{d}x=2\ln2-1.
+\]
+故原极限为 $e^{2\ln2-1}=4/e$.
+
+(2) 取对数后为
+\[
+\dfrac{1}{n}\sum\limits_{k=0}^{n-1}\ln\left(1+\dfrac{k}{n}\right),
+\]
+它有相同的积分极限 $2\ln2-1$,故原极限仍为 $4/e$.
+
+(3) 取对数后为
+\[
+\dfrac{1}{n}\ln\dfrac{n!}{n^n}
+=\dfrac{1}{n}\sum\limits_{k=1}^n\ln\dfrac{k}{n}.
+\]
+这是广义积分 $\displaystyle \int_0^1\ln x\,\mathrm{d}x=-1$ 的 Riemann 和;也可由 Stirling 公式直接得到其极限为 $-1$.
+故原极限为 $e^{-1}$.
+\end{proof}
+
+\methodsection{(C) 利用级数性质}
+
+\begin{example}
+求下列极限 $\displaystyle \lim\limits_{n\to\infty}x_n$:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle x_n=\dfrac{5^n\cdot n!}{(2n)^n}$;
+  \item $\displaystyle x_n=\dfrac{11\cdot12\cdot13\cdots(n+10)}{2\cdot5\cdot8\cdots(3n-1)}$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+(1) 记
+\[
+u_n=\dfrac{5^n n!}{(2n)^n}.
+\]
+由 Stirling 公式 $n!\sim\sqrt{2\pi n}(n/e)^n$,有
+\[
+u_n\sim\sqrt{2\pi n}\left(\dfrac{5}{2e}\right)^n\longrightarrow0,
+\]
+因为 $5/(2e)<1$.
+
+(2) 记题中乘积为 $v_n$.则
+\[
+\dfrac{v_{n+1}}{v_n}=\dfrac{n+11}{3n+2}\longrightarrow\dfrac{1}{3}<1.
+\]
+取 $q\in(1/3,1)$.当 $n$ 充分大时 $v_{n+1}\leq qv_n$,故
+$v_n\leq Cq^n\to0$.
+\end{proof}
+
+\begin{example}
+设
+\[
+x_n=\dfrac{1}{2\ln2}+\cdots+\dfrac{1}{n\ln n}-\ln\ln n,
+\]
+求证:$\{x_n\}$ 收敛.
+\end{example}
+
+\begin{proof}[解]
+令 $f(x)=1/(x\ln x)$.当 $x>e$ 时 $f$ 单调递减.记
+\[
+u_n=\sum\limits_{k=2}^n\dfrac{1}{k\ln k}-\ln\ln n.
+\]
+当 $n$ 充分大时,
+\[
+u_{n+1}-u_n
+=f(n+1)-\int_n^{n+1}f(x)\,\mathrm{d}x\leq0,
+\]
+故 $\{u_n\}$ 最终单调递减.另一方面,
+\[
+\sum\limits_{k=2}^n f(k)
+\geq\int_2^{n+1}f(x)\,\mathrm{d}x
+=\ln\ln(n+1)-\ln\ln2,
+\]
+所以
+\[
+u_n\geq\ln\dfrac{\ln(n+1)}{\ln n}-\ln\ln2,
+\]
+右端有统一下界.因此 $\{u_n\}$ 收敛,所给极限存在.
+\end{proof}
+
+\begin{example}
+设
+\[
+0\leq x_{n+1}\leq x_n+\dfrac{1}{n^2},
+\]
+则 $\{x_n\}$ 收敛.
+\end{example}
+
+\begin{proof}[解]
+令
+\[
+y_n=x_n+\sum\limits_{k=n}^{\infty}\dfrac{1}{k^2}.
+\]
+由题设,
+\[
+y_{n+1}
+=x_{n+1}+\sum\limits_{k=n+1}^{\infty}\dfrac{1}{k^2}
+\leq x_n+\dfrac{1}{n^2}+\sum\limits_{k=n+1}^{\infty}\dfrac{1}{k^2}
+=y_n.
+\]
+又 $y_n\geq0$,故 $\{y_n\}$ 单调递减且有下界,从而存在极限 $L\geq0$.
+由于 $\displaystyle \sum\limits_{k=n}^{\infty}1/k^2\to0$,有
+\[
+x_n=y_n-\sum\limits_{k=n}^{\infty}\dfrac{1}{k^2}\longrightarrow L.
+\]
+故 $\{x_n\}$ 收敛.
+\end{proof}
+
+\methodsection{(D) Stolz 定理}
+
+\begin{example}
+证明:
+\[
+\lim\limits_{n\to\infty}
+\dfrac{1^p+2^p+\cdots+n^p}{n^{p+1}}
+=\dfrac{1}{p+1}.
+\]
+\end{example}
+
+\begin{proof}[解]
+设题中 $p>0$.对
+\[
+S_n=1^p+2^p+\cdots+n^p
+\]
+与 $n^{p+1}$ 应用 Stolz 定理,得
+\[
+\lim\limits_{n\to\infty}\dfrac{S_n}{n^{p+1}}
+=\lim\limits_{n\to\infty}
+\dfrac{(n+1)^p}{(n+1)^{p+1}-n^{p+1}}.
+\]
+由 Lagrange 中值定理,存在 $\xi_n\in(n,n+1)$,使
+\[
+(n+1)^{p+1}-n^{p+1}=(p+1)\xi_n^p.
+\]
+故上式等于
+\[
+\lim\limits_{n\to\infty}\dfrac{1}{p+1}\left(\dfrac{n+1}{\xi_n}\right)^p
+=\dfrac{1}{p+1}.
+\]
+\end{proof}
+
+\begin{example}
+计算下列极限:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle
+  I=\lim\limits_{n\to\infty}\dfrac{1}{\sqrt n}\sum\limits_{k=1}^n\dfrac{a_k}{\sqrt k}
+  \quad\text{(其中 }a_k\to a\ (k\to\infty)\text{)}$;
+  \item $\displaystyle
+  I=\lim\limits_{n\to\infty}\dfrac{\sum\limits_{k=1}^n\dfrac{1}{k}}{\ln n}$;
+  \item $\displaystyle
+  I=\lim\limits_{n\to\infty}\dfrac{1+a+2a^2+\cdots+na^n}{na^{n+2}}
+  \quad(a>1)$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+(1) 令 $S_n=\displaystyle \sum\limits_{k=1}^n a_k/\sqrt k$.因 $\sqrt n\to+\infty$,由 Stolz 定理,
+\[
+\lim\limits_{n\to\infty}\dfrac{S_n}{\sqrt n}
+=\lim\limits_{n\to\infty}
+\dfrac{a_n/\sqrt n}{\sqrt n-\sqrt{n-1}}
+=\lim\limits_{n\to\infty}a_n\dfrac{\sqrt n+\sqrt{n-1}}{\sqrt n}=2a.
+\]
+
+(2) 记 $H_n=1+1/2+\cdots+1/n$.由 Stolz 定理,
+\[
+\lim\limits_{n\to\infty}\dfrac{H_n}{\ln n}
+=\lim\limits_{n\to\infty}
+\dfrac{1/(n+1)}{\ln(n+1)-\ln n}
+=\lim\limits_{n\to\infty}\dfrac{1}{(n+1)\ln(1+1/n)}=1.
+\]
+
+(3) 令 $S_n=1+a+2a^2+\cdots+na^n$,$T_n=na^{n+2}$.当 $a>1$ 时
+$T_n\to+\infty$,且
+\[
+\dfrac{S_{n+1}-S_n}{T_{n+1}-T_n}
+=\dfrac{(n+1)a^{n+1}}{(n+1)a^{n+3}-na^{n+2}}
+=\dfrac{n+1}{a[(a-1)n+a]}
+\longrightarrow\dfrac{1}{a(a-1)}.
+\]
+由 Stolz 定理即得结论.
+\end{proof}
+
+\begin{example}
+设
+\[
+S_n=\dfrac{\sum\limits_{k=0}^n\ln C_{n}^{k}}{n^2},
+\]
+求 $\displaystyle \lim\limits_{n\to\infty}S_n$.
+\end{example}
+
+\begin{proof}[解]
+令
+\[
+H(t)=-t\ln t-(1-t)\ln(1-t),
+\qquad H(0)=H(1)=0.
+\]
+由 Stirling 公式,对 $0\leq k\leq n$ 一致地有
+\[
+\ln C_n^k=nH\left(\dfrac{k}{n}\right)+O(\ln n).
+\]
+因此
+\[
+\dfrac{1}{n^2}\sum\limits_{k=0}^n\ln C_n^k
+=\dfrac{1}{n}\sum\limits_{k=0}^n H\left(\dfrac{k}{n}\right)
++O\left(\dfrac{\ln n}{n}\right).
+\]
+第一项是连续函数 $H$ 的 Riemann 和,故其极限为
+\[
+\int_0^1H(t)\,\mathrm{d}t
+=-2\int_0^1t\ln t\,\mathrm{d}t
+=\dfrac{1}{2}.
+\]
+所以原极限为 $1/2$.
+\end{proof}
+
+\begin{example}
+设
+\[
+\lim\limits_{n\to\infty}\sum\limits_{k=1}^n\dfrac{1}{k^2}=m,
+\]
+求极限
+\[
+\lim\limits_{n\to\infty}
+n^2\left(m-\sum\limits_{k=1}^n\dfrac{1}{k^2}-\dfrac{1}{n}\right).
+\]
+\end{example}
+
+\begin{proof}[解]
+由 $m=\displaystyle \sum\limits_{k=1}^{\infty}1/k^2$,令
+\[
+c_n=m-\sum\limits_{k=1}^n\dfrac{1}{k^2}-\dfrac{1}{n}
+=\sum\limits_{k=n+1}^{\infty}\dfrac{1}{k^2}-\dfrac{1}{n}.
+\]
+因积分判别法给出 $c_n\to0$,可对 $c_n$ 与 $1/n^2$ 使用 Stolz 定理的零比零型.计算得
+\[
+c_n-c_{n+1}
+=\dfrac{1}{(n+1)^2}-\dfrac{1}{n}+\dfrac{1}{n+1}
+=-\dfrac{1}{n(n+1)^2},
+\]
+而
+\[
+\dfrac{1}{n^2}-\dfrac{1}{(n+1)^2}
+=\dfrac{2n+1}{n^2(n+1)^2}.
+\]
+故
+\[
+\lim\limits_{n\to\infty}n^2c_n
+=\lim\limits_{n\to\infty}
+\dfrac{c_n-c_{n+1}}{1/n^2-1/(n+1)^2}
+=\lim\limits_{n\to\infty}\left(-\dfrac{n}{2n+1}\right)
+=-\dfrac{1}{2}.
+\]
+\end{proof}
+
+\begin{example}
+设
+\[
+\lim\limits_{n\to\infty}n(A_n-A_{n-1})=0,
+\]
+试证:当
+\[
+\lim\limits_{n\to\infty}\dfrac{A_1+A_2+\cdots+A_n}{n}.
+\]
+存在时,
+\[
+\lim\limits_{n\to\infty}A_n
+=
+\lim\limits_{n\to\infty}\dfrac{A_1+A_2+\cdots+A_n}{n}.
+\]
+\end{example}
+
+\begin{proof}[解]
+记 $S_n=A_1+cdots+A_n$,则题设第二个极限为 $S_n/n\to L$.固定
+$\lambda>1$,令 $m_n=[\lambda n]$.有
+\[
+\dfrac{A_{n+1}+\cdots+A_{m_n}}{m_n-n}
+=\dfrac{S_{m_n}-S_n}{m_n-n}\longrightarrow L.
+\]
+另一方面,由 $n(A_n-A_{n-1})\to0$,任给 $\varepsilon>0$,当 $n$ 充分大且
+$n<k\leq m_n$ 时,
+\[
+|A_k-A_n|
+\leq\sum\limits_{j=n+1}^k|A_j-A_{j-1}|
+\leq\varepsilon\sum\limits_{j=n+1}^k\dfrac{1}{j}
+\leq\varepsilon(\ln\lambda+o(1)).
+\]
+所以 $A_n$ 与上述区间平均值之差趋于 $0$.该平均值趋于 $L$,故 $A_n\to L$.
+\end{proof}
+
+\begin{example}
+设 $a_1>1$,
+\[
+a_{n+1}=a_n+\dfrac{1}{a_n},
+\]
+证明:
+\[
+\lim\limits_{n\to\infty}\dfrac{a_n}{\sqrt{2n}}=1.
+\]
+\end{example}
+
+\begin{proof}[解]
+由递推式 $a_{n+1}>a_n>0$,故 $\{a_n\}$ 单调递增.若它有有限极限 $L>0$,
+则令 $n\to\infty$ 会得到 $L=L+1/L$,矛盾.所以 $a_n\to+\infty$.
+
+平方递推式得
+\[
+a_{n+1}^2-a_n^2=2+\dfrac{1}{a_n^2}\longrightarrow2.
+\]
+对 $a_n^2$ 与 $n$ 使用 Stolz 定理,
+\[
+\lim\limits_{n\to\infty}\dfrac{a_n^2}{n}=2.
+\]
+由于 $a_n>0$,故
+\[
+\lim\limits_{n\to\infty}\dfrac{a_n}{\sqrt{2n}}=1.
+\]
+\end{proof}
+
+\begin{example}
+设数列 $\{a_n\}$ 满足 $0<a_1<\dfrac{\pi}{2}$ 且
+\[
+a_{n+1}=\sin a_n,
+\]
+证明:
+\[
+\lim\limits_{n\to\infty}\sqrt{\dfrac{n}{3}}\,a_n=1.
+\]
+\end{example}
+
+\begin{proof}[解]
+在 $(0,\pi/2)$ 上有 $0<\sin x<x$,故 $0<a_{n+1}<a_n$.于是
+$a_n\to L\geq0$,而 $L=\sin L$ 迫使 $L=0$.
+
+令 $b_n=1/a_n^2$.由展开式
+\[
+\sin x=x-\dfrac{x^3}{6}+O(x^5)
+\]
+可得
+\[
+\dfrac{1}{\sin^2x}-\dfrac{1}{x^2}=\dfrac{1}{3}+O(x^2)
+\qquad(x\to0).
+\]
+因此
+\[
+b_{n+1}-b_n\longrightarrow\dfrac{1}{3}.
+\]
+由 Stolz 定理,$b_n/n\to1/3$.所以
+\[
+\sqrt{\dfrac{n}{3}}a_n
+=\sqrt{\dfrac{n}{3b_n}}\longrightarrow1.
+\]
+\end{proof}
+
+\begin{example}
+设数列 $\{a_n\}$ 满足 $0<a_n<1$,
+\[
+a_{n+1}=a_n(1-a_n),
+\]
+证明:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle \lim\limits_{n\to\infty}na_n=1$;
+  \item $\displaystyle \lim\limits_{n\to\infty}\dfrac{n(1-na_n)}{\ln n}=1$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+由 $0<a_n<1$ 可知 $0<a_{n+1}<a_n$,故 $a_n\to L\geq0$.
+在递推式中令 $n\to\infty$,得 $L=L(1-L)$,所以 $L=0$.
+
+令 $b_n=1/a_n$.则
+\[
+b_{n+1}-b_n
+=\dfrac{1}{a_n(1-a_n)}-\dfrac{1}{a_n}
+=\dfrac{1}{1-a_n}\longrightarrow1.
+\]
+由 Stolz 定理,$b_n/n\to1$,故 $na_n=n/b_n\to1$.
+
+进一步,
+\[
+(b_{n+1}-(n+1))-(b_n-n)
+=\dfrac{a_n}{1-a_n}.
+\]
+再次应用 Stolz 定理并利用 $na_n\to1$,得到
+\[
+\lim\limits_{n\to\infty}\dfrac{b_n-n}{\ln n}
+=\lim\limits_{n\to\infty}
+\dfrac{a_n/(1-a_n)}{\ln(1+1/n)}=1.
+\]
+最后
+\[
+\dfrac{n(1-na_n)}{\ln n}
+=\dfrac{n}{b_n}\dfrac{b_n-n}{\ln n}\longrightarrow1.
+\]
+\end{proof}
+
+\begin{example}
+设 $0<a_1<1$,
+\[
+a_{n+1}=\ln(1+a_n),
+\]
+则
+\[
+\lim\limits_{n\to\infty}\dfrac{n(na_n-2)}{\ln n}=\dfrac{2}{3}.
+\]
+\end{example}
+
+\begin{proof}[解]
+因为 $0<\ln(1+x)<x$ 对 $x>0$ 成立,所以
+$0<a_{n+1}<a_n$,从而 $a_n\to L\geq0$.由 $L=\ln(1+L)$ 得 $L=0$.
+
+令 $b_n=1/a_n$.当 $x\to0$ 时,
+\[
+\dfrac{1}{\ln(1+x)}
+=\dfrac{1}{x}+\dfrac{1}{2}-\dfrac{x}{12}+O(x^2).
+\]
+故
+\[
+b_{n+1}-b_n
+=\dfrac{1}{2}-\dfrac{a_n}{12}+O(a_n^2)\longrightarrow\dfrac{1}{2}.
+\]
+由 Stolz 定理,$b_n/n\to1/2$,因而 $na_n=n/b_n\to2$.
+
+再令 $c_n=2b_n-n$.则
+\[
+c_{n+1}-c_n=-\dfrac{a_n}{6}+O(a_n^2).
+\]
+应用 Stolz 定理并使用 $na_n\to2$,有
+\[
+\lim\limits_{n\to\infty}\dfrac{c_n}{\ln n}
+=\lim\limits_{n\to\infty}
+\dfrac{-a_n/6+O(a_n^2)}{\ln(1+1/n)}
+=-\dfrac{1}{3}.
+\]
+于是
+\[
+\dfrac{n(na_n-2)}{\ln n}
+=-\dfrac{n}{b_n}\dfrac{c_n}{\ln n}
+\longrightarrow\dfrac{2}{3}.
+\]
+\end{proof}
+
+\methodsection{(E) 利用函数极限}
+
+\newpage
+
+\section{递推数列}
+
+\subsection{单调有界原理}
+
+\begin{example}
+证明数列
+\[
+x_0=1,\qquad x_{n+1}=\sqrt{2x_n},\qquad n=0,1,2,\ldots.
+\]
+有极限,并求其值.
+\end{example}
+
+\begin{proof}[解]
+由 $x_0=1<2$.若 $0<x_n<2$,则
+\[
+x_n<x_{n+1}=\sqrt{2x_n}<2,
+\]
+其中第一式等价于 $x_n<2$.故归纳可知 $\{x_n\}$ 单调递增且以 $2$ 为上界.
+设 $x_n\to L$,则 $L\geq1$,并且
+\[
+L=\sqrt{2L}.
+\]
+所以 $L=2$.即 $x_n\to2$.
+\end{proof}
+
+\begin{example}
+已知连续函数 $f(x)$ 在 $\lbrack 1,+\infty)$ 单调递减,且 $f(x)>0$,证明数列
+\[
+a_n=\sum\limits_{k=1}^n f(k)-\int_1^n f(x)\,\mathrm{d}x.
+\]
+收敛.
+\end{example}
+
+\begin{proof}[解]
+记
+\[
+a_n=\sum\limits_{k=1}^n f(k)-\int_1^n f(x)\,\mathrm{d}x.
+\]
+由于 $f$ 单调递减,
+\[
+a_{n+1}-a_n
+=f(n+1)-\int_n^{n+1}f(x)\,\mathrm{d}x\leq0.
+\]
+又
+\[
+\int_1^n f(x)\,\mathrm{d}x
+\leq\sum\limits_{k=1}^{n-1}f(k),
+\]
+所以 $a_n\geq f(n)>0$.因此 $\{a_n\}$ 单调递减且有下界,从而极限存在.
+\end{proof}
+
+\begin{example}
+设 $A>0$,$a_1>0$,
+\[
+a_{n+1}=\dfrac{1}{2}\left(a_n+\dfrac{1}{a_n}\right),
+\]
+证明:$\displaystyle \lim\limits_{n\to\infty}a_n$ 存在,并求其值.
+\end{example}
+
+\begin{proof}[解]
+按现有题面,参数 $A$ 未出现在递推式中.以下对题面所给递推式作答.
+
+由算术--几何平均值不等式,
+\[
+a_2=\dfrac{1}{2}\left(a_1+\dfrac{1}{a_1}\right)\geq1.
+\]
+若 $a_n\geq1$,则
+\[
+a_{n+1}-1=\dfrac{(a_n-1)^2}{2a_n}\geq0,
+\]
+且
+\[
+a_{n+1}-a_n=\dfrac{1-a_n^2}{2a_n}\leq0.
+\]
+故 $\{a_n\}_{n\geq2}$ 单调递减且下界为 $1$,于是存在极限 $L\geq1$.
+由
+\[
+L=\dfrac{1}{2}\left(L+\dfrac{1}{L}\right)
+\]
+得 $L=1$.因此 $a_n\to1$.
+
+题首的 $A>0$ 对结论没有作用,原始资料中的递推式仍需校勘;若原意为
+$a_{n+1}=\dfrac{1}{2}(a_n+A/a_n)$,则相同论证给出极限 $\sqrt A$.
+\end{proof}
+
+\begin{example}
+设 $c>0$,$0<x_1<\dfrac{1}{c}$,且
+\[
+x_{n+1}=x_n(2-cx_n),
+\]
+证明:$\{x_n\}$ 收敛并求其极限.
+\end{example}
+
+\begin{proof}[解]
+先证 $0<x_n<1/c$.若该式对某个 $n$ 成立,则
+\[
+x_{n+1}=x_n(2-cx_n)>0,
+\]
+并且
+\[
+\dfrac{1}{c}-x_{n+1}
+=c\left(\dfrac{1}{c}-x_n\right)^2>0.
+\]
+故归纳可知该区间对所有 $n$ 不变.又
+\[
+x_{n+1}-x_n
+=cx_n\left(\dfrac{1}{c}-x_n\right)>0.
+\]
+所以 $\{x_n\}$ 单调递增且以 $1/c$ 为上界.设其极限为 $L>0$,则
+$L=L(2-cL)$,从而 $L=1/c$.
+\end{proof}
+
+\begin{example}
+已知数列 $\{a_n\},\{b_n\}$ 满足:$a_1>b_1>0$,
+\[
+a_{n+1}=\dfrac{a_n+b_n}{2},
+\qquad
+b_{n+1}=\sqrt{a_nb_n},
+\]
+证明:$\displaystyle \lim\limits_{n\to\infty}a_n$ 与 $\displaystyle \lim\limits_{n\to\infty}b_n$ 都存在且相等.
+\end{example}
+
+\begin{proof}[解]
+由算术--几何平均值不等式,
+\[
+b_n\leq a_n,
+\qquad
+b_n\leq b_{n+1}=\sqrt{a_nb_n}\leq a_{n+1}=\dfrac{a_n+b_n}{2}\leq a_n.
+\]
+所以 $\{a_n\}$ 单调递减,$\{b_n\}$ 单调递增,且始终有 $b_n\leq a_n$.
+因此存在 $\alpha,\beta>0$,使 $a_n\to\alpha$,$b_n\to\beta$,并且
+$\beta\leq\alpha$.在
+\[
+a_{n+1}=\dfrac{a_n+b_n}{2}
+\]
+中令 $n\to\infty$,得 $\alpha=(\alpha+\beta)/2$,故 $\alpha=\beta$.
+所以两数列收敛于同一正数.
+\end{proof}
+
+\begin{example}
+已知数列 $\{a_n\}$ 满足 $0<a_n<2$ 且
+\[
+(2-a_n)a_{n+1}\geq1,
+\]
+证明:$\{a_n\}$ 收敛,并求其极限.
+\end{example}
+
+\begin{proof}[解]
+由题设及 $0<a_n<2$,
+\[
+a_{n+1}\geq\dfrac{1}{2-a_n}.
+\]
+又
+\[
+\dfrac{1}{2-a_n}-a_n
+=\dfrac{(a_n-1)^2}{2-a_n}\geq0,
+\]
+故 $a_{n+1}\geq a_n$.因此 $\{a_n\}$ 单调递增且以 $2$ 为上界,存在极限
+$L\leq2$.若 $L=2$,则 $(2-a_n)a_{n+1}\to0$,与题设矛盾,故 $L<2$.
+令 $n\to\infty$,得到
+\[
+(2-L)L\geq1,
+\]
+即 $-(L-1)^2\geq0$.所以 $L=1$,即 $a_n\to1$.
+\end{proof}
+
+\begin{example}
+设数列 $\{x_n\}$ 满足 $x_n>0$ 且
+\[
+x_{n+1}+\dfrac{4}{x_n}<4,
+\]
+证明:$\{x_n\}$ 收敛并求其极限.
+\end{example}
+
+\begin{proof}[解]
+因 $x_{n+1}>0$,题设给出 $4/x_n<4$,故 $x_n>1$.又
+\[
+4-\dfrac{4}{x_n}-x_n
+=-\dfrac{(x_n-2)^2}{x_n}\leq0,
+\]
+所以
+\[
+x_{n+1}<4-\dfrac{4}{x_n}\leq x_n.
+\]
+于是 $\{x_n\}$ 单调递减且下界为 $1$,故 $x_n\to L\geq1$.
+对原不等式取极限上界,得
+\[
+L+\dfrac{4}{L}\leq4.
+\]
+这等价于 $(L-2)^2\leq0$,故 $L=2$.
+\end{proof}
+
+\subsection{压缩映像原理}
+
+\begin{example}
+证明:
+\begin{enumerate}[label=(\arabic*)]
+  \item 存在唯一的 $c\in(0,1)$,使得 $c=e^{-c}$;
+  \item 设 $x_1\in(0,1)$,$x_{n+1}=e^{-x_n}$,则
+  $\displaystyle \lim\limits_{n\to\infty}x_n=c$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+(1) 令 $h(x)=x-e^{-x}$.则
+\[
+h(0)=-1<0,
+\qquad h(1)=1-e^{-1}>0,
+\qquad h'(x)=1+e^{-x}>0.
+\]
+由介值定理和严格单调性,存在唯一的 $c\in(0,1)$ 使 $c=e^{-c}$.
+
+(2) 令 $f(x)=e^{-x}$.由 $x_1\in(0,1)$ 可知 $x_n\in(0,1)$.
+进一步,$x_2\in(e^{-1},1)$ 且
+\[
+x_3\in I=\lbrack e^{-1},e^{-e^{-1}}\rbrack.
+\]
+$f$ 把 $I$ 映入自身,并且在 $I$ 上
+\[
+|f'(x)|=e^{-x}\leq e^{-e^{-1}}=:q<1.
+\]
+因 $c\in I$,由 Lagrange 中值定理,
+\[
+|x_{n+1}-c|=|f(x_n)-f(c)|\leq q|x_n-c|
+\qquad(n\geq3).
+\]
+迭代得 $|x_n-c|\leq q^{n-3}|x_3-c|\to0$,故 $x_n\to c$.
+\end{proof}
+
+\begin{example}
+设 $x_0>0$,
+\[
+x_n=3+\dfrac{1}{\sqrt{x_{n-1}}}\qquad(n=1,2,\ldots),
+\]
+证明:$\{x_n\}$ 收敛并求其极限.
+\end{example}
+
+\begin{proof}[解]
+令 $f(x)=3+x^{-1/2}$.当 $n\geq1$ 时 $x_n>3$.函数
+\[
+h(x)=x-3-x^{-1/2}
+\]
+在 $(0,+\infty)$ 上严格递增,且 $h(3)<0$、$h(4)>0$,故方程
+$x=f(x)$ 有唯一正根 $c\in(3,4)$.
+
+当 $x,y\geq3$ 时,由 Lagrange 中值定理,
+\[
+|f(x)-f(y)|\leq\dfrac{1}{2\cdot3^{3/2}}|x-y|=:q|x-y|,
+\qquad 0<q<1.
+\]
+因此
+\[
+|x_n-c|\leq q|x_{n-1}-c|\leq q^{n-1}|x_1-c|\longrightarrow0.
+\]
+故 $x_n\to c$.令 $t=\sqrt c$,则 $t^3-3t-1=0$;其唯一正根为
+$t=2\cos(\pi/9)$,所以
+\[
+c=4\cos^2\dfrac{\pi}{9}.
+\]
+\end{proof}
+
+\begin{example}
+设
+\[
+u_1=3,
+\qquad
+u_2=3+\dfrac{4}{3},
+\qquad
+u_3=3+\dfrac{4}{3+\dfrac{4}{3}},
+\qquad\ldots.
+\]
+如果数列 $\{u_n\}$ 收敛,计算其极限,并证明 $\{u_n\}$ 收敛于上述极限.
+\end{example}
+
+\begin{proof}[解]
+该连分数满足
+\[
+u_{n+1}=3+\dfrac{4}{u_n},
+\qquad u_1=3.
+\]
+令 $f(x)=3+4/x$.当 $x\geq3$ 时 $f(x)\geq3$,且
+\[
+|f'(x)|=\dfrac{4}{x^2}\leq\dfrac{4}{9}<1.
+\]
+正不动点满足 $L=3+4/L$,即 $L^2-3L-4=0$,故 $L=4$.
+于是
+\[
+|u_{n+1}-4|=|f(u_n)-f(4)|\leq\dfrac{4}{9}|u_n-4|.
+\]
+迭代可得 $u_n\to4$.
+\end{proof}
+
+\begin{example}
+设 $x_1=1$,
+\[
+x_{n+1}=\dfrac{1+2x_n}{1+x_n}\qquad(n=1,2,\ldots),
+\]
+证明:$\{x_n\}$ 收敛,并求 $\displaystyle \lim\limits_{n\to\infty}x_n$.
+\end{example}
+
+\begin{proof}[解]
+令
+\[
+f(x)=\dfrac{1+2x}{1+x}.
+\]
+当 $x\geq1$ 时 $f(x)\geq1$,且
+\[
+0<f'(x)=\dfrac{1}{(1+x)^2}\leq\dfrac{1}{4}.
+\]
+方程 $x=f(x)$ 的唯一正根为
+\[
+c=\dfrac{1+\sqrt5}{2}.
+\]
+由于 $x_1=1$,所有 $x_n\geq1$,并且
+\[
+|x_{n+1}-c|=|f(x_n)-f(c)|\leq\dfrac{1}{4}|x_n-c|.
+\]
+故 $x_n\to c=(1+\sqrt5)/2$.
+\end{proof}
+
+\subsection{不动点法}
+
+\begin{example}
+设 $x_1>0$,
+\[
+x_{n+1}=\dfrac{c(1+x_n)}{c+x_n}\qquad(c>1),
+\]
+求 $\displaystyle \lim\limits_{n\to\infty}x_n$.
+\end{example}
+
+\begin{proof}[解]
+令
+\[
+f(x)=\dfrac{c(1+x)}{c+x}.
+\]
+对 $x\geq0$,
+\[
+0<f'(x)=\dfrac{c(c-1)}{(c+x)^2}\leq\dfrac{c-1}{c}<1.
+\]
+又 $f$ 把 $(0,+\infty)$ 映入自身.其正不动点由
+$x(c+x)=c(1+x)$ 给出,即 $x^2=c$,所以 $x^*=\sqrt c$.
+由 Lagrange 中值定理,
+\[
+|x_{n+1}-\sqrt c|
+\leq\dfrac{c-1}{c}|x_n-\sqrt c|.
+\]
+故 $x_n\to\sqrt c$.
+\end{proof}
+
+\begin{example}
+设
+\[
+x_1=1,
+\qquad
+x_2=\dfrac{1}{2},
+\qquad
+x_{n+1}=\dfrac{1}{1+x_n},
+\]
+求 $\displaystyle \lim\limits_{n\to\infty}x_n$.
+\end{example}
+
+\begin{proof}[解]
+令 $f(x)=1/(1+x)$.从 $x_2=1/2$ 开始,
+\[
+\dfrac{1}{2}\leq x_n\leq\dfrac{2}{3},
+\]
+且该区间在 $f$ 下不变.在此区间上
+\[
+|f'(x)|=\dfrac{1}{(1+x)^2}\leq\dfrac{4}{9}<1.
+\]
+正不动点满足 $x=1/(1+x)$,故
+\[
+c=\dfrac{\sqrt5-1}{2}.
+\]
+由压缩估计 $|x_{n+1}-c|\leq(4/9)|x_n-c|$,得到
+\[
+\lim\limits_{n\to\infty}x_n=\dfrac{\sqrt5-1}{2}.
+\]
+\end{proof}
+
+\begin{example}
+设 $f(x)$ 映 $\lbrack a,b\rbrack$ 为自身,且
+\[
+|f(x)-f(y)|\leq|x-y|.
+\]
+任取 $x_1\in\lbrack a,b\rbrack$,令
+\[
+x_{n+1}=\dfrac{1}{2}[x_n+f(x_n)],
+\]
+求证数列有极限 $x^*$,且 $x^*$ 满足方程
+\[
+f(x^*)=x^*.
+\]
+\end{example}
+
+\begin{proof}[解]
+因为 $f$ 连续且把 $\lbrack a,b\rbrack$ 映为自身,函数 $f(x)-x$ 在
+$a$ 处非负、在 $b$ 处非正,故至少存在一个不动点 $p\in\lbrack a,b\rbrack$.
+对任一这样的 $p$,由恒等式
+\[
+\left|\dfrac{u+v}{2}\right|^2
+=\dfrac{|u|^2+|v|^2}{2}-\dfrac{|u-v|^2}{4}
+\]
+及 $|f(x_n)-p|\leq|x_n-p|$,得到
+\[
+|x_{n+1}-p|^2
+\leq|x_n-p|^2-|x_{n+1}-x_n|^2.
+\]
+因此 $|x_n-p|$ 单调不增,且
+\[
+\sum\limits_{n=1}^{\infty}|x_{n+1}-x_n|^2<+\infty.
+\]
+从而 $x_{n+1}-x_n\to0$,即 $f(x_n)-x_n\to0$.
+
+由于 $\{x_n\}\subset\lbrack a,b\rbrack$,它有收敛子列 $x_{n_k}\to x^*$.
+由 $f$ 的连续性及 $f(x_{n_k})-x_{n_k}\to0$,可得 $f(x^*)=x^*$.
+再在上面的距离不等式中取 $p=x^*$,知 $|x_n-x^*|$ 有极限;而其子列
+$|x_{n_k}-x^*|\to0$,故整个数列 $x_n\to x^*$.
+\end{proof}
+
+\begin{example}
+证明:数列 $x_0>0$,
+\[
+x_{n+1}=\dfrac{x_n(x_n^2+3a)}{3x_n^2+a}\qquad(a\geq0).
+\]
+的极限存在,并求其极限.
+\end{example}
+
+\begin{proof}[解]
+若 $a=0$,则递推式化为 $x_{n+1}=x_n/3$,故 $x_n\to0$.
+
+以下设 $a>0$,并记 $r=\sqrt a$.直接计算得
+\[
+\dfrac{x_{n+1}-r}{x_{n+1}+r}
+=\dfrac{x_n(x_n^2+3r^2)-r(3x_n^2+r^2)}
+{x_n(x_n^2+3r^2)+r(3x_n^2+r^2)}
+=\left(\dfrac{x_n-r}{x_n+r}\right)^3.
+\]
+令 $y_n=(x_n-r)/(x_n+r)$.由于 $x_n,r>0$,有 $|y_n|<1$,且
+$y_{n+1}=y_n^3$.所以
+\[
+y_n=y_0^{3^n}\longrightarrow0.
+\]
+又 $x_n=r(1+y_n)/(1-y_n)$,故 $x_n\to r=\sqrt a$.
+\end{proof}
+
+\subsection{利用上下极限 *}
+
+\newpage
+
+\section{上、下极限 *}
+
+\begin{example}
+请求下列数列 $\{a_n\}$ 的上、下极限:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle a_n=\sqrt[n]{1+2^{n(-1)^n}}$;
+  \item $\displaystyle a_n=1+\dfrac{n-\cos\dfrac{n\pi}{2}}{n+1}$;
+  \item $\displaystyle a_n=\dfrac{n}{3}-\left[\dfrac{n}{3}\right]$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+(1) 当 $n$ 为偶数时,
+\[
+a_n=\sqrt[n]{1+2^n}\longrightarrow2;
+\]
+当 $n$ 为奇数时,
+\[
+a_n=\sqrt[n]{1+2^{-n}}\longrightarrow1.
+\]
+故
+\[
+\varlimsup\limits_{n\to\infty}a_n=2,
+\qquad
+\varliminf\limits_{n\to\infty}a_n=1.
+\]
+
+(2) 有
+\[
+a_n=2-\dfrac{1+\cos(n\pi/2)}{n+1}\longrightarrow2.
+\]
+故上、下极限均为 $2$.
+
+(3) $a_n$ 是 $n/3$ 的小数部分,依次循环取 $1/3,2/3,0$.故
+\[
+\varlimsup\limits_{n\to\infty}a_n=\dfrac{2}{3},
+\qquad
+\varliminf\limits_{n\to\infty}a_n=0.
+\]
+\end{proof}
+
+\begin{example}
+设 $\{a_n\}$ 满足
+\[
+\lim\limits_{n\to\infty}(a_n-2a_{n+1})=A,
+\]
+证明:$\{a_n\}$ 收敛并求其极限.
+\end{example}
+
+\begin{proof}[解]
+令
+\[
+r_n=a_n-2a_{n+1},
+\qquad r_n\to A,
+\qquad e_n=a_n+A.
+\]
+由 $a_{n+1}=(a_n-r_n)/2$ 得
+\[
+e_{n+1}=\dfrac{1}{2}e_n+\dfrac{1}{2}(A-r_n).
+\]
+迭代可得
+\[
+e_n=\dfrac{e_1}{2^{n-1}}
++\sum\limits_{k=1}^{n-1}\dfrac{A-r_k}{2^{n-k}}.
+\]
+第一项趋于 $0$;第二项是趋零数列 $A-r_k$ 的几何加权平均,也趋于 $0$.
+故 $e_n\to0$,即
+\[
+a_n\longrightarrow-A.
+\]
+\end{proof}
+
+\begin{example}
+设 $a_n=nb_n$,其中 $\{b_n\}$ 满足 $|nb_n|\leq M$,且存在
+\[
+\lim\limits_{n\to\infty}n(b_n+b_{2n})=l,
+\]
+证明:$\{a_n\}$ 收敛,并求其极限.
+\end{example}
+
+\begin{proof}[解]
+由 $a_n=nb_n$,题设可写成
+\[
+a_n+\dfrac{1}{2}a_{2n}\longrightarrow l.
+\]
+又由 $|a_n|=|nb_n|\leq M$ 知 $\{a_n\}$ 有界.令
+\[
+c_n=a_n-\dfrac{2l}{3}.
+\]
+则
+\[
+c_n+\dfrac{1}{2}c_{2n}\longrightarrow0.
+\]
+记 $K=\varlimsup\limits_{n\to\infty}|c_n|<+\infty$.由上式,
+\[
+K\leq\dfrac{1}{2}\varlimsup\limits_{n\to\infty}|c_{2n}|
+\leq\dfrac{K}{2}.
+\]
+故 $K=0$,即 $c_n\to0$.因此
+\[
+a_n\longrightarrow\dfrac{2l}{3}.
+\]
+\end{proof}
+
+\begin{example}
+设
+\[
+a_{n+1}=1-\dfrac{a_n^2}{b^2},
+\qquad 0<a_1<b,
+\qquad b>\sqrt2,
+\]
+讨论 $\{a_n\}$ 的敛散性.
+\end{example}
+
+\begin{proof}[解]
+由 $0<a_1<b$ 得 $0<a_2<1$.当 $0<a_n<1$ 时,因 $b>\sqrt2>1$,
+仍有 $0<a_{n+1}<1$.故从第二项起数列位于 $(0,1)$ 内.
+
+令 $f(x)=1-x^2/b^2$.在 $\lbrack0,1\rbrack$ 上,
+\[
+|f'(x)|=\dfrac{2x}{b^2}\leq\dfrac{2}{b^2}<1.
+\]
+所以 $f$ 是压缩映射,数列收敛于该区间内唯一的不动点 $c$.解
+\[
+c=1-\dfrac{c^2}{b^2}
+\]
+并取正根,得到
+\[
+c=\dfrac{b\sqrt{b^2+4}-b^2}{2}.
+\]
+故 $\{a_n\}$ 收敛于上述 $c$.
+\end{proof}
+
+\begin{example}
+讨论下列数列 $\{a_n\}$ 的敛散性:
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle a_{n+1}=\sqrt[3]{a_n+6}\quad(a>-6)$;
+  \item $\displaystyle a_{n+1}=A\sqrt{a_n}+B\quad(A,B>0,\ a_1>0)$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+(1) 题面中的条件 $a>-6$ 使用了未定义的字母 $a$,原始资料需校勘.按自然含义将其理解为
+$a_1>-6$.此时 $a_2=\sqrt[3]{a_1+6}>0$.令
+\[
+f(x)=\sqrt[3]{x+6}.
+\]
+对 $x\geq0$,
+\[
+0<f'(x)=\dfrac{1}{3(x+6)^{2/3}}
+\leq\dfrac{1}{3\cdot6^{2/3}}<1.
+\]
+方程 $x=f(x)$ 等价于 $x^3-x-6=0$,其唯一实根为 $2$.
+故由压缩估计可知 $a_n\to2$.
+
+(2) 令 $t$ 为方程 $t^2-At-B=0$ 的正根,即
+\[
+t=\dfrac{A+\sqrt{A^2+4B}}{2},
+\qquad L=t^2.
+\]
+则 $L=A\sqrt L+B$.对任意 $x>0$,
+\[
+A\sqrt x+B-x=(t-\sqrt x)(t+\sqrt x-A).
+\]
+因 $t>A$,第二个因子恒正.所以当 $a_n<L$ 时
+$a_n<a_{n+1}<L$;当 $a_n>L$ 时 $L<a_{n+1}<a_n$.
+两种情形下数列都单调有界,并收敛于唯一正不动点
+\[
+L=\left(\dfrac{A+\sqrt{A^2+4B}}{2}\right)^2.
+\]
+\end{proof}
+
+\begin{example}
+设 $a_1>0$,
+\[
+a_{n+1}=\dfrac{1}{2}\left(a_n+\dfrac{1}{a_n}\right)+1,
+\]
+讨论 $\{a_n\}$ 敛散性.
+\end{example}
+
+\begin{proof}[解]
+令
+\[
+f(x)=\dfrac{1}{2}\left(x+\dfrac{1}{x}\right)+1.
+\]
+由算术--几何平均值不等式,$a_2\geq2$,故 $a_n\in\lbrack2,+\infty)$ 对
+$n\geq2$ 成立.在该区间上
+\[
+0<f'(x)=\dfrac{1}{2}-\dfrac{1}{2x^2}<\dfrac{1}{2}.
+\]
+方程 $x=f(x)$ 化为 $x^2-2x-1=0$,其正根为
+$c=1+\sqrt2$.因此
+\[
+|a_{n+1}-c|\leq\dfrac{1}{2}|a_n-c|
+\qquad(n\geq2),
+\]
+从而 $a_n\to1+\sqrt2$.所以 $\{a_n\}$ 收敛.
+\end{proof}
+
+\begin{example}
+设
+\[
+y_n=px_n+qx_{n+1},
+\qquad |p|<|q|,
+\]
+证明:$\{x_n\}$ 与 $\{y_n\}$ 同敛散.
+\end{example}
+
+\begin{proof}[解]
+若 $x_n\to X$,则立即有
+\[
+y_n=px_n+qx_{n+1}\longrightarrow(p+q)X.
+\]
+
+反之,设 $y_n\to Y$.由于 $|p|<|q|$,有 $p+q\neq0$.令
+\[
+X=\dfrac{Y}{p+q},
+\qquad r=-\dfrac{p}{q},
+\qquad |r|<1.
+\]
+由 $x_{n+1}=-(p/q)x_n+y_n/q$ 得
+\[
+x_{n+1}-X=r(x_n-X)+\dfrac{y_n-Y}{q}.
+\]
+这是一个收缩型非齐次递推式.迭代后,初值项按 $r^n$ 衰减,而趋零项
+$(y_n-Y)/q$ 的几何卷积也趋于 $0$.故 $x_n\to X$.
+因此 $\{x_n\}$ 与 $\{y_n\}$ 同时收敛或同时发散.
+\end{proof}
+
+\begin{example}
+证明下列命题:
+\begin{enumerate}[label=(\arabic*)]
+  \item 若 $\{a_n\}$ 满足
+  \[
+  0\leq a_{n+m}\leq a_n+a_m\qquad(n,m\in\mathbb N),
+  \]
+  则 $\left\{\dfrac{a_n}{n}\right\}$ 收敛;
+  \item 若 $\{a_n\}$ 满足
+  \[
+  0\leq a_{n+m}\leq a_n-a_m\qquad(n,m\in\mathbb N),
+  \]
+  则 $\{\sqrt[n]{a_n}\}$ 收敛.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+(1) 令
+\[
+\alpha=\inf\limits_{k\geq1}\dfrac{a_k}{k}.
+\]
+显然 $\varliminf\limits_{n\to\infty}a_n/n\geq\alpha$.固定 $k$,将
+$n$ 写成 $n=qk+r$,其中 $0\leq r<k$.反复使用次可加性可得
+\[
+a_n\leq qa_k+a_r,
+\]
+其中 $r=0$ 时略去末项.令 $C_k=\max\{a_1,\ldots,a_{k-1}\}$,则
+\[
+\dfrac{a_n}{n}\leq\dfrac{qa_k+C_k}{qk+r}.
+\]
+令 $n\to\infty$,得到
+\[
+\varlimsup\limits_{n\to\infty}\dfrac{a_n}{n}\leq\dfrac{a_k}{k}.
+\]
+再对 $k$ 取下确界,即得上极限不超过 $\alpha$.所以
+\[
+\lim\limits_{n\to\infty}\dfrac{a_n}{n}=\alpha.
+\]
+
+(2) 题设减号虽不寻常,但按原式可直接推出结论.交换 $n,m$ 后同时有
+\[
+0\leq a_{n+m}\leq a_n-a_m,
+\qquad
+0\leq a_{n+m}\leq a_m-a_n.
+\]
+所以 $a_n=a_m$ 对所有 $n,m$ 成立,即 $a_n\equiv c$.代回原不等式得
+$0\leq c\leq0$,故 $c=0$.因此
+\[
+\sqrt[n]{a_n}=0
+\]
+恒成立,该数列收敛于 $0$.
+\end{proof}
+
+\begin{example}
+证明下列命题:
+\begin{enumerate}[label=(\arabic*)]
+  \item 设 $\{a_n\}$ 是正数列,则
+  \[
+  \varlimsup\limits_{n\to\infty}
+  \left(\dfrac{a_n+a_{n+1}}{a_n}\right)^n
+  \geq e;
+  \]
+  \item 设 $\{a_n\}$ 是正数列,则
+  \[
+  \varliminf\limits_{n\to\infty}
+  n\left(\dfrac{1+a_{n+1}}{a_n}-1\right)
+  \geq1.
+  \]
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+两条命题按现有题面均不成立.
+
+(1) 取正数列
+\[
+a_n=\dfrac{1}{(n!)^2}.
+\]
+则 $a_{n+1}/a_n=1/(n+1)^2$,从而
+\[
+\left(\dfrac{a_n+a_{n+1}}{a_n}\right)^n
+=\left(1+\dfrac{1}{(n+1)^2}\right)^n\longrightarrow1<e.
+\]
+这否定了第一条命题.
+
+(2) 取
+\[
+a_{2k}=2,
+\qquad a_{2k+1}=1.
+\]
+当 $n$ 为偶数时,
+\[
+n\left(\dfrac{1+a_{n+1}}{a_n}-1\right)
+=n\left(\dfrac{2}{2}-1\right)=0.
+\]
+当 $n$ 为奇数时,该式等于 $2n$.因此其下极限为 $0<1$,第二条命题也不成立.
+故本题两处结论都应回查原始资料或补充缺失条件.
+\end{proof}
+
+\end{document}
+

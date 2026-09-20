@@ -1,0 +1,1175 @@
+\documentclass[../../数学分析培优讲义(答案版).tex]{subfiles}
+
+\begin{document}
+
+\setcounter{chapter}{7}
+\pagestyle{fancy}
+
+\chapter{数项级数}
+
+\section{级数收敛的定义及求和问题}
+
+\subsection{裂项相消法}
+
+\begin{example}
+设 $0<x<1$,求如下级数之和:
+\[
+    \sum\limits_{n=0}^{\infty}\dfrac{x^{2n}}{1-x^{2n+1}}.
+\]
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+求下列级数之和:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{1}{(kn-i)(kn+j)}$,其中 $k=i+j$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{1}{n(n+1)(n+2)}$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{n-\sqrt{n^2-1}}{\sqrt{n(n+1)}}$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}(\sqrt{n}-2\sqrt{n+1}+\sqrt{n+2})$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+求下列级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 之和:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle a_n=\sin\dfrac{1}{2n}\cos\dfrac{3}{2n}$;
+    \item $\displaystyle a_n=\arctan\dfrac{1}{2n^2}$;
+    \item $\displaystyle a_n=\arctan\dfrac{2}{4n^2-4n+1}$;
+    \item $\displaystyle a_n=3^{n-1}\sin^3\left(\dfrac{\theta}{3^n}\right)$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+已知级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n=A$,$\displaystyle\lim\limits_{n\to\infty}na_n=0$,求级数
+\[
+    \sum\limits_{n=1}^{\infty}n(a_n-a_{n+1})
+\]
+之和.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设 $a_n>0$ 且 $\displaystyle\sum\limits_{n=1}^{\infty}a_n=S$,若记
+\[
+    R_n=\sum\limits_{k=n+1}^{\infty}a_k,
+\]
+则
+\[
+    I=\sum\limits_{n=1}^{\infty}\dfrac{a_n}{\sqrt{R_{n-1}}+\sqrt{R_n}}=\sqrt{S}.
+\]
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设数列 $\{a_n\}$ 满足
+\[
+    \sum\limits_{n=1}^{\infty}(a_1+1)(a_2+1)\cdots(a_n+1)=l,
+\]
+其中 $l>0$ 或 $l=+\infty$.试证明:
+\[
+    \sum\limits_{n=1}^{\infty}
+    \dfrac{a_n}{(a_1+1)(a_2+1)\cdots(a_n+1)}
+    =1-\dfrac{1}{l}.
+\]
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设 $a_1>1$,$a_{n+1}=a_n^2-a_n+1$,则
+\[
+    I=\sum\limits_{n=1}^{\infty}\dfrac{1}{a_n}=\dfrac{1}{a_1-1}.
+\]
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\subsection{子列方法}
+
+\begin{example}
+计算
+\[
+    1+\dfrac{1}{2}+\left(\dfrac{1}{3}-1\right)+\dfrac{1}{4}+\dfrac{1}{5}
+    +\left(\dfrac{1}{6}-\dfrac{1}{2}\right)+\dfrac{1}{7}+\dfrac{1}{8}
+    +\left(\dfrac{1}{9}-\dfrac{1}{3}\right)+\cdots.
+\]
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+计算
+\[
+    1-\dfrac{1}{2}-\dfrac{1}{4}+\dfrac{1}{3}-\dfrac{1}{6}-\dfrac{1}{8}
+    +\cdots+\dfrac{1}{2n-1}-\dfrac{1}{4n-2}-\dfrac{1}{4n}+\cdots.
+\]
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+将级数 $\displaystyle1-\dfrac{1}{2}+\dfrac{1}{3}-\dfrac{1}{4}+\dfrac{1}{5}-\cdots$ 的各项重新安排,使先依次出现 $p$ 个正项,再出现 $q$ 个负项,然后如此交替.试证新级数的和为
+\[
+    \ln2+\dfrac{1}{2}\ln\dfrac{p}{q}.
+\]
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+证明:若删去调和级数中所有分母含有数字 $9$ 的项,则新级数收敛,且和小于 $80$.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\subsection{发散级数}
+
+\begin{example}
+试证明下列级数的发散性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}(n^2+2)\ln\left(\dfrac{n^2+1}{n^2}\right)$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\left(\dfrac{2n^2-3}{2n^2+1}\right)^{n^2}$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\cos(n\alpha)$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{1}{n}$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设 $a_n>0$,$\displaystyle\sum\limits_{n=1}^{\infty}a_n=+\infty$,试证:
+\[
+    \sum\limits_{n=1}^{\infty}\dfrac{a_n}{S_n}
+\]
+发散.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+如果
+\[
+    \lim\limits_{n\to\infty}a_{n+1}=0,
+    \quad
+    \lim\limits_{n\to\infty}(a_{n+1}+a_{n+2})=0,
+    \quad\ldots,\quad
+    \lim\limits_{n\to\infty}(a_{n+1}+\cdots+a_{n+p})=0,
+\]
+试问 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 是否一定收敛.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设 $\{a_n\}$ 是递减正数列,且 $\displaystyle\sum\limits_{n=1}^{\infty}a_n=+\infty$,证明:
+\[
+    \lim\limits_{n\to\infty}
+    \dfrac{a_1+a_3+\cdots+a_{2n-1}}{a_2+a_4+\cdots+a_{2n}}=1.
+\]
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+证明下列级数发散:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle1-\dfrac{1}{\sqrt2}+\dfrac{1}{3}-\dfrac{1}{\sqrt4}+\dfrac{1}{5}-\dfrac{1}{\sqrt6}+\cdots$;
+    \item $\displaystyle1+\dfrac{1}{\sqrt3}-\dfrac{1}{\sqrt2}+\dfrac{1}{\sqrt5}+\dfrac{1}{\sqrt7}-\dfrac{1}{\sqrt4}+\cdots$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\newpage
+
+\section{正项级数}
+
+\subsection{一般比较判别}
+
+\methodsection{(A) 通项大小比较法}
+
+\begin{example}
+判断级数 $\displaystyle I=\sum\limits_{n=3}^{\infty}a_n$ 的敛散性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle a_n=\dfrac{1}{\sqrt[r]{\ln n}}\quad(r>0)$;
+    \item $\displaystyle a_n=\dfrac{1}{(\ln n)^{\ln n}}$;
+    \item $\displaystyle a_n=\dfrac{1}{(\ln\ln n)^{\ln n}}$;
+    \item $\displaystyle a_n=\dfrac{1}{n^{1+\frac{1}{\ln\ln n}}}$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+判断级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 的敛散性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle a_n=\dfrac{1}{\ln(n!)}\quad(n\geq2)$;
+    \item $\displaystyle a_n=\dfrac{\ln(n!)}{n^p}$;
+    \item $\displaystyle a_n=\dfrac{\sum\limits_{k=1}^n\ln^2k}{n^p}$;
+    \item $\displaystyle a_n=\left[\dfrac{(2n-1)!!}{(2n)!!}\right]^2$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+试证明下列命题:
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $a_n>0$,若 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 收敛,则
+    \[
+        \sum\limits_{n=1}^{\infty}\dfrac{\sqrt{a_n}}{n^p}
+    \]
+    在 $p>\dfrac{1}{2}$ 时收敛;
+    \item 若 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 是正项收敛级数,则 $\displaystyle J=\sum\limits_{n=1}^{\infty}\sqrt{a_na_{n+1}}$ 收敛,反之不然.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 是正项发散级数,试判断下列级数的敛散性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{1+a_n}$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{1+na_n}$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{1+n^2a_n}$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{1+a_n^2}$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设 $a_n\neq0$,且 $a_n\to a\neq0$,则
+\[
+    \sum\limits_{n=1}^{\infty}|a_{n+1}-a_n|
+\]
+与
+\[
+    \sum\limits_{n=1}^{\infty}\left|\dfrac{1}{a_{n+1}}-\dfrac{1}{a_m}\right|
+\]
+同敛散.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}[\markstar\ Sapagof 判别法]
+设正数数列 $\{a_n\}$ 单调递减,则 $\displaystyle\lim\limits_{n\to\infty}a_n=0$ 的充分必要条件是正项级数
+\[
+    \sum\limits_{n=1}^{\infty}\left(1-\dfrac{a_{n+1}}{a_n}\right)
+\]
+发散.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}[\markstar]
+证明如下问题:
+\begin{enumerate}[label=(\arabic*)]
+    \item 设正项级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 发散,则 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{S_n}$ 发散,$\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{S_n^2}$ 收敛;
+    \item 设正项级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 收敛,则 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{R_n}$ 发散,$\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{\sqrt{R_n}}$ 收敛;
+    \item 设正项级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 发散,则存在发散的正项级数 $\displaystyle\sum\limits_{n=1}^{\infty}b_n$,使得 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{b_n}=0$;
+    \item 设正项级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 收敛,则存在收敛的正项级数 $\displaystyle\sum\limits_{n=1}^{\infty}b_n$,使得 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{b_n}=0$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}[\markstar]
+举例说明下列命题中的存在性:
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $\{b_n\}$ 是趋于 $+\infty$ 的正数列,则必存在收敛的正项级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$,使得 $\displaystyle\sum\limits_{n=1}^{\infty}a_nb_n=+\infty$;
+    \item 设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 是收敛的正项级数,则存在正数列 $\{\lambda_n\}$ 满足 $\displaystyle\lim\limits_{n\to\infty}\lambda_n=+\infty$ 且 $\displaystyle\sum\limits_{n=1}^{\infty}\lambda_na_n<+\infty$;
+    \item 存在 $\{a_n\},\{b_n\}$ 是递减趋于零的数列,且 $\displaystyle\sum\limits_{n=1}^{\infty}a_n,\sum\limits_{n=1}^{\infty}b_n$ 都发散,但 $\displaystyle\sum\limits_{n=1}^{\infty}\min\{a_n,b_n\}$ 收敛;
+    \item 设 $\{a_n\}$ 是趋于零的正数列,且 $\displaystyle\sum\limits_{n=1}^{\infty}a_n=+\infty$,则对 $C>0$,存在子列 $\{n_k\}$,使得 $\displaystyle\sum\limits_{k=1}^{\infty}a_{n_k}=C$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设 $0<p_1<p_2<\cdots<p_n<\cdots$,求证:
+\[
+    \sum\limits_{n=1}^{\infty}\dfrac{1}{p_n}\text{ 收敛}
+    \quad\Longleftrightarrow\quad
+    \sum\limits_{n=1}^{\infty}\dfrac{n}{p_1+p_2+\cdots+p_n}\text{ 收敛}.
+\]
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+证明下列不等式:
+\begin{enumerate}[label=(\arabic*)]
+    \item
+    \[
+        \sum\limits_{n=1}^m A_n^p
+        <\dfrac{p}{p-1}\sum\limits_{n=1}^mA_n^{p-1}a_n,
+        \qquad p>1,
+    \]
+    其中 $\{a_n\}$ 单调递增,$\displaystyle A_n=\dfrac{a_1+a_2+\cdots+a_n}{n}$;
+    \item (Hardy-Landan 不等式)设 $p>1$,$\{a_n\}$ 同 (1),则
+    \[
+        \sum\limits_{n=1}^m\left(\dfrac{a_1+a_2+\cdots+a_n}{n}\right)^p
+        <\left(\dfrac{p}{p-1}\right)^p\sum\limits_{n=1}^ma_n^p;
+    \]
+    \item (Cauleman 不等式)设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 是正项收敛级数,则
+    \[
+        \sum\limits_{n=1}^{\infty}\sqrt[n]{a_1a_2\cdots a_n}
+        \leq e\sum\limits_{n=1}^{\infty}a_n.
+    \]
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+研究
+\[
+    \sum\limits_{n=1}^{\infty}\dfrac{1}{x_n^2}
+\]
+的敛散性,这里 $x_n$ 是方程 $x=\tan x$ 的正根,并且按递增的顺序编号.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 为收敛的正项级数,求证:
+\[
+    \sum\limits_{n=1}^{\infty}a_n^{1-\frac{1}{n}}
+\]
+收敛.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+已知 $\varphi(x)$ 是 $(-\infty,+\infty)$ 上周期为 $1$ 的连续函数,满足 $\displaystyle\int_0^1\varphi(x)\,\mathrm{d}x=0$.设
+\[
+    a_n=\int_0^1e^x\varphi(nx)\,\mathrm{d}x,
+\]
+求证:级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n^2$ 收敛.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}[\markstar]
+设
+\[
+    \xi(s)=\sum\limits_{n=1}^{\infty}\dfrac{1}{n^s},
+    \qquad s>1,
+\]
+则
+\[
+    \xi(s)=s\int_1^{+\infty}\dfrac{[x]}{x^{s+1}}\,\mathrm{d}x.
+\]
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}[\markstar]
+\begin{enumerate}[label=(\arabic*)]
+    \item 求证:当 $s>0$ 时,$\displaystyle\int_1^{+\infty}\dfrac{x-[x]}{x^{s+1}}\,\mathrm{d}x$ 收敛;
+    \item 求证:当 $s>1$ 时,
+    \[
+        \int_1^{+\infty}\dfrac{x-[x]}{x^{s+1}}\,\mathrm{d}x
+        =\dfrac{1}{s-1}-\dfrac{1}{s}\sum\limits_{n=1}^{\infty}\dfrac{1}{n^s}.
+    \]
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设 $k>0,a>0$,证明:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_a^{+\infty}\dfrac{\sin2n\pi x}{x^k}\,\mathrm{d}x$ 收敛;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{1}{n}\dfrac{\sin2n\pi x}{x^k}$ 收敛.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+判别
+\[
+    \sum\limits_{k=1}^{\infty}\left[e-\left(1+\dfrac{1}{1!}+\dfrac{1}{2!}+\cdots+\dfrac{1}{n!}\right)\right]
+\]
+的敛散性.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\methodsection{(B) 通项趋势比较法}
+
+\begin{example}
+判别级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 的敛散性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle a_n=\dfrac{1}{n^{1+\frac{1}{n}}}$;
+    \item $\displaystyle a_n=\dfrac{\sqrt[n]{2}-1}{n^p}$;
+    \item $\displaystyle a_n=\dfrac{\sqrt{n+1}-\sqrt n}{n^p}$;
+    \item $\displaystyle a_n=\left(1-\sqrt[3]{\dfrac{n-1}{n+1}}\right)^p\quad(p>0)$;
+    \item $\displaystyle a_n=\left[e-\left(1+\dfrac{1}{n}\right)^n\right]^p$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+判断级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 的敛散性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle a_n=\left(\dfrac{1}{n}-\sin\dfrac{1}{n}\right)^p\quad(p>0)$;
+    \item $\displaystyle a_n=\left(e^{\frac{1}{n}}-\sin\dfrac{1}{n}\right)^{np}-1$;
+    \item $\displaystyle a_n=\ln\left(\dfrac{1}{\cos\dfrac{2\pi}{n}}\right)\quad(n>4)$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设正数列 $\{a_n\}$ 满足
+\[
+    \lim\limits_{n\to\infty}a_n\sum\limits_{i=1}^na_i^2=1.
+\]
+试证明:
+\[
+    \lim\limits_{n\to\infty}\sqrt[3]{3na_n}=1,
+\]
+且 $\displaystyle\sum\limits_{n=1}^{\infty}a_n^3$ 发散.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\subsection{特殊比较判别}
+
+\methodsection{(A) Cauchy 凝聚判别法}
+
+\begin{example}
+设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 是正项收敛级数,若 $\{na_n\}$ 为单调数列,则
+\[
+    \lim\limits_{n\to\infty}na_n\ln n=0.
+\]
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+判别下列级数的敛散性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{1}{n^p}$;
+    \item $\displaystyle\sum\limits_{n=2}^{\infty}\dfrac{1}{n(\ln n)^p}$;
+    \item $\displaystyle\sum\limits_{n=3}^{\infty}\dfrac{1}{n\ln n\ln\ln n}$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+试证明下列命题:
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $\{a_n\}$ 是递减正数列,若 $\displaystyle\sum\limits_{n=1}^{\infty}a_{2^n}$ 发散,则 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{n}$ 发散;
+    \item 设 $\{a_n\}$ 是递减于零的数列:
+    \begin{enumerate}[label=(\roman*)]
+        \item 若 $\displaystyle\sum\limits_{n=1}^{\infty}a_n=+\infty$,则 $\displaystyle\sum\limits_{n=1}^{\infty}\min\left\{a_n,\dfrac{1}{n}\right\}=+\infty$;
+        \item 若 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{n}=+\infty$,则 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{1}{n}\min\left\{a_n,\dfrac{1}{\ln n}\right\}=+\infty$.
+    \end{enumerate}
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}[\markstar\ 推广的 Cauchy 凝聚定理]
+设 $\{a_n\}$ 是严格递减的正数列,若存在严格递增的正整数列 $\{m_k\}$ 和 $M>0$,使得
+\[
+    m_{k+1}-m_k\leq M(m_k-m_{k-1}),
+    \qquad k=2,3,\ldots,
+\]
+则级数
+\[
+    \sum\limits_{n=1}^{\infty}a_n
+    \quad\text{与}\quad
+    \sum\limits_{k=1}^{\infty}(m_{k+1}-m_k)a_{m_k}
+\]
+同敛散.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+试证明下列命题:
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 是收敛正项级数,记 $\displaystyle R_n=\sum\limits_{k=n+1}^{\infty}a_k$,若 $\displaystyle\sum\limits_{n=1}^{\infty}R_n$ 收敛,则 $\displaystyle\lim\limits_{n\to\infty}na_n=0$;
+    \item 设 $\{a_n\}$ 是递减正数列,若 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{\sqrt n}$ 收敛,则级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n^2$ 收敛.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设 $\{a_n\}$ 递减于零,若 $b_n=a_n-2a_{n+1}+a_{n+2}\geq0$($n\in\mathbb{N}$),则
+\[
+    \sum\limits_{n=1}^{\infty}nb_n=a_1.
+\]
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\methodsection{(B) 比式判别法}
+
+\begin{example}
+讨论级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 的敛散性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle a_n=\dfrac{3^n n!}{n^n}$;
+    \item $\displaystyle a_n=\dfrac{(2n-1)!!}{3^n n!}$;
+    \item $\displaystyle a_n=\dfrac{(n!)^3}{3^{n^4/3}}$;
+    \item $\displaystyle a_n=\dfrac{(\alpha+1)(2\alpha+1)\cdots(n\alpha+1)}{(\beta+1)(2\beta+1)\cdots(n\beta+1)}\quad(\alpha>0,\beta>0)$;
+    \item $\displaystyle a_n=\dfrac{n^\alpha}{\beta^n}\quad(\beta>0)$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设 $a_1\geq a_2\geq\cdots\geq a_n\geq\cdots>0$,$\displaystyle\lim\limits_{n\to\infty}\dfrac{a_{2n}}{a_n}=\lambda$,则级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 在 $\lambda<\dfrac{1}{2}$ 时收敛,在 $\lambda>\dfrac{1}{2}$ 时发散.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $a_n>0$,$\displaystyle\lim\limits_{n\to\infty}\dfrac{a_{2n}}{a_{2n-1}}=\alpha$,$\displaystyle\lim\limits_{n\to\infty}\dfrac{a_{2n+1}}{a_{2n}}=\beta$,若 $\alpha\beta<1$,则 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 收敛;
+    \item 设 $a_n>0$,$\displaystyle\lim\limits_{n\to\infty}\dfrac{a_{n+1}}{a_n}=\lambda<1$,则 $\displaystyle\lim\limits_{n\to\infty}\dfrac{a_{2n}}{a_n}=0$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}[\markstar\ 比式判别法推广]
+设 $a_n>0$,$k_0$ 是固定正整数,若
+\[
+    \lim\limits_{n\to\infty}\dfrac{a_{n+k_0}}{a_n}=\lambda,
+\]
+则 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 在 $\lambda<1$ 时收敛,在 $\lambda>1$ 时发散.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 是正项级数,若
+\[
+    \lim\limits_{n\to\infty}\left(\dfrac{a_{n+1}}{a_n}\right)^n=\lambda,
+\]
+则 $I$ 在 $\lambda<e^{-1}$ 时收敛,$\lambda>e^{-1}$ 时发散.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+判别下列级数的敛散性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\dfrac{1}{1+a}+\dfrac{2}{1+a^2}+\dfrac{4}{1+a^4}+\dfrac{8}{1+a^8}+\cdots$;
+    \item $\displaystyle\dfrac{a}{1+a}+\dfrac{2a^2}{1+a^2}+\dfrac{4a^4}{1+a^4}+\cdots$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\methodsection{(C) 根式判别法}
+
+\begin{example}
+判别级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 的敛散性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle a_n=(\sqrt[n]{n}-1)^n$;
+    \item $\displaystyle a_n=\left(\dfrac{n}{n+1}\right)^{n(n+1)}$;
+    \item $\displaystyle a_n=\left(\dfrac{1+\cos n}{2+\cos n}\right)^{2n-\ln n}$;
+    \item $\displaystyle a_n=\dfrac{n^3}{(\sqrt2+(-1)^n)^n3^n}$;
+    \item $\displaystyle a_n=\dfrac{\ln(1+\alpha^n)}{n^\beta}\quad(\alpha\geq0)$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设 $\{a_n\},\{b_n\}$ 为正数列,若有
+\[
+    \lim\limits_{n\to\infty}\dfrac{a_{n+1}}{a_n}=\alpha,
+    \qquad
+    \lim\limits_{n\to\infty}\sqrt[n]{b_n}=\beta,
+\]
+试证明级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_nb_n$ 在 $\alpha\beta<1$ 时收敛,$\alpha\beta>1$ 时发散.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\methodsection{(D) Cauchy 积分判别法}
+
+\begin{example}
+证明下列命题:
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $a_1>1$,$\displaystyle a_{n+1}=\dfrac{a_n}{1+a_n^\alpha}$,$0<\alpha<1$,则 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 收敛;
+    \item 设 $a_n>0$,$\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{n}$ 收敛,则
+    \[
+        \sum\limits_{n=1}^{\infty}\left(\sum\limits_{k=1}^{\infty}\dfrac{a_n}{n^2+k^2}\right)
+    \]
+    收敛.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设
+\[
+    a_n=2\sqrt n-\sum\limits_{k=1}^n\dfrac{1}{\sqrt k},
+\]
+则 $\displaystyle\lim\limits_{n\to\infty}a_n=l$ 且 $1\leq l\leq2$.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设 $f(x)$ 于 $\lbrack 1,+\infty)$ 上可导,$f'(x)$ 单调递增,且 $f(x)\to A$($x\to+\infty$),证明:
+\[
+    \sum\limits_{n=1}^{\infty}f'(n)
+\]
+收敛.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\subsection{其他比较判别 *}
+
+\begin{example}[比值对数判别法]
+设有正项级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$,且存在
+\[
+    \lim\limits_{n\to\infty}\left(n\ln\dfrac{a_n}{a_{n+1}}\right)=l,
+    \qquad -\infty\leq l\leq+\infty.
+\]
+若 $l>1$,则级数收敛;若 $l<1$,则级数发散.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}[Rabbe 判别法]
+设有正项级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 满足
+\[
+    \lim\limits_{n\to\infty}n\left(\dfrac{a_n}{a_{n+1}}-1\right)=l,
+    \qquad -\infty\leq l\leq+\infty.
+\]
+若 $l>1$,则 $I$ 收敛;若 $l<1$,则 $I$ 发散.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}[\markstar\ Kummer 判别法]
+设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n,\sum\limits_{n=1}^{\infty}b_n$ 是正项级数,$\displaystyle\sum\limits_{n=1}^{\infty}b_n$ 发散,若有
+\[
+    \lim\limits_{n\to\infty}\left(\dfrac{1}{b_n}\dfrac{a_n}{a_{n+1}}-\dfrac{1}{b_{n+1}}\right)=\lambda,
+\]
+则 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 在 $\lambda>0$ 时收敛,在 $\lambda<0$ 时发散.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设
+\[
+    a_n=C_{\alpha}^{n}=\dfrac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}.
+\]
+\begin{enumerate}[label=(\arabic*)]
+    \item $\alpha$ 在什么条件下,$\displaystyle\lim\limits_{n\to\infty}a_n=0$;
+    \item 讨论 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 的敛散性.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}[对数判别法]
+设 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 是正项级数,若存在
+\[
+    \lim\limits_{n\to\infty}\dfrac{\ln\dfrac{1}{a_n}}{\ln n}=l,
+\]
+则当 $l>1$ 时,$I$ 收敛;当 $l<1$ 时,$I$ 发散.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\newpage
+
+\section{一般级数}
+
+\begin{example}
+证明级数
+\[
+    1-\dfrac{1}{3}\left(1+\dfrac{1}{2}\right)
+    +\dfrac{1}{5}\left(1+\dfrac{1}{2}+\dfrac{1}{3}\right)
+    -\dfrac{1}{7}\left(1+\dfrac{1}{2}+\dfrac{1}{3}+\dfrac{1}{4}\right)+\cdots
+\]
+是收敛的.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}[\markstar]
+\begin{enumerate}[label=(\arabic*)]
+    \item 证明 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{(-1)^{[\sqrt n]}}{n}$ 收敛;
+    \item 证明 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{(-1)^{\sqrt[3]{n}}}{n}$ 收敛.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+讨论级数
+\[
+    \sum\limits_{n=1}^{\infty}a_n
+    =\dfrac{1}{1^p}-\dfrac{1}{2^q}+\dfrac{1}{3^p}-\dfrac{1}{4^q}+
+    \cdots+\dfrac{1}{(2n-1)^p}-\dfrac{1}{(2n)^q}+\cdots,
+\]
+其中 $p>0,q>0$,的绝对收敛与条件收敛性.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+研究
+\[
+    \sum\limits_{n=1}^{\infty}\dfrac{(-1)^{n-1}}{n^{p+\frac{1}{n}}}
+\]
+的绝对收敛与条件收敛性.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设 $f(x)$ 在区间 $\lbrack -1,1\rbrack$ 上有二阶连续导数,且 $\displaystyle\lim\limits_{x\to0}\dfrac{f(x)}{x}=0$,证明:
+\[
+    \sum\limits_{n=1}^{\infty}f\left(\dfrac{1}{n}\right)
+\]
+绝对收敛.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+讨论级数
+\[
+    \sum\limits_{n=1}^{\infty}\left(1+\dfrac{1}{2}+\dfrac{1}{3}+\cdots+\dfrac{1}{n}\right)\dfrac{\sin nx}{n}
+\]
+的敛散性.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 收敛,$\displaystyle\sum\limits_{n=1}^{\infty}(a_n+b_n)$ 绝对收敛,试证:$\displaystyle\sum\limits_{n=1}^{\infty}a_nb_n$ 也收敛.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+判别下列级数的敛散性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{(-1)^n}{\sqrt n+(-1)^{n-1}}$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\ln\left(1+\dfrac{(-1)^n}{\sqrt[3]{n^2}}\right)$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+判断下列级数的敛散性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}(-1)^n\left(1-\cos\dfrac{\pi}{\sqrt n}\right)$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}\sin\left(\pi\sqrt{n^2+1}\right)$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+判断下列级数的敛散性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=2}^{\infty}\dfrac{(-1)^n}{\sqrt n}
+    \left[(-1)^n+\sqrt n\sin\dfrac{1}{\sqrt n}\right]$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}(-1)^{\frac{n(n-1)}{2}}\dfrac{1}{\sqrt n}$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+判别级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 的收敛性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle a_n=\dfrac{(-1)^n}{\sqrt[3]{n}+(-1)^{n-1}}$;
+    \item $\displaystyle a_n=\ln\left(1+\dfrac{(-1)^{n-1}}{(n+1)^\alpha}\right)$;
+    \item $\displaystyle a_n=\dfrac{(-1)^n}{[2n+(-1)^n]^\alpha}$;
+    \item $\displaystyle a_n=\dfrac{(-1)^{n-1}}{(\sqrt{n+1}+(-1)^n)^\alpha}$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $x\neq k\pi$($k\in\mathbb{Z}$),讨论 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{\cos nx}{n^p}$ 与 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{\sin nx}{n^p}$ 的条件收敛性与绝对收敛性;
+    \item 讨论级数 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{(-1)^n\sin n}{n}$ 与 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{(-1)^n\sin^2n}{n}$ 的条件收敛性与绝对收敛性.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\newpage
+
+\section{级数的应用 *}
+
+\subsection{与极限的联系}
+
+\begin{example}
+设
+\[
+    x_n=\dfrac{x^n}{n!\,3^n},
+\]
+求 $\displaystyle\lim\limits_{n\to\infty}x_n$.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设 $a_n>0$,$\displaystyle\sum\limits_{n=1}^{\infty}a_n=1$,$\displaystyle A_n=\sum\limits_{k=1}^na_k$,求极限
+\[
+    \lim\limits_{n\to\infty}\dfrac{e^{A_n}-e^{A_{n-1}}}{A_n^e-A_{n-1}^e}.
+\]
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设数列 $\{a_n\}$ 满足条件:
+\begin{enumerate}[label=(\arabic*)]
+    \item $0<a_k\leq100a_n$($n=k+1,k+2,\ldots$);
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 收敛.
+\end{enumerate}
+求证:$\displaystyle\lim\limits_{n\to\infty}na_n=0$.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}[\markstar]
+设正项级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 收敛,试证:
+\[
+    \lim\limits_{n\to\infty}\dfrac{\sum\limits_{k=1}^nka_k}{n}=0.
+\]
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+设 $\displaystyle S_n=\sum\limits_{k=1}^n\dfrac{\sin k}{k}=S_n^++S_n^-$,其中 $S_n^+$ 和 $S_n^-$ 分别是正项之和和负项之和.证明:$\displaystyle\lim\limits_{n\to\infty}\dfrac{S_n^+}{S_n^-}$ 存在并求其值.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\subsection{Cesaro 和}
+
+\begin{example}
+求下列级数的 Cesaro 和:
+\begin{enumerate}[label=(\arabic*)]
+    \item $1+0-1+1+0-1+\cdots$;
+    \item $\sin x+\sin2x+\sin3x+\cdots$,其中 $0<x<2\pi$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}[\markstar\ 可以 Cesaro 求和的必要条件]
+设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 可以 Cesaro 求和,则
+\[
+    \lim\limits_{n\to\infty}\dfrac{S_n}{n}=0,
+    \qquad
+    \lim\limits_{n\to\infty}\dfrac{a_n}{n}=0.
+\]
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}[\markstar]
+设 $\displaystyle\lim\limits_{n\to\infty}na_n=0$,则
+\[
+    \sum\limits_{n=1}^{\infty}a_n\text{ 在通常意义下收敛}
+    \quad\Longleftrightarrow\quad
+    \sum\limits_{n=1}^{\infty}a_n\text{ 可以 Cesaro 求和}.
+\]
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}[\markstar]
+设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 可以 Cesaro 求和,证明:
+\[
+    \sum\limits_{n=1}^{\infty}a_n\text{ 在通常意义下收敛}
+    \quad\Longleftrightarrow\quad
+    \lim\limits_{n\to\infty}\dfrac{a_1+2a_2+\cdots+na_n}{n}=0.
+\]
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\subsection{Cauchy 乘积}
+
+\begin{example}[\markstar]
+设 $|x|<1$,则
+\[
+    \dfrac{1}{1-x}\sum\limits_{n=0}^{\infty}a_nx^n
+    =\left(\sum\limits_{n=0}^{\infty}x^n\right)
+    \left(\sum\limits_{n=0}^{\infty}a_nx^n\right)
+    =\sum\limits_{n=0}^{\infty}(a_0+a_1+\cdots+a_n)x^n.
+\]
+特别地,
+\[
+    \left(\dfrac{1}{1-x}\right)^2
+    =\dfrac{1}{1-x}\sum\limits_{n=0}^{\infty}x^n
+    =\sum\limits_{n=0}^{\infty}(n+1)x^n.
+\]
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+证明:$\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a^n}{n!}$ 与 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{b^n}{n!}$ 绝对收敛,且它们的 Cauchy 乘积等于
+\[
+    \sum\limits_{n=0}^{\infty}\dfrac{(a+b)^n}{n!}.
+\]
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+求 $\displaystyle\sum\limits_{n=1}^{\infty}nx^{n-1}$ 与 $\displaystyle\sum\limits_{n=1}^{\infty}(-1)^{n-1}nx^{n-1}$ 的 Cauchy 乘积.
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+求下列级数 $S=\sum c_n$ 的和:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\sum\limits_{n=0}^{\infty}c_n$,其中 $\displaystyle c_n=\sum\limits_{k=0}^nx^ky^{n-k}$,$|x|<1,|y|<1$;
+    \item $\displaystyle\sum\limits_{n=1}^{\infty}c_n$,其中 $\displaystyle c_n=\sum\limits_{k=1}^{\infty}\dfrac{1}{k(k+1)(n-k+1)!}$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\subsection{无穷乘积}
+
+\begin{example}
+证明下列等式:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\prod\limits_{n=2}^{\infty}\dfrac{n^3-1}{n^3+1}=\dfrac{2}{3}$;
+    \item $\displaystyle\prod\limits_{n=0}^{\infty}\left[1+\left(\dfrac{1}{2}\right)^{2^n}\right]=2$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+讨论下列无穷乘积的敛散性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\prod\limits_{n=1}^{\infty}\dfrac{1}{n}$;
+    \item $\displaystyle\prod\limits_{n=1}^{\infty}\dfrac{(n+1)^2}{n(n+2)}$;
+    \item $\displaystyle\prod\limits_{n=1}^{\infty}\sqrt[n]{1+\dfrac{1}{n}}$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\begin{example}
+讨论下列无穷乘积的敛散性:
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\prod\limits_{n=1}^{\infty}\dfrac{n}{\sqrt{n^2+1}}$;
+    \item $\displaystyle\prod\limits_{n=2}^{\infty}\left(\dfrac{n^2-1}{n^2+1}\right)^p\quad(p\in\mathbb{R})$.
+\end{enumerate}
+\end{example}
+
+\begin{proof}[解]
+% TODO: 补充本题解答。
+\end{proof}
+
+\end{document}
+
