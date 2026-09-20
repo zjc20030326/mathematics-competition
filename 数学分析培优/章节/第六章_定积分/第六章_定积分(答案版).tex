@@ -22,7 +22,18 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+使用公式
+\[
+    \int_0^{\frac{\pi}{2}}\sin^m x\cos^n x\,\mathrm{d}x
+    =\dfrac{1}{2}B\left(\dfrac{m+1}{2},\dfrac{n+1}{2}\right).
+\]
+逐项代入得到
+\[
+    \boxed{\dfrac{2}{15}},\qquad
+    \boxed{\dfrac{2}{35}},\qquad
+    \boxed{\dfrac{1}{24}},\qquad
+    \boxed{\dfrac{\pi}{32}}.
+\]
 \end{proof}
 
 \begin{example}
@@ -36,7 +47,29 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 令 $x\mapsto\pi-x$，被积函数变号，故积分为 $0$。
+    \item 关于 $\dfrac{\pi}{2}$ 对称后，
+    \[
+        \int_0^\pi\cos^4x\sin^3x\,\mathrm{d}x
+        =2\int_0^{\frac{\pi}{2}}\cos^4x\sin^3x\,\mathrm{d}x
+        =\boxed{\dfrac{4}{35}}.
+    \]
+    \item 当 $n$ 为奇数时，由关于 $\dfrac{\pi}{2}$ 的反对称性，积分为 $0$。当 $n=2m$ 时，
+    \[
+        \int_0^\pi\cos^{2m}x\,\mathrm{d}x
+        =\boxed{\dfrac{\pi C_m^{2m}}{4^m}}.
+    \]
+    \item 由对称性及 Wallis 公式，
+    \[
+        \int_0^\pi\sin^n x\,\mathrm{d}x
+        =
+        \begin{cases}
+            \dfrac{\pi C_m^{2m}}{4^m}, & n=2m,\\[6pt]
+            \dfrac{2^{2m+1}(m!)^2}{(2m+1)!}, & n=2m+1.
+        \end{cases}
+    \]
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -51,7 +84,23 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 被积函数在一个整周期上的积分为零，故结果为 $\boxed{0}$。
+    \item 在 $\lbrack0,\pi\rbrack$ 上作代换 $x\mapsto\pi-x$，被积函数变号，故一个周期上的积分为 $\boxed{0}$。
+    \item 四个象限贡献相同，因此
+    \[
+        \int_0^{2\pi}\sin^2x\cos^4x\,\mathrm{d}x
+        =4\int_0^{\frac{\pi}{2}}\sin^2x\cos^4x\,\mathrm{d}x
+        =\boxed{\dfrac{\pi}{8}}.
+    \]
+    \item 两积分由平移 $x\mapsto x+\dfrac{\pi}{2}$ 相等。若 $n$ 为正整数，则公共值为
+    \[
+        \begin{cases}
+            0, & n\text{ 为奇数},\\[4pt]
+            \dfrac{2\pi C_m^{2m}}{4^m}, & n=2m.
+        \end{cases}
+    \]
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -65,7 +114,25 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 由周期性及
+    \[
+        \sin^4x\cos^4x=\dfrac{1}{16}\sin^4(2x),
+    \]
+    得
+    \[
+        \int_{-\pi}^{\pi}\cos^4x\sin^4x\,\mathrm{d}x
+        =\boxed{\dfrac{3\pi}{64}}.
+    \]
+    \item 被积函数在平移 $\pi$ 后变号，积分区间包含两个完整的 $2\pi$ 周期，故结果为 $\boxed{0}$。
+    \item 由偶性把积分化为 $\displaystyle\int_0^\pi\cos^3x\sin^2x\,\mathrm{d}x$，再关于 $\dfrac{\pi}{2}$ 配对，结果为 $\boxed{0}$。
+    \item 关于 $\dfrac{\pi}{2}$ 对称，故
+    \[
+        \int_0^\pi|\cos^5x|\,\mathrm{d}x
+        =2\int_0^{\frac{\pi}{2}}\cos^5x\,\mathrm{d}x
+        =\boxed{\dfrac{16}{15}}.
+    \]
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -77,7 +144,23 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 关于 $\dfrac{\pi}{2}$ 对称并令 $t=\tan x$，得到
+    \[
+    \begin{aligned}
+        \int_0^\pi\dfrac{\mathrm{d}x}{1+\sin^2x}
+        &=2\int_0^{\frac{\pi}{2}}\dfrac{\mathrm{d}x}{1+\sin^2x}\\
+        &=2\int_0^{+\infty}\dfrac{\mathrm{d}t}{1+2t^2}
+        =\boxed{\dfrac{\pi}{\sqrt2}}.
+    \end{aligned}
+    \]
+    \item 使用 $t=\tan\dfrac{x}{2}$，并把 $0$ 到 $2\pi$ 分成两段，可得标准积分
+    \[
+        \int_0^{2\pi}\dfrac{\mathrm{d}x}{1+a\cos x}
+        =\boxed{\dfrac{2\pi}{\sqrt{1-a^2}}},
+        \qquad |a|<1.
+    \]
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -94,7 +177,65 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 令 $x\mapsto\pi-x$ 并与原式相加：
+    \[
+        2I=\pi\int_0^\pi\dfrac{\mathrm{d}x}{1+\cos^2x}
+        =\dfrac{\pi^2}{\sqrt2}.
+    \]
+    故 $I=\boxed{\dfrac{\pi^2}{2\sqrt2}}$。
+
+    \item 记被积函数分母为 $D(x)=e^x+e^{1-x}$。因 $D(1-x)=D(x)$，
+    \[
+        2I=\int_0^1\dfrac{\mathrm{d}x}{D(x)}
+        =e^{-\frac12}\int_0^{\frac12}\operatorname{sech}u\,\mathrm{d}u.
+    \]
+    因此
+    \[
+        I=\boxed{\dfrac{e^{-\frac12}}{2}
+        \arctan\left(\sinh\dfrac{1}{2}\right)}.
+    \]
+
+    \item 将正、负半轴配对，并使用
+    \[
+        \ln(1+e^x)-\ln(1+e^{-x})=x,
+    \]
+    得
+    \[
+        I=\int_0^2x^2\,\mathrm{d}x=\boxed{\dfrac{8}{3}}.
+    \]
+
+    \item 令 $x\mapsto\dfrac{\pi}{4}-x$。由于
+    \[
+        \ln(1+\tan x)
+        +\ln\left(1+\tan\left(\dfrac{\pi}{4}-x\right)\right)=\ln2,
+    \]
+    故
+    \[
+        I=\boxed{\dfrac{\pi}{8}\ln2}.
+    \]
+
+    \item 令 $x\mapsto\dfrac{\pi}{2}-x$，所得两个被积函数之和为 $1$，所以
+    \[
+        I=\boxed{\dfrac{\pi}{4}}.
+    \]
+
+    \item 记 $A=a^n$、$B=b^n$。被积函数以 $\pi$ 为周期，且令 $t=\tan x$ 后
+    \[
+    \begin{aligned}
+        \int_0^{\frac{\pi}{2}}
+        \dfrac{A\sin^2x+B\cos^2x}
+        {A^2\sin^2x+B^2\cos^2x}\,\mathrm{d}x
+        &=\int_0^{+\infty}
+        \dfrac{At^2+B}{(A^2t^2+B^2)(1+t^2)}\,\mathrm{d}t\\
+        &=\dfrac{\pi}{A+B}.
+    \end{aligned}
+    \]
+    因而原积分为
+    \[
+        \boxed{\dfrac{2\pi}{a^n+b^n}}.
+    \]
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -112,7 +253,19 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 作代换 $x\mapsto a-x$，得到
+    \[
+        I=\int_0^a\dfrac{f(a-x)}{f(x)+f(a-x)}\,\mathrm{d}x.
+    \]
+    与原式相加得 $2I=a$，故 $I=\boxed{\dfrac{a}{2}}$。
+
+    \item 同样作代换 $x\mapsto a-x$，再用 $f(x)f(a-x)=1$，得到
+    \[
+        I=\int_0^a\dfrac{f(x)}{1+f(x)}\,\mathrm{d}x.
+    \]
+    与原式相加仍有 $2I=a$，故 $I=\boxed{\dfrac{a}{2}}$。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -132,7 +285,27 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 左端令 $t=x^2$，得
+    \[
+        \dfrac{1}{2}\int_1^{a^2}
+        f\left(t+\dfrac{a^2}{t}\right)\dfrac{\mathrm{d}t}{t}.
+    \]
+    将积分在 $t=a$ 处分开，并在第二段作代换 $t=\dfrac{a^2}{u}$，两段相等，故结果为
+    \[
+        \int_1^a f\left(u+\dfrac{a^2}{u}\right)\dfrac{\mathrm{d}u}{u}.
+    \]
+
+    \item 取 $R=\sqrt{a^2+b^2}$ 及角 $\varphi$，使
+    \[
+        a\cos x+b\sin x=R\cos(x-\varphi).
+    \]
+    利用 $2\pi$ 周期性平移积分区间，左端等于
+    \[
+        \int_0^{2\pi}f(R\cos x)\,\mathrm{d}x.
+    \]
+    再把区间分成两个长度为 $\pi$ 的部分，并在后一部分作 $x\mapsto2\pi-x$，得到题设右端。
+\end{enumerate}
 \end{proof}
 
 \subsection{积分与极限}
@@ -146,7 +319,20 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+设 $\omega_f(\delta)$ 为 $f$ 在 $\lbrack0,1\rbrack$ 上的连续模。将相邻两项配对。若 $n=2m$，则
+\[
+\begin{aligned}
+    \left|\dfrac{1}{n}\sum\limits_{k=1}^{n-1}
+    (-1)^{k+1}f\left(\dfrac{k}{n}\right)\right|
+    &\leq\dfrac{1}{n}\sum\limits_{j=1}^{m-1}
+    \left|f\left(\dfrac{2j-1}{n}\right)
+    -f\left(\dfrac{2j}{n}\right)\right|
+    +\dfrac{\|f\|_\infty}{n}\\
+    &\leq\dfrac{1}{2}\omega_f\left(\dfrac{1}{n}\right)
+    +\dfrac{\|f\|_\infty}{n}.
+\end{aligned}
+\]
+奇数情形只多出一个同样趋于零的端项。由一致连续性，右端趋于零，故原极限为 $0$。
 \end{proof}
 
 \begin{example}
@@ -161,7 +347,19 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+按当前题面，求和号内的表达式不含指标 $i$，因此该和恰为其单项的 $n$ 倍。若 $b>0$，则
+\[
+    n\left(b^{\frac{1}{n}}-1\right)\longrightarrow\ln b,
+    \qquad
+    b^{\frac{1}{n}}\longrightarrow1,
+    \qquad
+    b^{\frac{n+1}{2n}}\longrightarrow\sqrt b.
+\]
+所以按现有题面，极限为
+\[
+    \boxed{\ln b\,\sin1\,\sin\sqrt b}.
+\]
+由于求和项完全不依赖 $i$，原题很可能漏写了与 $i$ 有关的指数或因子，需要对照原始资料核对。
 \end{proof}
 
 \begin{example}
@@ -172,7 +370,20 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+写成 $x=k\pi+r$，其中 $k\in\mathbb{N}$、$0\leq r<\pi$。由于
+\[
+    \int_0^\pi|\sin t|\,\mathrm{d}t=2,
+\]
+故
+\[
+    \int_0^x|\sin t|\,\mathrm{d}t=2k+O(1).
+\]
+又 $x=k\pi+O(1)$，所以
+\[
+    \lim\limits_{x\to+\infty}\dfrac{1}{x}
+    \int_0^x|\sin t|\,\mathrm{d}t
+    =\boxed{\dfrac{2}{\pi}}.
+\]
 \end{proof}
 
 \begin{example}
@@ -185,7 +396,17 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 在 $0\leq x<\dfrac{\pi}{2}$ 上有 $\sin^n x\to0$，且 $0\leq\sin^n x\leq1$。由控制收敛定理，积分趋于 $0$。
+
+    \item 在 $0<x\leq\dfrac{\pi}{2}$ 上有 $(1-\sin x)^n\to0$，且该函数被 $1$ 控制，故积分也趋于 $0$。题面末尾的“其中 $a\in(0,1)$”未在公式中出现，应为多余文字或漏项。
+
+    \item 对 $0\leq x<1$，有 $x^n\to0$，故 $e^{x^n}\to1$；同时 $1\leq e^{x^n}\leq e$。由控制收敛定理，
+    \[
+        \lim\limits_{n\to\infty}\int_0^1e^{x^n}\,\mathrm{d}x
+        =\int_0^1 1\,\mathrm{d}x=1.
+    \]
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -207,7 +428,41 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 固定 $c\in(0,\delta)$。由严格递减性，
+    \[
+        \int_\delta^1[f(x)]^n\,\mathrm{d}x
+        \leq(1-\delta)[f(\delta)]^n,
+    \]
+    而
+    \[
+        \int_0^\delta[f(x)]^n\,\mathrm{d}x
+        \geq c[f(c)]^n.
+    \]
+    因 $f(\delta)<f(c)$，两式之比趋于零。
+
+    \item 记
+    \[
+        D_n=\int_0^1[f(x)]^n\,\mathrm{d}x.
+    \]
+    则
+    \[
+    \begin{aligned}
+        0\leq D_n-\int_0^\delta[f(x)]^{n+1}\,\mathrm{d}x
+        ={}&\int_0^\delta[f(x)]^n[1-f(x)]\,\mathrm{d}x\\
+        &+\int_\delta^1[f(x)]^n\,\mathrm{d}x.
+    \end{aligned}
+    \]
+    对任意 $\varepsilon\in(0,\delta)$，第一项在 $\lbrack0,\varepsilon\rbrack$ 上不超过
+    \[
+        [1-f(\varepsilon)]D_n,
+    \]
+    而在 $\lbrack\varepsilon,\delta\rbrack$ 上以及第二项都由第 (1) 问的估计可知相对于 $D_n$ 趋于零。再令 $\varepsilon\to0^+$，利用 $f(\varepsilon)\to1$，得到
+    \[
+        \dfrac{\displaystyle\int_0^\delta[f(x)]^{n+1}\,\mathrm{d}x}{D_n}
+        \longrightarrow1.
+    \]
+\end{enumerate}
 \end{proof}
 
 \begin{example}[\markstar]
@@ -220,7 +475,29 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+记
+\[
+    M=\max\limits_{a\leq x\leq b}f(x),
+    \qquad
+    G=\int_a^b g(x)\,\mathrm{d}x>0.
+\]
+上界为
+\[
+    \left[\int_a^b f(x)^ng(x)\,\mathrm{d}x\right]^{\frac{1}{n}}
+    \leq M G^{\frac{1}{n}}\longrightarrow M.
+\]
+任取 $\varepsilon>0$。由 $f$ 的连续性，在某个正长度闭区间 $J\subseteq\lbrack a,b\rbrack$ 上有 $f(x)\geq M-\varepsilon$。又因 $g>0$ 且连续，
+\[
+    \int_Jg(x)\,\mathrm{d}x>0.
+\]
+于是
+\[
+    \left[\int_a^b f(x)^ng(x)\,\mathrm{d}x\right]^{\frac{1}{n}}
+    \geq(M-\varepsilon)
+    \left[\int_Jg(x)\,\mathrm{d}x\right]^{\frac{1}{n}}
+    \longrightarrow M-\varepsilon.
+\]
+令 $\varepsilon\to0^+$，由夹逼定理得到结论。
 \end{proof}
 
 \begin{example}
@@ -232,7 +509,20 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+作代换 $x=ht$，原积分化为
+\[
+    I_h=\int_0^{\frac{1}{h}}\dfrac{f(ht)}{1+t^2}\,\mathrm{d}t.
+\]
+写成
+\[
+    I_h-f(0)\dfrac{\pi}{2}
+    =\int_0^{\frac{1}{h}}\dfrac{f(ht)-f(0)}{1+t^2}\,\mathrm{d}t
+    -f(0)\int_{\frac{1}{h}}^{+\infty}\dfrac{\mathrm{d}t}{1+t^2}.
+\]
+第二项显然趋于零。对第一项，先取 $R$ 足够大，使核函数在 $\lbrack R,+\infty)$ 上的积分任意小；再在固定区间 $\lbrack0,R\rbrack$ 上利用 $f(ht)\to f(0)$ 的一致性。由此第一项也趋于零，故
+\[
+    I_h\longrightarrow\dfrac{\pi}{2}f(0).
+\]
 \end{proof}
 
 \begin{example}
@@ -244,7 +534,19 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+令 $t=nx$，则左端积分为
+\[
+    \dfrac{2}{\pi}\int_0^n
+    \dfrac{f\left(\frac{t}{n}\right)}{1+t^2}\,\mathrm{d}t.
+\]
+与上一题完全相同，先控制核函数在大 $t$ 处的尾积分，再在固定有界区间上使用 $f\left(\dfrac{t}{n}\right)\to f(0)$ 的一致性，得到
+\[
+    \lim\limits_{n\to\infty}\dfrac{2}{\pi}
+    \int_0^n\dfrac{f\left(\frac{t}{n}\right)}{1+t^2}\,\mathrm{d}t
+    =\dfrac{2}{\pi}f(0)\int_0^{+\infty}
+    \dfrac{\mathrm{d}t}{1+t^2}
+    =f(0).
+\]
 \end{proof}
 
 \begin{example}
@@ -257,7 +559,20 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+令 $x=a+(b-a)t$，原式化为
+\[
+    (n+1)\int_0^1t^n f(a+(b-a)t)\,\mathrm{d}t.
+\]
+核函数 $(n+1)t^n$ 非负且在 $\lbrack0,1\rbrack$ 上积分为 $1$。任取 $\delta\in(0,1)$，在 $\lbrack0,1-\delta\rbrack$ 上有
+\[
+    (n+1)\int_0^{1-\delta}t^n\,\mathrm{d}t
+    =(1-\delta)^{n+1}\longrightarrow0.
+\]
+而在 $t$ 接近 $1$ 时，由 $f$ 在 $b$ 处左连续，
+\[
+    f(a+(b-a)t)\longrightarrow f(b).
+\]
+将积分分成上述两段并用夹逼估计，即得极限为 $f(b)$。
 \end{proof}
 
 \begin{example}
@@ -269,7 +584,17 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+对充分小的 $h$，由变量平移，
+\[
+\begin{aligned}
+    \int_a^b\dfrac{f(x+h)-f(x)}{h}\,\mathrm{d}x
+    &=
+    \dfrac{1}{h}\left(
+    \int_b^{b+h}f(u)\,\mathrm{d}u
+    -\int_a^{a+h}f(u)\,\mathrm{d}u\right).
+\end{aligned}
+\]
+当 $h\to0$ 时，两个积分平均值分别趋于 $f(b)$ 与 $f(a)$，故原极限为 $f(b)-f(a)$。
 \end{proof}
 
 \begin{example}
@@ -286,7 +611,37 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+记
+\[
+    h=\dfrac{b-a}{n},
+    \qquad x_i=a+ih.
+\]
+逐段写出右端矩形公式的误差：
+\[
+\begin{aligned}
+    A_n
+    &=\sum\limits_{i=1}^{n}
+    \int_{x_{i-1}}^{x_i}[f(x_i)-f(x)]\,\mathrm{d}x\\
+    &=\sum\limits_{i=1}^{n}
+    \int_{x_{i-1}}^{x_i}(t-x_{i-1})f'(t)\,\mathrm{d}t.
+\end{aligned}
+\]
+由于 $f'$ 一致连续，
+\[
+    A_n=\dfrac{h^2}{2}
+    \sum\limits_{i=1}^{n}f'(x_i)+o(h).
+\]
+于是
+\[
+\begin{aligned}
+    nA_n
+    &=\dfrac{b-a}{2}
+    \left[h\sum\limits_{i=1}^{n}f'(x_i)\right]+o(1)\\
+    &\longrightarrow\dfrac{b-a}{2}
+    \int_a^b f'(x)\,\mathrm{d}x\\
+    &=\dfrac{b-a}{2}[f(b)-f(a)].
+\end{aligned}
+\]
 \end{proof}
 
 \begin{example}[\markstar]
@@ -304,7 +659,26 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+记 $h=\dfrac{b-a}{n}$，并令 $m_i=a+\left(i-\dfrac{1}{2}\right)h$。在每个小区间上使用带积分余项的二阶 Taylor 公式，得到
+\[
+    \int_{m_i-\frac{h}{2}}^{m_i+\frac{h}{2}}f(x)\,\mathrm{d}x
+    -hf(m_i)
+    =\dfrac{h^3}{24}f''(m_i)+o(h^3),
+\]
+其中各小区间余项求和后为 $o(h^2)$。因此
+\[
+    B_n=\dfrac{h^2}{24}
+    \left[h\sum\limits_{i=1}^{n}f''(m_i)\right]+o(h^2).
+\]
+乘以 $n^2$，并利用 $n^2h^2=(b-a)^2$ 以及中点 Riemann 和收敛，得到
+\[
+\begin{aligned}
+    n^2B_n
+    &\longrightarrow\dfrac{(b-a)^2}{24}
+    \int_a^b f''(x)\,\mathrm{d}x\\
+    &=\dfrac{(b-a)^2}{24}[f'(b)-f'(a)].
+\end{aligned}
+\]
 \end{proof}
 
 \begin{example}[\markstar]
@@ -316,7 +690,27 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+记周期平均值
+\[
+    \overline g=\dfrac{1}{T}\int_0^Tg(t)\,\mathrm{d}t.
+\]
+先对区间示性函数证明。任取 $u<v$，作代换 $t=nx$，并把 $\lbrack nu,nv\rbrack$ 分成完整周期与至多两个不足一周期的余段，可得
+\[
+    \int_u^v g(nx)\,\mathrm{d}x
+    =(v-u)\overline g+O\left(\dfrac{1}{n}\right).
+\]
+因此结论对阶梯函数 $f$ 成立。
+
+一般的 Riemann 可积函数可在 $L^1$ 意义下由阶梯函数逼近。又因周期可积函数 $g$ 有界，若 $s$ 是阶梯函数，则
+\[
+    \left|\int_a^b[f(x)-s(x)]g(nx)\,\mathrm{d}x\right|
+    \leq\|g\|_\infty\int_a^b|f(x)-s(x)|\,\mathrm{d}x.
+\]
+先选取 $s$ 使右端任意小，再令 $n\to\infty$，便得到
+\[
+    \int_a^b f(x)g(nx)\,\mathrm{d}x
+    \longrightarrow\overline g\int_a^bf(x)\,\mathrm{d}x.
+\]
 \end{proof}
 
 \begin{example}[\markstar\ Riemann 引理]
@@ -328,7 +722,20 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+证明与上一题相同，非负性并非必需。具体地，令
+\[
+    \overline g=\dfrac{1}{T}\int_0^Tg(t)\,\mathrm{d}t.
+\]
+对任意区间 $\lbrack u,v\rbrack$，周期分割给出
+\[
+    \int_u^v[g(nx)-\overline g]\,\mathrm{d}x
+    =O\left(\dfrac{1}{n}\right).
+\]
+所以结论先对阶梯函数成立。再用阶梯函数在 $L^1$ 中逼近 Riemann 可积的 $f$，并利用 $g$ 的有界性控制逼近误差，得到
+\[
+    \int_a^b f(x)[g(nx)-\overline g]\,\mathrm{d}x\longrightarrow0.
+\]
+展开 $\overline g$ 即为题设结论。
 \end{proof}
 
 \begin{example}
@@ -343,7 +750,17 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+本题当前定义
+\[
+    a_n=\int_0^1f(x)g(x)\,\mathrm{d}x
+\]
+完全不含 $n$，所以结论一般不成立。取 $f(x)\equiv1$、$g(x)\equiv1$，则所有条件均满足，但 $a_n=1$，从而 $na_n=n\not\to0$。
+
+原题很可能应为
+\[
+    a_n=\int_0^1f(x)g(nx)\,\mathrm{d}x
+\]
+并且还需令 $g$ 的周期平均值为零；即便如此，要得到 $na_n\to0$ 仍通常需要更强条件或对原式作分部积分。现有题面必须对照原始资料核对。
 \end{proof}
 
 \begin{example}
@@ -354,7 +771,24 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+函数 $s$ 以 $1$ 为周期。在一个周期内，
+\[
+    s(x)=
+    \begin{cases}
+        1, & 0\leq x<\dfrac{1}{2},\\
+        -1, & \dfrac{1}{2}\leq x<1,
+    \end{cases}
+\]
+故
+\[
+    \int_0^1s(x)\,\mathrm{d}x=0.
+\]
+对上一题的 Riemann 引理取 $g=s$、$T=1$，便有
+\[
+    \lim\limits_{n\to\infty}\int_0^1f(x)s(nx)\,\mathrm{d}x
+    =\left(\int_0^1s(x)\,\mathrm{d}x\right)
+    \left(\int_0^1f(x)\,\mathrm{d}x\right)=0.
+\]
 \end{proof}
 
 \newpage
@@ -389,7 +823,29 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 函数有界，并且在 $(0,1\rbrack$ 上连续；唯一可能的不连续点为 $0$。有界函数只有一个不连续点，故 Riemann 可积。
+
+    \item 当 $x\to0$ 时，
+    \[
+        \sin x=x-\dfrac{x^3}{6}+o(x^3),
+        \qquad
+        \dfrac{1}{\sin x}
+        =\dfrac{1}{x}+\dfrac{x}{6}+o(x).
+    \]
+    因而
+    \[
+        \dfrac{1}{x}-\dfrac{1}{\sin x}\longrightarrow0.
+    \]
+    题设在 $0$ 处的取值使函数连续，故可积。
+
+    \item 因 $\ln(1+x)\sim x$ 且 $x\ln x\to0$，有
+    \[
+        \ln x\ln(1+x)\longrightarrow0
+        \qquad(x\to0^+).
+    \]
+    因此函数在 $0$ 处也连续，从而在闭区间上可积。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -407,7 +863,20 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 对 $x\neq0$，该函数是 $\dfrac{1}{x}$ 的小数部分，故始终位于 $\lbrack0,1)$。它只可能在
+    \[
+        x=\dfrac{1}{n},
+        \qquad n=1,2,\ldots,
+    \]
+    以及 $x=0$ 处不连续。不连续点集可数，故由 Riemann 可积判别准则，函数可积。
+
+    \item 该函数有界，只在 $\sin\dfrac{\pi}{x}=0$ 的点
+    \[
+        x=\dfrac{1}{n}
+    \]
+    以及聚点 $0$ 处可能不连续。不连续点集仍为可数集，故函数 Riemann 可积。
+\end{enumerate}
 \end{proof}
 
 \begin{example}[\markstar]
@@ -415,7 +884,20 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+记 Riemann 函数为
+\[
+    R(x)=
+    \begin{cases}
+        \dfrac{1}{q}, & x=\dfrac{p}{q}\text{ 为既约分数},\\
+        0, & x\text{ 为无理数或端点}.
+    \end{cases}
+\]
+任取 $\varepsilon>0$，选 $N$ 使 $\dfrac{1}{N}<\varepsilon$。分母不超过 $N$ 的既约分数在 $\lbrack0,1\rbrack$ 中只有有限个，可用总长度任意小的有限个区间覆盖它们。在其余点上有 $0\leq R(x)<\varepsilon$。
+
+因此可作分割，使覆盖上述有限点的小区间对 Darboux 上和的贡献任意小，而其余区间上的振幅不超过 $\varepsilon$。故上、下 Darboux 和之差可以任意小，$R$ 可积；并且由于每个区间都含无理数，下和为零，所以
+\[
+    \int_0^1R(x)\,\mathrm{d}x=0.
+\]
 \end{proof}
 
 \begin{example}[\markstar\ 复合]
@@ -428,7 +910,9 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+Riemann 可积函数 $\varphi$ 有界，且其不连续点集为零测集。若 $\varphi$ 在 $t_0$ 处连续，则由 $f$ 在紧区间 $\lbrack a,b\rbrack$ 上连续可知，复合函数 $f\circ\varphi$ 也在 $t_0$ 处连续。因此 $f\circ\varphi$ 的不连续点集包含在 $\varphi$ 的不连续点集中，仍为零测集。
+
+又因 $a\leq\varphi(t)\leq b$，$f(\varphi(t))$ 有界。由 Lebesgue 的 Riemann 可积判别准则，$f(\varphi(t))$ 在 $\lbrack\alpha,\beta\rbrack$ 上 Riemann 可积。
 \end{proof}
 
 \begin{example}[\markstar]
@@ -436,7 +920,29 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+三者的关系如下：
+\[
+    f\in R\lbrack a,b\rbrack
+    \quad\Longrightarrow\quad
+    |f|\in R\lbrack a,b\rbrack
+    \quad\Longleftrightarrow\quad
+    f^2\in R\lbrack a,b\rbrack.
+\]
+第一个推出关系来自绝对值函数的连续性；$|f|$ 可积推出 $f^2=|f|^2$ 可积，而 $f^2$ 可积时
+\[
+    |f|=\sqrt{f^2}
+\]
+也可积。
+
+反向一般不成立。取
+\[
+    f(x)=
+    \begin{cases}
+        1, & x\in\mathbb{Q},\\
+        -1, & x\notin\mathbb{Q}.
+    \end{cases}
+\]
+则 $|f|\equiv1$、$f^2\equiv1$ 都可积，但 $f$ 在每一点都不连续，因而不可积。
 \end{proof}
 
 \begin{example}
@@ -448,7 +954,15 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+在题设中取 $g=f$，得到
+\[
+    \int_a^b f(x)^2\,\mathrm{d}x=0.
+\]
+设 $x_0$ 是 $f$ 的连续点。若 $f(x_0)\neq0$，由连续性，存在 $x_0$ 的一个小邻域及常数 $c>0$，使该邻域内 $f(x)^2\geq c$。这将导致
+\[
+    \int_a^b f(x)^2\,\mathrm{d}x>0,
+\]
+矛盾。故每个连续点都满足 $f(x_0)=0$。
 \end{proof}
 
 \begin{example}
@@ -460,7 +974,24 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+令
+\[
+    h(x)=f(x)+f(-x).
+\]
+则 $h$ 是连续偶函数，故可在题设中取 $g=h$。于是
+\[
+    0=\int_{-1}^{1}f(x)h(x)\,\mathrm{d}x.
+\]
+作代换 $x\mapsto-x$，同一积分也等于
+\[
+    \int_{-1}^{1}f(-x)h(x)\,\mathrm{d}x.
+\]
+两式相加得到
+\[
+    0=\int_{-1}^{1}[f(x)+f(-x)]h(x)\,\mathrm{d}x
+    =\int_{-1}^{1}h(x)^2\,\mathrm{d}x.
+\]
+由 $h$ 连续，必有 $h\equiv0$，即 $f(-x)=-f(x)$，所以 $f$ 为奇函数。
 \end{proof}
 
 \begin{example}[特殊函数逼近]
@@ -478,7 +1009,28 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+任取 $\varepsilon>0$。
+\begin{enumerate}[label=(\arabic*)]
+    \item 由 $f$ 的 Riemann 可积性，可取一个分割及各小区间中的取样点，使相应阶梯函数 $g_1$ 满足
+    \[
+        \int_a^b|f(x)-g_1(x)|\,\mathrm{d}x<\varepsilon.
+    \]
+
+    \item 阶梯函数只有有限个跳跃点。在每个跳跃点两侧取互不相交、总长度充分小的区间，并在这些区间内用线段连接左右常值，得到折线函数 $g_2$。因各函数有界，可使
+    \[
+        \int_a^b|g_1-g_2|\,\mathrm{d}x
+    \]
+    任意小。
+
+    \item 折线函数本身连续，故第 (2) 问同时给出了连续函数逼近。
+
+    \item 在折线函数的有限个折点附近，用光滑圆弧或三次 Hermite 多项式替换折角，并保持这些小邻域总长度充分小，即得连续可微函数 $g_4$，且
+    \[
+        \int_a^b|g_2-g_4|\,\mathrm{d}x
+    \]
+    任意小。
+\end{enumerate}
+在每一步把误差控制为 $\dfrac{\varepsilon}{4}$，再用三角不等式，即可使最终各种 $g$ 都满足题设误差界。
 \end{proof}
 
 \newpage
@@ -492,7 +1044,32 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 阶跃函数
+    \[
+        f(x)=
+        \begin{cases}
+            0, & x<0,\\
+            1, & x\geq0
+        \end{cases}
+    \]
+    在任意包含 $0$ 的闭区间上 Riemann 可积，但它不可能有原函数，因为导函数具有 Darboux 介值性，而该函数有跳跃。
+
+    \item 令
+    \[
+        F(x)=
+        \begin{cases}
+            x^2\sin\dfrac{1}{x^2}, & x\neq0,\\
+            0, & x=0.
+        \end{cases}
+    \]
+    则 $F$ 在 $\lbrack0,1\rbrack$ 上处处可导，故 $f=F'$ 有原函数 $F$。但对 $x\neq0$，
+    \[
+        f(x)=2x\sin\dfrac{1}{x^2}
+        -\dfrac{2}{x}\cos\dfrac{1}{x^2},
+    \]
+    它在 $0$ 附近无界，因而不 Riemann 可积。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -504,7 +1081,21 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+令
+\[
+    F(x)=1+2\int_0^x f(t)\,\mathrm{d}t,
+    \qquad
+    y(x)=\sqrt{F(x)}.
+\]
+题设给出 $0\leq f(x)\leq y(x)$。又
+\[
+    y'(x)=\dfrac{f(x)}{y(x)}\leq1,
+    \qquad y(0)=1.
+\]
+因此 $y(x)\leq1+x$，进而
+\[
+    f(x)\leq y(x)\leq1+x.
+\]
 \end{proof}
 
 \begin{example}
@@ -523,7 +1114,27 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 令
+    \[
+        F(x)=\int_a^xf(t)\,\mathrm{d}t.
+    \]
+    因 $f>0$，$F$ 连续严格递增，且 $F(a)=0$、$F(b)=\displaystyle\int_a^bf$。由介值定理，存在唯一的 $\xi\in(a,b)$ 使
+    \[
+        F(\xi)=\dfrac{1}{2}F(b).
+    \]
+    这正是题设两式。
+
+    \item 令
+    \[
+        G(x)=e^{-x}\int_a^xf(t)\,\mathrm{d}t.
+    \]
+    由积分为零，$G(a)=G(b)=0$。Rolle 定理给出某个 $\xi\in(a,b)$ 使 $G'(\xi)=0$。而
+    \[
+        G'(x)=e^{-x}\left[f(x)-\int_a^xf(t)\,\mathrm{d}t\right],
+    \]
+    故 $\displaystyle\int_a^\xi f(t)\,\mathrm{d}t=f(\xi)$。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -542,7 +1153,36 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 由 $f(0)=0$ 及 $0\leq f'\leq1$，有 $f\geq0$，并且
+    \[
+        [f(x)^2]'=2f(x)f'(x)\leq2f(x).
+    \]
+    从 $0$ 到 $x$ 积分得
+    \[
+        f(x)^2\leq2\int_0^xf(t)\,\mathrm{d}t.
+    \]
+    两端乘以 $f(x)\geq0$ 后再积分：
+    \[
+    \begin{aligned}
+        \int_0^1f(x)^3\,\mathrm{d}x
+        &\leq2\int_0^1f(x)
+        \left[\int_0^xf(t)\,\mathrm{d}t\right]\mathrm{d}x\\
+        &=\left(\int_0^1f(x)\,\mathrm{d}x\right)^2.
+    \end{aligned}
+    \]
+
+    \item 直接计算差值：
+    \[
+    \begin{aligned}
+        &(b-a)\int_a^bf(x)g(x)\,\mathrm{d}x
+        -\int_a^bf(x)\,\mathrm{d}x\int_a^bg(x)\,\mathrm{d}x\\
+        &\qquad=\dfrac{1}{2}\int_a^b\int_a^b
+        [f(x)-f(y)][g(x)-g(y)]\,\mathrm{d}x\,\mathrm{d}y.
+    \end{aligned}
+    \]
+    因 $f,g$ 同为递增函数，二重积分的被积函数非负，故结论成立。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -550,7 +1190,15 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+令
+\[
+    F(x)=\int_0^xf(t)\,\mathrm{d}t.
+\]
+则 $F(0)=0$、$F'(x)=f(x)\geq0$，且题设给出 $F'(x)\leq F(x)$。于是
+\[
+    [e^{-x}F(x)]'\leq0.
+\]
+另一方面，$e^{-x}F(x)\geq0$ 且在 $x=0$ 时为零，所以它只能恒为零。故 $F\equiv0$，进而 $f=F'\equiv0$。
 \end{proof}
 
 \begin{example}
@@ -563,7 +1211,31 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+记 $q(x)=|f'(x)|$。由 $f(0)=0$，
+\[
+    |f(x)|\leq\int_0^xq(t)\,\mathrm{d}t.
+\]
+因此
+\[
+\begin{aligned}
+    \int_0^a|f(x)f'(x)|\,\mathrm{d}x
+    &\leq\int_0^aq(x)\left[\int_0^xq(t)\,\mathrm{d}t\right]\mathrm{d}x\\
+    &=\dfrac{1}{2}\left(\int_0^aq(x)\,\mathrm{d}x\right)^2\\
+    &\leq\dfrac{a}{2}\int_0^a[f'(x)]^2\,\mathrm{d}x.
+\end{aligned}
+\]
+
+若 $f(0)=f(a)=0$，则
+\[
+    |f(x)|\leq\min\left\{\int_0^xq,\int_x^aq\right\}.
+\]
+以 $Q(x)=\int_0^xq$ 作变量可得
+\[
+    \int_0^a|ff'|
+    \leq\dfrac{1}{4}\left(\int_0^aq\right)^2
+    \leq\dfrac{a}{4}\int_0^a(f')^2.
+\]
+若 $f\left(\dfrac{a}{2}\right)=0$，分别在 $\lbrack0,\dfrac{a}{2}\rbrack$、$\lbrack \dfrac{a}{2},a\rbrack$ 使用第一种估计，每段长度为 $\dfrac{a}{2}$，同样得到系数 $\boxed{\dfrac{a}{4}}$。
 \end{proof}
 
 \begin{example}[Gronwall 引理]
@@ -578,7 +1250,35 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+令
+\[
+    F(x)=\int_a^x\varphi(t)f(t)\,\mathrm{d}t,
+    \qquad
+    \Phi(x)=\int_a^x\varphi(t)\,\mathrm{d}t.
+\]
+则 $F(a)=0$，且由题设
+\[
+    F'(x)=\varphi(x)f(x)
+    \leq\varphi(x)[g(x)+F(x)].
+\]
+因此
+\[
+    [e^{-\Phi(x)}F(x)]'
+    \leq e^{-\Phi(x)}\varphi(x)g(x).
+\]
+从 $a$ 积分到 $x$，并利用 $g(t)\leq g(x)$，得到
+\[
+\begin{aligned}
+    F(x)
+    &\leq e^{\Phi(x)}g(x)
+    \int_a^xe^{-\Phi(t)}\varphi(t)\,\mathrm{d}t\\
+    &=g(x)[e^{\Phi(x)}-1].
+\end{aligned}
+\]
+最后由 $f(x)\leq g(x)+F(x)$ 得
+\[
+    f(x)\leq g(x)e^{\Phi(x)}.
+\]
 \end{proof}
 
 \begin{example}
@@ -590,7 +1290,19 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+对任意 $x\in\lbrack0,a\rbrack$，
+\[
+    f(0)=f(x)-\int_0^xf'(t)\,\mathrm{d}t.
+\]
+故
+\[
+    |f(0)|\leq|f(x)|+\int_0^a|f'(t)|\,\mathrm{d}t.
+\]
+对 $x$ 从 $0$ 到 $a$ 积分，再除以 $a$，便得
+\[
+    |f(0)|\leq\dfrac{1}{a}\int_0^a|f(x)|\,\mathrm{d}x
+    +\int_0^a|f'(x)|\,\mathrm{d}x.
+\]
 \end{proof}
 
 \begin{example}
@@ -603,7 +1315,18 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+题面右端的 $\max\{\cdots\}$ 只有一个元素，等同于去掉 $\max$。由积分中值定理，存在 $c\in\lbrack0,1\rbrack$ 使
+\[
+    f(c)=\int_0^1f(x)\,\mathrm{d}x.
+\]
+于是对任意 $x\in\lbrack0,1\rbrack$，
+\[
+    |f(x)|
+    \leq|f(c)|+\left|\int_c^xf'(t)\,\mathrm{d}t\right|
+    \leq\left|\int_0^1f(x)\,\mathrm{d}x\right|
+    +\int_0^1|f'(x)|\,\mathrm{d}x.
+\]
+再对 $x$ 积分即得题设不等式。
 \end{proof}
 
 \subsection{各种变形}
@@ -632,7 +1355,38 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 当前题面把严格下界与严格上界都写成了 $\sqrt2$，即要求同一个积分同时大于且小于 $\sqrt2$，逻辑上不可能成立。至少有一个端点常数存在排印错误，需要核对原始资料。
+
+    \item 写成
+    \[
+        \dfrac{\pi}{2}-\int_0^{\frac{\pi}{2}}
+        \dfrac{\sin x}{x}\,\mathrm{d}x
+        =\int_0^{\frac{\pi}{2}}\dfrac{x-\sin x}{x}\,\mathrm{d}x.
+    \]
+    对 $x>0$，有 $0<x-\sin x<\dfrac{x^3}{6}$，故
+    \[
+        0<\dfrac{\pi}{2}-\int_0^{\frac{\pi}{2}}
+        \dfrac{\sin x}{x}\,\mathrm{d}x
+        <\dfrac{1}{6}\int_0^{\frac{\pi}{2}}x^2\,\mathrm{d}x
+        =\dfrac{\pi^3}{144}.
+    \]
+
+    \item 因 $\sin x\leq1$，
+    \[
+        \int_{\frac{\pi}{6}}^{\frac{\pi}{2}}
+        \dfrac{2x}{\sin x}\,\mathrm{d}x
+        \geq\int_{\frac{\pi}{6}}^{\frac{\pi}{2}}2x\,\mathrm{d}x
+        =\dfrac{2\pi^2}{9}.
+    \]
+    又因弦估计 $\sin x\geq\dfrac{2x}{\pi}$，
+    \[
+        \int_{\frac{\pi}{6}}^{\frac{\pi}{2}}
+        \dfrac{2x}{\sin x}\,\mathrm{d}x
+        \leq\int_{\frac{\pi}{6}}^{\frac{\pi}{2}}\pi\,\mathrm{d}x
+        =\dfrac{\pi^2}{3}<\dfrac{4\pi^2}{9}.
+    \]
+\end{enumerate}
 \end{proof}
 
 \methodsection{(B) 换元法}
@@ -645,7 +1399,17 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+令 $t=x^2$，则
+\[
+    \int_0^{\sqrt{2\pi}}\sin x^2\,\mathrm{d}x
+    =\dfrac{1}{2}\int_0^{2\pi}\dfrac{\sin t}{\sqrt t}\,\mathrm{d}t.
+\]
+把后一个积分分成 $\lbrack0,\pi\rbrack$ 与 $\lbrack\pi,2\pi\rbrack$，并在第二段令 $t=u+\pi$，得到
+\[
+    \dfrac{1}{2}\int_0^\pi
+    \sin u\left(\dfrac{1}{\sqrt u}
+    -\dfrac{1}{\sqrt{u+\pi}}\right)\mathrm{d}u>0.
+\]
 \end{proof}
 
 \begin{example}
@@ -657,7 +1421,14 @@ $f\in C(\lbrack a,b\rbrack)$ 且严格递增,则
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+使用严格 Chebyshev 积分不等式。函数 $x$ 与 $f(x)$ 在 $\lbrack a,b\rbrack$ 上同向严格递增，故
+\[
+    \dfrac{1}{b-a}\int_a^bxf(x)\,\mathrm{d}x
+    >
+    \left(\dfrac{1}{b-a}\int_a^bx\,\mathrm{d}x\right)
+    \left(\dfrac{1}{b-a}\int_a^bf(x)\,\mathrm{d}x\right).
+\]
+代入 $\displaystyle\int_a^b x\,\mathrm{d}x=\dfrac{(b-a)(a+b)}{2}$ 并整理，即得结论。
 \end{proof}
 
 \begin{example}
@@ -669,7 +1440,21 @@ $f\in C(\lbrack a,b\rbrack)$ 且严格递增,则
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+令
+\[
+    g(x)=\cos x-\sin x,
+    \qquad
+    h(x)=\dfrac{1}{1+x^2}.
+\]
+二者都在 $\lbrack0,\dfrac{\pi}{2}\rbrack$ 上严格递减，且
+\[
+    \int_0^{\frac{\pi}{2}}g(x)\,\mathrm{d}x=0.
+\]
+由严格 Chebyshev 积分不等式，
+\[
+    \int_0^{\frac{\pi}{2}}g(x)h(x)\,\mathrm{d}x>0.
+\]
+展开该式就是题设两个积分之差为正。
 \end{proof}
 
 \methodsection{(C) 分部积分}
@@ -683,7 +1468,21 @@ $f\in C(\lbrack a,b\rbrack)$ 且严格递增,则
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+二次 Hermite 插值余项给出：对每个 $x\in(a,b)$，存在 $\xi_x\in(a,b)$ 使
+\[
+    f(x)=\dfrac{f''(\xi_x)}{2}(x-a)(x-b).
+\]
+因此
+\[
+    |f(x)|\leq\dfrac{M}{2}(x-a)(b-x).
+\]
+积分得更强的估计
+\[
+    \left|\int_a^bf(x)\,\mathrm{d}x\right|
+    \leq\int_a^b|f(x)|\,\mathrm{d}x
+    \leq\dfrac{M}{12}(b-a)^3
+    \leq\dfrac{M}{2}(b-a)^3.
+\]
 \end{proof}
 
 \begin{example}
@@ -700,7 +1499,24 @@ $f\in C(\lbrack a,b\rbrack)$ 且严格递增,则
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+把端点条件看作各具有重数 $n$ 的 Hermite 插值条件。其余项公式说明：对每个 $x\in(a,b)$，存在 $\xi_x\in(a,b)$ 使
+\[
+    f(x)=\dfrac{f^{(2n)}(\xi_x)}{(2n)!}
+    (x-a)^n(x-b)^n.
+\]
+故
+\[
+    |f(x)|\leq\dfrac{M}{(2n)!}(x-a)^n(b-x)^n.
+\]
+积分并令 $x=a+(b-a)t$，得到
+\[
+\begin{aligned}
+    \left|\int_a^bf(x)\,\mathrm{d}x\right|
+    &\leq\dfrac{M(b-a)^{2n+1}}{(2n)!}
+    \int_0^1t^n(1-t)^n\,\mathrm{d}t\\
+    &=\dfrac{(n!)^2M}{(2n)!(2n+1)!}(b-a)^{2n+1}.
+\end{aligned}
+\]
 \end{proof}
 
 \begin{example}
@@ -712,7 +1528,24 @@ $f\in C(\lbrack a,b\rbrack)$ 且严格递增,则
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+分部积分得到
+\[
+\begin{aligned}
+    \int_0^{2\pi}f(x)\sin nx\,\mathrm{d}x
+    &=
+    \dfrac{f(0)-f(2\pi)}{n}
+    +\dfrac{1}{n}\int_0^{2\pi}f'(x)\cos nx\,\mathrm{d}x.
+\end{aligned}
+\]
+因 $f'\geq0$，
+\[
+    \int_0^{2\pi}f'(x)\,\mathrm{d}x=f(2\pi)-f(0).
+\]
+对前式取绝对值便得
+\[
+    \left|\int_0^{2\pi}f(x)\sin nx\,\mathrm{d}x\right|
+    \leq\dfrac{2[f(2\pi)-f(0)]}{n}.
+\]
 \end{proof}
 
 \methodsection{(D) 中值定理}
@@ -726,7 +1559,24 @@ $f\in C(\lbrack a,b\rbrack)$ 且严格递增,则
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+本题按当前题面不成立。令 $t=x-2$，并取
+\[
+    f(x)=t-\dfrac{t^4}{8},
+    \qquad 0\leq t\leq2.
+\]
+则 $f(2)=f(4)=0$，并且
+\[
+    f'(x)=1-\dfrac{t^3}{2},
+    \qquad
+    \max\limits_{2\leq x\leq4}f'(x)=1.
+\]
+但
+\[
+    \int_2^4f(x)\,\mathrm{d}x
+    =\int_0^2\left(t-\dfrac{t^4}{8}\right)\mathrm{d}t
+    =\dfrac{6}{5}>1.
+\]
+因此结论缺少条件或常数有误，需要核对原始资料。
 \end{proof}
 
 \begin{example}
@@ -738,7 +1588,17 @@ $f\in C(\lbrack a,b\rbrack)$ 且严格递增,则
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+由 Lagrange 中值定理，存在 $c\in(0,1)$ 使
+\[
+    f'(c)=f(1)-f(0).
+\]
+对任意 $x\in\lbrack0,1\rbrack$，
+\[
+    |f'(x)|
+    \leq|f'(c)|+\left|\int_c^xf''(t)\,\mathrm{d}t\right|
+    \leq|f(1)-f(0)|+\int_0^1|f''(t)|\,\mathrm{d}t.
+\]
+对 $x$ 取最大值即得结论。
 \end{proof}
 
 \begin{example}
@@ -750,7 +1610,16 @@ $f\in C(\lbrack a,b\rbrack)$ 且严格递增,则
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+由 $f(0)=f(1)$，Rolle 定理给出 $c\in(0,1)$ 使 $f'(c)=0$。因此对任意 $x$，
+\[
+    |f'(x)|\leq\int_0^1|f''(t)|\,\mathrm{d}t.
+\]
+在 $x\in\lbrack0,1\rbrack$ 上积分，得到更强的估计
+\[
+    \int_0^1|f'(x)|\,\mathrm{d}x
+    \leq\int_0^1|f''(x)|\,\mathrm{d}x.
+\]
+再在右端增加非负项 $2\displaystyle\int_0^1|f(x)|\,\mathrm{d}x$，即得题设结论。
 \end{proof}
 
 \begin{example}
@@ -762,7 +1631,40 @@ $f\in C(\lbrack a,b\rbrack)$ 且严格递增,则
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+先证明存在 $c\in\lbrack0,1\rbrack$ 使
+\[
+    |f'(c)|\leq8\int_0^1|f(x)|\,\mathrm{d}x.
+\]
+记
+\[
+    A=\int_0^1|f(x)|\,\mathrm{d}x.
+\]
+若结论不成立，则由导函数的 Darboux 性质，$f'$ 保持定号，且处处有
+\[
+    |f'(x)|>8A.
+\]
+不妨设 $f'(x)>8A$。若 $f$ 在 $z\in\lbrack0,1\rbrack$ 处为零，则由中值定理，
+\[
+    |f(x)|>8A|x-z|,
+\]
+从而
+\[
+    A>8A\int_0^1|x-z|\,\mathrm{d}x
+    =4A\bigl[z^2+(1-z)^2\bigr]\geq2A,
+\]
+矛盾。若 $f$ 无零点，则 $f$ 保持定号；当 $f>0$ 时，
+$f(x)>f(0)+8Ax>8Ax$，故 $A>4A$；当 $f<0$ 时，从右端点反向比较同样得到 $A>4A$。情形 $f'(x)<-8A$ 完全类似。因此所需的 $c$ 必存在。
+
+于是对任意 $x$，
+\[
+    |f'(x)|\leq|f'(c)|+\int_0^1|f''(t)|\,\mathrm{d}t.
+\]
+积分后得到
+\[
+    \int_0^1|f'(x)|\,\mathrm{d}x
+    \leq\int_0^1|f''(x)|\,\mathrm{d}x
+    +8\int_0^1|f(x)|\,\mathrm{d}x.
+\]
 \end{proof}
 
 \begin{example}
@@ -773,7 +1675,33 @@ $f(x)$ 在 $\lbrack 0,1\rbrack$ 上有连续二阶导数,$f(0)=f(1)=0$,$f(x)\neq
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+因 $f$ 在 $(0,1)$ 内不为零且连续，它保持定号。不妨设 $f>0$。令 $c$ 为 $f$ 的最大值点，则 $f'(c)=0$，并记
+\[
+    q(x)=\left|\dfrac{f''(x)}{f(x)}\right|.
+\]
+对 $0<x<c$，
+\[
+    |f'(x)|=\left|\int_x^cf''(t)\,\mathrm{d}t\right|
+    \leq\max f\int_x^cq(t)\,\mathrm{d}t.
+\]
+再从 $0$ 积分到 $c$，并用 $f(0)=0$，得到
+\[
+    1\leq\int_0^c t q(t)\,\mathrm{d}t
+    \leq c\int_0^cq(t)\,\mathrm{d}t.
+\]
+同理，
+\[
+    1\leq(1-c)\int_c^1q(t)\,\mathrm{d}t.
+\]
+故
+\[
+\begin{aligned}
+    \int_0^1q(t)\,\mathrm{d}t
+    &\geq\dfrac{1}{c}+\dfrac{1}{1-c}\\
+    &\geq4.
+\end{aligned}
+\]
+若 $f''<0$，则由端点为零可知 $f>0$ 于内部，仍适用上述证明。
 \end{proof}
 
 \begin{example}
@@ -793,7 +1721,31 @@ $f(x)$ 在 $\lbrack 0,1\rbrack$ 上有连续二阶导数,$f(0)=f(1)=0$,$f(x)\neq
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 记 $m=\dfrac{a+b}{2}$。Taylor 公式给出
+    \[
+        f(x)=f'(m)(x-m)+R(x),
+        \qquad
+        |R(x)|\leq\dfrac{M}{2}(x-m)^2.
+    \]
+    对称区间上一次项积分为零，故
+    \[
+        \left|\int_a^bf(x)\,\mathrm{d}x\right|
+        \leq\dfrac{M}{2}\int_a^b(x-m)^2\,\mathrm{d}x
+        =\dfrac{M}{24}(b-a)^3.
+    \]
+
+    \item 由二次 Hermite 插值余项，
+    \[
+        |f(x)|\leq\dfrac{M}{2}(x-a)(b-x).
+    \]
+    因此
+    \[
+        \left|\int_a^bf(x)\,\mathrm{d}x\right|
+        \leq\dfrac{M}{2}\int_a^b(x-a)(b-x)\,\mathrm{d}x
+        =\dfrac{M}{12}(b-a)^3.
+    \]
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -816,7 +1768,21 @@ $f(x)$ 在 $\lbrack 0,1\rbrack$ 上有连续二阶导数,$f(0)=f(1)=0$,$f(x)\neq
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+严格不等式说明 $f$ 在区间上变号，故存在 $c\in(a,b)$ 使 $f(c)=0$。由 Taylor 公式及导数上界，
+\[
+    |f(x)|
+    \leq M_1|x-c|+\dfrac{M_2}{2}|x-c|^2.
+\]
+于是
+\[
+\begin{aligned}
+    \left|\int_a^bf(x)\,\mathrm{d}x\right|
+    &\leq M_1\int_a^b|x-c|\,\mathrm{d}x
+    +\dfrac{M_2}{2}\int_a^b|x-c|^2\,\mathrm{d}x\\
+    &\leq\dfrac{M_1}{2}(b-a)^2
+    +\dfrac{M_2}{6}(b-a)^3.
+\end{aligned}
+\]
 \end{proof}
 
 \subsection{其它问题}
@@ -841,7 +1807,27 @@ $f(x)$ 在 $\lbrack 0,1\rbrack$ 上有连续二阶导数,$f(0)=f(1)=0$,$f(x)\neq
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+取多项式
+\[
+    P(x)=(2x-1)^n=2^nx^n+Q_{n-1}(x),
+\]
+其中 $\deg Q_{n-1}\leq n-1$。由题设各阶矩条件，
+\[
+    \int_0^1P(x)f(x)\,\mathrm{d}x=2^n.
+\]
+若记 $M=\max\limits_{0\leq x\leq1}|f(x)|$，则
+\[
+\begin{aligned}
+    2^n
+    &\leq M\int_0^1|2x-1|^n\,\mathrm{d}x\\
+    &=\dfrac{M}{n+1}.
+\end{aligned}
+\]
+故
+\[
+    M\geq2^n(n+1).
+\]
+由于最大值能够在闭区间上取得，所述部分非空。
 \end{proof}
 
 \begin{example}
@@ -854,7 +1840,21 @@ $f(x)$ 在 $\lbrack 0,1\rbrack$ 上有连续二阶导数,$f(0)=f(1)=0$,$f(x)\neq
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+反设 $f$ 在开区间内少于两个零点。若 $f$ 不变号，则因 $\sin x+\cos x>0$，
+\[
+    \int_0^{\frac{\pi}{2}}f(x)(\sin x+\cos x)\,\mathrm{d}x\neq0,
+\]
+这与两个已知积分之和为零矛盾。
+
+若 $f$ 只在一点 $c\in(0,\dfrac{\pi}{2})$ 变号，则适当把 $f$ 替换为 $-f$ 后，$f(x)$ 与
+\[
+    \sin(x-c)=\sin x\cos c-\cos x\sin c
+\]
+处处同号，且乘积不恒为零。因此
+\[
+    \int_0^{\frac{\pi}{2}}f(x)\sin(x-c)\,\mathrm{d}x\neq0.
+\]
+但将 $\sin(x-c)$ 展开后，该积分由题设应为零，仍矛盾。故 $f$ 至少有两个内点零点。
 \end{proof}
 
 \begin{example}[Hadamard 定理]
@@ -867,7 +1867,20 @@ $f(x)$ 在 $\lbrack 0,1\rbrack$ 上有连续二阶导数,$f(0)=f(1)=0$,$f(x)\neq
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+对任意 $t\in\lbrack x_1,x_2\rbrack$，由凸性，
+\[
+    f\left(\dfrac{x_1+x_2}{2}\right)
+    \leq\dfrac{f(t)+f(x_1+x_2-t)}{2}.
+\]
+从 $x_1$ 到 $x_2$ 积分，得到左侧不等式。
+
+另一方面，凸函数图像不高于端点弦：
+\[
+    f(t)\leq
+    \dfrac{x_2-t}{x_2-x_1}f(x_1)
+    +\dfrac{t-x_1}{x_2-x_1}f(x_2).
+\]
+再次积分并除以 $x_2-x_1$，得到右侧不等式。
 \end{proof}
 
 \begin{example}
@@ -879,7 +1892,11 @@ $f(x)$ 在 $\lbrack 0,1\rbrack$ 上有连续二阶导数,$f(0)=f(1)=0$,$f(x)\neq
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+作代换 $t=xs$，得到
+\[
+    F(x)=\int_0^1f(xs)\,\mathrm{d}s.
+\]
+对每个固定的 $s\in\lbrack0,1\rbrack$，函数 $x\mapsto f(xs)$ 是凸函数。非负权积分保持凸性，故它们关于 $s$ 的积分 $F(x)$ 也是 $(0,+\infty)$ 上的凸函数。
 \end{proof}
 
 \begin{example}[\markstar]
@@ -900,7 +1917,22 @@ $\varphi(x)$ 在 $\lbrack m,M\rbrack$ 上有定义,并有二阶导数,$\varphi''
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+记
+\[
+    P=\int_a^bp(x)\,\mathrm{d}x,
+    \qquad
+    \mu=\dfrac{1}{P}\int_a^bp(x)f(x)\,\mathrm{d}x.
+\]
+由 $m\leq f\leq M$，有 $\mu\in\lbrack m,M\rbrack$。凸函数在 $\mu$ 处的切线位于图像下方：
+\[
+    \varphi(y)\geq\varphi(\mu)+\varphi'(\mu)(y-\mu).
+\]
+令 $y=f(x)$，乘以 $p(x)\geq0$ 后积分，得到
+\[
+    \int_a^bp(x)\varphi(f(x))\,\mathrm{d}x
+    \geq P\varphi(\mu),
+\]
+因为一次项的积分为零。两端除以 $P$ 即得 Jensen 不等式。
 \end{proof}
 
 \subsection{著名不等式}
@@ -916,7 +1948,18 @@ $\varphi(x)$ 在 $\lbrack m,M\rbrack$ 上有定义,并有二阶导数,$\varphi''
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+本题按当前题面不成立。取常值函数 $f(x)\equiv\dfrac{1}{4}$，则
+\[
+    \int_0^1\dfrac{f(x)}{1-f(x)}\,\mathrm{d}x
+    =\dfrac{1}{3},
+\]
+而题设右端为
+\[
+    \dfrac{\displaystyle\int_0^1\sqrt{f(x)}\,\mathrm{d}x}
+    {1-\displaystyle\int_0^1f(x)\,\mathrm{d}x}
+    =\dfrac{2}{3}.
+\]
+故不等式方向或右端分子（常见形式为该积分的平方）需要核对。
 \end{proof}
 
 \begin{example}
@@ -937,7 +1980,34 @@ $\varphi(x)$ 在 $\lbrack m,M\rbrack$ 上有定义,并有二阶导数,$\varphi''
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 记
+    \[
+        A=\int_a^bf(x)\sin x\,\mathrm{d}x,
+        \qquad
+        B=\int_a^bf(x)\cos x\,\mathrm{d}x.
+    \]
+    选取 $\theta$ 使 $A\cos\theta+B\sin\theta=\sqrt{A^2+B^2}$。于是
+    \[
+        \sqrt{A^2+B^2}
+        =\int_a^bf(x)\sin(x+\theta)\,\mathrm{d}x.
+    \]
+    由 Cauchy--Schwarz 不等式及 $\sin^2(x+\theta)\leq1$，
+    \[
+        A^2+B^2\leq(b-a)\int_a^bf(x)^2\,\mathrm{d}x.
+    \]
+
+    \item 使用复数形式及三角不等式：
+    \[
+    \begin{aligned}
+        \sqrt{A^2+B^2}
+        &=\left|\int_a^bf(x)e^{ix}\,\mathrm{d}x\right|\\
+        &\leq\int_a^bf(x)|e^{ix}|\,\mathrm{d}x
+        =\int_a^bf(x)\,\mathrm{d}x.
+    \end{aligned}
+    \]
+    两端平方即得结论。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -959,7 +2029,28 @@ $\varphi(x)$ 在 $\lbrack m,M\rbrack$ 上有定义,并有二阶导数,$\varphi''
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 由 $(M-f)(f-m)\geq0$，
+    \[
+        f+\dfrac{mM}{f}\leq m+M.
+    \]
+    积分后记 $A=\displaystyle\int_a^bf$、$B=\displaystyle\int_a^b\dfrac{1}{f}$，得到
+    \[
+        A+mMB\leq(m+M)(b-a).
+    \]
+    又由算术—几何平均不等式，
+    \[
+        2\sqrt{mMAB}\leq A+mMB.
+    \]
+    合并并平方即得第 (1) 问。
+
+    \item 逐点使用算术—几何平均不等式：
+    \[
+        \dfrac{f(x)}{M}+\dfrac{m}{f(x)}
+        \geq2\sqrt{\dfrac{m}{M}}.
+    \]
+    在 $\lbrack a,b\rbrack$ 上积分即得结论。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -972,7 +2063,21 @@ $\varphi(x)$ 在 $\lbrack m,M\rbrack$ 上有定义,并有二阶导数,$\varphi''
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+本题按当前题面不成立。取 $a=1$，则
+\[
+    \int_0^\pi x^a\sin x\,\mathrm{d}x
+    =\int_0^\pi x\sin x\,\mathrm{d}x=\pi,
+\]
+并且
+\[
+    \int_0^{\frac{\pi}{2}}a^{-\cos x}\,\mathrm{d}x
+    =\dfrac{\pi}{2}.
+\]
+两者乘积为 $\dfrac{\pi^2}{2}$，而
+\[
+    \dfrac{\pi^2}{2}<\dfrac{\pi^3}{4}.
+\]
+因此右端常数或被积函数的底数、指数存在错误，需要核对原始资料。
 \end{proof}
 
 \begin{example}
@@ -985,7 +2090,23 @@ $\varphi(x)$ 在 $\lbrack m,M\rbrack$ 上有定义,并有二阶导数,$\varphi''
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+对 $(xf(x)^2)'$ 积分。由 $f(a)=f(b)=0$，
+\[
+    0=\int_a^b[xf(x)^2]'\,\mathrm{d}x
+    =\int_a^bf(x)^2\,\mathrm{d}x
+    +2\int_a^bxf(x)f'(x)\,\mathrm{d}x.
+\]
+结合 $\displaystyle\int_a^bf^2=1$，得到
+\[
+    \left|\int_a^bxf(x)f'(x)\,\mathrm{d}x\right|
+    =\dfrac{1}{2}.
+\]
+再用 Cauchy--Schwarz 不等式：
+\[
+    \dfrac{1}{4}
+    \leq\int_a^b[xf(x)]^2\,\mathrm{d}x
+    \int_a^b[f'(x)]^2\,\mathrm{d}x.
+\]
 \end{proof}
 
 \begin{example}
@@ -1000,7 +2121,16 @@ $\varphi(x)$ 在 $\lbrack m,M\rbrack$ 上有定义,并有二阶导数,$\varphi''
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+取 $x_0\in\lbrack a,b\rbrack$ 使 $|f(x_0)|=M$。由 $f(c)=0$，
+\[
+    M=\left|\int_c^{x_0}f'(t)\,\mathrm{d}t\right|.
+\]
+使用 Cauchy--Schwarz 不等式，
+\[
+    M^2
+    \leq|x_0-c|\int_a^b[f'(t)]^2\,\mathrm{d}t
+    \leq(b-a)\int_a^b[f'(t)]^2\,\mathrm{d}t.
+\]
 \end{proof}
 
 \begin{example}
@@ -1012,7 +2142,22 @@ $\varphi(x)$ 在 $\lbrack m,M\rbrack$ 上有定义,并有二阶导数,$\varphi''
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+由 $\displaystyle\int_0^1xf(x)\,\mathrm{d}x=0$，对任意常数 $c$ 都有
+\[
+    \int_0^1f(x)\,\mathrm{d}x
+    =\int_0^1f(x)(1+cx)\,\mathrm{d}x.
+\]
+取 $c=-\dfrac{3}{2}$。由 Cauchy--Schwarz 不等式，
+\[
+    \left(\int_0^1f(x)\,\mathrm{d}x\right)^2
+    \leq\int_0^1f(x)^2\,\mathrm{d}x
+    \int_0^1\left(1-\dfrac{3x}{2}\right)^2\mathrm{d}x.
+\]
+而最后一个积分等于 $\dfrac{1}{4}$，故
+\[
+    \int_0^1f(x)^2\,\mathrm{d}x
+    \geq4\left(\int_0^1f(x)\,\mathrm{d}x\right)^2.
+\]
 \end{proof}
 
 \newpage
@@ -1031,7 +2176,12 @@ $\varphi(x)$ 在 $\lbrack m,M\rbrack$ 上有定义,并有二阶导数,$\varphi''
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+本题按当前题面不成立。取非零常值函数 $f(x)\equiv C$，则
+\[
+    f(1)-2\int_0^1xf(x)\,\mathrm{d}x
+    =C-2C\int_0^1x\,\mathrm{d}x=0,
+\]
+所以题设条件成立；但 $f'(\xi)=0$，而 $-\dfrac{f(\xi)}{3}=-\dfrac{C}{3}\neq0$。因此原题还缺少条件，需要核对。
 \end{proof}
 
 \begin{example}
@@ -1044,7 +2194,20 @@ $\varphi(x)$ 在 $\lbrack m,M\rbrack$ 上有定义,并有二阶导数,$\varphi''
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+令 $C=f(0)=f(1)$。第一个积分条件等价于
+\[
+    \int_0^{\frac14}[f(t)-C]\,\mathrm{d}t=0,
+\]
+故由连续性，存在 $c_1\in(0,\dfrac{1}{4})$ 使 $f(c_1)=C$。同理，第二个条件给出某个 $c_2\in(\dfrac{1}{4},1)$，使 $f(c_2)=C$。
+
+于是函数 $f-C$ 在
+\[
+    0,\quad c_1,\quad c_2,\quad1
+\]
+四个互不相同的点为零。连续使用三次 Rolle 定理，存在 $\xi\in(0,1)$ 使
+\[
+    f'''(\xi)=0.
+\]
 \end{proof}
 
 \begin{example}
@@ -1061,7 +2224,29 @@ $\lbrack a,b\rbrack$ 上的连续函数序列 $\varphi_1,\varphi_2,\ldots,\varph
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+取足够大的 $N$，使
+\[
+    \dfrac{\sqrt N}{b-a}>100,
+\]
+并令
+\[
+    c_1=\cdots=c_N=\dfrac{1}{\sqrt N}.
+\]
+显然 $\displaystyle\sum\limits_{k=1}^{N}c_k^2=1$。记
+\[
+    F_N(x)=\sum\limits_{k=1}^{N}c_k\varphi_k(x).
+\]
+则
+\[
+    \int_a^bF_N(x)\,\mathrm{d}x
+    =\sum\limits_{k=1}^{N}c_k=\sqrt N.
+\]
+因此
+\[
+    \max\limits_{x\in\lbrack a,b\rbrack}|F_N(x)|
+    \geq\dfrac{1}{b-a}\left|\int_a^bF_N(x)\,\mathrm{d}x\right|
+    =\dfrac{\sqrt N}{b-a}>100.
+\]
 \end{proof}
 
 \begin{example}
@@ -1074,7 +2259,18 @@ $\lbrack a,b\rbrack$ 上的连续函数序列 $\varphi_1,\varphi_2,\ldots,\varph
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+当 $t\to+\infty$ 时，
+\[
+    t\sin\dfrac{3}{t}\longrightarrow3,
+    \qquad
+    f(t)\longrightarrow1.
+\]
+因此乘积在滑动区间 $\lbrack x,x+2\rbrack$ 上一致趋于 $3$。于是
+\[
+    \int_x^{x+2}t\sin\dfrac{3}{t}f(t)\,\mathrm{d}t
+    \longrightarrow\int_x^{x+2}3\,\mathrm{d}t
+    =\boxed{6}.
+\]
 \end{proof}
 
 \begin{example}
@@ -1092,7 +2288,27 @@ $\lbrack a,b\rbrack$ 上的连续函数序列 $\varphi_1,\varphi_2,\ldots,\varph
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+记
+\[
+    I=\int_0^1f(x)\,\mathrm{d}x.
+\]
+因 $f$ 连续且严格递减，
+\[
+    f(1)<I<f(0).
+\]
+\begin{enumerate}[label=(\arabic*)]
+    \item 取
+    \[
+        \theta=\dfrac{I-f(1)}{f(0)-f(1)}.
+    \]
+    则 $0<\theta<1$，且 $I=\theta f(0)+(1-\theta)f(1)$。
+
+    \item 对任意 $c>f(0)>I$，取
+    \[
+        \theta=\dfrac{I-f(1)}{c-f(1)}.
+    \]
+    仍有 $0<\theta<1$，并且 $I=\theta c+(1-\theta)f(1)$。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -1103,7 +2319,21 @@ $\lbrack a,b\rbrack$ 上的连续函数序列 $\varphi_1,\varphi_2,\ldots,\varph
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+由 $f'$ 单调递减且 $f'(b)>0$，在全区间上都有
+\[
+    f'(x)\geq f'(b)>0.
+\]
+故 $f$ 严格递增，可以作变量代换 $u=f(x)$。由于 $0\leq f(x)\leq1$，且 $\cos u>0$，有
+\[
+\begin{aligned}
+    \int_a^b\cos f(x)\,\mathrm{d}x
+    &=\int_{f(a)}^{f(b)}
+    \dfrac{\cos u}{f'(f^{-1}(u))}\,\mathrm{d}u\\
+    &\leq\dfrac{1}{f'(b)}\int_0^1\cos u\,\mathrm{d}u\\
+    &<\dfrac{1}{f'(b)}
+    <\dfrac{2}{f'(b)}.
+\end{aligned}
+\]
 \end{proof}
 
 \begin{example}
@@ -1124,7 +2354,42 @@ $\lbrack a,b\rbrack$ 上的连续函数序列 $\varphi_1,\varphi_2,\ldots,\varph
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 当前题面不成立。令 $c=x$，则左端为
+    \[
+        \left|\int_0^x\sin t^2\,\mathrm{d}t\right|.
+    \]
+    当 $x\to+\infty$ 时该式趋于非零的 Fresnel 积分值，而右端 $\dfrac{1}{x}\to0$。原题很可能应把上限 $x-c$ 写成 $x+c$，或补充其他限制。
+
+    \item 当 $x>e^2$ 时，
+    \[
+        \left(\dfrac{x}{\ln x}\right)'
+        =\dfrac{1}{\ln x}-\dfrac{1}{(\ln x)^2}
+        >\dfrac{1}{2\ln x}.
+    \]
+    因此
+    \[
+        \int_a^b\dfrac{\mathrm{d}x}{\ln x}
+        <2\left[\dfrac{x}{\ln x}\right]_a^b
+        <\dfrac{2b}{\ln b}.
+    \]
+
+    \item 分部积分得
+    \[
+    \begin{aligned}
+        \int_a^b\dfrac{\sin x}{x}\,\mathrm{d}x
+        &=\left[-\dfrac{\cos x}{x}\right]_a^b
+        -\int_a^b\dfrac{\cos x}{x^2}\,\mathrm{d}x.
+    \end{aligned}
+    \]
+    故
+    \[
+        \left|\int_a^b\dfrac{\sin x}{x}\,\mathrm{d}x\right|
+        \leq\dfrac{1}{a}+\dfrac{1}{b}
+        +\int_a^b\dfrac{\mathrm{d}x}{x^2}
+        =\dfrac{2}{a}.
+    \]
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -1138,7 +2403,16 @@ $\lbrack a,b\rbrack$ 上的连续函数序列 $\varphi_1,\varphi_2,\ldots,\varph
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+对正整数 $k$，记
+\[
+    I_k=\int_{-\pi}^{\pi}f(x)\cos kx\,\mathrm{d}x.
+\]
+凸函数的导数 $f'$ 单调不减且有界，因而可作 Riemann--Stieltjes 分部积分。先作普通分部积分，再对单调函数 $f'$ 分部积分，得到
+\[
+    I_k=\dfrac{1}{k^2}
+    \int_{-\pi}^{\pi}[(-1)^k-\cos kx]\,\mathrm{d}f'(x).
+\]
+测度 $\mathrm{d}f'\geq0$。当 $k=2n$ 时，括号内为 $1-\cos2nx\geq0$，故 $I_{2n}\geq0$；当 $k=2n+1$ 时，括号内为 $-1-\cos(2n+1)x\leq0$，故 $I_{2n+1}\leq0$。除以 $\pi$ 即得题设结论。
 \end{proof}
 
 \begin{example}
@@ -1152,7 +2426,22 @@ $\lbrack a,b\rbrack$ 上的连续函数序列 $\varphi_1,\varphi_2,\ldots,\varph
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+把正、负半轴配对。令
+\[
+    h(x)=f(x)-f(-x),
+    \qquad 0\leq x\leq\pi.
+\]
+由于 $f$ 单调递减，$h(0)=0$ 且 $h$ 单调递减。于是对正整数 $k$，
+\[
+    \int_{-\pi}^{\pi}f(x)\sin kx\,\mathrm{d}x
+    =\int_0^\pi h(x)\sin kx\,\mathrm{d}x.
+\]
+令正测度 $\mathrm{d}\mu=-\mathrm{d}h$。由 $h(x)=-\mu(\lbrack0,x\rbrack)$ 及换序积分，
+\[
+    \int_0^\pi h(x)\sin kx\,\mathrm{d}x
+    =\dfrac{1}{k}\int_0^\pi[(-1)^k-\cos kt]\,\mathrm{d}\mu(t).
+\]
+因此 $k=2n$ 时该积分非负，$k=2n+1$ 时非正。除以 $\pi$ 即得结论。
 \end{proof}
 
 \begin{example}
@@ -1176,7 +2465,63 @@ $\lbrack a,b\rbrack$ 上的连续函数序列 $\varphi_1,\varphi_2,\ldots,\varph
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 当前题面中的 $k^2$ 未定义。正确的一阶渐近式为
+    \[
+        \int_0^1\dfrac{\mathrm{d}x}{1+x^n}
+        =1-\dfrac{\ln2}{n}+o\left(\dfrac{1}{n}\right).
+    \]
+    事实上，令 $x=e^{-\frac{t}{n}}$，则
+    \[
+    \begin{aligned}
+        n\left(1-\int_0^1\dfrac{\mathrm{d}x}{1+x^n}\right)
+        &=\int_0^{+\infty}
+        \dfrac{e^{-\frac{t}{n}}}{e^t+1}\,\mathrm{d}t\\
+        &\longrightarrow\int_0^{+\infty}
+        \dfrac{\mathrm{d}t}{e^t+1}
+        =\ln2.
+    \end{aligned}
+    \]
+    因而原题中的 $k^2$ 应核对。
+
+    \item 令 $t=xs$，则原式化为
+    \[
+        \int_1^2\sin\dfrac{1}{xs}\,\mathrm{d}s.
+    \]
+    令 $\lambda=\dfrac{1}{x}$。由于
+    \[
+        \dfrac{\mathrm{d}}{\mathrm{d}s}
+        \cos\dfrac{\lambda}{s}
+        =\dfrac{\lambda}{s^2}\sin\dfrac{\lambda}{s},
+    \]
+    分部积分得
+    \[
+    \begin{aligned}
+        \int_1^2\sin\dfrac{\lambda}{s}\,\mathrm{d}s
+        &=\dfrac{1}{\lambda}
+        \left[s^2\cos\dfrac{\lambda}{s}\right]_1^2
+        -\dfrac{2}{\lambda}\int_1^2s\cos\dfrac{\lambda}{s}\,\mathrm{d}s,
+    \end{aligned}
+    \]
+    故其绝对值不超过 $\dfrac{8}{\lambda}=8x$，所求极限为 $0$。
+
+    \item 令 $u=\dfrac{1}{t}$，则
+    \[
+        \int_0^x\sin\dfrac{1}{t}\,\mathrm{d}t
+        =\int_{\frac{1}{x}}^{+\infty}\dfrac{\sin u}{u^2}\,\mathrm{d}u.
+    \]
+    分部积分给出
+    \[
+        \left|\int_{\frac{1}{x}}^{+\infty}\dfrac{\sin u}{u^2}\,\mathrm{d}u\right|
+        \leq2x^2.
+    \]
+    因此当 $\alpha<2$ 时，
+    \[
+        \left|\dfrac{1}{x^\alpha}
+        \int_0^x\sin\dfrac{1}{t}\,\mathrm{d}t\right|
+        \leq2x^{2-\alpha}\longrightarrow0.
+    \]
+\end{enumerate}
 \end{proof}
 
 \end{document}

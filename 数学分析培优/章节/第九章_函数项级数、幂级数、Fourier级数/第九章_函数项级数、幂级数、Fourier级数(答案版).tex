@@ -19,7 +19,20 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 极限函数为零，且
+    \[
+        \max_{0\leq x\leq1}x^n(1-x)
+        =\dfrac1{n+1}\left(\dfrac n{n+1}\right)^n\longrightarrow0,
+    \]
+    故一致收敛。
+    \item 极限函数为零，且
+    \[
+        \sup_{x\in\mathbb R}\dfrac{|x|}{1+nx^2}=\dfrac1{2\sqrt n}\longrightarrow0,
+    \]
+    故一致收敛。
+    \item 当 $\alpha<0$ 时，$0\leq f_n(x)\leq n^\alpha\to0$，故一致收敛于零。当 $\alpha=0$ 时，逐点极限在 $x=0$ 处为 $1$、在 $x>0$ 处为零，不连续，故不一致收敛；当 $\alpha>0$ 时，$f_n(0)=n^\alpha$，连逐点有限收敛也不成立。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -33,7 +46,27 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 极限为 $\sin(x/2)$，且由正弦函数的 Lipschitz 性，
+    \[
+        \sup_{x\in\mathbb R}\left|f_n(x)-\sin\dfrac x2\right|\leq\dfrac1{2n},
+    \]
+    故一致收敛。
+    \item 极限为 $1/x$。由 $|\sin t-t|\leq|t|^3/6$，
+    \[
+        \sup_{x\geq1}\left|n\sin\dfrac1{nx}-\dfrac1x\right|
+        \leq\dfrac1{6n^2},
+    \]
+    故一致收敛。
+    \item 极限为零。充分大时 $x\mapsto\ln(nx)/x^2$ 在 $x>1$ 上递减，故
+    \[
+        \sup_{x>1}|f_n(x)|=\dfrac{\ln n}{n}\longrightarrow0.
+    \]
+    \item 极限为 $1$，且 $0<\ln(1+t)-t+t^2/2<t^2/2$ 给出
+    \[
+        \sup_{0<x<10}|f_n(x)-1|\leq\dfrac5n\longrightarrow0.
+    \]
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -47,7 +80,16 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+四列均逐点趋于零，但可分别选取
+\[
+    x_n=2^{-1/n},\qquad x_n=2^{-1/n},\qquad
+    x_n=\dfrac1{n+1},\qquad x_n=\dfrac1{n^2}.
+\]
+此时前两列的函数值分别恒为 $1/4$ 与 $1/2$；第三列趋于 $e^{-1}$；第四列为
+\[
+    \dfrac1{\sqrt{n^{-2}+n^{-1}}+n^{-1}},
+\]
+甚至趋于 $+\infty$。因此都不一致收敛。
 \end{proof}
 
 \begin{example}
@@ -61,7 +103,27 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 当 $\alpha>0$ 时，
+    \[
+        \sup_{x>0}x^\alpha e^{-nx^2}=C_\alpha n^{-\alpha/2}.
+    \]
+    因此 $\alpha>2$ 时由 Weierstrass 判别一致收敛。若 $\alpha\leq2$，在尾项中取 $x=N^{-1/2}$ 并考察 $N\leq n\leq2N$，尾和不趋于零，故不一致收敛。
+    \item 设 $C=\max\{|a|,|b|\}$。充分大时
+    $e^{-(x-n)^2}\leq e^{-(n-C)^2}$，故一致收敛。
+    \item 对 $|x|\leq4$，
+    \[
+        \left|\dfrac{x^n}{4^n}\ln\left(1+\dfrac{x^2}{n^2}\right)\right|
+        \leq\dfrac{16}{n^2},
+    \]
+    故一致绝对收敛。
+    \item
+    \[
+        \sup_{x\geq0}\dfrac{x}{n^p+n^qx^2}=\dfrac1{2n^{(p+q)/2}}.
+    \]
+    因而 $p+q>2$ 时一致收敛；反之取 $x=N^{(p-q)/2}$ 并对
+    $N\leq n\leq2N$ 求和，尾和不趋于零。故恰在 $p+q>2$ 时一致收敛。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -75,7 +137,22 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 当前题面在 $x=-n^{-\alpha}$ 处分母为零，故函数甚至未在整个实轴上定义，无法讨论该区间上的一致收敛性；区间或分母符号需要核对。
+    \item
+    \[
+        \left|\dfrac{x\sin nx}{\sqrt{1+n^2(1+nx^2)}}\right|
+        \leq\dfrac{|x|}{n\sqrt{1+nx^2}}\leq\dfrac1{n^{3/2}},
+    \]
+    故一致绝对收敛。
+    \item 对 $0<x<1$，
+    \[
+        \left|\dfrac{x^2}{1+n^2x}\sin\dfrac nx\right|\leq\dfrac{x}{n^2}\leq\dfrac1{n^2},
+    \]
+    故一致绝对收敛。
+    \item $b_n(x)=1/(2n+\sin x)$ 关于 $n$ 递减，且
+    $\sup_xb_n(x)\leq1/(2n-1)\to0$，故由一致 Leibniz 判别法一致收敛。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -89,7 +166,19 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 几何级数的余项为 $(1+x^3)^{-N}$，其在 $x>0$ 上的上确界为 $1$，故不一致收敛。
+    \item 取 $x=1/N$，则从 $n=N$ 到 $2N$ 的尾和为
+    \[
+        \sum\limits_{n=N}^{2N}\dfrac{N^{-1}}{1+(n/N)^3}\geq c>0.
+    \]
+    \item 仍取 $x=1/N$，有
+    \[
+        \sum\limits_{n=N}^{2N}nx^2e^{-nx}geq c>0.
+    \]
+    \item 取 $x=N$，对 $N\leq n\leq2N$，每项均为 $N^{-1}$ 量级，故相应尾和有正下界。
+\end{enumerate}
+四者均违反一致 Cauchy 准则。
 \end{proof}
 
 \begin{example}
@@ -103,7 +192,18 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 取 $x=N^2$ 并令 $N\leq n\leq2N$，则尾和
+    $\sum(n/N^2)e^{-n^2/N^2}$ 有固定正下界。
+    \item 取 $x=1/N$，则 $N\leq n\leq2N$ 时 $nx\in[1,2]$，相应尾和有固定正下界。
+    \item 取 $x=1/N^2$，利用 $\sin(nx)\sim nx$，从 $N$ 到 $2N$ 的尾和仍有固定正下界。
+    \item 当前级数与 $x$ 无关，并且
+    \[
+        \left|\dfrac{\sqrt\pi}{n^2}\sin\dfrac\pi{n^2}\right|
+        \leq\dfrac{\pi^{3/2}}{n^4}.
+    \]
+    因而它实际上一致绝对收敛，与题目要求“非一致收敛”矛盾，题面应有漏项。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -117,7 +217,12 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 当 $x\to0^+$ 时，各项趋于 $1$，相应和函数无界，故不可能是一致极限。
+    \item 对每个 $x<1$ 级数收敛，但 $x\to1^-$ 时第 $n$ 项趋于 $\ln n$，端点处连通项趋零条件都失败，故不一致收敛。
+    \item 当 $x\to0^+$ 时，$\sum(1+nx)^{-2}$ 发散到无穷；而各部分和有界，故不可能一致收敛。
+    \item 当前通项对每个 $x\in(0,\pi)$ 都不趋于零，原级数逐点发散，不能称为“非一致收敛”；指数的正负号需要核对。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -131,7 +236,18 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 分解为 $x^2\sum(-1)^n/n^2+\sum(-1)^n/n$；前者由 M 判别、后者与 $x$ 无关，故一致收敛。
+    \item $e^{-nx}/\sqrt{n+x^2}$ 关于 $n$ 递减，且其关于 $x\geq0$ 的上确界为 $1/\sqrt n\to0$，故一致收敛。
+    \item 写成
+    \[
+        \sin1\sum\limits_{n=1}^{\infty}\dfrac{(-1)^n}{\sqrt n}
+        +\sum\limits_{n=1}^{\infty}\dfrac{(-1)^n}{\sqrt n}
+        \left[\sin\left(1+\dfrac xn\right)-\sin1\right].
+    \]
+    第二级数在有限区间上由 $C/n^{3/2}$ 控制，故一致收敛。
+    \item 三角和的部分和在 $[\delta,2\pi-\delta]$ 上一致有界，而 $n^{-p}\downarrow0$，由一致 Dirichlet 判别得结论。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -145,7 +261,13 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 当 $x>0$ 时和为 $1+x^4$，而 $x=0$ 时和为 $0$，在零点不连续。
+    \item 当 $0\leq x<1$ 时和为 $1$，而 $x=1$ 时和为 $0$，在右端点不连续。
+    \item 当 $0<x<1$ 时和为 $x\ln x/(1-x)$，其在 $x\to1^-$ 时趋于 $-1$；但 $x=1$ 时每项为零，和为零。
+    \item 前 $N$ 项裂项为 $x^{1/(2N-1)}-x$。极限在 $x>0$ 时为 $1-x$，在 $x=0$ 时为零，在 $x<0$ 时为 $-1-x$，故在零点不连续。
+\end{enumerate}
+各项均连续，而和函数不连续，所以均不一致收敛。
 \end{proof}
 
 \begin{example}
@@ -157,7 +279,12 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+在任意有限区间 $[a,b]$ 上，$f$ 在 $[a,b+1]$ 上一致连续。$f_n(x)$ 是函数
+$t\mapsto f(x+t)$ 在 $[0,1]$ 上等距分割的 Riemann 和，故
+\[
+    f_n(x)\rightrightarrows\int_0^1f(x+t)\,\mathrm{d}t
+\]
+且误差由 $f$ 在 $[a,b+1]$ 上的连续模一致控制。
 \end{proof}
 
 \begin{example}
@@ -169,7 +296,15 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+写成
+\[
+    f_n(x)=e^n\int_0^{e^{-n}}f'(x+t)\,\mathrm{d}t.
+\]
+在包含 $[a,b]$ 的稍大紧区间上，$f'$ 一致连续，故
+\[
+    \sup_{a<x<b}|f_n(x)-f'(x)|
+    \leq\sup_{\substack{a<x<b\\0\leq t\leq e^{-n}}}|f'(x+t)-f'(x)|\longrightarrow0.
+\]
 \end{proof}
 
 \begin{example}[Heine 定理的推广]
@@ -177,7 +312,11 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+必要性直接由定义得到。反之若不一致趋于 $\varphi$，则存在 $\varepsilon_0>0$，以及趋于 $a$ 的点列 $x_n$，使
+\[
+    \sup_y|f(x_n,y)-\varphi(y)|\geq\varepsilon_0.
+\]
+这与题设对任意点列均一致收敛矛盾，故条件充分。
 \end{proof}
 
 \begin{example}
@@ -195,7 +334,20 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+当前条件不足。取区间 $[0,1]$，令 $f=0$、$g(x)=x^{-2/3}$，并令
+\[
+    f_n(x)=n^{1/3}\mathbf1_{(0,1/n)}(x).
+\]
+则 $g$ 可积，且
+\[
+    \int_0^1|f_n|^2=n^{-1/3}\to0,
+\]
+但 $h_n(1)=\int_0^1f_ng=3$，并不趋于零。若补充 $g\in L^2[a,b]$，则由 Cauchy--Schwarz 不等式
+\[
+    \sup_x|h_n(x)-h(x)|
+    \leq\|f_n-f\|_2\|g\|_2\longrightarrow0.
+\]
+故题面需要核对。
 \end{proof}
 
 \begin{example}
@@ -208,7 +360,12 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+设 $M=\sup_{[a,b]}|f_1|$、$L=b-a$。反复积分可得
+\[
+    |f_n(x)|\leq M\dfrac{L^{n-1}}{(n-1)!},
+    \qquad x\in[a,b].
+\]
+右端趋于零且与 $x$ 无关，故 $f_n$ 一致收敛于零。
 \end{proof}
 
 \begin{example}
@@ -220,7 +377,11 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+两题本质相同。由统一的 Lipschitz 估计，函数族等度连续；逐点极限 $f$ 也满足同一 Lipschitz 估计。任取 $\varepsilon>0$，先把区间分成有限个长度小于 $\varepsilon/(3M)$ 的小区间，再在所有分点处利用逐点收敛统一选取 $N$。任意点与相邻分点比较，即得 $n\geq N$ 时
+\[
+    \sup_x|f_n(x)-f(x)|<\varepsilon.
+\]
+故两列均一致收敛。
 \end{proof}
 
 \begin{example}
@@ -228,7 +389,14 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+任取 $\varepsilon>0$。由 $f$ 的一致连续性，取分点
+$0=x_0<\cdots<x_m=1$，使相邻分点处 $f$ 的振幅小于 $\varepsilon$。在有限个分点上同时取充分大的 $n$，使
+$|f_n(x_j)-f(x_j)|<\varepsilon$。若 $x_j\leq x\leq x_{j+1}$，由
+$f_n$ 的递增性，
+\[
+    f_n(x_j)\leq f_n(x)\leq f_n(x_{j+1}),
+\]
+结合 $f$ 的振幅估计得到 $|f_n(x)-f(x)|<2\varepsilon$，故一致收敛。
 \end{proof}
 
 \begin{example}
@@ -240,7 +408,15 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item $(-1)^{n-1}\cos(nx)$ 的部分和在给定闭区间上一致有界，故由一致 Dirichlet 判别法收敛。
+    \item 由三角和公式，
+    \[
+        \left|x\sum\limits_{k=1}^{N}\sin(kx)\right|
+        \leq C_\delta
+    \]
+    在给定区间上一致成立；再与 $a_n\downarrow0$ 配合使用 Abel 变换，即得一致收敛。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -251,7 +427,14 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 这是 Chaundy--Jolliffe 判别。令 $m=[1/|x|]$：在 $n\leq m$ 的部分使用 $|\sin(nx)|\leq n|x|$，在 $n>m$ 的部分使用 Abel 变换与三角和估计；两部分均由 $\sup_{k\geq N}k|a_k|$ 控制，故尾和在全实轴上一致趋零。
+    \item 由一致 Cauchy 准则，取 $x=1/n$ 并考察 $n\leq k\leq2n$，有
+    \[
+        \sum\limits_{k=n}^{2n}a_k\sin\dfrac{k}{n}\geq cna_{2n}\longrightarrow0.
+    \]
+    所以 $na_{2n}\to0$；再由单调性夹逼得到 $na_n\to0$。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -263,7 +446,13 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+记 $A_n=\sum_{k=1}^{n}a_k$。对任意 $m>n$ 作 Abel 变换，尾和可写成
+\[
+    \sum\limits_{k=n}^{m}a_kf_k
+    =(A_m-A_{n-1})f_m+
+    \sum\limits_{k=n}^{m-1}(A_k-A_{n-1})(f_k-f_{k+1}).
+\]
+由于 $\sum a_n$ 的尾部分和一致小，而 $f_k$ 的总变差不超过 $M$，右端一致趋于零，故级数一致收敛。
 \end{proof}
 
 \begin{example}
@@ -277,7 +466,14 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+对尾和作分部求和：
+\[
+    \sum\limits_{k=n}^{m}f_kg_k
+    =f_mG_m-f_nG_{n-1}
+    +\sum\limits_{k=n}^{m-1}(f_k-f_{k+1})G_k.
+\]
+由 $G_k$ 一致有界、$f_n\rightrightarrows0$，以及
+$\sum|f_{n+1}-f_n|$ 的一致收敛性，右端对 $m>n$ 一致趋零。故结论由一致 Cauchy 准则成立。
 \end{proof}
 
 \begin{example}
@@ -285,7 +481,11 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+令
+\[
+    E_m=\{x\in(a,b):|f_n(x)|\leq m\text{ 对所有 }n\}.
+\]
+各 $E_m$ 为相对闭集，且由逐点有界性有 $(a,b)=\bigcup_{m=1}^{\infty}E_m$。由 Baire 类定理，某个 $E_m$ 在 $(a,b)$ 中有非空内点；在该开子区间上，全体 $f_n$ 一致有界于 $m$。
 \end{proof}
 
 \begin{example}
@@ -293,7 +493,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+将 $[0,1]$ 内有理数排列为 $r_1,r_2,\ldots$。由一致有界性，先选子列使其在 $r_1$ 处收敛，再从中选子列使其在 $r_2$ 处收敛，如此继续。取对角子列 $f_{n_k}$，则对每个固定 $j$，它从某项起属于第 $j$ 次所选子列，故在 $r_j$ 处收敛。
 \end{proof}
 
 \begin{example}
@@ -301,7 +501,11 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+若 $|f'(x)|\leq M$ 对所有 $f\in\mathscr R$、$x\in I$ 成立，则由 Lagrange 中值定理
+\[
+    |f(x)-f(y)|\leq M|x-y|.
+\]
+给定 $\varepsilon>0$，统一取 $\delta=\varepsilon/M$ 即得等度连续性。
 \end{proof}
 
 \begin{example}
@@ -312,7 +516,15 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 由初值与二阶导数界，$|f_n'(x)|\leq1$ 且 $|f_n(x)|\leq1/2$。故函数族一致有界且等度连续，由 Arzel\`a--Ascoli 定理存在一致收敛子列。
+    \item 对 $0\leq x<y\leq1$，
+    \[
+        |f_n(y)-f_n(x)|\leq\int_x^yt^{-1/2}\,\mathrm{d}t
+        \leq2\sqrt{y-x},
+    \]
+    故等度连续。又由积分为零，存在 $c_n\in[0,1]$ 使 $f_n(c_n)=0$，于是 $|f_n(x)|\leq2$。再次应用 Arzel\`a--Ascoli 定理即得一致收敛子列。
+\end{enumerate}
 \end{proof}
 
 \newpage
@@ -332,7 +544,17 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 因 $|\ln x|\leq1$，通项绝对值由 $1/n^2$ 控制，故和函数连续。
+    \item 分成
+    \[
+        \sum\limits_{n=1}^{\infty}\dfrac{x}{n^2+x^2}
+        +\sum\limits_{n=1}^{\infty}(-1)^n\dfrac{n}{n^2+x^2}.
+    \]
+    第一项在紧区间上一致绝对收敛；第二项从 $n>a$ 起系数关于 $n$ 递减且上确界趋零，故一致收敛。和函数连续。
+    \item 通项由 $C^n/n!$ 控制，故在任意有限闭区间上一致收敛，和函数连续。
+    \item 对任意 $x_0\in(-1,1)$，取 $|x_0|<r<1$，则在 $x_0$ 的充分小邻域内，充分大时 $|x+1/n|\leq q<1$。故级数局部一致收敛，和函数在 $(-1,1)$ 上连续。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -346,7 +568,23 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+利用一致收敛或控制收敛逐项取极限：
+\begin{enumerate}[label=(\arabic*)]
+    \item 由 $2^{-n}$ 控制，极限为 $\sum_{n=1}^{\infty}2^{-n}=\boxed1$。
+    \item 因 $0\leq x^2/(1+n^2x^2)\leq1/n^2$，极限为
+    $\sum_{n=1}^{\infty}1/n^2=\boxed{\pi^2/6}$。
+    \item 一致 Abel 判别允许令 $x\to1^-$，故极限为
+    \[
+        \dfrac12\sum\limits_{n=1}^{\infty}\dfrac{(-1)^{n+1}}n
+        =\boxed{\dfrac12\ln2}.
+    \]
+    \item 由几何级数控制，令 $x\to1$ 得
+    \[
+        \sum\limits_{n=1}^{\infty}\dfrac{\sin(n\pi/2)}{2^n}
+        =\operatorname{Im}\dfrac{i/2}{1-i/2}
+        =\boxed{\dfrac25}.
+    \]
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -358,7 +596,11 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+令 $d_n=h_n-g_n\geq0$。则 $d_n$ 连续、关于 $n$ 单调递减，并逐点趋于零。由 Dini 定理，$d_n\rightrightarrows0$。于是
+\[
+    0\leq f-g_n\leq d_n,
+\]
+故 $g_n\rightrightarrows f$。连续函数的一致极限仍连续，因而 $f\in C[a,b]$。
 \end{proof}
 
 \begin{example}
@@ -370,7 +612,13 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+由 $|f_n|\leq F_n$ 可知 $F_n\geq0$。连续函数的部分和
+$\sigma_N=\sum_{n=1}^{N}F_n$ 单调增加到连续函数 $\sigma$，故由 Dini 定理一致收敛。因此
+\[
+    \sup_{x\in[a,b]}\sum\limits_{n=N+1}^{\infty}|f_n(x)|
+    \leq\sup_{x\in[a,b]}\bigl(\sigma(x)-\sigma_N(x)\bigr)\longrightarrow0.
+\]
+所以 $\sum f_n$ 一致收敛，其和函数连续。
 \end{proof}
 
 \begin{example}
@@ -378,7 +626,17 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+在任一不含整数的紧区间 $K$ 上，除有限项外有
+\[
+    \dfrac1{(n-x)^2}\leq\dfrac4{n^2}\qquad(x\in K),
+\]
+故双向级数在 $K$ 上一致收敛，和函数在每个非整数点连续。换指标
+$m=n-1$ 得
+\[
+    S(x+1)=\sum\limits_{n\in\mathbb Z}\dfrac1{(n-x-1)^2}
+    =\sum\limits_{m\in\mathbb Z}\dfrac1{(m-x)^2}=S(x),
+\]
+故周期为 $1$。
 \end{proof}
 
 \begin{example}[\markstar]
@@ -390,7 +648,10 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+级数由 $2^{-n}$ 控制而一致收敛。固定 $x\notin\{x_n\}$，给定
+$\varepsilon>0$，先使尾和小于 $\varepsilon$，再取一个不含有限个首项跳点的邻域，可知 $f$ 在 $x$ 连续。
+
+在 $x=x_k$ 处，第 $k$ 项的左右极限相差 $2/2^k=2^{1-k}$；其余有限个首项在该点附近不变，尾项可一致控制。因此 $f$ 在每个 $x_k$ 处有非零跳跃并不连续。故不连续点集恰为 $\{x_n:n\geq1\}$。
 \end{proof}
 
 \subsection{积分性质的传递}
@@ -400,7 +661,15 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+对任意 $a<x<b$，
+\[
+    f^{(n)}(x)-f^{(n)}(a)=\int_a^xf^{(n+1)}(t)\,\mathrm{d}t.
+\]
+两列 $f^{(n)}$ 与 $f^{(n+1)}$ 都一致收敛于 $g$，故令 $n\to\infty$ 得
+\[
+    g(x)-g(a)=\int_a^xg(t)\,\mathrm{d}t.
+\]
+于是 $g'=g$，故 $g(x)=Ce^x$。
 \end{proof}
 
 \begin{example}
@@ -419,7 +688,26 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 因
+    \[
+        \dfrac{x}{n(n+x)}=\dfrac1n-\dfrac1{n+x},
+    \]
+    逐项积分得到
+    \[
+        \sum\limits_{n=1}^{\infty}\left[\dfrac1n-\ln\left(1+\dfrac1n\right)\right]=\gamma.
+    \]
+    \item 逐项积分得
+    \[
+        \sum\limits_{n=1}^{\infty}(2^{-n}-5^{-n})=1-\dfrac14=\dfrac34.
+    \]
+    \item 分别在 $(0,1)$ 上展开 $1/(1+x)$，并对 $(1,+\infty)$ 作代换 $t=1/x$ 后展开。逐项积分并合并，得到
+    \[
+        \dfrac1a+\sum\limits_{k=1}^{\infty}(-1)^k
+        \left(\dfrac1{a+k}-\dfrac1{a-k}\right).
+    \]
+    在 $0<a<1$ 时上述换序可先在 $[\varepsilon,1-\varepsilon]$ 上进行，再令 $\varepsilon\to0^+$。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -431,7 +719,24 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 被积函数逐点趋于 $1/(1+e^x)$ 且由 $1$ 控制，故
+    \[
+        \lim\limits_{n\to\infty}\int_0^1\dfrac{\mathrm{d}x}{1+(1+x/n)^n}
+        =\int_0^1\dfrac{\mathrm{d}x}{1+e^x}
+        =\ln\dfrac{2e}{e+1}.
+    \]
+    \item 展开
+    \[
+        x^{-x}=e^{-x\ln x}
+        =\sum\limits_{k=0}^{\infty}\dfrac{x^k(-\ln x)^k}{k!}.
+    \]
+    各项非负，可逐项积分；又
+    \[
+        \int_0^1x^k(-\ln x)^k\,\mathrm{d}x=\dfrac{k!}{(k+1)^{k+1}},
+    \]
+    故积分等于 $\sum_{n=1}^{\infty}n^{-n}$。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -444,7 +749,12 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+把 $[0,1]$ 分成 $n$ 个小区间并令 $x=(k+t)/n$，得到
+\[
+    \int_0^1f(x)g(nx)\,\mathrm{d}x
+    =\int_0^1g(t)\left[\dfrac1n\sum\limits_{k=0}^{n-1}f\left(\dfrac{k+t}{n}\right)\right]\mathrm{d}t.
+\]
+方括号内的 Riemann 和关于 $t\in[0,1]$ 一致趋于 $\int_0^1f$，故可取极限，得到题中乘积。
 \end{proof}
 
 \begin{example}
@@ -460,7 +770,15 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+由给定 Lipschitz 条件及 $f_n'$ 连续，令 $x_2\to x_1$ 得
+\[
+    |f_n'(x)|\leq\dfrac Mn.
+\]
+因此
+\[
+    \left|\int_a^bh(x)f_n'(x)\,\mathrm{d}x\right|
+    \leq\dfrac{M(b-a)}n\max_{[a,b]}|h|\longrightarrow0.
+\]
 \end{proof}
 
 \begin{example}
@@ -477,7 +795,9 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+当前条件不足，因为没有控制 $\int|f_n|$。例如在 $[0,1]$ 上取 $g(x)=x$，可在 $(0,1/n)$ 内取两个符号相反、总积分为零而一阶矩恒为非零的尖峰，再加上积分为 $1$ 的正尖峰；此时仍满足远离零一致趋零及 $\int f_n=1$，但 $\int gf_n$ 不趋于 $g(0)$。
+
+若补充 $f_n\geq0$（或 $\int|f_n|$ 一致有界），则任取 $c>a$，把积分分为 $[a,c]$ 与 $[c,b]$。前一段用 $g(x)\to A$ 控制，后一段用 $f_n\rightrightarrows0$ 控制，再令 $c\to a^+$，即可得到极限 $A$。故原题需要补充条件。
 \end{proof}
 
 \begin{example}
@@ -488,7 +808,13 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+结论右端 $g(0)=0$。取 $\delta>0$。在 $|x|<\delta$ 上，$f_n$ 一致有界且
+$\sup_{|x|<\delta}|g(x)|\to0$（$\delta\to0$）；在其余闭集上，$f_n$ 一致趋零。因此
+\[
+    \left|\int_{-1}^{1}f_n(x)g(x)\,\mathrm{d}x\right|
+    \leq C\int_{-\delta}^{\delta}|g(x)|\,\mathrm{d}x+o(1).
+\]
+先令 $n\to\infty$，再令 $\delta\to0$，即得极限为零。
 \end{proof}
 
 \subsection{微分性质的传递}
@@ -503,7 +829,15 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item
+    \[
+        f_n'(x)=\dfrac{n^{-2}}{1+x^2/n^4},\qquad |f_n'(x)|\leq n^{-2}.
+    \]
+    导数级数在全区间一致收敛，故和函数可微。
+    \item $f_n'(x)=\cos(nx)/n^2$，导数级数由 $\sum n^{-2}$ 一致控制，故和函数在实轴上可微。
+    \item 在任一紧子区间 $|\tan x|\leq q<1$ 上，原级数及导数级数都由多项式因子乘 $q^n$ 控制，故局部一致收敛并可逐项求导。因此和函数在给定开区间内可微。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -519,7 +853,14 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+按题设可逐项求导，而求导只把双向级数的各项向左平移一位，所以
+\[
+    F'(x)=F(x).
+\]
+故 $F(x)=Ce^x$。在 $x=0$ 处所有正重积分项为零，因此
+\[
+    C=F(0)=\sum\limits_{n=0}^{\infty}f^{(n)}(0).
+\]
 \end{proof}
 
 \begin{example}
@@ -530,7 +871,12 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+令
+\[
+    F(x)=\sum\limits_{n=1}^{\infty}\dfrac{x^{n-1}}{n+1},\qquad0\leq x<1.
+\]
+该函数连续且严格递增，并且 $F(0)=1/2<1$，而
+$F(x)=[-\ln(1-x)-x]/x^2\to+\infty$（$x\to1^-$）。由介值定理，存在唯一 $\xi\in(0,1)$ 使 $F(\xi)=1$。
 \end{proof}
 
 \begin{example}[\markstar]
@@ -538,7 +884,11 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+取原函数 $F_n$ 并归一化为 $F_n(a)=0$。由 Lagrange 中值定理，
+\[
+    \|F_n-F_m\|_\infty\leq(b-a)\|f_n-f_m\|_\infty.
+\]
+故 $F_n$ 一致收敛于某个 $F$。再由导数一致收敛定理，$F'=f$，所以 $f$ 有原函数。
 \end{proof}
 
 \begin{example}[\markstar]
@@ -546,7 +896,12 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+任取分割 $P$。由一致收敛，充分大时 $\|f_n-f\|_\infty<\varepsilon$，从而上下 Darboux 和满足
+\[
+    U(f,P)-L(f,P)
+    \leq U(f_n,P)-L(f_n,P)+2\varepsilon(b-a).
+\]
+先为可积函数 $f_n$ 选择使第一项任意小的分割，再令 $\varepsilon\to0$，即得 $f$ 可积。
 \end{proof}
 
 \newpage
@@ -562,7 +917,15 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+由 Weierstrass 逼近定理，存在多项式 $p_m$ 一致逼近 $f$。题设给出
+$\int_a^bp_m(x)f(x)\,\mathrm{d}x=0$，故令 $m\to\infty$ 得
+\[
+    \int_a^bf(x)^2\,\mathrm{d}x=0,
+\]
+从而 $f\equiv0$。
+
+若只对 $n>n_0$ 成立，则对函数 $x^{n_0+1}f(x)$ 的所有多项式矩仍为零，故
+$x^{n_0+1}f(x)\equiv0$；由连续性仍有 $f\equiv0$。
 \end{proof}
 
 \begin{example}
@@ -573,7 +936,11 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 令 $f_e(x)=[f(x)+f(-x)]/2$ 为偶部。题设等价于
+    $\int_{-1}^{1}x^{2n}f_e(x)\,\mathrm{d}x=0$。偶连续函数可由 $x^2$ 的多项式一致逼近，故与上一题同理得到 $f_e=0$，即 $f$ 为奇函数。
+    \item 对奇部 $f_o(x)=[f(x)-f(-x)]/2$ 作同样论证；$x^{2n+1}f_o(x)$ 为偶函数，最终得到 $f_o=0$，故 $f$ 为偶函数。
+\end{enumerate}
 \end{proof}
 
 \begin{example}
@@ -581,7 +948,10 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+一致收敛使 $\{p_n\}$ 在 $\mathbb R$ 上一致 Cauchy。故充分大的 $m,n$ 满足
+$p_n-p_m$ 在整个实轴上有界。非恒定实多项式在实轴上无界，所以
+$p_n-p_m$ 必为常数。固定一个充分大的 $N$，便有 $p_n=p_N+c_n$，且
+$c_n$ 收敛。因此 $f=p_N+\lim c_n$，仍为多项式。
 \end{proof}
 
 \begin{example}
@@ -593,7 +963,12 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+由 Riemann 可积性，可取分割使上下 Darboux 和之差小于 $\varepsilon/3$。把相应上下阶梯函数仅在各分点的充分小邻域内改成连续折线，可得连续函数 $u,v$ 满足
+\[
+    u\leq f\leq v,qquad \int_a^b(v-u)<\dfrac{2\varepsilon}{3}.
+\]
+再由 Weierstrass 定理分别用多项式一致逼近 $u$ 与 $v$，并把误差常数向下、向上平移，得到多项式 $p\leq u\leq f\leq v\leq P$，且
+$\int(P-p)<\varepsilon$。
 \end{proof}
 
 \begin{example}
@@ -601,7 +976,12 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+必要性显然，因为所有奇次幂多项式在零点均为零。充分性是
+M\"untz--Sz\'asz 定理在指数列 $1,3,5,\ldots$ 上的直接应用：
+\[
+    \sum\limits_{k=0}^{\infty}\dfrac1{2k+1}=+\infty,
+\]
+故这些单项式的线性张成在所有满足 $f(0)=0$ 的 $C[0,1]$ 函数中稠密。因此存在只含奇次幂的多项式序列一致逼近 $f$。
 \end{proof}
 
 \begin{example}
@@ -609,7 +989,11 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+题设蕴含对任意多项式 $p$ 都有 $\int_a^bp(x)f(x)\,\mathrm{d}x=0$。若某连续点 $c$ 满足 $f(c)>0$，则在其某邻域内 $f$ 有正下界。选取在 $c$ 附近接近 $1$、在该邻域外一致趋于零的非负多项式峰函数 $p_N$，可使
+\[
+    \int_a^bp_N(x)f(x)\,\mathrm{d}x>0,
+\]
+矛盾；$f(c)<0$ 同理。因此每个连续点处都有 $f(c)=0$。
 \end{proof}
 
 \begin{example}
@@ -621,7 +1005,13 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+对每个非负整数 $n$ 作代换 $x=t^{2n+1}$，题设成为
+\[
+    (2n+1)\int_0^1t^{2n}f(t)\,\mathrm{d}t=0.
+\]
+而 $1,t^2,t^4,\ldots$ 的线性组合在 $C[0,1]$ 中稠密，因为任意
+$h(t)$ 可写成连续函数 $H(t^2)$。故可用这些多项式一致逼近 $f$，从而
+$\int_0^1f^2=0$，即 $f\equiv0$。
 \end{proof}
 
 \begin{example}
@@ -632,7 +1022,18 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+\begin{enumerate}[label=(\arabic*)]
+    \item 设 $F'=f$。用多项式 $q_m$ 一致逼近 $g$。对每个多项式 $q$，
+    \[
+        fq=(Fq)'-Fq'
+    \]
+    有原函数；又 $fq_m\rightrightarrows fg$，由前述一致极限定理，$fg$ 也有原函数。
+    \item $g'>0$，故 $1/g'$ 连续。函数
+    \[
+        f(g(x))g'(x)=\dfrac{\mathrm{d}}{\mathrm{d}x}F(g(x))
+    \]
+    有原函数。再对它与连续函数 $1/g'$ 应用 (1)，即得 $f(g(x))$ 有原函数。
+\end{enumerate}
 \end{proof}
 
 \newpage
