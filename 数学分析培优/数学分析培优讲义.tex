@@ -1,4 +1,15 @@
-\documentclass[oneside]{ctexbook}
+\documentclass[
+    lang=cn,
+    scheme=chinese,
+    mode=simple,
+    device=normal,
+    color=blue,
+    math=cm,
+    thmcnt=section,
+    12pt,
+    watermark,
+    result=noanswer
+]{elegantbook}
 
 \input{preamble}
 
@@ -8,19 +19,13 @@
 
 \begin{document}
 
-% 封面与目录不建立 PDF 页锚点，避免正文重新从第 1 页计数时产生重复锚点。
-\hypersetup{pageanchor=false}
-\frontmatter
-\pagenumbering{gobble}
 \maketitle
+\frontmatter
 \tableofcontents
-\clearpage
 
 \mainmatter
-\hypersetup{pageanchor=true}
-\pagestyle{fancy}
 
-% ================= 正文 =================
+% ================= 完整理论正文 + 例题 + 留白 =================
 \subfile{章节/第一章_数列极限/第一章_数列极限}
 \subfile{章节/第二章_函数极限与实数基本定理/第二章_函数极限与实数基本定理}
 \subfile{章节/第三章_一元函数的连续性/第三章_一元函数的连续性}

@@ -1,0 +1,1459 @@
+\setcounter{chapter}{10}
+\pagestyle{fancy}
+
+\chapter{含参变量积分}
+
+
+\section{含参变量常义积分}
+
+\begin{example}
+    求下列极限:
+    \begin{enumerate}
+        \item $\displaystyle \lim\limits_{y\to0^+}\int_0^1\dfrac{\mathrm{d}x}{1+(1+xy)^{\frac{1}{y}}}$;
+        \item $\displaystyle \lim\limits_{a\to0}\int_a^{1+a}\dfrac{\mathrm{d}x}{1+a^2+x^2}$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 当 $y\to0^+$ 时,$(1+xy)^{\frac{1}{y}}\to e^x$ 在 $x\in\lbrack0,1\rbrack$ 上一致成立,故
+              \[
+                  \lim\limits_{y\to0^+}\int_0^1\dfrac{\mathrm{d}x}{1+(1+xy)^{\frac{1}{y}}}
+                  =\int_0^1\dfrac{\mathrm{d}x}{1+e^x}
+                  =\ln\dfrac{2e}{1+e}.
+              \]
+        \item 被积函数及积分上下限均连续变化,故
+              \[
+                  \lim\limits_{a\to0}\int_a^{1+a}\dfrac{\mathrm{d}x}{1+a^2+x^2}
+                  =\int_0^1\dfrac{\mathrm{d}x}{1+x^2}=\dfrac{\pi}{4}.
+              \]
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    \begin{enumerate}
+        \item 设 $F(x)=\displaystyle\int_0^x\sin(xy)\,\mathrm{d}y$, 求 $F'(x)$;
+        \item 设 $I(x)=\displaystyle\int_{\sin x}^{\cos x}e^{t^2+xt}\,\mathrm{d}t$, 求 $I'(0)$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 由 Leibniz 公式,
+              \[
+                  F'(x)=\sin x^2+\int_0^x y\cos(xy)\,\mathrm{d}y.
+              \]
+              等价地,当 $x\neq0$ 时,
+              \[
+                  F(x)=\dfrac{1-\cos x^2}{x},
+                  \qquad
+                  F'(x)=\dfrac{2x^2\sin x^2-1+\cos x^2}{x^2},
+              \]
+              且 $F'(0)=0$.
+        \item
+              \[
+                  I'(x)=-\sin x\,e^{\cos^2x+x\cos x}
+                  -\cos x\,e^{\sin^2x+x\sin x}
+                  +\int_{\sin x}^{\cos x}t e^{t^2+xt}\,\mathrm{d}t.
+              \]
+              因而
+              \[
+                  I'(0)=-1+\int_0^1t e^{t^2}\,\mathrm{d}t
+                  =\dfrac{e-3}{2}.
+              \]
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    \begin{enumerate}
+        \item 设 $f\in C(\mathbb{R}^2)$,
+              \[
+                  F(x)=\int_0^x\left(\int_{t^2}^{x^2}f(t,s)\,\mathrm{d}s\right)\mathrm{d}t,
+              \]
+              求 $F'(x)$;
+        \item 设 $f\in C(\lbrack0,1\rbrack^2)$,
+              \[
+                  F(t)=\int_0^t\left(\int_0^t f(x,y)\,\mathrm{d}x\right)\mathrm{d}y,
+              \]
+              求 $F'(t)$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 对外层积分使用 Leibniz 公式.由于 $t=x$ 时内层积分为零,
+              \[
+                  F'(x)=2x\int_0^x f(t,x^2)\,\mathrm{d}t.
+              \]
+        \item 将积分区域看成正方形 $\lbrack0,t\rbrack^2$,两条活动边分别给出
+              \[
+                  F'(t)=\int_0^t f(x,t)\,\mathrm{d}x
+                  +\int_0^t f(t,y)\,\mathrm{d}y.
+              \]
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    设
+    \[
+        M=\int_a^b|g(x)|\,\mathrm{d}x<+\infty,
+    \]
+    $f(x,y),f_y(x,y)$ 在 $D=\lbrack a,b\rbrack\times\lbrack c,d\rbrack$ 上连续, 则
+    \[
+        F(y)=\int_a^b g(x)f(x,y)\,\mathrm{d}x
+    \]
+    在 $\lbrack c,d\rbrack$ 上连续可微.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    因 $f_y$ 在紧集 $D$ 上连续,故一致连续且有界.对 $y,y+h\in\lbrack c,d\rbrack$,
+    \[
+        \dfrac{F(y+h)-F(y)}{h}
+        =\int_a^b g(x)\dfrac{f(x,y+h)-f(x,y)}{h}\,\mathrm{d}x.
+    \]
+    由一元中值定理,差商在 $x\in\lbrack a,b\rbrack$ 上一致趋于 $f_y(x,y)$,且其绝对值由常数乘 $|g(x)|$ 控制.因此
+    \[
+        F'(y)=\int_a^b g(x)f_y(x,y)\,\mathrm{d}x.
+    \]
+    再利用 $f_y$ 的一致连续性与 $\displaystyle\int_a^b|g(x)|\,\mathrm{d}x<\infty$,可知 $F'$ 连续,故 $F\in C^1(\lbrack c,d\rbrack)$.
+\end{solution}
+
+\begin{example}
+    设 $f(x)$ 在 $\lbrack0,1\rbrack$ 上连续, 考察函数
+    \[
+        F(t)=\int_0^1\dfrac{t}{x^2+t^2}f(x)\,\mathrm{d}x
+    \]
+    的连续性.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    当 $t\neq0$ 时,被积函数关于参数在任意远离 $0$ 的参数邻域上一致连续并有统一可积控制,故 $F$ 在 $t\neq0$ 处连续.
+
+    令 $x=|t|u$,则
+    \[
+        F(t)=\operatorname{sgn}(t)\int_0^{1/|t|}\dfrac{f(|t|u)}{1+u^2}\,\mathrm{d}u.
+    \]
+    于是
+    \[
+        \lim\limits_{t\to0^+}F(t)=\dfrac{\pi}{2}f(0),
+        \qquad
+        \lim\limits_{t\to0^-}F(t)=-\dfrac{\pi}{2}f(0).
+    \]
+    若按被积函数在 $t=0$ 时的自然取值定义 $F(0)=0$,则 $F$ 在 $0$ 连续当且仅当 $f(0)=0$.因此 $F$ 在
+    $\mathbb{R}\setminus\{0\}$ 上总连续;在 $0$ 处的连续性由 $f(0)$ 决定.
+\end{solution}
+
+\begin{example}
+    已知
+    \[
+        \dfrac{1}{2\pi}\int_0^{2\pi}\dfrac{1-r^2}{1-2r\cos\theta+r^2}\,\mathrm{d}\theta=1,
+        \qquad 0<r<1,
+    \]
+    试求
+    \[
+        I(r)=\int_0^{2\pi}\ln(1-2r\cos\theta+r^2)\,\mathrm{d}\theta,
+        \qquad r>0,\ r\ne1.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    记 $D=1-2r\cos\theta+r^2$.注意
+    \[
+        \dfrac{\partial}{\partial r}\ln D
+        =\dfrac{2(r-\cos\theta)}{D}
+        =\dfrac{1}{r}\left(1-\dfrac{1-r^2}{D}\right).
+    \]
+    当 $0<r<1$ 时,由已知 Poisson 积分公式,$I'(r)=0$.又 $I(0)=0$,故 $I(r)=0$.
+
+    当 $r>1$ 时,提出 $r^2$:
+    \[
+        I(r)=\int_0^{2\pi}\left[2\ln r+\ln\left(1-2r^{-1}\cos\theta+r^{-2}\right)\right]\mathrm{d}\theta
+        =4\pi\ln r.
+    \]
+    所以
+    \[
+        I(r)=
+        \begin{cases}
+            0,         & 0<r<1, \\
+            4\pi\ln r, & r>1.
+        \end{cases}
+    \]
+\end{solution}
+
+\begin{example}
+    试求
+    \[
+        I(a)=\int_0^{\frac{\pi}{a}}\dfrac{\arctan(a\tan x)}{\tan x}\,\mathrm{d}x.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    原题未规定 $a$ 的取值范围及 $\arctan$ 的分支,因而不能得到唯一的参数公式.例如,按实数主值并取 $a>0$,已有
+    \[
+        I(1)=\int_0^\pi\dfrac{\arctan(\tan x)}{\tan x}\,\mathrm{d}x
+        =\pi\ln2,
+    \]
+    而
+    \[
+        I(2)=\int_0^{\frac{\pi}{2}}\dfrac{\arctan(2\tan x)}{\tan x}\,\mathrm{d}x
+        =\dfrac{\pi}{2}\ln3,
+    \]
+    二者已不符合同一个通常的“固定积分上限”结论.
+
+    若题面的上限原意为 $\pi/2$,则对 $a>-1$ 有
+    \[
+        J(a)=\int_0^{\frac{\pi}{2}}\dfrac{\arctan(a\tan x)}{\tan x}\,\mathrm{d}x,
+        \qquad
+        J'(a)=\int_0^{\frac{\pi}{2}}\dfrac{\mathrm{d}x}{1+a^2\tan^2x}
+        =\dfrac{\pi}{2(1+a)}.
+    \]
+    由 $J(0)=0$ 得
+    \[
+        J(a)=\dfrac{\pi}{2}\ln(1+a).
+    \]
+    因此,当且仅当确认原题上限应为 $\pi/2$ 时,才能将最后一式作为本题答案.
+\end{solution}
+
+\begin{example}
+    试求
+    \[
+        I(a)=\int_0^{\frac{\pi}{2}}\ln\left(\dfrac{1+a\cos x}{1-a\cos x}\right)\dfrac{\mathrm{d}x}{\cos x},
+        \qquad |a|<1.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    对参数求导可得
+    \[
+        I'(a)=\int_0^{\frac{\pi}{2}}
+        \left(\dfrac{1}{1+a\cos x}+\dfrac{1}{1-a\cos x}\right)\mathrm{d}x
+        =2\int_0^{\frac{\pi}{2}}\dfrac{\mathrm{d}x}{1-a^2\cos^2x}.
+    \]
+    令 $t=\tan x$,则
+    \[
+        I'(a)=2\int_0^{+\infty}\dfrac{\mathrm{d}t}{t^2+1-a^2}
+        =\dfrac{\pi}{\sqrt{1-a^2}}.
+    \]
+    由 $I(0)=0$,得到
+    \[
+        I(a)=\pi\arcsin a,
+        \qquad |a|<1.
+    \]
+\end{solution}
+
+\begin{example}
+    试求
+    \[
+        I(a,b)=\int_0^1\dfrac{x^b-x^a}{\ln x}\,\mathrm{d}x,
+        \qquad a,b>0.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    由
+    \[
+        \dfrac{x^b-x^a}{\ln x}=\int_a^b x^t\,\mathrm{d}t
+    \]
+    以及 Fubini 定理,
+    \[
+        I(a,b)=\int_a^b\left(\int_0^1x^t\,\mathrm{d}x\right)\mathrm{d}t
+        =\int_a^b\dfrac{\mathrm{d}t}{t+1}
+        =\ln\dfrac{b+1}{a+1}.
+    \]
+\end{solution}
+
+\begin{example}
+    设
+    \[
+        F(r)=\int_0^{2\pi}e^{r\cos\theta}\cos(r\sin\theta)\,\mathrm{d}\theta,
+    \]
+    求证: $F(r)=2\pi$.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    将被积函数看成复指数的实部:
+    \[
+        e^{r\cos\theta}\cos(r\sin\theta)
+        =\Ree\left(e^{re^{i\theta}}\right).
+    \]
+    幂级数在 $\theta\in\lbrack0,2\pi\rbrack$ 上一致收敛,故可逐项积分:
+    \[
+        \int_0^{2\pi}e^{re^{i\theta}}\,\mathrm{d}\theta
+        =\sum\limits_{n=0}^{\infty}\dfrac{r^n}{n!}
+        \int_0^{2\pi}e^{in\theta}\,\mathrm{d}\theta
+        =2\pi.
+    \]
+    取实部即得 $F(r)=2\pi$.
+\end{solution}
+
+
+\newpage
+
+\section{含参变量反常积分}
+
+本节基本与函数项级数讨论类似, 首先讨论一致收敛性, 再讨论相应条件下极限、求导、积分换序的应用.
+
+
+
+\subsection{一致收敛性}
+
+首先需要讨论一致收敛性的判别, 这里并没有什么新的方法, 完全类似于函数项级数中的判别方法.
+
+判别一致收敛的常用方法:
+\begin{enumerate}
+    \item 定义(包括上确界的等价定义);
+    \item Cauchy 收敛准则;
+    \item Weierstrass 判别法(M-判别法);
+    \item Abel--Dirichlet 判别法;
+    \item Dini 定理.
+\end{enumerate}
+
+判别非一致收敛的常用方法:
+\begin{enumerate}
+    \item 定义(端点法);
+    \item Cauchy 收敛准则;
+    \item 连续性的不可传递性.
+\end{enumerate}
+
+设
+\[
+    \varphi(t)=\int_a^{+\infty}f(x,t)\,\mathrm{d}x,\qquad t\in T.
+\]
+
+\begin{definition}
+    若对任意 $\varepsilon>0$, 存在 $A_0=A_0(\varepsilon)$, 当 $A>A_0$ 时, 有
+    \[
+        \left|\int_A^{+\infty}f(x,t)\,\mathrm{d}x\right|<\varepsilon,
+    \]
+    则称含参变量广义积分关于 $t\in T$ 一致收敛.
+\end{definition}
+
+\begin{theorem}[\markstar\ Cauchy 收敛准则]
+    $\displaystyle\int_a^{+\infty}f(x,t)\,\mathrm{d}x$ 关于 $t\in T$ 一致收敛, 当且仅当对任意 $\varepsilon>0$, 存在 $A_0>a$, 当 $A,A'>A_0$ 时, 有
+    \[
+        \left|\int_A^{A'}f(x,t)\,\mathrm{d}x\right|<\varepsilon.
+    \]
+\end{theorem}
+
+\begin{theorem}[\markstar\ Weierstrass 判别法]
+    设 $\displaystyle\int_a^{+\infty}f(x,t)\,\mathrm{d}x$ 在 $t\in T$ 上收敛. 如果
+    \begin{enumerate}
+        \item $|f(x,t)|\leq F(x)$;
+        \item $\displaystyle\int_a^{+\infty}F(x)\,\mathrm{d}x$ 收敛,
+    \end{enumerate}
+    则 $\displaystyle\int_a^{+\infty}f(x,t)\,\mathrm{d}x$ 关于 $t\in T$ 一致收敛.
+\end{theorem}
+
+\begin{theorem}[\markstar\ Abel 判别法]
+    设
+    \begin{enumerate}
+        \item $\displaystyle\int_a^{+\infty}f(x,t)\,\mathrm{d}x$ 关于 $t\in T$ 一致收敛;
+        \item $g(x,t)$ 关于 $x$ 单调, 且作为二元函数是有界的,
+    \end{enumerate}
+    则 $\displaystyle\int_a^{+\infty}f(x,t)g(x,t)\,\mathrm{d}x$ 关于 $t\in T$ 一致收敛.
+\end{theorem}
+
+\begin{theorem}[\markstar\ Dirichlet 判别法]
+    设
+    \begin{enumerate}
+        \item $\displaystyle\int_a^A f(x,t)\,\mathrm{d}x$ 对一切 $A\geq a,t\in T$ 一致有界;
+        \item $g(x,t)$ 关于 $x$ 单调, 且 $\displaystyle\lim\limits_{x\to+\infty}g(x,t)=0$ 关于 $t\in T$ 一致,
+    \end{enumerate}
+    则 $\displaystyle\int_a^{+\infty}f(x,t)g(x,t)\,\mathrm{d}x$ 关于 $t\in T$ 一致收敛.
+\end{theorem}
+
+\begin{theorem}[\markstar\ Dini 定理]
+    设 $f(x,t)$ 在
+    \[
+        D=\{(x,t)\mid a\leq x<+\infty,\ \alpha\leq t\leq\beta\}
+    \]
+    上连续且不变号,
+    \[
+        \varphi(t)=\int_a^{+\infty}f(x,t)\,\mathrm{d}x
+    \]
+    在 $\lbrack\alpha,\beta\rbrack$ 上连续, 则 $\displaystyle\int_a^{+\infty}f(x,t)\,\mathrm{d}x$ 关于 $t\in\lbrack\alpha,\beta\rbrack$ 一致收敛.
+\end{theorem}
+
+\begin{proposition}[\markstar\ 端点法]
+    若存在 $y_0\in I$(或 $y_0$ 为 $I$ 的端点), 使得对任意 $A>a$, 有
+    \[
+        \lim\limits_{y\to y_0}\int_A^{+\infty}f(x,y)\,\mathrm{d}x=B\ne0,
+    \]
+    则 $\displaystyle\int_a^{+\infty}f(x,y)\,\mathrm{d}x$ 在 $y\in I$ 上非一致收敛.
+\end{proposition}
+
+\begin{theorem}[\markstar]
+    若 $f(x,t)$ 在
+    \[
+        D=\{(x,t)\mid a\leq x<+\infty,\ \alpha\leq t\leq\beta\}
+    \]
+    上连续,
+    \[
+        \varphi(t)=\int_a^{+\infty}f(x,t)\,\mathrm{d}x
+    \]
+    在 $\lbrack\alpha,\beta\rbrack$ 上存在但不连续, 则 $\displaystyle\int_a^{+\infty}f(x,t)\,\mathrm{d}x$ 在 $\lbrack\alpha,\beta\rbrack$ 上非一致收敛.
+\end{theorem}
+
+\begin{example}
+    判别下列含参变量积分在特定区间的非一致收敛性:
+    \begin{enumerate}
+        \item $\displaystyle I(\alpha)=\int_0^{+\infty}e^{-\alpha x^2}\,\mathrm{d}x$, $\alpha\in(0,1)$;
+        \item $\displaystyle I(\alpha)=\int_0^{+\infty}\sqrt{\alpha}\,e^{-\alpha x^2}\,\mathrm{d}x$, $\alpha\in(0,+\infty)$;
+        \item $\displaystyle I(y)=\int_0^{+\infty}\dfrac{x\sin(xy)}{y(1+x^2)}\,\mathrm{d}x$, $y\in(0,+\infty)$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    三者对每个固定参数均收敛,但在所给参数区间上不一致收敛.
+    \begin{enumerate}
+        \item 对任意 $A>0$,取 $\alpha=A^{-2}$,则
+              \[
+                  \int_A^{+\infty}e^{-\alpha x^2}\,\mathrm{d}x
+                  =A\int_1^{+\infty}e^{-t^2}\,\mathrm{d}t,
+              \]
+              不随 $A\to+\infty$ 而趋于 $0$.
+        \item 令 $t=\sqrt\alpha x$,则
+              \[
+                  \int_A^{+\infty}\sqrt\alpha e^{-\alpha x^2}\,\mathrm{d}x
+                  =\int_{A\sqrt\alpha}^{+\infty}e^{-t^2}\,\mathrm{d}t.
+              \]
+              对每个 $A$ 令 $\alpha\to0^+$,右端趋于 $\sqrt\pi/2$,故不满足一致 Cauchy 准则.
+        \item 已知 Fourier 积分
+              \[
+                  \int_0^{+\infty}\dfrac{x\sin(xy)}{1+x^2}\,\mathrm{d}x
+                  =\dfrac{\pi}{2}e^{-y},
+                  \qquad y>0.
+              \]
+              因此 $I(y)=\pi e^{-y}/(2y)$,当 $y\to0^+$ 时无界.若积分一致收敛,则其和函数在任意紧截断积分的一致极限意义下不可能产生这种尾部失控,故不一致收敛.
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    试用定义证明:
+    \[
+        I(y)=\int_1^{+\infty}e^{-\frac{1}{y^2}(x-\frac{1}{y})^2}\,\mathrm{d}x
+    \]
+    关于 $y\in(0,1)$ 一致收敛.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    只需验证无穷远处的一致 Cauchy 准则.对 $A>2$ 分两种情形.
+
+    若 $0<y<2/A$,则
+    \[
+        \int_A^{+\infty}e^{-\frac{1}{y^2}(x-\frac{1}{y})^2}\,\mathrm{d}x
+        \leq y\int_{-\infty}^{+\infty}e^{-t^2}\,\mathrm{d}t
+        <\dfrac{2\sqrt\pi}{A}.
+    \]
+    若 $2/A\leq y<1$,令 $t=(x-1/y)/y$.此时
+    \[
+        \dfrac{A-\frac{1}{y}}{y}=\dfrac{Ay-1}{y^2}\geq\dfrac{A}{2y}\geq\dfrac{A}{2},
+    \]
+    从而
+    \[
+        \int_A^{+\infty}e^{-\frac{1}{y^2}(x-\frac{1}{y})^2}\,\mathrm{d}x
+        \leq\int_{\frac{A}{2}}^{+\infty}e^{-t^2}\,\mathrm{d}t.
+    \]
+    两种估计的右端都与 $y$ 无关且趋于 $0$,故积分关于 $y\in(0,1)$ 一致收敛.
+\end{solution}
+
+\begin{example}
+    证明下列命题:
+    \begin{enumerate}
+        \item $\displaystyle I=\int_1^{+\infty}\dfrac{(\ln x)^p}{x\sqrt{x}}\,\mathrm{d}x$ 关于 $p\in\lbrack0,10\rbrack$ 一致收敛;
+        \item $\displaystyle I(y)=\int_1^{+\infty}\dfrac{y^2-x^2}{(x^2+y^2)^2}\,\mathrm{d}x$ 关于 $y\in\lbrack0,+\infty)$ 一致收敛;
+        \item $\displaystyle \int_0^{+\infty}x\sin(x^4)\cos(\alpha x)\,\mathrm{d}x$ 对 $\alpha\in\lbrack a,b\rbrack$ 一致收敛.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 对 $x\geq e$、$p\in\lbrack0,10\rbrack$,
+              \[
+                  0\leq\dfrac{(\ln x)^p}{x\sqrt x}
+                  \leq\dfrac{1+(\ln x)^{10}}{x^{\frac{3}{2}}}.
+              \]
+              右端在 $lbrack e,+\infty)$ 可积,故由 Weierstrass 判别法一致收敛.
+        \item 注意
+              \[
+                  \dfrac{y^2-x^2}{(x^2+y^2)^2}
+                  =\dfrac{\mathrm{d}}{\mathrm{d}x}\dfrac{x}{x^2+y^2}.
+              \]
+              因此
+              \[
+                  \left|\int_A^{+\infty}\dfrac{y^2-x^2}{(x^2+y^2)^2}\,\mathrm{d}x\right|
+                  =\dfrac{A}{A^2+y^2}\leq\dfrac{1}{A},
+              \]
+              估计关于 $y\geq0$ 一致.
+        \item 写成两项相位积分
+              \[
+                  \dfrac{1}{2}\int_A^{+\infty}x
+                  \left[\sin(x^4+\alpha x)+\sin(x^4-\alpha x)\right]\mathrm{d}x.
+              \]
+              当 $A$ 足够大且 $\alpha\in\lbrack a,b\rbrack$ 时,两相位导数
+              $4x^3\pm\alpha$ 的绝对值一致不小于 $2x^3$.对每项分部积分,边界项及余项均为 $O(A^{-2})$,常数与 $\alpha$ 无关,故一致收敛.
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    证明:
+    \[
+        I(\alpha)=\int_0^{+\infty}\dfrac{e^{-x}}{|\sin x|^\alpha}\,\mathrm{d}x
+    \]
+    对 $\alpha\in\lbrack0,b\rbrack$, $0<b<1$, 一致收敛.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    因为 $0<|\sin x|\leq1$ 且 $0\leq\alpha\leq b$,
+    \[
+        0\leq\dfrac{e^{-x}}{|\sin x|^\alpha}
+        \leq\dfrac{e^{-x}}{|\sin x|^b}.
+    \]
+    在每个区间 $\lbrack k\pi,(k+1)\pi\rbrack$ 上,$|\sin x|^{-b}$ 的端点奇性均为可积的 $|x-k\pi|^{-b}$ 型;同时 $e^{-x}$ 使各周期上的积分按几何级数衰减.因此
+    \[
+        \int_0^{+\infty}\dfrac{e^{-x}}{|\sin x|^b}\,\mathrm{d}x<+\infty.
+    \]
+    由 Weierstrass 判别法,原积分关于 $\alpha\in\lbrack0,b\rbrack$ 一致收敛.
+\end{solution}
+
+\begin{example}
+    证明下列含参变量积分在对应区间上一致收敛:
+    \begin{enumerate}
+        \item $\displaystyle I(\alpha)=\int_0^{+\infty}\sin(x^\alpha)\,\mathrm{d}x$, $\alpha\geq\alpha_0$, $\alpha_0>1$;
+        \item $\displaystyle I(\alpha)=\int_1^{+\infty}\dfrac{x\sin(\alpha x)}{1+x^2}\,\mathrm{d}x$, $\alpha\geq\alpha_0$, $\alpha_0>0$;
+        \item $\displaystyle I(\alpha)=\int_0^{+\infty}e^{-x}\dfrac{\sin(\alpha x)}{x}\,\mathrm{d}x$, $\alpha\geq\alpha_0$, $\alpha_0>0$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 令 $t=x^\alpha$,则
+              \[
+                  I(\alpha)=\dfrac{1}{\alpha}\int_0^{+\infty}t^{\frac{1}{\alpha}-1}\sin t\,\mathrm{d}t.
+              \]
+              在 $t\geq1$ 上,振幅单调趋于 $0$,且对 $\alpha\geq\alpha_0$,Dirichlet 余项一致为
+              $O\left(A^{\frac{1}{\alpha_0}-1}\right)$;在 $t=0$ 附近则由 $|\sin t|\leq t$ 统一控制.故一致收敛.
+        \item 对 $x\geq1$,$x/(1+x^2)$ 单调趋于 $0$.Dirichlet 估计给出
+              \[
+                  \left|\int_A^B\dfrac{x\sin(\alpha x)}{1+x^2}\,\mathrm{d}x\right|
+                  \leq\dfrac{C}{\alpha_0}\dfrac{A}{1+A^2},
+              \]
+              故关于 $\alpha\geq\alpha_0$ 一致收敛.
+        \item 对无穷远端,
+              \[
+                  \left|e^{-x}\dfrac{\sin(\alpha x)}{x}\right|\leq\dfrac{e^{-x}}{x},
+                  \qquad x\geq1,
+              \]
+              右端可积且与参数无关.$x=0$ 是每个固定参数下的可去奇点,因此作为上限为 $+\infty$ 的含参变量反常积分,它关于 $\alpha\geq\alpha_0$ 一致收敛.
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    设 $f(x)$ 在 $x>0$ 时连续, $\displaystyle\int_0^{+\infty}x^\alpha f(x)\,\mathrm{d}x$ 在 $\alpha=a$ 和 $\alpha=b$ $(a<b)$ 时收敛, 则该积分对 $\alpha\in\lbrack a,b\rbrack$ 一致收敛.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    把积分分成 $(0,1\rbrack$ 与 $\lbrack1,+\infty)$ 两段.
+
+    在 $(0,1\rbrack$ 上写成
+    \[
+        x^\alpha f(x)=x^{\alpha-a}[x^af(x)].
+    \]
+    对 $\alpha\in\lbrack a,b\rbrack$,乘子 $x^{\alpha-a}$ 关于 $x$ 单调、绝对值不超过 $1$.由 Abel 判别法及
+    $\displaystyle\int_0^1x^af(x)\,\mathrm{d}x$ 的收敛性,端点 $0$ 处一致收敛.
+
+    在 $\lbrack1,+\infty)$ 上写成
+    \[
+        x^\alpha f(x)=x^{\alpha-b}[x^bf(x)].
+    \]
+    乘子 $x^{\alpha-b}$ 单调且不超过 $1$,再由
+    $\displaystyle\int_1^{+\infty}x^bf(x)\,\mathrm{d}x$ 收敛及 Abel 判别法,得到无穷远处的一致收敛.合并两段即得结论.
+\end{solution}
+
+
+
+\subsection{极限换序}
+
+\begin{theorem}[\markstar\ 连续性]
+    设 $f(x,t)$ 在
+    \[
+        D=\{(x,t)\mid a\leq x<+\infty,\ \alpha\leq t\leq\beta\}
+    \]
+    上连续, 且 $\displaystyle\int_a^{+\infty}f(x,t)\,\mathrm{d}x$ 关于 $t$ 在 $\lbrack\alpha,\beta\rbrack$ 上一致收敛于 $\varphi(t)$, 则 $\varphi(t)$ 在 $\lbrack\alpha,\beta\rbrack$ 上连续, 即对任意 $t_0\in\lbrack\alpha,\beta\rbrack$, 有
+    \[
+        \lim\limits_{t\to t_0}\int_a^{+\infty}f(x,t)\,\mathrm{d}x
+        =\int_a^{+\infty}\lim\limits_{t\to t_0}f(x,t)\,\mathrm{d}x.
+    \]
+\end{theorem}
+
+\begin{theorem}[\markstar\ 可微性]
+    设 $f(x,t),f_t(x,t)$ 在 $D$ 上连续, $\displaystyle\int_a^{+\infty}f(x,t)\,\mathrm{d}x$ 在 $\lbrack\alpha,\beta\rbrack$ 上收敛于 $\varphi(t)$, $\displaystyle\int_a^{+\infty}f_t(x,t)\,\mathrm{d}x$ 关于 $t\in\lbrack\alpha,\beta\rbrack$ 一致收敛, 则 $\varphi(t)$ 在 $\lbrack\alpha,\beta\rbrack$ 上可微, 且
+    \[
+        \varphi'(t)=\dfrac{\mathrm{d}}{\mathrm{d}t}\int_a^{+\infty}f(x,t)\,\mathrm{d}x
+        =\int_a^{+\infty}f_t(x,t)\,\mathrm{d}x.
+    \]
+\end{theorem}
+
+\begin{theorem}[\markstar\ 积分换序]
+    条件同定理 11.2.7, 则 $\varphi(t)$ 在 $\lbrack\alpha,\beta\rbrack$ 上可积, 且
+    \[
+        \int_\alpha^\beta\mathrm{d}t\int_a^{+\infty}f(x,t)\,\mathrm{d}x
+        =\int_a^{+\infty}\mathrm{d}x\int_\alpha^\beta f(x,t)\,\mathrm{d}t.
+    \]
+\end{theorem}
+
+\begin{remark}
+    更一般地, 两个积分都是反常积分时, 换序的充分条件是 $\displaystyle\int_a^{+\infty}f(x,t)\,\mathrm{d}x$、$\displaystyle\int_\alpha^{+\infty}f(x,t)\,\mathrm{d}t$ 分别关于 $t,x$ 一致收敛, 且
+    \[
+        \int_\alpha^{+\infty}\mathrm{d}t\int_a^{+\infty}f(x,t)\,\mathrm{d}x,
+        \qquad
+        \int_a^{+\infty}\mathrm{d}x\int_\alpha^{+\infty}f(x,t)\,\mathrm{d}t
+    \]
+    之一收敛即可, 具体可见基础教材 16.2 的定理 16.9 及结论.
+\end{remark}
+
+\begin{example}
+    讨论下列函数的连续性:
+    \begin{enumerate}
+        \item $\displaystyle F(\alpha)=\int_0^{+\infty}\dfrac{x}{2+x^\alpha}\,\mathrm{d}x$, $\alpha\in(2,+\infty)$;
+        \item $\displaystyle f(\alpha)=\int_0^{+\infty}\dfrac{e^{-x}}{|\sin x|^\alpha}\,\mathrm{d}x$, $\alpha\in(0,1)$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 固定任意 $\alpha_0>2$,取 $2<\alpha_1<\alpha_0<\alpha_2$.当
+              $\alpha\in\lbrack\alpha_1,\alpha_2\rbrack$ 时,被积函数在 $(0,1\rbrack$ 上由 $x/2$ 控制,在 $\lbrack1,+\infty)$ 上由 $x^{1-\alpha_1}$ 控制.两者均可积,故参数极限可移入积分号内,$F$ 在 $(2,+\infty)$ 上连续.
+        \item 固定 $\alpha_0\in(0,1)$,取 $0<a<\alpha_0<b<1$.在该参数邻域上
+              \[
+                  0\leq\dfrac{e^{-x}}{|\sin x|^\alpha}
+                  \leq\dfrac{e^{-x}}{|\sin x|^b},
+              \]
+              而右端在 $(0,+\infty)$ 可积.因此由控制收敛定理,$f$ 在 $(0,1)$ 上连续.
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    证明含参变量积分
+    \[
+        F(u)=\int_0^{+\infty}\dfrac{\sin(ux^2)}{x}\,\mathrm{d}x
+    \]
+    在 $(0,+\infty)$ 内非一致收敛, 但 $F(u)$ 在 $(0,+\infty)$ 内连续.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    令 $t=ux^2$,则对每个 $u>0$,
+    \[
+        F(u)=\dfrac{1}{2}\int_0^{+\infty}\dfrac{\sin t}{t}\,\mathrm{d}t
+        =\dfrac{\pi}{4}.
+    \]
+    所以 $F$ 在 $(0,+\infty)$ 上为常数,因而连续.
+
+    但对任意 $A>0$,取 $B=2A$、$u=A^{-2}$,则
+    \[
+        \int_A^B\dfrac{\sin(ux^2)}{x}\,\mathrm{d}x
+        =\dfrac{1}{2}\int_1^4\dfrac{\sin t}{t}\,\mathrm{d}t,
+    \]
+    右端是与 $A$ 无关的非零常数.因此一致 Cauchy 准则不成立,原积分在 $(0,+\infty)$ 上非一致收敛.
+\end{solution}
+
+\begin{example}
+    设 $f(x,y)$ 在 $\lbrack a,b\rbrack\times\lbrack c,+\infty)$ 上一致连续, 且
+    \[
+        \int_c^{+\infty}|\varphi(y)|\,\mathrm{d}y
+    \]
+    收敛, 则
+    \[
+        F(x)=\int_c^{+\infty}\varphi(y)f(x,y)\,\mathrm{d}y
+    \]
+    在 $\lbrack a,b\rbrack$ 上连续.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    任取 $x,x_0\in\lbrack a,b\rbrack$.由 $f$ 在整个无界条带上的一致连续性,对任意 $\varepsilon>0$,存在 $\delta>0$,使 $|x-x_0|<\delta$ 时对所有 $y\geq c$ 都有
+    \[
+        |f(x,y)-f(x_0,y)|<\dfrac{\varepsilon}{1+\int_c^{+\infty}|\varphi(y)|\,\mathrm{d}y}.
+    \]
+    于是
+    \[
+        |F(x)-F(x_0)|
+        \leq\int_c^{+\infty}|\varphi(y)|,|f(x,y)-f(x_0,y)|\,\mathrm{d}y<\varepsilon.
+    \]
+    故 $F$ 在 $\lbrack a,b\rbrack$ 上连续.
+\end{solution}
+
+\begin{example}[\markstar]
+    设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上有界, 证明
+    \[
+        g(\alpha)=\int_a^b\dfrac{f(x)}{\sqrt{x-\alpha}}\,\mathrm{d}x
+    \]
+    在 $\mathbb{R}$ 上连续.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    本题按原始 PDF 与当前源码的题面不能在实数范围内成立:当 $\alpha\geq a$ 时,区间中存在 $x\leq\alpha$,$\sqrt{x-\alpha}$ 不再是正实数;当 $\alpha\in\lbrack a,b\rbrack$ 时还会出现分母为零.因此 $g$ 甚至不能按所给公式定义为 $\mathbb{R}$ 上的实函数.
+
+    若题目原意是 $\alpha<a$,则在任意紧区间 $K\subset(-\infty,a)$ 上有
+    $x-\alpha\geq c_K>0$,从而可由一致连续性或控制收敛定理证明 $g$ 在 $(-\infty,a)$ 上连续.若原意是分母 $\sqrt{|x-\alpha|}$,则需要按该修正版另行证明.故此题必须先核对根号内是否遗漏绝对值.
+\end{solution}
+
+\begin{example}
+    证明下列命题:
+    \begin{enumerate}
+        \item $\displaystyle \lim\limits_{y\to+\infty}\int_0^y e^{-x}\,\mathrm{d}x=1$;
+        \item 设 $f(x)\in C(\mathbb{R})$ 且 $f(x)\geq0$, $\displaystyle\int_0^{+\infty}f(x)\,\mathrm{d}x$ 收敛, 则
+              \[
+                  \lim\limits_{n\to\infty}\int_0^{+\infty}n\ln\left(1+\dfrac{f(x)}{n}\right)\mathrm{d}x
+                  =\int_0^{+\infty}f(x)\,\mathrm{d}x.
+              \]
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item
+              \[
+                  \int_0^y e^{-x}\,\mathrm{d}x=1-e^{-y}\longrightarrow1.
+              \]
+        \item 对 $u\geq0$ 有 $0\leq\ln(1+u)\leq u$,故
+              \[
+                  0\leq n\ln\left(1+\dfrac{f(x)}{n}\right)\leq f(x).
+              \]
+              对每个固定 $x$,左端趋于 $f(x)$.由控制收敛定理,
+              \[
+                  \lim\limits_{n\to\infty}\int_0^{+\infty}n\ln\left(1+\dfrac{f(x)}{n}\right)\mathrm{d}x
+                  =\int_0^{+\infty}f(x)\,\mathrm{d}x.
+              \]
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    设 $f(x)\in R(0,+\infty)$, 则
+    \[
+        \lim\limits_{a\to0^+}\int_0^{+\infty}e^{-ax}f(x)\,\mathrm{d}x
+        =\int_0^{+\infty}f(x)\,\mathrm{d}x.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    这是反常积分的 Abel 连续性定理.给定 $\varepsilon>0$,由原积分收敛,可取 $A$,使
+    \[
+        \left|\int_u^v f(x)\,\mathrm{d}x\right|<\varepsilon
+        \qquad(v>u>A).
+    \]
+    因 $e^{-ax}$ 关于 $x$ 单调且绝对值不超过 $1$,Abel 估计给出
+    \[
+        \left|\int_A^{+\infty}e^{-ax}f(x)\,\mathrm{d}x\right|\leq C\varepsilon,
+    \]
+    常数与 $a>0$ 无关.在有限区间 $\lbrack0,A\rbrack$ 上,$e^{-ax}\to1$ 一致成立.因此先固定 $A$ 再令 $a\to0^+$,最后令 $\varepsilon\to0$,即得
+    \[
+        \lim\limits_{a\to0^+}\int_0^{+\infty}e^{-ax}f(x)\,\mathrm{d}x
+        =\int_0^{+\infty}f(x)\,\mathrm{d}x.
+    \]
+\end{solution}
+
+\begin{example}[\markstar]
+    设 $f(x)$ 是 $\lbrack0,A\rbrack$ 上单调函数, 则
+    \[
+        \lim\limits_{\lambda\to+\infty}\int_0^A\dfrac{\sin\lambda x}{x}f(x)\,\mathrm{d}x
+        =\dfrac{\pi}{2}f(0^+).
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    写成
+    \[
+        \int_0^A\dfrac{\sin\lambda x}{x}f(x)\,\mathrm{d}x
+        =f(0^+)\int_0^A\dfrac{\sin\lambda x}{x}\,\mathrm{d}x
+        +\int_0^A\dfrac{f(x)-f(0^+)}{x}\sin\lambda x\,\mathrm{d}x.
+    \]
+    第一项经 $t=\lambda x$ 化为
+    \[
+        f(0^+)\int_0^{\lambda A}\dfrac{\sin t}{t}\,\mathrm{d}t
+        \longrightarrow\dfrac{\pi}{2}f(0^+).
+    \]
+    对第二项,先取 $\delta>0$ 使 $|f(x)-f(0^+)|$ 在 $(0,\delta)$ 上充分小,再在
+    $\lbrack\delta,A\rbrack$ 上使用单调函数的 Dirichlet 估计;先令 $\lambda\to+\infty$,再令 $\delta\to0^+$,该项趋于 $0$.故结论成立.
+\end{solution}
+
+\begin{example}
+    计算积分
+    \[
+        g(\alpha)=\int_1^{+\infty}\dfrac{\arctan(\alpha x)}{x^2\sqrt{x^2-1}}\,\mathrm{d}x.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    先设 $\alpha\geq0$.在积分号下求导并令 $x=\sec t$,得到
+    \[
+        g'(\alpha)=\int_1^{+\infty}\dfrac{\mathrm{d}x}{x(1+\alpha^2x^2)\sqrt{x^2-1}}
+        =\int_0^{\frac{\pi}{2}}\dfrac{\cos^2t}{\alpha^2+\cos^2t}\,\mathrm{d}t
+        =\dfrac{\pi}{2}\left(1-\dfrac{\alpha}{\sqrt{1+\alpha^2}}\right).
+    \]
+    由 $g(0)=0$,
+    \[
+        g(\alpha)=\dfrac{\pi}{2}\left(\alpha-\sqrt{1+\alpha^2}+1\right),
+        \qquad \alpha\geq0.
+    \]
+    又 $g$ 是奇函数,所以统一写成
+    \[
+        g(\alpha)=\dfrac{\pi}{2}\left[\alpha-\operatorname{sgn}(\alpha)
+            \left(\sqrt{1+\alpha^2}-1\right)\right],
+    \]
+    其中 $g(0)=0$.
+\end{solution}
+
+\begin{example}
+    计算积分
+    \[
+        g(\alpha,\beta)=\int_0^{+\infty}\dfrac{\arctan(\alpha x)\arctan(\beta x)}{x^2}\,\mathrm{d}x.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    先设 $\alpha,\beta>0$.连续对两个参数求导:
+    \[
+        \dfrac{\partial^2g}{\partial\alpha\,\partial\beta}
+        =\int_0^{+\infty}\dfrac{\mathrm{d}x}{(1+\alpha^2x^2)(1+\beta^2x^2)}
+        =\dfrac{\pi}{2(\alpha+\beta)}.
+    \]
+    利用 $g(\alpha,0)=g(0,\beta)=0$,先后积分得到
+    \[
+        g(\alpha,\beta)=\dfrac{\pi}{2}\left[(\alpha+\beta)\ln(\alpha+\beta)
+            -\alpha\ln\alpha-\beta\ln\beta\right].
+    \]
+    若参数允许为负数,则利用 $g$ 分别关于 $\alpha$、$\beta$ 为奇函数,将上述公式应用于
+    $|\alpha|,|\beta|$ 并乘以 $\operatorname{sgn}(\alpha\beta)$.
+\end{solution}
+
+\begin{example}
+    计算积分
+    \[
+        I=\int_0^{+\infty}\dfrac{e^{-\alpha x}-e^{-\beta x}}{x}\cos(mx)\,\mathrm{d}x,
+        \qquad \alpha,\beta>0.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    记积分为 $I(\alpha,\beta)$.在积分号下求导:
+    \[
+        \dfrac{\partial I}{\partial\alpha}
+        =-\int_0^{+\infty}e^{-\alpha x}\cos(mx)\,\mathrm{d}x
+        =-\dfrac{\alpha}{\alpha^2+m^2},
+    \]
+    \[
+        \dfrac{\partial I}{\partial\beta}
+        =\dfrac{\beta}{\beta^2+m^2}.
+    \]
+    再利用 $I(\alpha,\alpha)=0$,得到
+    \[
+        I=\dfrac{1}{2}\ln\dfrac{\beta^2+m^2}{\alpha^2+m^2}.
+    \]
+\end{solution}
+
+\begin{example}
+    设
+    \[
+        f(x)=\left(\int_0^x e^{-t^2}\,\mathrm{d}t\right)^2,
+        \qquad
+        g(x)=\int_0^1\dfrac{e^{-x^2(1+t^2)}}{1+t^2}\,\mathrm{d}t.
+    \]
+    证明:
+    \begin{enumerate}
+        \item $f(x)+g(x)\equiv C$, 并确定此常数;
+        \item $\displaystyle\int_0^{+\infty}e^{-t^2}\,\mathrm{d}t=\dfrac{\sqrt{\pi}}{2}$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    直接求导.令 $H(x)=\displaystyle\int_0^xe^{-t^2}\,\mathrm{d}t$,则
+    \[
+        f'(x)=2H(x)e^{-x^2}.
+    \]
+    另一方面,令 $u=xt$,有
+    \[
+        g'(x)=-2x\int_0^1e^{-x^2(1+t^2)}\,\mathrm{d}t
+        =-2e^{-x^2}\int_0^xe^{-u^2}\,\mathrm{d}u=-2H(x)e^{-x^2}.
+    \]
+    故 $f'(x)+g'(x)=0$,即 $f(x)+g(x)\equiv C$.取 $x=0$,
+    \[
+        C=g(0)=\int_0^1\dfrac{\mathrm{d}t}{1+t^2}=\dfrac{\pi}{4}.
+    \]
+    再令 $x\to+\infty$,由 $g(x)\to0$ 得
+    \[
+        \left(\int_0^{+\infty}e^{-t^2}\,\mathrm{d}t\right)^2=\dfrac{\pi}{4}.
+    \]
+    积分为正,故其值为 $\sqrt\pi/2$.
+\end{solution}
+
+\begin{example}
+    利用
+    \[
+        \dfrac{1}{\sqrt{t}}=\dfrac{1}{\sqrt{\pi}}\int_0^{+\infty}e^{-tu^2}\,\mathrm{d}u
+    \]
+    计算 Fresnel 积分
+    \[
+        \int_0^{+\infty}\sin x^2\,\mathrm{d}x.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    题中给出的辅助公式缺少因子 $2$.正确公式应为
+    \[
+        \dfrac{1}{\sqrt t}=\dfrac{2}{\sqrt\pi}\int_0^{+\infty}e^{-tu^2}\,\mathrm{d}u,
+        \qquad t>0.
+    \]
+    用该公式作 Laplace 正则化并交换积分次序,可得
+    \[
+        \int_0^{+\infty}\sin x^2\,\mathrm{d}x
+        =\dfrac{1}{\sqrt2}\int_0^{+\infty}e^{-u^2}\,\mathrm{d}u
+        =\dfrac{\sqrt\pi}{2\sqrt2}.
+    \]
+    因此原题若坚持使用所印的 $1/\sqrt\pi$ 系数,会得到错误的一半;应先修正辅助公式.
+\end{solution}
+
+\begin{example}
+    试利用
+    \[
+        \int_0^{+\infty}e^{-u^2}\,\mathrm{d}u
+        \overset{u=\alpha x}{=}
+        \int_0^{+\infty}\alpha e^{-\alpha^2x^2}\,\mathrm{d}x,
+        \qquad \alpha>0,
+    \]
+    计算
+    \[
+        \int_0^{+\infty}e^{-x^2}\,\mathrm{d}x.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    记
+    \[
+        G=\int_0^{+\infty}e^{-u^2}\,\mathrm{d}u.
+    \]
+    将题给等式乘以 $e^{-\alpha^2}$,再对 $\alpha\in(0,+\infty)$ 积分.因被积函数非负,可交换积分次序:
+    \[
+        G^2=\int_0^{+\infty}\int_0^{+\infty}
+        \alpha e^{-\alpha^2(1+x^2)}\,\mathrm{d}x\,\mathrm{d}\alpha
+        =\int_0^{+\infty}\dfrac{\mathrm{d}x}{2(1+x^2)}
+        =\dfrac{\pi}{4}.
+    \]
+    故 $G=\sqrt\pi/2$.
+\end{solution}
+
+\begin{example}
+    若
+    \[
+        f(x)=\sum\limits_{n=0}^{\infty}a_nx^n,\qquad a_n>0,
+    \]
+    的收敛半径为 $+\infty$, 且 $\displaystyle\sum\limits_{n=0}^{\infty}a_nn!$ 收敛, 则
+    \[
+        \int_0^{+\infty}e^{-x}f(x)\,\mathrm{d}x
+    \]
+    收敛, 且
+    \[
+        \int_0^{+\infty}e^{-x}f(x)\,\mathrm{d}x
+        =\sum\limits_{n=0}^{\infty}a_nn!.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    因 $a_n>0$,部分和
+    \[
+        f_N(x)=\sum\limits_{n=0}^N a_nx^n
+    \]
+    单调增加到 $f(x)$.对每个 $N$,
+    \[
+        \int_0^{+\infty}e^{-x}f_N(x)\,\mathrm{d}x
+        =\sum\limits_{n=0}^Na_n\int_0^{+\infty}e^{-x}x^n\,\mathrm{d}x
+        =\sum\limits_{n=0}^Na_nn!.
+    \]
+    右端有有限极限.由单调收敛定理,原积分收敛且
+    \[
+        \int_0^{+\infty}e^{-x}f(x)\,\mathrm{d}x
+        =\sum\limits_{n=0}^{\infty}a_nn!.
+    \]
+\end{solution}
+
+\begin{example}
+    试用级数法求
+    \[
+        f(x)=\int_0^{\frac{\pi}{2}}\ln(1-x^2\cos^2\theta)\,\mathrm{d}\theta,
+        \qquad |x|<1.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    当 $|x|<1$ 时可一致展开
+    \[
+        \ln(1-x^2\cos^2\theta)
+        =-\sum\limits_{n=1}^{\infty}\dfrac{x^{2n}\cos^{2n}\theta}{n}.
+    \]
+    又
+    \[
+        \int_0^{\frac{\pi}{2}}\cos^{2n}\theta\,\mathrm{d}\theta
+        =\dfrac{\pi}{2}\dfrac{C_{2n}^n}{4^n}.
+    \]
+    故
+    \[
+        f(x)=-\dfrac{\pi}{2}\sum\limits_{n=1}^{\infty}
+        \dfrac{C_{2n}^n}{n4^n}x^{2n}
+        =\pi\ln\dfrac{1+\sqrt{1-x^2}}{2}.
+    \]
+\end{solution}
+
+\begin{example}
+    计算积分
+    \[
+        \int_0^{+\infty}\dfrac{x}{1+e^x}\,\mathrm{d}x.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    对 $x>0$,
+    \[
+        \dfrac{1}{1+e^x}=\sum\limits_{n=1}^{\infty}(-1)^{n-1}e^{-nx}.
+    \]
+    逐项积分得到
+    \[
+        \int_0^{+\infty}\dfrac{x}{1+e^x}\,\mathrm{d}x
+        =\sum\limits_{n=1}^{\infty}(-1)^{n-1}\int_0^{+\infty}xe^{-nx}\,\mathrm{d}x
+        =\sum\limits_{n=1}^{\infty}\dfrac{(-1)^{n-1}}{n^2}
+        =\dfrac{\pi^2}{12}.
+    \]
+\end{solution}
+
+\begin{example}[\markstar]
+    试证
+    \[
+        \int_0^{+\infty}\dfrac{x^{s-1}}{e^x+1}\,\mathrm{d}x
+        =\Gamma(s)(1-2^{1-s})\xi(s),\qquad s>1,
+    \]
+    其中
+    \[
+        \xi(s)=\sum\limits_{n=1}^{\infty}\dfrac{1}{n^s}.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    仍使用展开式
+    \[
+        \dfrac{1}{e^x+1}=\sum\limits_{n=1}^{\infty}(-1)^{n-1}e^{-nx}.
+    \]
+    当 $s>1$ 时可交换求和与积分,于是
+    \[
+        \int_0^{+\infty}\dfrac{x^{s-1}}{e^x+1}\,\mathrm{d}x
+        =\sum\limits_{n=1}^{\infty}(-1)^{n-1}
+        \int_0^{+\infty}x^{s-1}e^{-nx}\,\mathrm{d}x.
+    \]
+    令 $u=nx$,内层积分等于 $\Gamma(s)/n^s$,故
+    \[
+        \int_0^{+\infty}\dfrac{x^{s-1}}{e^x+1}\,\mathrm{d}x
+        =\Gamma(s)\sum\limits_{n=1}^{\infty}\dfrac{(-1)^{n-1}}{n^s}
+        =\Gamma(s)(1-2^{1-s})\xi(s).
+    \]
+\end{solution}
+
+
+\newpage
+
+\section{\texorpdfstring{Euler 积分——$B$ 函数与 $\Gamma$ 函数}{Euler 积分——B 函数与 Gamma 函数}}
+
+\begin{proposition}[\markstar]
+    $\Gamma$ 函数与 $B$ 函数基本性质如下.
+
+    \begin{enumerate}
+        \item 等价形式:
+              \begin{align*}
+                  \Gamma(s)
+                   & =\int_0^{+\infty}x^{s-1}e^{-x}\,\mathrm{d}x
+                  =2\int_0^{+\infty}t^{2s-1}e^{-t^2}\,\mathrm{d}t             \\
+                   & =\int_0^1\left(\ln\dfrac{1}{t}\right)^{s-1}\,\mathrm{d}t
+                  =\lim\limits_{n\to\infty}\dfrac{n!\,n^s}{s(s+1)\cdots(s+n)},\qquad s>0,
+              \end{align*}
+              且
+              \begin{align*}
+                  B(p,q)
+                   & =\int_0^1x^{p-1}(1-x)^{q-1}\,\mathrm{d}x                                     \\
+                   & =2\int_0^{\frac{\pi}{2}}\cos^{2p-1}\theta\sin^{2q-1}\theta\,\mathrm{d}\theta \\
+                   & =\int_0^{+\infty}\dfrac{u^{p-1}}{(1+u)^{p+q}}\,\mathrm{d}u                   \\
+                   & =\int_0^1\dfrac{u^{p-1}+u^{q-1}}{(1+u)^{p+q}}\,\mathrm{d}u,
+                  \qquad p,q>0.
+              \end{align*}
+
+        \item 递推公式:
+              \[
+                  B(p+1,q)=\dfrac{p}{p+q}B(p,q),\qquad
+                  B(p,q+1)=\dfrac{q}{p+q}B(p,q),\qquad
+                  \Gamma(p+1)=p\Gamma(p).
+              \]
+              并且
+              \[
+                  B(1,1)=\Gamma(1)=1,\qquad
+                  \Gamma\left(\dfrac{1}{2}\right)=\sqrt{\pi},\qquad
+                  \Gamma(n)=(n-1)!,\quad n\in\mathbb{Z}^+.
+              \]
+              对正整数 $m,n$, 有
+              \[
+                  B(n,m)=\dfrac{(n-1)!(m-1)!}{(m+n-1)!}.
+              \]
+
+        \item $\Gamma$ 函数与 $B$ 函数关系:
+              \[
+                  B(p,q)=\dfrac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}.
+              \]
+
+        \item 余元公式:
+              \[
+                  B(p,1-p)=\Gamma(p)\Gamma(1-p)=\dfrac{\pi}{\sin p\pi}.
+              \]
+
+        \item 倍元公式:
+              \[
+                  \Gamma(2x)=\dfrac{2^{2x-1}}{\sqrt{\pi}}\Gamma(x)\Gamma\left(x+\dfrac{1}{2}\right).
+              \]
+
+        \item 求导公式: $\Gamma(x)$ 在 $(0,+\infty)$ 内闭一致收敛, 且有连续的各阶导数,
+              \[
+                  \Gamma^{(n)}(x)=\int_0^{+\infty}t^{x-1}e^{-t}(\ln t)^n\,\mathrm{d}t.
+              \]
+    \end{enumerate}
+\end{proposition}
+
+\begin{example}
+    计算下列积分:
+    \begin{enumerate}
+        \item $\displaystyle\int_a^b(x-a)^p(b-x)^q\,\mathrm{d}x$, $p,q>-1$, $b>a$;
+        \item $\displaystyle\int_0^{+\infty}\dfrac{\mathrm{d}x}{1+x^3}$;
+        \item $\displaystyle\int_0^{+\infty}\dfrac{\mathrm{d}x}{1+x^4}$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 令 $x=a+(b-a)t$,则
+              \[
+                  \int_a^b(x-a)^p(b-x)^q\,\mathrm{d}x
+                  =(b-a)^{p+q+1}B(p+1,q+1).
+              \]
+        \item 由 $\displaystyle\int_0^{+\infty}\dfrac{x^{p-1}}{1+x^q}\,\mathrm{d}x
+                  =\dfrac{\pi}{q}\csc\dfrac{p\pi}{q}$,取 $p=1,q=3$,得
+              \[
+                  \int_0^{+\infty}\dfrac{\mathrm{d}x}{1+x^3}
+                  =\dfrac{2\pi}{3\sqrt3}.
+              \]
+        \item 同理取 $p=1,q=4$,得
+              \[
+                  \int_0^{+\infty}\dfrac{\mathrm{d}x}{1+x^4}
+                  =\dfrac{\pi}{2\sqrt2}.
+              \]
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    证明下列命题:
+    \begin{enumerate}
+        \item
+              \[
+                  \int_0^{+\infty}\dfrac{x^{p-1}}{(a+bx^q)^r}\,\mathrm{d}x
+                  =\dfrac{a^{\frac{p}{q}-r}}{q\,b^{\frac{p}{q}}}
+                  B\left(\dfrac{p}{q},r-\dfrac{p}{q}\right),\qquad a,b>0;
+              \]
+        \item
+              \[
+                  \int_0^{+\infty}\dfrac{\mathrm{d}x}{(x^2+1)^n}
+                  =\dfrac{\sqrt{\pi}\,\Gamma\left(n-\dfrac{1}{2}\right)}{2\Gamma(n)}
+                  =\dfrac{(2n-3)!!}{(2n-2)!!}\dfrac{\pi}{2}.
+              \]
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 令 $t=bx^q/a$.在 $q>0$ 且 $0<p<qr$ 时,
+              \[
+                  x=\left(\dfrac{a}{b}t\right)^{\frac{1}{q}},
+                  \qquad
+                  \mathrm{d}x=\dfrac{1}{q}\left(\dfrac{a}{b}\right)^{\frac{1}{q}}
+                  t^{\frac{1}{q}-1}\,\mathrm{d}t.
+              \]
+              从而
+              \[
+                  \int_0^{+\infty}\dfrac{x^{p-1}}{(a+bx^q)^r}\,\mathrm{d}x
+                  =\dfrac{a^{\frac{p}{q}-r}}{q\,b^{\frac{p}{q}}}
+                  \int_0^{+\infty}\dfrac{t^{\frac{p}{q}-1}}{(1+t)^r}\,\mathrm{d}t
+                  =\dfrac{a^{\frac{p}{q}-r}}{q\,b^{\frac{p}{q}}}
+                  B\left(\dfrac{p}{q},r-\dfrac{p}{q}\right).
+              \]
+              题面只写了 $a,b>0$,还应补充上述收敛条件.
+        \item 令 $t=x^2$,则
+              \[
+                  \int_0^{+\infty}\dfrac{\mathrm{d}x}{(1+x^2)^n}
+                  =\dfrac{1}{2}B\left(\dfrac{1}{2},n-\dfrac{1}{2}\right)
+                  =\dfrac{\sqrt\pi\,\Gamma\left(n-\dfrac{1}{2}\right)}{2\Gamma(n)}.
+              \]
+              再用 $\Gamma(z+1)=z\Gamma(z)$ 及 $\Gamma(1/2)=\sqrt\pi$,得
+              \[
+                  \dfrac{\sqrt\pi\,\Gamma\left(n-\dfrac{1}{2}\right)}{2\Gamma(n)}
+                  =\dfrac{(2n-3)!!}{(2n-2)!!}\dfrac{\pi}{2}.
+              \]
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    计算下列积分:
+    \begin{enumerate}
+        \item $\displaystyle\int_0^{\frac{\pi}{2}}\sin^\alpha x\,\mathrm{d}x$, $\alpha>0$;
+        \item $\displaystyle\int_0^{\frac{\pi}{2}}\sin^\alpha x\sin^\beta x\,\mathrm{d}x$;
+        \item $\displaystyle\int_0^{\frac{\pi}{2}}\tan^\alpha x\,\mathrm{d}x$, $|\alpha|<1$;
+        \item $\displaystyle\int_0^\pi\dfrac{\mathrm{d}x}{\sqrt{3-\cos x}}$;
+        \item $\displaystyle\int_0^\pi\dfrac{\sin^{n-1}x}{(1+k\cos x)^n}\,\mathrm{d}x$, $0<|k|<1$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 令 $t=\sin^2x$,则
+              \[
+                  \int_0^{\frac{\pi}{2}}\sin^\alpha x\,\mathrm{d}x
+                  =\dfrac{1}{2}B\left(\dfrac{\alpha+1}{2},\dfrac{1}{2}\right)
+                  =\dfrac{\sqrt\pi\,\Gamma\left(\frac{\alpha+1}{2}\right)}
+                  {2\Gamma\left(\frac{\alpha+2}{2}\right)}.
+              \]
+        \item 题面确实写为 $\sin^\alpha x\sin^\beta x$.按字面计算,当 $\alpha+\beta>-1$ 时
+              \[
+                  \int_0^{\frac{\pi}{2}}\sin^\alpha x\sin^\beta x\,\mathrm{d}x
+                  =\dfrac{1}{2}B\left(\dfrac{\alpha+\beta+1}{2},\dfrac{1}{2}\right).
+              \]
+              若原题第二个因子应为 $\cos^\beta x$,则常用结论为
+              \[
+                  \int_0^{\frac{\pi}{2}}\sin^\alpha x\cos^\beta x\,\mathrm{d}x
+                  =\dfrac{1}{2}B\left(\dfrac{\alpha+1}{2},\dfrac{\beta+1}{2}\right).
+              \]
+        \item 令 $t=\tan^2x$,则
+              \[
+                  \int_0^{\frac{\pi}{2}}\tan^\alpha x\,\mathrm{d}x
+                  =\dfrac{1}{2}B\left(\dfrac{\alpha+1}{2},\dfrac{1-\alpha}{2}\right)
+                  =\dfrac{\pi}{2\cos\left(\frac{\pi\alpha}{2}\right)}.
+              \]
+        \item 令 $x=2t$,则
+              \[
+                  \int_0^\pi\dfrac{\mathrm{d}x}{\sqrt{3-\cos x}}
+                  =\sqrt2\int_0^{\frac{\pi}{2}}\dfrac{\mathrm{d}t}{\sqrt{1+\sin^2t}}
+                  =\sqrt2\,K(-1),
+              \]
+              其中 $\displaystyle K(m)=\int_0^{\frac{\pi}{2}}
+                  \dfrac{\mathrm{d}t}{\sqrt{1-m\sin^2t}}$ 为第一类完全椭圆积分.
+        \item 令 $u=\cos x$,再作分式线性代换
+              \[
+                  y=\dfrac{u+k}{1+ku}.
+              \]
+              直接化简得
+              \[
+                  \int_0^\pi\dfrac{\sin^{n-1}x}{(1+k\cos x)^n}\,\mathrm{d}x
+                  =\dfrac{1}{(1-k^2)^{\frac{n}{2}}}
+                  \int_{-1}^1(1-y^2)^{\frac{n-2}{2}}\,\mathrm{d}y
+                  =\dfrac{B\left(\frac{1}{2},\frac{n}{2}\right)}{(1-k^2)^{\frac{n}{2}}}.
+              \]
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    计算下列积分:
+    \begin{enumerate}
+        \item $\displaystyle\int_0^{+\infty}\dfrac{x^{p-1}\ln x}{1+x}\,\mathrm{d}x$;
+        \item $\displaystyle\int_0^{+\infty}\dfrac{x\ln x}{1+x^2}\,\mathrm{d}x$;
+        \item $\displaystyle\int_0^{+\infty}\dfrac{\ln^2x}{1+x^4}\,\mathrm{d}x$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 对 $0<p<1$,记
+              \[
+                  J(p)=\int_0^{+\infty}\dfrac{x^{p-1}}{1+x}\,\mathrm{d}x
+                  =B(p,1-p)=\dfrac{\pi}{\sin\pi p}.
+              \]
+              在任意紧子区间上可对参数求导,故
+              \[
+                  \int_0^{+\infty}\dfrac{x^{p-1}\ln x}{1+x}\,\mathrm{d}x
+                  =J'(p)=-\dfrac{\pi^2\cos\pi p}{\sin^2\pi p}.
+              \]
+        \item 原积分发散.事实上,当 $x\geq1$ 时
+              \[
+                  \dfrac{x\ln x}{1+x^2}\geq\dfrac{\ln x}{2x},
+              \]
+              而 $\displaystyle\int_1^{+\infty}\dfrac{\ln x}{x}\,\mathrm{d}x=+\infty$.
+        \item 对 $0<a<4$,记
+              \[
+                  H(a)=\int_0^{+\infty}\dfrac{x^{a-1}}{1+x^4}\,\mathrm{d}x
+                  =\dfrac{\pi}{4}\csc\dfrac{\pi a}{4}.
+              \]
+              二次求导并取 $a=1$,得
+              \[
+                  \int_0^{+\infty}\dfrac{\ln^2x}{1+x^4}\,\mathrm{d}x
+                  =H''(1)=\dfrac{3\sqrt2\,\pi^3}{64}.
+              \]
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    计算积分:
+    \begin{enumerate}
+        \item $\displaystyle\int_0^1\ln\Gamma(x)\,\mathrm{d}x$;
+        \item $\displaystyle\int_0^1\ln\Gamma(x)\sin\pi x\,\mathrm{d}x$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    由反射公式
+    \[
+        \Gamma(x)\Gamma(1-x)=\dfrac{\pi}{\sin\pi x}
+    \]
+    及代换 $x\mapsto1-x$,得
+    \[
+        2\int_0^1\ln\Gamma(x)\,\mathrm{d}x
+        =\ln\pi-\int_0^1\ln(\sin\pi x)\,\mathrm{d}x
+        =\ln(2\pi).
+    \]
+    因此
+    \[
+        \int_0^1\ln\Gamma(x)\,\mathrm{d}x=\dfrac{1}{2}\ln(2\pi).
+    \]
+
+    再次使用反射公式,并注意 $\sin\pi(1-x)=\sin\pi x$,有
+    \[
+        2\int_0^1\ln\Gamma(x)\sin\pi x\,\mathrm{d}x
+        =\int_0^1\bigl[\ln\pi-\ln(\sin\pi x)\bigr]\sin\pi x\,\mathrm{d}x.
+    \]
+    由
+    \[
+        \int_0^1\sin\pi x\,\mathrm{d}x=\dfrac{2}{\pi},
+        \qquad
+        \int_0^1\sin\pi x\ln(\sin\pi x)\,\mathrm{d}x
+        =\dfrac{2(\ln2-1)}{\pi},
+    \]
+    得
+    \[
+        \int_0^1\ln\Gamma(x)\sin\pi x\,\mathrm{d}x
+        =\dfrac{1+\ln\left(\frac{\pi}{2}\right)}{\pi}.
+    \]
+\end{solution}
+
+\begin{example}[\markstar]
+    应用 $\Gamma$ 函数的 Gauss 乘积分解公式
+    \[
+        \Gamma(x)=\lim\limits_{n\to\infty}\dfrac{n^x\cdot n!}{x(x+1)\cdots(x+n)},
+    \]
+    证明:
+    \begin{enumerate}
+        \item
+              \[
+                  \dfrac{\Gamma'(x)}{\Gamma(x)}
+                  =-\gamma+\sum\limits_{n=1}^{\infty}\left(\dfrac{1}{n}-\dfrac{1}{x+n-1}\right),
+              \]
+              其中 $\gamma$ 为 Euler 常数;
+        \item $-\Gamma'(1)=\gamma$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    对 Gauss 乘积公式取对数并对 $x$ 求导,得
+    \[
+        \dfrac{\Gamma'(x)}{\Gamma(x)}
+        =\lim\limits_{N\to\infty}
+        \left(\ln N-\sum\limits_{k=0}^N\dfrac{1}{x+k}\right).
+    \]
+    再利用
+    \[
+        \gamma=\lim\limits_{N\to\infty}
+        \left(\sum\limits_{n=1}^N\dfrac{1}{n}-\ln N\right),
+    \]
+    整理为
+    \[
+        \dfrac{\Gamma'(x)}{\Gamma(x)}
+        =-\gamma+\sum\limits_{n=1}^{\infty}
+        \left(\dfrac{1}{n}-\dfrac{1}{x+n-1}\right).
+    \]
+    令 $x=1$,级数中每项都为零,故
+    \[
+        \dfrac{\Gamma'(1)}{\Gamma(1)}=-\gamma.
+    \]
+    由 $\Gamma(1)=1$,立即得 $-\Gamma'(1)=\gamma$.
+\end{solution}
+
+\begin{example}[\markstar]
+    设 $t>1$, 证明
+    \[
+        \int_1^{+\infty}\dfrac{(\ln x)^{t-1}}{x(x-1)}\,\mathrm{d}x
+        =\Gamma(t)\xi(t),
+    \]
+    其中
+    \[
+        \xi(t)=\sum\limits_{n=1}^{\infty}\dfrac{1}{n^t}
+    \]
+    为 Zeta 函数.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    令 $u=\ln x$,则 $x=e^u$,并且
+    \[
+        \dfrac{\mathrm{d}x}{x(x-1)}=\dfrac{\mathrm{d}u}{e^u-1}.
+    \]
+    因而
+    \[
+        \int_1^{+\infty}\dfrac{(\ln x)^{t-1}}{x(x-1)}\,\mathrm{d}x
+        =\int_0^{+\infty}\dfrac{u^{t-1}}{e^u-1}\,\mathrm{d}u.
+    \]
+    对 $u>0$ 展开
+    \[
+        \dfrac{1}{e^u-1}=\sum\limits_{n=1}^{\infty}e^{-nu}.
+    \]
+    由被积函数非负,可用单调收敛定理交换求和与积分:
+    \[
+        \int_0^{+\infty}\dfrac{u^{t-1}}{e^u-1}\,\mathrm{d}u
+        =\sum\limits_{n=1}^{\infty}\int_0^{+\infty}u^{t-1}e^{-nu}\,\mathrm{d}u
+        =\Gamma(t)\sum\limits_{n=1}^{\infty}\dfrac{1}{n^t}
+        =\Gamma(t)\xi(t).
+    \]
+\end{solution}

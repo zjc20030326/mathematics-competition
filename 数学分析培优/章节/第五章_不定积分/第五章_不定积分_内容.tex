@@ -1,0 +1,871 @@
+\setcounter{chapter}{4}
+\pagestyle{fancy}
+
+\chapter{不定积分}
+
+
+\section{不定积分计算方法}
+
+
+\subsection{基本方法}
+
+\begin{theorem}[\markstar\ 常见三角函数公式]
+    \begin{enumerate}[label=\arabic*.]
+        \item 积化和差公式
+              \begin{align*}
+                  \sin x\cos y & =\dfrac{1}{2}[\sin(x+y)+\sin(x-y)],
+                               & \cos x\sin y                        & =\dfrac{1}{2}[\sin(x+y)-\sin(x-y)], \\
+                  \cos x\cos y & =\dfrac{1}{2}[\cos(x+y)+\cos(x-y)],
+                               & \sin x\sin y                        & =\dfrac{1}{2}[\cos(x-y)-\cos(x+y)].
+              \end{align*}
+        \item 和差化积公式
+              \begin{align*}
+                  \sin\alpha+\sin\beta
+                   & =2\sin\dfrac{\alpha+\beta}{2}\cos\dfrac{\alpha-\beta}{2},  \\
+                  \sin\alpha-\sin\beta
+                   & =2\cos\dfrac{\alpha+\beta}{2}\sin\dfrac{\alpha-\beta}{2},  \\
+                  \cos\alpha+\cos\beta
+                   & =2\cos\dfrac{\alpha+\beta}{2}\cos\dfrac{\alpha-\beta}{2},  \\
+                  \cos\alpha-\cos\beta
+                   & =-2\sin\dfrac{\alpha+\beta}{2}\sin\dfrac{\alpha-\beta}{2}.
+              \end{align*}
+        \item 万能公式
+              \[
+                  \tan\alpha=\dfrac{2\tan\dfrac{\alpha}{2}}{1-\tan^2\dfrac{\alpha}{2}},
+                  \qquad
+                  \sin\alpha=\dfrac{2\tan\dfrac{\alpha}{2}}{1+\tan^2\dfrac{\alpha}{2}},
+                  \qquad
+                  \cos\alpha=\dfrac{1-\tan^2\dfrac{\alpha}{2}}{1+\tan^2\dfrac{\alpha}{2}}.
+              \]
+        \item 三角恒等式
+              \[
+                  \sec^2x=1+\tan^2x,
+                  \qquad
+                  \csc^2x=1+\cot^2x.
+              \]
+              \[
+                  \cos\dfrac{\alpha}{2}\cos\dfrac{\alpha}{2^2}\cdots
+                  \cos\dfrac{\alpha}{2^n}
+                  =\dfrac{\sin\alpha}{2^n\sin\dfrac{\alpha}{2^n}},
+                  \qquad
+                  \sum\limits_{k=1}^n\sin kx
+                  =\dfrac{\cos\dfrac{\pi}{2}-\cos\left(n+\dfrac{1}{2}\right)x}
+                  {2\sin\dfrac{x}{2}}.
+              \]
+              \[
+                  \sum\limits_{k=1}^n\cos kx
+                  =\dfrac{\cos\left(n+\dfrac{1}{2}\right)x-\sin\dfrac{x}{2}}
+                  {2\sin\dfrac{x}{2}}.
+              \]
+        \item 求导公式
+              \[
+                  (\sec x)'=\tan x\sec x,
+                  \qquad
+                  (\tan x)'=\sec^2x.
+              \]
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[\markstar\ 部分初等函数积分公式]
+    \begin{enumerate}
+        \item $\displaystyle\int x^\alpha\,\mathrm{d}x=\dfrac{x^{\alpha+1}}{\alpha+1}+C\quad(\alpha\neq-1)$;
+        \item $\displaystyle\int\dfrac{1}{x}\,\mathrm{d}x=\ln|x|+C$;
+        \item $\displaystyle\int e^x\,\mathrm{d}x=e^x+C$;
+        \item $\displaystyle\int a^x\,\mathrm{d}x=\dfrac{a^x}{\ln a}+C\quad(a>0,a\neq1)$;
+        \item $\displaystyle\int\cos x\,\mathrm{d}x=\sin x+C$;
+        \item $\displaystyle\int\sin x\,\mathrm{d}x=-\cos x+C$;
+        \item $\displaystyle\int\tan x\,\mathrm{d}x=-\ln|\cos x|+C$;
+        \item $\displaystyle\int\cot x\,\mathrm{d}x=\ln|\sin x|+C$;
+        \item $\displaystyle\int\sec^2x\,\mathrm{d}x=\tan x+C$;
+        \item $\displaystyle\int\csc^2x\,\mathrm{d}x=-\cot x+C$;
+        \item $\displaystyle\int\dfrac{\mathrm{d}x}{\sqrt{a^2-x^2}}=\arcsin\dfrac{x}{a}+C$;
+        \item $\displaystyle\int\dfrac{\mathrm{d}x}{x^2+a^2}=\dfrac{1}{a}\arctan\dfrac{x}{a}+C$;
+        \item $\displaystyle\int\dfrac{\mathrm{d}x}{x^2-a^2}=\dfrac{1}{2a}\ln\left|\dfrac{x-a}{x+a}\right|+C$;
+        \item $\displaystyle\int\dfrac{\mathrm{d}x}{\sqrt{x^2\pm a^2}}=\ln\left|x+\sqrt{x^2\pm a^2}\right|+C$;
+        \item $\displaystyle\int\sqrt{a^2-x^2}\,\mathrm{d}x
+                  =\dfrac{1}{2}\left(x\sqrt{a^2-x^2}+a^2\arcsin\dfrac{x}{a}\right)+C$;
+        \item $\displaystyle\int\sqrt{x^2+a^2}\,\mathrm{d}x
+                  =\dfrac{1}{2}\left[x\sqrt{x^2+a^2}+a^2\ln\left(x+\sqrt{x^2+a^2}\right)\right]+C$;
+        \item $\displaystyle\int e^{ax}\cos bx\,\mathrm{d}x
+                  =\dfrac{e^{ax}}{a^2+b^2}(a\cos bx+b\sin bx)$;
+        \item $\displaystyle\int e^{ax}\sin bx\,\mathrm{d}x
+                  =\dfrac{e^{ax}}{a^2+b^2}(a\sin bx-b\cos bx)$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[第一积分换元法]
+    若 $f(u)$ 在区间 $J$ 上有原函数 $F(u)$,即
+    \[
+        \int f(u)\,\mathrm{d}u=F(u)+C,
+        \qquad u\in J,
+    \]
+    则 $F(\varphi(x))$ 是 $f(\varphi(x))\varphi'(x)$ 在区间 $I$ 上的原函数:
+    \[
+        \int f(\varphi(x))\varphi'(x)\,\mathrm{d}x
+        =F(\varphi(x))+C,
+        \qquad x\in I,
+    \]
+    其中 $u=\varphi(x)$ 是 $I$ 上的可微函数,且 $\varphi(I)\subseteq J$.
+\end{theorem}
+
+\begin{remark}
+    关键在于将被积函数凑成 $f[\varphi(x)]\varphi'(x)\,\mathrm{d}x$ 的形式,故俗称凑微分法.
+\end{remark}
+
+\begin{corollary}[\markstar]
+    设 $f(x)$ 在区间 $I$ 上可微,$f(x)\neq0$($x\in I$),则:
+    \begin{enumerate}
+        \item $\displaystyle\int\dfrac{f'(x)}{f(x)}\,\mathrm{d}x=\ln|f(x)|+C$;
+        \item 若 $f(x)>0$($x\in I$),则
+              \[
+                  \int\dfrac{f'(x)}{\sqrt{f(x)}}\,\mathrm{d}x=2\sqrt{f(x)}+C,
+                  \qquad
+                  \int f'(x)\sqrt{f(x)}\,\mathrm{d}x
+                  =\dfrac{2}{3}f^{\frac{3}{2}}(x)+C.
+              \]
+    \end{enumerate}
+\end{corollary}
+
+\begin{theorem}[第二积分换元法]
+    设 $G(t)$ 是 $f(\varphi(t))\varphi'(t)$ 在区间 $I$ 的原函数,
+    \[
+        \int f(\varphi(t))\varphi'(t)\,\mathrm{d}t=G(t)+C.
+    \]
+    则 $G(\varphi^{-1}(x))$ 是 $f(x)$ 在区间 $J$ 上的原函数:
+    \[
+        \int f(x)\,\mathrm{d}x=G(\varphi^{-1}(x))+C,
+        \qquad x\in J.
+    \]
+\end{theorem}
+
+\begin{example}
+    求下列不定积分:
+    \begin{enumerate}
+        \item $\displaystyle I=\int\dfrac{\mathrm{d}x}{3x^2+3x-1}$;
+        \item $\displaystyle I=\int\dfrac{\mathrm{d}x}{\sqrt{3x^2+3x-1}}$;
+        \item $\displaystyle I=\int\dfrac{\mathrm{d}x}{x^2-5x+7}$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    配方后直接使用基本积分公式,得到
+    \begin{enumerate}
+        \item $\displaystyle I=\dfrac{1}{\sqrt{21}}\ln\left|\dfrac{6x+3-\sqrt{21}}{6x+3+\sqrt{21}}\right|+C$;
+        \item $\displaystyle I=\dfrac{1}{\sqrt3}\ln\left|2\sqrt3\sqrt{3x^2+3x-1}+6x+3\right|+C$;
+        \item $\displaystyle I=\dfrac{2}{\sqrt3}\arctan\dfrac{2x-5}{\sqrt3}+C$.
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    求下列不定积分:
+    \begin{enumerate}
+        \item $\displaystyle I=\int\dfrac{a^x-a^{-x}}{a^x+a^{-x}}\,\mathrm{d}x\quad(a>0)$;
+        \item $\displaystyle I=\int\dfrac{\ln x+1}{1+x\ln x}\,\mathrm{d}x$;
+        \item $\displaystyle I=\int\dfrac{\sin2x}{a^2\sin^2x+b^2\cos^2x}\,\mathrm{d}x\quad(a^2\neq b^2)$;
+        \item $\displaystyle I=\int(3x-1)\sqrt{3x^2-2x+7}\,\mathrm{d}x$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    均将分子配成分母或根式内函数的导数:
+    \begin{enumerate}
+        \item 当 $a\neq1$ 时,
+              \[
+                  I=\dfrac{1}{\ln a}\ln(a^x+a^{-x})+C;
+              \]
+              当 $a=1$ 时,$I=C$.
+        \item $\displaystyle I=\ln|1+x\ln x|+C$.
+        \item $\displaystyle I=\dfrac{1}{a^2-b^2}\ln|a^2\sin^2x+b^2\cos^2x|+C$.
+        \item 令 $u=3x^2-2x+7$,则
+              \[
+                  I=\dfrac{1}{3}(3x^2-2x+7)^{\frac{3}{2}}+C.
+              \]
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    求下列不定积分:
+    \begin{enumerate}
+        \item $\displaystyle I=\int(\tan x-\sec x)^2\,\mathrm{d}x$;
+        \item $\displaystyle I=\int\sin^4x\,\mathrm{d}x$;
+        \item $\displaystyle I=\int\dfrac{\sin^4x}{\cos^2x}\,\mathrm{d}x$;
+        \item $\displaystyle I=\int\sin mx\cos nx\,\mathrm{d}x$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    利用恒等变形与积化和差公式:
+    \begin{enumerate}
+        \item
+              \[
+                  (\tan x-\sec x)^2=2\sec^2x-1-2\sec x\tan x,
+              \]
+              故 $I=2\tan x-x-2\sec x+C$.
+        \item $\displaystyle I=\dfrac{3x}{8}-\dfrac{\sin2x}{4}+\dfrac{\sin4x}{32}+C$.
+        \item 由 $\sin^4x/\cos^2x=\sec^2x-2+\cos^2x$,
+              \[
+                  I=\tan x-\dfrac{3x}{2}+\dfrac{\sin2x}{4}+C.
+              \]
+        \item 当 $m\neq n$ 且 $m\neq-n$ 时,
+              \[
+                  I=-\dfrac{\cos((m-n)x)}{2(m-n)}
+                  -\dfrac{\cos((m+n)x)}{2(m+n)}+C.
+              \]
+              当 $m=\pm n\neq0$ 时,按原被积函数直接得到
+              $I=-\cos(2mx)/(4m)+C$.
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    求下列不定积分:
+    \begin{enumerate}
+        \item $\displaystyle I=\int\dfrac{\mathrm{d}x}{x^4+x}$;
+        \item $\displaystyle I=\int\dfrac{x\,\mathrm{d}x}{\sqrt{1-4x^2}}$;
+        \item $\displaystyle I=\int\dfrac{\mathrm{d}x}{x^4\sqrt{1+x^2}}$;
+        \item $\displaystyle I=\int\dfrac{\mathrm{d}x}{x\sqrt{x^2-1}}$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 由
+              \[
+                  \dfrac{1}{x(x^3+1)}=\dfrac{1}{x}-\dfrac{x^2}{x^3+1},
+              \]
+              得 $\displaystyle I=\ln|x|-\dfrac{1}{3}\ln|x^3+1|+C$.
+        \item 令 $u=1-4x^2$,得 $\displaystyle I=-\dfrac{1}{4}\sqrt{1-4x^2}+C$.
+        \item 令 $y=\sqrt{1+x^2}/x$,则
+              \[
+                  \mathrm{d}y=-\dfrac{\mathrm{d}x}{x^2\sqrt{1+x^2}},
+                  \qquad
+                  \dfrac{1}{x^2}=y^2-1.
+              \]
+              因而
+              \[
+                  I=y-\dfrac{y^3}{3}+C
+                  =\dfrac{\sqrt{1+x^2}}{x}
+                  -\dfrac{1}{3}\left(\dfrac{\sqrt{1+x^2}}{x}\right)^3+C.
+              \]
+        \item $\displaystyle I=\arccos\dfrac{1}{|x|}+C\quad(|x|>1)$.
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    求下列函数的不定积分:
+    \begin{enumerate}
+        \item $\displaystyle I=\int\dfrac{\mathrm{d}x}{x\ln x}$;
+        \item $\displaystyle I=\int\dfrac{\mathrm{d}x}{x^8(1+x^2)}$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item $\displaystyle I=\ln|\ln x|+C$.
+        \item 利用
+              \[
+                  \dfrac{1}{x^8(1+x^2)}
+                  =\dfrac{1}{x^8}-\dfrac{1}{x^6}+\dfrac{1}{x^4}-\dfrac{1}{x^2}+\dfrac{1}{1+x^2},
+              \]
+              得
+              \[
+                  I=-\dfrac{1}{7x^7}+\dfrac{1}{5x^5}-\dfrac{1}{3x^3}
+                  +\dfrac{1}{x}+\arctan x+C.
+              \]
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    求下列不定积分:
+    \begin{enumerate}
+        \item $\displaystyle I=\int\dfrac{\mathrm{d}x}{\sin x}$;
+        \item $\displaystyle I=\int\dfrac{\mathrm{d}x}{\cos x}$;
+        \item $\displaystyle I=\int\dfrac{\cos x}{\sqrt{\cos2x}}\,\mathrm{d}x$;
+        \item $\displaystyle I=\int\dfrac{\mathrm{d}x}{3\cos^2x+4\sin^2x}$;
+        \item $\displaystyle I=\int\dfrac{\sin x}{1+\sin x}\,\mathrm{d}x$;
+        \item $\displaystyle I=\int\dfrac{\mathrm{d}x}{2+\cos^2x}$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item $\displaystyle I=\ln\left|\tan\dfrac{x}{2}\right|+C$.
+        \item $\displaystyle I=\ln|\sec x+\tan x|+C$.
+        \item 令 $u=\sin x$,得
+              \[
+                  I=\dfrac{1}{\sqrt2}\arcsin(\sqrt2\sin x)+C.
+              \]
+        \item 令 $t=\tan x$,得
+              \[
+                  I=\int\dfrac{\mathrm{d}t}{3+4t^2}
+                  =\dfrac{1}{2\sqrt3}\arctan\dfrac{2\tan x}{\sqrt3}+C.
+              \]
+        \item 由 $1/(1+\sin x)=\sec^2x-\sec x\tan x$,
+              \[
+                  I=x-\tan x+\sec x+C.
+              \]
+        \item 令 $t=\tan x$,得
+              \[
+                  I=\dfrac{1}{\sqrt6}\arctan\left(\sqrt{\dfrac{2}{3}}\tan x\right)+C.
+              \]
+    \end{enumerate}
+\end{solution}
+
+\begin{theorem}[\marktwostar\ 分部积分法]
+    设 $u(x),v(x)$ 在区间 $I$ 上可微,若 $v(x),u'(x)$ 在 $I$ 上有原函数,则 $u(x),v'(x)$ 在 $I$ 上也有原函数,而且
+    \[
+        \int u(x)v'(x)\,\mathrm{d}x
+        =u(x)v(x)-\int v(x)u'(x)\,\mathrm{d}x.
+    \]
+\end{theorem}
+
+\begin{remark}
+    即将 $uv'$ 原函数求解问题转化为更易求解的 $vu'$ 原函数问题.而 $u,v$ 究竟如何选择呢?优先选 $u$ 的一般顺序为(反对幂三指):
+    \[
+        \text{反三角函数}\longrightarrow\text{对数函数}\longrightarrow\text{幂函数}
+        \longrightarrow\text{三角函数}\longrightarrow\text{指数函数}.
+    \]
+\end{remark}
+
+\begin{example}
+    求下列不定积分:
+    \begin{enumerate}
+        \item $\displaystyle I=\int\ln x\,\mathrm{d}x$;
+        \item $\displaystyle I=\int xe^x\,\mathrm{d}x$;
+        \item $\displaystyle I=\int\ln(1+\sqrt{x})\,\mathrm{d}x$;
+        \item $\displaystyle I=\int\left(\dfrac{\ln x}{x}\right)^2\,\mathrm{d}x$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    分部积分可得
+    \begin{enumerate}
+        \item $\displaystyle I=x\ln x-x+C$;
+        \item $\displaystyle I=(x-1)e^x+C$;
+        \item 令 $t=\sqrt{x}$,则
+              \[
+                  I=(x-1)\ln(1+\sqrt{x})+\sqrt{x}-\dfrac{x}{2}+C;
+              \]
+        \item $\displaystyle I=-\dfrac{(\ln x)^2+2\ln x+2}{x}+C$.
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    求下列函数的不定积分:
+    \begin{enumerate}
+        \item $\displaystyle I=\int x\cos x\,\mathrm{d}x$;
+        \item $\displaystyle I=\int(2x+3x^2)\arctan x\,\mathrm{d}x$;
+        \item $\displaystyle I=\int\dfrac{x\arcsin x}{\sqrt{1-x^2}}\,\mathrm{d}x$;
+        \item $\displaystyle I=\int\dfrac{\ln\sin x}{\sin^2x}\,\mathrm{d}x$;
+        \item $\displaystyle I=\int\sin(\ln x)\,\mathrm{d}x$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    逐项分部积分:
+    \begin{enumerate}
+        \item $\displaystyle I=x\sin x+\cos x+C$.
+        \item 取 $\mathrm{d}v=(2x+3x^2)\,\mathrm{d}x$,得到
+              \[
+                  I=(x^2+x^3+1)\arctan x-x-\dfrac{x^2}{2}
+                  +\dfrac{1}{2}\ln(1+x^2)+C.
+              \]
+        \item $\displaystyle I=x-\sqrt{1-x^2}\arcsin x+C$.
+        \item $\displaystyle I=-\cot x\ln|\sin x|-\cot x-x+C$.
+        \item 令 $t=\ln x$,则
+              \[
+                  I=\dfrac{x}{2}[\sin(\ln x)-\cos(\ln x)]+C.
+              \]
+    \end{enumerate}
+\end{solution}
+
+
+
+\subsection{特殊方法}
+
+
+\methodsection{(A) 配对法}
+
+当要求不定积分 $I(x)$,但 $I(x)$ 常规办法不易求得时,对偶地考虑与其相关的 $J(x)$,使得 $aI(x)+bJ(x)$ 与 $cI(x)+dJ(x)$ 更易求得,即可由此解出 $I(x)$.
+
+\begin{proposition}[\markstar]
+    对于形如
+    \[
+        I=\int\dfrac{a\sin x+b\cos x}{c\sin x+d\cos x}\,\mathrm{d}x
+    \]
+    的不定积分,取 $A,B$ 使得
+    \[
+        A(c\sin x+d\cos x)+B(c\sin x+d\cos x)
+        =a\sin x+b\cos x.
+    \]
+    则有
+    \[
+        I=Ax+B\ln|c\sin x+d\cos x|+C.
+    \]
+    更进一步,类似上述方法可解所有形如
+    \[
+        \int\dfrac{p\sin x+q\cos x+s}{a\sin x+b\cos x+c}\,\mathrm{d}x
+    \]
+    的不定积分.
+\end{proposition}
+
+\begin{example}
+    求下列不定积分:
+    \begin{enumerate}
+        \item $\displaystyle\int\dfrac{\sin x}{\sin x+\cos x}\,\mathrm{d}x$;
+        \item $\displaystyle\int\dfrac{\mathrm{d}x}{3+5\tan x}$;
+        \item $\displaystyle\int\dfrac{\mathrm{d}x}{\sin x+2\cos x+3}$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 将本积分与分子为 $\cos x$ 的积分配对,得到
+              \[
+                  I=\dfrac{x}{2}-\dfrac{1}{2}\ln|\sin x+\cos x|+C.
+              \]
+        \item 设 $D=3\cos x+5\sin x$.由
+              \[
+                  \cos x=\dfrac{5}{34}D'+\dfrac{3}{34}D,
+              \]
+              可得
+              \[
+                  I=\dfrac{5}{34}\ln|3\cos x+5\sin x|+\dfrac{3x}{34}+C.
+              \]
+        \item 令 $t=\tan(x/2)$,则
+              \[
+                  I=2\int\dfrac{\mathrm{d}t}{(t+1)^2+4}
+                  =\arctan\dfrac{t+1}{2}+C.
+              \]
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    利用配对法求下列不定积分:
+    \begin{enumerate}
+        \item $\displaystyle\int\dfrac{\mathrm{d}x}{1+x^4}$;
+        \item $\displaystyle\int\dfrac{\mathrm{d}x}{1+x^2+x^4}$;
+        \item $\displaystyle\int\dfrac{\mathrm{d}x}{1+x^3}$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    分解实二次因式后可得
+    \begin{enumerate}
+        \item
+              \[
+                  I=\dfrac{1}{4\sqrt2}\ln\dfrac{x^2+\sqrt2x+1}{x^2-\sqrt2x+1}
+                  +\dfrac{1}{2\sqrt2}\arctan\dfrac{\sqrt2x}{1-x^2}+C;
+              \]
+        \item
+              \[
+                  I=\dfrac{1}{4}\ln\dfrac{x^2+x+1}{x^2-x+1}
+                  +\dfrac{1}{\sqrt3}\left[
+                      \arctan\dfrac{2x+1}{\sqrt3}
+                      +\arctan\dfrac{2x-1}{\sqrt3}\right]+C;
+              \]
+        \item
+              \[
+                  I=\dfrac{1}{3}\ln|x+1|-\dfrac{1}{6}\ln(x^2-x+1)
+                  +\dfrac{1}{\sqrt3}\arctan\dfrac{2x-1}{\sqrt3}+C.
+              \]
+    \end{enumerate}
+    反正切函数跨越分支点时,积分常数相应调整.
+\end{solution}
+
+
+
+\methodsection{(B) 递推法}
+
+为了计算 $\displaystyle I_n=\int f^n(x)\,\mathrm{d}x$,可以用各种方法将它化成参数值较小的 $\displaystyle I_{n-k}=\int f^{n-k}(x)\\mathrm{d}x$其中$0<k\leq n$,并且如此进行下去,直到最后把问题化为参数值最小的一个或几个积分.
+
+\begin{proposition}[\markstar]
+    设
+    \[
+        I(m,n)=\int\cos^m x\sin^n x\,\mathrm{d}x,
+    \]
+    则
+    \[
+        I(m,n)
+        =\dfrac{\cos^{m-1}x\sin^{n+1}x}{m+n}
+        +\dfrac{n-1}{m+n}I(m-2,n).
+    \]
+\end{proposition}
+
+\begin{example}
+    求下列不定积分的递推公式:
+    \begin{enumerate}
+        \item $\displaystyle I_n=\int\tan^n x\,\mathrm{d}x$;
+        \item $\displaystyle I_n=\int\sec^n x\,\mathrm{d}x$;
+        \item $\displaystyle I_n=\int\dfrac{\sin nx}{\sin x}\,\mathrm{d}x$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 由 $\tan^n x=\tan^{n-2}x(\sec^2x-1)$,
+              \[
+                  I_n=\dfrac{\tan^{n-1}x}{n-1}-I_{n-2},
+                  \qquad n>1.
+              \]
+        \item 分部积分得
+              \[
+                  I_n=\dfrac{\sec^{n-2}x\tan x}{n-1}
+                  +\dfrac{n-2}{n-1}I_{n-2},
+                  \qquad n>1.
+              \]
+        \item 由
+              \[
+                  \dfrac{\sin nx-\sin((n-2)x)}{\sin x}=2\cos((n-1)x),
+              \]
+              得
+              \[
+                  I_n=I_{n-2}+\dfrac{2\sin((n-1)x)}{n-1},
+                  \qquad n>1.
+              \]
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    求下列不定积分的递推公式:
+    \begin{enumerate}
+        \item $\displaystyle I_n=\int\dfrac{\mathrm{d}x}{(1+x^2)^n}$;
+        \item $\displaystyle I_n=\int\ln^n x\,\mathrm{d}x$;
+        \item $\displaystyle I_{m,n}=\int x^m\ln^n x\,\mathrm{d}x$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 分部积分可得
+              \[
+                  I_n=\dfrac{x}{2(n-1)(1+x^2)^{n-1}}
+                  +\dfrac{2n-3}{2(n-1)}I_{n-1},
+                  \qquad n>1.
+              \]
+        \item
+              \[
+                  I_n=x\ln^n x-nI_{n-1}.
+              \]
+        \item 当 $m\neq-1$ 时,
+              \[
+                  I_{m,n}=\dfrac{x^{m+1}\ln^n x}{m+1}
+                  -\dfrac{n}{m+1}I_{m,n-1}.
+              \]
+              当 $m=-1$ 时,
+              \[
+                  I_{-1,n}=\dfrac{\ln^{n+1}x}{n+1}+C.
+              \]
+    \end{enumerate}
+\end{solution}
+
+
+\newpage
+
+\section{几类可积函数}
+
+
+\subsection{有理分式}
+
+对于有理真分式,总可分解为形如下列四种最简真分式的组合:
+\[
+    \dfrac{A}{x-a},\qquad
+    \dfrac{A}{(x-a)^k}\quad(k\geq2),\qquad
+    \dfrac{Ax+B}{x^2+px+q},\qquad
+    \dfrac{Ax+B}{(x^2+px+q)^k}
+\]
+其中 $p^2-4q<0,k\geq2$.
+
+我们有:
+\begin{enumerate}
+    \item
+          \[
+              \int\dfrac{A}{x-a}\,\mathrm{d}x=A\ln|x-a|+C.
+          \]
+    \item
+          \[
+              \int\dfrac{A}{(x-a)^k}\,\mathrm{d}x
+              =\dfrac{A(x-a)^{1-k}}{1-k}+C.
+          \]
+    \item
+          \begin{align*}
+              \int\dfrac{Ax+B}{x^2+px+q}\,\mathrm{d}x
+               & =\dfrac{A}{2}\int\dfrac{2x+p}{x^2+px+q}\,\mathrm{d}x
+              +\left(B-\dfrac{Ap}{2}\right)\int\dfrac{\mathrm{d}x}{x^2+px+q}          \\
+               & =\dfrac{A}{2}\ln|x^2+px+q|
+              +\left(B-\dfrac{Ap}{2}\right)
+              \int\dfrac{\mathrm{d}x}{\left(x+\dfrac{p}{2}\right)^2+q-\dfrac{p^2}{4}} \\
+               & =\dfrac{A}{2}\ln|x^2+px+q|
+              +\dfrac{2B-Ap}{\sqrt{4q-p^2}}
+              \arctan\dfrac{2x+p}{\sqrt{4q-p^2}}+C.
+          \end{align*}
+    \item 可得递推公式(略).
+\end{enumerate}
+
+\begin{example}
+    求下列不定积分:
+    \begin{enumerate}
+        \item $\displaystyle\int\dfrac{\mathrm{d}x}{x(x^3+1)^2}$;
+        \item $\displaystyle\int\dfrac{x(x^2+3)}{(x^2-1)(x^2+1)^2}\,\mathrm{d}x$;
+        \item $\displaystyle\int\dfrac{2x^4+5x^2-2}{2x^3-x-1}\,\mathrm{d}x$;
+        \item $\displaystyle\int\dfrac{\mathrm{d}x}{\cos^7x}$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 令 $u=x^3$,则
+              \[
+                  I=\dfrac{1}{3}\int\dfrac{\mathrm{d}u}{u(u+1)^2}
+                  =\dfrac{1}{3}\left[\ln\left|\dfrac{u}{u+1}\right|+\dfrac{1}{u+1}\right]+C.
+              \]
+        \item 令 $u=x^2$,部分分式分解给出
+              \[
+                  I=\dfrac{1}{2}\left[\ln\left|\dfrac{u-1}{u+1}\right|+\dfrac{1}{u+1}\right]+C.
+              \]
+        \item 长除法与部分分式分解给出
+              \[
+                  \dfrac{2x^4+5x^2-2}{2x^3-x-1}
+                  =x+\dfrac{1}{x-1}+\dfrac{4x+3}{2x^2+2x+1},
+              \]
+              因此
+              \[
+                  I=\dfrac{x^2}{2}+\ln|x-1|+\ln(2x^2+2x+1)
+                  +\arctan(2x+1)+C.
+              \]
+        \item 连续使用 $\sec^n x$ 的递推式,得到
+              \[
+                  I=\dfrac{1}{6}\sec^5x\tan x+\dfrac{5}{24}\sec^3x\tan x
+                  +\dfrac{5}{16}\sec x\tan x
+                  +\dfrac{5}{16}\ln|\sec x+\tan x|+C.
+              \]
+    \end{enumerate}
+\end{solution}
+
+
+
+\subsection{无理函数}
+
+\begin{proposition}[\markstar]
+    对于下列四种类型的不定积分,有如下处理技巧:
+    \begin{enumerate}
+        \item $R\left(x,x^{\frac{m}{n}},\ldots,x^{\frac{r}{s}}\right)$ 型:记 $\dfrac{m}{n},\ldots,\dfrac{r}{s}$ 的公分母为 $k$,令 $x=t^k$.
+        \item $R\left[x,\left(\dfrac{ax+b}{cx+d}\right)^{\frac{m}{n}},\ldots,
+                      \left(\dfrac{ax+b}{cx+d}\right)^{\frac{t}{s}}\right]$ 型:类似 (1),记各分数指数的公分母为 $k$,令
+              \[
+                  \dfrac{ax+b}{cx+d}=t^k.
+              \]
+        \item $R(x,\sqrt{ax^2+bx+c})$ 型:根据 $a,b,c$ 的系数,考虑以下三种 Euler 变换:
+
+              Euler 第一变换:若 $a>0$,则令
+              \[
+                  \sqrt{ax^2+bx+c}=\pm\sqrt{a}\,x+t.
+              \]
+
+              Euler 第二变换:若 $c>0$,则令
+              \[
+                  \sqrt{ax^2+bx+c}=xt+\sqrt{c}.
+              \]
+
+              Euler 第三变换:若 $ax^2+bx+c$ 有两个实根,即 $ax^2+bx+c=a(x-\alpha)(x-\beta)$,则令
+              \[
+                  \sqrt{ax^2+bx+c}=t(x-\alpha).
+              \]
+        \item $x^m(ax^n+b)^p$ 型:令 $x^n=t$,化为前述类型之一.
+    \end{enumerate}
+\end{proposition}
+
+\begin{remark}
+    事实上,(3) 中利用 Euler 第一、三变换足矣,因为若 $\Delta\geq0$ 可用第三变换;若 $\Delta<0$,由
+    \[
+        ax^2+bx+c=\dfrac{1}{4a}\left[(2ax+b)^2+(4ac-b^2)\right]
+    \]
+    可得 $ax^2+bx+c$ 与 $a$ 符号相同,故可用第一变换.
+\end{remark}
+
+\begin{example}
+    求下列不定积分:
+    \begin{enumerate}
+        \item $\displaystyle\int\dfrac{x+\sqrt[3]{x^2}+6\sqrt{x}}{x(1+\sqrt[3]{x})}\,\mathrm{d}x$;
+        \item $\displaystyle\int\dfrac{\mathrm{d}x}{\sqrt{x+1}+\sqrt[3]{x+1}}$;
+        \item $\displaystyle\int\sqrt[3]{\dfrac{2-x}{2+x}}\dfrac{\mathrm{d}x}{(2-x)^2}$;
+        \item $\displaystyle\int\dfrac{1}{x}\sqrt{\dfrac{x+2}{x-2}}\,\mathrm{d}x$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 令 $t=\sqrt[6]{x}$,化简后
+              \[
+                  I=6\int\left(t^3+6-\dfrac{6}{1+t^2}\right)\mathrm{d}t
+                  =\dfrac{3}{2}t^4+36t-36\arctan t+C.
+              \]
+        \item 令 $t=\sqrt[6]{x+1}$,则
+              \[
+                  I=6\int\dfrac{t^3}{t+1}\,\mathrm{d}t
+                  =2t^3-3t^2+6t-6\ln|t+1|+C.
+              \]
+        \item 令
+              \[
+                  t=\sqrt[3]{\dfrac{2-x}{2+x}},
+              \]
+              则被积式化为 $-3\mathrm{d}t/(4t^3)$,故
+              \[
+                  I=\dfrac{3}{8t^2}+C
+                  =\dfrac{3}{8}\left(\dfrac{2+x}{2-x}\right)^{\frac{2}{3}}+C.
+              \]
+        \item 令 $t=\sqrt{(x+2)/(x-2)}$,则
+              \[
+                  I=-2\int\left(\dfrac{1}{t^2-1}+\dfrac{1}{t^2+1}\right)\mathrm{d}t
+                  =\ln\left|\dfrac{t+1}{t-1}\right|-2\arctan t+C.
+              \]
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    求下列不定积分:
+    \begin{enumerate}
+        \item $\displaystyle\int\dfrac{\sqrt{x^2+2x+3}}{x}\,\mathrm{d}x$;
+        \item $\displaystyle\int\dfrac{\mathrm{d}x}{x^2\sqrt{4x^2-3x-1}}$;
+        \item $\displaystyle\int\dfrac{1-\sqrt{1+x+x^2}}{x\sqrt{1+x+x^2}}\,\mathrm{d}x$;
+        \item $\displaystyle\int\dfrac{\mathrm{d}x}{\sqrt{x^2+3x-4}}$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 使用 Euler 代换
+              \[
+                  t=\dfrac{\sqrt{x^2+2x+3}+\sqrt3}{x},
+                  \qquad
+                  x=\dfrac{2(\sqrt3t+1)}{t^2-1}.
+              \]
+              化为有理积分后得到
+              \[
+                  I=-\sqrt3\ln|3t+\sqrt3|+\ln\left|\dfrac{t+1}{t-1}\right|
+                  +\dfrac{1-\sqrt3}{t+1}+\dfrac{1+\sqrt3}{t-1}+C.
+              \]
+        \item 令 $u=1/x$.在固定符号区间内,积分化为
+              \[
+                  -\int\dfrac{u\,\mathrm{d}u}{\sqrt{4-3u-u^2}},
+              \]
+              从而
+              \[
+                  I=\sqrt{4-3u-u^2}+\dfrac{3}{2}\arcsin\dfrac{2u+3}{5}+C.
+              \]
+        \item 令 $u=1/x$,并合并对数项,得到
+              \[
+                  I=-\ln\left|2\sqrt{1+x+x^2}+x+2\right|+C.
+              \]
+        \item
+              \[
+                  I=\ln\left|2\sqrt{x^2+3x-4}+2x+3\right|+C.
+              \]
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    求下列不定积分:
+    \begin{enumerate}
+        \item $\displaystyle\int x^5(a^3+x^3)^{\frac{1}{3}}\,\mathrm{d}x$;
+        \item $\displaystyle\int\dfrac{(x^6+a^6)^3}{x^{11}}\,\mathrm{d}x$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 令 $u=x^3$,再令 $v=a^3+u$,得
+              \[
+                  I=\dfrac{1}{7}(a^3+x^3)^{\frac{7}{3}}
+                  -\dfrac{a^3}{4}(a^3+x^3)^{\frac{4}{3}}+C.
+              \]
+        \item 展开后逐项积分:
+              \[
+                  I=\dfrac{x^8}{8}+\dfrac{3a^6x^2}{2}
+                  -\dfrac{3a^{12}}{4x^4}-\dfrac{a^{18}}{10x^{10}}+C.
+              \]
+    \end{enumerate}
+\end{solution}
+
+
+
+\subsection{三角函数有理式}
+
+\begin{proposition}[\markstar]
+    由万能公式,令 $t=\tan\dfrac{x}{2}$ 可得
+    \[
+        \int R(\cos x,\sin x)\,\mathrm{d}x
+        =\int R\left(\dfrac{1-t^2}{1+t^2},\dfrac{2t}{1+t^2}\right)
+        \dfrac{2}{1+t^2}\,\mathrm{d}t.
+    \]
+    仍为有理函数,由此可转化为有理函数的不定积分.但实际计算中,该方法不一定是最简便的.因此,遇到下列情形,应灵活设计变量替换:
+    \begin{enumerate}
+        \item 若有 $R(\cos x,-\sin x)=-R(\cos x,\sin x)$,则可令 $t=\cos x$;
+        \item 若有 $R(-\cos x,\sin x)=-R(\cos x,\sin x)$,则可令 $t=\sin x$;
+        \item 若有 $R(-\cos x,-\sin x)=-R(\cos x,\sin x)$,则可令 $t=\tan x$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{example}
+    求下列不定积分:
+    \begin{enumerate}
+        \item $\displaystyle\int\dfrac{\mathrm{d}x}{a+b\tan x}$;
+        \item $\displaystyle\int\dfrac{\mathrm{d}x}{\sin x\cos2x}$;
+        \item $\displaystyle\int\dfrac{\cos2x}{\sin^4x+\cos^4x}\,\mathrm{d}x$;
+        \item $\displaystyle\int\dfrac{\mathrm{d}x}{1-\sin x}$;
+        \item $\displaystyle\int\dfrac{\sin x}{1+\sin x}\,\mathrm{d}x$;
+        \item $\displaystyle\int\dfrac{\mathrm{d}x}{5+3\sin x+4\cos x}$;
+        \item $\displaystyle\int\dfrac{\sin x}{1+\sin x+\cos x}\,\mathrm{d}x$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item
+              \[
+                  I=\dfrac{ax+b\ln|a\cos x+b\sin x|}{a^2+b^2}+C,
+                  \qquad a^2+b^2\neq0.
+              \]
+        \item 由
+              \[
+                  \dfrac{1}{\sin x\cos2x}=\dfrac{1}{\sin x}+\dfrac{2\sin x}{\cos2x},
+              \]
+              得
+              \[
+                  I=\ln\left|\tan\dfrac{x}{2}\right|
+                  +\dfrac{1}{\sqrt2}\ln\left|\dfrac{\sqrt2\cos x+1}{\sqrt2\cos x-1}\right|+C.
+              \]
+        \item 令 $t=\tan x$,则
+              \[
+                  I=\int\dfrac{1-t^2}{1+t^4}\,\mathrm{d}t
+                  =\dfrac{1}{2\sqrt2}\ln\dfrac{t^2+\sqrt2t+1}{t^2-\sqrt2t+1}+C.
+              \]
+        \item $\displaystyle I=\tan x+\sec x+C$.
+        \item $\displaystyle I=x-\tan x+\sec x+C$.
+        \item 令 $t=\tan(x/2)$,则
+              \[
+                  I=2\int\dfrac{\mathrm{d}t}{(t+3)^2}
+                  =-\dfrac{2}{t+3}+C.
+              \]
+        \item 同样令 $t=\tan(x/2)$,或直接验证,得到
+              \[
+                  I=\dfrac{x}{2}-\dfrac{1}{2}\ln|1+\sin x|+C.
+              \]
+    \end{enumerate}
+\end{solution}

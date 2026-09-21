@@ -1,0 +1,1745 @@
+\setcounter{chapter}{6}
+\pagestyle{fancy}
+
+\chapter{反常积分}
+
+
+\section{积分计算}
+
+本节基本方法前文都已介绍过,包括 N-L 公式、换元、分部积分、拟合法等等,差别仅在套上了反常积分的语言而已.
+
+
+
+\subsection{基本积分计算}
+
+\begin{example}
+  计算下列积分:
+  \begin{enumerate}
+    \item $\displaystyle\int_0^{+\infty}\dfrac{x^2}{1+x^4}\,\mathrm{d}x$;
+    \item $\displaystyle\int_{-\infty}^{+\infty}|t-x|^{\frac{1}{2}}
+            \dfrac{y\,\mathrm{d}t}{(t-x^2)+y^2}$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\ln x}{1+x^2}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\mathrm{d}x}{(1+x^2)(1+x^\alpha)}$;
+    \item $\displaystyle\int_0^{+\infty}f(x^p+x^{-p})\dfrac{\ln x}{1+x^2}\,\mathrm{d}x$.
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  \begin{enumerate}
+    \item 由 Euler 积分公式
+          \[
+            \int_0^{+\infty}\dfrac{x^{u-1}}{1+x^v}\,\mathrm{d}x
+            =\dfrac{\pi}{v}\csc\dfrac{u\pi}{v}
+            \qquad(0<u<v),
+          \]
+          取 $u=3,v=4$,得
+          \[
+            \int_0^{+\infty}\dfrac{x^2}{1+x^4}\,\mathrm{d}x
+            =\dfrac{\pi}{4}\csc\dfrac{3\pi}{4}
+            =\dfrac{\pi}{2\sqrt{2}}.
+          \]
+
+    \item 按现有题面,分母为 $(t-x^2)+y^2=t-(x^2-y^2)$.若 $y\neq0$ 且
+          $x^2-y^2\neq x$,则被积函数在 $t=x^2-y^2$ 处有一阶奇点,相应反常积分不收敛;
+          题目也没有给出参数范围或 Cauchy 主值的说明.因此本小题按现有题面不能确定有限积分值,
+          需核对原始资料中的分母及参数条件.
+
+    \item 记原积分为 $I$.作换元 $x=1/t$,则
+          \[
+            I=\int_0^{+\infty}\dfrac{-\ln t}{1+t^2}\,\mathrm{d}t=-I,
+          \]
+          故 $I=0$.
+
+    \item 记原积分为 $I_\alpha$.作换元 $x=1/t$,得
+          \[
+            I_\alpha
+            =\int_0^{+\infty}\dfrac{t^\alpha}{(1+t^2)(1+t^\alpha)}\,\mathrm{d}t.
+          \]
+          与原式相加可得
+          \[
+            2I_\alpha=\int_0^{+\infty}\dfrac{\mathrm{d}t}{1+t^2}=\dfrac{\pi}{2},
+          \]
+          因而 $I_\alpha=\dfrac{\pi}{4}$.
+
+    \item 记原积分为 $J$.由于 $x^p+x^{-p}$ 在换元 $x=1/t$ 下不变,而
+          $\ln x$ 变号,故
+          \[
+            J=-\int_0^{+\infty}f(t^p+t^{-p})\dfrac{\ln t}{1+t^2}\,\mathrm{d}t=-J.
+          \]
+          在积分存在的条件下,$J=0$.
+  \end{enumerate}
+\end{solution}
+
+\begin{example}
+  计算下列积分:
+  \begin{enumerate}
+    \item $\displaystyle\int_0^{\frac{\pi}{2}}\cos(2nx)\ln(\cos x)\,\mathrm{d}x$;
+    \item $\displaystyle\int_a^b\dfrac{\mathrm{d}x}{\sqrt{(x-a)(b-x)}}\quad(b>a)$;
+    \item $\displaystyle\int_{-1}^{1}\dfrac{\mathrm{d}x}{(a-x)\sqrt{1-x^2}}\quad(a>1)$.
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  \begin{enumerate}
+    \item 当 $n\in\mathbb{Z}^+$ 时,利用
+          \[
+            \ln(2\cos x)=-\sum\limits_{k=1}^{\infty}\dfrac{(-1)^k}{k}\cos(2kx)
+            \qquad\left(0<x<\dfrac{\pi}{2}\right)
+          \]
+          及三角函数的正交性,得到
+          \[
+            \int_0^{\frac{\pi}{2}}\cos(2nx)\ln(\cos x)\,\mathrm{d}x
+            =\dfrac{(-1)^{n+1}\pi}{4n}.
+          \]
+
+    \item 令 $x=\dfrac{a+b}{2}+\dfrac{b-a}{2}\cos\theta$,则
+          \[
+            \sqrt{(x-a)(b-x)}=\dfrac{b-a}{2}\sin\theta,
+          \]
+          从而
+          \[
+            \int_a^b\dfrac{\mathrm{d}x}{\sqrt{(x-a)(b-x)}}
+            =\int_0^\pi\mathrm{d}\theta=\pi.
+          \]
+
+    \item 令 $x=\cos\theta$,则
+          \[
+            \int_{-1}^{1}\dfrac{\mathrm{d}x}{(a-x)\sqrt{1-x^2}}
+            =\int_0^\pi\dfrac{\mathrm{d}\theta}{a-\cos\theta}
+            =\dfrac{\pi}{\sqrt{a^2-1}}.
+          \]
+  \end{enumerate}
+\end{solution}
+
+\begin{example}
+  计算下列积分:
+  \begin{enumerate}
+    \item $\displaystyle\int_{-\infty}^{+\infty}\dfrac{\mathrm{d}x}{(x^2+2x+2)^n}$;
+    \item $\displaystyle\int_0^1x^n\left(\ln\dfrac{1}{x}\right)^m\,\mathrm{d}x\quad(n,m\in\mathbb{N})$.
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  \begin{enumerate}
+    \item 令 $t=x+1$,则
+          \[
+            \int_{-\infty}^{+\infty}\dfrac{\mathrm{d}x}{(x^2+2x+2)^n}
+            =\int_{-\infty}^{+\infty}\dfrac{\mathrm{d}t}{(1+t^2)^n}
+            =\dfrac{\sqrt{\pi}\,\Gamma\left(n-\dfrac{1}{2}\right)}{\Gamma(n)}.
+          \]
+          对 $n\in\mathbb{Z}^+$,亦可写为
+          \[
+            \dfrac{\pi(2n-2)!}{2^{2n-2}[(n-1)!]^2}.
+          \]
+
+    \item 令 $x=e^{-t}$,则
+          \[
+            \int_0^1x^n\left(\ln\dfrac{1}{x}\right)^m\,\mathrm{d}x
+            =\int_0^{+\infty}t^m e^{-(n+1)t}\,\mathrm{d}t
+            =\dfrac{m!}{(n+1)^{m+1}}.
+          \]
+  \end{enumerate}
+\end{solution}
+
+\begin{example}
+  证明:
+  \begin{enumerate}
+    \item
+          \[
+            \int_0^{+\infty}f\left(ax+\dfrac{b}{x}\right)\,\mathrm{d}x
+            =\dfrac{1}{a}\int_0^{+\infty}f\left(\sqrt{t^2+4ab}\right)\,\mathrm{d}t,
+            \qquad a,b>0,
+          \]
+          假定两积分有意义;
+    \item
+          \[
+            \int_0^{+\infty}f\left(\left(Ax-\dfrac{B}{x}\right)^2\right)\,\mathrm{d}x
+            =\dfrac{1}{A}\int_0^{+\infty}f(y^2)\,\mathrm{d}y,
+            \qquad A,B>0,
+          \]
+          假定两积分有意义.
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  \begin{enumerate}
+    \item 令 $u=ax+\dfrac{b}{x}$.函数在 $x=\sqrt{b/a}$ 两侧分别单调,
+          且由方程 $ax^2-ux+b=0$ 得两支反函数
+          \[
+            x_\pm(u)=\dfrac{u\pm\sqrt{u^2-4ab}}{2a}.
+          \]
+          将两段积分都化为关于 $u$ 的积分,两支 Jacobian 之差为
+          \[
+            x_+'(u)-x_-'(u)=\dfrac{u}{a\sqrt{u^2-4ab}}.
+          \]
+          因而
+          \[
+            \int_0^{+\infty}f\left(ax+\dfrac{b}{x}\right)\,\mathrm{d}x
+            =\dfrac{1}{a}\int_{2\sqrt{ab}}^{+\infty}
+            f(u)\dfrac{u\,\mathrm{d}u}{\sqrt{u^2-4ab}}.
+          \]
+          再令 $t=\sqrt{u^2-4ab}$,即得所证等式.
+
+    \item 令 $y=Ax-\dfrac{B}{x}$.该函数在 $(0,+\infty)$ 上严格递增并取遍
+          $\mathbb{R}$,且
+          \[
+            x=\dfrac{y+\sqrt{y^2+4AB}}{2A},
+            \qquad
+            \dfrac{\mathrm{d}x}{\mathrm{d}y}
+            =\dfrac{1}{2A}\left(1+\dfrac{y}{\sqrt{y^2+4AB}}\right).
+          \]
+          因 $f(y^2)$ 为偶函数,上式括号中的奇函数部分在 $\mathbb{R}$ 上积分为零,故
+          \[
+            \int_0^{+\infty}f\left(\left(Ax-\dfrac{B}{x}\right)^2\right)\,\mathrm{d}x
+            =\dfrac{1}{2A}\int_{-\infty}^{+\infty}f(y^2)\,\mathrm{d}y
+            =\dfrac{1}{A}\int_0^{+\infty}f(y^2)\,\mathrm{d}y.
+          \]
+  \end{enumerate}
+\end{solution}
+
+\begin{example}[\markstar]
+  证明:
+  \[
+    \int_1^{+\infty}\left(\dfrac{1}{[x]}-\dfrac{1}{x}\right)\,\mathrm{d}x
+    =\lim\limits_{n\to\infty}\left(1+\dfrac{1}{2}+\cdots+\dfrac{1}{n}-\ln n\right)
+    =\gamma,
+  \]
+  其中 $\gamma$ 为 Euler 常数.
+\end{example}
+\exampleblank
+
+\begin{solution}
+  对任意 $n\in\mathbb{Z}^+$,逐段积分得
+  \[
+    \int_1^{n+1}\left(\dfrac{1}{[x]}-\dfrac{1}{x}\right)\,\mathrm{d}x
+    =\sum\limits_{k=1}^{n}\int_k^{k+1}\left(\dfrac{1}{k}-\dfrac{1}{x}\right)\,\mathrm{d}x
+    =\sum\limits_{k=1}^{n}\dfrac{1}{k}-\ln(n+1).
+  \]
+  右端与 $\displaystyle\sum\limits_{k=1}^{n}\dfrac{1}{k}-\ln n$ 之差为
+  $\ln\dfrac{n}{n+1}\to0$,故令 $n\to\infty$ 即得结论.
+\end{solution}
+
+
+
+\subsection{特殊积分计算}
+
+Froullani 积分、Euler 积分、Dirichlet 积分、概率积分均已在基础教材中介绍,故不再赘述,它们的证明、形式及应用均需熟练掌握.
+
+\begin{example}
+  利用 Euler 积分,计算下列积分:
+  \begin{enumerate}
+    \item $\displaystyle\int_0^{\frac{\pi}{2}}\ln\tan x\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^1\dfrac{\ln x}{\sqrt{1-x^2}}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^1\dfrac{\arcsin x}{x}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{\frac{\pi}{2}}x\cot x\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^\pi x\ln\sin x\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^\pi\dfrac{x\sin x}{1-\cos x}\,\mathrm{d}x$.
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  先记
+  \[
+    L=\int_0^{\frac{\pi}{2}}\ln(\sin x)\,\mathrm{d}x.
+  \]
+  由换元 $x\mapsto\dfrac{\pi}{2}-x$ 及倍角公式,
+  \[
+    2L=\int_0^{\frac{\pi}{2}}\ln\left(\dfrac{\sin2x}{2}\right)\,\mathrm{d}x
+    =L-\dfrac{\pi}{2}\ln2,
+  \]
+  故 $L=-\dfrac{\pi}{2}\ln2$.于是:
+  \begin{enumerate}
+    \item 换元 $x\mapsto\dfrac{\pi}{2}-x$ 后原积分变为其相反数,故积分为 $0$.
+    \item 令 $x=\sin t$,原积分等于 $L=-\dfrac{\pi}{2}\ln2$.
+    \item 分部积分得
+          \[
+            \int_0^1\dfrac{\arcsin x}{x}\,\mathrm{d}x
+            =-\int_0^1\dfrac{\ln x}{\sqrt{1-x^2}}\,\mathrm{d}x
+            =\dfrac{\pi}{2}\ln2.
+          \]
+    \item 由 $\cot x=(\ln\sin x)'$ 分部积分,
+          \[
+            \int_0^{\frac{\pi}{2}}x\cot x\,\mathrm{d}x
+            =-\int_0^{\frac{\pi}{2}}\ln(\sin x)\,\mathrm{d}x
+            =\dfrac{\pi}{2}\ln2.
+          \]
+    \item 记原积分为 $I$.换元 $x\mapsto\pi-x$ 后与原式相加,
+          \[
+            2I=\pi\int_0^\pi\ln(\sin x)\,\mathrm{d}x=-\pi^2\ln2,
+          \]
+          故 $I=-\dfrac{\pi^2}{2}\ln2$.
+    \item 因 $\dfrac{\sin x}{1-\cos x}=\cot\dfrac{x}{2}$,令 $x=2t$,得
+          \[
+            \int_0^\pi\dfrac{x\sin x}{1-\cos x}\,\mathrm{d}x
+            =4\int_0^{\frac{\pi}{2}}t\cot t\,\mathrm{d}t
+            =2\pi\ln2.
+          \]
+  \end{enumerate}
+\end{solution}
+
+\begin{example}
+  利用 Froullani 积分,计算下列积分($a,b>0$):
+  \begin{enumerate}
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\arctan ax-\arctan bx}{x}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{e^{-ax}-e^{-bx}}{x}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\cos ax-\cos bx}{x}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\sin ax\sin bx}{x}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^1\dfrac{x^{a-1}-x^{b-1}}{\ln x}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{b\sin ax-a\sin bx}{x^2}\,\mathrm{d}x$.
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  \begin{enumerate}
+    \item 对参数求导可得
+          \[
+            \dfrac{\partial}{\partial a}
+            \int_0^{+\infty}\dfrac{\arctan ax-\arctan bx}{x}\,\mathrm{d}x
+            =\int_0^{+\infty}\dfrac{\mathrm{d}x}{1+a^2x^2}=\dfrac{\pi}{2a}.
+          \]
+          再利用 $a=b$ 时积分为零,得到结果 $\dfrac{\pi}{2}\ln\dfrac{a}{b}$.
+
+    \item 直接应用 Froullani 公式,结果为 $\ln\dfrac{b}{a}$.
+
+    \item 由阻尼因子 $e^{-\varepsilon x}$ 先计算再令 $\varepsilon\to0^+$,或直接应用
+          Froullani 公式,得
+          \[
+            \int_0^{+\infty}\dfrac{\cos ax-\cos bx}{x}\,\mathrm{d}x
+            =\ln\dfrac{b}{a}.
+          \]
+
+    \item 当 $a\neq b$ 时,
+          \[
+            \sin ax\sin bx=\dfrac{1}{2}\bigl[\cos((a-b)x)-\cos((a+b)x)\bigr],
+          \]
+          故积分为
+          \[
+            \dfrac{1}{2}\ln\dfrac{a+b}{|a-b|}.
+          \]
+          当 $a=b$ 时,被积函数为 $\dfrac{\sin^2(ax)}{x}$,积分发散.
+
+    \item 令
+          \[
+            H(a,b)=\int_0^1\dfrac{x^{a-1}-x^{b-1}}{\ln x}\,\mathrm{d}x.
+          \]
+          对 $a$ 求偏导得 $\dfrac{\partial H}{\partial a}=\dfrac{1}{a}$,再利用
+          $H(b,b)=0$,可得 $H(a,b)=\ln\dfrac{a}{b}$.
+
+    \item 分部积分并注意边界项为零,
+          \[
+            \int_0^{+\infty}\dfrac{b\sin ax-a\sin bx}{x^2}\,\mathrm{d}x
+            =ab\int_0^{+\infty}\dfrac{\cos ax-\cos bx}{x}\,\mathrm{d}x
+            =ab\ln\dfrac{b}{a}.
+          \]
+  \end{enumerate}
+\end{solution}
+
+\begin{example}
+  利用 Dirichlet 积分,计算下列积分:
+  \begin{enumerate}
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\sin^2x}{x^2}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\sin^4x}{x^2}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\sin^4x}{x^4}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{x-\sin x}{x^3}\,\mathrm{d}x$;
+    \item $\displaystyle\int_{-\infty}^{+\infty}\dfrac{\sin x}{x(x-\pi)}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\sin x^2}{x}\,\mathrm{d}x$.
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  记 Dirichlet 积分
+  \[
+    \int_0^{+\infty}\dfrac{\sin(cx)}{x}\,\mathrm{d}x=\dfrac{\pi}{2}
+    \qquad(c>0).
+  \]
+  \begin{enumerate}
+    \item 分部积分得
+          \[
+            \int_0^{+\infty}\dfrac{\sin^2x}{x^2}\,\mathrm{d}x
+            =\int_0^{+\infty}\dfrac{\sin2x}{x}\,\mathrm{d}x=\dfrac{\pi}{2}.
+          \]
+    \item 分部积分后利用
+          $4\sin^3x\cos x=\sin2x-\dfrac{1}{2}\sin4x$,得
+          \[
+            \int_0^{+\infty}\dfrac{\sin^4x}{x^2}\,\mathrm{d}x
+            =\dfrac{\pi}{4}.
+          \]
+    \item 连续两次分部积分可得
+          \[
+            \int_0^{+\infty}\dfrac{\sin^4x}{x^4}\,\mathrm{d}x
+            =\dfrac{1}{3}\int_0^{+\infty}\dfrac{\cos2x-\cos4x}{x^2}\,\mathrm{d}x.
+          \]
+          再分部积分一次,
+          \[
+            \int_0^{+\infty}\dfrac{\cos2x-\cos4x}{x^2}\,\mathrm{d}x
+            =\int_0^{+\infty}\dfrac{-2\sin2x+4\sin4x}{x}\,\mathrm{d}x=\pi,
+          \]
+          故原积分为 $\dfrac{\pi}{3}$.
+    \item 分部积分得
+          \[
+            \int_0^{+\infty}\dfrac{x-\sin x}{x^3}\,\mathrm{d}x
+            =\dfrac{1}{2}\int_0^{+\infty}\dfrac{1-\cos x}{x^2}\,\mathrm{d}x
+            =\dfrac{\pi}{4}.
+          \]
+    \item 利用
+          \[
+            \dfrac{1}{x(x-\pi)}=-\dfrac{1}{\pi x}+\dfrac{1}{\pi(x-\pi)}
+          \]
+          以及换元 $u=x-\pi$,可得
+          \[
+            \int_{-\infty}^{+\infty}\dfrac{\sin x}{x(x-\pi)}\,\mathrm{d}x
+            =-\dfrac{1}{\pi}\cdot\pi+\dfrac{1}{\pi}\cdot(-\pi)=-2.
+          \]
+    \item 令 $u=x^2$,则
+          \[
+            \int_0^{+\infty}\dfrac{\sin x^2}{x}\,\mathrm{d}x
+            =\dfrac{1}{2}\int_0^{+\infty}\dfrac{\sin u}{u}\,\mathrm{d}u
+            =\dfrac{\pi}{4}.
+          \]
+  \end{enumerate}
+\end{solution}
+
+\begin{example}
+  利用概率积分,计算下列积分:
+  \begin{enumerate}
+    \item $\displaystyle\int_0^{+\infty}e^{-x^2}\left(x^2+\dfrac{1}{2}\right)^2\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\left(e^{-a^2x^2}-e^{-b^2x^2}\right)\,\mathrm{d}x$.
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  利用
+  \[
+    \int_0^{+\infty}e^{-x^2}\,\mathrm{d}x=\dfrac{\sqrt{\pi}}{2},
+    \quad
+    \int_0^{+\infty}x^2e^{-x^2}\,\mathrm{d}x=\dfrac{\sqrt{\pi}}{4},
+    \quad
+    \int_0^{+\infty}x^4e^{-x^2}\,\mathrm{d}x=\dfrac{3\sqrt{\pi}}{8},
+  \]
+  得到
+  \begin{enumerate}
+    \item
+          \[
+            \int_0^{+\infty}e^{-x^2}\left(x^2+\dfrac{1}{2}\right)^2\,\mathrm{d}x
+            =\dfrac{3\sqrt{\pi}}{4}.
+          \]
+    \item 当 $a,b\neq0$ 时,换元后得
+          \[
+            \int_0^{+\infty}\left(e^{-a^2x^2}-e^{-b^2x^2}\right)\,\mathrm{d}x
+            =\dfrac{\sqrt{\pi}}{2}\left(\dfrac{1}{|a|}-\dfrac{1}{|b|}\right).
+          \]
+          特别地,若 $a,b>0$,可去掉绝对值号.
+  \end{enumerate}
+\end{solution}
+
+\begin{example}
+  证明:
+  \begin{enumerate}
+    \item $1-x^2\leq e^{-x^2}\leq\dfrac{1}{1+x^2}$;
+    \item 由 (1) 计算概率积分.
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  \begin{enumerate}
+    \item 由 $e^u\geq1+u$ 分别取 $u=x^2$ 与 $u=-x^2$,可得
+          \[
+            e^{-x^2}\leq\dfrac{1}{1+x^2},
+            \qquad
+            e^{-x^2}\geq1-x^2.
+          \]
+
+    \item 设 $I=\displaystyle\int_0^{+\infty}e^{-x^2}\,\mathrm{d}x$.对 $n>1$,由 (1) 得
+          \[
+            \int_0^{\sqrt n}\left(1-\dfrac{x^2}{n}\right)^n\,\mathrm{d}x
+            \leq I\leq
+            \int_0^{+\infty}\left(1+\dfrac{x^2}{n}\right)^{-n}\,\mathrm{d}x.
+          \]
+          两端分别为
+          \[
+            \dfrac{\sqrt{n\pi}\,\Gamma(n+1)}{2\Gamma\left(n+\dfrac{3}{2}\right)},
+            \qquad
+            \dfrac{\sqrt{n\pi}\,\Gamma\left(n-\dfrac{1}{2}\right)}{2\Gamma(n)}.
+          \]
+          由 $\displaystyle\dfrac{\Gamma(n+c)}{\Gamma(n)}\sim n^c$,两端均趋于
+          $\dfrac{\sqrt\pi}{2}$.故由夹逼定理,
+          \[
+            \int_0^{+\infty}e^{-x^2}\,\mathrm{d}x=\dfrac{\sqrt\pi}{2}.
+          \]
+  \end{enumerate}
+\end{solution}
+
+
+
+\subsection{积分与极限}
+
+该类问题大多利用拟合法结合反常积分收敛的定义或性质分段分析即可.
+
+\begin{example}
+  设 $f:\mathbb{R}\to\mathbb{R}$ 是有界连续函数,求
+  \[
+    \lim\limits_{t\to0^+}\int_{-\infty}^{+\infty}\dfrac{t}{t^2+x^2}f(x)\,\mathrm{d}x.
+  \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+  令 $x=tu$,则
+  \[
+    \int_{-\infty}^{+\infty}\dfrac{t}{t^2+x^2}f(x)\,\mathrm{d}x
+    =\int_{-\infty}^{+\infty}\dfrac{f(tu)}{1+u^2}\,\mathrm{d}u.
+  \]
+  设 $|f(x)|\leq M$.被积函数绝对值不超过可积函数
+  $\dfrac{M}{1+u^2}$,且由 $f$ 在 $0$ 处连续,$f(tu)\to f(0)$.由控制收敛定理,
+  \[
+    \lim\limits_{t\to0^+}\int_{-\infty}^{+\infty}
+    \dfrac{t}{t^2+x^2}f(x)\,\mathrm{d}x
+    =f(0)\int_{-\infty}^{+\infty}\dfrac{\mathrm{d}u}{1+u^2}
+    =\pi f(0).
+  \]
+\end{solution}
+
+\begin{example}
+  求极限
+  \[
+    \lim\limits_{x\to0^+}x^\alpha\int_x^1\dfrac{f(t)}{t^{\alpha+1}}\,\mathrm{d}t,
+  \]
+  其中 $\alpha>0$,$f(x)\in C\lbrack 0,1\rbrack$.
+\end{example}
+\exampleblank
+
+\begin{solution}
+  将 $f(t)$ 分解为 $f(0)+[f(t)-f(0)]$.常数部分为
+  \[
+    x^\alpha f(0)\int_x^1t^{-\alpha-1}\,\mathrm{d}t
+    =\dfrac{f(0)}{\alpha}(1-x^\alpha)
+    \longrightarrow\dfrac{f(0)}{\alpha}.
+  \]
+  任给 $\varepsilon>0$,由连续性可取 $\delta>0$,使 $0<t<\delta$ 时
+  $|f(t)-f(0)|<\varepsilon$.于是当 $0<x<\delta$ 时,余项的绝对值不超过
+  \[
+    \varepsilon x^\alpha\int_x^\delta t^{-\alpha-1}\,\mathrm{d}t
+    +x^\alpha\int_\delta^1\dfrac{|f(t)-f(0)|}{t^{\alpha+1}}\,\mathrm{d}t
+    \leq\dfrac{\varepsilon}{\alpha}+o(1).
+  \]
+  故余项趋于 $0$,所求极限为 $\dfrac{f(0)}{\alpha}$.
+\end{solution}
+
+\begin{example}
+  设当 $x>a$ 时,$\varphi(x)>0$,$f(x),\varphi(x)$ 在任何有限区间 $\lbrack a,b\rbrack$ 上可积,
+  \[
+    \int_a^{+\infty}\varphi(t)\,\mathrm{d}t
+  \]
+  发散,当 $x\to+\infty$ 时,$f(x)=o(\varphi(x))$.证明:
+  \[
+    \int_a^{+\infty}f(t)\,\mathrm{d}t
+    =o\left(\int_a^{+\infty}\varphi(t)\,\mathrm{d}t\right).
+  \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+  题面中的两个积分应理解为上限为 $x$ 的部分积分.记
+  \[
+    F(x)=\int_a^xf(t)\,\mathrm{d}t,
+    \qquad
+    \Phi(x)=\int_a^x\varphi(t)\,\mathrm{d}t.
+  \]
+  由条件 $\Phi(x)\to+\infty$.任给 $\varepsilon>0$,存在 $A>a$,使得
+  $t>A$ 时 $|f(t)|\leq\varepsilon\varphi(t)$.于是
+  \[
+    |F(x)|\leq\left|\int_a^Af(t)\,\mathrm{d}t\right|
+    +\varepsilon\int_A^x\varphi(t)\,\mathrm{d}t.
+  \]
+  两边除以 $\Phi(x)$ 并令 $x\to+\infty$,得到
+  \[
+    \limsup\limits_{x\to+\infty}\dfrac{|F(x)|}{\Phi(x)}\leq\varepsilon.
+  \]
+  由 $\varepsilon$ 的任意性,$F(x)=o(\Phi(x))$.
+\end{solution}
+
+\begin{proposition}[\markstar\ Riemann 引理]
+  设 $f(x)$ 在 $\lbrack a,+\infty)$ 上绝对可积,$g(x)$ 是周期为 $T$ 的函数,在 $\lbrack 0,T\rbrack$ 上正常可积,则
+  \[
+    \lim\limits_{n\to\infty}\int_a^{+\infty}f(x)g(nx)\,\mathrm{d}x
+    =\dfrac{1}{T}\int_0^Tg(x)\,\mathrm{d}x\int_a^{+\infty}f(x)\,\mathrm{d}x.
+  \]
+\end{proposition}
+
+\begin{example}
+  \begin{enumerate}
+    \item 设 $\varphi(x)$ 为有界周期函数,周期为 $T$,且
+          \[
+            \dfrac{1}{T}\int_0^T\varphi(x)\,\mathrm{d}x=C,
+          \]
+          求证:
+          \[
+            \lim\limits_{n\to\infty}n\int_0^{+\infty}\dfrac{\varphi(t)}{t^2}\,\mathrm{d}t=C;
+          \]
+    \item 设 $\displaystyle\varphi(x)=\int_0^x\cos\dfrac{1}{t}\,\mathrm{d}t$,求 $\varphi'(0)$;
+    \item 设 $\displaystyle F(x)=\int_0^x\left(\dfrac{1}{t}-\left[\dfrac{1}{t}\right]\right)\,\mathrm{d}t$,试证 $F'(0)=\dfrac{1}{2}$.
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  \begin{enumerate}
+    \item 原资料把积分下限写成 $0$,此时积分与 $n$ 无关,且 $t=0$ 还是奇点,
+          所给等式按现有题面不成立.与周期平均结论相符的题面应为
+          \[
+            \lim\limits_{n\to\infty}n\int_n^{+\infty}\dfrac{\varphi(t)}{t^2}\,\mathrm{d}t=C.
+          \]
+          对这一形式,令 $t=nu$,得到
+          \[
+            n\int_n^{+\infty}\dfrac{\varphi(t)}{t^2}\,\mathrm{d}t
+            =\int_1^{+\infty}\dfrac{\varphi(nu)}{u^2}\,\mathrm{d}u.
+          \]
+          对 $g(u)=u^{-2}$ 应用 Riemann 引理即得极限
+          $C\displaystyle\int_1^{+\infty}u^{-2}\,\mathrm{d}u=C$.
+
+    \item 令 $u=1/t$.当 $x>0$ 时,
+          \[
+            \varphi(x)=\int_{1/x}^{+\infty}\dfrac{\cos u}{u^2}\,\mathrm{d}u.
+          \]
+          分部积分表明右端为 $O(x^2)$,故
+          \[
+            \varphi'(0)=\lim\limits_{x\to0^+}\dfrac{\varphi(x)}{x}=0.
+          \]
+
+    \item 以 $\{u\}=u-[u]$ 表示小数部分.换元 $u=1/t$ 得
+          \[
+            \dfrac{F(x)}{x}
+            =\dfrac{1}{x}\int_{1/x}^{+\infty}\dfrac{\{u\}}{u^2}\,\mathrm{d}u.
+          \]
+          周期函数 $\{u\}$ 的周期为 $1$,周期平均值为
+          $\displaystyle\int_0^1u\,\mathrm{d}u=\dfrac{1}{2}$.
+          应用 (1) 中修正后的周期平均结论,可得
+          \[
+            F'(0)=\lim\limits_{x\to0^+}\dfrac{F(x)}{x}=\dfrac{1}{2}.
+          \]
+  \end{enumerate}
+\end{solution}
+
+\begin{example}
+  设 $f(x)$ 在任一有限区间 $\lbrack 0,a\rbrack$($a>0$)上正常可积,在 $(0,+\infty)$ 上绝对可积,证明:
+  \[
+    \lim\limits_{n\to\infty}\int_0^{+\infty}f(x)|\sin nx|\,\mathrm{d}x
+    =\dfrac{2}{\pi}\int_0^{+\infty}f(x)\,\mathrm{d}x.
+  \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+  函数 $g(x)=|\sin x|$ 是周期为 $\pi$ 的连续函数,且
+  \[
+    \dfrac{1}{\pi}\int_0^\pi|\sin x|\,\mathrm{d}x=\dfrac{2}{\pi}.
+  \]
+  因 $f$ 在 $(0,+\infty)$ 上绝对可积,直接对 $f(x)$ 与 $g(nx)$ 应用
+  Riemann 引理,即得
+  \[
+    \lim\limits_{n\to\infty}\int_0^{+\infty}f(x)|\sin nx|\,\mathrm{d}x
+    =\dfrac{2}{\pi}\int_0^{+\infty}f(x)\,\mathrm{d}x.
+  \]
+\end{solution}
+
+\begin{example}
+  设 $p(t)$ 为 $\mathbb{R}$ 上连续函数满足:
+  \begin{enumerate}
+    \item $p(t)=0$,$|t|\geq1$;
+    \item $\displaystyle\int_{-\infty}^{+\infty}p(t)\,\mathrm{d}t=0$;
+    \item $\displaystyle\int_{-\infty}^{+\infty}tp(t)\,\mathrm{d}t=1$.
+  \end{enumerate}
+  又 $f(x)$ 为 $\mathbb{R}$ 上可微函数,证明:
+  \[
+    \lim\limits_{\lambda\to0}\int_{-\infty}^{+\infty}
+    \dfrac{1}{\lambda^2}p\left(\dfrac{t-x}{\lambda}\right)f(t)\,\mathrm{d}t
+    =f'(x).
+  \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+  先设 $\lambda>0$,令 $t=x+\lambda u$.利用
+  $\displaystyle\int_{-\infty}^{+\infty}p(u)\,\mathrm{d}u=0$,原积分化为
+  \[
+    \int_{-1}^{1}p(u)\dfrac{f(x+\lambda u)-f(x)}{\lambda}\,\mathrm{d}u.
+  \]
+  由 $f$ 在 $x$ 处可微,括号中的差商在 $u\in\lbrack-1,1\rbrack$ 上趋于
+  $u f'(x)$,从而极限为
+  \[
+    f'(x)\int_{-1}^{1}up(u)\,\mathrm{d}u=f'(x).
+  \]
+  但是当 $\lambda<0$ 时,换元中的测度因子为 $|\lambda|$,同样计算得到极限
+  $-f'(x)$.因此原题所写的双侧极限一般不存在;结论对 $\lambda\to0^+$ 成立.
+  若要保留双侧极限,核函数前的系数应相应改为 $1/(\lambda|\lambda|)$.
+\end{solution}
+
+我们知道,反常积分不能像常义积分那样定义为积分和的极限.接下来这个命题说明:对于单调无界反常积分,我们可以用类似于积分和的和式来逼近.
+
+\begin{proposition}[\markstar]
+  设 $f(x)$ 在 $(0,1)$ 上单调,$x=0,1$ 为奇点,$\displaystyle\int_0^1f(x)\,\mathrm{d}x$ 存在.证明:
+  \[
+    \lim\limits_{n\to\infty}
+    \dfrac{f\left(\dfrac{1}{n}\right)+f\left(\dfrac{2}{n}\right)+\cdots+f\left(\dfrac{n-1}{n}\right)}{n}
+    =\int_0^1f(x)\,\mathrm{d}x.
+  \]
+\end{proposition}
+
+\begin{remark}
+  \begin{enumerate}
+    \item 单调性条件可减弱为只在奇点某邻域内单调;
+    \item 该结论还可推广为更一般的情况,$f$ 条件同上,$\varphi(x)$ 在 $\lbrack 0,1\rbrack$ 上常义可积,则
+          \[
+            \lim\limits_{n\to\infty}\dfrac{1}{n}\sum\limits_{i=1}^{n-1}
+            \varphi\left(\dfrac{i}{n}\right)f\left(\dfrac{i}{n}\right)
+            =\int_0^1\varphi(x)f(x)\,\mathrm{d}x;
+          \]
+    \item 逆命题不成立,例如 $f(x)=\dfrac{1}{x}-\dfrac{1}{1-x}$.
+  \end{enumerate}
+\end{remark}
+
+\begin{example}
+  设 $0<a<d$,
+  \[
+    A_n=\dfrac{a+(a+d)+\cdots+[a+(n-1)d]}{n},
+  \]
+  \[
+    G_n=\sqrt[n]{a(a+d)\cdots[a+(n-1)d]}.
+  \]
+  试证:
+  \[
+    \lim\limits_{n\to\infty}\dfrac{G_n}{A_n}=\dfrac{2}{e}.
+  \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+  显然
+  \[
+    A_n=a+\dfrac{n-1}{2}d\sim\dfrac{nd}{2}.
+  \]
+  另一方面,
+  \[
+    \ln G_n=\dfrac{1}{n}\sum\limits_{k=0}^{n-1}\ln(a+kd)
+    =\ln(nd)+\dfrac{1}{n}\sum\limits_{k=0}^{n-1}
+    \ln\left(\dfrac{k+a/d}{n}\right).
+  \]
+  末项是瑕积分 $\displaystyle\int_0^1\ln x\,\mathrm{d}x=-1$ 的积分和,
+  故 $\ln G_n=\ln(nd)-1+o(1)$,即 $G_n\sim\dfrac{nd}{e}$.因此
+  \[
+    \lim\limits_{n\to\infty}\dfrac{G_n}{A_n}=\dfrac{2}{e}.
+  \]
+\end{solution}
+
+\begin{example}
+  $\{C_{n}^{k}\}_{k=0}^n$ 为二项式系数,$A_n,G_n$ 分别表示它们的算术平均值与几何平均值,试证:
+  \[
+    \lim\limits_{n\to\infty}\sqrt[n]{A_n}=2,
+    \qquad
+    \lim\limits_{n\to\infty}\sqrt[n]{G_n}=\sqrt{e}.
+  \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+  由二项式定理,
+  \[
+    A_n=\dfrac{1}{n+1}\sum\limits_{k=0}^nC_n^k=\dfrac{2^n}{n+1},
+  \]
+  故 $\displaystyle\lim\limits_{n\to\infty}\sqrt[n]{A_n}=2$.
+
+  再由 Stirling 公式,当 $k/n\to t\in(0,1)$ 时,
+  \[
+    \dfrac{1}{n}\ln C_n^k
+    =-t\ln t-(1-t)\ln(1-t)+o(1).
+  \]
+  于是
+  \[
+    \ln\sqrt[n]{G_n}
+    =\dfrac{1}{n(n+1)}\sum\limits_{k=0}^n\ln C_n^k
+    \longrightarrow\int_0^1[-t\ln t-(1-t)\ln(1-t)]\,\mathrm{d}t
+    =\dfrac{1}{2}.
+  \]
+  从而 $\displaystyle\lim\limits_{n\to\infty}\sqrt[n]{G_n}=\sqrt e$.
+\end{solution}
+
+\begin{example}
+  设 $f(x)$ 在 $\lbrack 1,+\infty)$ 上可微,$f(1)=1$,若有
+  \[
+    f'(x)=\dfrac{1}{x^2+f^2(x)},
+    \qquad 1\leq x<\infty,
+  \]
+  则
+  \[
+    \lim\limits_{x\to+\infty}f(x)<1+\dfrac{\pi}{4}.
+  \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+  由方程知 $f'(x)>0$,故 $f$ 单调递增且 $f(x)\geq1$.于是
+  \[
+    0<f'(x)=\dfrac{1}{x^2+f^2(x)}\leq\dfrac{1}{x^2+1}.
+  \]
+  所以 $f$ 有有限极限,并且
+  \[
+    \lim\limits_{x\to+\infty}f(x)-1
+    =\int_1^{+\infty}f'(x)\,\mathrm{d}x
+    <\int_1^{+\infty}\dfrac{\mathrm{d}x}{x^2+1}
+    =\dfrac{\pi}{4}.
+  \]
+  故 $\displaystyle\lim\limits_{x\to+\infty}f(x)<1+\dfrac{\pi}{4}$.
+\end{solution}
+
+
+\newpage
+
+\section{敛散性判别}
+
+\begin{remark}
+  判别反常积分敛散性的常用方法:
+  \begin{enumerate}
+    \item 设当 $x$ 充分大时 $f(x)\geq0$:
+          \begin{enumerate}
+            \item 若 $\displaystyle\lim\limits_{x\to+\infty}f(x)=0$,可考察 $x\to+\infty$ 时无穷小量 $f(x)$ 的阶:若阶数 $\lambda>1$,则收敛;当 $\lambda\leq1$ 时,发散;
+            \item 利用比较判别法或其极限形式;
+            \item 可考察 $\displaystyle\int_a^Af(x)\,\mathrm{d}x$ 是否有界.
+          \end{enumerate}
+    \item 设 $x\to+\infty$ 时,$f(x)$ 无穷次变号,则考虑用 Abel 或 Dirichlet 判别法;
+    \item 若前述方法均失效,可考虑用 Cauchy 收敛准则或定义;
+    \item 利用分部积分或换元转化为熟悉或容易判断的积分;
+    \item 利用级数(下一章详细介绍).
+  \end{enumerate}
+\end{remark}
+
+
+
+\subsection{非负函数积分敛散性判别}
+
+\begin{example}
+  讨论下列反常积分的敛散性:
+  \begin{enumerate}
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\mathrm{d}x}{\sqrt[3]{x^4+1}}$;
+    \item $\displaystyle\int_0^{\frac{\pi}{2}}\dfrac{1-\cos x}{x^p}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{x\arctan x}{1+x^p}\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\mathrm{d}x}{x^p+x^q}$;
+    \item $\displaystyle\int_0^{+\infty}\dfrac{x^p}{1+x^q}\,\mathrm{d}x$.
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  分别考察 $0$ 与 $+\infty$ 附近的等价无穷小.
+  \begin{enumerate}
+    \item 当 $x\to+\infty$ 时,被积函数等价于 $x^{-4/3}$;在 $0$ 附近有界,
+          故收敛.
+    \item 当 $x\to0^+$ 时,
+          \[
+            \dfrac{1-\cos x}{x^p}\sim\dfrac{1}{2}x^{2-p},
+          \]
+          故当且仅当 $p<3$ 时收敛.
+    \item 在 $0$ 附近被积函数等价于 $x^2$;当 $x\to+\infty$ 时等价于
+          $\dfrac{\pi}{2}x^{1-p}$.故当且仅当 $p>2$ 时收敛.
+    \item 在 $0$ 附近被积函数等价于 $x^{-\min\{p,q\}}$,在 $+\infty$ 附近
+          等价于 $x^{-\max\{p,q\}}$.故收敛的充要条件为
+          \[
+            \min\{p,q\}<1<\max\{p,q\}.
+          \]
+    \item 对任意实数 $p,q$,收敛的充要条件可统一写成
+          \[
+            \min\{q,0\}<p+1<\max\{q,0\}.
+          \]
+          特别地,在通常假设 $q>0$ 时,条件为 $p>-1$ 且 $q>p+1$.
+  \end{enumerate}
+\end{solution}
+
+\begin{example}
+  讨论下列积分的敛散性:
+  \begin{enumerate}
+    \item $\displaystyle\int_1^{+\infty}\dfrac{\mathrm{d}x}{\sqrt[r]{\ln x}}\quad(r>0)$;
+    \item $\displaystyle\int_2^{+\infty}\dfrac{\mathrm{d}x}{(\ln x)^{\ln x}}$;
+    \item $\displaystyle\int_3^{+\infty}\dfrac{\mathrm{d}x}{(\ln x)^{\ln\ln x}}$;
+    \item $\displaystyle\int_2^{+\infty}\dfrac{\mathrm{d}x}{(\ln x)(\ln x)^\alpha}$.
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  \begin{enumerate}
+    \item 在 $x=1$ 附近仅当 $r>1$ 时局部可积;但对任意 $r>0$,
+          $(\ln x)^{-1/r}$ 在无穷远处都比 $x^{-1/2}$ 衰减得慢,故积分总是发散.
+    \item 因
+          \[
+            (\ln x)^{\ln x}=x^{\ln\ln x},
+          \]
+          当 $x$ 充分大时被积函数小于 $x^{-2}$,故收敛.
+    \item 因
+          \[
+            (\ln x)^{\ln\ln x}=e^{(\ln\ln x)^2}=o(x^{1/2}),
+          \]
+          被积函数最终大于 $x^{-1/2}$,故发散.
+    \item 按现有题面,分母就是 $(\ln x)^{\alpha+1}$.任意对数幂都不足以使
+          无穷区间上的积分收敛,故对所有 $\alpha\in\mathbb{R}$ 均发散.
+          若原题意为 $\displaystyle\int_2^{+\infty}\dfrac{\mathrm{d}x}{x(\ln x)^\alpha}$,
+          则应为 $\alpha>1$ 时收敛.
+  \end{enumerate}
+\end{solution}
+
+\begin{example}
+  如果反常积分 $\displaystyle\int_a^bf^2$ 收敛,则称 $f$ 在 $\lbrack a,b\rbrack$ 上平方可积.分无穷积分与瑕积分两种情况讨论平方可积性与绝对可积性之间的关系.
+\end{example}
+\exampleblank
+
+\begin{solution}
+  对有限区间上的瑕积分,由 Cauchy--Schwarz 不等式,
+  \[
+    \int_a^b|f(x)|\,\mathrm{d}x
+    \leq\sqrt{b-a}\left(\int_a^bf^2(x)\,\mathrm{d}x\right)^{1/2},
+  \]
+  故平方可积蕴含绝对可积.逆命题不成立,例如在 $(0,1\rbrack$ 上
+  $f(x)=x^{-2/3}$ 绝对可积但不平方可积.
+
+  对无穷积分,两个方向都不成立.例如在 $\lbrack1,+\infty)$ 上,
+  $f(x)=1/x$ 平方可积但不绝对可积.反向可取局部可积函数
+  \[
+    f(x)=
+    \begin{cases}
+      n, & n\leq x\leq n+n^{-3}, \\
+      0, & \text{其他},
+    \end{cases}
+    \qquad n\in\mathbb{Z}^+.
+  \]
+  此时 $\displaystyle\int_1^{+\infty}|f(x)|\,\mathrm{d}x
+    =\sum\limits_{n=1}^{\infty}n^{-2}<+\infty$,而
+  $\displaystyle\int_1^{+\infty}f^2(x)\,\mathrm{d}x
+    =\sum\limits_{n=1}^{\infty}n^{-1}=+\infty$.
+\end{solution}
+
+\begin{example}
+  讨论
+  \[
+    \int_0^\pi\dfrac{\sin^{\alpha-1}x}{|1+k\cos x|^\alpha}\,\mathrm{d}x
+  \]
+  的敛散性.
+\end{example}
+\exampleblank
+
+\begin{solution}
+  在两个端点,只要分母不为零,被积函数均与端点距离的 $\alpha-1$ 次幂
+  同阶,故要求 $\alpha>0$.
+  \begin{itemize}
+    \item 若 $|k|<1$,分母在 $\lbrack0,\pi\rbrack$ 上不为零,故当且仅当
+          $\alpha>0$ 时收敛.
+    \item 若 $|k|=1$,分母在某一端点有二阶零点.该端点附近被积函数与
+          $u^{-\alpha-1}$ 同阶,要求 $\alpha<0$;这与另一端点所要求的
+          $\alpha>0$ 矛盾,故对所有 $\alpha$ 都发散.
+    \item 若 $|k|>1$,分母在 $(0,\pi)$ 内有一个一阶零点,该点附近要求
+          $\alpha<1$.结合端点条件,当且仅当 $0<\alpha<1$ 时收敛.
+  \end{itemize}
+\end{solution}
+
+\begin{example}
+  设 $f(x)$ 在 $\lbrack 1,+\infty)$ 上连续,对任意 $x\in\lbrack 1,+\infty)$ 有 $f(x)>0$,且
+  \[
+    \lim\limits_{x\to+\infty}\dfrac{\ln f(x)}{\ln x}=\lambda.
+  \]
+  证明:$\lambda>1$ 时,$\displaystyle\int_1^{+\infty}f(x)\,\mathrm{d}x$ 收敛.
+\end{example}
+\exampleblank
+
+\begin{solution}
+  原结论不成立.例如取 $f(x)=x^2$,则 $\lambda=2>1$,但
+  $\displaystyle\int_1^{+\infty}x^2\,\mathrm{d}x$ 发散.
+
+  实际上,由极限条件,任给 $\varepsilon>0$,当 $x$ 充分大时有
+  \[
+    x^{\lambda-\varepsilon}<f(x)<x^{\lambda+\varepsilon}.
+  \]
+  因此正确的收敛条件是 $\lambda<-1$:取充分小的 $\varepsilon>0$ 使
+  $\lambda+\varepsilon<-1$,再与 $x^{\lambda+\varepsilon}$ 比较即可.
+  相反,若 $\lambda>-1$,则与 $x^{\lambda-\varepsilon}$ 比较可知积分发散.
+\end{solution}
+
+\begin{example}
+  设 $f(x)$ 在 $(-\infty,+\infty)$ 上有定义,$f(x)>0$,且在任意有限区间 $\lbrack -A,B\rbrack$ 上可积($A,B>0$);又有定数 $M$,使得
+  \[
+    \int_{-\infty}^{+\infty}f(x)e^{-\frac{|x|}{k}}\,\mathrm{d}x<M
+  \]
+  对任意 $k>0$ 成立.证明:$\displaystyle\int_{-\infty}^{+\infty}f(x)\,\mathrm{d}x$ 收敛.
+\end{example}
+\exampleblank
+
+\begin{solution}
+  取 $k=n\in\mathbb{Z}^+$.对每个固定的 $x$,
+  $e^{-|x|/n}\uparrow1$.因 $f(x)>0$,由单调收敛定理,
+  \[
+    \int_{-\infty}^{+\infty}f(x)\,\mathrm{d}x
+    =\lim\limits_{n\to\infty}\int_{-\infty}^{+\infty}
+    f(x)e^{-|x|/n}\,\mathrm{d}x\leq M.
+  \]
+  故原积分收敛.
+\end{solution}
+
+\begin{example}
+  设函数 $f(x)$ 在 $\lbrack 0,1\rbrack$ 上连续,且 $\displaystyle\lim\limits_{x\to0}f(x)=\pm\infty$.对任意 $N\in\mathbb{Z}^+$,令
+  \[
+    f_N=\min\{f(x),N\}.
+  \]
+  证明:
+  \[
+    \int_0^1f(x)\,\mathrm{d}x\text{ 收敛}
+    \quad\Longleftrightarrow\quad
+    \lim\limits_{N\to+\infty}\int_0^1f_N(x)\,\mathrm{d}x\text{ 存在}.
+  \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+  题面存在两处冲突:函数若在闭区间 $\lbrack0,1\rbrack$ 上连续,便不可能在
+  $x\to0$ 时趋于无穷;此外,截断 $f_N=\min\{f,N\}$ 只适用于
+  $f(x)\to+\infty$ 的情形,不适用于 $f(x)\to-\infty$.
+
+  按通常题意,应设 $f$ 在 $(0,1\rbrack$ 上连续且 $f(x)\to+\infty$.
+  此时 $f_N(x)\uparrow f(x)$.将函数在一个充分小的端点邻域上平移为非负函数后,
+  由单调收敛定理,
+  \[
+    \lim\limits_{N\to+\infty}\int_0^1f_N(x)\,\mathrm{d}x
+    =\int_0^1f(x)\,\mathrm{d}x,
+  \]
+  其中两边允许取 $+\infty$.因此右端极限有限当且仅当原反常积分收敛.
+
+  若 $f(x)\to-\infty$,相应截断应改为
+  \[
+    f_N(x)=\max\{f(x),-N\}.
+  \]
+\end{solution}
+
+\begin{example}
+  设 $f(x)$ 是 $\lbrack 1,+\infty)$ 上的正值函数,若 $\displaystyle\int_1^{+\infty}f(x)\,\mathrm{d}x$ 收敛,则:
+  \begin{enumerate}
+    \item $\displaystyle\int_1^{+\infty}\dfrac{\sqrt{f(x)}}{x^p}\,\mathrm{d}x$($p>\dfrac{1}{2}$)收敛;
+    \item $\displaystyle\int_1^{+\infty}\dfrac{\mathrm{d}x}{x^2f(x)}$ 发散;
+    \item $\displaystyle\int_1^{+\infty}\sqrt{f(x)f(x+x_0)}\,\mathrm{d}x$ 收敛.
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  \begin{enumerate}
+    \item 由 Cauchy--Schwarz 不等式,
+          \[
+            \int_1^{+\infty}\dfrac{\sqrt{f(x)}}{x^p}\,\mathrm{d}x
+            \leq\left(\int_1^{+\infty}f(x)\,\mathrm{d}x\right)^{1/2}
+            \left(\int_1^{+\infty}\dfrac{\mathrm{d}x}{x^{2p}}\right)^{1/2}<+\infty.
+          \]
+    \item 对任意 $R>1$,
+          \[
+            (\ln R)^2
+            =\left(\int_1^R\sqrt{f(x)}\dfrac{\mathrm{d}x}{x\sqrt{f(x)}}\right)^2
+            \leq\int_1^Rf(x)\,\mathrm{d}x
+            \int_1^R\dfrac{\mathrm{d}x}{x^2f(x)}.
+          \]
+          第一因子有界而左端趋于无穷,故第二个积分发散.
+    \item 由算术--几何平均不等式,
+          \[
+            \sqrt{f(x)f(x+x_0)}\leq\dfrac{f(x)+f(x+x_0)}{2}.
+          \]
+          右端在 $\lbrack1,+\infty)$ 上可积,故原积分收敛.
+  \end{enumerate}
+\end{solution}
+
+\begin{example}
+  \begin{enumerate}
+    \item 设 $f\in C\lbrack 1,+\infty)$,$f(x)>0$,$\displaystyle F(x)=\int_1^xf(t)\,\mathrm{d}t$,若 $\displaystyle\int_1^{+\infty}f(x)\,\mathrm{d}x=+\infty$,则
+          \[
+            \int_1^{+\infty}\dfrac{f(x)}{F(x)\ln F(x)}\,\mathrm{d}x
+          \]
+          发散,而
+          \[
+            \int_2^{+\infty}\dfrac{f(x)}{F(x)\ln^2F(x)}\,\mathrm{d}x
+          \]
+          收敛;
+    \item 设 $F(x)$ 在 $\lbrack 1,+\infty)$ 上递减趋于 $0$,则 $\displaystyle\int_1^{+\infty}f(x)\,\mathrm{d}x$ 与 $\displaystyle\int_1^{+\infty}a^xf(a^x)\,\mathrm{d}x$($a>1$)同敛散.
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  \begin{enumerate}
+    \item 由于 $F'(x)=f(x)$ 且 $F(x)\to+\infty$,取 $x_0$ 使
+          $F(x_0)>1$.换元 $u=F(x)$ 得
+          \[
+            \int_{x_0}^{+\infty}\dfrac{f(x)}{F(x)\ln F(x)}\,\mathrm{d}x
+            =\int_{F(x_0)}^{+\infty}\dfrac{\mathrm{d}u}{u\ln u}=+\infty,
+          \]
+          而
+          \[
+            \int_{x_0}^{+\infty}\dfrac{f(x)}{F(x)\ln^2F(x)}\,\mathrm{d}x
+            =\int_{F(x_0)}^{+\infty}\dfrac{\mathrm{d}u}{u\ln^2u}<+\infty.
+          \]
+          题面所写的固定下限 $1,2$ 可能落在 $\ln F(x)$ 无定义或为零的位置,
+          但不影响无穷远处的敛散性.
+
+    \item 本小题的假设写的是 $F$,积分中却使用 $f$;关于 $F$ 的假设与结论无关,
+          应核对函数名.对题面中的两个 $f$ 积分,令 $u=a^x$,则
+          \[
+            \int_1^{+\infty}a^xf(a^x)\,\mathrm{d}x
+            =\dfrac{1}{\ln a}\int_a^{+\infty}f(u)\,\mathrm{d}u.
+          \]
+          去掉有限区间 $\lbrack1,a\rbrack$ 不影响敛散性,故二者同敛散.
+  \end{enumerate}
+\end{solution}
+
+\begin{example}
+  设 $f(x)$ 在 $\lbrack 0,+\infty)$ 上是正值递增函数,$\displaystyle F(x)=\int_0^xf(t)\,\mathrm{d}t$,$\displaystyle\lim\limits_{x\to0^+}\dfrac{x}{F(x)}=1$,则
+  \[
+    \int_0^{+\infty}\dfrac{1}{f(x)}\,\mathrm{d}x\text{ 收敛}
+    \quad\Longleftrightarrow\quad
+    \int_0^{+\infty}\dfrac{x}{F(x)}\,\mathrm{d}x\text{ 收敛}.
+  \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+  条件 $x/F(x)\to1$ 保证两积分在 $0$ 附近都正常,只需考察无穷远处.
+  因 $f$ 递增,
+  \[
+    F(x)=\int_0^xf(t)\,\mathrm{d}t\leq xf(x),
+  \]
+  故 $\dfrac{1}{f(x)}\leq\dfrac{x}{F(x)}$.于是右侧积分收敛蕴含左侧积分收敛.
+
+  反之,仍由单调性,
+  \[
+    F(x)\geq\int_{x/2}^xf(t)\,\mathrm{d}t\geq\dfrac{x}{2}f\left(\dfrac{x}{2}\right),
+  \]
+  所以
+  \[
+    \dfrac{x}{F(x)}\leq\dfrac{2}{f(x/2)}.
+  \]
+  换元 $u=x/2$ 即知左侧积分收敛蕴含右侧积分收敛.
+\end{solution}
+
+\begin{example}
+  设 $f\in C^{(2)}\lbrack a,+\infty)$,若积分
+  \[
+    \int_a^{+\infty}f^2(x)\,\mathrm{d}x,
+    \qquad
+    \int_a^{+\infty}[f''(x)]^2\,\mathrm{d}x
+  \]
+  均收敛,则 $\displaystyle\int_a^{+\infty}[f'(x)]^2\,\mathrm{d}x$ 收敛.
+\end{example}
+\exampleblank
+
+\begin{solution}
+  取光滑截断函数 $\eta_R$,使 $0\leq\eta_R\leq1$,
+  $\eta_R=1$ 于 $\lbrack a+1,R\rbrack$,支集包含于
+  $\lbrack a,R+1\rbrack$,且 $|\eta_R'|$ 有与 $R$ 无关的上界.分部积分得
+  \[
+    \int_a^{+\infty}\eta_R^2(f')^2\,\mathrm{d}x
+    =-\int_a^{+\infty}\eta_R^2ff''\,\mathrm{d}x
+    -2\int_a^{+\infty}\eta_R\eta_R'ff'\,\mathrm{d}x.
+  \]
+  记左端平方根为 $X_R$.由 Cauchy--Schwarz 不等式,
+  \[
+    X_R^2
+    \leq\|f\|_2\|f''\|_2+C\|f\|_2X_R,
+  \]
+  其中常数 $C$ 与 $R$ 无关.因此 $X_R$ 一致有界.令 $R\to+\infty$,得到
+  $\displaystyle\int_{a+1}^{+\infty}[f'(x)]^2\,\mathrm{d}x<+\infty$;
+  再加上有限区间上的积分即得结论.
+\end{solution}
+
+\begin{example}
+  设 $f(x)>0$,$\displaystyle\int_1^{+\infty}f(x)\,\mathrm{d}x$ 收敛.证明:$[f(x)]^{1-\frac{1}{x}}$ 收敛.
+\end{example}
+\exampleblank
+
+\begin{solution}
+  题面末句缺少积分号;按本节语境,应证明
+  \[
+    \int_1^{+\infty}[f(x)]^{1-\frac{1}{x}}\,\mathrm{d}x
+  \]
+  收敛.当 $x\geq2$ 时令 $r=1-1/x$.对任意 $t>0$,函数
+  $t^r-2t$ 的最大值在 $t=(r/2)^x$ 处取得,且该最大值不超过 $2^{1-x}$.
+  因此
+  \[
+    [f(x)]^{1-\frac{1}{x}}\leq2f(x)+2^{1-x}.
+  \]
+  右端在 $\lbrack2,+\infty)$ 上可积,而有限区间不影响敛散性,故所述积分收敛.
+\end{solution}
+
+\begin{example}
+  \begin{enumerate}
+    \item 设 $f(x)>0$($a\leq x<+\infty$),且对任意 $b>a$ 有 $f\in R\lbrack a,b\rbrack$.若对 $x_0>a$,有
+          \[
+            \lim\limits_{x\to+\infty}\dfrac{f(x+x_0)}{f(x)}=l,
+          \]
+          则
+          \[
+            \int_a^{+\infty}f(x)\,\mathrm{d}x
+            \begin{cases}
+              \text{收敛}, & l<1, \\
+              \text{发散}, & l>1;
+            \end{cases}
+          \]
+    \item 设 $f\in R\lbrack a,b\rbrack$($\forall b>a$),且 $f(x)>0$($a\leq x<+\infty$),
+          \[
+            \lim\limits_{x\to+\infty}\dfrac{f(kx)}{f(x)}=l,
+            \qquad k>1,
+          \]
+          则
+          \[
+            \int_a^{+\infty}f(x)\,\mathrm{d}x
+            \begin{cases}
+              \text{收敛}, & l<\dfrac{1}{k}, \\
+              \text{发散}, & l>\dfrac{1}{k}.
+            \end{cases}
+          \]
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  \begin{enumerate}
+    \item 取 $A>a$ 充分大,并记
+          \[
+            I_n=\int_{A+nx_0}^{A+(n+1)x_0}f(x)\,\mathrm{d}x.
+          \]
+          若 $l<1$,取 $l<q<1$,则 $A$ 可取到使
+          $f(x+x_0)\leq qf(x)$ 对 $x\geq A$ 成立,从而
+          $I_{n+1}\leq qI_n$,故 $\displaystyle\sum\limits_{n=0}^{\infty}I_n$ 收敛.
+          若 $l>1$,可取 $q>1$ 使 $I_{n+1}\geq qI_n$,于是 $I_n$ 不趋于零,
+          积分发散.
+
+    \item 取 $A>\max\{a,0\}$,记
+          \[
+            J_n=\int_{k^nA}^{k^{n+1}A}f(x)\,\mathrm{d}x.
+          \]
+          换元 $x=ku$ 得
+          \[
+            J_{n+1}=k\int_{k^nA}^{k^{n+1}A}f(ku)\,\mathrm{d}u.
+          \]
+          因而 $J_{n+1}/J_n$ 的上下界可由 $k f(ku)/f(u)$ 的上下界控制.
+          若 $kl<1$,各块积分构成收敛的几何控制;若 $kl>1$,块积分不趋于零.
+          这分别给出 $l<1/k$ 时收敛、$l>1/k$ 时发散.
+  \end{enumerate}
+\end{solution}
+
+类似于级数中判别法的讨论,比较判别法中常用的比较对象是 $p$ 积分 $\displaystyle\int_1^{+\infty}\dfrac{\mathrm{d}x}{x^p}$.那么,是否有一个普遍适用的比较标准呢?回答是否定的.
+
+\begin{proposition}[\markstar]
+  设 $f(x)\in C\lbrack a,+\infty)$ 且 $f(x)>0$,则:
+  \begin{enumerate}
+    \item 若 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 发散,令 $\displaystyle F(x)=\int_a^xf(t)\,\mathrm{d}t$,则
+          \begin{enumerate}
+            \item $\displaystyle\int_a^{+\infty}\dfrac{f(x)}{F(x)}\,\mathrm{d}x$ 发散;
+            \item $\displaystyle\int_a^{+\infty}\dfrac{f(x)}{F^{1+\delta}(x)}\,\mathrm{d}x$($\delta>0$)收敛.
+          \end{enumerate}
+    \item 若 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛,令 $\displaystyle R(x)=\int_x^{+\infty}f(t)\,\mathrm{d}t$,则
+          \begin{enumerate}
+            \item $\displaystyle\int_a^{+\infty}\dfrac{f(x)}{R(x)}\,\mathrm{d}x$ 发散;
+            \item $\displaystyle\int_a^{+\infty}\dfrac{f(x)}{R^{1-\delta}(x)}\,\mathrm{d}x$($\delta>0$)收敛.
+          \end{enumerate}
+  \end{enumerate}
+\end{proposition}
+
+
+
+\subsection{一般函数积分敛散性判别}
+
+\begin{proposition}[\markstar]
+  \begin{enumerate}
+    \item $\displaystyle\int_1^{+\infty}\dfrac{\sin x}{x^p}\,\mathrm{d}x$ 与 $\displaystyle\int_1^{+\infty}\dfrac{\cos x}{x^p}\,\mathrm{d}x$ 敛散性相同,且
+          \[
+            \begin{cases}
+              \text{绝对收敛}, & p>1,      \\
+              \text{条件收敛}, & 0<p\leq1, \\
+              \text{发散},   & p\leq0;
+            \end{cases}
+          \]
+    \item
+          \[
+            \int_0^\infty\dfrac{\sin x}{x^p}\,\mathrm{d}x
+            \begin{cases}
+              \text{绝对收敛}, & 1<p<2,     \\
+              \text{条件收敛}, & 0<p\leq1,  \\
+              \text{发散},   & \text{其它},
+            \end{cases}
+          \]
+          而
+          \[
+            \int_0^{+\infty}\dfrac{\cos x}{x^p}\,\mathrm{d}x
+            \begin{cases}
+              \text{条件收敛}, & 0<p<1,     \\
+              \text{发散},   & \text{其它}.
+            \end{cases}
+          \]
+  \end{enumerate}
+\end{proposition}
+
+\begin{example}
+  证明:积分
+  \[
+    \int_0^1\left(x\sin\dfrac{1}{x^2}-\dfrac{1}{x}\cos\dfrac{1}{x^2}\right)\,\mathrm{d}x
+  \]
+  收敛.
+\end{example}
+\exampleblank
+
+\begin{solution}
+  令 $t=1/x$,则原积分化为
+  \[
+    \int_1^{+\infty}\left(\dfrac{\sin t^2}{t^3}-\dfrac{\cos t^2}{t}\right)\,\mathrm{d}t.
+  \]
+  注意到
+  \[
+    \left(\dfrac{\sin t^2}{t^2}\right)'
+    =\dfrac{2\cos t^2}{t}-\dfrac{2\sin t^2}{t^3},
+  \]
+  故原积分等于
+  \[
+    -\dfrac{1}{2}\left[\dfrac{\sin t^2}{t^2}\right]_1^{+\infty}
+    =\dfrac{\sin1}{2}.
+  \]
+  因此积分收敛.
+\end{solution}
+
+\begin{example}
+  讨论下列反常积分的条件收敛与绝对收敛性:
+  \begin{enumerate}
+    \item $\displaystyle\int_0^{+\infty}\sin x^2\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}\cos^2x\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^{+\infty}x\sin^4x\,\mathrm{d}x$;
+    \item $\displaystyle\int_0^1\dfrac{1}{x^p}\sin\dfrac{1}{x}\,\mathrm{d}x$.
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  \begin{enumerate}
+    \item 令 $t=x^2$,则积分化为
+          $\dfrac{1}{2}\displaystyle\int_0^{+\infty}t^{-1/2}\sin t\,\mathrm{d}t$,
+          由 Dirichlet 判别法收敛;取绝对值后发散,故条件收敛.
+    \item 因 $\cos^2x\geq0$ 且每个周期上的积分为正,故发散.
+    \item 因 $x\sin^4x\geq0$,且在每个周期中 $\sin^4x$ 都有固定的正平均值,
+          故发散.
+    \item 令 $t=1/x$,则
+          \[
+            \int_0^1x^{-p}\sin\dfrac{1}{x}\,\mathrm{d}x
+            =\int_1^{+\infty}t^{p-2}\sin t\,\mathrm{d}t.
+          \]
+          因此 $p<1$ 时绝对收敛,$1\leq p<2$ 时条件收敛,$p\geq2$ 时发散.
+  \end{enumerate}
+\end{solution}
+
+\begin{example}
+  积分
+  \[
+    \int_0^{+\infty}\left[\left(1-\dfrac{\sin x}{x}\right)^{-\frac{1}{3}}-1\right]\,\mathrm{d}x
+  \]
+  是否收敛?是否绝对收敛?
+\end{example}
+\exampleblank
+
+\begin{solution}
+  当 $x\to0^+$ 时,
+  \[
+    1-\dfrac{\sin x}{x}\sim\dfrac{x^2}{6},
+  \]
+  故被积函数与 $6^{1/3}x^{-2/3}$ 同阶,在 $0$ 附近可积.
+  当 $x\to+\infty$ 时,由 Taylor 展开
+  \[
+    \left(1-\dfrac{\sin x}{x}\right)^{-1/3}-1
+    =\dfrac{\sin x}{3x}+O\left(\dfrac{1}{x^2}\right).
+  \]
+  第一项的积分条件收敛而不绝对收敛,余项绝对可积.故原积分条件收敛,
+  但不绝对收敛.
+\end{solution}
+
+\begin{example}
+  设 $\alpha,\beta\in\mathbb{R}$,讨论积分
+  \[
+    \int_0^{+\infty}x^\alpha\sin(x^\beta)\,\mathrm{d}x
+  \]
+  的绝对收敛性与条件收敛性.
+\end{example}
+\exampleblank
+
+\begin{solution}
+  若 $\beta=0$,被积函数为 $x^\alpha\sin1$,不可能同时在 $0$ 与
+  $+\infty$ 附近可积,故发散.
+
+  若 $\beta\neq0$,令 $t=x^\beta$,则问题归结为幂函数乘 $\sin t$ 的积分.
+  逐端点判别可得:
+  \begin{itemize}
+    \item 当 $\beta>0$ 时,绝对收敛的充要条件为
+          \[
+            -\beta-1<\alpha<-1;
+          \]
+          条件收敛的充要条件为
+          \[
+            -1\leq\alpha<\beta-1.
+          \]
+    \item 当 $\beta<0$ 时,绝对收敛的充要条件为
+          \[
+            -1<\alpha<-\beta-1;
+          \]
+          条件收敛的充要条件为
+          \[
+            \beta-1<\alpha\leq-1.
+          \]
+  \end{itemize}
+  除上述范围外均发散.
+\end{solution}
+
+\begin{example}
+  讨论下列积分的绝对收敛性与条件收敛性:
+  \begin{enumerate}
+    \item $\displaystyle\int_0^{+\infty}\dfrac{\sin\left(x+\dfrac{1}{x}\right)}{x^\alpha}\,\mathrm{d}x$;
+    \item $\displaystyle\int_1^{+\infty}\sin\left(\dfrac{\sin x}{\sqrt{x}}\right)\dfrac{\mathrm{d}x}{\sqrt{x}}$.
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  \begin{enumerate}
+    \item 在 $x\to0^+$ 时令 $t=1/x$,可知该端点的积分在 $\alpha<2$ 时
+          收敛、在 $\alpha<1$ 时绝对收敛;在 $+\infty$ 端,由 Dirichlet 判别法,
+          $\alpha>0$ 时收敛、$\alpha>1$ 时绝对收敛.因此原积分当且仅当
+          $0<\alpha<2$ 时条件收敛,不存在绝对收敛的参数.
+
+    \item 当 $x\to+\infty$ 时,
+          \[
+            \dfrac{1}{\sqrt{x}}\sin\left(\dfrac{\sin x}{\sqrt{x}}\right)
+            =\dfrac{\sin x}{x}+O\left(\dfrac{1}{x^2}\right).
+          \]
+          故原积分与 Dirichlet 积分具有相同的敛散性质:条件收敛而不绝对收敛.
+  \end{enumerate}
+\end{solution}
+
+\begin{example}
+  判断下列积分的敛散性:
+  \begin{enumerate}
+    \item $\displaystyle\int_1^{+\infty}\tan\left(\dfrac{\sin x}{x}\right)\,\mathrm{d}x$;
+    \item $\displaystyle\int_1^{+\infty}\dfrac{\ln\cos\dfrac{1}{x}}{x^p}\,\mathrm{d}x$;
+    \item $\displaystyle\int_1^{+\infty}\dfrac{\sin x}{x^\alpha-\sin x}\,\mathrm{d}x$.
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  \begin{enumerate}
+    \item 由 $\tan u=u+O(u^3)$,
+          \[
+            \tan\left(\dfrac{\sin x}{x}\right)
+            =\dfrac{\sin x}{x}+O\left(\dfrac{1}{x^3}\right),
+          \]
+          故积分条件收敛而不绝对收敛.
+    \item 由 $\ln\cos u=-u^2/2+O(u^4)$,
+          \[
+            \dfrac{\ln\cos(1/x)}{x^p}\sim-\dfrac{1}{2x^{p+2}},
+          \]
+          故当且仅当 $p>-1$ 时收敛,且此时绝对收敛.
+    \item 当 $\alpha\leq0$ 时,分母在无穷远处反复出现零点或被积函数不趋于零,
+          积分发散.当 $\alpha>0$ 时,
+          \[
+            \dfrac{\sin x}{x^\alpha-\sin x}
+            =\dfrac{\sin x}{x^\alpha}+\dfrac{\sin^2x}{x^{2\alpha}}
+            +O\left(\dfrac{1}{x^{3\alpha}}\right).
+          \]
+          第一项对所有 $\alpha>0$ 收敛;第二项当且仅当 $2\alpha>1$ 时收敛.
+          因此 $\alpha>1/2$ 时收敛,其中 $\alpha>1$ 时绝对收敛,
+          $1/2<\alpha\leq1$ 时条件收敛;其余情形发散.
+  \end{enumerate}
+\end{solution}
+
+\begin{example}
+  设 $f(x)>0$ 单调递减,试证:
+  \[
+    \int_a^{+\infty}f(x)\,\mathrm{d}x
+    \quad\text{与}\quad
+    \int_a^{+\infty}f(x)\sin^2x\,\mathrm{d}x
+  \]
+  同敛散.
+\end{example}
+\exampleblank
+
+\begin{solution}
+  若 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛,则因
+  $0\leq f(x)\sin^2x\leq f(x)$,另一个积分也收敛.
+
+  反之,对充分大的整数 $n$,在区间
+  $\lbrack n\pi+\pi/4,n\pi+3\pi/4\rbrack$ 上有 $\sin^2x\geq1/2$.
+  利用 $f$ 单调递减,
+  \[
+    \int_{n\pi+\pi/4}^{n\pi+3\pi/4}f(x)\sin^2x\,\mathrm{d}x
+    \geq\dfrac{\pi}{4}f((n+1)\pi).
+  \]
+  若右侧积分收敛,则 $\displaystyle\sum\limits_n f(n\pi)$ 收敛;
+  再由单调函数的积分判别法,$\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛.
+\end{solution}
+
+\begin{example}
+  设 $f(x)$ 在 $\lbrack a,+\infty)$ 上可微,且 $x\to+\infty$ 时 $f'(x)$ 单调递增趋于 $+\infty$.证明:
+  \[
+    \int_a^{+\infty}\sin(f(x))\,\mathrm{d}x
+    \quad\text{和}\quad
+    \int_a^{+\infty}\cos(f(x))\,\mathrm{d}x
+  \]
+  都收敛.
+\end{example}
+\exampleblank
+
+\begin{solution}
+  取 $A$ 充分大,使 $f'(x)>0$ 对 $x\geq A$ 成立.令 $u=f(x)$,
+  并以 $x=\varphi(u)$ 表示反函数,则
+  \[
+    \int_A^{+\infty}\sin(f(x))\,\mathrm{d}x
+    =\int_{f(A)}^{+\infty}\sin u\,h(u)\,\mathrm{d}u,
+    \qquad
+    h(u)=\dfrac{1}{f'(\varphi(u))}.
+  \]
+  由 $f'$ 单调递增趋于 $+\infty$,函数 $h$ 单调递减趋于 $0$.
+  故由 Dirichlet 判别法,上式收敛.将 $\sin u$ 换为 $\cos u$ 完全相同,
+  所以两个积分都收敛.
+\end{solution}
+
+对于周期函数特有的积分性质 $\displaystyle\int_a^{a+T}f(x)\,\mathrm{d}x=\int_0^Tf(x)\,\mathrm{d}x$($T$ 为 $f$ 周期),我们常对周期函数反常积分作周期处理.
+
+\begin{example}
+  设 $f\in C\lbrack a,+\infty)$ 且是周期为 $T$ 的周期函数,又 $g(x)$ 是 $\lbrack a,+\infty)$ 上的单调函数,且 $\displaystyle\lim\limits_{x\to+\infty}g(x)=0$,则:
+  \begin{enumerate}
+    \item 若 $\displaystyle\int_a^{a+T}f(x)\,\mathrm{d}x=0$,则 $\displaystyle\int_a^{+\infty}f(x)g(x)\,\mathrm{d}x$ 收敛;
+    \item 若 $\displaystyle\int_a^{a+T}f(x)\,\mathrm{d}x\neq0$,则 $\displaystyle\int_a^{+\infty}f(x)g(x)\,\mathrm{d}x$ 与 $\displaystyle\int_a^{+\infty}g(x)\,\mathrm{d}x$ 同敛散.
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  记周期平均值
+  \[
+    m=\dfrac{1}{T}\int_a^{a+T}f(x)\,\mathrm{d}x,
+    \qquad
+    h(x)=f(x)-m.
+  \]
+  则 $h$ 为周期函数且一个周期上的积分为零,所以
+  $\displaystyle H(x)=\int_a^xh(t)\,\mathrm{d}t$ 有界.
+  由 Dirichlet 判别法,对任意单调趋于零的 $g$,
+  $\displaystyle\int_a^{+\infty}h(x)g(x)\,\mathrm{d}x$ 收敛.
+  因此
+  \[
+    \int_a^{+\infty}f(x)g(x)\,\mathrm{d}x
+    =m\int_a^{+\infty}g(x)\,\mathrm{d}x
+    +\int_a^{+\infty}h(x)g(x)\,\mathrm{d}x.
+  \]
+  当 $m=0$ 时第一项消失,得到 (1);当 $m\neq0$ 时,第二项总收敛,
+  故左侧与 $\displaystyle\int_a^{+\infty}g(x)\,\mathrm{d}x$ 同敛散.
+\end{solution}
+
+\begin{example}[\markstar]
+  讨论积分
+  \[
+    \int_0^{+\infty}\dfrac{x}{1+x^6\sin^2x}\,\mathrm{d}x
+  \]
+  的敛散性.
+\end{example}
+\exampleblank
+
+\begin{solution}
+  只需考察无穷远处.对充分大的整数 $n$,在
+  $I_n=\lbrack n\pi-\pi/2,n\pi+\pi/2\rbrack$ 上写 $x=n\pi+u$.
+  此时 $x\asymp n$,且 $|\sin u|\geq2|u|/\pi$.于是
+  \[
+    \int_{I_n}\dfrac{x}{1+x^6\sin^2x}\,\mathrm{d}x
+    \leq Cn\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}
+    \dfrac{\mathrm{d}u}{1+c n^6u^2}
+    \leq\dfrac{C_1}{n^2}.
+  \]
+  因 $\displaystyle\sum\limits_{n=1}^{\infty}n^{-2}$ 收敛,原积分收敛.
+\end{solution}
+
+\begin{example}[\markstar]
+  讨论积分
+  \[
+    \int_0^{+\infty}\dfrac{x}{1+x^4\sin^2x}\,\mathrm{d}x
+  \]
+  的敛散性.
+\end{example}
+\exampleblank
+
+\begin{solution}
+  仍考察每个 $n\pi$ 附近.当
+  $|x-n\pi|\leq n^{-2}$ 时,$x\asymp n$ 且
+  $x^4\sin^2x\leq Cn^4(x-n\pi)^2\leq C$.因此
+  \[
+    \int_{n\pi-n^{-2}}^{n\pi+n^{-2}}
+    \dfrac{x}{1+x^4\sin^2x}\,\mathrm{d}x
+    \geq\dfrac{c}{n}.
+  \]
+  这些区间在 $n$ 充分大时两两不交,而
+  $\displaystyle\sum\limits_{n=1}^{\infty}n^{-1}$ 发散,故原积分发散.
+\end{solution}
+
+
+\newpage
+
+\section{无穷远处性质}
+
+反常积分许多性质可类比于级数,有时甚至完全一样,但有时也天差地别.考虑收敛级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$,有 $\displaystyle\lim\limits_{n\to\infty}a_n=0$.自然的一个疑问是,能否有如下结论:
+\[
+  \int_a^{+\infty}f(x)\,\mathrm{d}x\text{ 收敛}
+  \quad\Longrightarrow\quad
+  \lim\limits_{x\to+\infty}f(x)=0?
+\]
+答案是否定的,上节最后几个例子均为反例,并且一般情况下都得不到如上结论.下面给出一个特殊情况下的成立条件.
+
+\begin{proposition}[\markstar]
+  设 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛且 $f\in C\lbrack a,+\infty)$,则
+  \[
+    \lim\limits_{x\to+\infty}f(x)=0
+    \quad\Longleftrightarrow\quad
+    f\text{ 在 }\lbrack a,+\infty)\text{ 上一致连续}.
+  \]
+\end{proposition}
+
+\begin{corollary}[\markstar]
+  设 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛,且 $|f'(x)|\leq M$,则
+  \[
+    \lim\limits_{x\to+\infty}f(x)=0.
+  \]
+\end{corollary}
+
+\begin{example}
+  设 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛,且 $\displaystyle\lim\limits_{x\to+\infty}f(x)$ 存在,则
+  \[
+    \lim\limits_{x\to+\infty}f(x)=0.
+  \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+  设 $\displaystyle\lim\limits_{x\to+\infty}f(x)=L$.若 $L\neq0$,则当 $x$
+  充分大时,$f(x)$ 与 $L$ 同号且 $|f(x)|\geq|L|/2$.于是尾积分的绝对值
+  随区间长度无界增长,与反常积分的 Cauchy 收敛准则矛盾.故 $L=0$.
+\end{solution}
+
+\begin{example}
+  \begin{enumerate}
+    \item 设 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛,且 $f$ 单调,则 $\displaystyle\lim\limits_{x\to+\infty}xf(x)=0$.逆命题是否成立?
+    \item 设 $\displaystyle\int_a^{+\infty}x^\alpha f(x)\,\mathrm{d}x$ 收敛,且 $f$ 单调,则 $\displaystyle\lim\limits_{x\to+\infty}x^{\alpha+1}f(x)=0$.
+    \item 设 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛,且 $xf(x)$ 单调,则 $\displaystyle\lim\limits_{x\to+\infty}xf(x)\ln x=0$.
+    \item 设 $\displaystyle\int_a^x f(x)\,\mathrm{d}x$ 收敛,且 $\dfrac{f(x)}{x}$ 单调递减($a>0$),则 $\displaystyle\lim\limits_{x\to+\infty}xf(x)=0$.
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  \begin{enumerate}
+    \item 由单调性与积分收敛性,$f$ 最终同号并趋于 $0$.以最终非负递减的情形为例,
+          \[
+            \dfrac{x}{2}f(x)\leq\int_{x/2}^xf(t)\,\mathrm{d}t\longrightarrow0.
+          \]
+          另一种符号同理,故 $xf(x)\to0$.逆命题不成立,例如
+          $f(x)=1/(x\ln x)$ 在 $x\geq e$ 时满足 $xf(x)\to0$,但积分发散.
+
+    \item 在区间 $\lbrack x/2,x\rbrack$ 上,$t^\alpha$ 与 $x^\alpha$ 相差至多
+          一个只依赖于 $\alpha$ 的常数倍.结合 $f$ 的单调性与尾积分趋于零,可得
+          \[
+            c_\alpha x^{\alpha+1}|f(x)|
+            \leq\left|\int_{x/2}^xt^\alpha f(t)\,\mathrm{d}t\right|\longrightarrow0,
+          \]
+          故 $x^{\alpha+1}f(x)\to0$.
+
+    \item 令 $x=e^u$ 及 $h(u)=e^u f(e^u)$.则 $h$ 单调,且
+          \[
+            \int_{\ln a}^{+\infty}h(u)\,\mathrm{d}u
+            =\int_a^{+\infty}f(x)\,\mathrm{d}x
+          \]
+          收敛.对 $h$ 应用 (1),得到 $u h(u)\to0$,即
+          $xf(x)\ln x\to0$.
+
+    \item 题面中的 $\displaystyle\int_a^x f(x)\,\mathrm{d}x$ 记号有误;
+          按语意应为 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$.
+          令 $g(x)=f(x)/x$,则 $g$ 单调递减且
+          \[
+            \int_a^{+\infty}xg(x)\,\mathrm{d}x
+            =\int_a^{+\infty}f(x)\,\mathrm{d}x
+          \]
+          收敛.对 (2) 取 $\alpha=1$,得 $x^2g(x)=xf(x)\to0$.
+  \end{enumerate}
+\end{solution}
+
+\begin{example}
+  \begin{enumerate}
+    \item 设 $f\in C\lbrack a,+\infty)$ 且 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛,则存在数列 $\{x_n\}\subseteq\lbrack a,+\infty)$ 满足
+          \[
+            \lim\limits_{n\to\infty}x_n=+\infty,
+            \qquad
+            \lim\limits_{n\to\infty}f(x_n)=0;
+          \]
+    \item 设 $f\in C\lbrack a,+\infty)$ 且 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛,则存在数列 $\{x_n\}\subseteq\lbrack a,+\infty)$ 满足
+          \[
+            \lim\limits_{n\to\infty}x_n=+\infty,
+            \qquad
+            \lim\limits_{n\to\infty}x_nf(x_n)=0;
+          \]
+    \item 设 $f$ 在 $\lbrack a,+\infty)$ 上可微且 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛,证明:存在数列 $\{x_n\}\subseteq\lbrack a,+\infty)$ 满足
+          \[
+            \lim\limits_{n\to\infty}x_n=+\infty,
+            \qquad
+            \lim\limits_{n\to\infty}f'(x_n)=0.
+          \]
+  \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+  三问均用反证法.
+  \begin{enumerate}
+    \item 若不存在所求数列,则存在 $\varepsilon>0$ 与 $A$,使
+          $|f(x)|\geq\varepsilon$ 对所有 $x\geq A$ 成立.由连续性,$f$ 在该尾区间
+          上不能变号,故尾积分不可能收敛,矛盾.
+
+    \item 若不存在所求数列,则存在 $\varepsilon>0$ 与 $A>0$,使
+          $|xf(x)|\geq\varepsilon$ 对所有 $x\geq A$ 成立.连续性同样保证 $f$
+          在尾区间上符号不变,于是对 $B>A$,
+          \[
+            \left|\int_A^Bf(x)\,\mathrm{d}x\right|
+            \geq\varepsilon\int_A^B\dfrac{\mathrm{d}x}{x}
+            =\varepsilon\ln\dfrac{B}{A},
+          \]
+          与积分收敛矛盾.
+
+    \item 若不存在所求数列,则存在 $\varepsilon>0$ 与 $A$,使
+          $|f'(x)|\geq\varepsilon$ 对所有 $x\geq A$ 成立.导数具有介值性,
+          因而 $f'$ 在尾区间上符号不变.于是 $|f(x)|$ 至少线性增长,
+          $f$ 最终符号不变,从而其反常积分不可能收敛,矛盾.
+  \end{enumerate}
+\end{solution}
+
+\begin{example}
+  证明:若 $f$ 连续可微,$\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 与 $\displaystyle\int_a^{+\infty}f'(x)\,\mathrm{d}x$ 都收敛,则
+  \[
+    \lim\limits_{x\to+\infty}f(x)=0.
+  \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+  由微积分基本定理,
+  \[
+    f(x)=f(a)+\int_a^xf'(t)\,\mathrm{d}t.
+  \]
+  因 $\displaystyle\int_a^{+\infty}f'(t)\,\mathrm{d}t$ 收敛,
+  $\displaystyle\lim\limits_{x\to+\infty}f(x)$ 存在.再由上一题,
+  $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛迫使该极限等于 $0$.
+\end{solution}

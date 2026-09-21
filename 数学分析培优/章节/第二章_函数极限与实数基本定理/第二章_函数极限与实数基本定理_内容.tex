@@ -1,0 +1,1514 @@
+\setcounter{chapter}{1}
+\pagestyle{fancy}
+
+\chapter{函数极限与实数基本定理}
+
+
+\section{求极限值}
+
+
+\subsection{等价无穷小及已知极限}
+
+\begin{proposition}[\marktwostar\ 常用的等价关系与极限]
+    当 $x\to0$ 时,
+    \[
+        \begin{aligned}
+            x & \sim\sin x\sim\tan x\sim\arcsin x\sim\arctan x\sim\ln(1+x) \\
+              & \sim e^x-1
+            \sim\dfrac{a^x-1}{\ln a}
+            \sim\dfrac{(1+x)^b-1}{b},
+            \qquad a>0,\ b\neq0.
+        \end{aligned}
+    \]
+    此外,
+    \[
+        1-\cos x\sim\dfrac{1}{2}x^2,
+        \qquad
+        (1+x)^{\frac{1}{x}}
+        =e-\dfrac{e}{2}x+\dfrac{11e}{24}x^2+o(x^2).
+    \]
+    又有
+    \[
+        1+\dfrac{1}{2}+\dfrac{1}{3}+\cdots+\dfrac{1}{n}
+        =\ln n+\gamma+\alpha_n,
+        \qquad
+        \lim\limits_{n\to\infty}\alpha_n=0,
+    \]
+    其中 $\gamma$ 为 Euler 常数.并且
+    \[
+        n!=\sqrt{2\pi n}\left(\dfrac{n}{e}\right)^n
+        e^{\frac{\theta_n}{12n}}
+        \sim
+        \sqrt{2\pi n}\left(\dfrac{n}{e}\right)^n,
+        \qquad 0\leq\theta_n\leq1.
+    \]
+\end{proposition}
+
+\begin{example}
+    求下列极限:
+    \begin{enumerate}
+        \item $\displaystyle
+                  \lim\limits_{n\to\infty}
+                  \dfrac{n^3\sqrt[n]{2\left(1-\cos\dfrac{1}{n^2}\right)}}{\sqrt{n^2+1}-n}$;
+        \item $\displaystyle
+                  \lim\limits_{x\to0}
+                  \dfrac{x(1-\cos x)}{(1-e^x)\sin x^2}$;
+        \item $\displaystyle
+                  \lim\limits_{x\to0}
+                  \dfrac{\arctan x}{\ln(1+\sin x)}$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    利用基本等价无穷小逐项计算.
+    \begin{enumerate}
+        \item 因为
+              \[
+                  2\left(1-\cos\dfrac{1}{n^2}\right)\sim\dfrac{1}{n^4},
+                  \qquad
+                  \sqrt{n^2+1}-n
+                  =\dfrac{1}{\sqrt{n^2+1}+n}\sim\dfrac{1}{2n},
+              \]
+              且
+              \[
+                  \sqrt[n]{2\left(1-\cos\dfrac{1}{n^2}\right)}
+                  =\exp\left\{\dfrac{1}{n}\ln\left[2\left(1-\cos\dfrac{1}{n^2}\right)\right]\right\}
+                  \longrightarrow 1,
+              \]
+              故原极限为 $+\infty$.
+        \item 当 $x\to0$ 时,
+              \[
+                  x(1-\cos x)\sim\dfrac{x^3}{2},
+                  \qquad
+                  (1-e^x)\sin x^2\sim(-x)x^2=-x^3,
+              \]
+              所以极限为 $-\dfrac{1}{2}$.
+        \item 由 $\arctan x\sim x$,$\ln(1+\sin x)\sim\sin x\sim x$,极限为 $1$.
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    求
+    \[
+        \lim\limits_{n\to\infty}
+        \left(\dfrac{1}{n+1}+\dfrac{1}{n+2}+\cdots+\dfrac{1}{2n}\right).
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    该和式是区间 $\lbrack 1,2\rbrack$ 上函数 $1/x$ 的 Riemann 和:
+    \[
+        \sum\limits_{k=1}^{n}\dfrac{1}{n+k}
+        =\dfrac{1}{n}\sum\limits_{k=1}^{n}\dfrac{1}{1+\dfrac{k}{n}}
+        \longrightarrow\int_0^1\dfrac{\mathrm{d}x}{1+x}
+        =\ln2.
+    \]
+\end{solution}
+
+\begin{example}
+    求
+    \[
+        \lim\limits_{n\to\infty}
+        \sqrt[n]{
+            \prod\limits_{i=1}^{n}
+            \dfrac{e^{1-\frac{1}{i}}}{\left(1+\dfrac{1}{i}\right)^i}
+        }.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    记原式为 $A_n$.取对数得
+    \[
+        \ln A_n
+        =\dfrac{1}{n}\sum\limits_{i=1}^{n}
+        \left[1-\dfrac{1}{i}-i\ln\left(1+\dfrac{1}{i}\right)\right].
+    \]
+    由
+    \[
+        i\ln\left(1+\dfrac{1}{i}\right)
+        =1-\dfrac{1}{2i}+O\left(\dfrac{1}{i^2}\right),
+    \]
+    可得
+    \[
+        \ln A_n
+        =-\dfrac{1}{2n}\sum\limits_{i=1}^{n}\dfrac{1}{i}
+        +O\left(\dfrac{1}{n}\sum\limits_{i=1}^{n}\dfrac{1}{i^2}\right)
+        \longrightarrow0.
+    \]
+    因此 $A_n\to e^0=1$.
+\end{solution}
+
+\begin{example}
+    求下列极限:
+    \begin{enumerate}
+        \item $\displaystyle
+                  \lim\limits_{x\to0}
+                  \dfrac{(1+x)^{\frac{1}{x}}-e}{x}$;
+        \item $\displaystyle
+                  \lim\limits_{x\to0}
+                  \dfrac{(1+x)^{\frac{1}{x}}-(1+2x)^{\frac{1}{2x}}}{\sin x}$;
+        \item $\displaystyle
+                  \lim\limits_{x\to+\infty}
+                  \left[
+                      \dfrac{x^2}{e}\left(1+\dfrac{1}{x}\right)^x
+                      -x^2+\dfrac{x}{2}
+                      \right]$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    使用展开式
+    \[
+        (1+t)^{\frac{1}{t}}
+        =e\left(1-\dfrac{t}{2}+\dfrac{11t^2}{24}+O(t^3)\right).
+    \]
+    于是
+    \begin{enumerate}
+        \item
+              \[
+                  \dfrac{(1+x)^{\frac{1}{x}}-e}{x}
+                  =-\dfrac{e}{2}+O(x)\longrightarrow-\dfrac{e}{2}.
+              \]
+        \item 分别令 $t=x$ 与 $t=2x$,有
+              \[
+                  (1+x)^{\frac{1}{x}}-(1+2x)^{\frac{1}{2x}}
+                  =\dfrac{e}{2}x+O(x^2),
+              \]
+              而 $\sin x\sim x$,故极限为 $\dfrac{e}{2}$.
+        \item 令 $t=1/x$,则
+              \[
+                  \dfrac{1}{e}\left(1+\dfrac{1}{x}\right)^x
+                  =1-\dfrac{1}{2x}+\dfrac{11}{24x^2}+O\left(\dfrac{1}{x^3}\right).
+              \]
+              代回原式即得极限 $\dfrac{11}{24}$.
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    求
+    \[
+        \lim\limits_{n\to\infty}\dfrac{(2n-1)!!}{(2n)!!}.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    由 Wallis 公式,
+    \[
+        \dfrac{(2n-1)!!}{(2n)!!}\sim\dfrac{1}{\sqrt{\pi n}},
+    \]
+    故所求极限为 $0$.
+\end{solution}
+
+
+
+\subsection{洛必达法则}
+
+\begin{enumerate}
+    \item 在使用洛必达法则之前,务必先检验是否属于可使用的几种不定式之一;
+    \item 洛必达法则只是充分条件,而非必要条件,即就算洛必达法则算不出结果,也并不意味着极限不存在.例如
+          $\displaystyle\lim\limits_{x\to+\infty}\dfrac{x+\sin x}{x+\cos x}=1$;
+    \item 在使用洛必达法则前及过程中,能用等价无穷小代换的尽量先换,不要盲目一直求导.
+\end{enumerate}
+
+\begin{example}
+    求下列极限:
+    \begin{enumerate}
+        \item $\displaystyle
+                  \lim\limits_{x\to0}
+                  \left[\dfrac{1}{\ln(1+x)}-\dfrac{1}{x}\right]$;
+        \item $\displaystyle
+                  \lim\limits_{x\to0}
+                  \left(\dfrac{\sin x}{x}\right)^{\frac{1}{1-\cos x}}$;
+        \item $\displaystyle
+                  \lim\limits_{x\to\frac{\pi}{4}}
+                  \dfrac{\sec^2x-2\tan x}{1+\cos4x}$;
+        \item $\displaystyle
+                  \lim\limits_{x\to+\infty}
+                  \dfrac{\left(\int_0^x e^{t^2}\,\mathrm{d}t\right)^2}
+                  {\int_0^x e^{2t^2}\,\mathrm{d}t}$;
+        \item $\displaystyle
+                  \lim\limits_{x\to+\infty}\sqrt[x]{x}$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 通分后应用洛必达法则:
+              \[
+                  \lim\limits_{x\to0}
+                  \dfrac{x-\ln(1+x)}{x\ln(1+x)}
+                  =\lim\limits_{x\to0}\dfrac{\dfrac{x}{1+x}}{\ln(1+x)+\dfrac{x}{1+x}}
+                  =\dfrac{1}{2}.
+              \]
+        \item 设极限为 $A$,则
+              \[
+                  \ln A
+                  =\lim\limits_{x\to0}
+                  \dfrac{\ln\left(\dfrac{\sin x}{x}\right)}{1-\cos x}
+                  =\lim\limits_{x\to0}\dfrac{-\dfrac{x^2}{6}+O(x^4)}{\dfrac{x^2}{2}+O(x^4)}
+                  =-\dfrac{1}{3},
+              \]
+              因而 $A=e^{-\frac{1}{3}}$.
+        \item 注意到
+              \[
+                  \sec^2x-2\tan x=(\tan x-1)^2,
+                  \qquad
+                  1+\cos4x=2\cos^22x.
+              \]
+              又
+              \[
+                  \tan x-1=-\dfrac{\cos2x}{\cos x(\sin x+\cos x)},
+              \]
+              故原式趋于
+              \[
+                  \dfrac{1}{2\cos^2\dfrac{\pi}{4}
+                      \left(\sin\dfrac{\pi}{4}+\cos\dfrac{\pi}{4}\right)^2}
+                  =\dfrac{1}{2}.
+              \]
+        \item 记
+              \[
+                  F(x)=\int_0^x e^{t^2}\,\mathrm{d}t,
+                  \qquad
+                  G(x)=\int_0^x e^{2t^2}\,\mathrm{d}t.
+              \]
+              连续使用洛必达法则可得
+              \[
+                  \lim\limits_{x\to+\infty}\dfrac{F(x)^2}{G(x)}
+                  =\lim\limits_{x\to+\infty}\dfrac{2F(x)}{e^{x^2}}
+                  =\lim\limits_{x\to+\infty}\dfrac{2e^{x^2}}{2xe^{x^2}}=0.
+              \]
+        \item 取对数,
+              \[
+                  \lim\limits_{x\to+\infty}\ln\sqrt[x]{x}
+                  =\lim\limits_{x\to+\infty}\dfrac{\ln x}{x}=0,
+              \]
+              故原极限为 $1$.
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    求下列极限:
+    \begin{enumerate}
+        \item $\displaystyle
+                  \lim\limits_{x\to+\infty}\left(\cos\dfrac{1}{x}+\sin\dfrac{1}{x}\right)$;
+        \item $\displaystyle
+                  \lim\limits_{x\to0}
+                  \left[\dfrac{(1+x)^{\frac{1}{x}}}{e}\right]^{\frac{1}{x}}$;
+        \item $\displaystyle
+                  \lim\limits_{x\to+\infty}
+                  \dfrac{\left(1+\dfrac{1}{x}\right)^x-e}{\sin\dfrac{1}{x}}$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 因 $1/x\to0$,故极限为 $\cos0+\sin0=1$.
+        \item 设极限为 $A$,则
+              \[
+                  \ln A
+                  =\lim\limits_{x\to0}\dfrac{1}{x}
+                  \left[\dfrac{\ln(1+x)}{x}-1\right]
+                  =-\dfrac{1}{2},
+              \]
+              从而 $A=e^{-\frac{1}{2}}$.
+        \item 由
+              \[
+                  \left(1+\dfrac{1}{x}\right)^x
+                  =e\left(1-\dfrac{1}{2x}+O\left(\dfrac{1}{x^2}\right)\right),
+                  \qquad
+                  \sin\dfrac{1}{x}\sim\dfrac{1}{x},
+              \]
+              得极限为 $-\dfrac{e}{2}$.
+    \end{enumerate}
+\end{solution}
+
+\begin{example}[\markstar]
+    已知函数 $f(x)$ 可导,且
+    \[
+        \lim\limits_{x\to+\infty}\bigl[f(x)+f'(x)\bigr]=k,
+    \]
+    证明:
+    \[
+        \lim\limits_{x\to+\infty}f(x)=k.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    令
+    \[
+        h(x)=f(x)+f'(x)-k,
+    \]
+    则 $h(x)\to0$.给定 $\varepsilon>0$,取 $A$ 使 $x>A$ 时 $|h(x)|<\varepsilon$.令
+    \[
+        F(x)=e^x[f(x)-k].
+    \]
+    对任意 $x>A$,在 $\lbrack A,x\rbrack$ 上对 $F(t)$ 与 $e^t$ 使用 Cauchy 中值定理,存在 $\xi\in(A,x)$,使
+    \[
+        \dfrac{F(x)-F(A)}{e^x-e^A}
+        =\dfrac{F'(\xi)}{e^\xi}
+        =h(\xi).
+    \]
+    整理得
+    \[
+        f(x)-k=e^{A-x}[f(A)-k]+(1-e^{A-x})h(\xi).
+    \]
+    因此
+    \[
+        |f(x)-k|\leq e^{A-x}|f(A)-k|+\varepsilon.
+    \]
+    先令 $x\to+\infty$,再令 $\varepsilon\to0$,即得 $f(x)\to k$.
+\end{solution}
+
+
+
+\subsection{Taylor 公式}
+
+事实上,Taylor 公式作为一元微分学巅峰,从证明过程来看,洛必达法则能求的极限,理论上 Taylor 公式都能求,但也仅限于理论上,因为实际计算中有时确实洛必达法则会更好算,这需根据具体情况而定.一个简单的判别方法(但不绝对):若所给函数求导后的结果相当复杂,就应优先 Taylor 公式,如复合了一堆函数.
+
+\begin{example}
+    求下列极限:
+    \begin{enumerate}
+        \item $\displaystyle
+                  \lim\limits_{x\to0}
+                  \dfrac{\dfrac{x^2}{2}+1-\sqrt{1+x^2}}
+                  {(\cos x-e^{x^2})\sin x^2}$;
+        \item $\displaystyle
+                  \lim\limits_{x\to0}
+                  \dfrac{e^x-1-x}{\sqrt{1-x}-\cos\sqrt{x}}$;
+        \item $\displaystyle
+                  \lim\limits_{n\to\infty}
+                  \left(\dfrac{f\left(a+\dfrac{1}{n}\right)}{f(a)}\right)^n$,
+              其中函数 $f(x)$ 在 $a$ 点可导,且 $f(a)\neq0$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 展开各因子:
+              \[
+                  \dfrac{x^2}{2}+1-\sqrt{1+x^2}
+                  =\dfrac{x^4}{8}+O(x^6),
+              \]
+              \[
+                  \cos x-e^{x^2}=-\dfrac{3}{2}x^2+O(x^4),
+                  \qquad
+                  \sin x^2=x^2+O(x^6).
+              \]
+              因此极限为 $-\dfrac{1}{12}$.
+        \item 有
+              \[
+                  e^x-1-x=\dfrac{x^2}{2}+O(x^3),
+              \]
+              以及
+              \[
+                  \sqrt{1-x}-\cos\sqrt{x}
+                  =\left(1-\dfrac{x}{2}-\dfrac{x^2}{8}+O(x^3)\right)
+                  -\left(1-\dfrac{x}{2}+\dfrac{x^2}{24}+O(x^3)\right)
+                  =-\dfrac{x^2}{6}+O(x^3).
+              \]
+              故极限为 $-3$.
+        \item 由 $f$ 在 $a$ 点可导,
+              \[
+                  f\left(a+\dfrac{1}{n}\right)
+                  =f(a)+\dfrac{f'(a)}{n}+o\left(\dfrac{1}{n}\right).
+              \]
+              因而
+              \[
+                  \left(\dfrac{f\left(a+\dfrac{1}{n}\right)}{f(a)}\right)^n
+                  =\left[1+\dfrac{f'(a)}{nf(a)}+o\left(\dfrac{1}{n}\right)\right]^n
+                  \longrightarrow e^{\frac{f'(a)}{f(a)}}.
+              \]
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    求
+    \[
+        \lim\limits_{n\to\infty}n\sin(2\pi n!e).
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    由
+    \[
+        e=\sum\limits_{k=0}^{n}\dfrac{1}{k!}
+        +\sum\limits_{k=n+1}^{\infty}\dfrac{1}{k!}
+    \]
+    可知
+    \[
+        n!e=N_n+r_n,
+        \qquad
+        N_n\in\mathbb{Z},
+        \qquad
+        r_n=\dfrac{1}{n+1}+\dfrac{1}{(n+1)(n+2)}+\cdots.
+    \]
+    对 $j\geq1$,有
+    \[
+        \dfrac{1}{(n+1)(n+2)\cdots(n+j)}
+        \leq\dfrac{1}{(n+1)^j},
+    \]
+    因而
+    \[
+        \dfrac{1}{n+1}\leq r_n
+        \leq\sum\limits_{j=1}^{\infty}\dfrac{1}{(n+1)^j}
+        =\dfrac{1}{n}.
+    \]
+    由此 $r_n\to0$,且
+    \[
+        \dfrac{n}{n+1}\leq nr_n\leq1,
+    \]
+    故 $nr_n\to1$.于是
+    \[
+        n\sin(2\pi n!e)
+        =n\sin(2\pi r_n)
+        =2\pi nr_n\dfrac{\sin(2\pi r_n)}{2\pi r_n}
+        \longrightarrow2\pi.
+    \]
+\end{solution}
+
+\begin{example}
+    求极限:
+    \begin{enumerate}
+        \item $\displaystyle
+                  \lim\limits_{x\to0}
+                  \dfrac{\tan(\tan x)-\sin(\sin x)}{x^3}$;
+        \item $\displaystyle
+                  \lim\limits_{x\to0}
+                  \dfrac{\tan(\tan^2x)-x\sin(\sin x)}{x^4}$;
+        \item $\displaystyle
+                  \lim\limits_{x\to0}
+                  \dfrac{x\sin(\sin x)-\sin^2x}{x^6}$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    使用 Taylor 展开.
+    \begin{enumerate}
+        \item
+              \[
+                  \tan(\tan x)=x+\dfrac{2}{3}x^3+O(x^5),
+                  \qquad
+                  \sin(\sin x)=x-\dfrac{1}{3}x^3+O(x^5),
+              \]
+              故极限为 $1$.
+        \item
+              \[
+                  \tan(\tan^2x)=x^2+\dfrac{2}{3}x^4+O(x^6),
+                  \qquad
+                  x\sin(\sin x)=x^2-\dfrac{1}{3}x^4+O(x^6),
+              \]
+              故极限为 $1$.
+        \item
+              \[
+                  x\sin(\sin x)=x^2-\dfrac{x^4}{3}+\dfrac{x^6}{10}+O(x^8),
+              \]
+              \[
+                  \sin^2x=x^2-\dfrac{x^4}{3}+\dfrac{2x^6}{45}+O(x^8).
+              \]
+              两式相减后,$x^6$ 的系数为
+              \[
+                  \dfrac{1}{10}-\dfrac{2}{45}=\dfrac{1}{18},
+              \]
+              因此极限为 $\dfrac{1}{18}$.
+    \end{enumerate}
+\end{solution}
+
+
+
+\subsection{迫敛性}
+
+当所求函数极限比较复杂,不易直接求出时,可考虑适当的放缩,进而利用迫敛性.
+
+\begin{example}
+    求下列极限:
+    \begin{enumerate}
+        \item $\displaystyle\lim\limits_{x\to0}x\left[\dfrac{1}{x}\right]$;
+        \item $\displaystyle\lim\limits_{x\to+\infty}\dfrac{[x]}{x}$;
+        \item $\displaystyle\lim\limits_{x\to+\infty}\dfrac{[xf(x)]}{x}$,
+              其中 $\displaystyle\lim\limits_{x\to+\infty}f(x)=a$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    使用不等式 $y-1<[y]\leq y$.
+    \begin{enumerate}
+        \item 令 $y=1/x$.由 $0\leq y-[y]<1$,有
+              \[
+                  \left|\dfrac{[y]}{y}-1\right|
+                  =\dfrac{|[y]-y|}{|y|}<\dfrac{1}{|y|}.
+              \]
+              当 $x\to0$ 时,$|y|\to\infty$,因而
+              $x\left[\dfrac{1}{x}\right]=\dfrac{[y]}{y}\to1$.
+        \item
+              \[
+                  1-\dfrac{1}{x}<\dfrac{[x]}{x}\leq1,
+              \]
+              故极限为 $1$.
+        \item 设 $\{u\}=u-[u]\in\lbrack0,1)$,则
+              \[
+                  \dfrac{[xf(x)]}{x}=f(x)-\dfrac{\{xf(x)\}}{x}.
+              \]
+              第二项趋于 $0$,故极限为 $a$.
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    已知 $a_i>0\ (i=1,2,\ldots,n)$,求
+    \[
+        \lim\limits_{p\to+\infty}
+        \left[
+            \left(\sum\limits_{i=1}^n a_i^p\right)^{\frac{1}{p}}
+            +
+            \left(\sum\limits_{i=1}^n a_i^{-p}\right)^{\frac{1}{p}}
+            \right].
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    记
+    \[
+        M=\max\limits_{1\leq i\leq n}a_i,
+        \qquad
+        m=\min\limits_{1\leq i\leq n}a_i.
+    \]
+    由
+    \[
+        M^p\leq\sum\limits_{i=1}^{n}a_i^p\leq nM^p
+    \]
+    得
+    \[
+        \left(\sum\limits_{i=1}^{n}a_i^p\right)^{\frac{1}{p}}\longrightarrow M.
+    \]
+    同理,
+    \[
+        \left(\sum\limits_{i=1}^{n}a_i^{-p}\right)^{\frac{1}{p}}
+        \longrightarrow\max\limits_i a_i^{-1}=\dfrac{1}{m}.
+    \]
+    所以所求极限为
+    \[
+        M+\dfrac{1}{m}.
+    \]
+\end{solution}
+
+
+
+\subsection{Heine 归结原理}
+
+利用 Heine 归结原理,可以沟通数列极限与函数极限,将两类问题进行转化.
+
+\begin{example}
+    求下列极限:
+    \begin{enumerate}
+        \item $\displaystyle
+                  \lim\limits_{n\to\infty}
+                  \dfrac{(e-1)e^{\frac{1}{n}}}{n\left(e^{\frac{1}{n}}-1\right)}$;
+        \item $\displaystyle
+                  \lim\limits_{n\to\infty}
+                  n\left(x^{\frac{1}{n}}-x^{\frac{1}{2n}}\right)\quad(x>0)$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 令 $t=1/n$,则
+              \[
+                  n\left(e^{\frac{1}{n}}-1\right)=\dfrac{e^t-1}{t}\longrightarrow1,
+              \]
+              而分子趋于 $e-1$,故极限为 $e-1$.
+        \item 因
+              \[
+                  x^{\frac{1}{n}}=e^{\frac{\ln x}{n}}
+                  =1+\dfrac{\ln x}{n}+O\left(\dfrac{1}{n^2}\right),
+              \]
+              \[
+                  x^{\frac{1}{2n}}
+                  =1+\dfrac{\ln x}{2n}+O\left(\dfrac{1}{n^2}\right),
+              \]
+              故极限为 $\dfrac{1}{2}\ln x$.
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    求极限
+    \[
+        \lim\limits_{n\to\infty}
+        \sum\limits_{k=n}^{2n}\sin\dfrac{\pi}{k}.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    当 $n\leq k\leq2n$ 时,$\pi/k\to0$ 是一致的,故
+    \[
+        \sin\dfrac{\pi}{k}=\dfrac{\pi}{k}+O\left(\dfrac{1}{k^3}\right).
+    \]
+    于是
+    \[
+        \sum\limits_{k=n}^{2n}\sin\dfrac{\pi}{k}
+        =\pi\sum\limits_{k=n}^{2n}\dfrac{1}{k}
+        +O\left(\sum\limits_{k=n}^{2n}\dfrac{1}{k^3}\right)
+        \longrightarrow\pi\ln2.
+    \]
+\end{solution}
+
+\begin{example}
+    \begin{enumerate}
+        \item 设
+              \[
+                  f(x)=\sum\limits_{k=1}^n a_k\sin kx
+              \]
+              满足 $|f(x)|\leq|\sin x|$,证明:
+              \[
+                  \left|\sum\limits_{k=1}^n ka_k\right|\leq1.
+              \]
+        \item 设
+              \[
+                  f(x)=\sum\limits_{k=1}^n a_k\ln(1+\ln x)
+              \]
+              满足 $|f(x)|\leq|x|$,且 $x>0$,证明:
+              \[
+                  \left|\sum\limits_{k=1}^n ka_k\right|\leq1.
+              \]
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 由 $|f(x)|\leq|\sin x|$ 可知 $f(0)=0$.当 $x\neq0$ 时,
+              \[
+                  \left|\dfrac{f(x)-f(0)}{x}\right|
+                  \leq\left|\dfrac{\sin x}{x}\right|.
+              \]
+              令 $x\to0$,得到
+              \[
+                  |f'(0)|\leq1.
+              \]
+              又
+              \[
+                  f'(0)=\sum\limits_{k=1}^{n}ka_k,
+              \]
+              故结论成立.
+        \item 原式中 $\ln(1+\ln x)$ 作为实值函数只在 $x>e^{-1}$ 时有定义,
+              因而“$x>0$”这一定义域本身已需要核对.即使把定义域改为 $x>e^{-1}$,题设仍不能推出所要求的结论.事实上,按当前题面,
+              \[
+                  f(x)=\left(\sum\limits_{k=1}^{n}a_k\right)\ln(1+\ln x),
+              \]
+              求和项中并未出现能够产生系数 $k$ 的结构.例如取
+              \[
+                  n=2,
+                  \qquad
+                  a_1=2,
+                  \qquad
+                  a_2=-2,
+              \]
+              则在原式的自然定义域上 $f(x)\equiv0$,满足 $|f(x)|\leq|x|$,但
+              \[
+                  |a_1+2a_2|=2>1.
+              \]
+              因此本小题按原始 PDF 的现有题面不成立,需核对求和项或右侧估计式.
+    \end{enumerate}
+\end{solution}
+
+
+
+\subsection{递推法}
+
+\begin{example}
+    设 $f(x)$ 为 $(0,+\infty)$ 上函数,$a>0$ 且 $a\neq1$.
+    \begin{enumerate}
+        \item 若 $f(x)$ 满足 $f(x^a)=f(x)$,且
+              \[
+                  \lim\limits_{x\to0^+}f(x)
+                  =\lim\limits_{x\to+\infty}f(x)
+                  =f(1),
+              \]
+              则 $f(x)\equiv f(1)$;
+        \item 若 $f(x)$ 满足 $f(ax)=f(x)$,且
+              $\displaystyle\lim\limits_{x\to0^+}f(x)$ 或
+              $\displaystyle\lim\limits_{x\to+\infty}f(x)$ 存在,则 $f(x)$ 为常值函数.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 先设 $a>1$.若 $x>1$,则
+              \[
+                  f(x)=f\left(x^{a^n}\right)\longrightarrow f(1)
+                  \qquad(n\to\infty),
+              \]
+              因为 $x^{a^n}\to+\infty$;若 $0<x<1$,则 $x^{a^n}\to0^+$,同样有 $f(x)=f(1)$.
+              当 $0<a<1$ 时,将关系反向写成 $f(x)=f\left(x^{1/a}\right)$,再作相同迭代即可.
+        \item 若 $a>1$,则
+              \[
+                  f(x)=f(a^nx)=f(a^{-n}x).
+              \]
+              根据已知存在的是无穷远处极限还是右端点极限,分别令 $n\to\infty$,即知所有 $f(x)$ 均等于同一极限.$0<a<1$ 时交换 $a$ 与 $1/a$ 即可.
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    设 $f(x)$ 在 $\mathbb{R}$ 上有定义,在 $x=0$ 的某邻域有界,且
+    \[
+        f(ax)=bf(x),
+    \]
+    其中 $a>1,b>1$,证明:
+    \[
+        \lim\limits_{x\to0}f(x)=0.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    先由 $f(0)=bf(0)$ 及 $b>1$ 得 $f(0)=0$.取 $\delta>0$ 与 $M>0$,使得 $|x|<\delta$ 时 $|f(x)|\leq M$.
+
+    对任意充分小的 $x\neq0$,可取整数 $n\geq0$,使得
+    \[
+        \dfrac{\delta}{a}\leq |a^nx|<\delta.
+    \]
+    由函数方程反复迭代,
+    \[
+        |f(x)|=b^{-n}|f(a^nx)|\leq Mb^{-n}.
+    \]
+    当 $x\to0$ 时必有 $n\to\infty$,故 $f(x)\to0$.
+\end{solution}
+
+\begin{example}
+    \begin{enumerate}
+        \item 设函数 $f:(0,+\infty)\to(0,+\infty)$ 单调递增,且
+              \[
+                  \lim\limits_{t\to+\infty}\dfrac{f(2t)}{f(t)}=1,
+              \]
+              证明:对任意 $m>0$,有
+              \[
+                  \lim\limits_{t\to+\infty}\dfrac{f(mt)}{f(t)}=1.
+              \]
+        \item 设 $\displaystyle\lim\limits_{x\to0}f(x)=0$,且
+              \[
+                  \lim\limits_{x\to0}\dfrac{f(x)-f\left(\dfrac{x}{2}\right)}{x}=0,
+              \]
+              证明:
+              \[
+                  \lim\limits_{x\to0}\dfrac{f(x)}{x}=0.
+              \]
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 先设 $m>1$,取整数 $r$ 使 $2^r\leq m<2^{r+1}$.由单调性,
+              \[
+                  \dfrac{f(2^rt)}{f(t)}
+                  \leq\dfrac{f(mt)}{f(t)}
+                  \leq\dfrac{f(2^{r+1}t)}{f(t)}.
+              \]
+              对任意固定的正整数 $j$,
+              \[
+                  \dfrac{f(2^jt)}{f(t)}
+                  =\prod\limits_{k=0}^{j-1}\dfrac{f(2^{k+1}t)}{f(2^kt)}
+                  \longrightarrow1.
+              \]
+              由迫敛性知中间项趋于 $1$.当 $0<m<1$ 时,对 $1/m>1$ 使用已证结论并取倒数即可.
+        \item 记
+              \[
+                  h(x)=\dfrac{f(x)-f\left(\dfrac{x}{2}\right)}{x},
+              \]
+              则 $h(x)\to0$.由 $f(x/2^N)\to0$,可得
+              \[
+                  f(x)=\sum\limits_{k=0}^{\infty}
+                  \left[f\left(\dfrac{x}{2^k}\right)-f\left(\dfrac{x}{2^{k+1}}\right)\right].
+              \]
+              因而
+              \[
+                  \dfrac{f(x)}{x}
+                  =\sum\limits_{k=0}^{\infty}\dfrac{1}{2^k}h\left(\dfrac{x}{2^k}\right).
+              \]
+              给定 $\varepsilon>0$,当 $|x|$ 足够小时,对所有 $k\geq0$ 都有
+              $\left|h\left(x/2^k\right)\right|<\varepsilon$,于是
+              \[
+                  \left|\dfrac{f(x)}{x}\right|
+                  \leq\varepsilon\sum\limits_{k=0}^{\infty}\dfrac{1}{2^k}
+                  =2\varepsilon.
+              \]
+              故所求极限为 $0$.
+    \end{enumerate}
+\end{solution}
+
+
+\newpage
+
+\section{函数极限综合问题}
+
+
+\subsection{渐近线}
+
+设 $f(x),g(x)$ 满足
+$\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ 在 $x\to x_0$ 时的渐近曲线.一般情况下,常讨论 $g(x)$ 为一、二次曲线的情形.在一次曲线的情形,称 $g(x)$ 为渐近(直)线:$y=ax+b$.且有计算公式
+\[
+    a=\lim\limits_{x\to+\infty}\dfrac{f(x)}{x},
+    \qquad
+    b=\lim\limits_{x\to+\infty}[f(x)-ax].
+\]
+特别地:
+\begin{enumerate}
+    \item 若 $\displaystyle\lim\limits_{x\to+\infty}f(x)=a$ 或
+          $\displaystyle\lim\limits_{x\to-\infty}f(x)=b$,则称 $y=a$ 或 $y=b$ 为 $y=f(x)$ 的水平渐近线;
+    \item 若 $\displaystyle\lim\limits_{x\to x_0^+}f(x)=\pm\infty$ 或
+          $\displaystyle\lim\limits_{x\to x_0^-}f(x)=\pm\infty$,则称 $x=x_0$ 为 $y=f(x)$ 的一条竖直渐近线.
+\end{enumerate}
+
+\begin{example}
+    求函数
+    \[
+        y=\dfrac{(1+x)^2}{4(1-x)}
+    \]
+    的渐近线.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    先作恒等变形:
+    \[
+        \dfrac{(1+x)^2}{4(1-x)}
+        =-\dfrac{1}{4}\left(x+3+\dfrac{4}{x-1}\right)
+        =-\dfrac{x}{4}-\dfrac{3}{4}-\dfrac{1}{x-1}.
+    \]
+    因此,当 $x\to1$ 时函数无界,竖直渐近线为
+    \[
+        x=1.
+    \]
+    当 $x\to\pm\infty$ 时,$-1/(x-1)\to0$,故斜渐近线为
+    \[
+        y=-\dfrac{x}{4}-\dfrac{3}{4}.
+    \]
+\end{solution}
+
+\begin{example}
+    \begin{enumerate}
+        \item 求 $\alpha,\beta$ 值,使得
+              \[
+                  \lim\limits_{x\to+\infty}
+                  \left(\sqrt{4x^2+x+1}-(\alpha x+\beta)\right)=0;
+              \]
+        \item 求 $\alpha,\beta,\gamma$ 表达式,使得
+              \[
+                  \lim\limits_{x\to+\infty}
+                  [f(x)-(\alpha+\beta x+\gamma x^2)]=0.
+              \]
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 当 $x\to+\infty$ 时,
+              \[
+                  \sqrt{4x^2+x+1}
+                  =2x\sqrt{1+\dfrac{1}{4x}+\dfrac{1}{4x^2}}
+                  =2x+\dfrac{1}{4}+O\left(\dfrac{1}{x}\right).
+              \]
+              因而
+              \[
+                  \alpha=2,
+                  \qquad
+                  \beta=\dfrac{1}{4}.
+              \]
+        \item 若所需各极限存在,则系数必须逐次取为
+              \[
+                  \gamma=\lim\limits_{x\to+\infty}\dfrac{f(x)}{x^2},
+              \]
+              \[
+                  \beta=\lim\limits_{x\to+\infty}
+                  \dfrac{f(x)-\gamma x^2}{x},
+                  \qquad
+                  \alpha=\lim\limits_{x\to+\infty}
+                  \left[f(x)-\beta x-\gamma x^2\right].
+              \]
+              反之,若这三个有限极限依次存在,则上述选择正好使题设余项趋于 $0$.
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    求曲线
+    \[
+        (x-a)y^2=x^2(x-b),
+        \qquad a>0,\ b>0,\ a\neq b,
+    \]
+    的渐近线.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    由曲线方程,
+    \[
+        y=\pm |x|\sqrt{\dfrac{x-b}{x-a}}.
+    \]
+    当 $x\to a$ 且从使根式有意义的一侧趋近时,因 $a\neq b$,有 $|y|\to+\infty$,故
+    \[
+        x=a
+    \]
+    是竖直渐近线.
+
+    又当 $|x|\to\infty$ 时,
+    \[
+        \sqrt{\dfrac{x-b}{x-a}}
+        =\sqrt{1+\dfrac{a-b}{x-a}}
+        =1+\dfrac{a-b}{2x}+O\left(\dfrac{1}{x^2}\right).
+    \]
+    分别考察两个分支以及 $x\to\pm\infty$,得到两条斜渐近线
+    \[
+        y=x+\dfrac{a-b}{2},
+        \qquad
+        y=-x-\dfrac{a-b}{2}.
+    \]
+\end{solution}
+
+
+
+\subsection{特殊函数性质}
+
+\begin{proposition}[\markstar\ Riemann 函数]
+    设 Riemann 函数为
+    \[
+        R(x)=
+        \begin{cases}
+            \dfrac{1}{q}, & x=\dfrac{p}{q},                     \\
+            0,            & x\text{ 为 }(0,1)\text{ 中的无理数或 }0,1,
+        \end{cases}
+    \]
+    则对任意 $x_0\in\lbrack 0,1\rbrack$,有
+    \[
+        \lim\limits_{x\to x_0}R(x)=0.
+    \]
+\end{proposition}
+
+\begin{remark}
+    因此,Riemann 函数在每个点处极限值为零,进而其只在无理点连续(不考虑端点 $0,1$),有理点间断.
+\end{remark}
+
+\begin{example}
+    证明命题 2.2.1.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    固定 $x_0\in\lbrack0,1\rbrack$.给定 $\varepsilon>0$,取正整数 $N$ 使 $1/N<\varepsilon$.
+    在 $\lbrack0,1\rbrack$ 中,既约分母不超过 $N$ 的有理数只有有限个.选取 $\delta>0$,使穿孔邻域
+    \[
+        0<|x-x_0|<\delta
+    \]
+    不含这些有限个有理数.若该邻域中的 $x$ 为无理数,则 $R(x)=0$;若
+    $x=p/q$ 为既约分数,则 $q>N$,从而
+    \[
+        0<R(x)=\dfrac{1}{q}<\dfrac{1}{N}<\varepsilon.
+    \]
+    因此
+    \[
+        \lim\limits_{x\to x_0}R(x)=0.
+    \]
+\end{solution}
+
+\begin{proposition}[\markstar\ Dirichlet 函数]
+    设 Dirichlet 函数 $D:\mathbb{R}\to\{0,1\}$,
+    \[
+        D(x)=
+        \begin{cases}
+            1, & x\in\mathbb{Q},                    \\
+            0, & x\in\mathbb{R}\setminus\mathbb{Q}.
+        \end{cases}
+    \]
+    则对任意 $x_0\in\mathbb{R}$,
+    $\displaystyle\lim\limits_{x\to x_0}D(x)$ 不存在.
+\end{proposition}
+
+\begin{remark}
+    因此很自然可得 $D(x)$ 在任意一点不连续,由此还能构造只在某点连续,而其它点不连续的函数---$f(x)=(x-a)D(x)$.
+\end{remark}
+
+\begin{example}
+    证明命题 2.2.2.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    有理数与无理数在 $\mathbb{R}$ 中都稠密.因此可分别取有理数列 $\{r_n\}$ 与无理数列 $\{s_n\}$,使
+    \[
+        r_n\to x_0,
+        \qquad
+        s_n\to x_0.
+    \]
+    但
+    \[
+        D(r_n)=1,
+        \qquad
+        D(s_n)=0.
+    \]
+    同一点处沿两列所得极限不同,由 Heine 归结原理知
+    $\displaystyle\lim\limits_{x\to x_0}D(x)$ 不存在.
+\end{solution}
+
+\begin{proposition}[\markstar\ 单调函数]
+    设 $f(x)$ 在 $\mathring{U}(x_0)$ 上为单调递增函数,则 $f(x_0-0),f(x_0+0)$ 均存在,且
+    \[
+        f(x_0-0)=\sup\limits_{x\in\mathring{U}_{-}(x_0)}f(x),
+        \qquad
+        f(x_0+0)=\inf\limits_{x\in\mathring{U}_{+}(x_0)}f(x).
+    \]
+\end{proposition}
+
+\begin{remark}
+    因此单调函数一定存在单侧极限,进而间断点必为第一类间断点(跳跃间断点).
+\end{remark}
+
+\begin{example}
+    证明命题 2.2.3.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    只证左极限,右极限同理.设
+    \[
+        A=\sup\limits_{x\in\mathring{U}_{-}(x_0)}f(x).
+    \]
+    单调性保证 $A$ 存在于广义实数系.给定 $\varepsilon>0$,由上确界定义可取
+    $x_1<x_0$,使
+    \[
+        A-\varepsilon<f(x_1)\leq A.
+    \]
+    当 $x_1<x<x_0$ 时,由单调递增性,
+    \[
+        A-\varepsilon<f(x_1)\leq f(x)\leq A.
+    \]
+    故
+    \[
+        \lim\limits_{x\to x_0-}f(x)=A
+        =\sup\limits_{x\in\mathring{U}_{-}(x_0)}f(x).
+    \]
+    若 $A=+\infty$,则对任意 $M>0$,可取 $x_1<x_0$ 使 $f(x_1)>M$.
+    当 $x_1<x<x_0$ 时,单调性给出 $f(x)\geq f(x_1)>M$,故此时左极限为 $+\infty$.
+
+    在右侧令
+    \[
+        B=\inf\limits_{x\in\mathring{U}_{+}(x_0)}f(x)
+    \]
+    .若 $B$ 有限,给定 $\varepsilon>0$,取 $x_2>x_0$ 使
+    \[
+        B\leq f(x_2)<B+\varepsilon.
+    \]
+    当 $x_0<x<x_2$ 时,
+    \[
+        B\leq f(x)\leq f(x_2)<B+\varepsilon,
+    \]
+    因而 $f(x_0+0)=B$.若 $B=-\infty$,则对任意 $M>0$,可取 $x_2>x_0$
+    使 $f(x_2)<-M$;当 $x_0<x<x_2$ 时,$f(x)\leq f(x_2)<-M$,故右极限为 $-\infty$.
+\end{solution}
+
+
+
+\subsection{推广的 Stolz 定理}
+
+\begin{theorem}[\markstar\ 函数版本 Stolz]
+    设 $f(x),g(x)$ 在 $\lbrack a,+\infty)$ 上有定义,$T$ 是一个正常数,且满足:
+    \begin{enumerate}
+        \item $f(x),g(x)$ 在任一区间 $\lbrack a,b\rbrack$ 上有界;
+        \item 对任意 $x>a$,有 $g(x+T)>g(x)$ 且 $g(x)\to+\infty\ (x\to+\infty)$.
+    \end{enumerate}
+    若存在极限
+    \[
+        \lim\limits_{x\to+\infty}
+        \dfrac{f(x+T)-f(x)}{g(x+T)-g(x)}=A,
+    \]
+    则有
+    \[
+        \lim\limits_{x\to+\infty}\dfrac{f(x)}{g(x)}=A.
+    \]
+\end{theorem}
+
+\begin{example}
+    证明定理 2.2.1.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    给定 $\varepsilon>0$,取 $X>a$,使 $x>X$ 时
+    \[
+        A-\varepsilon<
+        \dfrac{f(x+T)-f(x)}{g(x+T)-g(x)}
+        <A+\varepsilon.
+    \]
+    对任意充分大的 $x$,写成
+    \[
+        x=y+nT,
+        \qquad
+        y\in\lbrack X,X+T),
+        \qquad
+        n\in\mathbb{N}.
+    \]
+    将上述不等式在 $y,y+T,\ldots,y+(n-1)T$ 处相加,得到
+    \[
+        (A-\varepsilon)[g(x)-g(y)]
+        <f(x)-f(y)
+        <(A+\varepsilon)[g(x)-g(y)].
+    \]
+    由于 $f,g$ 在 $\lbrack X,X+T\rbrack$ 上有界,而 $g(x)\to+\infty$,两端除以 $g(x)$ 后令 $x\to+\infty$,可得
+    \[
+        A-\varepsilon
+        \leq\liminf\limits_{x\to+\infty}\dfrac{f(x)}{g(x)}
+        \leq\limsup\limits_{x\to+\infty}\dfrac{f(x)}{g(x)}
+        \leq A+\varepsilon.
+    \]
+    再令 $\varepsilon\to0$,即得结论.
+\end{solution}
+
+\begin{example}[Cauchy 定理]
+    若 $f$ 在 $(a,+\infty)$ 内有定义,且内闭有界(即对任意 $\lbrack \alpha,\beta\rbrack\subseteq(a,+\infty)$,$f$ 在 $\lbrack \alpha,\beta\rbrack$ 上有界),则:
+    \begin{enumerate}
+        \item 当右边极限存在时,
+              \[
+                  \lim\limits_{x\to+\infty}\dfrac{f(x)}{x}
+                  =\lim\limits_{x\to+\infty}[f(x+1)-f(x)];
+              \]
+        \item 当右边极限存在时,
+              \[
+                  \lim\limits_{x\to+\infty}[f(x)]^{\frac{1}{x}}
+                  =\lim\limits_{x\to+\infty}\dfrac{f(x+1)}{f(x)},
+                  \qquad f(x)\geq c>0.
+              \]
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 在函数版本 Stolz 定理中取 $g(x)=x$ 与 $T=1$,则
+              \[
+                  \dfrac{g(x+1)-g(x)}{1}=1.
+              \]
+              因而当右端极限存在时,
+              \[
+                  \lim\limits_{x\to+\infty}\dfrac{f(x)}{x}
+                  =\lim\limits_{x\to+\infty}[f(x+1)-f(x)].
+              \]
+        \item 因 $f(x)\geq c>0$,可以令 $F(x)=\ln f(x)$.对 $F$ 使用第 (1) 问,得到
+              \[
+                  \lim\limits_{x\to+\infty}\dfrac{\ln f(x)}{x}
+                  =\lim\limits_{x\to+\infty}
+                  \ln\dfrac{f(x+1)}{f(x)}.
+              \]
+              两端取指数,即得
+              \[
+                  \lim\limits_{x\to+\infty}[f(x)]^{\frac{1}{x}}
+                  =\lim\limits_{x\to+\infty}\dfrac{f(x+1)}{f(x)}.
+              \]
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    设 $f(x)$ 在 $\lbrack a,+\infty)$ 上有定义,且内闭有界,
+    \[
+        \lim\limits_{x\to+\infty}
+        \dfrac{f(x+1)-f(x)}{x^n}=l
+    \]
+    ($l$ 有限),证明:
+    \[
+        \lim\limits_{x\to+\infty}\dfrac{f(x)}{x^{n+1}}
+        =\dfrac{l}{n+1}.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    对 $f(x)$ 与 $g(x)=x^{n+1}$ 应用函数版本 Stolz 定理.由于
+    \[
+        (x+1)^{n+1}-x^{n+1}
+        =(n+1)x^n+O(x^{n-1}),
+    \]
+    故
+    \[
+        \dfrac{f(x+1)-f(x)}{(x+1)^{n+1}-x^{n+1}}
+        =\dfrac{\dfrac{f(x+1)-f(x)}{x^n}}
+        {\dfrac{(x+1)^{n+1}-x^{n+1}}{x^n}}
+        \longrightarrow\dfrac{l}{n+1}.
+    \]
+    从而
+    \[
+        \lim\limits_{x\to+\infty}\dfrac{f(x)}{x^{n+1}}
+        =\dfrac{l}{n+1}.
+    \]
+\end{solution}
+
+
+
+\subsection{周期函数}
+
+\begin{example}
+    设 $f,g$ 是 $(-\infty,+\infty)$ 上的周期函数,若
+    \[
+        \lim\limits_{x\to+\infty}[f(x)-g(x)]=0,
+    \]
+    则 $f(x)=g(x)$.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    设 $T_f,T_g>0$ 分别是 $f,g$ 的周期,并记 $h=f-g$.固定 $x$ 与整数 $m$.由
+    \[
+        h(x+nT_f)\to0,
+        \qquad
+        h(x+nT_f+mT_g)\to0
+    \]
+    以及 $f(x+nT_f)=f(x)$、$g(x+nT_f+mT_g)=g(x+nT_f)$,两式相减可得
+    \[
+        f(x+mT_g)-f(x)=0.
+    \]
+    故 $T_g$ 也是 $f$ 的周期.交换 $f,g$ 的地位,同理可知 $T_f$ 也是 $g$ 的周期.
+    于是 $h$ 以 $T_f$ 为周期,因而
+    \[
+        h(x)=h(x+nT_f)\longrightarrow0.
+    \]
+    所以 $h(x)=0$,即 $f(x)=g(x)$.
+\end{solution}
+
+\begin{example}
+    设 $f(x)$ 是周期为 $T\ (T>0)$ 的连续周期函数,则
+    \[
+        \lim\limits_{x\to+\infty}
+        \dfrac{1}{x}\int_0^x f(t)\,\mathrm{d}t
+        =\dfrac{1}{T}\int_0^T f(t)\,\mathrm{d}t.
+    \]
+\end{example}
+\exampleblank
+
+\begin{solution}
+    写
+    \[
+        x=nT+r,
+        \qquad
+        n\in\mathbb{N},
+        \qquad
+        0\leq r<T.
+    \]
+    利用周期性,
+    \[
+        \int_0^x f(t)\,\mathrm{d}t
+        =n\int_0^T f(t)\,\mathrm{d}t+\int_0^r f(t)\,\mathrm{d}t.
+    \]
+    因 $f$ 连续且周期,后一积分关于 $r$ 一致有界.又有 $nT/x\to1$,故
+    \[
+        \dfrac{1}{x}\int_0^x f(t)\,\mathrm{d}t
+        =\dfrac{nT}{x}\cdot\dfrac{1}{T}\int_0^T f(t)\,\mathrm{d}t
+        +\dfrac{1}{x}\int_0^r f(t)\,\mathrm{d}t
+        \longrightarrow\dfrac{1}{T}\int_0^T f(t)\,\mathrm{d}t.
+    \]
+\end{solution}
+
+
+\newpage
+
+\section{实数基本定理 *}
+
+\begin{example}
+    设 $f$ 在有限区间 $I$ 上有定义,满足:对任意 $x\in I$,存在 $x$ 的邻域 $(x-\delta,x+\delta)$,使得 $f(x)$ 在 $(x-\delta,x+\delta)\cap I$ 上有界.
+    \begin{enumerate}
+        \item 证明:当 $I=\lbrack a,b\rbrack$ 时,$f(x)$ 在 $I$ 上有界;
+        \item 当 $I=(a,b)$ 时,$f(x)$ 在 $I$ 上一定有界吗?
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    \begin{enumerate}
+        \item 对每个 $x\in\lbrack a,b\rbrack$,取题设给出的邻域 $U_x$,并取常数 $M_x$,使
+              \[
+                  |f(t)|\leq M_x,
+                  \qquad
+                  t\in U_x\cap\lbrack a,b\rbrack.
+              \]
+              这些邻域构成 $\lbrack a,b\rbrack$ 的开覆盖.由有限覆盖定理,可选出有限个
+              $U_{x_1},\ldots,U_{x_m}$ 覆盖 $\lbrack a,b\rbrack$.令
+              \[
+                  M=\max\{M_{x_1},\ldots,M_{x_m}\},
+              \]
+              则 $|f(t)|\leq M$ 对所有 $t\in\lbrack a,b\rbrack$ 成立.
+        \item 不一定.例如在 $(a,b)$ 上取
+              \[
+                  f(x)=\dfrac{1}{x-a}.
+              \]
+              它在每一点的某个邻域内有界,但在整个 $(a,b)$ 上无界.
+    \end{enumerate}
+\end{solution}
+
+\begin{example}
+    设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上有定义且在每一点处函数的极限存在,求证:$f(x)$ 在 $\lbrack a,b\rbrack$ 上有界.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    固定 $x_0\in\lbrack a,b\rbrack$,设有限极限
+    \[
+        \lim\limits_{x\to x_0}f(x)=A.
+    \]
+    取 $\varepsilon=1$,则存在 $\delta>0$,使
+    \[
+        0<|x-x_0|<\delta
+        \quad\Longrightarrow\quad
+        |f(x)|\leq |A|+1.
+    \]
+    再把点值 $|f(x_0)|$ 纳入界中,可知 $f$ 在 $x_0$ 的某邻域内有界.因此 $f$ 满足上一题第 (1) 问的条件,由有限覆盖定理知 $f$ 在 $\lbrack a,b\rbrack$ 上有界.
+\end{solution}
+
+\begin{example}
+    若 $f(x)$ 在 $\lbrack a,b\rbrack$ 无界,试证明存在 $x_0\in\lbrack a,b\rbrack$,对任意 $\delta>0$,使得 $f(x)$ 在 $(x_0-\delta,x_0+\delta)$ 上无界.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    反证.若不存在这样的 $x_0$,则对每个 $x\in\lbrack a,b\rbrack$,都存在邻域 $U_x$,使 $f$ 在 $U_x\cap\lbrack a,b\rbrack$ 上有界.由有限覆盖定理可从 $\{U_x\}$ 中取出有限子覆盖,于是这些局部界的最大值给出 $f$ 在整个 $\lbrack a,b\rbrack$ 上的界,这与题设无界矛盾.
+\end{solution}
+
+\begin{example}
+    设 $f(x)$ 在 $(a,b)$ 内有定义,对任意 $\xi\in(a,b)$,存在 $\delta>0$,当 $x\in(\xi-\delta,\xi+\delta)\cap(a,b)$ 时,有 $f(x)<f(\xi)$ 当 $x<\xi$ 时,$f(x)>f(\xi)$ 当 $x>\xi$ 时.求证:$f(x)$ 在 $(a,b)$ 内严格递增.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    任取 $a<x<y<b$.令
+    \[
+        E=\left\{z\in(x,y]\ \middle|\
+        f(t)>f(x)\text{ 对所有 }t\in(x,z]\text{ 成立}\right\}.
+    \]
+    由题设在 $x$ 点右侧的局部性质,$E\neq\varnothing$.注意 $E$ 具有下闭性:
+    若 $z\in E$ 且 $x<u\leq z$,则 $u\in E$.设 $c=\sup E$,则
+    \[
+        (x,c)\subseteq E,
+    \]
+    因而
+    \[
+        f(t)>f(x),
+        \qquad x<t<c.
+    \]
+
+    若 $c<y$,取 $c$ 左侧且足够接近 $c$ 的点 $t_0$.由 $t_0\in E$ 以及 $c$ 点的局部性质,
+    \[
+        f(x)<f(t_0)<f(c).
+    \]
+    再由 $c$ 点右侧的局部性质,存在 $\eta>0$,使 $c+\eta<y$ 且
+    \[
+        f(t)>f(c)>f(x),
+        \qquad c<t\leq c+\eta.
+    \]
+    结合 $(x,c)$ 上已有的不等式,可知 $c+\eta\in E$,这与 $c=\sup E$ 矛盾.
+    因此 $c=y$.由 $y$ 点左侧的局部性质,取 $t\in(x,y)$ 且使 $t$ 足够接近 $y$,则
+    \[
+        f(x)<f(t)<f(y).
+    \]
+    故 $f(y)>f(x)$.
+
+    由于 $x<y$ 任意,$f$ 在 $(a,b)$ 上严格递增.
+\end{solution}
+
+\begin{example}
+    设 $f(x)$ 在 $\lbrack 0,1\rbrack$ 上递增,$f(a)>a,f(b)>b$,证明:
+    \begin{enumerate}
+        \item 存在 $x_0\in(a,b)$,使得 $f(x_0)=x_0$;
+        \item 存在 $x_1\in(a,b)$,使得 $f(x_1)=x_1^2$.
+    \end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+    本题按原始 PDF 与当前源码的现有题面不成立.取
+    \[
+        f(x)=x+1,
+        \qquad
+        x\in\lbrack0,1\rbrack,
+    \]
+    并取任意 $0<a<b<1$,则 $f$ 递增,且
+    \[
+        f(a)>a,
+        \qquad
+        f(b)>b.
+    \]
+    但是对 $x\in(a,b)$,既有 $f(x)=x+1\neq x$,又因 $x^2\leq x<x+1$ 而有 $f(x)\neq x^2$.因此第 (1)、(2) 问的结论均不能由当前条件推出,需核对题设中的第二个边界不等式或函数取值范围.
+\end{solution}
+
+\begin{example}
+    设定义在 $\lbrack 0,1\rbrack$ 上的 $f(x),g(x)$ 满足
+    \[
+        f(0)>0,\qquad f(1)<1,\qquad g\in C(\lbrack 0,1\rbrack).
+    \]
+    若 $f+g$ 在 $\lbrack 0,1\rbrack$ 上递增,则存在 $\xi\in\lbrack 0,1\rbrack$,使得 $f(\xi)=0$.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    本题按原始 PDF 与当前源码的现有题面不成立.例如取
+    \[
+        f(x)=\dfrac{1}{2},
+        \qquad
+        g(x)=x,
+        \qquad
+        x\in\lbrack0,1\rbrack.
+    \]
+    则
+    \[
+        f(0)>0,
+        \qquad
+        f(1)<1,
+    \]
+    $g$ 连续,且 $f+g=x+1/2$ 严格递增;但 $f(x)$ 在 $\lbrack0,1\rbrack$ 上恒不为 $0$.因此需要核对原题缺失的条件或结论.
+\end{solution}
+
+\begin{example}
+    设定义在 $(-\infty,+\infty)$ 上的 $f(x)$ 满足:对任意 $x_0\in(-\infty,+\infty)$,存在 $\delta>0$,使得
+    \[
+        f(x_0)\geq f(x),
+        \qquad x\in(x_0-\delta,x_0+\delta).
+    \]
+    证明:存在区间 $I$,使得 $f(x)$ 在 $I$ 上是常数.
+\end{example}
+\exampleblank
+
+\begin{solution}
+    题设说明 $f$ 在每一点 $x_0$ 都满足:某邻域内 $f(x)\leq f(x_0)$.因此 $f$ 是上半连续函数.
+
+    任取一个非退化闭区间 $K_0$.上半连续函数在紧区间上取得最大值.递归地,设已取非退化闭区间 $K_n$,记
+    \[
+        M_n=\max\limits_{x\in K_n}f(x),
+        \qquad
+        A_n=\{x\in K_n\mid f(x)=M_n\}.
+    \]
+    $A_n$ 是非空闭集.若 $A_n$ 含有非退化区间,则 $f$ 在该区间上恒等于 $M_n$,结论成立.
+
+    否则,$K_n\setminus A_n$ 是非空相对开集,可在其中选取非退化闭区间
+    $K_{n+1}$,并使
+    \[
+        K_{n+1}\subseteq K_n\setminus A_n,
+        \qquad
+        |K_{n+1}|<\dfrac{1}{n+1}.
+    \]
+    若上述过程永不终止,则闭区间套定理给出唯一一点
+    \[
+        \{x_*\}=\bigcap\limits_{n=0}^{\infty}K_n.
+    \]
+    由题设,存在 $x_*$ 的邻域 $U$,使 $f(x)\leq f(x_*)$ 对 $x\in U$ 成立.对充分大的 $n$,有 $K_n\subseteq U$,于是 $x_*$ 是 $f$ 在 $K_n$ 上的最大值点,即 $x_*\in A_n$.但同时
+    $x_*\in K_{n+1}\subseteq K_n\setminus A_n$,矛盾.
+
+    故递归必在有限步终止,从而存在非退化区间 $I$,使 $f$ 在 $I$ 上为常数.
+\end{solution}
