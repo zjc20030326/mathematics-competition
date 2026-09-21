@@ -55,7 +55,7 @@ x^{2n+m(2n+1)}
         \dfrac{1}{n(n+1)(n+2)}
         =\dfrac{1}{2}\left[\dfrac{1}{n(n+1)}-\dfrac{1}{(n+1)(n+2)}\right],
     \]
-    故和为 $\boxed{\dfrac14}$。
+    故和为 $\boxed{\dfrac{1}{4}}$。
     \item 通项等于
     \[
         \sqrt{\dfrac{n}{n+1}}-\sqrt{\dfrac{n-1}{n}},
@@ -83,7 +83,7 @@ x^{2n+m(2n+1)}
 \begin{enumerate}[label=(\arabic*)]
     \item 由积化和差，
     \[
-        a_n=\dfrac12\left(\sin\dfrac2n-\sin\dfrac1n\right)
+        a_n=\dfrac{1}{2}\left(\sin\dfrac{2}{n}-\sin\dfrac{1}{n}\right)
         \sim\dfrac{1}{2n}.
     \]
     因而按当前题面该级数发散，并不存在有限的“和”；这里的分母很可能漏写了指数，应核对原始资料。
@@ -98,11 +98,11 @@ x^{2n+m(2n+1)}
         \arctan\dfrac{2}{4n^2-4n+1}
         =\arctan\dfrac{1}{2n-2}-\arctan\dfrac{1}{2n},
     \]
-    其中 $n=1$ 时把第一项理解为 $\dfrac\pi2$。故 $I=\boxed{\dfrac\pi2}$。
+    其中 $n=1$ 时把第一项理解为 $\dfrac{\pi}{2}$。故 $I=\boxed{\dfrac{\pi}{2}}$。
     \item 由 $\sin3u=3\sin u-4\sin^3u$，
     \[
         3^{n-1}\sin^3\dfrac{\theta}{3^n}
-        =\dfrac14\left(3^n\sin\dfrac{\theta}{3^n}
+        =\dfrac{1}{4}\left(3^n\sin\dfrac{\theta}{3^n}
         -3^{n-1}\sin\dfrac{\theta}{3^{n-1}}\right).
     \]
     裂项相消并令 $N\to\infty$，得到
@@ -180,7 +180,7 @@ x^{2n+m(2n+1)}
 \]
 因此若正确条件是 $P_n\to l$，结论才由裂项相消得到
 \[
-    \sum\limits_{n=1}^{\infty}\dfrac{a_n}{P_n}=1-\dfrac1l.
+    \sum\limits_{n=1}^{\infty}\dfrac{a_n}{P_n}=1-\dfrac{1}{l}.
 \]
 而原题写的是 $\displaystyle \sum P_n=l$。例如取 $a_n=0$，则 $l=+\infty$，但左端为 $0$、右端为 $1$。故条件中的求和号应核对原始资料。
 \end{proof}
@@ -199,12 +199,12 @@ x^{2n+m(2n+1)}
 \]
 因而
 \[
-    \dfrac1{a_n}
-    =\dfrac1{a_n-1}-\dfrac1{a_{n+1}-1}.
+    \dfrac{1}{a_n}
+    =\dfrac{1}{a_n-1}-\dfrac{1}{a_{n+1}-1}.
 \]
 又 $a_n>1$ 且严格递增，故 $a_n\to+\infty$。裂项相消即得
 \[
-    I=\boxed{\dfrac1{a_1-1}}.
+    I=\boxed{\dfrac{1}{a_1-1}}.
 \]
 \end{proof}
 
@@ -220,10 +220,10 @@ x^{2n+m(2n+1)}
 \end{example}
 
 \begin{proof}[解]
-取到第 $3N$ 项，括号中的减项恰为 $1,\dfrac12,\ldots,\dfrac1N$，故部分和为
+取到第 $3N$ 项，括号中的减项恰为 $1,\dfrac{1}{2},\ldots,\dfrac{1}{N}$，故部分和为
 \[
     H_{3N}-H_N,
-    \qquad H_N=\sum\limits_{k=1}^{N}\dfrac1k.
+    \qquad H_N=\sum\limits_{k=1}^{N}\dfrac{1}{k}.
 \]
 由 $H_N=\ln N+\gamma+o(1)$，所求和为 $\boxed{\ln3}$。
 \end{proof}
@@ -239,10 +239,10 @@ x^{2n+m(2n+1)}
 \begin{proof}[解]
 每组三项之和为
 \[
-    \dfrac1{2n-1}-\dfrac1{4n-2}-\dfrac1{4n}
-    =\dfrac12\left(\dfrac1{2n-1}-\dfrac1{2n}\right).
+    \dfrac{1}{2n-1}-\dfrac{1}{4n-2}-\dfrac{1}{4n}
+    =\dfrac{1}{2}\left(\dfrac{1}{2n-1}-\dfrac{1}{2n}\right).
 \]
-因此所求和为交错调和级数之和的一半，即 $\boxed{\dfrac12\ln2}$。
+因此所求和为交错调和级数之和的一半，即 $\boxed{\dfrac{1}{2}\ln2}$。
 \end{proof}
 
 \begin{example}
@@ -255,19 +255,19 @@ x^{2n+m(2n+1)}
 \begin{proof}[解]
 记重排后前 $N$ 个完整组的和为 $T_N$，则
 \[
-    T_N=\sum\limits_{k=1}^{pN}\dfrac1{2k-1}
-    -\sum\limits_{k=1}^{qN}\dfrac1{2k}.
+    T_N=\sum\limits_{k=1}^{pN}\dfrac{1}{2k-1}
+    -\sum\limits_{k=1}^{qN}\dfrac{1}{2k}.
 \]
 利用
 \[
-    \sum\limits_{k=1}^{m}\dfrac1{2k-1}=H_{2m}-\dfrac12H_m,
+    \sum\limits_{k=1}^{m}\dfrac{1}{2k-1}=H_{2m}-\dfrac{1}{2}H_m,
     \qquad
-    \sum\limits_{k=1}^{m}\dfrac1{2k}=\dfrac12H_m,
+    \sum\limits_{k=1}^{m}\dfrac{1}{2k}=\dfrac{1}{2}H_m,
 \]
 可得
 \[
-    T_N=H_{2pN}-\dfrac12H_{pN}-\dfrac12H_{qN}
-    \longrightarrow\ln2+\dfrac12\ln\dfrac pq.
+    T_N=H_{2pN}-\dfrac{1}{2}H_{pN}-\dfrac{1}{2}H_{qN}
+    \longrightarrow\ln2+\dfrac{1}{2}\ln\dfrac{p}{q}.
 \]
 一个组内尚未取完的项总和趋于零，故所有部分和具有同一极限。
 \end{proof}
@@ -283,11 +283,11 @@ x^{2n+m(2n+1)}
 \]
 个，每个均不小于 $10^{k-1}$。因此第 $k$ 组倒数之和严格小于
 \[
-    8\left(\dfrac9{10}\right)^{k-1}.
+    8\left(\dfrac{9}{10}\right)^{k-1}.
 \]
 故新级数收敛，并且其和小于
 \[
-    8\sum\limits_{k=1}^{\infty}\left(\dfrac9{10}\right)^{k-1}
+    8\sum\limits_{k=1}^{\infty}\left(\dfrac{9}{10}\right)^{k-1}
     =\boxed{80}.
 \]
 \end{proof}
@@ -308,18 +308,18 @@ x^{2n+m(2n+1)}
 \begin{enumerate}[label=(\arabic*)]
     \item 因
     \[
-        (n^2+2)\ln\left(1+\dfrac1{n^2}\right)\longrightarrow1,
+        (n^2+2)\ln\left(1+\dfrac{1}{n^2}\right)\longrightarrow1,
     \]
     通项不趋于零。
     \item
     \[
-        \left(1-\dfrac4{2n^2+1}\right)^{n^2}\longrightarrow e^{-2}\neq0.
+        \left(1-\dfrac{4}{2n^2+1}\right)^{n^2}\longrightarrow e^{-2}\neq0.
     \]
     \item 若 $\cos(n\alpha)\to0$，则其子列 $\cos(2n\alpha)\to0$；但恒等式
     $\cos(2n\alpha)=2\cos^2(n\alpha)-1$ 又给出该子列趋于 $-1$，矛盾。
     \item 由分组估计
     \[
-        \sum\limits_{n=2^{m-1}+1}^{2^m}\dfrac1n\geq\dfrac12,
+        \sum\limits_{n=2^{m-1}+1}^{2^m}\dfrac{1}{n}\geq\dfrac{1}{2},
     \]
     调和级数发散。
 \end{enumerate}
@@ -334,7 +334,7 @@ x^{2n+m(2n+1)}
 \end{example}
 
 \begin{proof}[解]
-记 $\displaystyle S_n=\sum\limits_{k=1}^{n}a_k$。若 $a_n/S_n$ 不趋于零，则结论显然。否则最终有 $a_n/S_n\leq\dfrac12$，即 $a_n/S_{n-1}\leq1$。此时
+记 $\displaystyle S_n=\sum\limits_{k=1}^{n}a_k$。若 $a_n/S_n$ 不趋于零，则结论显然。否则最终有 $a_n/S_n\leq\dfrac{1}{2}$，即 $a_n/S_{n-1}\leq1$。此时
 \[
     \ln\dfrac{S_n}{S_{n-1}}
     =\ln\left(1+\dfrac{a_n}{S_{n-1}}\right)
@@ -343,7 +343,7 @@ x^{2n+m(2n+1)}
 求和后得到
 \[
     \sum\limits_{n=N}^{m}\dfrac{a_n}{S_n}
-    \geq\dfrac12\ln\dfrac{S_m}{S_{N-1}}\longrightarrow+\infty,
+    \geq\dfrac{1}{2}\ln\dfrac{S_m}{S_{N-1}}\longrightarrow+\infty,
 \]
 故原级数发散。
 \end{proof}
@@ -363,7 +363,7 @@ x^{2n+m(2n+1)}
 \begin{proof}[解]
 不一定。事实上题设第一式已经是 $a_{n+1}\to0$，其余每个固定长度的和也随之趋于零，并未增加足以保证级数收敛的条件。取
 \[
-    a_n=\dfrac1n
+    a_n=\dfrac{1}{n}
 \]
 即可满足全部极限条件，但调和级数发散。
 \end{proof}
@@ -407,14 +407,14 @@ x^{2n+m(2n+1)}
 \begin{enumerate}[label=(\arabic*)]
     \item 两两分组后第 $k$ 组为
     \[
-        \dfrac1{2k-1}-\dfrac1{\sqrt{2k}}.
+        \dfrac{1}{2k-1}-\dfrac{1}{\sqrt{2k}}.
     \]
     当 $k$ 充分大时它不超过 $-c/\sqrt k$，其中 $c>0$，故分组部分和趋于 $-\infty$。
     \item 每组三项为
     \[
-        \dfrac1{\sqrt{4k-3}}+\dfrac1{\sqrt{4k-1}}-\dfrac1{\sqrt{2k}}.
+        \dfrac{1}{\sqrt{4k-3}}+\dfrac{1}{\sqrt{4k-1}}-\dfrac{1}{\sqrt{2k}}.
     \]
-    乘以 $\sqrt k$ 后趋于 $1-\dfrac1{\sqrt2}>0$，故与 $\displaystyle \sum\limits k^{-1/2}$ 比较可知分组部分和趋于 $+\infty$。
+    乘以 $\sqrt k$ 后趋于 $1-\dfrac{1}{\sqrt2}>0$，故与 $\displaystyle \sum\limits k^{-1/2}$ 比较可知分组部分和趋于 $+\infty$。
 \end{enumerate}
 \end{proof}
 
@@ -476,7 +476,7 @@ $\displaystyle \sum (\ln^2n)/n^{p-1}$ 同敛散，也恰在 $p>2$ 时收敛。
 
 对 (4)，Wallis 公式给出
 \[
-    \dfrac{(2n-1)!!}{(2n)!!}\sim\dfrac1{\sqrt{\pi n}},
+    \dfrac{(2n-1)!!}{(2n)!!}\sim\dfrac{1}{\sqrt{\pi n}},
 \]
 故通项与 $1/(\pi n)$ 等价，级数发散。
 \end{proof}
@@ -500,12 +500,12 @@ $\displaystyle \sum (\ln^2n)/n^{p-1}$ 同敛散，也恰在 $p>2$ 时收敛。
         \sum\limits_{n=1}^{\infty}\dfrac{\sqrt{a_n}}{n^p}
         \leq
         \left(\sum\limits_{n=1}^{\infty}a_n\right)^{1/2}
-        \left(\sum\limits_{n=1}^{\infty}\dfrac1{n^{2p}}\right)^{1/2}<\infty
+        \left(\sum\limits_{n=1}^{\infty}\dfrac{1}{n^{2p}}\right)^{1/2}<\infty
     \]
     当且仅当这里所用的 $p$ 满足 $p>1/2$。
     \item 由 $2\sqrt{a_na_{n+1}}\leq a_n+a_{n+1}$，$I$ 收敛蕴含 $J$ 收敛。反之不成立：取
     \[
-        a_{2k-1}=1,qquad a_{2k}=\dfrac1{k^4}.
+        a_{2k-1}=1,qquad a_{2k}=\dfrac{1}{k^4}.
     \]
     则 $\displaystyle \sum a_n$ 发散，而 $\displaystyle \sum\sqrt{a_na_{n+1}}$ 可由 $\displaystyle \sum k^{-2}$ 控制，因而收敛。
 \end{enumerate}
@@ -527,7 +527,7 @@ $\displaystyle \sum (\ln^2n)/n^{p-1}$ 同敛散，也恰在 $p>2$ 时收敛。
     \item 不能确定。取 $a_n=1/n$ 时所得级数发散；若 $a_{2^k}=1$，其余项取 $a_n=1/n^2$，则 $\displaystyle \sum a_n$ 发散，而所得级数收敛。
     \item 恒收敛，因为
     \[
-        0<\dfrac{a_n}{1+n^2a_n}\leq\dfrac1{n^2}.
+        0<\dfrac{a_n}{1+n^2a_n}\leq\dfrac{1}{n^2}.
     \]
     \item 不能确定。取 $a_n=1/n$ 时发散；取 $a_n=2^n$ 时通项小于 $2^{-n}$，故收敛。
 \end{enumerate}
@@ -552,10 +552,10 @@ $\displaystyle \sum (\ln^2n)/n^{p-1}$ 同敛散，也恰在 $p>2$ 时收敛。
 \]
 于是
 \[
-    \dfrac1{C^2}|a_{n+1}-a_n|
+    \dfrac{1}{C^2}|a_{n+1}-a_n|
     \leq
-    \left|\dfrac1{a_{n+1}}-\dfrac1{a_n}\right|
-    \leq\dfrac1{c^2}|a_{n+1}-a_n|.
+    \left|\dfrac{1}{a_{n+1}}-\dfrac{1}{a_n}\right|
+    \leq\dfrac{1}{c^2}|a_{n+1}-a_n|.
 \]
 有限个首项不影响敛散性，故两级数同敛散。原题下标需要核对。
 \end{proof}
@@ -598,7 +598,7 @@ $\displaystyle \sum (\ln^2n)/n^{p-1}$ 同敛散，也恰在 $p>2$ 时收敛。
     \[
         \dfrac{a_n}{S_n^2}
         \leq\dfrac{a_n}{S_{n-1}S_n}
-        =\dfrac1{S_{n-1}}-\dfrac1{S_n},
+        =\dfrac{1}{S_{n-1}}-\dfrac{1}{S_n},
     \]
     故第二个级数收敛。
     \item 按本章前文的定义 $\displaystyle R_n=\sum_{k=n+1}^{\infty}a_k$，当前题面不成立。例如取 $a_n=2^{-2^n}$，则 $a_n/\sqrt{R_n}$ 的通项甚至不趋于零。若分母应为 $R_{n-1}$，则
@@ -667,16 +667,16 @@ $\displaystyle \sum (\ln^2n)/n^{p-1}$ 同敛散，也恰在 $p>2$ 时收敛。
 \begin{proof}[解]
 记 $P_n=p_1+cdots+p_n$。由 $P_n\leq np_n$，
 \[
-    \dfrac1{p_n}\leq\dfrac n{P_n},
+    \dfrac{1}{p_n}\leq\dfrac{n}{P_n},
 \]
 故右侧收敛蕴含左侧收敛。反之，由单调性，
 \[
     P_n\geq\sum\limits_{k=\lfloor n/2\rfloor}^{n}p_k
-    \geq\dfrac n2p_{\lfloor n/2\rfloor},
+    \geq\dfrac{n}{2}p_{\lfloor n/2\rfloor},
 \]
 从而
 \[
-    \dfrac n{P_n}\leq\dfrac2{p_{\lfloor n/2\rfloor}}.
+    \dfrac{n}{P_n}\leq\dfrac{2}{p_{\lfloor n/2\rfloor}}.
 \]
 右端每个下标至多重复三次，故可与 $\displaystyle \sum1/p_n$ 比较，得到反向蕴含。
 \end{proof}
@@ -717,14 +717,14 @@ $\displaystyle \sum (\ln^2n)/n^{p-1}$ 同敛散，也恰在 $p>2$ 时收敛。
         \sum\limits_{n=1}^{m}A_n^{p-1}a_n
         \leq
         \left(\sum\limits_{n=1}^{m}A_n^p\right)^{\frac{p-1}{p}}
-        \left(\sum\limits_{n=1}^{m}a_n^p\right)^{\frac1p}.
+        \left(\sum\limits_{n=1}^{m}a_n^p\right)^{\frac{1}{p}}.
     \]
     与 (1) 合并并约去公共因子，得到所述 Hardy--Landau 不等式。
     \item 在 (2) 中以 $a_n^{1/p}$ 代替 $a_n$，得到
     \[
         \sum\limits_{n=1}^{m}
         \left(\dfrac{a_1^{1/p}+\cdots+a_n^{1/p}}n\right)^p
-        \leq\left(\dfrac p{p-1}\right)^p\sum\limits_{n=1}^{m}a_n.
+        \leq\left(\dfrac{p}{p-1}\right)^p\sum\limits_{n=1}^{m}a_n.
     \]
     几何平均不超过算术平均，故左端逐项不小于
     $(a_1\cdots a_n)^{1/n}$。先令 $m\to\infty$，再令 $p\to\infty$，并用
@@ -743,7 +743,7 @@ $\displaystyle \sum (\ln^2n)/n^{p-1}$ 同敛散，也恰在 $p>2$ 时收敛。
 \begin{proof}[解]
 第 $n$ 个正根位于 $(n\pi,n\pi+\pi/2)$ 内，因而 $x_n>n\pi$。于是
 \[
-    0<\dfrac1{x_n^2}<\dfrac1{\pi^2n^2}.
+    0<\dfrac{1}{x_n^2}<\dfrac{1}{\pi^2n^2}.
 \]
 与 $p$ 级数比较可知原级数收敛。
 \end{proof}
@@ -789,9 +789,9 @@ $a_n\geq2^{-n}$，则 $a_n^{-1/n}\leq2$，故
 由周期性及一个周期上的积分为零，$\Phi$ 是有界周期函数。换元 $t=nx$ 并分部积分，得
 \[
 \begin{aligned}
-a_n&=\dfrac1n\int_0^ne^{t/n}\varphi(t)\,\mathrm{d}t\\
-&=\dfrac1n\left[e^{t/n}\Phi(t)\right]_0^n
--\dfrac1{n^2}\int_0^ne^{t/n}\Phi(t)\,\mathrm{d}t.
+a_n&=\dfrac{1}{n}\int_0^ne^{t/n}\varphi(t)\,\mathrm{d}t\\
+&=\dfrac{1}{n}\left[e^{t/n}\Phi(t)\right]_0^n
+-\dfrac{1}{n^2}\int_0^ne^{t/n}\Phi(t)\,\mathrm{d}t.
 \end{aligned}
 \]
 因 $\Phi(n)=\Phi(0)=0$，故 $|a_n|\leq C/n$。于是
@@ -816,8 +816,8 @@ $\displaystyle \sum a_n^2$ 由 $\displaystyle \sum C^2/n^2$ 控制而收敛。
 \begin{aligned}
 s\int_1^{+\infty}\dfrac{[x]}{x^{s+1}}\,\mathrm{d}x
 &=\sum\limits_{n=1}^{\infty}sn\int_n^{n+1}x^{-s-1}\,\mathrm{d}x\\
-&=\sum\limits_{n=1}^{\infty}n\left(\dfrac1{n^s}-\dfrac1{(n+1)^s}\right)\\
-&=\sum\limits_{n=1}^{\infty}\dfrac1{n^s}=\xi(s),
+&=\sum\limits_{n=1}^{\infty}n\left(\dfrac{1}{n^s}-\dfrac{1}{(n+1)^s}\right)\\
+&=\sum\limits_{n=1}^{\infty}\dfrac{1}{n^s}=\xi(s),
 \end{aligned}
 \]
 其中最后一步由部分和裂项后令上限趋于无穷得到。
@@ -843,7 +843,7 @@ s\int_1^{+\infty}\dfrac{[x]}{x^{s+1}}\,\mathrm{d}x
         \int_1^{+\infty}\dfrac{x-[x]}{x^{s+1}}\,\mathrm{d}x
         &=\int_1^{+\infty}x^{-s}\,\mathrm{d}x
         -\int_1^{+\infty}\dfrac{[x]}{x^{s+1}}\,\mathrm{d}x\\
-        &=\dfrac1{s-1}-\dfrac1s\sum\limits_{n=1}^{\infty}\dfrac1{n^s}.
+        &=\dfrac{1}{s-1}-\dfrac{1}{s}\sum\limits_{n=1}^{\infty}\dfrac{1}{n^s}.
     \end{aligned}
     \]
 \end{enumerate}
@@ -871,7 +871,7 @@ s\int_1^{+\infty}\dfrac{[x]}{x^{s+1}}\,\mathrm{d}x
     \item 记上述反常积分为 $I_n$。同一公式给出 $|I_n|\leq C/n$，其中 $C$ 与 $n$ 无关。因此
     \[
         \sum\limits_{n=1}^{\infty}\dfrac{|I_n|}{n}
-        \leq C\sum\limits_{n=1}^{\infty}\dfrac1{n^2}<\infty.
+        \leq C\sum\limits_{n=1}^{\infty}\dfrac{1}{n^2}<\infty.
     \]
     原题第二式把积分变量 $x$ 留在了求和号内；按“先取该反常积分再对 $n$ 求和”的自然理解，结论如上。
 \end{enumerate}
@@ -888,14 +888,14 @@ s\int_1^{+\infty}\dfrac{[x]}{x^{s+1}}\,\mathrm{d}x
 \begin{proof}[解]
 题面求和指标应为 $n$。记
 \[
-    r_n=e-\sum\limits_{k=0}^{n}\dfrac1{k!}
-    =\sum\limits_{k=n+1}^{\infty}\dfrac1{k!}.
+    r_n=e-\sum\limits_{k=0}^{n}\dfrac{1}{k!}
+    =\sum\limits_{k=n+1}^{\infty}\dfrac{1}{k!}.
 \]
 当 $n\geq1$ 时，
 \[
-    0<r_n\leq\dfrac1{(n+1)!}
-    \sum\limits_{j=0}^{\infty}\dfrac1{(n+2)^j}
-    \leq\dfrac2{(n+1)!}.
+    0<r_n\leq\dfrac{1}{(n+1)!}
+    \sum\limits_{j=0}^{\infty}\dfrac{1}{(n+2)^j}
+    \leq\dfrac{2}{(n+1)!}.
 \]
 故 $\displaystyle \sum r_n$ 与阶乘级数比较可知收敛。
 \end{proof}
@@ -917,15 +917,15 @@ s\int_1^{+\infty}\dfrac{[x]}{x^{s+1}}\,\mathrm{d}x
 逐项作等价比较：
 \[
 \begin{gathered}
-    n^{-1-\frac{1}{n}}\sim\dfrac1n,
+    n^{-1-\frac{1}{n}}\sim\dfrac{1}{n},
     \qquad
     \dfrac{\sqrt[n]2-1}{n^p}\sim\dfrac{\ln2}{n^{p+1}},\\
-    \dfrac{\sqrt{n+1}-\sqrt n}{n^p}\sim\dfrac1{2n^{p+\frac{1}{2}}},
+    \dfrac{\sqrt{n+1}-\sqrt n}{n^p}\sim\dfrac{1}{2n^{p+\frac{1}{2}}},
     \qquad
     \left(1-\sqrt[3]{\dfrac{n-1}{n+1}}\right)^p
-    \sim\left(\dfrac2{3n}\right)^p,\\
-    \left[e-\left(1+\dfrac1n\right)^n\right]^p
-    \sim\left(\dfrac e{2n}\right)^p.
+    \sim\left(\dfrac{2}{3n}\right)^p,\\
+    \left[e-\left(1+\dfrac{1}{n}\right)^n\right]^p
+    \sim\left(\dfrac{e}{2n}\right)^p.
 \end{gathered}
 \]
 所以 (1) 发散；(2) 在 $p>0$ 时收敛、$p\leq0$ 时发散；(3) 在
@@ -945,7 +945,7 @@ $0<p\leq1$ 时发散。
 \begin{proof}[解]
 Taylor 展开给出
 \[
-    \dfrac1n-\sin\dfrac1n\sim\dfrac1{6n^3},
+    \dfrac{1}{n}-\sin\dfrac{1}{n}\sim\dfrac{1}{6n^3},
     \qquad
     -\ln\cos\dfrac{2\pi}{n}\sim\dfrac{2\pi^2}{n^2}.
 \]
@@ -953,12 +953,12 @@ Taylor 展开给出
 
 对 (2)，
 \[
-    e^{1/n}-\sin\dfrac1n=1+\dfrac1{2n^2}+O\left(\dfrac1{n^3}\right),
+    e^{1/n}-\sin\dfrac{1}{n}=1+\dfrac{1}{2n^2}+O\left(\dfrac{1}{n^3}\right),
 \]
 从而对固定 $p\neq0$，
 \[
-    \left(e^{1/n}-\sin\dfrac1n\right)^{np}-1
-    \sim\dfrac p{2n}.
+    \left(e^{1/n}-\sin\dfrac{1}{n}\right)^{np}-1
+    \sim\dfrac{p}{2n}.
 \]
 因此该级数发散；$p=0$ 时各项为零。
 \end{proof}
@@ -987,8 +987,8 @@ B_n^3-B_{n-1}^3
 \]
 由 Stolz 定理，$B_n^3/n\to3$，进而
 \[
-    a_n\sim\dfrac1{\sqrt[3]{3n}},
-    \qquad a_n^3\sim\dfrac1{3n}.
+    a_n\sim\dfrac{1}{\sqrt[3]{3n}},
+    \qquad a_n^3\sim\dfrac{1}{3n}.
 \]
 所以 $\displaystyle \sum a_n^3$ 发散。与此同时
 \[
@@ -1015,9 +1015,9 @@ $a_n=b_n/n\geq c/n$，与级数收敛矛盾。因此 $b_n$ 必单调递减。
 \[
     \sum\limits_{k=\lceil\sqrt n\rceil}^{n}a_k
     =\sum\limits_{k=\lceil\sqrt n\rceil}^{n}\dfrac{b_k}{k}
-    \geq b_n\sum\limits_{k=\lceil\sqrt n\rceil}^{n}\dfrac1k.
+    \geq b_n\sum\limits_{k=\lceil\sqrt n\rceil}^{n}\dfrac{1}{k}.
 \]
-左端作为收敛级数的尾和趋于零，而右侧调和和渐近于 $\frac12\ln n$，故
+左端作为收敛级数的尾和趋于零，而右侧调和和渐近于 $\frac{1}{2}\ln n$，故
 $b_n\ln n=na_n\ln n\to0$。
 \end{proof}
 
@@ -1057,7 +1057,7 @@ $b_n\ln n=na_n\ln n\to0$。
     \item 在区间 $2^k\leq n<2^{k+1}$ 上，
     \[
         \sum\limits_{n=2^k}^{2^{k+1}-1}\dfrac{a_n}{n}
-        \geq\dfrac12a_{2^{k+1}}.
+        \geq\dfrac{1}{2}a_{2^{k+1}}.
     \]
     右侧分块和发散，故原级数发散。
     \item 令 $b_n=\min\{a_n,1/n\}$。若 $\displaystyle \sum b_n$ 收敛，则因 $b_n$ 递减，有 $nb_n\to0$。于是充分大时不可能有 $b_n=1/n$，故最终 $b_n=a_n$，这与 $\displaystyle \sum a_n$ 发散矛盾。
@@ -1091,7 +1091,7 @@ $b_n\ln n=na_n\ln n\to0$。
 因此 $\displaystyle \sum d_ka_{m_k}$ 收敛立即推出 $\displaystyle \sum a_n$ 收敛。反之，将左端下界改写为
 \[
     d_ka_{m_{k+1}}
-    \geq\dfrac1M d_{k+1}a_{m_{k+1}},
+    \geq\dfrac{1}{M} d_{k+1}a_{m_{k+1}},
 \]
 可见 $\displaystyle \sum a_n$ 收敛蕴含 $\displaystyle \sum d_{k+1}a_{m_{k+1}}$ 收敛。移去有限个首项不影响敛散性，故两级数同敛散。
 \end{proof}
@@ -1116,7 +1116,7 @@ $b_n\ln n=na_n\ln n\to0$。
     \item 由单调性，
     \[
         \sum\limits_{k=\lceil n/2\rceil}^{n}\dfrac{a_k}{\sqrt k}
-        \geq\dfrac{n}{2}\dfrac{a_n}{\sqrt n}=\dfrac12\sqrt n,a_n.
+        \geq\dfrac{n}{2}\dfrac{a_n}{\sqrt n}=\dfrac{1}{2}\sqrt n,a_n.
     \]
     左端是收敛级数的尾和，故 $\sqrt n,a_n\to0$。最终有
     $a_n\leq1/\sqrt n$，于是 $a_n^2\leq a_n/\sqrt n$，比较即得收敛。
@@ -1279,7 +1279,7 @@ $-\ln\lambda<1$，即 $\lambda>e^{-1}$，则发散。
     \[
         \limsup\sqrt[n]{a_n}
         \leq\max_{-1\leq t\leq1}\left(\dfrac{1+t}{2+t}\right)^2
-        =\dfrac49<1,
+        =\dfrac{4}{9}<1,
     \]
     故收敛。
     \item 奇偶子列的 $n$ 次方根分别趋于
@@ -1336,9 +1336,9 @@ $-\ln\lambda<1$，即 $\lambda>e^{-1}$，则发散。
     $a_n\sim(\alpha n)^{-1/\alpha}$。因 $0<\alpha<1$，有 $1/\alpha>1$，所以 $\displaystyle \sum a_n$ 收敛。
     \item 当前内层求和的分子为 $a_n$。利用积分比较，
     \[
-        \sum\limits_{k=1}^{\infty}\dfrac1{n^2+k^2}
+        \sum\limits_{k=1}^{\infty}\dfrac{1}{n^2+k^2}
         \leq\int_0^{+\infty}\dfrac{\mathrm{d}x}{n^2+x^2}
-        =\dfrac\pi{2n}.
+        =\dfrac{\pi}{2n}.
     \]
     因此题中双重级数不超过 $\displaystyle (\pi/2)\sum a_n/n$，从而收敛。
 \end{enumerate}
@@ -1356,11 +1356,11 @@ $-\ln\lambda<1$，即 $\lambda>e^{-1}$，则发散。
 有
 \[
     a_{n+1}-a_n
-    =\dfrac2{\sqrt{n+1}+\sqrt n}-\dfrac1{\sqrt{n+1}}>0,
+    =\dfrac{2}{\sqrt{n+1}+\sqrt n}-\dfrac{1}{\sqrt{n+1}}>0,
 \]
 故 $a_n$ 单调递增。又由递减函数 $x^{-1/2}$ 的积分比较，
 \[
-    2(\sqrt{n+1}-1)leq\sum\limits_{k=1}^{n}\dfrac1{\sqrt k}
+    2(\sqrt{n+1}-1)leq\sum\limits_{k=1}^{n}\dfrac{1}{\sqrt k}
     \leq1+2(\sqrt n-1).
 \]
 因此
@@ -1403,7 +1403,7 @@ $f'(x)\geq f'(x_0)>0$，这与 $f(x)$ 有有限极限矛盾。因此 $-f'(x)$ �
 \begin{proof}[解]
 若 $l>1$，取 $1<p<l$，则充分大时
 \[
-    \ln\dfrac{a_n}{a_{n+1}}>\dfrac pn.
+    \ln\dfrac{a_n}{a_{n+1}}>\dfrac{p}{n}.
 \]
 求和后得到 $a_n\leq Cn^{-p}$，故级数收敛。若 $l<1$，取
 $l<p<1$，同理有 $a_n\geq cn^{-p}$，故级数发散。
@@ -1421,7 +1421,7 @@ $l<p<1$，同理有 $a_n\geq cn^{-p}$，故级数发散。
 \begin{proof}[解]
 由 $u-1\sim\ln u$（$u\to1$），当极限有限时，本判别与上一题的比值对数判别等价。更直接地，若 $l>1$，取 $1<p<l$，则充分大时
 \[
-    \dfrac{a_n}{a_{n+1}}>1+\dfrac pn.
+    \dfrac{a_n}{a_{n+1}}>1+\dfrac{p}{n}.
 \]
 与 $n^{-p}$ 作比式比较即得收敛；若 $l<1$，取 $l<p<1$ 作反向比较，得到发散。无穷极限情形同理。
 \end{proof}
@@ -1507,7 +1507,7 @@ $a_n>n^{-p}$，故发散。
 第 $n$ 项为
 \[
     (-1)^{n-1}\dfrac{H_n}{2n-1},
-    \qquad H_n=\sum\limits_{k=1}^{n}\dfrac1k.
+    \qquad H_n=\sum\limits_{k=1}^{n}\dfrac{1}{k}.
 \]
 因为 $H_n/(2n-1)\to0$，且该数列从某项起单调递减，所以由 Leibniz 判别法，原级数收敛。
 \end{proof}
@@ -1523,14 +1523,14 @@ $a_n>n^{-p}$，故发散。
 \begin{enumerate}[label=(\arabic*)]
     \item 按 $k^2\leq n<(k+1)^2$ 分块。第 $k$ 块同号，且其和
     \[
-        B_k=(-1)^k\sum\limits_{n=k^2}^{(k+1)^2-1}\dfrac1n
-        =(-1)^k\left(\dfrac2k+O\left(\dfrac1{k^2}\right)\right).
+        B_k=(-1)^k\sum\limits_{n=k^2}^{(k+1)^2-1}\dfrac{1}{n}
+        =(-1)^k\left(\dfrac{2}{k}+O\left(\dfrac{1}{k^2}\right)\right).
     \]
     块级数收敛，而块内任意未完成部分的绝对值不超过 $(2k+1)/k^2\to0$，故原级数收敛。
     \item 题面中的 $(-1)^{\sqrt[3]n}$ 对非立方数不是实数，无法作为实级数讨论。若原题应为
     $(-1)^{[\sqrt[3]n]}$，则按 $k^3\leq n<(k+1)^3$ 分块，块和为
     \[
-        (-1)^k\left(\dfrac3k+O\left(\dfrac1{k^2}\right)\right),
+        (-1)^k\left(\dfrac{3}{k}+O\left(\dfrac{1}{k^2}\right)\right),
     \]
     且块内余量趋于零，故同样收敛。指数中的取整符号需要核对原始资料。
 \end{enumerate}
@@ -1551,7 +1551,7 @@ $a_n>n^{-p}$，故发散。
 
 若 $p=q=r$，两两分组后
 \[
-    \dfrac1{(2n-1)^r}-\dfrac1{(2n)^r}=O(n^{-r-1}),
+    \dfrac{1}{(2n-1)^r}-\dfrac{1}{(2n)^r}=O(n^{-r-1}),
 \]
 所以原级数对一切 $r>0$ 均收敛；其中 $0<r\leq1$ 时为条件收敛。若
 $p\neq q$ 且至少一个不超过 $1$，分组通项最终由较小指数对应的项支配，部分和趋于 $+\infty$ 或 $-\infty$。因此条件收敛恰在 $p=q\leq1$ 时发生。
@@ -1584,7 +1584,7 @@ $p\neq q$ 且至少一个不超过 $1$，分组通项最终由较小指数对应
 \begin{proof}[解]
 题设极限先给出 $f(0)=0$，再由可导性得到 $f'(0)=0$。Taylor 公式给出：对每个 $n$，存在 $\xi_n$ 介于 $0$ 与 $1/n$ 之间，使
 \[
-    f\left(\dfrac1n\right)=\dfrac{f''(\xi_n)}{2n^2}.
+    f\left(\dfrac{1}{n}\right)=\dfrac{f''(\xi_n)}{2n^2}.
 \]
 由于 $f''$ 在紧区间上有界，故 $|f(1/n)|\leq C/n^2$，从而题中级数绝对收敛。
 \end{proof}
@@ -1618,7 +1618,7 @@ $p\neq q$ 且至少一个不超过 $1$，分组通项最终由较小指数对应
 \]
 则 $\displaystyle \sum a_n$ 收敛，且 $\displaystyle \sum(a_n+b_n)=0$ 绝对收敛；但
 \[
-    \sum\limits_{n=1}^{\infty}a_nb_n=-\sum\limits_{n=1}^{\infty}\dfrac1n
+    \sum\limits_{n=1}^{\infty}a_nb_n=-\sum\limits_{n=1}^{\infty}\dfrac{1}{n}
 \]
 发散。因此题目还缺少条件，需要核对原始资料。
 \end{proof}
@@ -1636,12 +1636,12 @@ $p\neq q$ 且至少一个不超过 $1$，分组通项最终由较小指数对应
     \item 展开得
     \[
         \dfrac{(-1)^n}{\sqrt n+(-1)^{n-1}}
-        =\dfrac{(-1)^n}{\sqrt n}+\dfrac1n+O(n^{-3/2}).
+        =\dfrac{(-1)^n}{\sqrt n}+\dfrac{1}{n}+O(n^{-3/2}).
     \]
     第一项构成交错收敛级数，第二项为调和级数，故原级数发散到 $+\infty$。
     \item 令 $u_n=(-1)^nn^{-2/3}$，则
     \[
-        \ln(1+u_n)=u_n-\dfrac12u_n^2+O(|u_n|^3).
+        \ln(1+u_n)=u_n-\dfrac{1}{2}u_n^2+O(|u_n|^3).
     \]
     第一项形成收敛的交错级数，后两项绝对可和，故原级数收敛；但
     $|\ln(1+u_n)|\sim n^{-2/3}$，所以不是绝对收敛。
@@ -1660,17 +1660,17 @@ $p\neq q$ 且至少一个不超过 $1$，分组通项最终由较小指数对应
 \begin{enumerate}[label=(\arabic*)]
     \item
     \[
-        1-\cos\dfrac\pi{\sqrt n}\sim\dfrac{\pi^2}{2n},
+        1-\cos\dfrac{\pi}{\sqrt n}\sim\dfrac{\pi^2}{2n},
     \]
     故原级数与交错调和级数同型，条件收敛。
     \item 因
     \[
-        \sqrt{n^2+1}=n+\dfrac1{2n}+O(n^{-3}),
+        \sqrt{n^2+1}=n+\dfrac{1}{2n}+O(n^{-3}),
     \]
     所以
     \[
         \sin\left(\pi\sqrt{n^2+1}\right)
-        =(-1)^n\left(\dfrac\pi{2n}+O(n^{-3})\right).
+        =(-1)^n\left(\dfrac{\pi}{2n}+O(n^{-3})\right).
     \]
     因此该级数也条件收敛。
 \end{enumerate}
@@ -1689,7 +1689,7 @@ $p\neq q$ 且至少一个不超过 $1$，分组通项最终由较小指数对应
 \begin{enumerate}[label=(\arabic*)]
     \item 通项化为
     \[
-        \dfrac1{\sqrt n}+(-1)^n\sin\dfrac1{\sqrt n}
+        \dfrac{1}{\sqrt n}+(-1)^n\sin\dfrac{1}{\sqrt n}
         =\dfrac{1+(-1)^n}{\sqrt n}+O(n^{-3/2}).
     \]
     偶数项的主项形成发散的正项级数，而误差绝对可和，故原级数发散到 $+\infty$。
@@ -1712,13 +1712,13 @@ $p\neq q$ 且至少一个不超过 $1$，分组通项最终由较小指数对应
 \begin{enumerate}[label=(\arabic*)]
     \item
     \[
-        a_n=\dfrac{(-1)^n}{n^{1/3}}+\dfrac1{n^{2/3}}+O(n^{-1}),
+        a_n=\dfrac{(-1)^n}{n^{1/3}}+\dfrac{1}{n^{2/3}}+O(n^{-1}),
     \]
     故发散。
     \item 当 $\alpha>0$ 时，
     \[
         a_n=\dfrac{(-1)^{n-1}}{(n+1)^\alpha}
-        -\dfrac1{2(n+1)^{2\alpha}}+O(n^{-3\alpha}).
+        -\dfrac{1}{2(n+1)^{2\alpha}}+O(n^{-3\alpha}).
     \]
     因而 $\alpha>1/2$ 时收敛，$0<\alpha\leq1/2$ 时发散；其中
     $\alpha>1$ 绝对收敛，$1/2<\alpha\leq1$ 条件收敛。
@@ -1824,9 +1824,9 @@ $p\neq q$ 且至少一个不超过 $1$，分组通项最终由较小指数对应
 \begin{proof}[解]
 任取 $N<n$，分拆为
 \[
-    \dfrac1n\sum\limits_{k=1}^{n}ka_k
-    =\dfrac1n\sum\limits_{k=1}^{N}ka_k
-    +\dfrac1n\sum\limits_{k=N+1}^{n}ka_k.
+    \dfrac{1}{n}\sum\limits_{k=1}^{n}ka_k
+    =\dfrac{1}{n}\sum\limits_{k=1}^{N}ka_k
+    +\dfrac{1}{n}\sum\limits_{k=N+1}^{n}ka_k.
 \]
 第一项在 $n\to\infty$ 时趋于零，第二项不超过
 $\displaystyle \sum_{k=N+1}^{\infty}a_k$。再令 $N\to\infty$，即得极限为零。
@@ -1866,7 +1866,7 @@ $S_n^++S_n^-=S_n=O(1)$，有
     \]
     对 $N=1,ldots,n$ 再取平均。振荡余项的平均趋于零，故 Cesaro 和为
     \[
-        \boxed{\dfrac12\cot\dfrac x2}.
+        \boxed{\dfrac{1}{2}\cot\dfrac{x}{2}}.
     \]
 \end{enumerate}
 \end{proof}
@@ -1903,7 +1903,7 @@ $S_n^++S_n^-=S_n=O(1)$，有
 \begin{proof}[解]
 通常收敛必然蕴含 Cesaro 可和。反之设 Cesaro 和为 $s$。恒等式
 \[
-    S_n-\sigma_n=\dfrac1n\sum\limits_{k=1}^{n}(k-1)a_k
+    S_n-\sigma_n=\dfrac{1}{n}\sum\limits_{k=1}^{n}(k-1)a_k
 \]
 成立。由 $ka_k\to0$ 及 Cesaro 平均定理，右端趋于零，故
 $S_n\to s$，即通常收敛。
@@ -1921,11 +1921,11 @@ $S_n\to s$，即通常收敛。
 \begin{proof}[解]
 仍记 Cesaro 均值为 $\sigma_n\to s$。由
 \[
-    S_n-\sigma_n=\dfrac1n\sum\limits_{k=1}^{n}(k-1)a_k
+    S_n-\sigma_n=\dfrac{1}{n}\sum\limits_{k=1}^{n}(k-1)a_k
 \]
 可知，若题中加权平均趋于零，则 $S_n\to s$。反之，若 $S_n$ 通常收敛，则由 Kronecker 引理
 \[
-    \dfrac1n\sum\limits_{k=1}^{n}ka_k\longrightarrow0.
+    \dfrac{1}{n}\sum\limits_{k=1}^{n}ka_k\longrightarrow0.
 \]
 这就证明了等价性。
 \end{proof}
@@ -1967,7 +1967,7 @@ $S_n\to s$，即通常收敛。
 比式判别给出两个指数级数均绝对收敛。其 Cauchy 乘积中 $n$ 次项系数为
 \[
     \sum\limits_{k=0}^{n}\dfrac{a^k}{k!}\dfrac{b^{n-k}}{(n-k)!}
-    =\dfrac1{n!}\sum\limits_{k=0}^{n}C_k^na^kb^{n-k}
+    =\dfrac{1}{n!}\sum\limits_{k=0}^{n}C_k^na^kb^{n-k}
     =\dfrac{(a+b)^n}{n!}.
 \]
 故乘积正是题中级数。
@@ -1980,13 +1980,13 @@ $S_n\to s$，即通常收敛。
 \begin{proof}[解]
 当 $|x|<1$ 时，两级数分别为
 \[
-    \dfrac1{(1-x)^2},
+    \dfrac{1}{(1-x)^2},
     \qquad
-    \dfrac1{(1+x)^2}.
+    \dfrac{1}{(1+x)^2}.
 \]
 故 Cauchy 乘积为
 \[
-    \dfrac1{(1-x^2)^2}
+    \dfrac{1}{(1-x^2)^2}
     =\sum\limits_{m=0}^{\infty}(m+1)x^{2m}.
 \]
 即奇次幂系数为零，$x^{2m}$ 的系数为 $m+1$。
@@ -2006,13 +2006,13 @@ $S_n\to s$，即通常收敛。
     \[
         S=\left(\sum\limits_{k=0}^{\infty}x^k\right)
         \left(\sum\limits_{j=0}^{\infty}y^j\right)
-        =\boxed{\dfrac1{(1-x)(1-y)}}.
+        =\boxed{\dfrac{1}{(1-x)(1-y)}}.
     \]
     \item 当前题面令 $k$ 从 $1$ 到 $\infty$，但当 $k>n+1$ 时阶乘
     $(n-k+1)!$ 无定义。若自然的上限应为 $k=n$，则令 $j=n-k+1$，交换绝对收敛求和次序可得
     \[
-        S=\left(\sum\limits_{k=1}^{\infty}\dfrac1{k(k+1)}\right)
-        \left(\sum\limits_{j=1}^{\infty}\dfrac1{j!}\right)
+        S=\left(\sum\limits_{k=1}^{\infty}\dfrac{1}{k(k+1)}\right)
+        \left(\sum\limits_{j=1}^{\infty}\dfrac{1}{j!}\right)
         =\boxed{e-1}.
     \]
     原题的求和上限需要核对。
@@ -2038,7 +2038,7 @@ $S_n\to s$，即通常收敛。
         &=\prod\limits_{n=2}^{N}\dfrac{n-1}{n+1}
         \prod\limits_{n=2}^{N}\dfrac{n^2+n+1}{n^2-n+1}\\
         &=\dfrac{2}{N(N+1)}\dfrac{N^2+N+1}{3}
-        \longrightarrow\dfrac23.
+        \longrightarrow\dfrac{2}{3}.
     \end{aligned}
     \]
     \item 恒等式
@@ -2069,7 +2069,7 @@ $S_n\to s$，即通常收敛。
     故收敛。
     \item 取对数后，
     \[
-        \sum\limits_{n=1}^{\infty}\dfrac1n\ln\left(1+\dfrac1n\right)
+        \sum\limits_{n=1}^{\infty}\dfrac{1}{n}\ln\left(1+\dfrac{1}{n}\right)
     \]
     的通项与 $1/n^2$ 等价，故对数级数收敛，原无穷乘积收敛到正数。
 \end{enumerate}
@@ -2087,7 +2087,7 @@ $S_n\to s$，即通常收敛。
 \begin{enumerate}[label=(\arabic*)]
     \item 取对数后通项为
     \[
-        -\dfrac12\ln\left(1+\dfrac1{n^2}\right)\sim-\dfrac1{2n^2},
+        -\dfrac{1}{2}\ln\left(1+\dfrac{1}{n^2}\right)\sim-\dfrac{1}{2n^2},
     \]
     故对数级数收敛，原乘积收敛到正数。
     \item 对任意固定 $p\in\mathbb R$，

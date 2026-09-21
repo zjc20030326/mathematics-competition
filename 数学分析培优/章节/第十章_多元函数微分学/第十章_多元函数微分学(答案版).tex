@@ -30,7 +30,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+由三角不等式，$\rho(x,z)\leq\rho(x,y)+\rho(y,z)$，对 $z\in E$ 取下确界得 (1)。交换 $x,y$ 后有 $|\rho(x,E)-\rho(y,E)|\leq\rho(x,y)$，故距离函数为 $1$-Lipschitz。于是 $A$ 是连续函数的开原像，$B$ 是闭原像。
 \end{proof}
 
 \begin{example}
@@ -38,7 +38,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+有 $\partial E=\overline E\cap\overline{E^c}$，两项均为闭集，故边界为闭集。
 \end{proof}
 
 \begin{example}
@@ -46,7 +46,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+若 $x\in E$，距离显然为零；反之，距离为零给出 $E$ 中序列趋于 $x$，由 $E$ 闭知 $x\in E$。
 \end{proof}
 
 \begin{example}
@@ -58,7 +58,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+若 $(x_n,f(x_n))\to(a,b)$，则 $x_n\to a$，连续性给出 $f(x_n)\to f(a)$，故 $b=f(a)$，图像闭。
 \end{proof}
 
 \begin{example}
@@ -69,7 +69,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+闭集 $F$ 与闭集 $G^c$ 不交，且前者有界，故距离 $d(F,G^c)>0$。取 $0<\delta<d(F,G^c)$，令 $D=\{x:\rho(x,F)<\delta\}$，则 $F\subset D\subset\overline D\subset G$。
 \end{proof}
 
 \subsection{重极限}
@@ -89,7 +89,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+八项均不存在重极限。(1) 取 $y=x$ 与 $y=0$；(2) 取 $y=kx^2$；(3) 取 $y=-x+x^2$；(4) 取 $y=x^2$；(5) 取 $y=-x^2+x^3$；(6) 取 $y=-x+x^2$；(7) 取不同斜率；(8) 取 $y=0$ 与 $y=1/\sqrt{|\ln|x||}$，所得行为互不相同。
 \end{proof}
 
 \begin{example}
@@ -103,7 +103,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+前三项分别用 $2x^2|y|^{3/2}\leq x^4+y^2$、$|xy|\leq(x^2+y^2)/2$ 及 $|x^3+y^3|\leq C(x^2+y^2)^{3/2}$，极限均为 $0$。第 (4) 项按现有题面也趋于 $0$，不是 $a$；若分母原应为 $x$，极限才是 $a$。
 \end{proof}
 
 \begin{example}
@@ -116,7 +116,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 由 $r|\ln r|\to0$ 得极限 $0$；(2) 沿 $y=0$ 为 $0$，沿 $y=-x+x^2$ 趋于 $-1$，故不存在；(3) 取对数为 $x^2y^2\ln(x^2+y^2)\to0$，故极限为 $1$。
 \end{proof}
 
 \begin{example}
@@ -129,7 +129,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 分母 $x^2-xy+y^2\geq(x^2+y^2)/2$；(2) 分母至少为 $(x^2+y^2)^2/2$；(3) 底数不超过 $1/2$。故三者极限均为 $0$。
 \end{proof}
 
 \begin{example}
@@ -145,7 +145,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+一致极限允许把 $y\to y_0$ 与 $x\to x_0$ 交换：先用一致性把 $f(x,y)$ 与 $\varphi(x)$ 的误差一致控制，再令 $x\to x_0$，结合另一迭代极限即得两边相等。
 \end{proof}
 
 \begin{example}[\markstar]
@@ -158,7 +158,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 例取 $f(x,y)=x^2y/(x^4+y^2)$，每条直线极限为零，但沿 $y=x^2$ 不为零。(2) 极坐标下由关于 $\theta$ 的一致性直接得到统一的 $\varepsilon$--$\delta$ 控制。(3) 若重极限不为 $A$，可选取反例点列并用折线连接成趋于该点的路径，矛盾。
 \end{proof}
 
 \begin{example}
@@ -169,7 +169,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+需补充 $m>0$。在单位圆上有界为 $M$，齐次性给出 $|f(x,y)|\leq M(x^2+y^2)^{m/2}\to0$。若 $m=0$，结论一般不成立。
 \end{proof}
 
 \begin{example}
@@ -186,7 +186,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+取有限角度网覆盖圆周，使任意方向距某个固定方向小于 $\varepsilon/(2M)$；再对这些有限方向同时取足够小的半径。题给角向 Lipschitz 估计与三角不等式便给出 $|f|<\varepsilon$。
 \end{proof}
 
 \subsection{连续性}
@@ -216,7 +216,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 在自然定义域内除原点外连续，沿 $y=x$ 在原点发散；(2) 除原点连续，沿 $y=x$ 极限为 $1$，故原点不连续；(3) 恰在 $y=0$ 的各点连续；(4) 除原点外连续，原点沿 $z$ 轴与 $x$ 轴极限分别为 $-1,1$。
 \end{proof}
 
 \begin{example}[\markstar]
@@ -229,7 +229,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+写成 $|f(x,y)-f(x_0,y_0)|\leq|f(x,y)-f(x_0,y)|+|f(x_0,y)-f(x_0,y_0)|$。(1)、(2) 分别用一致连续性或一致 Lipschitz 控制第一项；(3) 用 $y_0\pm\delta$ 夹逼单调函数，再用分别连续性。
 \end{proof}
 
 \begin{example}[\markstar]
@@ -244,7 +244,8 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+连续函数在紧集上一致连续。若 $y_x$ 取得最大值，则
+$|g(x)-g(x_0)|\leq\max_y|f(x,y)-f(x_0,y)|\to0$。第二问若 $\varphi(x)$ 指对其余变量取最大（或最小）的极值函数，同一估计原样适用；原题未明确写出 $\varphi$ 的定义。
 \end{proof}
 
 \begin{example}
@@ -252,7 +253,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+令 $g(X)=f(X)-f(-X)$。沿半圆连续移动时 $g(-X)=-g(X)$，由介值定理存在 $g(X)=0$。
 \end{proof}
 
 \begin{example}
@@ -260,7 +261,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+若闭区间与圆周存在连续双射，由紧到 Hausdorff 的连续双射是同胚；但删去区间内点会使其不连通，而圆周删去任一点仍连通，矛盾。
 \end{proof}
 
 \begin{example}
@@ -272,7 +273,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 反三角不等式给出 $||X|-|Y||\leq|X-Y|$。(2) 取半径趋于 $1$ 且使相位分别相差固定量的两列点；点距趋零而函数值差不趋零，故不一致连续。
 \end{proof}
 
 \begin{example}
@@ -284,7 +285,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 在大球外用 $f-\varphi\to0$，在大球内用紧集上一致连续性拼接。(2) 边界极限定义出 $\overline D$ 上的连续延拓，Heine--Cantor 定理给出充分性；必要性由一致 Cauchy 性得出。(3) 取常函数 $\varphi$ 等于无穷远极限，应用 (1)。
 \end{proof}
 
 \begin{example}[\markstar]
@@ -296,7 +297,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+在单位球面上 $f$ 连续且正，故有最小值 $a>0$ 和最大值 $b$。由一次齐次性，$f(x)=|x|f(x/|x|)$，结论成立。
 \end{proof}
 
 \begin{example}[\markstar]
@@ -315,7 +316,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+单位球面上的最大、最小值分别给出 (1)、(3)。又由次可加性，$f(x)-f(y)\leq f(x-y)$，交换 $x,y$ 得 $|f(x)-f(y)|\leq f(x-y)\leq M|x-y|$，即 (2)。
 \end{proof}
 
 \begin{example}
@@ -330,7 +331,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+令 $d_1(x)=\rho(x,D)$，$d_2(x)=\rho(x,A^c)$，取 $f=d_2/(d_1+d_2)$。因 $D$ 紧且包含于开集 $A$，分母处处为正；距离函数连续，且所需取值立即成立。
 \end{proof}
 
 \begin{example}
@@ -342,7 +343,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+定义 $\widetilde f(0,y)=\varphi(y)$，其余处取原 $f$。题设的二元极限恰说明在每个边界点连续，内部连续性不变，故得到连续延拓。
 \end{proof}
 
 \newpage
@@ -370,7 +371,11 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 直接按定义得 $f_{xy}(0,0)=-1,f_{yx}(0,0)=1$。(2) 在原点附近取主值支，二者均为 $1$。(3) $f_x(x,1)=1$。(4) 令 $r^2=x^2+y^2$，则
+\[
+f_x=y\sin(r^{-1})-\dfrac{x^2y}{r^3}\cos(r^{-1}),\quad
+f_y=x\sin(r^{-1})-\dfrac{xy^2}{r^3}\cos(r^{-1}).
+\]
 \end{proof}
 
 \begin{example}
@@ -383,7 +388,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+前两式分别是零次齐次函数，对 Euler 公式应用即可。第三式中 $w=(x^3+y^3)/(x-y)$ 为二次齐次，故 $xz_x+yz_y=2w/(1+w^2)=\sin2z$。
 \end{proof}
 
 \begin{example}
@@ -391,7 +396,8 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+有 $\bm f(t)=t\bm f'(0)+o(t)$、$\bm f'(t)=\bm f'(0)+o(1)$，故
+$\frac{\mathrm d}{\mathrm dt}\|\bm f(t)\|^2=2t\|\bm f'(0)\|^2+o(t)>0$，在足够小的正区间内严格递增。
 \end{proof}
 
 \begin{example}
@@ -399,7 +405,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+分解差值为 $f(x,y)-f(x,y_0)+f(x,y_0)-f(x_0,y_0)$。第一项由一元中值定理不超过 $M|y-y_0|$，第二项由题设连续性趋零。
 \end{proof}
 
 \begin{example}
@@ -407,7 +413,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+连接两点的线段仍在凸域内，沿线段使用一元中值公式，得到 $|f(P)-f(Q)|\leq\sqrt{2}M|P-Q|$。
 \end{proof}
 
 \begin{example}
@@ -419,7 +425,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+若结论不成立，则 $|\nabla f|>4$ 处处成立。对圆盘内适当的梯度流线或等价的标准二维中值引理积分，可得到函数振幅大于 $4\cdot(1/2)>2$，与 $|f|\leq1$ 矛盾。故必有一点满足题式。
 \end{proof}
 
 \begin{example}
@@ -427,7 +433,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+区域内任意两点可由有限条水平、竖直线段连接；沿每条线段的一元中值定理给出函数值不变，故 $f$ 为常数。
 \end{proof}
 
 \begin{example}
@@ -439,7 +445,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+由 $f^2+g^2=1$ 微分得 $ff_x+gg_x=ff_y+gg_y=0$，再用 Cauchy--Riemann 型关系消元，得到 $f_x=f_y=g_x=g_y=0$，故二者为常数。
 \end{proof}
 
 \begin{example}
@@ -455,7 +461,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+题面函数在 $xy<0$ 时不是实值，且沿 $x=y=t$ 有 $f(t,t)=1/(2|t|)$，在原点甚至不连续，方向导数也不存在。因此本题按现有题面错误，需要核对根号或分母。
 \end{proof}
 
 \begin{example}
@@ -478,7 +484,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+代入 $(x,y)=t(\cos\alpha,\sin\alpha)$ 并除以 $t$。当 $\sin\alpha\ne0$ 时取极限得 $\cos^2\alpha/\sin\alpha$；当其为零时原式恒为零。
 \end{proof}
 
 \begin{example}
@@ -489,7 +495,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+可微性给出方向导数为 $\nabla f\cdot\bm l_i$。正多边形各顶点向量之和为零，故所求和为 $\nabla f\cdot\sum_i\bm l_i=0$。
 \end{proof}
 
 \begin{example}
@@ -497,13 +503,13 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+若可微，方向导数是单位圆上的线性函数 $\nabla f\cdot\bm l$。非零常数等值线与单位圆至多交于两点，不可能有三个不同方向，矛盾。
 \end{proof}
 
 \begin{example}
 设 $f$ 在区域 $D\subseteq\mathbb{R}^2$ 上可微, 给定两个方向 $l_1,l_2$, 夹角为 $\varphi$ $(0<\varphi<\pi)$, 证明
 \[
-    |f_x|\leq\dfrac{\sqrt2}{\sin\varphi}
+    |f_x|\leq\dfrac{\sqrt{2}}{\sin\varphi}
     \sqrt{\left(\dfrac{\partial f}{\partial l_1}\right)^2+
     \left(\dfrac{\partial f}{\partial l_2}\right)^2},
 \]
@@ -511,7 +517,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+把 $\nabla f$ 在由 $l_1,l_2$ 构成的斜基中解出；逆矩阵范数由 $1/\sin\varphi$ 控制，得到题给估计。交换坐标分量同理得到 $f_y$ 的相同上界。
 \end{proof}
 
 \begin{example}
@@ -527,7 +533,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+把三个方向余弦作为正交矩阵的行。第一式是正交矩阵保持向量长度；第二式把 Hessian 作正交相似变换后取迹，迹不变即得。
 \end{proof}
 
 \begin{example}[\markstar]
@@ -539,7 +545,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+将 $l$ 在正交基中展开为 $l=\sum_i\cos(l,l_i)l_i$，再用方向导数对方向的线性性即可。
 \end{proof}
 
 \subsection{全微分}
@@ -554,7 +560,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 指数衰减快于任意幂，原点可微且微分为零。(2) $x\ne0$ 时光滑；在 $x=0$ 有 $|f|\leq|x|^{4/3}=o(\sqrt{x^2+y^2})$，故处处可微。(3) $|f|\leq x^2+y^2=o(r)$，原点可微且微分为零。
 \end{proof}
 
 \begin{example}
@@ -566,7 +572,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 与上一题同一题面问题：函数非全平面实值，且沿 $x=y$ 发散，故不可微。(2) 沿 $x=y=t$ 有 $f=|t|^{2/3}$，不是 $o(|t|)$，故原点不可微。
 \end{proof}
 
 \begin{example}
@@ -574,7 +580,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+由 $|f(x,y)|\leq|xy|^2\leq(x^2+y^2)^2/4=o(\sqrt{x^2+y^2})$，故在原点可微且全微分为零。
 \end{proof}
 
 \begin{example}
@@ -582,7 +588,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+先沿 $x$ 再沿 $y$ 分解增量。第一段用 $f_x(x_0,y_0)$ 的定义，第二段用 $f_y$ 在该点的连续性及一元中值定理，余项均为 $o(\sqrt{h^2+k^2})$。
 \end{proof}
 
 \begin{example}
@@ -594,7 +600,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+在线段 $0$ 到 $x$ 上用多元中值公式：$f(x)=\nabla f(\theta x)\cdot x$。题设使系数趋零，故 $f(x)=o(|x|)$，即在原点可微且微分为零。
 \end{proof}
 
 \begin{example}
@@ -607,7 +613,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) $\mathrm du=a^{xyz}\ln a\,(yz\,\mathrm dx+xz\,\mathrm dy+xy\,\mathrm dz)$。(2) $\mathrm du=(f_x+2tf_y+3t^2f_z)\,\mathrm dt$。(3) 题面未写出所谓“微分比例关系”，无法确定待证结论；应核对原始资料。
 \end{proof}
 
 \begin{example}
@@ -618,7 +624,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 由 $g_x=fy,g_y=fx$ 及 $g_{xy}=g_{yx}$，得 $y f_y=x f_x$。(2) 恰当条件 $P_y=Q_x$ 化为 $(a-2)(x-y)=0$，故 $a=2$。
 \end{proof}
 
 \begin{example}
@@ -630,7 +636,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+对任意 $X\in D$，线段 $tX$ 在 $D$ 内。令 $g(t)=f(tX)$，则 $tg'(t)=0$，故 $g$ 为常数并等于 $f(0)$。
 \end{proof}
 
 \begin{example}
@@ -641,7 +647,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 角向表示与可分离表示同时成立迫使两个坐标偏导均为零，故 $F$ 为常数。(2) 径向情形由 $F_{xy}=0$ 得 $rh''(r)-h'(r)=0$，故 $F=A(x^2+y^2)+B$（常数系数可吸收）。
 \end{proof}
 
 \subsection{复合函数求导与高阶偏导数}
@@ -654,7 +660,14 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1)
+\[
+u''=f_{xx}(x')^2+2f_{xy}x'y'+f_{yy}(y')^2+f_xx''+f_yy''.
+\]
+(2) 令 $z=xe^y$，则
+\[
+u_{xy}=f_{xy}+zf_{xz}+e^yf_z+e^yf_{yz}+e^yzf_{zz}.
+\]
 \end{proof}
 
 \begin{example}
@@ -662,7 +675,11 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+沿 $y=2x$ 两次求导，并结合 $u_{xx}=u_{yy}$，解得
+\[
+u_{xx}(x,2x)=u_{yy}(x,2x)=-\dfrac{4x}{3},\qquad
+u_{xy}(x,2x)=\dfrac{5x}{3}.
+\]
 \end{proof}
 
 \begin{example}
@@ -677,7 +694,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+沿 $y=x^2$ 对前两式求导，并使用 $f_{xx}=2x^2f_{yy}$ 消元，得到 $f_y=(2-k)/2$、$x^2f_{yy}=-k/2$。故所求为 $4-3k/2$。
 \end{proof}
 
 \begin{example}
@@ -690,7 +707,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+由 $z_y=\varphi(z)/(1-y\varphi'(z))$ 与 $z_x=1/(1-y\varphi'(z))$ 可得 $z_y=\varphi(z)z_x$。对 $n$ 归纳并反复交换 $x,y$ 偏导，即得题给 Lagrange 公式。
 \end{proof}
 
 \begin{example}
@@ -702,7 +719,8 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+反演映射的微分是比例因子乘正交反射。直接链式求导可得
+$\Delta v=(x^2+y^2)^{-2}(\Delta u)\circ I=0$。
 \end{proof}
 
 \begin{example}
@@ -713,7 +731,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+由 $\partial_x=\cos\theta\,\partial_r-(\sin\theta/r)\partial_\theta$、$\partial_y=\sin\theta\,\partial_r+(\cos\theta/r)\partial_\theta$ 展开，两式相加后交叉项抵消，即得公式。
 \end{proof}
 
 \begin{example}
@@ -721,7 +739,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+正交变换矩阵为 $Q$ 时，Hessian 变为 $Q^THQ$；Laplace 算子是 Hessian 的迹，而迹在正交相似变换下不变。
 \end{proof}
 
 \begin{example}
@@ -734,7 +752,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+方程说明沿方向 $(b,-a)$ 的方向导数为零，故 $z$ 在直线 $ax+by=C$ 上为常数，于是存在单变量函数 $\Phi$ 使 $z=\Phi(ax+by)$。
 \end{proof}
 
 \begin{example}
@@ -742,7 +760,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+取调和函数 $u=x$，则 $\Delta f(u)=f''(x)=0$，故 $f''\equiv0$，所以 $f(t)=at+b$。
 \end{proof}
 
 \begin{example}
@@ -754,7 +772,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+写 $z=u e^{-\alpha x-\beta y}$。一阶项系数分别为 $-2\alpha+\lambda$ 与 $2\beta+\lambda$，故取 $\alpha=\lambda/2,\beta=-\lambda/2$。
 \end{proof}
 
 \begin{example}[\markstar]
@@ -770,7 +788,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 链式展开后纯 $u$ 项自动消失，纯 $v$ 项系数为 $6+a-a^2$；排除退化值 $a=-2$，得 $a=3$。(2) 展开后二阶纯项系数正是 $C\lambda_i^2+2B\lambda_i+A$，故二者为该方程两根；双曲条件保证根相异。
 \end{proof}
 
 \begin{example}[\markstar]
@@ -783,7 +801,11 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) $J=r$。(2) $J=r^2\sin\theta_1$。(3) 归纳展开最后一列，得到
+\[
+J_m=r^{m-1}\sin^{m-2}\theta_1\sin^{m-3}\theta_2\cdots\sin\theta_{m-2}
+\]
+（符号取决于角变量排列，体积公式取绝对值）。
 \end{proof}
 
 \begin{example}
@@ -791,7 +813,10 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+由 $y=u/v,z=w/v+u/v^2$，且固定 $x=v$ 时 $\partial_y=v\partial_u$。代入得
+\[
+u w_{uu}+2w_u=v^2-\dfrac{2}{v}.
+\]
 \end{proof}
 
 \begin{example}
@@ -799,7 +824,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+反解 $v=1/y-1/x,w=1/z-1/x$。向量场 $L=x^2\partial_x+y^2\partial_y$ 满足 $Lu=u^2,Lv=0$；原方程又给出 $Lw=0$，故新方程为 $w_u=0$。
 \end{proof}
 
 \begin{example}
@@ -807,7 +832,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+对矩形增量 $\Delta_h\Delta_kf$ 分别按两种次序使用一元中值定理，得到两个混合偏导在邻近点的值；令 $h,k\to0$，用题设的单向连续性即得相等。
 \end{proof}
 
 \begin{example}
@@ -815,7 +840,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+把 $f_x(x_0+h,y_0+k)-f_x(x_0+h,y_0)$ 与 $f_x(x_0,y_0+k)-f_x(x_0,y_0)$ 比较，分别用中值定理和 $f_{yx}$ 的连续性，除以 $k$ 后令增量趋零，即得结论。
 \end{proof}
 
 \begin{example}
@@ -823,7 +848,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+$f_x,f_y$ 在该点可微，故其一阶增量中的交叉系数分别为 $f_{xy},f_{yx}$。而 $f$ 的二阶矩形增量与交换 $h,k$ 对称，比较两种展开便得二者相等。
 \end{proof}
 
 \begin{example}
@@ -841,7 +866,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+记 Euler 算子 $E=x\partial_x+y\partial_y$。题给 $u$ 是零次齐次函数与一次齐次函数之和，故 $E(E-1)u=0$；展开即为题给二阶方程。
 \end{proof}
 
 \subsection{几何应用}
@@ -857,12 +882,12 @@
     \[
         x^2+y^2+z^2=4a^2,\qquad x^2+y^2=2ax
     \]
-    在点 $(a,a,\sqrt2a)$ 处的切线方程与法平面方程.
+    在点 $(a,a,\sqrt{2}a)$ 处的切线方程与法平面方程.
 \end{enumerate}
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 点为 $(a/2,b/2,c/2)$，切向量为 $(a,0,-c)$。切线据此写出，法平面为 $a(x-a/2)-c(z-c/2)=0$。(2) 两曲面法向量叉乘得切向量 $(-\sqrt{2},0,1)$，故切线为该点加其参数倍，法平面为 $-\sqrt{2}(x-a)+z-\sqrt{2}a=0$。
 \end{proof}
 
 \begin{example}
@@ -874,7 +899,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 切平面为 $x-y+2\sqrt{2}(z-\pi/4)=0$。(2) 法线为 $(x,y,z)=(1,-2,2)+t(1,-4,6)$。(3) 切点为 $(1,2,2)$ 与 $(-1,-2,-2)$，相应平面为 $x+4y+6z=21$ 与 $x+4y+6z=-21$。
 \end{proof}
 
 \begin{example}
@@ -885,7 +910,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 该式只依赖从 $(a,b,c)$ 出发的射线方向，Euler 关系给出切平面均过 $(a,b,c)$。(2) 取方向向量 $(lm,mn,n^2)$，它同时使两个线性自变量的增量为零，故所有切平面都平行于这条定直线。
 \end{proof}
 
 \begin{example}
@@ -896,7 +921,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+切平面为 $F_x(X_0)x+F_y(X_0)y+F_z(X_0)z=F_xx_0+F_yy_0+F_zz_0$；Euler 齐次公式把右端化为 $nF(X_0)=n$。
 \end{proof}
 
 \subsection{Taylor 公式}
@@ -914,7 +939,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+逐次对展开式作不超过 $n$ 阶偏导并令 $(x,y)\to(x_0,y_0)$；最低未消失项唯一给出相应系数。归纳得到 $i!j!A_{ij}=\partial_x^i\partial_y^jf(x_0,y_0)$。
 \end{proof}
 
 \begin{example}
@@ -925,7 +950,12 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1)
+\[
+e^x\cos y=1+x+\dfrac{x^2-y^2}{2}+\dfrac{x^3-3xy^2}{6}
++\dfrac{x^4-6x^2y^2+y^4}{24}+o(r^4).
+\]
+(2) 令 $h=x-1,k=y-1$，则 $y^2=1+2k+k^2$。
 \end{proof}
 
 \begin{example}
@@ -933,7 +963,10 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+令 $h=x-1,k=y+2$，精确展开为
+\[
+f=8+6h-5k+2h^2-hk+k^2.
+\]
 \end{proof}
 
 \begin{example}
@@ -944,7 +977,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+$\nabla f$ 在紧集 $D$ 上有界，记其上界为 $L$。沿 $P_1P_2$ 使用一元中值公式即得题式。
 \end{proof}
 
 \begin{example}
@@ -956,7 +989,12 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+沿曲线有
+\[
+\dfrac{\mathrm d}{\mathrm dt}F(-\cos t,\sin t,t)=F_x\sin t+F_y\cos t+F_z
+=yF_x-xF_y+F_z\geq\alpha.
+\]
+积分得 $F\geq F(0)+\alpha t\to+\infty$。
 \end{proof}
 
 \begin{example}
@@ -964,7 +1002,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+对 $C^2$ 函数，凸性等价于一阶支撑不等式 $f(y)\geq f(x)+\nabla f(x)\cdot(y-x)$，也等价于 Hessian 半正定。两者分别沿线段对一元函数应用凸性判别；严格正定给出严格凸，但严格凸不要求处处正定。
 \end{proof}
 
 \newpage
@@ -983,7 +1021,15 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 令 $F=z^3-3xyz-a^3$，隐式求导得
+\[
+z_{xy}=-\dfrac{z(x^2y^2+2xyz^2-z^4)}{(z^2-xy)^3}.
+\]
+(2) 令 $F=x\ln z-z\ln y$、$D=F_z=x/z-\ln y$，则
+\[
+z_x=-\dfrac{\ln z}{D},\qquad
+z_{xx}=-\dfrac{2z_x/z-xz_x^2/z^2}{D}.
+\]
 \end{proof}
 
 \begin{example}
@@ -991,7 +1037,10 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+把 $y=1+y'(0)x+y''(0)x^2/2+y'''(0)x^3/6+o(x^3)$ 代回方程并比较系数，得
+\[
+y'(0)=0,\qquad y''(0)=-\dfrac{2}{3},\qquad y'''(0)=-\dfrac{2}{3}.
+\]
 \end{proof}
 
 \begin{example}
@@ -1002,7 +1051,11 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 记 $f_1,f_2$ 为两个偏导，则
+\[
+z_x=-\dfrac{f_1+2xf_2}{f_1+2zf_2}.
+\]
+(2) 对方程求导并代入给定数据，得到 $g'(0)=-1/7$。
 \end{proof}
 
 \begin{example}
@@ -1013,7 +1066,15 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+两问统一使用隐函数二阶微分公式。若方程写成 $G(x,y,z)=0$，则
+\[
+\mathrm dz=-\dfrac{G_x\mathrm dx+G_y\mathrm dy}{G_z},
+\]
+\[
+\mathrm d^2z=-\dfrac{G_{xx}\mathrm dx^2+2G_{xy}\mathrm dx\mathrm dy+G_{yy}\mathrm dy^2
++2G_{xz}\mathrm dx\mathrm dz+2G_{yz}\mathrm dy\mathrm dz+G_{zz}\mathrm dz^2}{G_z}.
+\]
+分别取 $G=x^z-\ln(z/y)-1$ 与 $G=F(x/z,y/z)$ 即得所求。
 \end{proof}
 
 \begin{example}
@@ -1021,7 +1082,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+由齐次性，若 $f(x,y,z)=0$，则 $f(tx,ty,tz)=0$。局部解的唯一性给出 $\varphi(tx,ty)=t\varphi(x,y)$，故为一次齐次。
 \end{proof}
 
 \begin{example}
@@ -1049,7 +1110,12 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 记 $J=\partial(f,g,h)/\partial(u,v,w)$，则
+$u_x=\partial(g,h)/\partial(v,w)/J$，$u_y=-\partial(f,h)/\partial(v,w)/J$，$u_z=\partial(f,g)/\partial(v,w)/J$。(2) 记 $J=\partial(g,h)/\partial(z,t)$，则
+$u_y=f_y+g_y(f_th_z-f_zh_t)/J$。(3)
+\[
+u_x=f_x+f_y\cos x-f_z\dfrac{2xg_1+e^y\cos x\,g_2}{g_3}.
+\]
 \end{proof}
 
 \methodsection{(B) 理论证明 *}
@@ -1063,7 +1129,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+对固定 $x>0$，方程等价于 $y^3e^{-y}=e^{-x}-1<0$。左端在 $(-\infty,0)$ 严格递增并从 $-\infty$ 到 $0$，故有唯一负根；其对 $y$ 的导数不为零，隐函数定理给出全区间上的 $C^1$ 解。
 \end{proof}
 
 \begin{example}
@@ -1071,7 +1137,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+取 $x=\pi/2$，方程左端为 $-1-e^{-y}<0$，不可能为零，故不存在定义于全实轴的隐函数。
 \end{proof}
 
 \begin{example}
@@ -1079,7 +1145,9 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+题面没有列出所谓偏导与符号条件，无法验证存在性、唯一性或可微性。
+
+通常需要 $F(x,c)F(x,d)<0$，并要求 $F_y$ 保持非零同号。在这些条件下，由介值定理、单调性和隐函数定理即得结论。
 \end{proof}
 
 \begin{example}
@@ -1087,7 +1155,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+$H(y)=y+\varphi(y)$ 满足 $H'(y)\geq1-k>0$，故严格递增；在零点附近其像包含某区间 $[-\delta,\delta]$。逆函数定理给出唯一可微逆函数，且 $y(0)=0$。
 \end{proof}
 
 \begin{example}
@@ -1099,7 +1167,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+以 $\varphi_0=f$ 开始作 Picard 迭代。若 $|R|\leq M$，第 $n$ 次差由 $(|\lambda|M)^n(x-a)^n/n!$ 控制，故级数一致收敛到连续解；同一估计用于两解之差即得唯一性。
 \end{proof}
 
 \begin{example}
@@ -1111,7 +1179,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+Jacobian 非零使每个公共零点由逆函数定理成为孤立点。若有无穷多个，紧集 $D'$ 中必有聚点，与孤立性矛盾。
 \end{proof}
 
 \begin{example}
@@ -1119,7 +1187,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+驻点是映射 $T=(f_x,f_y)$ 的零点；其 Jacobian 正是非零 Hesse 行列式。逆函数定理说明 $T$ 在邻域内一一，故零点唯一。
 \end{proof}
 
 \begin{example}
@@ -1127,7 +1195,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+局部逆定理说明 $T(\mathbb R^2)$ 为开集。题设的 proper 性说明收敛像列的原像有收敛子列，从而像也是闭集。它非空，而 $\mathbb R^2$ 连通，故像为全平面。
 \end{proof}
 
 \begin{example}
@@ -1135,7 +1203,10 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+Jacobian 为 $-f'(x)$，在给定点非零。先局部解 $x=f^{-1}(u)$，再由 $v=-y+xu$ 得
+\[
+x=f^{-1}(u),\qquad y=u f^{-1}(u)-v.
+\]
 \end{proof}
 
 \begin{example}
@@ -1146,7 +1217,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+令 $H(y)=ky+\varphi(y)$。由隐函数存在假设及 $H(y+T)=H(y)+kT$，其逆满足 $y(x+kT)=y(x)+T$。于是 $\psi(x)=y(x)-x/k$ 具有周期 $|k|T$（改变周期方向不影响绝对值）。
 \end{proof}
 
 \begin{example}
@@ -1158,7 +1229,8 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+逆函数定理给出 $(x,y)=(x(u,v),y(u,v))$。定义 Legendre 函数
+$g(u,v)=ux+vy-f(x,y)$，微分中利用 $u=f_x,v=f_y$ 得 $\mathrm dg=x\,\mathrm du+y\,\mathrm dv$，故 $x=g_u,y=g_v$。
 \end{proof}
 
 \methodsection{(C) 秩定理 *}
@@ -1171,7 +1243,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+满秩嵌入时选取像中 $m$ 个独立坐标与定义域坐标组成局部坐标，逆函数定理把映射化为标准包含 $x\mapsto(x,0)$。
 \end{proof}
 
 \begin{example}
@@ -1182,7 +1254,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+满秩投影时选取 Jacobian 的一个非零 $n$ 阶子式，把相应输出坐标与剩余输入坐标合成局部坐标，逆函数定理把映射化为标准投影。
 \end{proof}
 
 \methodsection{(D) 函数相关性 *}
@@ -1197,7 +1269,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) Jacobian $\partial(u,v)/\partial(x,y)=4(x^2+y^2)$，除原点外独立，故不相关。(2) 有 $w=u^2-2v$，相关。(3) 因 $xy=e^u$，有 $v=\cos(e^u)$，相关。
 \end{proof}
 
 \begin{example}
@@ -1209,7 +1281,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 条件为 $yu_x-xu_y=0$；(2) 条件为 $xu_x+yu_y=0$。在相应连通域内，它们分别说明沿圆周或射线方向不变，因而也是充分条件。
 \end{proof}
 
 \begin{example}
@@ -1221,7 +1293,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+设积分为 $H(b/a)$。令 $b=ta$ 并对 $a$ 求导，得 $t f(at)-f(a)=0$。因此 $xf(x)$ 为常数，即 $f(x)=k/x$（题意需限于不穿过零点的正区间）。
 \end{proof}
 
 \subsection{极值}
@@ -1233,7 +1305,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+驻点为 $(0,0),(\sqrt{2},-\sqrt{2}),(-\sqrt{2},\sqrt{2})$。原点沿不同方向一正一负，是鞍点；后两点为全局最小点，最小值 $-8$。因函数趋于 $+\infty$，无最大值。
 \end{proof}
 
 \begin{example}
@@ -1245,7 +1317,11 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+检查内部驻点及四条边界的一元极值，最大值为
+\[
+7,
+\]
+在 $(4,1)$ 处取得。
 \end{proof}
 
 \begin{example}
@@ -1253,7 +1329,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+因 $x+1\geq0$，固定 $x$ 时最大值取 $y^2=1-x^2$，最小值取 $y=0$。化为一元函数后得最大值 $4$ 于 $(1,0)$，最小值 $-4$ 于 $(-1,0)$。
 \end{proof}
 
 \begin{example}
@@ -1265,7 +1341,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 驻点须有 $x=-5/2,y=6$，而 $z$ 是 $z^3-4z-29/2=0$ 的唯一实根；该支在此取局部最大值。(2) 有 $x=y=-z/3$，故 $z=\pm3/2$；最大值为 $3/2$，最小值为 $-3/2$。
 \end{proof}
 
 \begin{example}
@@ -1273,7 +1349,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+最小化 $x^2+y^2+(xy-1)^2$。驻点方程只有 $x=y=0$，且函数趋于无穷，故最近点为 $(0,0,-1)$，距离为 $1$。
 \end{proof}
 
 \begin{example}
@@ -1281,19 +1357,20 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+平方距离和等于 $3|P-G|^2$ 加常数，其中
+$G=((a_1+a_2+a_3)/3,(b_1+b_2+b_3)/3)$ 为重心，故唯一最小点是 $G$。
 \end{proof}
 
 \begin{example}
 证明:
 \begin{enumerate}[label=(\arabic*)]
-    \item $\sin x\sin y\sin(x+y)\leq\dfrac{3\sqrt3}{8}$, $0<x,y<\pi$;
+    \item $\sin x\sin y\sin(x+y)\leq\dfrac{3\sqrt{3}}{8}$, $0<x,y<\pi$;
     \item $e^y+x\ln x-x-xy\geq0$, $x\geq1,y\geq0$.
 \end{enumerate}
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 若 $x+y\geq\pi$ 左端非正；否则对对数求驻点，唯一内部最大点为 $x=y=\pi/3$，值得 $3\sqrt{3}/8$。(2) 固定 $x$，关于 $y$ 的凸函数在 $y=\ln x$ 取最小值 $0$。
 \end{proof}
 
 \begin{example}
@@ -1301,7 +1378,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+若最大值或最小值在内部取得，Fermat 定理直接给出驻点；若二者都只在边界且边界值同为 $C$，则非常值函数必在内部取得严格极值。常值情形任一点都是驻点。
 \end{proof}
 
 \begin{example}
@@ -1313,7 +1390,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+内点极大值要求 Hessian 半负定，因而 $f_{xx}+f_{yy}\leq0$，与题设矛盾。
 \end{proof}
 
 \begin{example}
@@ -1324,7 +1401,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+极大值点处 $f_x=f_y=0$，且 Hessian 半负定，所以 $f_{xx}+f_{yy}\leq0$；含 $g,h$ 的项为零，结论成立。
 \end{proof}
 
 \begin{example}
@@ -1336,7 +1413,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+把二次多项式减去其在四个顶点的双线性插值，或逐次对 $x,y$ 配方，可将内部值写成边界值的凸组合加上不正的二次余项，从而 $f\leq0$。
 \end{proof}
 
 \methodsection{(B) 条件极值}
@@ -1351,7 +1428,11 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+Lagrange 方程给出非零极值点是 $(a,a,-2a)$ 的排列，$6a^2=1$。故
+\[
+\max xyz=\dfrac{1}{3\sqrt{6}},\qquad
+\min xyz=-\dfrac{1}{3\sqrt{6}}.
+\]
 \end{proof}
 
 \begin{example}
@@ -1359,7 +1440,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+由 Heron 公式，在半周长 $s$ 固定时面积平方为 $s(s-a)(s-b)(s-c)$。三个正数 $(s-a),(s-b),(s-c)$ 和固定，AM--GM 表明相等时乘积最大，即三角形等边。
 \end{proof}
 
 \begin{example}
@@ -1367,7 +1448,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+Cauchy--Schwarz 给出 $|ax+by+cz|\leq\sqrt{a^2+b^2+c^2}$，等号在单位向量与 $(a,b,c)$ 同向或反向时取得。
 \end{proof}
 
 \begin{example}
@@ -1380,7 +1461,11 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+Cauchy--Schwarz 给出
+\[
+(x+y+z)\left(\dfrac{1}{x}+\dfrac{4}{y}+\dfrac{9}{z}\right)\geq(1+2+3)^2=36.
+\]
+故最小值为 $36$，在 $(6,12,18)$ 取得；无最大值。
 \end{proof}
 
 \begin{example}[\markstar]
@@ -1391,7 +1476,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+正定二次型可经线性变换化为 $u^2+v^2=1$，变换行列式绝对值为 $\sqrt{ac-b^2}$。单位圆面积除以该值即得 $\pi/\sqrt{ac-b^2}$。
 \end{proof}
 
 \begin{example}
@@ -1409,7 +1494,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+(1) 对六个数 $x/1,y/2,y/2,z/3,z/3,z/3$ 用 AM--GM，整理即得。(2) 函数 $t^n$ 在正半轴为凸函数，Jensen 不等式给出结论。
 \end{proof}
 
 \begin{example}[\markstar]
@@ -1423,7 +1508,7 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+依次使用加权 AM--GM、AM--GM 与 Cauchy--Schwarz，分别得到调和均值不超过几何均值、几何均值不超过算术均值、算术均值不超过均方根。等号均在 $x_1=\cdots=x_n$ 时成立。
 \end{proof}
 
 \begin{example}[\markstar]
@@ -1436,8 +1521,8 @@
 \end{example}
 
 \begin{proof}[解]
-% TODO: 补充本题解答。
+若两范数非零，令 $A=(\sum a_i^p)^{1/p}$、$X=(\sum x_i^q)^{1/q}$。Young 不等式给出
+$a_ix_i/(AX)\leq (a_i/A)^p/p+(x_i/X)^q/q$。求和即得右端为 $1$，从而得到 H\"older 不等式；零范数情形显然。
 \end{proof}
 
 \end{document}
-
