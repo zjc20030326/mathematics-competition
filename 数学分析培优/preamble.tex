@@ -7,14 +7,20 @@
 % ================= 子文件支持 =================
 \usepackage{subfiles}
 
-% ElegantBook 4.6 不再内置水印命令,由项目显式加载.
+% 单章编译可能读取 TeX Live 自带的 elegantbook.cls，故不使用文档类选项
+% 控制水印，而统一读取主文件中定义的项目级开关。
 \usepackage{draftwatermark}
 
 % ================= 水印内容 =================
-% ElegantBook 4.6 已移除旧的 watermark 类选项,水印由 draftwatermark 提供.
-\SetWatermarkText{欧拉的小迷弟}
 \SetWatermarkScale{0.4}
 \SetWatermarkLightness{0.9}
+\AtBeginDocument{%
+    \ifmathanalysiswatermark
+        \SetWatermarkText{欧拉的小迷弟}%
+    \else
+        \SetWatermarkText{}%
+    \fi
+}
 
 % ================= 页眉页脚 =================
 % ElegantBook 已加载 fancyhdr;这里只覆盖本讲义的个人化样式.

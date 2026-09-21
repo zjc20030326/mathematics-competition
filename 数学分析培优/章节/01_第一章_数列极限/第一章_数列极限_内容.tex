@@ -55,7 +55,7 @@
   \[
     \dfrac{2}{\pi}x\leq \sin x\leq x.
   \]
-  令 $f(x)=\sin x$.由于 $f''(x)=-\sin x<0$,故 $f$ 在
+  由于 $(\sin x)''=-\sin x<0$,故 $\sin x$ 在
   $\lbrack0,\dfrac{\pi}{2}\rbrack$ 上为凹函数.于是其图像位于连接
   $(0,0)$ 与 $(\dfrac{\pi}{2},1)$ 的弦的上方,从而
   \[
@@ -123,16 +123,16 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
   \]
   故 $\displaystyle \lim\limits_{n\to\infty}\sqrt[n]{n+1}=1$.
 
-  (2) 记 $u_n=\sqrt[3]{x_n}$,$b=\sqrt[3]{a}$.若 $a\neq0$,则由
-  $u_n^3\to b^3$ 可知 $u_n$ 最终与 $b$ 同号且 $|u_n|\geq\dfrac{|b|}{2}$.因而
+  (2) 若 $a\neq0$,则 $x_n$ 最终与 $a$ 同号,因而
   \[
-    |u_n-b|
-    =\dfrac{|x_n-a|}{u_n^2+u_nb+b^2}
-    \leq \dfrac{4}{b^2}|x_n-a|.
+    \left|\sqrt[3]{x_n}-\sqrt[3]{a}\right|
+    =\dfrac{|x_n-a|}
+    {x_n^{2/3}+\sqrt[3]{x_n}\sqrt[3]{a}+a^{2/3}}
+    \leq\dfrac{|x_n-a|}{|a|^{2/3}}.
   \]
-  给定 $\varepsilon>0$,取 $n$ 充分大使右端小于 $\varepsilon$,即得 $u_n\to b$.
+  给定 $\varepsilon>0$,取 $n$ 充分大使右端小于 $\varepsilon$,即得结论.
   若 $a=0$,则对充分大的 $n$ 有 $|x_n|<\varepsilon^3$,故
-  $|u_n|<\varepsilon$.所以结论对一切 $a\in\mathbb R$ 均成立.
+  $|\sqrt[3]{x_n}|<\varepsilon$.所以结论对一切 $a\in\mathbb R$ 均成立.
 
   (3) 任给 $\varepsilon>0$,取 $N_0$,使得 $k>N_0$ 时
   $|x_k-A|<\dfrac{\varepsilon}{2}$.令
@@ -194,10 +194,10 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
   \[
     T_n=\dfrac{1}{P_n}\sum\limits_{j=1}^n p_{n+1-j}a_j.
   \]
-  先注意到,对每个固定的 $j$,令 $m=n+1-j$,则
+  先注意到,对每个固定的 $j$,当 $n\to\infty$ 时 $n+1-j\to\infty$,从而
   \[
     0\leq\dfrac{p_{n+1-j}}{P_n}
-    \leq\dfrac{p_m}{P_m}\longrightarrow0.
+    \leq\dfrac{p_{n+1-j}}{P_{n+1-j}}\longrightarrow0.
   \]
   任给 $\varepsilon>0$,取 $N_0$,使 $j>N_0$ 时 $|a_j-a|<\varepsilon$.
   于是
@@ -224,28 +224,28 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 \exampleblank
 
 \begin{solution}
-  令
+  任给 $\varepsilon\in(0,1)$.由 $f(x)/x\to1$,存在 $\delta>0$,使得
+  $0<x<\delta$ 时
   \[
-    t_{i,n}=\dfrac{(2i-1)a}{n^2}.
+    (1-\varepsilon)x<f(x)<(1+\varepsilon)x.
   \]
-  由于 $0<t_{i,n}\leq\dfrac{(2n-1)a}{n^2}\to0$,等价关系
-  $f(x)\sim x$ 对这一列参数一致适用.即存在 $\eta_n\to0$,使得对
-  $1\leq i\leq n$ 有
+  因为
   \[
-    f(t_{i,n})=t_{i,n}(1+\theta_{i,n}),
-    \qquad |\theta_{i,n}|\leq\eta_n.
+    0<\dfrac{(2i-1)a}{n^2}
+    \leq\dfrac{(2n-1)a}{n^2}\longrightarrow0
   \]
-  又
+  对 $1\leq i\leq n$ 一致成立,所以当 $n$ 充分大时
   \[
-    \sum\limits_{i=1}^n t_{i,n}
-    =\dfrac{a}{n^2}\sum\limits_{i=1}^n(2i-1)=a.
+    (1-\varepsilon)\dfrac{(2i-1)a}{n^2}
+    <f\left(\dfrac{(2i-1)a}{n^2}\right)
+    <(1+\varepsilon)\dfrac{(2i-1)a}{n^2}.
   \]
-  故
+  对 $i=1,\ldots,n$ 求和,并利用
+  $\displaystyle\sum\limits_{i=1}^n(2i-1)=n^2$,得到
   \[
-    |x_n-a|
-    \leq\eta_n\sum\limits_{i=1}^n t_{i,n}
-    =a\eta_n\longrightarrow0.
+    (1-\varepsilon)a<x_n<(1+\varepsilon)a.
   \]
+  由 $\varepsilon$ 的任意性和夹逼定理可知 $x_n\to a$.
 \end{solution}
 
 \begin{remark}
@@ -319,11 +319,21 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 \end{solution}
 
 \begin{remark}
-  取
+\[
+\dfrac{\sqrt[3]{1+x}-1}{\dfrac{x}{3}}         
+=\dfrac{3}{(1+x)^{\tfrac{2}{3}}+(1+x)^{\tfrac{1}{3}}+1}
+\longrightarrow 1 \qquad (x\to 0).
+\]
+
+  在本题中取
   \[
-    g(x)=x+x^2+\dfrac{x^3}{3},\qquad f(x)=x,
+    f(x)=\sqrt[3]{1+x}-1,
+    \qquad
+    g(x)=\dfrac{x}{3},
+    \qquad
+    \alpha_{i,n}=\dfrac{i}{n^2}.
   \]
-  则有
+  因 $\displaystyle\max_{1\leq i\leq n}\alpha_{i,n}=1/n\to0$,由上面的结论,
   \[
     \lim\limits_{n\to\infty}\sum\limits_{i=1}^n
     \left(\sqrt[3]{1+\dfrac{i}{n^2}}-1\right)
@@ -517,7 +527,6 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
     \sum\limits_{k=1}^n p_ka_k
     =p_nA_n-\sum\limits_{k=1}^{n-1}(p_{k+1}-p_k)A_k.
   \]
-  设 $A_n\to A$.注意此时还有 $a_n=A_n-A_{n-1}\to0$,但目标并非直接由此得到.
   将上式改写为
   \[
     \dfrac{1}{p_n}\sum\limits_{k=1}^n p_ka_k
@@ -525,7 +534,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
     \dfrac{p_{k+1}-p_k}{p_n}A_k.
   \]
   各权非负,其和为 $\dfrac{p_n-p_1}{p_n}\to1$,且对固定 $k$ 权趋于 $0$.
-  由 Toeplitz 定理,右端第二项趋于 $A$,第一项也趋于 $A$,故原式趋于 $0$.
+  由 Toeplitz 定理,右端第二项与 $A_n$ 有相同极限,故两者之差趋于 $0$.
 \end{solution}
 
 \begin{example}
@@ -539,22 +548,22 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 \exampleblank
 
 \begin{solution}
-  记
+  将原式乘以趋于 $1-\lambda$ 的因子
+  $\dfrac{1-\lambda}{1-\lambda^{n+1}}$,得到
   \[
-    S_n=\sum\limits_{j=0}^n\lambda^j a_{n-j}.
+    \dfrac{1-\lambda}{1-\lambda^{n+1}}
+    \sum\limits_{j=0}^n\lambda^j a_{n-j}
+    =\sum\limits_{k=0}^n
+    \dfrac{(1-\lambda)\lambda^{n-k}}{1-\lambda^{n+1}}a_k.
   \]
-  任给 $\varepsilon>0$,取 $N_0$,使 $k>N_0$ 时
-  $|a_k-a|<\varepsilon(1-\lambda)/2$.由于收敛数列有界,可取 $M>0$ 使
-  $|a_k-a|\leq M$ 对所有 $k$ 成立.于是
+  右端各权非负,权和为 $1$;对每个固定的 $k$,
   \[
-    \left|S_n-a\sum\limits_{j=0}^n\lambda^j\right|
-    \leq \sum\limits_{j=0}^{n-N_0-1}\lambda^j|a_{n-j}-a|
-    +\sum\limits_{j=n-N_0}^{n}\lambda^j|a_{n-j}-a|.
+    \dfrac{(1-\lambda)\lambda^{n-k}}{1-\lambda^{n+1}}
+    \longrightarrow0.
   \]
-  第一项小于 $\varepsilon/2$,第二项不超过
-  $M\lambda^{n-N_0}/(1-\lambda)$,因而也最终小于 $\varepsilon/2$.
-  再由有限几何级数趋于 $1/(1-\lambda)$,得到
-  $S_n\to a/(1-\lambda)$.
+  由 Toeplitz 定理,上式右端趋于 $a$.又
+  $\dfrac{1-\lambda}{1-\lambda^{n+1}}\to1-\lambda$,故题中和式趋于
+  $\dfrac{a}{1-\lambda}$.
 \end{solution}
 
 \begin{example}
@@ -571,21 +580,20 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 \exampleblank
 
 \begin{solution}
-  由题设,级数 $\displaystyle \sum\limits_{j=1}^{\infty}|y_j|$ 收敛,并且其和不超过 $k$;
-  特别地 $y_j\to0$.任给 $\varepsilon>0$,取 $N_0$,使
-  $j>N_0$ 时 $|x_j|<\varepsilon/(2k)$.
-  令 $C=\displaystyle \sum\limits_{j=1}^{N_0}|x_j|$.当 $n$ 充分大时,
-  对 $1\leq j\leq N_0$ 均有
-  $|y_{n+1-j}|<\varepsilon/[2(C+1)]$.于是
+  将 $z_n$ 写成
   \[
-    |z_n|
-    \leq\sum\limits_{j=1}^{N_0}|x_jy_{n+1-j}|
-    +\sum\limits_{j=N_0+1}^{n}|x_jy_{n+1-j}|
-    <\dfrac{\varepsilon}{2}
-    +\dfrac{\varepsilon}{2k}\sum\limits_{j=1}^{n}|y_j|
-    \leq\varepsilon.
+    z_n=\sum\limits_{j=1}^n t_{nj}x_j,
+    \qquad t_{nj}=y_{n+1-j}.
   \]
-  故 $z_n\to0$.
+  对每个固定的 $j$,由
+  $\displaystyle\sum\limits_{m=1}^{\infty}|y_m|<+\infty$ 可知
+  $t_{nj}=y_{n+1-j}\to0$;并且
+  \[
+    \sum\limits_{j=1}^n|t_{nj}|
+    =\sum\limits_{j=1}^n|y_j|\leq k.
+  \]
+  Toeplitz 定理的零极限型只需固定列趋于 $0$ 且各行绝对值之和一致有界.
+  因 $x_j\to0$,立即得到 $z_n\to0$.
 \end{solution}
 
 
@@ -850,7 +858,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 \exampleblank
 
 \begin{solution}
-  记 $S_n=\displaystyle \sum\limits_{k=1}^n1/k$.对任意 $n$,
+  对任意 $n$,
   \[
     S_{2n}-S_n=\sum\limits_{k=n+1}^{2n}\dfrac{1}{k}
     \geq n\dfrac{1}{2n}=\dfrac{1}{2}.
@@ -902,7 +910,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
   \]
   由夹逼定理,所求极限为 $1$.
 
-  (2) 记原式为 $y_n$.由于
+  (2) 由于
   \[
     1\leq n+1+n\cos n\leq2n+1,
     \qquad
@@ -910,11 +918,12 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
   \]
   故
   \[
-    0\leq\ln y_n
+    0\leq
+    \ln\left[(n+1+n\cos n)^{\frac{1}{2n+n\sin n}}\right]
     =\dfrac{\ln(n+1+n\cos n)}{2n+n\sin n}
     \leq\dfrac{\ln(2n+1)}{n}\longrightarrow0.
   \]
-  从而 $y_n\to e^0=1$.
+  从而原式趋于 $e^0=1$.
 \end{solution}
 
 \begin{example}
@@ -959,13 +968,13 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 \exampleblank
 
 \begin{solution}
-  令 $A=\max\{a_1,a_2,\ldots,a_m\}$.因为各 $a_j>0$,有
+  由 $A=\max\{a_1,a_2,\ldots,a_m\}$ 及各 $a_j>0$,有
   \[
     A^n\leq a_1^n+a_2^n+\cdots+a_m^n\leq mA^n.
   \]
   开 $n$ 次方得
   \[
-    A\leq\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}\leq\sqrt[n]{m},A.
+    A\leq\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}\leq\sqrt[n]{m}\,A.
   \]
   由 $\sqrt[n]{m}\to1$ 及夹逼定理,所求极限为 $A$.
 \end{solution}
@@ -1164,22 +1173,18 @@ $\{x_n-x_{n-1}\}$ 绝对收敛 $\Rightarrow \displaystyle \lim\limits_{n\to\inft
 \exampleblank
 
 \begin{solution}
-  (1) 记
-  \[
-    u_n=\dfrac{5^n n!}{(2n)^n}.
-  \]
   由 Stirling 公式 $n!\sim\sqrt{2\pi n}(n/e)^n$,有
   \[
-    u_n\sim\sqrt{2\pi n}\left(\dfrac{5}{2e}\right)^n\longrightarrow0,
+    x_n\sim\sqrt{2\pi n}\left(\dfrac{5}{2e}\right)^n\longrightarrow0,
   \]
   因为 $5/(2e)<1$.
 
-  (2) 记题中乘积为 $v_n$.则
+  (2) 题中乘积的相邻两项之比满足
   \[
-    \dfrac{v_{n+1}}{v_n}=\dfrac{n+11}{3n+2}\longrightarrow\dfrac{1}{3}<1.
+    \dfrac{x_{n+1}}{x_n}=\dfrac{n+11}{3n+2}\longrightarrow\dfrac{1}{3}<1.
   \]
-  取 $q\in(1/3,1)$.当 $n$ 充分大时 $v_{n+1}\leq qv_n$,故
-  $v_n\leq Cq^n\to0$.
+  取 $q\in(1/3,1)$.当 $n$ 充分大时 $x_{n+1}\leq qx_n$,故
+  $x_n\leq Cq^n\to0$.
 \end{solution}
 
 \begin{example}
@@ -1192,16 +1197,13 @@ $\{x_n-x_{n-1}\}$ 绝对收敛 $\Rightarrow \displaystyle \lim\limits_{n\to\inft
 \exampleblank
 
 \begin{solution}
-  令 $f(x)=1/(x\ln x)$.当 $x>e$ 时 $f$ 单调递减.记
-  \[
-    u_n=\sum\limits_{k=2}^n\dfrac{1}{k\ln k}-\ln\ln n.
-  \]
+  令 $f(x)=\dfrac{1}{x\ln x}$.当 $x>e$ 时 $f$ 单调递减.
   当 $n$ 充分大时,
   \[
-    u_{n+1}-u_n
+    x_{n+1}-x_n
     =f(n+1)-\int_n^{n+1}f(x)\,\mathrm{d}x\leq0,
   \]
-  故 $\{u_n\}$ 最终单调递减.另一方面,
+  故 $\{x_n\}$ 最终单调递减.另一方面,
   \[
     \sum\limits_{k=2}^n f(k)
     \geq\int_2^{n+1}f(x)\,\mathrm{d}x
@@ -1209,9 +1211,9 @@ $\{x_n-x_{n-1}\}$ 绝对收敛 $\Rightarrow \displaystyle \lim\limits_{n\to\inft
   \]
   所以
   \[
-    u_n\geq\ln\dfrac{\ln(n+1)}{\ln n}-\ln\ln2,
+    x_n\geq\ln\dfrac{\ln(n+1)}{\ln n}-\ln\ln2,
   \]
-  右端有统一下界.因此 $\{u_n\}$ 收敛,所给极限存在.
+  右端有统一下界.因此 $\{x_n\}$ 收敛,所给极限存在.
 \end{solution}
 
 \begin{example}
@@ -1313,10 +1315,10 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
     =\lim\limits_{n\to\infty}\dfrac{1}{(n+1)\ln(1+1/n)}=1.
   \]
 
-  (3) 令 $S_n=1+a+2a^2+\cdots+na^n$,$T_n=na^{n+2}$.当 $a>1$ 时
-  $T_n\to+\infty$,且
+  (3) 令 $S_n=1+a+2a^2+\cdots+na^n$.当 $a>1$ 时
+  $na^{n+2}\to+\infty$,且
   \[
-    \dfrac{S_{n+1}-S_n}{T_{n+1}-T_n}
+    \dfrac{S_{n+1}-S_n}{(n+1)a^{n+3}-na^{n+2}}
     =\dfrac{(n+1)a^{n+1}}{(n+1)a^{n+3}-na^{n+2}}
     =\dfrac{n+1}{a[(a-1)n+a]}
     \longrightarrow\dfrac{1}{a(a-1)}.
@@ -1334,28 +1336,30 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \exampleblank
 
 \begin{solution}
-  令
+  为应用 Stolz 定理,记分子为
   \[
-    H(t)=-t\ln t-(1-t)\ln(1-t),
-    \qquad H(0)=H(1)=0.
+    B_n=\sum\limits_{k=0}^n\ln C_n^k.
   \]
-  由 Stirling 公式,对 $0\leq k\leq n$ 一致地有
+  由
   \[
-    \ln C_n^k=nH\left(\dfrac{k}{n}\right)+O(\ln n).
+    B_n=(n+1)\ln(n!)-2\sum\limits_{k=0}^n\ln(k!),
   \]
-  因此
+  可直接算得
   \[
-    \dfrac{1}{n^2}\sum\limits_{k=0}^n\ln C_n^k
-    =\dfrac{1}{n}\sum\limits_{k=0}^n H\left(\dfrac{k}{n}\right)
-    +O\left(\dfrac{\ln n}{n}\right).
+    B_{n+1}-B_n=n\ln(n+1)-\ln(n!).
   \]
-  第一项是连续函数 $H$ 的 Riemann 和,故其极限为
+  因 $n^2$ 严格递增且趋于 $+\infty$,由 Stolz 定理及 Stirling 公式
+  $\ln(n!)=n\ln n-n+O(\ln n)$,
   \[
-    \int_0^1H(t)\,\mathrm{d}t
-    =-2\int_0^1t\ln t\,\mathrm{d}t
+    \begin{aligned}
+    \lim\limits_{n\to\infty}\dfrac{B_n}{n^2}
+    &=\lim\limits_{n\to\infty}
+      \dfrac{n\ln(n+1)-\ln(n!)}{(n+1)^2-n^2}\\
+    &=\lim\limits_{n\to\infty}
+      \dfrac{n\ln\left(1+\dfrac{1}{n}\right)+n+O(\ln n)}{2n+1}
     =\dfrac{1}{2}.
+    \end{aligned}
   \]
-  所以原极限为 $1/2$.
 \end{solution}
 
 \begin{example}
@@ -1372,29 +1376,21 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \exampleblank
 
 \begin{solution}
-  由 $m=\displaystyle \sum\limits_{k=1}^{\infty}1/k^2$,令
+  由 $m=\displaystyle\sum\limits_{k=1}^{\infty}\dfrac{1}{k^2}$ 及积分判别法,
+  题中括号内的数列趋于 $0$.因此可与 $\dfrac{1}{n^2}$ 使用 Stolz 定理的零比零型:
   \[
-    c_n=m-\sum\limits_{k=1}^n\dfrac{1}{k^2}-\dfrac{1}{n}
-    =\sum\limits_{k=n+1}^{\infty}\dfrac{1}{k^2}-\dfrac{1}{n}.
-  \]
-  因积分判别法给出 $c_n\to0$,可对 $c_n$ 与 $1/n^2$ 使用 Stolz 定理的零比零型.计算得
-  \[
-    c_n-c_{n+1}
-    =\dfrac{1}{(n+1)^2}-\dfrac{1}{n}+\dfrac{1}{n+1}
-    =-\dfrac{1}{n(n+1)^2},
-  \]
-  而
-  \[
-    \dfrac{1}{n^2}-\dfrac{1}{(n+1)^2}
-    =\dfrac{2n+1}{n^2(n+1)^2}.
-  \]
-  故
-  \[
-    \lim\limits_{n\to\infty}n^2c_n
+    \begin{aligned}
+    \lim\limits_{n\to\infty}
+    n^2\left(m-\sum\limits_{k=1}^n\dfrac{1}{k^2}-\dfrac{1}{n}\right)
     =\lim\limits_{n\to\infty}
-    \dfrac{c_n-c_{n+1}}{1/n^2-1/(n+1)^2}
+    \dfrac{
+      \dfrac{1}{(n+1)^2}-\dfrac{1}{n}+\dfrac{1}{n+1}
+    }{
+      \dfrac{1}{n^2}-\dfrac{1}{(n+1)^2}
+    }
     =\lim\limits_{n\to\infty}\left(-\dfrac{n}{2n+1}\right)
     =-\dfrac{1}{2}.
+    \end{aligned}
   \]
 \end{solution}
 
@@ -1417,21 +1413,14 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \exampleblank
 
 \begin{solution}
-  记 $S_n=A_1+cdots+A_n$,则题设第二个极限为 $S_n/n\to L$.固定
-  $\lambda>1$,令 $m_n=[\lambda n]$.有
+  直接作恒等变形:
   \[
-    \dfrac{A_{n+1}+\cdots+A_{m_n}}{m_n-n}
-    =\dfrac{S_{m_n}-S_n}{m_n-n}\longrightarrow L.
+    A_n-\dfrac{A_1+A_2+\cdots+A_n}{n}
+    =\dfrac{1}{n}\sum\limits_{k=1}^{n-1}k(A_{k+1}-A_k).
   \]
-  另一方面,由 $n(A_n-A_{n-1})\to0$,任给 $\varepsilon>0$,当 $n$ 充分大且
-  $n<k\leq m_n$ 时,
-  \[
-    |A_k-A_n|
-    \leq\sum\limits_{j=n+1}^k|A_j-A_{j-1}|
-    \leq\varepsilon\sum\limits_{j=n+1}^k\dfrac{1}{j}
-    \leq\varepsilon(\ln\lambda+o(1)).
-  \]
-  所以 $A_n$ 与上述区间平均值之差趋于 $0$.该平均值趋于 $L$,故 $A_n\to L$.
+  题设给出 $(k+1)(A_{k+1}-A_k)\to0$,故
+  $k(A_{k+1}-A_k)\to0$.由 Ces\`aro 平均定理,上式右端趋于 $0$.
+  因此 $A_n$ 与题中已知存在的算术平均极限相同.
 \end{solution}
 
 \begin{example}
@@ -1649,10 +1638,6 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \exampleblank
 
 \begin{solution}
-  记
-  \[
-    a_n=\sum\limits_{k=1}^n f(k)-\int_1^n f(x)\,\mathrm{d}x.
-  \]
   由于 $f$ 单调递减,
   \[
     a_{n+1}-a_n
@@ -1689,36 +1674,31 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \begin{example}
   设 $A>0$,$a_1>0$,
   \[
-    a_{n+1}=\dfrac{1}{2}\left(a_n+\dfrac{1}{a_n}\right),
+    a_{n+1}=\dfrac{1}{2}\left(a_n+\dfrac{A}{a_n}\right),
   \]
   证明:$\displaystyle \lim\limits_{n\to\infty}a_n$ 存在,并求其值.
 \end{example}
 \exampleblank
 
 \begin{solution}
-  按现有题面,参数 $A$ 未出现在递推式中.以下对题面所给递推式作答.
-
   由算术--几何平均值不等式,
   \[
-    a_2=\dfrac{1}{2}\left(a_1+\dfrac{1}{a_1}\right)\geq1.
+    a_2=\dfrac{1}{2}\left(a_1+\dfrac{A}{a_1}\right)\geq\sqrt A.
   \]
-  若 $a_n\geq1$,则
+  若 $a_n\geq\sqrt A$,则
   \[
-    a_{n+1}-1=\dfrac{(a_n-1)^2}{2a_n}\geq0,
+    a_{n+1}-\sqrt A=\dfrac{(a_n-\sqrt A)^2}{2a_n}\geq0,
   \]
   且
   \[
-    a_{n+1}-a_n=\dfrac{1-a_n^2}{2a_n}\leq0.
+    a_{n+1}-a_n=\dfrac{A-a_n^2}{2a_n}\leq0.
   \]
-  故 $\{a_n\}_{n\geq2}$ 单调递减且下界为 $1$,于是存在极限 $L\geq1$.
+  故 $\{a_n\}_{n\geq2}$ 单调递减且下界为 $\sqrt A$,于是存在极限 $L\geq\sqrt A$.
   由
   \[
-    L=\dfrac{1}{2}\left(L+\dfrac{1}{L}\right)
+    L=\dfrac{1}{2}\left(L+\dfrac{A}{L}\right)
   \]
-  得 $L=1$.因此 $a_n\to1$.
-
-  题首的 $A>0$ 对结论没有作用,原始资料中的递推式仍需校勘;若原意为
-  $a_{n+1}=\dfrac{1}{2}(a_n+A/a_n)$,则相同论证给出极限 $\sqrt A$.
+  得 $L^2=A$.因此 $a_n\to\sqrt A$.
 \end{solution}
 
 \begin{example}
@@ -1900,10 +1880,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 
 \begin{solution}
   令 $f(x)=3+x^{-1/2}$.当 $n\geq1$ 时 $x_n>3$.函数
-  \[
-    h(x)=x-3-x^{-1/2}
-  \]
-  在 $(0,+\infty)$ 上严格递增,且 $h(3)<0$、$h(4)>0$,故方程
+  $x-3-x^{-1/2}$ 在 $(0,+\infty)$ 上严格递增,且在 $3$ 处为负、在 $4$ 处为正,故方程
   $x=f(x)$ 有唯一正根 $c\in(3,4)$.
 
   当 $x,y\geq3$ 时,由 Lagrange 中值定理,
@@ -2126,21 +2103,36 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \exampleblank
 
 \begin{solution}
-  若 $a=0$,则递推式化为 $x_{n+1}=x_n/3$,故 $x_n\to0$.
+  若 $a=0$,则递推式化为 $x_{n+1}=\dfrac{1}{3}x_n$,故 $x_n\to0$.
 
-  以下设 $a>0$,并记 $r=\sqrt a$.直接计算得
+  以下设 $a>0$.正不动点满足
   \[
-    \dfrac{x_{n+1}-r}{x_{n+1}+r}
-    =\dfrac{x_n(x_n^2+3r^2)-r(3x_n^2+r^2)}
-    {x_n(x_n^2+3r^2)+r(3x_n^2+r^2)}
-    =\left(\dfrac{x_n-r}{x_n+r}\right)^3.
+    x=\dfrac{x(x^2+3a)}{3x^2+a},
   \]
-  令 $y_n=(x_n-r)/(x_n+r)$.由于 $x_n,r>0$,有 $|y_n|<1$,且
-  $y_{n+1}=y_n^3$.所以
+  因 $x>0$,约去 $x$ 后得到 $3x^2+a=x^2+3a$,故唯一的正不动点为
+  $x=\sqrt a$.
+
+  直接计算得
   \[
-    y_n=y_0^{3^n}\longrightarrow0.
+    \dfrac{x_{n+1}-\sqrt a}{x_{n+1}+\sqrt a}
+    =\left(\dfrac{x_n-\sqrt a}{x_n+\sqrt a}\right)^3.
   \]
-  又 $x_n=r(1+y_n)/(1-y_n)$,故 $x_n\to r=\sqrt a$.
+  迭代可得
+  \[
+    \dfrac{x_n-\sqrt a}{x_n+\sqrt a}
+    =\left(\dfrac{x_0-\sqrt a}{x_0+\sqrt a}\right)^{3^n}
+    \longrightarrow0,
+  \]
+  其中底数的绝对值小于 $1$.将上式解出 $x_n$,得到
+  \[
+    x_n=\sqrt a\,
+    \dfrac{
+      1+\left(\dfrac{x_0-\sqrt a}{x_0+\sqrt a}\right)^{3^n}
+    }{
+      1-\left(\dfrac{x_0-\sqrt a}{x_0+\sqrt a}\right)^{3^n}
+    }
+    \longrightarrow\sqrt a.
+  \]
 \end{solution}
 
 
@@ -2322,26 +2314,25 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \exampleblank
 
 \begin{solution}
-  令
+  因为 $a_n-2a_{n+1}$ 收敛,所以存在 $M>0$,使
+  $|a_n-2a_{n+1}|\leq M$.于是
   \[
-    r_n=a_n-2a_{n+1},
-    \qquad r_n\to A,
-    \qquad e_n=a_n+A.
+    |a_{n+1}|\leq\dfrac{1}{2}|a_n|+\dfrac{M}{2},
   \]
-  由 $a_{n+1}=(a_n-r_n)/2$ 得
+  迭代后得到 $|a_n|\leq|a_1|+M$,故 $\{a_n\}$ 有界.
+
+  记其下极限和上极限分别为 $\alpha,\beta$.利用移位不改变上、下极限,以及
+  $a_n-2a_{n+1}\to A$,在恒等式
   \[
-    e_{n+1}=\dfrac{1}{2}e_n+\dfrac{1}{2}(A-r_n).
+    a_{n+1}=\dfrac{1}{2}a_n-\dfrac{1}{2}(a_n-2a_{n+1})
   \]
-  迭代可得
+  两侧分别取下极限和上极限,有
   \[
-    e_n=\dfrac{e_1}{2^{n-1}}
-    +\sum\limits_{k=1}^{n-1}\dfrac{A-r_k}{2^{n-k}}.
+    \alpha=\dfrac{1}{2}(\alpha-A),
+    \qquad
+    \beta=\dfrac{1}{2}(\beta-A).
   \]
-  第一项趋于 $0$;第二项是趋零数列 $A-r_k$ 的几何加权平均,也趋于 $0$.
-  故 $e_n\to0$,即
-  \[
-    a_n\longrightarrow-A.
-  \]
+  因此 $\alpha=\beta=-A$,从而 $a_n\to-A$.
 \end{solution}
 
 \begin{example}
@@ -2358,23 +2349,25 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
   \[
     a_n+\dfrac{1}{2}a_{2n}\longrightarrow l.
   \]
-  又由 $|a_n|=|nb_n|\leq M$ 知 $\{a_n\}$ 有界.令
+  又由 $|a_n|=|nb_n|\leq M$ 知 $\{a_n\}$ 有界,而上式等价于
   \[
-    c_n=a_n-\dfrac{2l}{3}.
+    a_n-\dfrac{2l}{3}
+    +\dfrac{1}{2}\left(a_{2n}-\dfrac{2l}{3}\right)\longrightarrow0.
   \]
-  则
+  因此
   \[
-    c_n+\dfrac{1}{2}c_{2n}\longrightarrow0.
+    \begin{aligned}
+    \varlimsup\limits_{n\to\infty}
+    \left|a_n-\dfrac{2l}{3}\right|
+    &\leq\dfrac{1}{2}
+    \varlimsup\limits_{n\to\infty}
+    \left|a_{2n}-\dfrac{2l}{3}\right|\\
+    &\leq\dfrac{1}{2}
+    \varlimsup\limits_{n\to\infty}
+    \left|a_n-\dfrac{2l}{3}\right|.
+    \end{aligned}
   \]
-  记 $K=\varlimsup\limits_{n\to\infty}|c_n|<+\infty$.由上式,
-  \[
-    K\leq\dfrac{1}{2}\varlimsup\limits_{n\to\infty}|c_{2n}|
-    \leq\dfrac{K}{2}.
-  \]
-  故 $K=0$,即 $c_n\to0$.因此
-  \[
-    a_n\longrightarrow\dfrac{2l}{3}.
-  \]
+  这个有限的非负上极限只能为 $0$,故 $a_n\to\dfrac{2l}{3}$.
 \end{solution}
 
 \begin{example}
@@ -2392,59 +2385,71 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
   由 $0<a_1<b$ 得 $0<a_2<1$.当 $0<a_n<1$ 时,因 $b>\sqrt2>1$,
   仍有 $0<a_{n+1}<1$.故从第二项起数列位于 $(0,1)$ 内.
 
-  令 $f(x)=1-x^2/b^2$.在 $\lbrack0,1\rbrack$ 上,
+  记
   \[
-    |f'(x)|=\dfrac{2x}{b^2}\leq\dfrac{2}{b^2}<1.
+    \alpha=\varliminf\limits_{n\to\infty}a_n,
+    \qquad
+    \beta=\varlimsup\limits_{n\to\infty}a_n.
   \]
-  所以 $f$ 是压缩映射,数列收敛于该区间内唯一的不动点 $c$.解
+  函数 $1-\dfrac{x^2}{b^2}$ 在 $\lbrack0,1\rbrack$ 上连续且递减,所以
   \[
-    c=1-\dfrac{c^2}{b^2}
+    \alpha=1-\dfrac{\beta^2}{b^2},
+    \qquad
+    \beta=1-\dfrac{\alpha^2}{b^2}.
   \]
-  并取正根,得到
+  两式相减得到
   \[
-    c=\dfrac{b\sqrt{b^2+4}-b^2}{2}.
+    \beta-\alpha
+    =\dfrac{(\beta-\alpha)(\alpha+\beta)}{b^2}.
   \]
-  故 $\{a_n\}$ 收敛于上述 $c$.
+  因 $0\leq\alpha\leq\beta\leq1$ 且 $b^2>2$,只能有 $\alpha=\beta$.
+  故数列收敛,其极限是方程 $x=1-\dfrac{x^2}{b^2}$ 的正根
+  \[
+    \dfrac{b\sqrt{b^2+4}-b^2}{2}.
+  \]
 \end{solution}
 
 \begin{example}
   讨论下列数列 $\{a_n\}$ 的敛散性:
   \begin{enumerate}
-    \item $\displaystyle a_{n+1}=\sqrt[3]{a_n+6}\quad(a>-6)$;
+    \item $\displaystyle a_{n+1}=\sqrt[3]{a_n+6}\quad(a_1>-6)$;
     \item $\displaystyle a_{n+1}=A\sqrt{a_n}+B\quad(A,B>0,\ a_1>0)$.
   \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-  (1) 题面中的条件 $a>-6$ 使用了未定义的字母 $a$,原始资料需校勘.按自然含义将其理解为
-  $a_1>-6$.此时 $a_2=\sqrt[3]{a_1+6}>0$.令
+  (1) $a_2=\sqrt[3]{a_1+6}>0$.取 $M=\max\{a_2,2\}$.因为
   \[
-    f(x)=\sqrt[3]{x+6}.
+    0<\sqrt[3]{x+6}\leq M\qquad(0\leq x\leq M),
   \]
-  对 $x\geq0$,
+  其中右侧不等式来自 $M+6\leq M^3$,故 $0<a_n\leq M$ 对 $n\geq2$ 成立.
+  记上下极限为 $\alpha,\beta$.
+  由立方根函数连续且递增,
   \[
-    0<f'(x)=\dfrac{1}{3(x+6)^{2/3}}
-    \leq\dfrac{1}{3\cdot6^{2/3}}<1.
+    \alpha=\sqrt[3]{\alpha+6},
+    \qquad
+    \beta=\sqrt[3]{\beta+6}.
   \]
-  方程 $x=f(x)$ 等价于 $x^3-x-6=0$,其唯一实根为 $2$.
-  故由压缩估计可知 $a_n\to2$.
+  而 $x^3-x-6=(x-2)(x^2+2x+3)$,故 $\alpha=\beta=2$,即 $a_n\to2$.
 
-  (2) 令 $t$ 为方程 $t^2-At-B=0$ 的正根,即
-  \[
-    t=\dfrac{A+\sqrt{A^2+4B}}{2},
-    \qquad L=t^2.
-  \]
-  则 $L=A\sqrt L+B$.对任意 $x>0$,
-  \[
-    A\sqrt x+B-x=(t-\sqrt x)(t+\sqrt x-A).
-  \]
-  因 $t>A$,第二个因子恒正.所以当 $a_n<L$ 时
-  $a_n<a_{n+1}<L$;当 $a_n>L$ 时 $L<a_{n+1}<a_n$.
-  两种情形下数列都单调有界,并收敛于唯一正不动点
+  (2) 方程 $x=A\sqrt x+B$ 的唯一正根为
   \[
     L=\left(\dfrac{A+\sqrt{A^2+4B}}{2}\right)^2.
   \]
+  对任意 $x>0$,
+  \[
+    A\sqrt x+B-x
+    =(\sqrt L-\sqrt x)(\sqrt L+\sqrt x-A).
+  \]
+  因 $\sqrt L>A$,第二个因子恒正;又 $A\sqrt x+B$ 严格递增,所以递推始终留在
+  $a_1$ 与 $L$ 之间,从而有界.记上下极限为 $\alpha,\beta$,由连续性和单调性,
+  \[
+    \alpha=A\sqrt\alpha+B,
+    \qquad
+    \beta=A\sqrt\beta+B.
+  \]
+  两者都是上述方程的唯一正根,故 $\alpha=\beta=L$.
 \end{solution}
 
 \begin{example}
@@ -2457,22 +2462,20 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \exampleblank
 
 \begin{solution}
-  令
-  \[
-    f(x)=\dfrac{1}{2}\left(x+\dfrac{1}{x}\right)+1.
-  \]
   由算术--几何平均值不等式,$a_2\geq2$,故 $a_n\in\lbrack2,+\infty)$ 对
-  $n\geq2$ 成立.在该区间上
+  $n\geq2$ 成立.递推函数在该区间上的导数为
+  $\dfrac{1}{2}-\dfrac{1}{2x^2}>0$,故严格递增;其不动点方程为
+  $x^2-2x-1=0$,唯一的正不动点为
+  $1+\sqrt2$.因此以 $a_2$ 和 $1+\sqrt2$ 为端点的闭区间在递推下保持不变,
+  数列有界.
+
+  记上下极限为 $\alpha,\beta$.由递推函数连续且递增,
   \[
-    0<f'(x)=\dfrac{1}{2}-\dfrac{1}{2x^2}<\dfrac{1}{2}.
+    \alpha=\dfrac{1}{2}\left(\alpha+\dfrac{1}{\alpha}\right)+1,
+    \qquad
+    \beta=\dfrac{1}{2}\left(\beta+\dfrac{1}{\beta}\right)+1.
   \]
-  方程 $x=f(x)$ 化为 $x^2-2x-1=0$,其正根为
-  $c=1+\sqrt2$.因此
-  \[
-    |a_{n+1}-c|\leq\dfrac{1}{2}|a_n-c|
-    \qquad(n\geq2),
-  \]
-  从而 $a_n\to1+\sqrt2$.所以 $\{a_n\}$ 收敛.
+  由于该方程只有一个正根 $1+\sqrt2$,故 $\alpha=\beta=1+\sqrt2$.
 \end{solution}
 
 \begin{example}
@@ -2491,74 +2494,152 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
     y_n=px_n+qx_{n+1}\longrightarrow(p+q)X.
   \]
 
-  反之,设 $y_n\to Y$.由于 $|p|<|q|$,有 $p+q\neq0$.令
+  反之,设 $y_n\to Y$.由于 $|p|<|q|$,有 $p+q\neq0$.由
+  $x_{n+1}=-\dfrac{p}{q}x_n+\dfrac{y_n}{q}$ 迭代可知
   \[
-    X=\dfrac{Y}{p+q},
-    \qquad r=-\dfrac{p}{q},
-    \qquad |r|<1.
+    |x_n|\leq\left|\dfrac{p}{q}\right|^{n-1}|x_1|
+    +\dfrac{\displaystyle\sup\limits_k|y_k|}{|q|}
+     \sum\limits_{j=0}^{n-2}\left|\dfrac{p}{q}\right|^j,
   \]
-  由 $x_{n+1}=-(p/q)x_n+y_n/q$ 得
+  故 $\{x_n\}$ 有界.再由
   \[
-    x_{n+1}-X=r(x_n-X)+\dfrac{y_n-Y}{q}.
+    x_{n+1}-\dfrac{Y}{p+q}
+    =-\dfrac{p}{q}\left(x_n-\dfrac{Y}{p+q}\right)
+    +\dfrac{y_n-Y}{q},
   \]
-  这是一个收缩型非齐次递推式.迭代后,初值项按 $r^n$ 衰减,而趋零项
-  $(y_n-Y)/q$ 的几何卷积也趋于 $0$.故 $x_n\to X$.
+  取绝对值的上极限,得到
+  \[
+    \varlimsup\limits_{n\to\infty}
+    \left|x_n-\dfrac{Y}{p+q}\right|
+    \leq\left|\dfrac{p}{q}\right|
+    \varlimsup\limits_{n\to\infty}
+    \left|x_n-\dfrac{Y}{p+q}\right|.
+  \]
+  因 $\left|\dfrac{p}{q}\right|<1$,上述有限的非负上极限只能为 $0$,故
+  $x_n\to\dfrac{Y}{p+q}$.
   因此 $\{x_n\}$ 与 $\{y_n\}$ 同时收敛或同时发散.
 \end{solution}
 
+可以，精简后用“次可加数列 + 对数化”处理第二问会更干净。下面所有环境都不带星号，并按你的分式规范处理：
+
+```latex
 \begin{example}
-  证明下列命题:
+
+  证明下列命题：
+
   \begin{enumerate}
-    \item 若 $\{a_n\}$ 满足
+
+    \item 若非负数列 $\{a_n\}$ 满足对任意正整数 $m,n$ 都有
           \[
-            0\leq a_{n+m}\leq a_n+a_m\qquad(n,m\in\mathbb N),
+            a_{m+n}\leq a_m+a_n,
           \]
-          则 $\left\{\dfrac{a_n}{n}\right\}$ 收敛;
-    \item 若 $\{a_n\}$ 满足
+          则数列 $\left\{\dfrac{a_n}{n}\right\}$ 收敛；
+
+    \item 若非负数列 $\{a_n\}$ 满足对任意正整数 $m,n$ 都有
           \[
-            0\leq a_{n+m}\leq a_n-a_m\qquad(n,m\in\mathbb N),
+            a_{m+n}\leq a_m a_n,
           \]
-          则 $\{\sqrt[n]{a_n}\}$ 收敛.
+          则数列 $\{\sqrt[n]{a_n}\}$ 收敛。
+
   \end{enumerate}
+
 \end{example}
+
 \exampleblank
 
 \begin{solution}
+
   (1) 令
   \[
-    \alpha=\inf\limits_{k\geq1}\dfrac{a_k}{k}.
+    \alpha=\inf\limits_{k\geq 1}\dfrac{a_k}{k}.
   \]
-  显然 $\varliminf\limits_{n\to\infty}a_n/n\geq\alpha$.固定 $k$,将
-  $n$ 写成 $n=qk+r$,其中 $0\leq r<k$.反复使用次可加性可得
+  显然
+  \[
+    \varliminf\limits_{n\to\infty}\dfrac{a_n}{n}\geq\alpha.
+  \]
+
+  固定正整数 $k$。将 $n$ 写成
+  \[
+    n=qk+r,\qquad 0\leq r<k.
+  \]
+  由题设反复使用次可加性，得到
   \[
     a_n\leq qa_k+a_r,
   \]
-  其中 $r=0$ 时略去末项.令 $C_k=\max\{a_1,\ldots,a_{k-1}\}$,则
+  其中 $r=0$ 时略去末项。
+
+  令
   \[
-    \dfrac{a_n}{n}\leq\dfrac{qa_k+C_k}{qk+r}.
+    C_k=\max\{a_1,\ldots,a_{k-1}\},
   \]
-  令 $n\to\infty$,得到
+  则
   \[
-    \varlimsup\limits_{n\to\infty}\dfrac{a_n}{n}\leq\dfrac{a_k}{k}.
+    \dfrac{a_n}{n}
+    \leq
+    \dfrac{qa_k+C_k}{qk+r}.
   \]
-  再对 $k$ 取下确界,即得上极限不超过 $\alpha$.所以
+  令 $n\to\infty$，即 $q\to\infty$，可得
   \[
-    \lim\limits_{n\to\infty}\dfrac{a_n}{n}=\alpha.
+    \varlimsup\limits_{n\to\infty}\dfrac{a_n}{n}
+    \leq
+    \dfrac{a_k}{k}.
+  \]
+  由于 $k$ 任意，对 $k$ 取下确界，得到
+  \[
+    \varlimsup\limits_{n\to\infty}\dfrac{a_n}{n}
+    \leq\alpha.
+  \]
+  因此
+  \[
+    \varlimsup\limits_{n\to\infty}\dfrac{a_n}{n}
+    \leq
+    \alpha
+    \leq
+    \varliminf\limits_{n\to\infty}\dfrac{a_n}{n},
+  \]
+  从而
+  \[
+    \lim\limits_{n\to\infty}\dfrac{a_n}{n}
+    =\alpha.
   \]
 
-  (2) 题设减号虽不寻常,但按原式可直接推出结论.交换 $n,m$ 后同时有
+  (2) 若存在正整数 $k$ 使 $a_k=0$，则对任意 $n>k$，
   \[
-    0\leq a_{n+m}\leq a_n-a_m,
-    \qquad
-    0\leq a_{n+m}\leq a_m-a_n.
+    0\leq a_n\leq a_k a_{n-k}=0,
   \]
-  所以 $a_n=a_m$ 对所有 $n,m$ 成立,即 $a_n\equiv c$.代回原不等式得
-  $0\leq c\leq0$,故 $c=0$.因此
+  故 $a_n=0$ 对所有 $n\geq k$ 成立，于是
   \[
-    \sqrt[n]{a_n}=0
+    \lim\limits_{n\to\infty}\sqrt[n]{a_n}=0.
   \]
-  恒成立,该数列收敛于 $0$.
+
+  以下设 $a_n>0$ 对所有正整数 $n$ 成立。令
+  \[
+    b_n=\ln a_n.
+  \]
+  由
+  \[
+    a_{m+n}\leq a_m a_n
+  \]
+  得
+  \[
+    b_{m+n}\leq b_m+b_n.
+  \]
+  因此由第 (1) 问，
+  \[
+    \lim\limits_{n\to\infty}\dfrac{b_n}{n}
+  \]
+  存在。
+
+  又因为
+  \[
+    \sqrt[n]{a_n}
+    =a_n^{\frac{1}{n}}
+    =\exp\left(\dfrac{b_n}{n}\right),
+  \]
+  且指数函数连续，所以 $\{\sqrt[n]{a_n}\}$ 收敛。
+
 \end{solution}
+
 
 \begin{example}
   证明下列命题:
@@ -2566,12 +2647,12 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
     \item 设 $\{a_n\}$ 是正数列,则
           \[
             \varlimsup\limits_{n\to\infty}
-            \left(\dfrac{a_n+a_{n+1}}{a_n}\right)^n
+            \left(\dfrac{a_1+a_{n+1}}{a_n}\right)^n
             \geq e;
           \]
     \item 设 $\{a_n\}$ 是正数列,则
           \[
-            \varliminf\limits_{n\to\infty}
+            \varlimsup\limits_{n\to\infty}
             n\left(\dfrac{1+a_{n+1}}{a_n}-1\right)
             \geq1.
           \]
@@ -2580,29 +2661,36 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \exampleblank
 
 \begin{solution}
-  两条命题按现有题面均不成立.
+  先证 (2).若结论不成立,则可取 $q<1$,使得当 $n$ 充分大时
+  \[
+    n\left(\dfrac{1+a_{n+1}}{a_n}-1\right)\leq q.
+  \]
+  因而
+  \[
+    \dfrac{a_{n+1}}{n+1}
+    \leq\dfrac{n+q}{n+1}\dfrac{a_n}{n}-\dfrac{1}{n+1}
+    <\dfrac{a_n}{n}-\dfrac{1}{n+1}.
+  \]
+  从某个固定的 $N$ 起迭代此式,得到
+  \[
+    \dfrac{a_{m+1}}{m+1}
+    <\dfrac{a_N}{N}-\sum\limits_{n=N}^m\dfrac{1}{n+1}.
+  \]
+  右端最终为负,与 $a_{m+1}>0$ 矛盾,故 (2) 成立.
 
-  (1) 取正数列
+  对正数列 $\dfrac{a_n}{a_1}$ 应用 (2),得到
   \[
-    a_n=\dfrac{1}{(n!)^2}.
+    \varlimsup\limits_{n\to\infty}
+    n\left(\dfrac{a_1+a_{n+1}}{a_n}-1\right)\geq1.
   \]
-  则 $a_{n+1}/a_n=1/(n+1)^2$,从而
+  若 (1) 左端小于 $e$,则存在 $c<1$,使得当 $n$ 充分大时
   \[
-    \left(\dfrac{a_n+a_{n+1}}{a_n}\right)^n
-    =\left(1+\dfrac{1}{(n+1)^2}\right)^n\longrightarrow1<e.
+    \left(\dfrac{a_1+a_{n+1}}{a_n}\right)^n\leq e^c.
   \]
-  这否定了第一条命题.
-
-  (2) 取
+  于是
   \[
-    a_{2k}=2,
-    \qquad a_{2k+1}=1.
+    n\left(\dfrac{a_1+a_{n+1}}{a_n}-1\right)
+    \leq n\left(e^{\frac{c}{n}}-1\right)\longrightarrow c<1,
   \]
-  当 $n$ 为偶数时,
-  \[
-    n\left(\dfrac{1+a_{n+1}}{a_n}-1\right)
-    =n\left(\dfrac{2}{2}-1\right)=0.
-  \]
-  当 $n$ 为奇数时,该式等于 $2n$.因此其下极限为 $0<1$,第二条命题也不成立.
-  故本题两处结论都应回查原始资料或补充缺失条件.
+  与前式矛盾.故 (1) 也成立.
 \end{solution}
