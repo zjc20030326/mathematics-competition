@@ -719,12 +719,12 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
     a_n=\dfrac{1}{n}-\dfrac{2}{n}+\dfrac{3}{n}+\cdots+(-1)^{n-1}\dfrac{n}{n}
     \qquad(n=1,2,\ldots),
   \]
-  则 $\{a_n\}$ 收敛.
+  则 $\{a_n\}$ 发散.
 \end{example}
 \exampleblank
 
 \begin{solution}
-  原命题不成立.当 $n=2m$ 时,
+  当 $n=2m$ 时,
   \[
     a_{2m}=\dfrac{(1-2)+(3-4)+\cdots+((2m-1)-2m)}{2m}
     =-\dfrac{1}{2}.
@@ -735,7 +735,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
     =\dfrac{(1-2)+\cdots+((2m-3)-(2m-2))+(2m-1)}{2m-1}
     =\dfrac{m}{2m-1}\longrightarrow\dfrac{1}{2}.
   \]
-  偶子列与奇子列极限不同,故 $\{a_n\}$ 发散.因此本题题面中的“收敛”应核对原始资料.
+  偶子列与奇子列极限不同,故 $\{a_n\}$ 发散.
 \end{solution}
 
 \begin{example}
@@ -747,7 +747,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
   由 Dirichlet 逼近定理,对无理数 $1/(2\pi)$,存在严格递增的正整数列
   $\{q_j\}$ 与整数列 $\{p_j\}$,使得
   \[
-    \left|\dfrac{q_j}{2\pi}-p_j\right|\longrightarrow0.
+    \left|\dfrac{q_j}{2\pi}-p_j\right|\longrightarrow 0.
   \]
   于是 $q_j-2\pi p_j\to0$,从而
   \[
@@ -755,7 +755,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
   \]
   另一方面,
   \[
-    \sin(q_j+1)longrightarrow\sin1\neq0.
+    \sin(q_j+1)\longrightarrow\sin1\neq0.
   \]
   因此 $\{\sin n\}$ 有两个极限不同的子列,所以它不收敛.
 \end{solution}
