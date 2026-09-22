@@ -3,6 +3,7 @@ tmp/
 # Local Codex workflow state and Python bytecode.
 .superpowers/
 __pycache__/
+.pytest_cache/
 *.py[cod]
 
 # LaTeX build by-products. Published PDFs remain tracked deliberately.

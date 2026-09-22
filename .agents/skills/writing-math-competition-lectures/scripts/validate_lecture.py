@@ -32,27 +32,68 @@ EXAMPLE_TOKEN_RE = re.compile(
     r"\\begin\{solution\}|\\end\{solution\}"
 )
 
-EXPECTED_CHAPTERS = [
-    ("01_第一章_数列极限", "第一章_数列极限"),
-    ("02_第二章_函数极限与实数基本定理", "第二章_函数极限与实数基本定理"),
-    ("03_第三章_一元函数的连续性", "第三章_一元函数的连续性"),
-    ("04_第四章_一元函数微分学", "第四章_一元函数微分学"),
-    ("05_第五章_不定积分", "第五章_不定积分"),
-    ("06_第六章_定积分", "第六章_定积分"),
-    ("07_第七章_反常积分", "第七章_反常积分"),
-    ("08_第八章_数项级数", "第八章_数项级数"),
-    (
-        "09_第九章_函数项级数、幂级数、Fourier级数",
-        "第九章_函数项级数、幂级数、Fourier级数",
+@dataclass(frozen=True)
+class BookProfile:
+    """Structural contract for one lecture-note book."""
+
+    display_name: str
+    normal_main: str
+    answer_main: str
+    chapters: tuple[tuple[str, str], ...]
+    # 非首个 section 前必须紧跟 \newpage. 数学分析培优和高等代数培优
+    # 都采用这条约定, 因此当前两本书都是 True. 保留该开关是为了让
+    # 未来可能采用不同分页约定的书不必修改检查逻辑.
+    section_break_required: bool
+
+
+MATH_ANALYSIS_PROFILE = BookProfile(
+    display_name="数学分析培优",
+    normal_main="数学分析培优讲义.tex",
+    answer_main="数学分析培优讲义(答案版).tex",
+    chapters=(
+        ("01_第一章_数列极限", "第一章_数列极限"),
+        ("02_第二章_函数极限与实数基本定理", "第二章_函数极限与实数基本定理"),
+        ("03_第三章_一元函数的连续性", "第三章_一元函数的连续性"),
+        ("04_第四章_一元函数微分学", "第四章_一元函数微分学"),
+        ("05_第五章_不定积分", "第五章_不定积分"),
+        ("06_第六章_定积分", "第六章_定积分"),
+        ("07_第七章_反常积分", "第七章_反常积分"),
+        ("08_第八章_数项级数", "第八章_数项级数"),
+        (
+            "09_第九章_函数项级数、幂级数、Fourier级数",
+            "第九章_函数项级数、幂级数、Fourier级数",
+        ),
+        ("10_第十章_多元函数微分学", "第十章_多元函数微分学"),
+        ("11_第十一章_含参变量积分", "第十一章_含参变量积分"),
+        ("12_第十二章_重积分", "第十二章_重积分"),
+        (
+            "13_第十三章_曲线积分与曲面积分",
+            "第十三章_曲线积分与曲面积分",
+        ),
     ),
-    ("10_第十章_多元函数微分学", "第十章_多元函数微分学"),
-    ("11_第十一章_含参变量积分", "第十一章_含参变量积分"),
-    ("12_第十二章_重积分", "第十二章_重积分"),
-    (
-        "13_第十三章_曲线积分与曲面积分",
-        "第十三章_曲线积分与曲面积分",
+    section_break_required=True,
+)
+
+ADVANCED_ALGEBRA_PROFILE = BookProfile(
+    display_name="高等代数培优",
+    normal_main="高等代数培优讲义.tex",
+    answer_main="高等代数培优讲义(答案版).tex",
+    chapters=(
+        ("01_第一章_多项式", "第一章_多项式"),
+        ("02_第二章_行列式", "第二章_行列式"),
+        ("03_第三章_矩阵", "第三章_矩阵"),
+        ("04_第四章_线性空间与线性方程组", "第四章_线性空间与线性方程组"),
+        ("05_第五章_线性变换", "第五章_线性变换"),
+        ("06_第六章_相似标准型", "第六章_相似标准型"),
+        ("07_第七章_二次型", "第七章_二次型"),
+        ("08_第八章_欧氏空间", "第八章_欧氏空间"),
+        ("09_第九章_矩阵综合", "第九章_矩阵综合"),
+        ("10_第十章_张量积与外积", "第十章_张量积与外积"),
     ),
-]
+    section_break_required=True,
+)
+
+BOOK_PROFILES = (MATH_ANALYSIS_PROFILE, ADVANCED_ALGEBRA_PROFILE)
 
 SEVERITY_ORDER = {"error": 0, "warning": 1, "info": 2}
 
@@ -465,7 +506,13 @@ def check_text_file(
             )
         for rule_id, pattern in GENERIC_PATTERNS.items():
             if pattern.search(check_line):
-                replacement = "C_k^n notation" if rule_id == "LATEX002" else "dfrac or frac"
+                if rule_id == "LATEX002":
+                    replacement = (
+                        "C_k^n for a binomial coefficient, or a pmatrix "
+                        "environment for a stacked column vector"
+                    )
+                else:
+                    replacement = "dfrac or frac"
                 diagnostics.append(
                     _diagnostic(
                         path,
@@ -560,25 +607,29 @@ def _check_example_sequence(path: Path) -> list[Diagnostic]:
     return diagnostics
 
 
-def _check_chapter_entries(project_root: Path) -> list[Diagnostic]:
+def _check_chapter_entries(
+    project_root: Path,
+    profile: BookProfile,
+) -> list[Diagnostic]:
     diagnostics: list[Diagnostic] = []
     chapters_root = project_root / "章节"
     discovered = {
         (path.parent.name, path.name.removesuffix("_内容.tex"))
         for path in chapters_root.glob("*/*_内容.tex")
     }
-    expected = set(EXPECTED_CHAPTERS)
+    expected = set(profile.chapters)
     if discovered != expected:
         diagnostics.append(
             _project_error(
                 chapters_root,
                 "MA002",
-                "Chapter folder and content-file map does not match the 13-book profile.",
+                "Chapter folder and content-file map does not match the "
+                f"{profile.display_name} chapter profile.",
                 "Restore the expected numbered folder and chapter stem names.",
             )
         )
 
-    for folder_name, stem in EXPECTED_CHAPTERS:
+    for folder_name, stem in profile.chapters:
         folder = chapters_root / folder_name
         content = folder / f"{stem}_内容.tex"
         normal = folder / f"{stem}.tex"
@@ -599,9 +650,11 @@ def _check_chapter_entries(project_root: Path) -> list[Diagnostic]:
         normal_text = _read_utf8(normal)
         answer_text = _read_utf8(answer)
         expected_input = rf"\input{{{stem}_内容}}"
-        normal_class = r"\documentclass[../../数学分析培优讲义.tex]{subfiles}"
+        normal_class = (
+            rf"\documentclass[../../{profile.normal_main}]{{subfiles}}"
+        )
         answer_class = (
-            r"\documentclass[../../数学分析培优讲义(答案版).tex]{subfiles}"
+            rf"\documentclass[../../{profile.answer_main}]{{subfiles}}"
         )
         if expected_input not in normal_text or normal_class not in normal_text:
             diagnostics.append(
@@ -625,7 +678,7 @@ def _check_chapter_entries(project_root: Path) -> list[Diagnostic]:
     return diagnostics
 
 
-def _check_pagination(content: Path) -> list[Diagnostic]:
+def _check_pagination(content: Path, profile: BookProfile) -> list[Diagnostic]:
     diagnostics: list[Diagnostic] = []
     previous = ""
     first_section_after_chapter = False
@@ -650,7 +703,7 @@ def _check_pagination(content: Path) -> list[Diagnostic]:
                             line_number,
                         )
                     )
-            elif previous != r"\newpage":
+            elif profile.section_break_required and previous != r"\newpage":
                 diagnostics.append(
                     _project_error(
                         content,
@@ -686,10 +739,13 @@ def _documentclass_options(text: str) -> str:
     return match.group(1) if match else ""
 
 
-def _check_main_files(project_root: Path) -> list[Diagnostic]:
+def _check_main_files(
+    project_root: Path,
+    profile: BookProfile,
+) -> list[Diagnostic]:
     diagnostics: list[Diagnostic] = []
-    normal = project_root / "数学分析培优讲义.tex"
-    answer = project_root / "数学分析培优讲义(答案版).tex"
+    normal = project_root / profile.normal_main
+    answer = project_root / profile.answer_main
     preamble = project_root / "preamble.tex"
     if not normal.is_file() or not answer.is_file() or not preamble.is_file():
         missing = [
@@ -769,43 +825,57 @@ def _check_main_files(project_root: Path) -> list[Diagnostic]:
     normal_refs = re.findall(r"\\subfile\{([^}]+)\}", normal_text)
     answer_refs = re.findall(r"\\subfile\{([^}]+)\}", answer_text)
     expected_normal = [
-        f"章节/{folder}/{stem}" for folder, stem in EXPECTED_CHAPTERS
+        f"章节/{folder}/{stem}" for folder, stem in profile.chapters
     ]
     expected_answer = [
-        f"章节/{folder}/{stem}(答案版)" for folder, stem in EXPECTED_CHAPTERS
+        f"章节/{folder}/{stem}(答案版)" for folder, stem in profile.chapters
     ]
     if normal_refs != expected_normal or answer_refs != expected_answer:
         diagnostics.append(
             _project_error(
                 project_root,
                 "MA010",
-                "Main files do not contain the expected 13 ordered chapter references.",
+                "Main files do not contain the expected "
+                f"{len(profile.chapters)} ordered chapter references for "
+                f"{profile.display_name}.",
                 "Restore matching normal and answer subfile references.",
             )
         )
     return diagnostics
 
 
-def check_math_analysis_project(project_root: Path) -> list[Diagnostic]:
-    """Check the current 数学分析培优 single-source project contract."""
+def check_book_project(
+    project_root: Path,
+    profile: BookProfile,
+) -> list[Diagnostic]:
+    """Check one book's single-source project contract."""
     project_root = project_root.resolve()
-    diagnostics = _check_main_files(project_root)
-    diagnostics.extend(_check_chapter_entries(project_root))
+    diagnostics = _check_main_files(project_root, profile)
+    diagnostics.extend(_check_chapter_entries(project_root, profile))
     for content in sorted((project_root / "章节").glob("*/*_内容.tex")):
-        diagnostics.extend(_check_pagination(content))
+        diagnostics.extend(_check_pagination(content, profile))
     return diagnostics
 
 
-def _find_math_analysis_root(path: Path, repo_root: Path) -> Path | None:
+def check_math_analysis_project(project_root: Path) -> list[Diagnostic]:
+    """Check the 数学分析培优 contract; kept for existing callers."""
+    return check_book_project(project_root, MATH_ANALYSIS_PROFILE)
+
+
+def _find_book_root(
+    path: Path,
+    repo_root: Path,
+) -> tuple[Path, BookProfile] | None:
     start = path if path.is_dir() else path.parent
     for candidate in (start, *start.parents):
         if not _within(candidate, repo_root):
             break
-        if (
-            (candidate / "数学分析培优讲义.tex").is_file()
-            and (candidate / "数学分析培优讲义(答案版).tex").is_file()
-        ):
-            return candidate
+        for profile in BOOK_PROFILES:
+            if (
+                (candidate / profile.normal_main).is_file()
+                and (candidate / profile.answer_main).is_file()
+            ):
+                return candidate, profile
     return None
 
 
@@ -825,18 +895,21 @@ def run_checks(
     for path, selected_lines in selected_files.items():
         diagnostics.extend(check_text_file(path, selected_lines))
 
-    project_roots: set[Path] = set()
+    project_roots: set[tuple[Path, BookProfile]] = set()
     if project is not None:
         project_path = _resolve_input(repo_root, project)
-        found = _find_math_analysis_root(project_path, repo_root)
+        found = _find_book_root(project_path, repo_root)
         if found is not None:
             project_roots.add(found)
     for path in selected_files:
-        found = _find_math_analysis_root(path, repo_root)
+        found = _find_book_root(path, repo_root)
         if found is not None:
             project_roots.add(found)
-    for project_root in sorted(project_roots):
-        diagnostics.extend(check_math_analysis_project(project_root))
+    for project_root, profile in sorted(
+        project_roots,
+        key=lambda item: item[0].as_posix(),
+    ):
+        diagnostics.extend(check_book_project(project_root, profile))
     return diagnostics
 
 

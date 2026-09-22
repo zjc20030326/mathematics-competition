@@ -1,0 +1,2287 @@
+\setcounter{chapter}{1}
+\pagestyle{fancy}
+
+\chapter{行列式}
+
+本章前六节完全对应原讲义中的专题一与教材相关部分，原讲义以习题训练为主，因此这里保留其题目顺序，并在答案版中补充相应解答。若题目未另作说明，本章默认要求计算所给行列式。
+
+
+\section{大对角形及递推法}
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+a & b & 0 & \cdots & 0\\
+c & a & b & \ddots & \vdots\\
+0 & c & a & \ddots & 0\\
+\vdots & \ddots & \ddots & \ddots & b\\
+0 & \cdots & 0 & c & a
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+按最后一行或最后一列展开可得
+\[
+D_n=aD_{n-1}-bcD_{n-2},
+\qquad
+D_0=1,\quad D_1=a.
+\]
+特征方程为
+\[
+\lambda^2-a\lambda+bc=0.
+\]
+记
+\[
+\lambda_{\pm}
+=
+\dfrac{a\pm\sqrt{a^2-4bc}}{2}.
+\]
+若 $a^2\neq4bc$，则
+\[
+D_n
+=
+\dfrac{\lambda_+^{\,n+1}-\lambda_-^{\,n+1}}
+{\lambda_+-\lambda_-}.
+\]
+若 $a^2=4bc$，令 $\lambda=\dfrac{a}{2}$，则
+\[
+D_n=(n+1)\lambda^n.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+\alpha+\beta & \alpha\beta & 0 & \cdots & 0\\
+1 & \alpha+\beta & \alpha\beta & \ddots & \vdots\\
+0 & 1 & \alpha+\beta & \ddots & 0\\
+\vdots & \ddots & \ddots & \ddots & \alpha\beta\\
+0 & \cdots & 0 & 1 & \alpha+\beta
+\end{vmatrix},
+\qquad
+\alpha\neq\beta.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+递推关系为
+\[
+D_n=(\alpha+\beta)D_{n-1}-\alpha\beta D_{n-2},
+\qquad
+D_0=1,\quad D_1=\alpha+\beta.
+\]
+特征方程
+\[
+\lambda^2-(\alpha+\beta)\lambda+\alpha\beta=0
+\]
+的两根为 $\alpha,\beta$，故
+\[
+D_n
+=
+\dfrac{\alpha^{n+1}-\beta^{n+1}}{\alpha-\beta}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+\cos x & 1 & 0 & \cdots & 0\\
+1 & 2\cos x & 1 & \ddots & \vdots\\
+0 & 1 & 2\cos x & \ddots & 0\\
+\vdots & \ddots & \ddots & \ddots & 1\\
+0 & \cdots & 0 & 1 & 2\cos x
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+有
+\[
+D_1=\cos x,\qquad
+D_2=2\cos^2x-1=\cos2x,
+\]
+且
+\[
+D_n=2\cos x\,D_{n-1}-D_{n-2}.
+\]
+由
+\[
+\cos nx
+=
+2\cos x\cos((n-1)x)-\cos((n-2)x)
+\]
+可知
+\[
+\boxed{D_n=\cos nx}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+2n & n & 0 & \cdots & 0\\
+n & 2n & n & \ddots & \vdots\\
+0 & n & 2n & \ddots & 0\\
+\vdots & \ddots & \ddots & \ddots & n\\
+0 & \cdots & 0 & n & 2n
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+从每一行提出 $n$，得
+\[
+D_n
+=
+n^n
+\begin{vmatrix}
+2 & 1 & 0 & \cdots & 0\\
+1 & 2 & 1 & \ddots & \vdots\\
+0 & 1 & 2 & \ddots & 0\\
+\vdots & \ddots & \ddots & \ddots & 1\\
+0 & \cdots & 0 & 1 & 2
+\end{vmatrix}.
+\]
+设后一个行列式为 $E_n$，则
+\[
+E_n=2E_{n-1}-E_{n-2},
+\qquad
+E_1=2,\quad E_2=3,
+\]
+故 $E_n=n+1$。因此
+\[
+\boxed{D_n=(n+1)n^n}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+2 & 1 & 0 & \cdots & 0\\
+1 & 2 & 1 & \ddots & \vdots\\
+0 & 1 & 2 & \ddots & 0\\
+\vdots & \ddots & \ddots & \ddots & 1\\
+0 & \cdots & 0 & 1 & 2
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+递推
+\[
+D_n=2D_{n-1}-D_{n-2},
+\qquad
+D_1=2,\quad D_2=3.
+\]
+由归纳法立即得到
+\[
+\boxed{D_n=n+1}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+1-a_1 & a_2 & 0 & \cdots & 0\\
+-1 & 1-a_2 & a_3 & \ddots & \vdots\\
+0 & -1 & 1-a_3 & \ddots & 0\\
+\vdots & \ddots & \ddots & \ddots & a_n\\
+0 & \cdots & 0 & -1 & 1-a_n
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+记 $D_0=1$，则
+\[
+D_1=1-a_1,
+\]
+并有
+\[
+D_k=(1-a_k)D_{k-1}+a_kD_{k-2}.
+\]
+因此
+\[
+D_k-D_{k-1}
+=
+-a_k(D_{k-1}-D_{k-2}).
+\]
+由
+\[
+D_1-D_0=-a_1
+\]
+递推得
+\[
+D_k-D_{k-1}
+=
+(-1)^k a_1a_2\cdots a_k.
+\]
+累加即得
+\[
+\boxed{
+D_n
+=
+1-a_1+a_1a_2-a_1a_2a_3+\cdots
++(-1)^n a_1a_2\cdots a_n
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+设
+\[
+|A_n|=
+\begin{vmatrix}
+a_0+a_1 & a_1 & 0 & \cdots & 0\\
+a_1 & a_1+a_2 & a_2 & \ddots & \vdots\\
+0 & a_2 & a_2+a_3 & \ddots & 0\\
+\vdots & \ddots & \ddots & \ddots & a_{n-1}\\
+0 & \cdots & 0 & a_{n-1} & a_{n-1}+a_n
+\end{vmatrix}.
+\]
+证明：
+\[
+|A_n|
+=
+a_0a_1\cdots a_n
+\left(
+\dfrac{1}{a_0}
++\dfrac{1}{a_1}
++\cdots
++\dfrac{1}{a_n}
+\right).
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+记右端为
+\[
+F_n=\sum\limits_{k=0}^{n}\prod_{\substack{0\leq j\leq n\\j\neq k}}a_j.
+\]
+按最后一行展开三对角行列式可得
+\[
+|A_n|
+=
+(a_{n-1}+a_n)|A_{n-1}|
+-a_{n-1}^2|A_{n-2}|.
+\]
+直接代入 $F_{n-1},F_{n-2}$ 可验证
+\[
+F_n
+=
+(a_{n-1}+a_n)F_{n-1}
+-a_{n-1}^2F_{n-2},
+\]
+而 $n=1$ 时结论显然成立，故由归纳法得
+\[
+\boxed{
+|A_n|
+=
+a_0a_1\cdots a_n
+\sum\limits_{k=0}^{n}\dfrac{1}{a_k}
+}.
+\]
+若某个 $a_k=0$，将右端理解为前面的无分母多项式形式即可。
+\end{solution}
+
+
+\begin{example}
+已知 $a_i>0,b_i>0\ (i=1,2,\ldots,n)$，证明
+\[
+D_n=
+\begin{vmatrix}
+a_1 & b_1 & 0 & \cdots & 0\\
+-1 & a_2 & b_2 & \ddots & \vdots\\
+0 & -1 & a_3 & \ddots & 0\\
+\vdots & \ddots & \ddots & \ddots & b_{n-1}\\
+0 & \cdots & 0 & -1 & a_n
+\end{vmatrix}>0.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+递推关系为
+\[
+D_n=a_nD_{n-1}+b_{n-1}D_{n-2},
+\qquad
+D_0=1,\quad D_1=a_1>0.
+\]
+由于 $a_n>0,b_{n-1}>0$，由归纳法有
+\[
+D_n>0
+\]
+对一切正整数 $n$ 成立。
+\end{solution}
+
+
+\newpage
+
+\section{行（列）和相等的行列式}
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+0 & 1 & \cdots & 1\\
+1 & 0 & \cdots & 1\\
+\vdots & \vdots & \ddots & \vdots\\
+1 & 1 & \cdots & 0
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+矩阵可写成
+\[
+J-I_n,
+\]
+其中 $J$ 为全 $1$ 矩阵。向量 $(1,\ldots,1)^{\mathsf T}$ 对应特征值
+$n-1$，而其正交补上的特征值均为 $-1$。故
+\[
+\boxed{
+D_n=(-1)^{n-1}(n-1)
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+a_1+b & a_2 & a_3 & \cdots & a_n\\
+a_1 & a_2+b & a_3 & \cdots & a_n\\
+a_1 & a_2 & a_3+b & \cdots & a_n\\
+\vdots & \vdots & \vdots & \ddots & \vdots\\
+a_1 & a_2 & a_3 & \cdots & a_n+b
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+记
+\[
+\boldsymbol{1}=(1,\ldots,1)^{\mathsf T},
+\qquad
+a=(a_1,\ldots,a_n)^{\mathsf T}.
+\]
+则
+\[
+A=bI_n+\boldsymbol{1}a^{\mathsf T}.
+\]
+由秩一行列式公式
+\[
+\det(I+uv^{\mathsf T})=1+v^{\mathsf T}u
+\]
+可得
+\[
+\boxed{
+D_n=b^{\,n-1}
+\left(b+\sum\limits_{i=1}^{n}a_i\right)
+}.
+\]
+该式作为关于 $b$ 的多项式恒等式，对 $b=0$ 也成立。
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+\begin{vmatrix}
+5&6&7&8\\
+6&7&8&5\\
+7&8&5&6\\
+8&5&6&7
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+这是四阶循环行列式。取四次单位根
+\[
+1,\quad i,\quad -1,\quad -i,
+\]
+相应特征值为
+\[
+26,\quad -2-2i,\quad -2,\quad -2+2i.
+\]
+故
+\[
+D
+=
+26(-2)(-2-2i)(-2+2i)
+=
+\boxed{-416}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+1&1&\cdots&1&2-n\\
+1&1&\cdots&2-n&1\\
+\vdots&\vdots&\reflectbox{$\ddots$}&\vdots&\vdots\\
+1&2-n&\cdots&1&1\\
+2-n&1&\cdots&1&1
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+设 $P$ 为反序置换矩阵，则
+\[
+A=J-(n-1)P.
+\]
+在向量 $\boldsymbol{1}$ 上，
+\[
+A\boldsymbol{1}=\boldsymbol{1},
+\]
+故该方向的特征值为 $1$。在
+\[
+\boldsymbol{1}^{\perp}
+\]
+上有 $J=0$，于是 $A=-(n-1)P$。又
+\[
+\det P=(-1)^{\frac{n(n-1)}{2}}.
+\]
+因此
+\[
+\boxed{
+D_n
+=
+(-1)^{n-1+\frac{n(n-1)}{2}}(n-1)^{n-1}
+=
+(-1)^{\frac{(n-1)(n+2)}{2}}(n-1)^{n-1}
+}.
+\]
+\end{solution}
+
+
+\newpage
+
+\section{升阶法}
+
+为方便书写，记
+\[
+\Delta(x_1,\ldots,x_n)
+=
+\prod\limits_{1\leq i<j\leq n}(x_j-x_i),
+\]
+并以 $e_k=e_k(x_1,\ldots,x_n)$ 表示第 $k$ 个初等对称多项式，约定 $e_0=1$。
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+1+x_1&1+x_1^2&\cdots&1+x_1^n\\
+1+x_2&1+x_2^2&\cdots&1+x_2^n\\
+\vdots&\vdots&&\vdots\\
+1+x_n&1+x_n^2&\cdots&1+x_n^n
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+将各列写成“常数列 $1$”与幂列之和，并按列作多线性展开。由于两列同时取常数列时行列式为零，只保留“没有常数列”和“恰有一列取常数列”的项。利用缺一阶广义 Vandermonde 行列式，可得
+\[
+\boxed{
+D_n
+=
+\Delta(x_1,\ldots,x_n)
+\left(
+e_n+e_{n-1}-e_{n-2}+e_{n-3}-\cdots+(-1)^{n-1}
+\right)
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+1+x&x&\cdots&x\\
+x&2+x&\cdots&x\\
+\vdots&\vdots&\ddots&\vdots\\
+x&x&\cdots&n+x
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+写成
+\[
+A=\diag(1,2,\ldots,n)+xJ.
+\]
+由矩阵行列式引理，
+\[
+\det(D+x\boldsymbol{1}\boldsymbol{1}^{\mathsf T})
+=
+\det D
+\left(
+1+x\boldsymbol{1}^{\mathsf T}D^{-1}\boldsymbol{1}
+\right),
+\]
+故
+\[
+\boxed{
+D_n
+=
+n!
+\left(
+1+x\sum\limits_{k=1}^{n}\dfrac{1}{k}
+\right)
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+a_1+b_1&a_2&a_3&\cdots&a_n\\
+a_1&a_2+b_2&a_3&\cdots&a_n\\
+a_1&a_2&a_3+b_3&\cdots&a_n\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+a_1&a_2&a_3&\cdots&a_n+b_n
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+有
+\[
+A=\diag(b_1,\ldots,b_n)+\boldsymbol{1}a^{\mathsf T}.
+\]
+于是
+\[
+\boxed{
+D_n
+=
+\prod\limits_{i=1}^{n}b_i
++
+\sum\limits_{i=1}^{n}
+a_i
+\prod_{\substack{1\leq j\leq n\\j\neq i}}b_j
+}.
+\]
+当各 $b_i\neq0$ 时，也可写成
+\[
+D_n
+=
+\left(\prod\limits_{i=1}^{n}b_i\right)
+\left(
+1+\sum\limits_{i=1}^{n}\dfrac{a_i}{b_i}
+\right).
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+1&x_1&x_1^2&\cdots&x_1^{n-2}&x_1^n\\
+1&x_2&x_2^2&\cdots&x_2^{n-2}&x_2^n\\
+\vdots&\vdots&\vdots&&\vdots&\vdots\\
+1&x_n&x_n^2&\cdots&x_n^{n-2}&x_n^n
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+这是 Vandermonde 行列式中缺少 $x^{n-1}$ 列的情形。由广义 Vandermonde 公式，
+\[
+\boxed{
+D_n
+=
+(x_1+x_2+\cdots+x_n)
+\Delta(x_1,\ldots,x_n)
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+1&x_1(x_1-1)&x_1^2(x_1-1)&\cdots&x_1^{n-1}(x_1-1)\\
+1&x_2(x_2-1)&x_2^2(x_2-1)&\cdots&x_2^{n-1}(x_2-1)\\
+\vdots&\vdots&\vdots&&\vdots\\
+1&x_n(x_n-1)&x_n^2(x_n-1)&\cdots&x_n^{n-1}(x_n-1)
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+第 $k+1$ 列对应多项式
+\[
+x^k(x-1)=x^{k+1}-x^k,
+\qquad k=1,\ldots,n-1.
+\]
+逐列消去低次项后，可化为缺少一次项的广义 Vandermonde 型。结果为
+\[
+\boxed{
+D_n
+=
+\Delta(x_1,\ldots,x_n)
+\left(
+e_{n-1}-e_{n-2}+e_{n-3}-\cdots+(-1)^{n-1}
+\right)
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+1&x_1(x_1-a)&x_1^2(x_1-a)&\cdots&x_1^{n-1}(x_1-a)\\
+1&x_2(x_2-a)&x_2^2(x_2-a)&\cdots&x_2^{n-1}(x_2-a)\\
+\vdots&\vdots&\vdots&&\vdots\\
+1&x_n(x_n-a)&x_n^2(x_n-a)&\cdots&x_n^{n-1}(x_n-a)
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+与上一题同理，利用
+\[
+x^k(x-a)=x^{k+1}-ax^k
+\]
+逐列化简，得到
+\[
+\boxed{
+D_n
+=
+\Delta(x_1,\ldots,x_n)
+\left(
+e_{n-1}
+-ae_{n-2}
++a^2e_{n-3}
+-\cdots
++(-a)^{n-1}
+\right)
+}.
+\]
+\end{solution}
+
+
+\newpage
+
+\section{\texorpdfstring{$A(t)$}{A(t)} 的应用}
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+x&b&b&\cdots&b\\
+a&x&b&\cdots&b\\
+a&a&x&\cdots&b\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+a&a&a&\cdots&x
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+当 $a\neq b$ 时，连续作相邻行差或使用参数行列式可得
+\[
+\boxed{
+D_n
+=
+\dfrac{
+a(x-b)^n-b(x-a)^n
+}{a-b}
+}.
+\]
+当 $a=b$ 时取极限，得
+\[
+\boxed{
+D_n
+=
+(x-a)^{n-1}\bigl(x+(n-1)a\bigr)
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+x_1&y&y&\cdots&y\\
+z&x_2&y&\cdots&y\\
+z&z&x_3&\cdots&y\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+z&z&z&\cdots&x_n
+\end{vmatrix},
+\qquad
+y\neq z.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+利用相邻行差，或对上一题作变参数推广，可得
+\[
+\boxed{
+D_n
+=
+\dfrac{
+y\prod\limits_{i=1}^{n}(x_i-z)
+-
+z\prod\limits_{i=1}^{n}(x_i-y)
+}{y-z}
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+设 $A=(a_{ij})$，$A_{ij}$ 表示元素 $a_{ij}$ 的代数余子式。证明
+\[
+\begin{vmatrix}
+a_{11}-a_{12}&a_{12}-a_{13}&\cdots&a_{1,n-1}-a_{1n}&1\\
+a_{21}-a_{22}&a_{22}-a_{23}&\cdots&a_{2,n-1}-a_{2n}&1\\
+\vdots&\vdots&&\vdots&\vdots\\
+a_{n1}-a_{n2}&a_{n2}-a_{n3}&\cdots&a_{n,n-1}-a_{nn}&1
+\end{vmatrix}
+=
+\sum\limits_{i,j=1}^{n}A_{ij}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+记 $C_k$ 为 $A$ 的第 $k$ 列。左端矩阵的前 $n-1$ 列为
+\[
+C_1-C_2,\ C_2-C_3,\ \ldots,\ C_{n-1}-C_n,
+\]
+最后一列为 $\boldsymbol{1}$。
+
+先设 $A$ 可逆。于是左端等于
+\[
+\det A\,
+\det
+\begin{pmatrix}
+e_1-e_2& e_2-e_3&\cdots&e_{n-1}-e_n&A^{-1}\boldsymbol{1}
+\end{pmatrix}.
+\]
+对任意列向量 $v$，
+\[
+\det
+\begin{pmatrix}
+e_1-e_2&\cdots&e_{n-1}-e_n&v
+\end{pmatrix}
+=
+\sum\limits_{i=1}^{n}v_i.
+\]
+故原式等于
+\[
+\det A\,
+\boldsymbol{1}^{\mathsf T}A^{-1}\boldsymbol{1}
+=
+\boldsymbol{1}^{\mathsf T}\operatorname{adj}(A)\boldsymbol{1}
+=
+\sum\limits_{i,j=1}^{n}A_{ij}.
+\]
+两端均为 $a_{ij}$ 的多项式，故由多项式恒等原理，对奇异 $A$ 也成立。
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+1+x_1&1+x_1^2&\cdots&1+x_1^n\\
+1+x_2&1+x_2^2&\cdots&1+x_2^n\\
+\vdots&\vdots&&\vdots\\
+1+x_n&1+x_n^2&\cdots&1+x_n^n
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+这与例题 2.3.1 相同，因此
+\[
+\boxed{
+D_n
+=
+\Delta(x_1,\ldots,x_n)
+\left(
+e_n+e_{n-1}-e_{n-2}+e_{n-3}-\cdots+(-1)^{n-1}
+\right)
+}.
+\]
+\end{solution}
+
+
+\newpage
+
+\section{（大小）拆分法}
+
+\subsection{大拆分法}
+
+\begin{example}[\markstar]
+设 $A=(a_{ij})$，已知 $|A|$ 及各代数余子式 $A_{ij}$，计算
+\[
+|A(t)|
+=
+\begin{vmatrix}
+a_{11}+t&a_{12}+t&\cdots&a_{1n}+t\\
+a_{21}+t&a_{22}+t&\cdots&a_{2n}+t\\
+\vdots&\vdots&&\vdots\\
+a_{n1}+t&a_{n2}+t&\cdots&a_{nn}+t
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+有
+\[
+A(t)=A+t\boldsymbol{1}\boldsymbol{1}^{\mathsf T}.
+\]
+由行列式关于任一列的多线性知，展开时至多有一列取 $t\boldsymbol{1}$，故 $|A(t)|$ 关于 $t$ 至多一次。常数项为 $|A|$，一次项为全体代数余子式之和，因此
+\[
+\boxed{
+|A(t)|
+=
+|A|
++t\sum\limits_{i,j=1}^{n}A_{ij}
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+a_1+b_1&a_1+b_2&\cdots&a_1+b_n\\
+a_2+b_1&a_2+b_2&\cdots&a_2+b_n\\
+\vdots&\vdots&&\vdots\\
+a_n+b_1&a_n+b_2&\cdots&a_n+b_n
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+矩阵可写成
+\[
+a\boldsymbol{1}^{\mathsf T}
++
+\boldsymbol{1}b^{\mathsf T},
+\]
+故秩不超过 $2$。因此当 $n\geq3$ 时
+\[
+\boxed{D_n=0}.
+\]
+另外，
+\[
+D_1=a_1+b_1,
+\]
+而 $n=2$ 时
+\[
+D_2=(a_1-a_2)(b_2-b_1).
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+a&b&\cdots&b\\
+b&a&\cdots&b\\
+\vdots&\vdots&\ddots&\vdots\\
+b&b&\cdots&a
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+写成
+\[
+A=(a-b)I_n+bJ.
+\]
+故特征值为
+\[
+a+(n-1)b
+\]
+一次，以及
+\[
+a-b
+\]
+共 $n-1$ 次。因此
+\[
+\boxed{
+D_n=(a-b)^{n-1}\bigl(a+(n-1)b\bigr)
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+x_1&a_2&a_3&\cdots&a_n\\
+a_1&x_2&a_3&\cdots&a_n\\
+a_1&a_2&x_3&\cdots&a_n\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+a_1&a_2&a_3&\cdots&x_n
+\end{vmatrix},
+\qquad
+a_i\neq x_i.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+写成
+\[
+A
+=
+\diag(x_1-a_1,\ldots,x_n-a_n)
++
+\boldsymbol{1}a^{\mathsf T}.
+\]
+由矩阵行列式引理，
+\[
+\boxed{
+D_n
+=
+\left(
+\prod\limits_{i=1}^{n}(x_i-a_i)
+\right)
+\left(
+1+
+\sum\limits_{i=1}^{n}\dfrac{a_i}{x_i-a_i}
+\right)
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+1+x&x&\cdots&x\\
+x&2+x&\cdots&x\\
+\vdots&\vdots&\ddots&\vdots\\
+x&x&\cdots&n+x
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+与例题 2.3.2 相同，
+\[
+\boxed{
+D_n
+=
+n!
+\left(
+1+x\sum\limits_{k=1}^{n}\dfrac{1}{k}
+\right)
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+a_1+b_1&a_2&a_3&\cdots&a_n\\
+a_1&a_2+b_2&a_3&\cdots&a_n\\
+a_1&a_2&a_3+b_3&\cdots&a_n\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+a_1&a_2&a_3&\cdots&a_n+b_n
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+与例题 2.3.3 相同，
+\[
+\boxed{
+D_n
+=
+\prod\limits_{i=1}^{n}b_i
++
+\sum\limits_{i=1}^{n}
+a_i
+\prod_{\substack{1\leq j\leq n\\j\neq i}}b_j
+}.
+\]
+\end{solution}
+
+
+\subsection{小拆分法}
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+x&a&a&\cdots&a\\
+b&x&a&\cdots&a\\
+b&b&x&\cdots&a\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+b&b&b&\cdots&x
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+当 $a\neq b$ 时，由例题 2.4.1，
+\[
+\boxed{
+D_n
+=
+\dfrac{
+a(x-b)^n-b(x-a)^n
+}{a-b}
+}.
+\]
+当 $a=b$ 时，
+\[
+\boxed{
+D_n=(x-a)^{n-1}\bigl(x+(n-1)a\bigr)
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+x_1&a&a&\cdots&a\\
+b&x_2&a&\cdots&a\\
+b&b&x_3&\cdots&a\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+b&b&b&\cdots&x_n
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+若 $a\neq b$，则由例题 2.4.2，
+\[
+\boxed{
+D_n
+=
+\dfrac{
+a\prod\limits_{i=1}^{n}(x_i-b)
+-
+b\prod\limits_{i=1}^{n}(x_i-a)
+}{a-b}
+}.
+\]
+当 $a=b$ 时可由上式取极限得到相应结果。
+\end{solution}
+
+
+\newpage
+
+\section{矩阵分解技巧与降阶公式（打洞原理）}
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+a_1b_1&a_1b_2&\cdots&a_1b_n\\
+a_2b_1&a_2b_2&\cdots&a_2b_n\\
+\vdots&\vdots&&\vdots\\
+a_nb_1&a_nb_2&\cdots&a_nb_n
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+矩阵为外积
+\[
+ab^{\mathsf T},
+\]
+其秩不超过 $1$。故当 $n\geq2$ 时
+\[
+\boxed{D_n=0}.
+\]
+$n=1$ 时 $D_1=a_1b_1$。
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+\sin(\alpha_1+\beta_1)&\sin(\alpha_1+\beta_2)&\cdots&\sin(\alpha_1+\beta_n)\\
+\sin(\alpha_2+\beta_1)&\sin(\alpha_2+\beta_2)&\cdots&\sin(\alpha_2+\beta_n)\\
+\vdots&\vdots&&\vdots\\
+\sin(\alpha_n+\beta_1)&\sin(\alpha_n+\beta_2)&\cdots&\sin(\alpha_n+\beta_n)
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+由
+\[
+\sin(\alpha_i+\beta_j)
+=
+\sin\alpha_i\cos\beta_j
++
+\cos\alpha_i\sin\beta_j
+\]
+可知该矩阵是两个秩一矩阵之和，故秩不超过 $2$。因此当 $n\geq3$ 时
+\[
+\boxed{D_n=0}.
+\]
+当 $n=2$ 时，
+\[
+D_2
+=
+\sin(\alpha_1-\alpha_2)\sin(\beta_2-\beta_1).
+\]
+\end{solution}
+
+
+\begin{example}
+设 $A=(a_{ij})$，
+\[
+a_{ij}=\dfrac{1}{1-\alpha_i\beta_j},
+\]
+求 $|A|$。
+\end{example}
+\exampleblank
+
+\begin{solution}
+这是 Cauchy 型行列式。由标准 Cauchy 行列式公式，
+\[
+\boxed{
+|A|
+=
+\dfrac{
+\displaystyle
+\prod\limits_{1\leq i<j\leq n}
+(\alpha_i-\alpha_j)(\beta_i-\beta_j)
+}{
+\displaystyle
+\prod\limits_{i,j=1}^{n}(1-\alpha_i\beta_j)
+}
+}.
+\]
+这里假设各分母非零；当某些 $\alpha_i$ 或 $\beta_j$ 重合时，公式自然给出行列式为零。
+\end{solution}
+
+
+\begin{example}
+记
+\[
+s_k=\sum\limits_{j=1}^{n}a_j^k,
+\qquad
+s_0=n.
+\]
+计算
+\[
+D_n=
+\begin{vmatrix}
+s_0&s_1&s_2&\cdots&s_{n-1}\\
+s_1&s_2&s_3&\cdots&s_n\\
+s_2&s_3&s_4&\cdots&s_{n+1}\\
+\vdots&\vdots&\vdots&&\vdots\\
+s_{n-1}&s_n&s_{n+1}&\cdots&s_{2n-2}
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+令 Vandermonde 矩阵
+\[
+V=
+\begin{pmatrix}
+1&1&\cdots&1\\
+a_1&a_2&\cdots&a_n\\
+\vdots&\vdots&&\vdots\\
+a_1^{n-1}&a_2^{n-1}&\cdots&a_n^{n-1}
+\end{pmatrix}.
+\]
+则题中矩阵正是
+\[
+VV^{\mathsf T}.
+\]
+因此
+\[
+D_n
+=
+(\det V)^2
+=
+\boxed{
+\prod\limits_{1\leq i<j\leq n}(a_j-a_i)^2
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+1+x&x&\cdots&x\\
+x&2+x&\cdots&x\\
+\vdots&\vdots&\ddots&\vdots\\
+x&x&\cdots&n+x
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+仍由矩阵行列式引理，
+\[
+\boxed{
+D_n
+=
+n!
+\left(
+1+x\sum\limits_{k=1}^{n}\dfrac{1}{k}
+\right)
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+a_1+b_1&a_2&a_3&\cdots&a_n\\
+a_1&a_2+b_2&a_3&\cdots&a_n\\
+a_1&a_2&a_3+b_3&\cdots&a_n\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+a_1&a_2&a_3&\cdots&a_n+b_n
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+由秩一扰动公式，
+\[
+\boxed{
+D_n
+=
+\prod\limits_{i=1}^{n}b_i
++
+\sum\limits_{i=1}^{n}
+a_i
+\prod_{\substack{1\leq j\leq n\\j\neq i}}b_j
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+a&b&\cdots&b\\
+b&a&\cdots&b\\
+\vdots&\vdots&\ddots&\vdots\\
+b&b&\cdots&a
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+矩阵为
+\[
+(a-b)I_n+bJ,
+\]
+故
+\[
+\boxed{
+D_n=(a-b)^{n-1}\bigl(a+(n-1)b\bigr)
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+a_1^2+1&a_1a_2&\cdots&a_1a_n\\
+a_2a_1&a_2^2+1&\cdots&a_2a_n\\
+\vdots&\vdots&\ddots&\vdots\\
+a_na_1&a_na_2&\cdots&a_n^2+1
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+题中矩阵为
+\[
+I_n+aa^{\mathsf T},
+\qquad
+a=(a_1,\ldots,a_n)^{\mathsf T}.
+\]
+故
+\[
+\boxed{
+D_n=1+a^{\mathsf T}a
+=
+1+\sum\limits_{i=1}^{n}a_i^2
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+1+a_1+b_1&a_1+b_2&\cdots&a_1+b_n\\
+a_2+b_1&1+a_2+b_2&\cdots&a_2+b_n\\
+\vdots&\vdots&\ddots&\vdots\\
+a_n+b_1&a_n+b_2&\cdots&1+a_n+b_n
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+写成
+\[
+A=I_n+a\boldsymbol{1}^{\mathsf T}+\boldsymbol{1}b^{\mathsf T}.
+\]
+令
+\[
+U=(a,\boldsymbol{1}),
+\qquad
+V=(\boldsymbol{1},b).
+\]
+由
+\[
+\det(I_n+UV^{\mathsf T})
+=
+\det(I_2+V^{\mathsf T}U),
+\]
+得到
+\[
+\boxed{
+D_n
+=
+\left(1+\sum\limits_{i=1}^{n}a_i\right)
+\left(1+\sum\limits_{i=1}^{n}b_i\right)
+-
+n\sum\limits_{i=1}^{n}a_ib_i
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+0&a_1+a_2&\cdots&a_1+a_n\\
+a_2+a_1&0&\cdots&a_2+a_n\\
+\vdots&\vdots&\ddots&\vdots\\
+a_n+a_1&a_n+a_2&\cdots&0
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+先设各 $a_i\neq0$。记
+\[
+a=(a_1,\ldots,a_n)^{\mathsf T},
+\qquad
+D=-2\diag(a_1,\ldots,a_n).
+\]
+则
+\[
+A=D+a\boldsymbol{1}^{\mathsf T}+\boldsymbol{1}a^{\mathsf T}.
+\]
+对该秩二扰动使用矩阵行列式引理，可得
+\[
+\boxed{
+D_n
+=
+(-1)^n2^{n-2}
+\left(\prod\limits_{i=1}^{n}a_i\right)
+\left[
+(n-2)^2
+-
+\left(\sum\limits_{i=1}^{n}a_i\right)
+\left(\sum\limits_{i=1}^{n}\dfrac{1}{a_i}\right)
+\right]
+}.
+\]
+两端均可视为 $a_i$ 的多项式恒等式，因此有 $a_i=0$ 的情形可由连续性或展开后代入得到。
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+\lambda&2&3&\cdots&n\\
+1&\lambda+1&3&\cdots&n\\
+1&2&\lambda+2&\cdots&n\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+1&2&3&\cdots&\lambda+n-1
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+记
+\[
+v=(1,2,\ldots,n)^{\mathsf T}.
+\]
+题中矩阵可写成
+\[
+A=(\lambda-1)I_n+\boldsymbol{1}v^{\mathsf T}.
+\]
+故
+\[
+\boxed{
+D_n
+=
+(\lambda-1)^{n-1}
+\left(
+\lambda-1+\dfrac{n(n+1)}{2}
+\right)
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+1+a_1&1&\cdots&1\\
+1&1+a_2&\cdots&1\\
+\vdots&\vdots&\ddots&\vdots\\
+1&1&\cdots&1+a_n
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+有
+\[
+A=\diag(a_1,\ldots,a_n)+J.
+\]
+故
+\[
+\boxed{
+D_n
+=
+\prod\limits_{i=1}^{n}a_i
++
+\sum\limits_{i=1}^{n}
+\prod_{\substack{1\leq j\leq n\\j\neq i}}a_j
+}.
+\]
+若各 $a_i\neq0$，也可写成
+\[
+D_n
+=
+\left(\prod\limits_{i=1}^{n}a_i\right)
+\left(
+1+\sum\limits_{i=1}^{n}\dfrac{1}{a_i}
+\right).
+\]
+\end{solution}
+
+
+\begin{example}[\markstar]
+设 $A_{m\times n}$，$B_{n\times m}$，证明
+\[
+\lambda^n
+\left|\lambda I_m-AB\right|
+=
+\lambda^m
+\left|\lambda I_n-BA\right|.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+先设 $\lambda\neq0$。由 Sylvester 行列式恒等式
+\[
+\det(I_m-XY)=\det(I_n-YX),
+\]
+取
+\[
+X=\dfrac{1}{\lambda}A,\qquad Y=B,
+\]
+得
+\[
+\det\left(I_m-\dfrac{1}{\lambda}AB\right)
+=
+\det\left(I_n-\dfrac{1}{\lambda}BA\right).
+\]
+乘以 $\lambda^{m+n}$ 即得
+\[
+\lambda^n
+\det(\lambda I_m-AB)
+=
+\lambda^m
+\det(\lambda I_n-BA).
+\]
+两边均为 $\lambda$ 的多项式，故恒等式对 $\lambda=0$ 也成立。
+\end{solution}
+
+
+\newpage
+
+\section{综合问题}
+
+\begin{example}
+证明下面的行列式不为零：
+\[
+D_n=
+\det\left((i+j-1)^i\right)_{1\leq i,j\leq n}.
+\]
+原题取 $n=2011$。
+\end{example}
+\exampleblank
+
+\begin{solution}
+令
+\[
+x_j=j-1,\qquad
+p_i(x)=(x+i)^i.
+\]
+则
+\[
+D_n=\det\bigl(p_i(x_j)\bigr)_{1\leq i,j\leq n}.
+\]
+将
+\[
+p_i(x)
+=
+\sum\limits_{k=0}^{i}
+C_k^i i^{\,i-k}x^k
+\]
+看作单项式基下的系数展开。其常数项与一次项系数均为 $i^i$，而最高次项系数为 $1$。用 Cauchy--Binet 公式展开后，只有“删去 $x^0$ 列”与“删去 $x^1$ 列”两个系数子式可能非零，且二者均为 $1$。
+
+于是
+\[
+D_n
+=
+\Delta(x_1,\ldots,x_n)
+\bigl(e_n(x_1,\ldots,x_n)+e_{n-1}(x_1,\ldots,x_n)\bigr).
+\]
+这里
+\[
+x_1=0,x_2=1,\ldots,x_n=n-1,
+\]
+故
+\[
+e_n=0,\qquad
+e_{n-1}=(n-1)!,
+\]
+并且
+\[
+\Delta(0,1,\ldots,n-1)
+=
+\prod\limits_{k=1}^{n-1}k!.
+\]
+因此
+\[
+\boxed{
+D_n
+=
+(n-1)!
+\prod\limits_{k=1}^{n-1}k!
+>0
+}.
+\]
+特别地，原题 $n=2011$ 时行列式必不为零。
+\end{solution}
+
+
+\begin{example}[\markstar]
+计算 Cauchy 行列式
+\[
+D_n=
+\begin{vmatrix}
+\dfrac{1}{a_1+b_1}&\dfrac{1}{a_1+b_2}&\cdots&\dfrac{1}{a_1+b_n}\\[6pt]
+\dfrac{1}{a_2+b_1}&\dfrac{1}{a_2+b_2}&\cdots&\dfrac{1}{a_2+b_n}\\
+\vdots&\vdots&&\vdots\\[4pt]
+\dfrac{1}{a_n+b_1}&\dfrac{1}{a_n+b_2}&\cdots&\dfrac{1}{a_n+b_n}
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+假设各 $a_i+b_j\neq0$。Cauchy 行列式公式为
+\[
+\boxed{
+D_n
+=
+\dfrac{
+\displaystyle
+\prod\limits_{1\leq i<j\leq n}(a_j-a_i)(b_j-b_i)
+}{
+\displaystyle
+\prod\limits_{i,j=1}^{n}(a_i+b_j)
+}
+}.
+\]
+可由对 $n$ 归纳，或逐步作列差后提取因子证明。
+\end{solution}
+
+
+\begin{example}[\markstar]
+设 $n$ 阶行列式 $\det A$ 的元素都是关于 $t$ 的可微函数，证明：
+\begin{enumerate}
+  \item
+  \[
+  \dfrac{\mathrm{d}}{\mathrm{d}t}\det A
+  =
+  \det A_1+\cdots+\det A_n,
+  \]
+  其中 $A_i$ 为仅对 $A$ 的第 $i$ 行逐项求导所得矩阵；
+  \item
+  \[
+  \dfrac{\mathrm{d}}{\mathrm{d}t}\det A
+  =
+  \sum\limits_{i,j=1}^{n}
+  \dfrac{\mathrm{d}a_{ij}(t)}{\mathrm{d}t}A_{ij}.
+  \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+行列式关于各行分别线性。对
+\[
+\det(R_1(t),\ldots,R_n(t))
+\]
+求导，按乘积法则的多线性版本得到
+\[
+\dfrac{\mathrm{d}}{\mathrm{d}t}\det A
+=
+\sum\limits_{i=1}^{n}
+\det(R_1,\ldots,R_i',\ldots,R_n),
+\]
+即第一式。
+
+再对每个 $\det A_i$ 按第 $i$ 行展开，
+\[
+\det A_i
+=
+\sum\limits_{j=1}^{n}a_{ij}'(t)A_{ij}.
+\]
+对 $i$ 求和即得第二式。
+\end{solution}
+
+
+\begin{example}[\markstar]
+设 $A=(a_{ij})\neq0$，且对一切 $i,j$ 有
+\[
+a_{ij}=A_{ij},
+\]
+其中 $A_{ij}$ 为 $a_{ij}$ 的代数余子式。求 $|A|$。
+\end{example}
+\exampleblank
+
+\begin{solution}
+设 $A$ 为实 $n$ 阶矩阵，并先取 $n\geq3$。由于代数余子式矩阵等于 $A$，故
+\[
+\operatorname{adj}(A)=A^{\mathsf T}.
+\]
+于是
+\[
+AA^{\mathsf T}
+=
+A\operatorname{adj}(A)
+=
+|A|I_n.
+\]
+因 $A\neq0$ 且左端半正定，若 $|A|=0$ 则
+\[
+AA^{\mathsf T}=0
+\]
+将推出 $A=0$，矛盾。因此 $|A|>0$。取行列式得
+\[
+|A|^2=|A|^n,
+\]
+故
+\[
+|A|^{n-2}=1.
+\]
+当 $n\geq3$ 时
+\[
+\boxed{|A|=1}.
+\]
+
+原题若允许 $n=2$，则结论并不唯一：此时
+\[
+A=
+\begin{pmatrix}
+a&b\\
+-b&a
+\end{pmatrix},
+\qquad
+|A|=a^2+b^2,
+\]
+可取任意正值。因此原题需要补充 $n\geq3$ 才能得到唯一答案。
+\end{solution}
+
+
+\begin{example}
+设 $a_1,a_2,\ldots,a_n$ 是 $n$ 个 $n$ 位自然数，其中 $a_i$ 的个位、十位、$\ldots$、第 $n$ 位数字依次为
+\[
+a_{i1},a_{i2},\ldots,a_{in},
+\]
+并设
+\[
+d=
+\begin{vmatrix}
+a_{11}&a_{12}&\cdots&a_{1n}\\
+a_{21}&a_{22}&\cdots&a_{2n}\\
+\vdots&\vdots&&\vdots\\
+a_{n1}&a_{n2}&\cdots&a_{nn}
+\end{vmatrix}.
+\]
+证明：$a_1,a_2,\ldots,a_n$ 的最大公因数 $r$ 整除 $d$。
+\end{example}
+\exampleblank
+
+\begin{solution}
+由十进制展开，
+\[
+a_i
+=
+a_{i1}+10a_{i2}+\cdots+10^{n-1}a_{in}.
+\]
+对行列式作列变换
+\[
+C_1
+\longleftarrow
+C_1+10C_2+\cdots+10^{n-1}C_n.
+\]
+行列式的值不变，而新第一列变为
+\[
+(a_1,a_2,\ldots,a_n)^{\mathsf T}.
+\]
+因为 $r$ 整除每个 $a_i$，故可从第一列提出因子 $r$，于是
+\[
+\boxed{r\mid d}.
+\]
+\end{solution}
+
+
+\begin{example}
+设
+\[
+D_n=
+\begin{vmatrix}
+1&-1&-1&\cdots&-1\\
+1&1&-1&\cdots&-1\\
+1&1&1&\cdots&-1\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+1&1&1&\cdots&1
+\end{vmatrix}.
+\]
+求 $D_n$ 展开式中正项的项数。
+\end{example}
+\exampleblank
+
+\begin{solution}
+由于矩阵中没有零元，Leibniz 展开共有 $n!$ 项。设正项数为 $P$，负项数为 $N$，则
+\[
+P+N=n!,
+\qquad
+P-N=D_n.
+\]
+从最后一行开始依次作
+\[
+R_i\longleftarrow R_i-R_{i-1},
+\qquad i=n,n-1,\ldots,2,
+\]
+得到除第一行外每行仅在第 $i$ 列有元素 $2$，故
+\[
+D_n=2^{n-1}.
+\]
+因此
+\[
+\boxed{
+P=\dfrac{n!+2^{n-1}}{2}
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+\sum_{j_1j_2\cdots j_n}
+\begin{vmatrix}
+a_{1j_1}&a_{1j_2}&\cdots&a_{1j_n}\\
+a_{2j_1}&a_{2j_2}&\cdots&a_{2j_n}\\
+\vdots&\vdots&&\vdots\\
+a_{nj_1}&a_{nj_2}&\cdots&a_{nj_n}
+\end{vmatrix},
+\]
+其中求和遍历 $1,2,\ldots,n$ 的所有全排列
+\[
+j_1j_2\cdots j_n.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+每个行列式都是原矩阵 $A=(a_{ij})$ 的列置换，因此对置换 $\sigma$，
+\[
+\det A_\sigma
+=
+\operatorname{sgn}(\sigma)\det A.
+\]
+当 $n\geq2$ 时，偶置换与奇置换数目相同，故
+\[
+\boxed{
+\sum_{\sigma\in S_n}\det A_\sigma=0
+}.
+\]
+$n=1$ 时结果为 $a_{11}$。
+\end{solution}
+
+
+\begin{example}[\markstar]
+设 $n\geq3$，
+\[
+f_1(x),f_2(x),\ldots,f_n(x)
+\]
+都是次数不超过 $n-2$ 的多项式，$a_1,a_2,\ldots,a_n$ 为任意数。证明
+\[
+\begin{vmatrix}
+f_1(a_1)&f_2(a_1)&\cdots&f_n(a_1)\\
+f_1(a_2)&f_2(a_2)&\cdots&f_n(a_2)\\
+\vdots&\vdots&&\vdots\\
+f_1(a_n)&f_2(a_n)&\cdots&f_n(a_n)
+\end{vmatrix}
+=0.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+每个 $f_j$ 都属于
+\[
+\Span\{1,x,\ldots,x^{n-2}\},
+\]
+该多项式空间维数为 $n-1$。于是 $n$ 个多项式
+\[
+f_1,\ldots,f_n
+\]
+线性相关。即存在不全为零的 $\lambda_j$ 使
+\[
+\sum\limits_{j=1}^{n}\lambda_jf_j(x)\equiv0.
+\]
+代入 $x=a_i$，得到题中矩阵的列线性相关，故行列式为零。
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D=
+\begin{vmatrix}
+1^{50}&2^{50}&3^{50}&\cdots&100^{50}\\
+2^{50}&3^{50}&4^{50}&\cdots&101^{50}\\
+3^{50}&4^{50}&5^{50}&\cdots&102^{50}\\
+\vdots&\vdots&\vdots&&\vdots\\
+100^{50}&101^{50}&102^{50}&\cdots&199^{50}
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+第 $j$ 列的第 $i$ 个元素为
+\[
+(i+j-1)^{50}.
+\]
+把它看成关于 $i$ 的多项式，则所有列都属于由
+\[
+1,i,i^2,\ldots,i^{50}
+\]
+张成的 $51$ 维空间。因此 $100$ 个列向量必线性相关，故
+\[
+\boxed{D=0}.
+\]
+\end{solution}
+
+
+\begin{proposition}[\marktwostar\ 循环矩阵]
+设
+\[
+I=
+\begin{pmatrix}
+0&1&0&\cdots&0\\
+0&0&1&\cdots&0\\
+\vdots&\vdots&\vdots&&\vdots\\
+0&0&0&\cdots&1\\
+1&0&0&\cdots&0
+\end{pmatrix},
+\qquad
+J=
+\begin{pmatrix}
+0&1&0&\cdots&0\\
+0&0&1&\cdots&0\\
+\vdots&\vdots&\vdots&&\vdots\\
+0&0&0&\cdots&1\\
+0&0&0&\cdots&0
+\end{pmatrix}.
+\]
+设
+\[
+A=
+\begin{pmatrix}
+a_0&a_1&a_2&\cdots&a_{n-1}\\
+a_{n-1}&a_0&a_1&\cdots&a_{n-2}\\
+\vdots&\vdots&\vdots&&\vdots\\
+a_2&a_3&a_4&\cdots&a_1\\
+a_1&a_2&a_3&\cdots&a_0
+\end{pmatrix},
+\]
+并令
+\[
+f(x)=a_0+a_1x+\cdots+a_{n-1}x^{n-1}.
+\]
+若 $\omega_1,\ldots,\omega_n$ 为全部 $n$ 次单位根，则：
+\begin{enumerate}
+  \item $I^n=E$，$J^n=0$，且 $\omega_i$ 为 $I$ 的特征值；
+  \item 矩阵 $B$ 与 $I$ 可交换当且仅当 $B=g(I)$；矩阵 $B$ 与 $J$ 可交换当且仅当 $B=g(J)$，其中 $g$ 为次数小于 $n$ 的多项式；
+  \item $f(\omega_i)$ 为 $A$ 的全部特征值，且
+  \[
+  |A|=\prod\limits_{i=1}^{n}f(\omega_i).
+  \]
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+前两式 $I^n=E,J^n=0$ 由移位矩阵的定义直接得到。对任意 $n$ 次单位根 $\omega$，
+\[
+v(\omega)
+=
+(1,\omega,\omega^2,\ldots,\omega^{n-1})^{\mathsf T}
+\]
+满足
+\[
+Iv(\omega)=\omega v(\omega),
+\]
+故全部 $n$ 次单位根恰为 $I$ 的特征值。
+
+若 $BI=IB$，比较矩阵元素可知 $B$ 的各行由上一行循环移位得到，因此 $B$ 为循环矩阵，即
+\[
+B=b_0E+b_1I+\cdots+b_{n-1}I^{n-1}=g(I).
+\]
+反之任意 $g(I)$ 显然与 $I$ 可交换。
+
+类似地，$BJ=JB$ 强迫 $B$ 为上三角 Toeplitz 矩阵，从而
+\[
+B=b_0E+b_1J+\cdots+b_{n-1}J^{n-1}=g(J).
+\]
+
+最后
+\[
+A=f(I),
+\]
+故若 $Iv(\omega_i)=\omega_i v(\omega_i)$，则
+\[
+Av(\omega_i)
+=
+f(I)v(\omega_i)
+=
+f(\omega_i)v(\omega_i).
+\]
+因此
+\[
+|A|
+=
+\prod\limits_{i=1}^{n}f(\omega_i).
+\]
+\end{proof}
+
+
+\begin{example}
+计算：
+\begin{enumerate}
+  \item
+  \[
+  \begin{vmatrix}
+  5&6&7&8\\
+  6&7&8&5\\
+  7&8&5&6\\
+  8&5&6&7
+  \end{vmatrix};
+  \]
+  \item
+  \[
+  D_n=
+  \begin{vmatrix}
+  1&2&\cdots&n-1&n\\
+  2&3&\cdots&n&1\\
+  \vdots&\vdots&&\vdots&\vdots\\
+  n&1&\cdots&n-2&n-1
+  \end{vmatrix}.
+  \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+第一问由例题 2.2.3 已知
+\[
+\boxed{-416}.
+\]
+
+第二问是左循环行列式。先记 $C_n$ 为第一行同为
+\[
+(1,2,\ldots,n)
+\]
+的标准右循环行列式。令
+\[
+f(x)=1+2x+\cdots+nx^{n-1}.
+\]
+当 $\omega^n=1,\omega\neq1$ 时，
+\[
+f(\omega)
+=
+\sum\limits_{k=1}^{n}k\omega^{k-1}
+=
+\dfrac{n}{\omega-1},
+\]
+而
+\[
+f(1)=\dfrac{n(n+1)}{2}.
+\]
+又
+\[
+\prod_{\substack{\omega^n=1\\\omega\neq1}}(1-\omega)=n,
+\]
+故
+\[
+\det C_n
+=
+(-1)^{n-1}
+\dfrac{(n+1)n^{n-1}}{2}.
+\]
+
+题中左循环矩阵可由 $C_n$ 作行置换
+\[
+0,1,\ldots,n-1
+\longmapsto
+0,n-1,n-2,\ldots,1
+\]
+得到，该置换由
+\[
+\left\lfloor\dfrac{n-1}{2}\right\rfloor
+\]
+个对换组成。因此
+\[
+\boxed{
+D_n
+=
+(-1)^{\,n-1+\left\lfloor\frac{n-1}{2}\right\rfloor}
+\dfrac{(n+1)n^{n-1}}{2}
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+a_0&a_1&a_2&\cdots&a_{n-1}\\
+\mu a_{n-1}&a_0&a_1&\cdots&a_{n-2}\\
+\mu a_{n-2}&\mu a_{n-1}&a_0&\cdots&a_{n-3}\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+\mu a_1&\mu a_2&\mu a_3&\cdots&a_0
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+设
+\[
+T=
+\begin{pmatrix}
+0&1&0&\cdots&0\\
+0&0&1&\cdots&0\\
+\vdots&\vdots&\vdots&&\vdots\\
+0&0&0&\cdots&1\\
+\mu&0&0&\cdots&0
+\end{pmatrix},
+\]
+则
+\[
+T^n=\mu I_n,
+\qquad
+A=a_0I_n+a_1T+\cdots+a_{n-1}T^{n-1}.
+\]
+取 $\rho$ 满足 $\rho^n=\mu$，并令 $\omega_k$ 遍历全部 $n$ 次单位根，则 $T$ 的特征值为
+\[
+\rho\omega_k.
+\]
+因此
+\[
+\boxed{
+D_n
+=
+\prod\limits_{k=1}^{n}
+\left(
+a_0+a_1\rho\omega_k+\cdots+a_{n-1}(\rho\omega_k)^{n-1}
+\right)
+}.
+\]
+等价地，乘积遍历所有满足 $z^n=\mu$ 的 $z$：
+\[
+D_n
+=
+\prod_{z^n=\mu}
+\left(
+a_0+a_1z+\cdots+a_{n-1}z^{n-1}
+\right).
+\]
+\end{solution}
+
+
+\begin{example}
+计算
+\[
+D_n=
+\begin{vmatrix}
+a_1&a_2&a_3&\cdots&a_n\\
+-a_n&a_1&a_2&\cdots&a_{n-1}\\
+-a_{n-1}&-a_n&a_1&\cdots&a_{n-2}\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+-a_2&-a_3&-a_4&\cdots&a_1
+\end{vmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+这是上一题取 $\mu=-1$ 的情形。令
+\[
+f(z)=a_1+a_2z+\cdots+a_nz^{n-1}.
+\]
+则
+\[
+\boxed{
+D_n
+=
+\prod_{z^n=-1}f(z)
+=
+\prod_{z^n=-1}
+\left(
+a_1+a_2z+\cdots+a_nz^{n-1}
+\right)
+}.
+\]
+\end{solution}

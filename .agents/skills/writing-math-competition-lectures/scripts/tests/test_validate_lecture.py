@@ -30,6 +30,28 @@ CHAPTERS = [
     ),
 ]
 
+ADVANCED_ALGEBRA_CHAPTERS = [
+    ("01_第一章_多项式", "第一章_多项式"),
+    ("02_第二章_行列式", "第二章_行列式"),
+    ("03_第三章_矩阵", "第三章_矩阵"),
+    ("04_第四章_线性空间与线性方程组", "第四章_线性空间与线性方程组"),
+    ("05_第五章_线性变换", "第五章_线性变换"),
+    ("06_第六章_相似标准型", "第六章_相似标准型"),
+    ("07_第七章_二次型", "第七章_二次型"),
+    ("08_第八章_欧氏空间", "第八章_欧氏空间"),
+    ("09_第九章_矩阵综合", "第九章_矩阵综合"),
+    ("10_第十章_张量积与外积", "第十章_张量积与外积"),
+]
+
+MATH_ANALYSIS_MAINS = (
+    "数学分析培优讲义.tex",
+    "数学分析培优讲义(答案版).tex",
+)
+ADVANCED_ALGEBRA_MAINS = (
+    "高等代数培优讲义.tex",
+    "高等代数培优讲义(答案版).tex",
+)
+
 
 def load_validator():
     spec = importlib.util.spec_from_file_location("validate_lecture", SCRIPT)
@@ -58,15 +80,21 @@ def init_repo(path: Path) -> None:
     git(path, "config", "user.name", "Validator Tests")
 
 
-def build_math_analysis_project(root: Path) -> Path:
-    project = root / "数学分析培优"
-    chapters = project / "章节"
-    chapters.mkdir(parents=True)
+def build_project(
+    root: Path,
+    directory: str,
+    normal_main: str,
+    answer_main: str,
+    chapters: list[tuple[str, str]],
+) -> Path:
+    project = root / directory
+    chapters_dir = project / "章节"
+    chapters_dir.mkdir(parents=True)
     normal_refs = []
     answer_refs = []
 
-    for folder_name, stem in CHAPTERS:
-        folder = chapters / folder_name
+    for folder_name, stem in chapters:
+        folder = chapters_dir / folder_name
         folder.mkdir()
         content = folder / f"{stem}_内容.tex"
         content.write_text(
@@ -78,14 +106,14 @@ def build_math_analysis_project(root: Path) -> Path:
             encoding="utf-8",
         )
         (folder / f"{stem}.tex").write_text(
-            "\\documentclass[../../数学分析培优讲义.tex]{subfiles}\n"
+            f"\\documentclass[../../{normal_main}]{{subfiles}}\n"
             "\\begin{document}\n"
             f"\\input{{{stem}_内容}}\n"
             "\\end{document}\n",
             encoding="utf-8",
         )
         (folder / f"{stem}(答案版).tex").write_text(
-            "\\documentclass[../../数学分析培优讲义(答案版).tex]{subfiles}\n"
+            f"\\documentclass[../../{answer_main}]{{subfiles}}\n"
             "\\begin{document}\n"
             f"\\input{{{stem}_内容}}\n"
             "\\end{document}\n",
@@ -102,11 +130,11 @@ def build_math_analysis_project(root: Path) -> Path:
         "\\mathanalysiswatermarktrue\n"
         "\\input{{preamble}}\n"
     )
-    (project / "数学分析培优讲义.tex").write_text(
+    (project / normal_main).write_text(
         main_prefix.format(mode="noanswer") + "\n".join(normal_refs),
         encoding="utf-8",
     )
-    (project / "数学分析培优讲义(答案版).tex").write_text(
+    (project / answer_main).write_text(
         main_prefix.format(mode="answer") + "\n".join(answer_refs),
         encoding="utf-8",
     )
@@ -122,6 +150,24 @@ def build_math_analysis_project(root: Path) -> Path:
     return project
 
 
+def build_math_analysis_project(root: Path) -> Path:
+    return build_project(
+        root,
+        "数学分析培优",
+        *MATH_ANALYSIS_MAINS,
+        CHAPTERS,
+    )
+
+
+def build_advanced_algebra_project(root: Path) -> Path:
+    return build_project(
+        root,
+        "高等代数培优",
+        *ADVANCED_ALGEBRA_MAINS,
+        ADVANCED_ALGEBRA_CHAPTERS,
+    )
+
+
 def replace_text(path: Path, old: str, new: str) -> None:
     text = path.read_text(encoding="utf-8")
     assert old in text
@@ -132,9 +178,13 @@ def first_content_file(project: Path) -> Path:
     return sorted((project / "章节").glob("*/*_内容.tex"))[0]
 
 
-def apply_project_mutation(project: Path, mutation: str) -> None:
-    normal = project / "数学分析培优讲义.tex"
-    answer = project / "数学分析培优讲义(答案版).tex"
+def apply_project_mutation(
+    project: Path,
+    mutation: str,
+    mains: tuple[str, str] = MATH_ANALYSIS_MAINS,
+) -> None:
+    normal = project / mains[0]
+    answer = project / mains[1]
     preamble = project / "preamble.tex"
 
     if mutation == "remove_answer_entry":
@@ -361,5 +411,95 @@ def test_math_analysis_mutation_is_reported(tmp_path, mutation, rule_id):
     ids = {
         item.rule_id for item in validator.check_math_analysis_project(project)
     }
+
+    assert rule_id in ids
+
+
+def check_algebra(validator, project):
+    return validator.check_book_project(
+        project,
+        validator.ADVANCED_ALGEBRA_PROFILE,
+    )
+
+
+def test_find_book_root_detects_each_profile(tmp_path):
+    validator = load_validator()
+    math_project = build_math_analysis_project(tmp_path)
+    algebra_project = build_advanced_algebra_project(tmp_path)
+
+    assert validator._find_book_root(math_project, tmp_path) == (
+        math_project.resolve(),
+        validator.MATH_ANALYSIS_PROFILE,
+    )
+    assert validator._find_book_root(algebra_project, tmp_path) == (
+        algebra_project.resolve(),
+        validator.ADVANCED_ALGEBRA_PROFILE,
+    )
+    assert validator._find_book_root(tmp_path, tmp_path) is None
+
+
+def test_valid_advanced_algebra_project_has_no_structural_errors(tmp_path):
+    validator = load_validator()
+    project = build_advanced_algebra_project(tmp_path)
+
+    diagnostics = check_algebra(validator, project)
+
+    assert not [item for item in diagnostics if item.severity == "error"]
+
+
+def test_book_profiles_have_distinct_chapter_counts():
+    validator = load_validator()
+
+    assert len(validator.MATH_ANALYSIS_PROFILE.chapters) == 13
+    assert len(validator.ADVANCED_ALGEBRA_PROFILE.chapters) == 10
+    assert validator.MATH_ANALYSIS_PROFILE.section_break_required is True
+    assert validator.ADVANCED_ALGEBRA_PROFILE.section_break_required is True
+
+
+def test_repeated_section_break_is_required_for_math_analysis(tmp_path):
+    validator = load_validator()
+    project = build_math_analysis_project(tmp_path)
+    with first_content_file(project).open("a", encoding="utf-8") as handle:
+        handle.write("\\section{Second}\nText.\n")
+
+    ids = {
+        item.rule_id for item in validator.check_math_analysis_project(project)
+    }
+
+    assert "MA006" in ids
+
+
+def test_repeated_section_break_is_required_for_advanced_algebra(tmp_path):
+    validator = load_validator()
+    project = build_advanced_algebra_project(tmp_path)
+    with first_content_file(project).open("a", encoding="utf-8") as handle:
+        handle.write("\\section{Second}\nText.\n")
+
+    ids = {item.rule_id for item in check_algebra(validator, project)}
+
+    assert "MA006" in ids
+
+
+@pytest.mark.parametrize(
+    ("mutation", "rule_id"),
+    [
+        ("remove_answer_entry", "MA002"),
+        ("wrong_normal_mode", "MA003"),
+        ("wrong_answer_mode", "MA004"),
+        ("missing_subfiles_package", "MA005"),
+        ("missing_later_section_break", "MA006"),
+        ("break_before_initial_section", "MA006"),
+        ("break_before_subsection", "MA007"),
+        ("unknown_watermark_option", "MA008"),
+        ("watermark_after_preamble", "MA009"),
+        ("missing_main_reference", "MA010"),
+    ],
+)
+def test_advanced_algebra_mutation_is_reported(tmp_path, mutation, rule_id):
+    validator = load_validator()
+    project = build_advanced_algebra_project(tmp_path)
+    apply_project_mutation(project, mutation, ADVANCED_ALGEBRA_MAINS)
+
+    ids = {item.rule_id for item in check_algebra(validator, project)}
 
     assert rule_id in ids

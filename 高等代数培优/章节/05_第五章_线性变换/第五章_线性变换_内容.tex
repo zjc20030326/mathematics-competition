@@ -1,0 +1,3203 @@
+\setcounter{chapter}{4}
+\pagestyle{fancy}
+
+\chapter{线性变换}
+
+\section{线性变换及其矩阵表示}
+
+\begin{theorem}[\markstar]
+设 $\sigma$ 是 $n$ 维线性空间 $V$ 的线性变换，则下述命题等价：
+\begin{enumerate}
+    \item $\sigma$ 是可逆线性变换；
+    \item $\sigma$ 是单射；
+    \item $\sigma$ 是满射；
+    \item 若 $\eta_1,\eta_2,\ldots,\eta_n$ 是 $V$ 的一个基，则
+    $\sigma(\eta_1),\sigma(\eta_2),\ldots,\sigma(\eta_n)$ 也是 $V$ 的一个基；
+    \item 若 $W,U$ 是 $V$ 的两个子空间，且 $V=W\oplus U$，则
+    \[
+        V=\sigma(W)\oplus\sigma(U).
+    \]
+\end{enumerate}
+\end{theorem}
+
+\begin{example}
+设 $\mathbb R^3$ 的线性变换 $\sigma$ 在基
+\[
+\alpha_1=(1,1,0)^{\mathsf T},\quad
+\alpha_2=(2,-1,0)^{\mathsf T},\quad
+\alpha_3=(0,2,-1)^{\mathsf T}
+\]
+下的矩阵为
+\[
+A=
+\begin{pmatrix}
+2&0&3\\
+0&-2&-1\\
+1&-1&4
+\end{pmatrix}.
+\]
+向量 $\alpha$ 在基
+\[
+\beta_1=(1,1,3)^{\mathsf T},\quad
+\beta_2=(1,2,5)^{\mathsf T},\quad
+\beta_3=(0,2,-1)^{\mathsf T}
+\]
+下的坐标为 $(1,0,-1)^{\mathsf T}$，求 $\sigma(\alpha)$ 在基
+$\beta_1,\beta_2,\beta_3$ 下的坐标。
+\end{example}
+\exampleblank
+
+\begin{solution}
+由
+\[
+\alpha=\beta_1-\beta_3=(1,-1,4)^{\mathsf T}.
+\]
+设
+\[
+P=(\alpha_1,\alpha_2,\alpha_3),\qquad
+Q=(\beta_1,\beta_2,\beta_3).
+\]
+则
+\[
+[\alpha]_{\alpha}=P^{-1}\alpha
+=
+\begin{pmatrix}
+5\\-2\\-4
+\end{pmatrix},
+\qquad
+[\sigma(\alpha)]_{\alpha}
+=
+A[\alpha]_{\alpha}
+=
+\begin{pmatrix}
+-2\\8\\-9
+\end{pmatrix}.
+\]
+故
+\[
+\sigma(\alpha)
+=
+P
+\begin{pmatrix}
+-2\\8\\-9
+\end{pmatrix}
+=
+\begin{pmatrix}
+14\\-28\\9
+\end{pmatrix}.
+\]
+再换到 $\beta$ 基下：
+\[
+[\sigma(\alpha)]_{\beta}
+=
+Q^{-1}\sigma(\alpha)
+=
+\boxed{
+\begin{pmatrix}
+\dfrac{178}{5}\\[2pt]
+-\dfrac{108}{5}\\[2pt]
+-\dfrac{51}{5}
+\end{pmatrix}
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+设 $P[x]_2$ 表示实数域上次数不超过 $2$ 的多项式构成的线性空间，
+\[
+f_1=1-x,\qquad f_2=1+x^2,\qquad f_3=x+2x^2
+\]
+是 $P[x]_2$ 的一个基。线性变换 $\sigma$ 满足
+\[
+\sigma(f_1)=2+x^2,\qquad
+\sigma(f_2)=x,\qquad
+\sigma(f_3)=1+x+x^2.
+\]
+\begin{enumerate}
+    \item 求由基 $1,x,x^2$ 到基 $f_1,f_2,f_3$ 的过渡矩阵；
+    \item 求 $\sigma$ 在基 $f_1,f_2,f_3$ 下的矩阵；
+    \item 设 $f=1+2x+3x^2$，求 $\sigma(f)$。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+在标准基 $1,x,x^2$ 下，
+\[
+F=
+\begin{pmatrix}
+1&1&0\\
+-1&0&1\\
+0&1&2
+\end{pmatrix},
+\qquad
+(f_1,f_2,f_3)=(1,x,x^2)F.
+\]
+因此由标准基到 $f_1,f_2,f_3$ 的过渡矩阵为
+\[
+\boxed{
+F^{-1}
+=
+\begin{pmatrix}
+-1&-2&1\\
+2&2&-1\\
+-1&-1&1
+\end{pmatrix}
+}.
+\]
+
+又
+\[
+S=
+\begin{pmatrix}
+2&0&1\\
+0&1&1\\
+1&0&1
+\end{pmatrix}
+\]
+的列分别是 $\sigma(f_i)$ 在标准基下的坐标，故
+\[
+[\sigma]_{(f)}
+=
+F^{-1}S
+=
+\boxed{
+\begin{pmatrix}
+-1&-2&-2\\
+3&2&3\\
+-1&-1&-1
+\end{pmatrix}
+}.
+\]
+最后
+\[
+[f]_{(f)}=F^{-1}
+\begin{pmatrix}1\\2\\3\end{pmatrix},
+\]
+计算得
+\[
+\boxed{\sigma(f)=-4+3x-2x^2}.
+\]
+\end{solution}
+
+
+\begin{example}
+已知 $\mathbb R^3$ 的线性变换 $\sigma$ 对基
+\[
+\varepsilon_1=(-1,0,2)^{\mathsf T},\quad
+\varepsilon_2=(0,1,1)^{\mathsf T},\quad
+\varepsilon_3=(3,-1,-6)^{\mathsf T}
+\]
+的像分别为
+\[
+\sigma(\varepsilon_1)=(-1,0,1)^{\mathsf T},\quad
+\sigma(\varepsilon_2)=(0,-1,2)^{\mathsf T},\quad
+\sigma(\varepsilon_3)=(-1,-1,3)^{\mathsf T}.
+\]
+\begin{enumerate}
+    \item 求 $\sigma$ 在基 $\varepsilon_1,\varepsilon_2,\varepsilon_3$ 下的矩阵；
+    \item 设 $x=(1,1,1)^{\mathsf T}$，求 $\sigma(x)$；
+    \item 已知 $\sigma(x)$ 在基 $\varepsilon_1,\varepsilon_2,\varepsilon_3$ 下的坐标向量为 $(2,-4,2)^{\mathsf T}$，求 $x$；
+    \item 证明 $\varepsilon_1,\varepsilon_1+\varepsilon_2,
+    \varepsilon_1+\varepsilon_2+\varepsilon_3$ 是 $\mathbb R^3$ 的基，并求
+    $\sigma$ 在该基下的矩阵。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+记
+\[
+E=(\varepsilon_1,\varepsilon_2,\varepsilon_3),
+\qquad
+S=(\sigma(\varepsilon_1),\sigma(\varepsilon_2),\sigma(\varepsilon_3)).
+\]
+则
+\[
+[\sigma]_{\varepsilon}
+=
+E^{-1}S
+=
+\boxed{
+\begin{pmatrix}
+-2&9&7\\
+-1&2&1\\
+-1&3&2
+\end{pmatrix}
+}.
+\]
+由标准坐标矩阵
+\[
+[\sigma]_{\mathrm{std}}=SE^{-1}
+\]
+可得
+\[
+\boxed{
+\sigma(1,1,1)^{\mathsf T}
+=
+(-7,-5,17)^{\mathsf T}
+}.
+\]
+
+第三问按原题数据无解：将目标坐标换回标准坐标后，线性方程
+$\sigma(x)=E(2,-4,2)^{\mathsf T}$ 不相容。故该小问题面或数据存在疑点，
+已在《解答问题记录》中单独标记。
+
+对第四问，令
+\[
+Q=
+(\varepsilon_1,\,
+\varepsilon_1+\varepsilon_2,\,
+\varepsilon_1+\varepsilon_2+\varepsilon_3).
+\]
+从 $\varepsilon$ 基到该基的变换矩阵为上三角且行列式为 $1$，
+故这三个向量构成一组基。计算得
+\[
+\boxed{
+[\sigma]_Q
+=
+\begin{pmatrix}
+-1&6&12\\
+0&-1&-2\\
+-1&2&4
+\end{pmatrix}
+}.
+\]
+\end{solution}
+
+
+\begin{example}
+设 $M_2(\mathbb R)$ 中
+\[
+\eta_1=
+\begin{pmatrix}1&0\\0&0\end{pmatrix},\quad
+\eta_2=
+\begin{pmatrix}1&1\\0&0\end{pmatrix},\quad
+\eta_3=
+\begin{pmatrix}1&1\\1&0\end{pmatrix},\quad
+\eta_4=
+\begin{pmatrix}1&1\\1&1\end{pmatrix}
+\]
+构成一组基，又设
+\[
+\xi_1=
+\begin{pmatrix}1&0\\3&0\end{pmatrix},\quad
+\xi_2=
+\begin{pmatrix}1&1\\3&3\end{pmatrix},\quad
+\xi_3=
+\begin{pmatrix}3&1\\7&3\end{pmatrix},\quad
+\xi_4=
+\begin{pmatrix}3&3\\7&7\end{pmatrix}.
+\]
+若线性变换 $\sigma$ 满足 $\sigma(\eta_i)=\xi_i$，求：
+\begin{enumerate}
+    \item $\sigma(\xi_1),\ldots,\sigma(\xi_4)$；
+    \item $\sigma(\xi_1),\ldots,\sigma(\xi_4)$ 能否构成 $M_2(\mathbb R)$ 的一组基。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+将二阶矩阵按 $(a_{11},a_{12},a_{21},a_{22})^{\mathsf T}$ 向量化。
+计算得到
+\[
+\begin{aligned}
+\sigma(\xi_1)&=
+\begin{pmatrix}7&0\\15&0\end{pmatrix},&
+\sigma(\xi_2)&=
+\begin{pmatrix}7&7\\15&15\end{pmatrix},\\
+\sigma(\xi_3)&=
+\begin{pmatrix}17&7\\37&15\end{pmatrix},&
+\sigma(\xi_4)&=
+\begin{pmatrix}17&17\\37&37\end{pmatrix}.
+\end{aligned}
+\]
+又 $\xi_1,\ldots,\xi_4$ 的坐标矩阵行列式非零，而 $\sigma$ 在
+$M_2(\mathbb R)$ 上的矩阵行列式也非零，因此 $\sigma$ 可逆。
+可逆线性变换保持线性无关性，故
+\[
+\boxed{\sigma(\xi_1),\sigma(\xi_2),\sigma(\xi_3),\sigma(\xi_4)
+\text{ 构成一组基}.}
+\]
+\end{solution}
+
+
+\begin{example}
+设 $V$ 是数域 $P$ 上的 $n$ 维线性空间，
+$\alpha_1,\ldots,\alpha_n$ 为一组基。定义线性变换 $A$：
+\[
+A(\alpha_i)=\alpha_{i+1}\quad(i=1,\ldots,n-1),
+\qquad
+A(\alpha_n)=0.
+\]
+\begin{enumerate}
+    \item 求 $A$ 在该基下的矩阵；
+    \item 证明 $A^n=O$，但 $A^{n-1}\neq O$；
+    \item 若 $B$ 为线性变换且 $B^n=O,B^{n-1}\neq O$，证明存在一组基使 $B$ 的矩阵也等于上述矩阵。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+矩阵为
+\[
+\boxed{
+\begin{pmatrix}
+0&0&\cdots&0\\
+1&0&\cdots&0\\
+0&1&\ddots&\vdots\\
+\vdots&\ddots&\ddots&0\\
+0&\cdots&1&0
+\end{pmatrix}
+}.
+\]
+由定义，
+\[
+A^k(\alpha_1)=\alpha_{k+1}\quad(k<n),
+\]
+故 $A^{n-1}\alpha_1=\alpha_n\neq0$，而 $A^n$ 对全部基向量都为零。
+
+对第三问，由 $B^{n-1}\neq O$，可取 $v$ 使 $B^{n-1}v\neq0$。
+于是
+\[
+B^{n-1}v,\ B^{n-2}v,\ \ldots,\ Bv,\ v
+\]
+线性无关；否则取最低次非零关系并作用适当次幂的 $B$ 即得矛盾。
+以
+\[
+\beta_1=B^{n-1}v,\ \beta_2=B^{n-2}v,\ldots,\beta_n=v
+\]
+为基，即得到同一幂零 Jordan 块矩阵。
+\end{solution}
+
+
+\begin{example}
+设 $f:\mathbb R^2\to\mathbb R$ 为线性映射。
+\begin{enumerate}
+    \item 证明存在 $a,b\in\mathbb R$ 使
+    \[
+    f(x,y)=ax+by;
+    \]
+    \item 已知 $f(1,1)=3,\ f(1,0)=4$，求 $f(2,1)$。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+由于
+\[
+(x,y)=x(1,0)+y(0,1),
+\]
+故
+\[
+f(x,y)=xf(1,0)+yf(0,1).
+\]
+令 $a=f(1,0),b=f(0,1)$ 即得第一问。
+
+第二问中 $a=4$，又 $a+b=3$，故 $b=-1$，
+\[
+\boxed{f(2,1)=7}.
+\]
+\end{solution}
+
+
+\begin{example}[\markstar]
+设 $A$ 为数域 $P$ 上的 $n$ 阶方阵，定义 $P^{n\times n}$ 上的线性变换
+\[
+T(X)=AX.
+\]
+求 $\operatorname{tr}T$ 与 $\det T$。
+\end{example}
+\exampleblank
+
+\begin{solution}
+按列分解矩阵空间：
+\[
+M_n(P)\cong P^n\oplus\cdots\oplus P^n
+\]
+共 $n$ 份，而 $T$ 在每一份上都由 $A$ 作用。因此 $T$ 的矩阵相似于
+$n$ 个 $A$ 的块对角直和，故
+\[
+\boxed{
+\operatorname{tr}T=n\,\operatorname{tr}A,
+\qquad
+\det T=(\det A)^n.
+}
+\]
+\end{solution}
+
+
+\begin{example}
+设 $f$ 是平面 $\mathbb R^2$ 上的线性变换，满足：
+\begin{enumerate}
+    \item $f(1,0)$ 位于第四象限；
+    \item $f(0,1)$ 位于第二象限；
+    \item $f(1,1)$ 位于第一象限。
+\end{enumerate}
+证明 $f$ 可逆，且 $f^{-1}$ 把第一象限内任意点映射到第一象限。
+\end{example}
+\exampleblank
+
+\begin{solution}
+设
+\[
+f(1,0)=(a,-b),\qquad
+f(0,1)=(-c,d),
+\]
+其中 $a,b,c,d>0$。由 $f(1,1)$ 位于第一象限知
+\[
+a>c,\qquad d>b.
+\]
+故
+\[
+\det
+\begin{pmatrix}
+a&-c\\
+-b&d
+\end{pmatrix}
+=ad-bc>0,
+\]
+所以 $f$ 可逆。
+
+若 $(u,v)$ 在第一象限，则
+\[
+f^{-1}
+\begin{pmatrix}u\\v\end{pmatrix}
+=
+\dfrac{1}{ad-bc}
+\begin{pmatrix}
+d&c\\
+b&a
+\end{pmatrix}
+\begin{pmatrix}u\\v\end{pmatrix},
+\]
+两个分量均为正，故结论成立。
+\end{solution}
+
+
+\begin{example}
+设 $V$ 为数域 $F$ 上的 $n$ 维线性空间。
+\begin{enumerate}
+    \item 证明 $V$ 的任意有限多个真子空间的并仍是 $V$ 的真子集；
+    \item 设 $A_1,\ldots,A_s$ 是 $V$ 上两两不同的线性变换，证明存在
+    $v\in V$ 使 $A_i(v)$ 两两不同。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+第一问即有限不覆盖定理。
+
+第二问对每个 $i\neq j$，
+\[
+\ker(A_i-A_j)
+\]
+是真子空间，因为 $A_i\neq A_j$。有限不覆盖定理保证存在
+\[
+v\notin\bigcup_{i<j}\ker(A_i-A_j).
+\]
+于是
+\[
+(A_i-A_j)v\neq0,
+\]
+故 $A_i(v)\neq A_j(v)$。
+\end{solution}
+
+
+\begin{example}[\markstar]
+设 $V,V'$ 是同一数域 $P$ 上的两个线性空间，$T:V\to V'$ 为线性映射，
+并存在映射 $\widetilde T:V'\to V$。原题给出某一侧复合等于恒等映射，
+讨论 $T,\widetilde T$ 的单射、满射与可逆性。
+\end{example}
+\exampleblank
+
+\begin{solution}
+这一题原 PDF 的复合顺序与恒等映射所在空间在类型上不一致。
+正确的标准结论是：
+\[
+\widetilde T T=I_V
+\quad\Longrightarrow\quad
+T\text{ 单射， }\widetilde T\text{ 满射};
+\]
+而
+\[
+T\widetilde T=I_{V'}
+\quad\Longrightarrow\quad
+T\text{ 满射， }\widetilde T\text{ 单射}.
+\]
+单有一侧逆一般不能推出 $T$ 可逆；有限维且 $\dim V=\dim V'$ 时，
+单射与满射等价，此时才可进一步推出可逆。
+\end{solution}
+
+
+\begin{example}[\markstar]
+问是否存在 $n$ 阶方阵 $A,B$ 满足
+\[
+AB-BA=I_n?
+\]
+又问线性空间上的线性变换是否可能满足同样关系，并讨论何种条件下存在。
+\end{example}
+\exampleblank
+
+\begin{solution}
+在特征为 $0$ 的数域上不可能，因为
+\[
+\operatorname{tr}(AB-BA)=0,
+\qquad
+\operatorname{tr}I_n=n\neq0.
+\]
+
+更一般地，若底域特征为 $p>0$，必要条件是
+\[
+p\mid n.
+\]
+该条件也是充分的。例如在 $p$ 维空间
+\[
+P_{p-1}(F)=\Span\{1,x,\ldots,x^{p-1}\}
+\]
+上，令 $D=\dfrac{\mathrm d}{\mathrm dx}$，$X$ 为乘以 $x$ 后模 $x^p$ 的算子，
+则在特征 $p$ 下
+\[
+DX-XD=I.
+\]
+当 $p\mid n$ 时作若干个这样的直和即可。
+\end{solution}
+
+
+\begin{example}
+设 $V$ 是复数域 $\mathbb C$ 上的 $n$ 维线性空间，$\sigma$ 是 $V$ 的线性变换。
+把同一加法与实数数乘保留下来后得到实线性空间 $V_{\mathbb R}$。
+若 $\sigma$ 在复基下的矩阵为 $A_{\mathbb C}$，在某实基下的矩阵为
+$A_{\mathbb R}$，证明
+\[
+\det A_{\mathbb R}
+=
+|\det A_{\mathbb C}|^2.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+在由复基
+\[
+e_1,\ldots,e_n
+\]
+诱导的实基
+\[
+e_1,ie_1,\ldots,e_n,ie_n
+\]
+下，若
+\[
+A_{\mathbb C}=B+iC,
+\]
+则对应实矩阵为
+\[
+\begin{pmatrix}
+B&-C\\
+C&B
+\end{pmatrix}.
+\]
+其行列式等于
+\[
+\det(B+iC)\det(B-iC)
+=
+\det A_{\mathbb C}\,
+\overline{\det A_{\mathbb C}}
+=
+|\det A_{\mathbb C}|^2.
+\]
+\end{solution}
+
+
+\begin{example}
+设 $P$ 为数域，$\tau$ 为 $M_n(P)$ 上的线性变换。对任意固定
+$A,B\in M_n(P)$，至少有
+\[
+\tau(AB)=\tau(A)\tau(B)
+\]
+或
+\[
+\tau(AB)=\tau(B)\tau(A)
+\]
+之一成立。证明：要么对所有 $A,B$ 总是前一种关系，要么对所有 $A,B$
+总是后一种关系。
+\end{example}
+\exampleblank
+
+\begin{solution}
+令
+\[
+F(A,B)=\tau(AB)-\tau(A)\tau(B),
+\qquad
+G(A,B)=\tau(AB)-\tau(B)\tau(A).
+\]
+假设存在一对 $(A_0,B_0)$ 使 $F(A_0,B_0)\neq0$，则必有
+$G(A_0,B_0)=0$。对任意 $A,B$，考虑参数族
+\[
+(A_0+tA,\ B_0+sB).
+\]
+题设保证对所有参数点总有 $F=0$ 或 $G=0$。由于 $F,G$ 的每个矩阵元
+都是 $s,t$ 的多项式，而数域无限时有限个真代数零集不能覆盖整个平面，
+从而其中一种恒为零。由在 $(A_0,B_0)$ 处 $F\neq0$，只能是 $G\equiv0$。
+另一种情形同理。
+
+若底域是有限域，上述论证需要额外处理；原题未说明数域是否默认无限，
+这一点在问题记录中注明。
+\end{solution}
+
+
+\begin{lemma}[\markstar]
+\begin{enumerate}
+    \item 若 $F$ 上方阵 $A$ 有特征值 $\lambda_1\in F$，则存在 $F$ 上可逆矩阵 $P$ 使
+    \[
+    P^{-1}AP=
+    \begin{pmatrix}
+    \lambda_1&*\\
+    0&B_1
+    \end{pmatrix}.
+    \]
+    \item 若实方阵 $A$ 有非实特征值 $\lambda_1=a+bi$，相应复特征向量
+    $x=y+zi$，则 $L(y,z)$ 是二维实不变子空间，并存在实可逆矩阵 $P$ 使
+    \[
+    P^{-1}AP=
+    \begin{pmatrix}
+    a&b&*\\
+    -b&a&*\\
+    0&0&C_1
+    \end{pmatrix}.
+    \]
+\end{enumerate}
+\end{lemma}
+
+
+\begin{theorem}[\markstar]
+设 $A$ 为域 $F$ 上的 $n$ 阶方阵。
+\begin{enumerate}
+    \item 若已知 $A$ 在 $F$ 中有特征值 $\lambda_1,\ldots,\lambda_t$，
+    则存在相似变换把这些特征值依次放到上三角块的对角线上；
+    \item 若 $A$ 在 $F$ 中有 $n$ 个特征值（重根按重数计算），则 $A$ 相似于上三角矩阵；
+    \item 实方阵总能在实数域上相似于准上三角矩阵，其对角块为一阶实块或二阶实块。
+\end{enumerate}
+\end{theorem}
+
+
+\begin{proposition}[\markstar]
+设 $A,B$ 分别为 $n,m$ 阶矩阵，特征值为
+$\lambda_i$ 与 $\mu_j$，则 $A\otimes B$ 的特征值为
+\[
+\lambda_i\mu_j.
+\]
+\end{proposition}
+
+
+\begin{proposition}[\marktwostar]
+设 $A,B$ 分别为数域 $F$ 上的 $m,n$ 阶方阵，
+$V=M_{m\times n}(F)$，定义
+\[
+\varphi(X)=AXB.
+\]
+则：
+\begin{enumerate}
+    \item 在矩阵单位基下，$\varphi$ 的矩阵为 $A\otimes B^{\mathsf T}$；
+    \item $\varphi$ 的特征值为 $\lambda_i\mu_j$。
+\end{enumerate}
+\end{proposition}
+
+
+\begin{example}
+设 $A,B$ 分别为数域 $F$ 上的 $m,n$ 阶方阵，
+$V=M_{m\times n}(F)$，定义
+\[
+\varphi(X)=AX-XB.
+\]
+证明 $\varphi$ 的特征值为
+\[
+\lambda_i-\mu_j.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+向量化公式给出
+\[
+\operatorname{vec}(AX-XB)
+=
+\left(I_n\otimes A-B^{\mathsf T}\otimes I_m\right)\operatorname{vec}X.
+\]
+前两项可同时上三角化，故该 Kronecker 和的对角元正是
+\[
+\lambda_i-\mu_j.
+\]
+因此这些数构成 $\varphi$ 的全部特征值。
+\end{solution}
+
+
+\begin{example}
+设 $A=(a_{ij})$ 为 $n$ 阶复方阵，
+\[
+g(\lambda)=|\lambda I_n+A|.
+\]
+证明 $n^2$ 阶块矩阵
+\[
+B=
+\begin{pmatrix}
+a_{11}I_n+A&a_{12}I_n&\cdots&a_{1n}I_n\\
+a_{21}I_n&a_{22}I_n+A&\cdots&a_{2n}I_n\\
+\vdots&\vdots&\ddots&\vdots\\
+a_{n1}I_n&a_{n2}I_n&\cdots&a_{nn}I_n+A
+\end{pmatrix}
+\]
+可逆的充分必要条件是 $g(A)$ 可逆。
+\end{example}
+\exampleblank
+
+\begin{solution}
+注意
+\[
+B=A\otimes I_n+I_n\otimes A.
+\]
+若 $A$ 的特征值为 $\lambda_1,\ldots,\lambda_n$，则 $B$ 的特征值为
+\[
+\lambda_i+\lambda_j\qquad(1\leq i,j\leq n).
+\]
+故
+\[
+B\text{ 可逆}
+\iff
+\lambda_i+\lambda_j\neq0\quad\forall i,j.
+\]
+另一方面 $g(A)$ 的特征值为
+\[
+g(\lambda_i)=\prod\limits_{j=1}^{n}(\lambda_i+\lambda_j),
+\]
+故
+\[
+g(A)\text{ 可逆}
+\iff
+g(\lambda_i)\neq0\quad\forall i
+\iff
+\lambda_i+\lambda_j\neq0\quad\forall i,j.
+\]
+两者等价。
+\end{solution}
+
+
+\newpage
+
+\section{值域与核}
+
+\begin{example}
+设 $V$ 是 $\mathbb R^n$ 的一个真子空间。判断下列结论是否正确：
+\begin{enumerate}
+    \item 存在线性变换 $\sigma:\mathbb R^n\to\mathbb R^n$，使
+    \[
+    \operatorname{Im}\sigma=V;
+    \]
+    \item 存在线性变换 $\tau:\mathbb R^n\to\mathbb R^n$，使
+    \[
+    \ker\tau=V.
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+两者都正确。取 $V$ 的一个补空间 $W$，使
+\[
+\mathbb R^n=V\oplus W.
+\]
+定义投影
+\[
+\sigma(v+w)=v,
+\]
+则 $\operatorname{Im}\sigma=V$。
+
+再取任意与 $W$ 同维的子空间 $U$，以及同构 $T:W\to U$，定义
+\[
+\tau(v+w)=T(w).
+\]
+于是
+\[
+\ker\tau=V.
+\]
+\end{solution}
+
+
+\begin{example}
+设 $V$ 是复数域上的 $n$ 维线性空间，$\sigma$ 是 $V$ 的线性变换，
+$W_1,W_2$ 是任意两个子空间。问
+\[
+\sigma(W_1\cap W_2)=\sigma(W_1)\cap\sigma(W_2)
+\]
+是否恒成立？
+\end{example}
+\exampleblank
+
+\begin{solution}
+总有
+\[
+\sigma(W_1\cap W_2)
+\subseteq
+\sigma(W_1)\cap\sigma(W_2),
+\]
+但等号不一定成立。
+
+例如在 $\mathbb C^2$ 上取
+\[
+\sigma(x,y)=(x,0),
+\quad
+W_1=\Span\{(1,0)\},
+\quad
+W_2=\Span\{(1,1)\}.
+\]
+则
+\[
+W_1\cap W_2=\{0\},
+\]
+而
+\[
+\sigma(W_1)=\sigma(W_2)=\Span\{(1,0)\}.
+\]
+故左端为 $\{0\}$，右端非零。
+\end{solution}
+
+
+\begin{example}
+设 $A,B:V\to V$ 为线性变换，$A$ 可逆，$B$ 幂零，且
+\[
+AB=BA.
+\]
+证明
+\[
+\ker(A-B)=\{0\}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+若
+\[
+(A-B)x=0,
+\]
+则 $Ax=Bx$。由 $AB=BA$ 归纳得到
+\[
+A^k x=B^k x.
+\]
+取 $k$ 使 $B^k=0$，则
+\[
+A^k x=0.
+\]
+因 $A^k$ 可逆，故 $x=0$。
+\end{solution}
+
+
+\begin{example}[\markstar]
+设 $\sigma$ 是线性空间 $V$ 的线性变换，且
+\[
+\sigma^2=\sigma.
+\]
+令
+\[
+V_1=\operatorname{Im}\sigma,
+\qquad
+V_2=\ker\sigma.
+\]
+证明
+\[
+V=V_1\oplus V_2,
+\]
+且 $\sigma$ 在 $V_1$ 上为恒等变换。
+\end{example}
+\exampleblank
+
+\begin{solution}
+对任意 $x\in V$，
+\[
+x=\sigma x+(x-\sigma x).
+\]
+其中 $\sigma x\in V_1$，并且
+\[
+\sigma(x-\sigma x)=\sigma x-\sigma^2x=0,
+\]
+故 $x-\sigma x\in V_2$，从而 $V=V_1+V_2$。
+
+若 $y\in V_1\cap V_2$，则 $y=\sigma x$ 且 $\sigma y=0$，于是
+\[
+y=\sigma x=\sigma^2x=\sigma y=0.
+\]
+因此
+\[
+V=V_1\oplus V_2.
+\]
+若 $y\in V_1$，写 $y=\sigma x$，则
+\[
+\sigma y=\sigma^2x=\sigma x=y.
+\]
+\end{solution}
+
+
+\begin{example}[\markstar]
+设
+\[
+V=V_1\oplus V_2.
+\]
+对分解
+\[
+\alpha=\alpha_1+\alpha_2
+\qquad
+(\alpha_i\in V_i)
+\]
+定义
+\[
+f_1(\alpha)=\alpha_1,\qquad
+f_2(\alpha)=\alpha_2.
+\]
+证明：
+\begin{enumerate}
+    \item $f_1,f_2$ 是线性变换；
+    \item $f_1^2=f_1,\ f_2^2=f_2$；
+    \item $f_1f_2=f_2f_1=0$，且 $f_1+f_2=I_V$。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+直和分解的唯一性保证 $f_1,f_2$ 定义良好。
+对
+\[
+\alpha=\alpha_1+\alpha_2,\qquad
+\beta=\beta_1+\beta_2
+\]
+直接计算即可得到线性性。又
+\[
+f_1(\alpha_1)=\alpha_1,\qquad
+f_1(\alpha_2)=0,
+\]
+以及对 $f_2$ 的对应关系，因此
+\[
+f_i^2=f_i,\qquad
+f_1f_2=f_2f_1=0.
+\]
+最后
+\[
+(f_1+f_2)(\alpha)=\alpha_1+\alpha_2=\alpha.
+\]
+\end{solution}
+
+
+\begin{example}
+设 $V_1,V_2$ 是 $n$ 维线性空间 $V$ 的两个子空间，且
+\[
+\dim V_1+\dim V_2=n.
+\]
+证明存在 $V$ 的线性变换 $\varphi$ 使
+\[
+\operatorname{Im}\varphi=V_1,
+\qquad
+\ker\varphi=V_2.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+原题条件本身不足。由秩--零化度定理，若存在这样的 $\varphi$，则
+\[
+n
+=
+\dim\operatorname{Im}\varphi+\dim\ker\varphi
+=
+\dim V_1+\dim V_2,
+\]
+但还必须有
+\[
+V_1\cap V_2=\{0\}
+\]
+才能按投影方式构造。
+
+例如在 $\mathbb R^2$ 中取
+\[
+V_1=V_2=\Span\{(1,0)\},
+\]
+则维数之和为 $2$，但不存在像空间和核空间都等于同一非零直线的线性变换：
+若 $v\in\operatorname{Im}\varphi=\ker\varphi$，则该限制会破坏所需秩结构。
+
+正确命题是：若
+\[
+V=V_1\oplus V_2,
+\]
+则取沿 $V_2$ 到 $V_1$ 的投影即可。
+\end{solution}
+
+
+\begin{example}[\markstar]
+设 $\sigma$ 是数域 $F$ 上的 $n$ 维线性空间 $V$ 的线性变换，
+且
+\[
+V=V_1\oplus V_2.
+\]
+证明 $\sigma$ 可逆的充分必要条件是
+\[
+V=\sigma(V_1)\oplus\sigma(V_2).
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+若 $\sigma$ 可逆，则
+\[
+V=\sigma(V)=\sigma(V_1+V_2)=\sigma(V_1)+\sigma(V_2).
+\]
+若
+\[
+y\in\sigma(V_1)\cap\sigma(V_2),
+\]
+有 $y=\sigma(v_1)=\sigma(v_2)$，单射性给出 $v_1=v_2\in V_1\cap V_2$，
+故 $y=0$，于是为直和。
+
+反之，若
+\[
+V=\sigma(V_1)\oplus\sigma(V_2),
+\]
+则 $\sigma(V)=V$，故 $\sigma$ 满射。有限维情况下满射等价于可逆。
+\end{solution}
+
+
+\begin{proposition}[\marktwostar]
+设 $\varphi$ 是 $n$ 维线性空间 $V$ 的线性变换，则下列命题等价：
+\begin{enumerate}
+    \item $V=\ker\varphi\oplus\operatorname{Im}\varphi$；
+    \item $\ker\varphi\cap\operatorname{Im}\varphi=\{0\}$；
+    \item $\ker\varphi=\ker\varphi^2$；
+    \item $\operatorname{Im}\varphi=\operatorname{Im}\varphi^2$。
+\end{enumerate}
+\end{proposition}
+
+
+\begin{example}
+设 $\sigma$ 是 $n$ 维线性空间 $V$ 上的线性变换，证明：
+\begin{enumerate}
+    \item
+    \[
+    \ker\sigma=\ker\sigma^2
+    \iff
+    \ker\sigma\cap\operatorname{Im}\sigma=\{0\};
+    \]
+    \item
+    \[
+    \operatorname{Im}\sigma=\operatorname{Im}\sigma^2
+    \iff
+    \ker\sigma+\operatorname{Im}\sigma=V.
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+第一问：若 $x=\sigma y\in\ker\sigma\cap\operatorname{Im}\sigma$，则
+\[
+\sigma^2y=0.
+\]
+由 $\ker\sigma=\ker\sigma^2$ 得 $\sigma y=0$，即 $x=0$。反向若
+$\sigma^2y=0$，则 $\sigma y$ 属于交空间，故 $\sigma y=0$。
+
+第二问使用秩--零化度：
+\[
+\dim(\ker\sigma+\operatorname{Im}\sigma)
+=
+\dim\ker\sigma+\dim\operatorname{Im}\sigma
+-\dim(\ker\sigma\cap\operatorname{Im}\sigma).
+\]
+结合第一问以及
+\[
+\operatorname{Im}\sigma^2\subseteq\operatorname{Im}\sigma
+\]
+即可得到等价性。
+\end{solution}
+
+
+\begin{example}
+设 $\varphi,\psi$ 是线性空间 $V$ 上的幂等变换：
+\[
+\varphi^2=\varphi,\qquad
+\psi^2=\psi.
+\]
+证明：
+\begin{enumerate}
+    \item
+    \[
+    \operatorname{Im}\varphi=\operatorname{Im}\psi
+    \iff
+    \varphi\psi=\psi,\quad\psi\varphi=\varphi;
+    \]
+    \item
+    \[
+    \ker\varphi=\ker\psi
+    \iff
+    \varphi\psi=\varphi,\quad\psi\varphi=\psi.
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+幂等变换在自身像空间上恒等。
+若像空间相同，则对任意 $x$，
+\[
+\psi x\in\operatorname{Im}\psi=\operatorname{Im}\varphi,
+\]
+故 $\varphi\psi x=\psi x$；另一式同理。反向由
+\[
+\varphi\psi=\psi
+\]
+得 $\operatorname{Im}\psi\subseteq\operatorname{Im}\varphi$，
+另一式给出反包含。
+
+核空间的证明类似：由
+\[
+\varphi\psi=\varphi
+\]
+可得 $\ker\psi\subseteq\ker\varphi$，再由另一式得到反包含。
+\end{solution}
+
+
+\begin{proposition}[\markstar]
+设 $V,U,W$ 为有限维线性空间，
+\[
+\varphi:V\to U,\qquad
+\psi:W\to U
+\]
+为线性映射，则
+\[
+\exists\,\sigma:V\to W,\quad\varphi=\psi\sigma
+\iff
+\operatorname{Im}\varphi\subseteq\operatorname{Im}\psi.
+\]
+\end{proposition}
+
+
+\begin{example}
+设 $f,g$ 是 $n$ 维线性空间 $V$ 的线性变换，且
+\[
+\ker f\subseteq\ker g.
+\]
+证明：
+\begin{enumerate}
+    \item 存在 $V$ 的线性变换 $h$，使 $g=hf$；
+    \item 若 $\ker g=\ker f$，则可取 $h$ 为可逆线性变换。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+先在 $\operatorname{Im}f$ 上定义
+\[
+h_0(fx)=gx.
+\]
+若 $fx=fy$，则 $x-y\in\ker f\subseteq\ker g$，所以 $gx=gy$，
+故定义良好。把 $h_0$ 从 $\operatorname{Im}f$ 线性延拓到整个 $V$，
+即得到 $g=hf$。
+
+若两核相等，则
+\[
+\dim\operatorname{Im}f=\dim\operatorname{Im}g,
+\]
+而 $h_0:\operatorname{Im}f\to\operatorname{Im}g$ 为同构。
+分别取补空间并在补空间间任取同构，即可把 $h_0$ 延拓成 $V$ 上的可逆变换。
+\end{solution}
+
+
+\begin{example}
+设 $S,T$ 是线性空间 $V$ 的子空间，$f$ 是 $V$ 的线性变换。
+记
+\[
+S^0=\{\ell\in V^*:\ell(S)=0\},
+\]
+且转置映射
+\[
+f^*:V^*\to V^*,\qquad
+g\mapsto g\circ f.
+\]
+证明：
+\begin{enumerate}
+    \item
+    \[
+    (S\cap T)^0=S^0+T^0;
+    \]
+    \item
+    \[
+    \operatorname{Im}f^*=(\ker f)^0.
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+第一问一侧包含显然。反向取
+\[
+\ell\in(S\cap T)^0.
+\]
+在商空间或分别选取 $S\cap T$ 的补基后，可把 $\ell$ 分解为
+\[
+\ell=\ell_S+\ell_T,
+\qquad
+\ell_S\in S^0,\quad \ell_T\in T^0.
+\]
+
+第二问若 $g=f^*h=h\circ f$，则 $g$ 在 $\ker f$ 上为零，故
+\[
+\operatorname{Im}f^*\subseteq(\ker f)^0.
+\]
+反向若 $g\in(\ker f)^0$，则可在 $\operatorname{Im}f$ 上定义
+\[
+h_0(fx)=g(x).
+\]
+这一定义良好，并可延拓成 $V$ 上线性函数 $h$，于是
+\[
+g=h\circ f=f^*h.
+\]
+\end{solution}
+
+
+\begin{theorem}[\marktwostar]
+设
+\[
+f(x)=g(x)h(x),
+\qquad
+g(x),h(x)\in P[x],
+\]
+且
+\[
+(g,h)=1.
+\]
+若 $\sigma$ 是有限维线性空间 $V$ 上的线性变换，则
+\[
+\ker f(\sigma)
+=
+\ker g(\sigma)\oplus\ker h(\sigma).
+\]
+\end{theorem}
+
+\begin{proof}
+由 Bézout 恒等式，存在 $u,v\in P[x]$ 使
+\[
+u(x)g(x)+v(x)h(x)=1.
+\]
+对 $\sigma$ 代入：
+\[
+u(\sigma)g(\sigma)+v(\sigma)h(\sigma)=I.
+\]
+若 $x\in\ker f(\sigma)$，则
+\[
+x=u(\sigma)g(\sigma)x+v(\sigma)h(\sigma)x.
+\]
+第一项属于 $\ker h(\sigma)$，第二项属于 $\ker g(\sigma)$，故核空间为二者之和。
+若 $x$ 同时属于两个核，则由 Bézout 式直接得 $x=0$，因此为直和。
+\end{proof}
+
+
+\begin{example}
+设 $\sigma$ 是实数域上的 $n$ 维线性空间 $V$ 的线性变换，证明：
+\begin{enumerate}
+    \item
+    \[
+    \sigma^3=I
+    \iff
+    r(I-\sigma)+r(I+\sigma+\sigma^2)=n;
+    \]
+    \item
+    \[
+    \sigma^2=I
+    \iff
+    r(I-\sigma)+r(I+\sigma)=n.
+    \]
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+利用
+\[
+x^3-1=(x-1)(x^2+x+1),
+\qquad
+(x-1,x^2+x+1)=1
+\]
+以及上一条核分解定理。第一式中
+\[
+\ker(I-\sigma)\oplus\ker(I+\sigma+\sigma^2)=V
+\]
+恰好等价于秩之和为 $n$，并等价于
+\[
+(\sigma-I)(\sigma^2+\sigma+I)=\sigma^3-I=0.
+\]
+第二问同理由
+\[
+x^2-1=(x-1)(x+1)
+\]
+得到。
+\end{solution}
+
+
+\begin{example}
+设 $A$ 为 $n$ 阶方阵，$B$ 为 $n$ 阶可逆矩阵，且
+\[
+r(I-AB)+r(I+BA)=n.
+\]
+证明
+\[
+r(A)=n.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+因为 $B$ 可逆，
+\[
+BA=B(AB)B^{-1},
+\]
+故 $AB$ 与 $BA$ 相似，于是
+\[
+r(I+BA)=r(I+AB).
+\]
+题设变为
+\[
+r(I-AB)+r(I+AB)=n.
+\]
+由上一题可得
+\[
+(AB)^2=I,
+\]
+故 $AB$ 可逆。于是 $A$ 也可逆，从而
+\[
+\boxed{r(A)=n}.
+\]
+\end{solution}
+
+
+\begin{example}
+设 $A,B$ 是有限维线性空间 $V$ 的线性变换。
+\begin{enumerate}
+    \item 证明
+    \[
+    \dim\ker(AB)
+    \leq
+    \dim\ker A+\dim\ker B;
+    \]
+    \item 判断
+    \[
+    \dim\ker(AB)=\dim\ker(BA)
+    \]
+    是否恒成立。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+限制映射
+\[
+B:\ker(AB)\to\ker A.
+\]
+其核正是
+\[
+\ker B.
+\]
+故秩--零化度给出
+\[
+\dim\ker(AB)
+=
+\dim\ker B
++
+\dim B(\ker(AB))
+\leq
+\dim\ker B+\dim\ker A.
+\]
+
+第二问不成立。例如
+\[
+A=
+\begin{pmatrix}1&0\\0&0\end{pmatrix},
+\qquad
+B=
+\begin{pmatrix}0&1\\0&0\end{pmatrix}.
+\]
+则
+\[
+AB=B,\qquad BA=0,
+\]
+故
+\[
+\dim\ker(AB)=1,\qquad
+\dim\ker(BA)=2.
+\]
+\end{solution}
+
+
+\begin{example}
+设 $\varphi_1,\ldots,\varphi_m$ 是 $n$ 维线性空间 $V$ 的线性变换，
+满足
+\[
+\varphi_i^2=\varphi_i,
+\qquad
+\varphi_i\varphi_j=0\quad(i\neq j).
+\]
+证明
+\[
+V
+=
+\operatorname{Im}\varphi_1\oplus\cdots\oplus\operatorname{Im}\varphi_m
+\oplus
+\bigcap\limits_{i=1}^{m}\ker\varphi_i.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+令
+\[
+P=\varphi_1+\cdots+\varphi_m.
+\]
+由两两正交性，
+\[
+P^2=P.
+\]
+因此
+\[
+V=\operatorname{Im}P\oplus\ker P.
+\]
+又
+\[
+\operatorname{Im}P
+=
+\operatorname{Im}\varphi_1\oplus\cdots\oplus\operatorname{Im}\varphi_m,
+\]
+而
+\[
+\ker P=\bigcap\limits_{i=1}^{m}\ker\varphi_i.
+\]
+即得结论。
+\end{solution}
+
+
+\begin{theorem}[\markstar]
+设 $A$ 是 $n$ 阶幂等矩阵，即 $A^2=A$。则：
+\begin{enumerate}
+    \item
+    \[
+    r(A)+r(A-I)=n;
+    \]
+    \item $A$ 的特征值只能为 $0$ 或 $1$；
+    \item
+    \[
+    r(A)=\operatorname{tr}A.
+    \]
+\end{enumerate}
+\end{theorem}
+
+
+\begin{proposition}[\markstar]
+设 $A_1,\ldots,A_s$ 为 $n$ 阶矩阵，且
+\[
+A_1+\cdots+A_s=I_n.
+\]
+则下列命题等价：
+\begin{enumerate}
+    \item $A_i$ 全部幂等；
+    \item
+    \[
+    r(A_1)+\cdots+r(A_s)=n;
+    \]
+    \item
+    \[
+    A_iA_j=0\qquad(i\neq j).
+    \]
+\end{enumerate}
+\end{proposition}
+
+
+\begin{example}
+设
+\[
+V=V_1\oplus V_2\oplus\cdots\oplus V_s.
+\]
+证明存在 $V$ 上的线性变换 $\sigma_1,\ldots,\sigma_s$，满足
+\[
+\sigma_i^2=\sigma_i,\qquad
+\sigma_i\sigma_j=0\ (i\neq j),\qquad
+\sigma_1+\cdots+\sigma_s=I,
+\]
+且
+\[
+\sigma_i(V)=V_i.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+对唯一分解
+\[
+x=x_1+\cdots+x_s,\qquad x_i\in V_i,
+\]
+定义
+\[
+\sigma_i(x)=x_i.
+\]
+由直和分解的唯一性，各 $\sigma_i$ 线性且满足全部所需关系。
+\end{solution}
+
+
+\begin{example}
+设 $A,A_1,A_2$ 为 $n$ 阶方阵，满足
+\[
+A^2=A,\qquad
+A=A_1+A_2,\qquad
+r(A)=r(A_1)+r(A_2).
+\]
+证明
+\[
+A_i^2=A_i\quad(i=1,2),
+\qquad
+A_1A_2=A_2A_1=0.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+由
+\[
+\operatorname{Im}A
+\subseteq
+\operatorname{Im}A_1+\operatorname{Im}A_2
+\]
+及维数条件可知
+\[
+\operatorname{Im}A
+=
+\operatorname{Im}A_1\oplus\operatorname{Im}A_2.
+\]
+幂等矩阵 $A$ 在 $\operatorname{Im}A$ 上为恒等。若 $y=A_1x$，则
+\[
+y=Ay=A_1y+A_2y.
+\]
+按上述直和分解唯一性，
+\[
+A_1y=y,\qquad A_2y=0.
+\]
+故
+\[
+A_1^2=A_1,\qquad A_2A_1=0.
+\]
+交换 $A_1,A_2$ 即得另外两式。
+\end{solution}
+
+
+\begin{example}
+设 $A$ 为幂等矩阵，且
+\[
+A=A_1+\cdots+A_s,
+\qquad
+r(A)=r(A_1)+\cdots+r(A_s).
+\]
+证明所有 $A_i$ 都相似于对角矩阵，且
+\[
+\operatorname{tr}A_i=r(A_i).
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+与上一题相同，由秩相加得到
+\[
+\operatorname{Im}A
+=
+\operatorname{Im}A_1\oplus\cdots\oplus\operatorname{Im}A_s.
+\]
+利用 $A$ 在 $\operatorname{Im}A$ 上恒等，对每个分量比较可得
+\[
+A_i^2=A_i,\qquad A_iA_j=0\quad(i\neq j).
+\]
+因此每个 $A_i$ 都是幂等矩阵，其极小多项式整除
+\[
+x(x-1),
+\]
+无重根，所以可对角化，特征值只有 $0,1$。于是
+\[
+\boxed{\operatorname{tr}A_i=r(A_i)}.
+\]
+\end{solution}
+
+
+\newpage
+
+\section{特征值与特征向量}
+
+\subsection{特征值与特征向量的求解}
+
+\begin{theorem}[\markstar]
+设 $S_i$ 是属于互异特征值 $\lambda_i$ 的线性无关特征向量集
+$(i=1,\ldots,r)$，则
+\[
+S_1\cup S_2\cup\cdots\cup S_r
+\]
+线性无关。特别地，属于不同特征值的非零特征向量线性无关。
+\end{theorem}
+
+
+\begin{proposition}[\markstar]
+设
+\[
+A\in M_{m,n}(K),\qquad
+B\in M_{n,m}(K),\qquad m\geq n.
+\]
+则
+\[
+|\lambda I_m-AB|
+=
+\lambda^{m-n}|\lambda I_n-BA|.
+\]
+因此 $AB$ 与 $BA$ 具有相同的非零特征值，并且代数重数相同。
+\end{proposition}
+
+
+\begin{theorem}[\markstar]
+设 $A=(a_{ij})\in M_n(\mathbb C)$。定义第 $i$ 个 Gershgorin 圆盘
+\[
+G_i=
+\left\{
+z\in\mathbb C:
+|z-a_{ii}|
+\leq
+\sum\limits_{j\neq i}|a_{ij}|
+\right\}.
+\]
+则 $A$ 的全部特征值都位于
+\[
+G_1\cup\cdots\cup G_n
+\]
+中。
+\end{theorem}
+
+
+\begin{theorem}[\markstar]
+若 $n$ 个 Gershgorin 圆盘分成若干互不相交的连通区域，其中某一连通区域
+恰由 $k$ 个圆盘组成，则该区域内恰有 $k$ 个特征值，重数按代数重数计算。
+\end{theorem}
+
+
+\begin{example}
+估计下列矩阵特征值的取值范围，并写出对应 Gershgorin 圆盘：
+\[
+A_1=
+\begin{pmatrix}
+1&-0.1&0.2\\
+-1.1&-1&0.4\\
+-0.3&0.1&0
+\end{pmatrix},
+\qquad
+A_2=
+\begin{pmatrix}
+-3&1&0.1&-0.5\\
+0.1&2&0.4&-0.1\\
+1&0.3&0&0\\
+0&-2&1&1
+\end{pmatrix}.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+对 $A_1$，三个圆盘为
+\[
+|z-1|\leq0.3,\qquad
+|z+1|\leq1.5,\qquad
+|z|\leq0.4.
+\]
+故全部特征值都在这三个圆盘之并内。
+
+对 $A_2$，四个圆盘为
+\[
+|z+3|\leq1.6,\qquad
+|z-2|\leq0.6,\qquad
+|z|\leq1.3,\qquad
+|z-1|\leq3.
+\]
+由各圆盘的交叠关系还可进一步使用 Gershgorin 第二定理判断各连通分量内
+特征值的个数。
+\end{solution}
+
+
+\begin{example}
+设 $A$ 为 $n$ 阶方阵。
+\begin{enumerate}
+    \item 若
+    \[
+    |a_{ii}|>\sum\limits_{j\neq i}|a_{ij}|
+    \qquad(i=1,\ldots,n),
+    \]
+    证明 $|A|\neq0$；
+    \item 若
+    \[
+    a_{ii}>\sum\limits_{j\neq i}|a_{ij}|
+    \qquad(i=1,\ldots,n),
+    \]
+    证明 $|A|>0$。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+第一问中所有 Gershgorin 圆盘都不包含原点，所以 $0$ 不是特征值，
+从而 $A$ 可逆。
+
+第二问各圆盘都完全位于右半平面。实矩阵的非实特征值成共轭对出现，
+其乘积为正；实特征值全部为正。因此所有特征值之积满足
+\[
+\boxed{\det A>0}.
+\]
+原讲义若仅写“严格对角占优”而不要求对角元为正，则第二个结论并不成立；
+这里按其前文更精确的条件整理。
+\end{solution}
+
+
+\begin{example}
+设 $A=(a_{ij})$ 满足
+\[
+0\leq a_{ij}\leq1,
+\qquad
+\sum\limits_{j=1}^{n}a_{ij}=1.
+\]
+证明：
+\begin{enumerate}
+    \item $1$ 是 $A$ 的特征值；
+    \item 对任意特征值 $\lambda$，都有 $|\lambda|\leq1$。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+令
+\[
+\boldsymbol{1}=(1,\ldots,1)^{\mathsf T}.
+\]
+由行和为 $1$，
+\[
+A\boldsymbol{1}=\boldsymbol{1},
+\]
+故 $1$ 是特征值。
+
+又第 $i$ 个 Gershgorin 圆盘满足
+\[
+|z-a_{ii}|
+\leq
+1-a_{ii}.
+\]
+该圆盘完全包含在单位闭圆盘 $|z|\leq1$ 中，因此所有特征值均满足
+\[
+|\lambda|\leq1.
+\]
+\end{solution}
+
+
+\begin{example}[\markstar]
+求
+\[
+M=
+\begin{pmatrix}
+0&J_n\\
+J_n&0
+\end{pmatrix}
+\]
+的全部特征值以及 $2n$ 个线性无关的特征向量，其中 $J_n$ 为全 $1$ 矩阵。
+\end{example}
+\exampleblank
+
+\begin{solution}
+令
+\[
+e=(1,\ldots,1)^{\mathsf T}.
+\]
+则
+\[
+J_ne=ne,
+\]
+而对任意 $u\perp e$ 有 $J_nu=0$。
+
+因此
+\[
+\begin{pmatrix}e\\e\end{pmatrix}
+\]
+是特征值 $n$ 的特征向量，
+\[
+\begin{pmatrix}e\\-e\end{pmatrix}
+\]
+是特征值 $-n$ 的特征向量。
+
+取 $e^\perp$ 的一组基 $u_1,\ldots,u_{n-1}$，则
+\[
+\begin{pmatrix}u_i\\0\end{pmatrix},
+\qquad
+\begin{pmatrix}0\\u_i\end{pmatrix}
+\]
+均属于特征值 $0$。故特征值为
+\[
+\boxed{n,\ -n,\ 0\ (2n-2\text{ 重})}.
+\]
+\end{solution}
+
+
+\begin{example}
+设
+\[
+A=
+\begin{pmatrix}
+a&-1&c\\
+5&b&3\\
+1-c&0&-a
+\end{pmatrix},
+\qquad
+|A|=-1.
+\]
+又 $A^*$ 有特征值 $\lambda_0$，相应特征向量为
+\[
+\alpha=(-1,-1,1)^{\mathsf T}.
+\]
+求 $a,b,c,\lambda_0$。
+\end{example}
+\exampleblank
+
+\begin{solution}
+由 $|A|=-1$，矩阵 $A$ 可逆，且
+\[
+A^*=|A|A^{-1}=-A^{-1}.
+\]
+条件
+\[
+A^*\alpha=\lambda_0\alpha
+\]
+等价于
+\[
+A\alpha=-\dfrac{1}{\lambda_0}\alpha.
+\]
+将 $\alpha=(-1,-1,1)^{\mathsf T}$ 代入并结合 $\det A=-1$ 解方程组，
+得到
+\[
+\boxed{
+a=2,\qquad b=-3,\qquad c=2,\qquad \lambda_0=1.
+}
+\]
+\end{solution}
+
+
+\begin{example}
+已知三阶方阵 $A$ 满足
+\[
+|A-I|=|A-2I|=|A+I|=\lambda.
+\]
+\begin{enumerate}
+    \item 当 $\lambda=0$ 时，求 $|A+3I|$；
+    \item 当 $\lambda=2$ 时，求 $|A+3I|$。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+令
+\[
+p(t)=\det(A-tI).
+\]
+这是首项系数为 $-1$ 的三次多项式，并且
+\[
+p(1)=p(2)=p(-1)=\lambda.
+\]
+故
+\[
+p(t)-\lambda=-(t-1)(t-2)(t+1).
+\]
+于是
+\[
+|A+3I|=p(-3)=\lambda+40.
+\]
+因此
+\[
+\boxed{
+\lambda=0\Rightarrow |A+3I|=40,
+\qquad
+\lambda=2\Rightarrow |A+3I|=42.
+}
+\]
+\end{solution}
+
+
+\begin{example}
+已知 $n$ 阶方阵
+\[
+A=(a_ia_j)_{n\times n}+J_n-I_n,
+\]
+即
+\[
+a_{ii}=a_i^2,\qquad
+a_{ij}=a_ia_j+1\quad(i\neq j),
+\]
+并且
+\[
+\sum\limits_{i=1}^{n}a_i=1,
+\qquad
+\sum\limits_{i=1}^{n}a_i^2=n.
+\]
+求：
+\begin{enumerate}
+    \item $A$ 的全部特征值；
+    \item $\det A$ 与 $\operatorname{tr}A$。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+令
+\[
+a=(a_1,\ldots,a_n)^{\mathsf T},
+\qquad
+e=(1,\ldots,1)^{\mathsf T}.
+\]
+则
+\[
+A=aa^{\mathsf T}+ee^{\mathsf T}-I.
+\]
+且
+\[
+a^{\mathsf T}a=n,\qquad
+e^{\mathsf T}e=n,\qquad
+a^{\mathsf T}e=1.
+\]
+在
+\[
+\Span\{a,e\}
+\]
+上，相对于基 $(a,e)$，$A$ 的矩阵为
+\[
+\begin{pmatrix}
+n-1&1\\
+1&n-1
+\end{pmatrix},
+\]
+故得到特征值
+\[
+n,\qquad n-2.
+\]
+在同时正交于 $a,e$ 的 $n-2$ 维子空间上，
+\[
+A=-I.
+\]
+因此
+\[
+\boxed{
+\lambda(A):
+n,\ n-2,\ \underbrace{-1,\ldots,-1}_{n-2}
+}.
+\]
+从而
+\[
+\boxed{
+\det A=(-1)^{n-2}n(n-2),
+\qquad
+\operatorname{tr}A=n.
+}
+\]
+原 PDF 中第一条件印成了 $\sum a_1=1$，按上下文应为 $\sum a_i=1$。
+\end{solution}
+
+
+\begin{example}[\markstar]
+设 $n$ 阶循环矩阵
+\[
+C=
+\begin{pmatrix}
+c_0&c_1&\cdots&c_{n-1}\\
+c_{n-1}&c_0&\cdots&c_{n-2}\\
+\vdots&\vdots&&\vdots\\
+c_1&c_2&\cdots&c_0
+\end{pmatrix}.
+\]
+\begin{enumerate}
+    \item 求全部特征值及相应特征向量；
+    \item 求 $\det C$。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+令
+\[
+f(x)=c_0+c_1x+\cdots+c_{n-1}x^{n-1},
+\]
+并令 $\omega_k$ 遍历全部 $n$ 次单位根。则
+\[
+v_k=
+(1,\omega_k,\omega_k^2,\ldots,\omega_k^{n-1})^{\mathsf T}
+\]
+是特征向量，对应特征值
+\[
+\boxed{\lambda_k=f(\omega_k)}.
+\]
+因此
+\[
+\boxed{
+\det C
+=
+\prod\limits_{k=1}^{n}f(\omega_k).
+}
+\]
+\end{solution}
+
+
+\begin{example}
+设 $A$ 是数域 $K$ 上的 $n$ 阶方阵，$\lambda_0\in K$ 是特征多项式的单根，
+$\alpha$ 是属于 $\lambda_0$ 的特征向量。证明
+\[
+(\lambda_0I-A)x=\alpha
+\]
+无解。
+\end{example}
+\exampleblank
+
+\begin{solution}
+若存在解 $x$，则
+\[
+(A-\lambda_0I)x=-\alpha,
+\qquad
+(A-\lambda_0I)\alpha=0.
+\]
+于是
+\[
+(A-\lambda_0I)^2x=0,
+\qquad
+(A-\lambda_0I)x\neq0.
+\]
+这说明 $\lambda_0$ 至少存在长度为 $2$ 的广义特征向量链，因此其代数重数至少为 $2$，
+与 $\lambda_0$ 为单根矛盾。
+\end{solution}
+
+
+\begin{example}
+设 $A$ 是 $n$ 阶复方阵，且存在列向量 $\alpha$，使
+\[
+\alpha,A\alpha,\ldots,A^{n-1}\alpha
+\]
+线性无关。证明对任意特征值 $\lambda_0$，
+其特征子空间维数为
+\[
+\dim V_{\lambda_0}=1.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+给定的 $n$ 个向量构成一组基，因此 $A$ 在这组循环基下的矩阵是一个友矩阵。
+友矩阵的每个特征值对应的特征子空间维数均为 $1$：
+解
+\[
+(F-\lambda I)x=0
+\]
+时前 $n-1$ 个分量都由一个自由参数唯一确定。
+相似变换保持特征子空间维数，故
+\[
+\boxed{\dim V_{\lambda_0}=1}.
+\]
+\end{solution}
+
+
+\begin{example}
+设 $A$ 为 $n$ 阶不可逆矩阵。证明 $A^*$ 的 $n$ 个特征值中至少有
+$n-1$ 个为 $0$，且若存在非零特征值，则它等于
+\[
+\operatorname{tr}A^*.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+若
+\[
+r(A)\leq n-2,
+\]
+则所有 $n-1$ 阶子式均为零，所以
+\[
+A^*=0.
+\]
+若
+\[
+r(A)=n-1,
+\]
+则
+\[
+r(A^*)=1.
+\]
+秩一矩阵的特征值为
+\[
+0\quad(n-1\text{ 重})
+\]
+以及
+\[
+\operatorname{tr}A^*
+\]
+一次。因此结论成立。
+\end{solution}
+
+
+\begin{example}
+设 $A$ 是数域 $K$ 上的 $n$ 阶可逆矩阵，并且
+\[
+A\sim A^k
+\qquad
+(\forall k\in\mathbb Z_+).
+\]
+证明 $A$ 的全部特征值都是 $1$。
+\end{example}
+\exampleblank
+
+\begin{solution}
+设谱的有限集合为
+\[
+S=\{\lambda_1,\ldots,\lambda_s\}\subset\overline K.
+\]
+由
+\[
+A\sim A^k
+\]
+可知对每个正整数 $k$，
+\[
+S=S^k=\{\lambda_1^k,\ldots,\lambda_s^k\}.
+\]
+因此每个 $\lambda_i$ 的所有正整数幂仍落在有限集合 $S$ 中，所以 $\lambda_i$ 必为单位根。
+取 $N$ 为这些单位根阶数的公倍数，则
+\[
+A^N
+\]
+的全部特征值都为 $1$。又 $A\sim A^N$，故 $A$ 本身的全部特征值也都为 $1$。
+\end{solution}
+
+
+\begin{example}
+设 $a_{ij}\in\mathbb Z$，证明
+\[
+D_n=
+\det
+\begin{pmatrix}
+a_{11}-\dfrac13&a_{12}&\cdots&a_{1n}\\
+a_{21}&a_{22}-\dfrac13&\cdots&a_{2n}\\
+\vdots&\vdots&\ddots&\vdots\\
+a_{n1}&a_{n2}&\cdots&a_{nn}-\dfrac13
+\end{pmatrix}
+\neq0.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+若 $D_n=0$，则 $\dfrac13$ 是整数矩阵
+\[
+A=(a_{ij})
+\]
+的特征值。于是 $\dfrac13$ 是其首一整系数特征多项式的有理根。
+由有理根定理，首一整系数多项式的有理根必为整数，矛盾。
+故
+\[
+\boxed{D_n\neq0}.
+\]
+\end{solution}
+
+
+\subsection{对角化}
+
+\begin{theorem}[\markstar]
+若 $n$ 阶复矩阵 $A$ 有 $n$ 个互不相同的特征值，则 $A$ 可对角化。
+\end{theorem}
+
+
+\begin{proposition}[\marktwostar]
+设 $A$ 为 $n$ 阶复矩阵，则下列命题等价：
+\begin{enumerate}
+    \item $A$ 可对角化；
+    \item $A$ 有 $n$ 个线性无关的特征向量；
+    \item $\mathbb C^n$ 是各特征子空间的直和；
+    \item 每个特征值的代数重数等于几何重数；
+    \item 对任意 $A$-不变子空间 $U$，存在 $A$-不变子空间 $W$ 使
+    \[
+    \mathbb C^n=U\oplus W;
+    \]
+    \item $A$ 的极小多项式无重根；
+    \item $A$ 的所有 Jordan 块都是一阶的。
+\end{enumerate}
+\end{proposition}
+
+
+\begin{example}
+已知
+\[
+A=
+\begin{pmatrix}
+1&2&2\\
+2&a&2\\
+2&2&1
+\end{pmatrix},
+\qquad
+B=
+\begin{pmatrix}
+-1&0&0\\
+0&-1&0\\
+0&0&b
+\end{pmatrix}.
+\]
+求 $a,b$ 使 $A\sim B$，并求可逆矩阵 $P$ 使
+\[
+P^{-1}AP=B.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+计算
+\[
+\chi_A(\lambda)
+=
+(\lambda+1)
+\left(
+\lambda^2-(a+3)\lambda+3a-8
+\right).
+\]
+要与
+\[
+(\lambda+1)^2(\lambda-b)
+\]
+相同，必须
+\[
+a=1,\qquad b=5.
+\]
+当 $a=1$ 时，属于 $-1$ 的两个线性无关特征向量可取
+\[
+(-1,1,0)^{\mathsf T},
+\qquad
+(-1,0,1)^{\mathsf T},
+\]
+属于 $5$ 的特征向量可取
+\[
+(1,1,1)^{\mathsf T}.
+\]
+因此
+\[
+\boxed{
+P=
+\begin{pmatrix}
+-1&-1&1\\
+1&0&1\\
+0&1&1
+\end{pmatrix}
+}
+\]
+满足
+\[
+P^{-1}AP=\diag(-1,-1,5).
+\]
+\end{solution}
+
+
+\begin{example}[\markstar]
+设 $A,B$ 为 $n$ 阶实方阵，且存在复可逆矩阵 $Q$ 使
+\[
+A=Q^{-1}BQ.
+\]
+证明存在实可逆矩阵 $P$ 使
+\[
+A=P^{-1}BP.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+写
+\[
+Q=X+iY,
+\qquad
+X,Y\in M_n(\mathbb R).
+\]
+由
+\[
+BQ=QA
+\]
+比较实部、虚部得
+\[
+BX=XA,\qquad BY=YA.
+\]
+故对任意实数 $t$，
+\[
+B(X+tY)=(X+tY)A.
+\]
+多项式
+\[
+p(t)=\det(X+tY)
+\]
+不恒为零，否则在复数 $t=i$ 处也应为零，与 $\det Q\neq0$ 矛盾。
+因此可取某个实数 $t_0$ 使
+\[
+P=X+t_0Y
+\]
+可逆，于是
+\[
+BP=PA,
+\qquad
+A=P^{-1}BP.
+\]
+\end{solution}
+
+
+\begin{example}
+设三阶方阵 $A$ 的特征值为
+\[
+1,\quad2,\quad3,
+\]
+对应特征向量依次为
+\[
+\xi_1=(1,1,1)^{\mathsf T},\quad
+\xi_2=(1,2,4)^{\mathsf T},\quad
+\xi_3=(1,3,9)^{\mathsf T}.
+\]
+又
+\[
+\beta=(1,1,3)^{\mathsf T}.
+\]
+\begin{enumerate}
+    \item 将 $\beta$ 用 $\xi_1,\xi_2,\xi_3$ 线性表示；
+    \item 求 $A^n\beta$。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+解
+\[
+\beta=c_1\xi_1+c_2\xi_2+c_3\xi_3
+\]
+得
+\[
+(c_1,c_2,c_3)=(2,-2,1).
+\]
+因此
+\[
+\boxed{
+\beta=2\xi_1-2\xi_2+\xi_3
+}.
+\]
+利用特征向量关系，
+\[
+\boxed{
+A^n\beta
+=
+2\xi_1-2\cdot2^n\xi_2+3^n\xi_3.
+}
+\]
+\end{solution}
+
+
+\begin{example}
+用 $J$ 表示全 $1$ 的 $n$ 阶方阵，$n\geq2$，
+\[
+f(x)=a+bx\in\mathbb Q[x],
+\qquad
+A=f(J)=aI+bJ.
+\]
+\begin{enumerate}
+    \item 求 $J$ 的全部特征值和特征向量；
+    \item 求 $A$ 的全部特征子空间；
+    \item 判断 $A$ 是否可对角化，并给出一个有理可逆矩阵把它对角化。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+令
+\[
+e=(1,\ldots,1)^{\mathsf T}.
+\]
+则
+\[
+Je=ne,
+\]
+而
+\[
+e^\perp=\left\{x:\sum\limits_i x_i=0\right\}
+\]
+是特征值 $0$ 的特征子空间，维数 $n-1$。
+
+故 $A=aI+bJ$ 的特征值为
+\[
+a+bn
+\]
+在 $\Span\{e\}$ 上，以及
+\[
+a
+\]
+在 $e^\perp$ 上。若 $b\neq0$，这两个特征子空间即全部；若 $b=0$，则
+$A=aI$，整个空间都是特征子空间。
+
+取
+\[
+e,\quad e_1-e_n,\quad e_2-e_n,\ldots,e_{n-1}-e_n
+\]
+为基即可得到有理可逆对角化矩阵，因此 $A$ 总可对角化。
+\end{solution}
+
+
+\begin{example}
+设三阶实对称矩阵 $A$ 的各行元素之和均为 $3$，
+\[
+\alpha_1=(-1,2,-1)^{\mathsf T},
+\qquad
+\alpha_2=(0,-1,1)^{\mathsf T}
+\]
+是 $Ax=0$ 的两个解。
+\begin{enumerate}
+    \item 求 $A$ 的特征值与特征向量；
+    \item 求正交矩阵 $Q$ 和对角矩阵 $D$，使
+    \[
+    Q^{\mathsf T}AQ=D;
+    \]
+    \item 求
+    \[
+    \left|
+    \left(\dfrac23B^2\right)^{-1}
+    +\dfrac49B^*
+    +B
+    \right|,
+    \]
+    其中 $B$ 与 $A-\dfrac32I$ 相似。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+由于行和为 $3$，
+\[
+e=(1,1,1)^{\mathsf T}
+\]
+是特征值 $3$ 的特征向量。又 $\alpha_1,\alpha_2$ 线性无关并属于核，
+故特征值为
+\[
+\boxed{0,0,3}.
+\]
+三者互相正交化、单位化即可得到正交矩阵 $Q$，并有
+\[
+D=\diag(0,0,3).
+\]
+事实上这也说明
+\[
+A=J_3.
+\]
+
+于是 $B$ 的特征值为
+\[
+-\dfrac32,\quad-\dfrac32,\quad\dfrac32.
+\]
+从而
+\[
+B^2=\dfrac94I,
+\qquad
+\left(\dfrac23B^2\right)^{-1}=\dfrac23I.
+\]
+又
+\[
+\det B=\dfrac{27}{8},
+\]
+所以 $B^*$ 在对应特征方向上的特征值为
+\[
+-\dfrac94,\quad-\dfrac94,\quad\dfrac94.
+\]
+因此题中矩阵的三个特征值为
+\[
+-\dfrac{11}{6},\quad
+-\dfrac{11}{6},\quad
+\dfrac{19}{6},
+\]
+故
+\[
+\boxed{
+\det
+=
+\dfrac{2299}{216}.
+}
+\]
+\end{solution}
+
+
+\begin{example}
+设 $A\in M_n(K)$，证明：若
+\[
+r(A)+r(A-I)=n,
+\]
+则 $A$ 可对角化。
+\end{example}
+\exampleblank
+
+\begin{solution}
+由秩--零化度，
+\[
+\dim\ker A+\dim\ker(A-I)
+=
+2n-r(A)-r(A-I)=n.
+\]
+又
+\[
+\ker A\cap\ker(A-I)=\{0\}.
+\]
+故
+\[
+K^n=\ker A\oplus\ker(A-I).
+\]
+这两个子空间分别是特征值 $0,1$ 的特征子空间，因此可取由特征向量组成的基，
+$A$ 可对角化。
+\end{solution}
+
+
+\begin{example}
+设
+\[
+V=M_n(F),
+\qquad
+\sigma(A)=A^{\mathsf T}.
+\]
+\begin{enumerate}
+    \item 证明 $\sigma$ 是线性变换；
+    \item 求全部特征子空间；
+    \item 证明 $\sigma$ 可对角化。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+线性性由转置的线性性直接得到。
+若底域特征不为 $2$，则
+\[
+\sigma(A)=A
+\]
+对应特征值 $1$，特征子空间为全体对称矩阵；
+\[
+\sigma(A)=-A
+\]
+对应特征值 $-1$，特征子空间为全体反对称矩阵。
+任意矩阵有唯一分解
+\[
+A=
+\dfrac{A+A^{\mathsf T}}{2}
++
+\dfrac{A-A^{\mathsf T}}{2},
+\]
+故
+\[
+M_n(F)
+=
+\operatorname{Sym}_n(F)
+\oplus
+\operatorname{Skew}_n(F),
+\]
+所以 $\sigma$ 可对角化。
+\end{solution}
+
+
+\begin{example}
+设 $A^2=I$。证明对任意正整数 $m,k$，
+\[
+r((A+I)^m)+r((A-I)^k)=n.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+在特征不为 $2$ 的数域上，
+\[
+x^2-1=(x-1)(x+1)
+\]
+无重根，所以
+\[
+V=\ker(A-I)\oplus\ker(A+I).
+\]
+在 $\ker(A-I)$ 上，
+\[
+A+I=2I,\qquad A-I=0;
+\]
+在 $\ker(A+I)$ 上恰好相反。因此
+\[
+r((A+I)^m)=\dim\ker(A-I),
+\]
+\[
+r((A-I)^k)=\dim\ker(A+I),
+\]
+二者之和为 $n$。
+\end{solution}
+
+
+\subsection{多个矩阵同时对角化}
+
+\begin{proposition}[\markstar]
+设 $A,B\in M_n(K)$ 且
+\[
+AB=BA.
+\]
+若 $A,B$ 都可对角化，则它们可同时对角化。
+\end{proposition}
+
+
+\begin{example}[\markstar]
+设 $S$ 是任意多个可相似对角化的 $n$ 阶方阵构成的集合，且其中任意两矩阵可交换。
+证明 $S$ 中全部矩阵可同时相似对角化。
+\end{example}
+\exampleblank
+
+\begin{solution}
+对维数归纳。若 $S$ 中所有矩阵都是数量矩阵则显然成立。
+否则取一个非数量矩阵 $A\in S$。因 $A$ 可对角化，
+\[
+V=V_{\lambda_1}\oplus\cdots\oplus V_{\lambda_r},
+\qquad r\geq2.
+\]
+任意 $B\in S$ 与 $A$ 可交换，因此保持每个 $V_{\lambda_i}$ 不变。
+所有 $B$ 在每个较低维子空间上的限制仍两两可交换且可对角化。
+由归纳假设，在每个 $V_{\lambda_i}$ 上存在公共特征基。
+合并这些基即得到整个 $S$ 的公共特征基。
+\end{solution}
+
+
+\begin{example}
+设 $A$ 有 $n$ 个互不相同的特征值。若 $B$ 满足
+\[
+AB=BA,
+\]
+证明 $B$ 可对角化，且 $B$ 可以表示为 $A$ 的多项式。
+\end{example}
+\exampleblank
+
+\begin{solution}
+取 $A$ 的特征基
+\[
+v_1,\ldots,v_n,
+\qquad
+Av_i=\lambda_i v_i.
+\]
+由 $AB=BA$，
+\[
+A(Bv_i)=B(Av_i)=\lambda_iBv_i,
+\]
+故 $Bv_i$ 仍属于一维特征子空间 $\Span\{v_i\}$，于是
+\[
+Bv_i=\mu_i v_i.
+\]
+因此 $A,B$ 在同一基下均为对角矩阵。
+
+由于 $\lambda_i$ 两两不同，由 Lagrange 插值存在次数小于 $n$ 的多项式 $p$ 满足
+\[
+p(\lambda_i)=\mu_i.
+\]
+于是
+\[
+\boxed{B=p(A)}.
+\]
+\end{solution}
+
+
+\begin{example}
+多项式
+\[
+f(x)=x^n+c_{n-1}x^{n-1}+\cdots+c_1x+c_0
+\]
+的友矩阵为
+\[
+F=
+\begin{pmatrix}
+0&0&\cdots&0&-c_0\\
+1&0&\cdots&0&-c_1\\
+0&1&\cdots&0&-c_2\\
+\vdots&\vdots&\ddots&\vdots&\vdots\\
+0&0&\cdots&1&-c_{n-1}
+\end{pmatrix}.
+\]
+证明：若方阵 $A$ 相似于某个多项式的友矩阵，则所有与 $A$ 可交换的方阵都是 $A$ 的多项式。
+\end{example}
+\exampleblank
+
+\begin{solution}
+友矩阵 $F$ 是循环矩阵意义下的循环算子：
+取第一标准基向量 $e_1$，则
+\[
+e_1,Fe_1,\ldots,F^{n-1}e_1
+\]
+构成一组基。
+
+若 $B$ 与 $F$ 可交换，写
+\[
+Be_1=
+c_0e_1+c_1Fe_1+\cdots+c_{n-1}F^{n-1}e_1
+=
+p(F)e_1.
+\]
+于是对任意 $k$，
+\[
+BF^ke_1
+=
+F^kBe_1
+=
+p(F)F^ke_1.
+\]
+因为这些向量构成基，故
+\[
+B=p(F).
+\]
+若 $A=P^{-1}FP$，则与 $A$ 可交换的矩阵共轭到与 $F$ 可交换的矩阵，
+所以同样是 $A$ 的多项式。
+\end{solution}
+
+
+\newpage
+
+\section{不变子空间}
+
+\begin{example}
+已知线性空间 $V$ 的线性变换 $\sigma$ 在基
+$\eta_1,\eta_2,\eta_3,\eta_4$ 下的矩阵为
+\[
+A=
+\begin{pmatrix}
+1&-1&-1&2\\
+0&1&0&0\\
+2&3&1&-1\\
+1&-2&-2&-1
+\end{pmatrix}.
+\]
+求包含 $\eta_1$ 的最小 $\sigma$-不变子空间。
+\end{example}
+\exampleblank
+
+\begin{solution}
+包含 $\eta_1$ 的最小不变子空间就是循环子空间
+\[
+W=\Span\{\eta_1,\sigma\eta_1,\sigma^2\eta_1,\ldots\}.
+\]
+由矩阵第一列，
+\[
+[\sigma\eta_1]_{\eta}
+=
+\begin{pmatrix}1\\0\\2\\1\end{pmatrix},
+\]
+而
+\[
+[\sigma^2\eta_1]_{\eta}
+=
+\begin{pmatrix}1\\0\\3\\-4\end{pmatrix}.
+\]
+这三个向量线性无关，而再作用一次 $\sigma$ 后不再增加秩。因此
+\[
+\boxed{
+W=
+\Span\left\{
+\eta_1,\,
+\eta_1+2\eta_3+\eta_4,\,
+\eta_1+3\eta_3-4\eta_4
+\right\}.
+}
+\]
+\end{solution}
+
+
+\begin{example}[\markstar]
+设 $\sigma$ 是实数域上的 $n$ 维线性空间 $V$ 的线性变换，
+$\alpha\neq0$，令
+\[
+W=\Span\{\alpha,\sigma\alpha,\sigma^2\alpha,\ldots\}.
+\]
+\begin{enumerate}
+    \item 证明 $W$ 是 $\sigma$-不变子空间；
+    \item 若 $\dim W=r$，证明
+    \[
+    \alpha,\sigma\alpha,\ldots,\sigma^{r-1}\alpha
+    \]
+    是 $W$ 的一组基，并求 $\sigma|_W$ 在此基下的矩阵。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+第一问由
+\[
+\sigma(\sigma^k\alpha)=\sigma^{k+1}\alpha
+\]
+立即得到。
+
+设
+\[
+\alpha,\sigma\alpha,\ldots,\sigma^{r-1}\alpha
+\]
+在最早位置出现线性相关。若在第 $s<r$ 项之前已经相关，则所有更高次幂都可递推表示，
+从而 $\dim W\leq s<r$，矛盾。因此前 $r$ 个向量线性无关并构成基。
+
+存在唯一的 $c_0,\ldots,c_{r-1}$ 使
+\[
+\sigma^r\alpha
+=
+c_0\alpha+c_1\sigma\alpha+\cdots+c_{r-1}\sigma^{r-1}\alpha.
+\]
+故限制变换的矩阵为友矩阵型
+\[
+\boxed{
+\begin{pmatrix}
+0&0&\cdots&0&c_0\\
+1&0&\cdots&0&c_1\\
+0&1&\ddots&\vdots&c_2\\
+\vdots&\ddots&\ddots&0&\vdots\\
+0&\cdots&0&1&c_{r-1}
+\end{pmatrix}.
+}
+\]
+\end{solution}
+
+
+\begin{example}
+设 $\varphi$ 是 $n$ 维线性空间 $V$ 的可逆线性变换，
+$W$ 是 $\varphi$-不变子空间。证明 $W$ 也是 $\varphi^{-1}$-不变子空间。
+\end{example}
+\exampleblank
+
+\begin{solution}
+由不变性，
+\[
+\varphi(W)\subseteq W.
+\]
+因为 $\varphi$ 可逆，所以 $\varphi|_W$ 是单射，从而
+\[
+\dim\varphi(W)=\dim W.
+\]
+有限维下包含且维数相同意味着
+\[
+\varphi(W)=W.
+\]
+两边作用 $\varphi^{-1}$ 即得
+\[
+\varphi^{-1}(W)=W.
+\]
+\end{solution}
+
+
+\begin{example}[\markstar]
+设 $A,B$ 都是线性空间 $V$ 的线性变换，并且
+\[
+AB=BA.
+\]
+证明：
+\begin{enumerate}
+    \item $A$ 的每个特征子空间都是 $B$ 的不变子空间；
+    \item 若 $V$ 是复线性空间，则 $A,B$ 至少有一个公共特征向量。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+若
+\[
+x\in V_\lambda(A),
+\]
+则
+\[
+A(Bx)=B(Ax)=B(\lambda x)=\lambda Bx,
+\]
+故
+\[
+Bx\in V_\lambda(A).
+\]
+第一问成立。
+
+在复数域上，$A$ 至少有一个特征值 $\lambda$。
+若相应特征子空间 $V_\lambda(A)$ 非零，则由第一问它对 $B$ 不变。
+限制变换
+\[
+B|_{V_\lambda(A)}
+\]
+仍是复线性变换，因此有特征向量 $v\neq0$。这个 $v$ 同时是 $A$ 与 $B$ 的特征向量。
+\end{solution}
+
+
+\begin{example}[\markstar]
+设 $\{\sigma_i:i\in I\}$ 是复数域上的 $n$ 维线性空间 $V$ 上的一族
+两两可交换线性变换，指标集 $I$ 可以有限也可以无限。证明所有 $\sigma_i$
+至少有一个公共特征向量。
+\end{example}
+\exampleblank
+
+\begin{solution}
+对 $\dim V$ 归纳。若所有 $\sigma_i$ 都是数量变换，则任意非零向量都是公共特征向量。
+
+否则取一个非数量变换 $\sigma_{i_0}$，选择其某个非零真特征子空间
+\[
+W=V_\lambda(\sigma_{i_0}).
+\]
+由于全部变换两两可交换，上一题表明 $W$ 对每个 $\sigma_i$ 都不变。
+于是所有限制
+\[
+\sigma_i|_W
+\]
+仍两两可交换，而 $\dim W<\dim V$。由归纳假设，$W$ 中存在公共特征向量，
+它也是原来全部 $\sigma_i$ 的公共特征向量。
+\end{solution}
+
+
+\begin{example}[\markstar]
+设 $\sigma$ 是 $n>1$ 维线性空间 $V$ 的线性变换，在某一基下的矩阵为单个
+Jordan 块
+\[
+J_n(\lambda)=
+\begin{pmatrix}
+\lambda&1&0&\cdots&0\\
+0&\lambda&1&\ddots&\vdots\\
+\vdots&\ddots&\ddots&\ddots&0\\
+0&\cdots&0&\lambda&1\\
+0&\cdots&\cdots&0&\lambda
+\end{pmatrix}.
+\]
+\begin{enumerate}
+    \item 证明 $V$ 不能分解成两个非平凡 $\sigma$-不变子空间的直和；
+    \item 求 $\sigma$ 的全部不变子空间。
+\end{enumerate}
+\end{example}
+\exampleblank
+
+\begin{solution}
+令
+\[
+N=\sigma-\lambda I.
+\]
+则 $N$ 是单个 $n$ 阶幂零 Jordan 块。不变子空间对 $\sigma$ 不变当且仅当对
+$N$ 不变。
+
+设对应基为 $e_1,\ldots,e_n$，满足
+\[
+Ne_1=0,\qquad
+Ne_j=e_{j-1}\quad(j\geq2).
+\]
+若非零不变子空间 $W$ 中某向量的最高非零坐标出现在第 $k$ 位，
+连续作用 $N$ 可推出
+\[
+e_1,\ldots,e_k\in W.
+\]
+再由最高位的最大性得到
+\[
+W=\Span\{e_1,\ldots,e_k\}.
+\]
+因此全部不变子空间恰为
+\[
+\boxed{
+0,\ 
+\Span\{e_1\},\
+\Span\{e_1,e_2\},\ldots,
+\Span\{e_1,\ldots,e_n\}=V.
+}
+\]
+这些子空间构成一条严格嵌套链，所以两个非平凡不变子空间不可能互补成直和。
+\end{solution}
+
+
+\begin{example}[\markstar]
+设 $V$ 是数域 $P$ 上的 $n$ 维线性空间，$\sigma$ 满足
+\[
+\sigma^{n-1}\neq0,\qquad
+\sigma^n=0.
+\]
+证明 $\sigma$ 恰有 $n+1$ 个不变子空间。
+\end{example}
+\exampleblank
+
+\begin{solution}
+由 $\sigma^{n-1}\neq0$，存在 $v$ 使
+\[
+\sigma^{n-1}v\neq0.
+\]
+于是
+\[
+\sigma^{n-1}v,\sigma^{n-2}v,\ldots,\sigma v,v
+\]
+构成 $V$ 的一组基，$\sigma$ 在此基下就是单个 $n$ 阶幂零 Jordan 块。
+由上一题，全部不变子空间恰好为
+\[
+0,\ 
+\Span\{\sigma^{n-1}v\},\
+\Span\{\sigma^{n-1}v,\sigma^{n-2}v\},
+\ldots,V,
+\]
+共
+\[
+\boxed{n+1}
+\]
+个。
+\end{solution}
+
+
+\begin{example}
+设 $\varphi$ 是复线性空间 $V$ 的线性变换，
+$\lambda_1,\ldots,\lambda_k$ 是互不相同的特征值，
+$v_i$ 是属于 $\lambda_i$ 的特征向量。
+设 $W$ 是 $\varphi$-不变子空间，且
+\[
+w=c_1v_1+\cdots+c_kv_k\in W,
+\qquad
+c_i\neq0.
+\]
+证明
+\[
+v_i\in W\qquad(i=1,\ldots,k).
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+对每个 $i$，取 Lagrange 插值多项式
+\[
+p_i(x)
+=
+\prod_{\substack{1\leq j\leq k\\j\neq i}}
+\dfrac{x-\lambda_j}{\lambda_i-\lambda_j}.
+\]
+则
+\[
+p_i(\lambda_j)=\delta_{ij}.
+\]
+因为 $W$ 对 $\varphi$ 不变，也对任意多项式 $p_i(\varphi)$ 不变，所以
+\[
+p_i(\varphi)w
+=
+c_i v_i
+\in W.
+\]
+因 $c_i\neq0$，故
+\[
+v_i\in W.
+\]
+\end{solution}
+
+
+\begin{example}[\markstar]
+设 $V$ 是实数域上的 $n$ 维线性空间，$\sigma$ 是 $V$ 上的线性变换。
+证明 $\sigma$ 必有一维或二维不变子空间。
+\end{example}
+\exampleblank
+
+\begin{solution}
+$\sigma$ 的实特征多项式次数为 $n$。若它有实根 $\lambda$，则对应实特征向量张成一维不变子空间。
+
+若没有实特征值，则必有一对共轭非实特征值
+\[
+a\pm bi,\qquad b\neq0.
+\]
+取复特征向量
+\[
+z=u+iv.
+\]
+比较实部、虚部可得
+\[
+\sigma u=au-bv,\qquad
+\sigma v=bu+av.
+\]
+因此
+\[
+\Span_{\mathbb R}\{u,v\}
+\]
+是二维实不变子空间。
+\end{solution}
+
+
+\begin{example}
+设 $V$ 是复数域上的 $n$ 维线性空间，$\varphi$ 是 $V$ 的线性变换。
+证明存在不变子空间链
+\[
+V_1\subseteq V_2\subseteq\cdots\subseteq V_n=V,
+\qquad
+\dim V_i=i.
+\]
+\end{example}
+\exampleblank
+
+\begin{solution}
+复数域上 $\varphi$ 至少有一个特征向量，令其张成 $V_1$。
+在商空间
+\[
+V/V_1
+\]
+上诱导线性变换，再取一个一维不变子空间并取其逆像得到 $V_2$。
+如此递归即可构造
+\[
+V_1\subseteq\cdots\subseteq V_n.
+\]
+等价地，这正是“复矩阵可上三角化”的几何表述。
+\end{solution}
+
+
+\begin{example}[\markstar]
+设 $\sigma$ 是数域 $P$ 上 $n$ 维线性空间 $V$ 的线性变换，
+且有 $n$ 个互不相同的特征值。证明 $V$ 中恰有
+\[
+2^n
+\]
+个 $\sigma$-不变子空间。
+\end{example}
+\exampleblank
+
+\begin{solution}
+取对应特征向量基
+\[
+v_1,\ldots,v_n.
+\]
+任取指标子集
+\[
+S\subseteq\{1,\ldots,n\},
+\]
+子空间
+\[
+W_S=\Span\{v_i:i\in S\}
+\]
+显然 $\sigma$-不变，因此至少有 $2^n$ 个。
+
+反之，若 $W$ 是任意不变子空间，对其中任意向量
+\[
+w=\sum c_i v_i
+\]
+应用上一题的 Lagrange 投影可知，只要 $c_i\neq0$，就有 $v_i\in W$。
+因此 $W$ 必恰好是某些 $v_i$ 的张成空间。故总数正好为
+\[
+\boxed{2^n}.
+\]
+\end{solution}
+
+
+\begin{example}[\markstar]
+设 $V$ 是复数域上的有限维线性空间，$\tau$ 是 $V$ 的线性变换。
+若对任意 $\tau$-不变子空间 $U$，都存在 $\tau$-不变子空间 $W$ 使
+\[
+V=U\oplus W,
+\]
+则称 $\tau$ 完全可约。证明：$\tau$ 完全可约当且仅当 $V$ 有一组由特征向量组成的基。
+\end{example}
+\exampleblank
+
+\begin{solution}
+若 $V$ 有特征向量基，则 $\tau$ 可对角化。对任意不变子空间 $U$，
+可由不同特征值的谱投影把 $U$ 分解为各特征子空间中的部分，再在每个特征子空间内取补空间，
+这些补空间的直和给出 $\tau$-不变补空间。
+
+反之，设 $\tau$ 完全可约。复数域上存在特征向量 $v_1$，令
+\[
+U_1=\Span\{v_1\}.
+\]
+完全可约性给出不变补空间
+\[
+V=U_1\oplus W_1.
+\]
+对 $W_1$ 上的限制重复这一过程。有限维归纳最终得到
+\[
+V
+=
+\Span\{v_1\}\oplus\cdots\oplus\Span\{v_n\},
+\]
+其中每个 $v_i$ 都是 $\tau$ 的特征向量。
+\end{solution}

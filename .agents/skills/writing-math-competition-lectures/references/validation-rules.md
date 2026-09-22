@@ -34,7 +34,7 @@ python .agents/skills/writing-math-competition-lectures/scripts/validate_lecture
 python .agents/skills/writing-math-competition-lectures/scripts/validate_lecture.py check --scope project --project PATH
 ```
 
-检查指定项目中的受支持文本文件,并在识别到 `数学分析培优` 时运行专属结构检查.
+检查指定项目中的受支持文本文件,并在识别到 `数学分析培优` 或 `高等代数培优` 时运行该书专属的结构检查. 识别依据是主文件对, 见第 3 节.
 
 ### Exit code
 
@@ -49,7 +49,7 @@ warning 不等于自动修复请求. 先判断是否为允许的代码,路径,�
 - `PUNC001`: 所选自然语言中出现中文标点. Markdown 代码围栏,行内代码和 URL 不检查.
 - `TEXT001`: 存在未解决的待办标记.
 - `LATEX001`: `.tex` 中使用 double-dollar 行间公式.
-- `LATEX002`: 使用 `\binom`.
+- `LATEX002`: 使用 `\binom`. 组合数改用 `C_k^n`; 上下堆叠的列向量改用 `\begin{pmatrix}` 环境 (`\pmatrix{...}` 是 amsmath 不接受的旧写法).
 - `LATEX003`: 使用 `\tfrac`.
 - `LATEX004`: `\begin` 和 `\end` 环境不匹配.
 - `LATEX005`: 花括号,数学定界符或 `\left` 和 `\right` 不匹配.
@@ -57,18 +57,31 @@ warning 不等于自动修复请求. 先判断是否为允许的代码,路径,�
 
 Markdown 按项目规则允许 double-dollar 行间公式,因此 `LATEX001` 只检查 `.tex`.
 
-## 3. 数学分析规则编号
+## 3. 书籍结构规则编号
+
+`MA` 规则按书籍档案 `BookProfile` 套用. 当前登记两本书:
+
+```text
+数学分析培优     13 章   section_break_required = True
+高等代数培优     10 章   section_break_required = True
+```
+
+识别依据是同一目录下同时存在该书的普通版和答案版主文件.
 
 - `MA001`: `example`,`exampleblank`,`solution` 顺序不完整或交叉.
-- `MA002`: 13 章目录,共享内容或双入口结构缺失或不一致.
+- `MA002`: 章节目录,共享内容或双入口结构缺失或不一致.
 - `MA003`: 普通版主文件不是 `result=noanswer`.
 - `MA004`: 答案版主文件不是 `result=answer`.
 - `MA005`: `preamble.tex` 未加载 `subfiles`.
-- `MA006`: 章节后的首个 `section` 前出现多余 `\newpage`,或后续 `section` 前缺少 `\newpage`.
+- `MA006`: 章节后的首个 `section` 前出现多余 `\newpage`. 当该书 `section_break_required` 为真时,还检查后续 `section` 前是否缺少 `\newpage`.
 - `MA007`: `subsection` 或 `methodsection` 前出现机械分页.
 - `MA008`: 把 `watermark` 作为文档类选项传入.
 - `MA009`: 水印 Boolean 声明或启用晚于 `preamble.tex`.
-- `MA010`: 两个主文件没有按当前顺序引用 13 章.
+- `MA010`: 两个主文件没有按该书顺序引用全部章节.
+
+两本书当前采用同一套分页约定: 每个非首个 `section` 前都紧跟 `\newpage`, 所以两本书的 `section_break_required` 都是 `True`.
+
+该开关保留为按书配置: 某本书若改用不同的分页约定, 只需在该书档案里改成 `False`, 其余检查逻辑不变.
 
 `MA` 规则只代表工程结构,不代表例题解答在数学上正确.
 
@@ -95,6 +108,8 @@ Markdown 按项目规则允许 double-dollar 行间公式,因此 `LATEX001` 只�
 ## 5. 编译目录
 
 默认使用系统临时目录中的纯英文路径作为 `latexmk -outdir`.
+
+`-outdir` 的值必须是纯 ASCII. latexmk 4.87 (TeX Live 2026) 会把该目录同时作为环境变量 `TEXMF_OUTPUT_DIRECTORY` 传给 TeX, 值含非 ASCII 字符时 `xelatex.exe` 会在 `putenv` 阶段致命退出, 表现为退出码 12, 不生成 `.log`, 只留下一个 32 字节的占位 `.aux`. 源码路径和文件名含中文不受影响, 就地编译也正常.
 
 要求:
 

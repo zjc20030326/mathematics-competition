@@ -1,6 +1,6 @@
 ---
 name: writing-math-competition-lectures
-description: Use when creating, transcribing, editing, solving, proofreading, compiling, or validating mathematical lecture notes under the 数学竞赛 project, including 数学分析培优, blank and answer editions, chapter structure, mathematical solutions, LaTeX, source-PDF collation, or lecture-note quality checks.
+description: Use when creating, transcribing, editing, solving, proofreading, compiling, or validating mathematical lecture notes under the 数学竞赛 project, including 数学分析培优 and 高等代数培优, blank and answer editions, chapter structure, mathematical solutions, LaTeX, source-PDF collation, or lecture-note quality checks.
 ---
 
 # 数学竞赛讲义编写
@@ -27,7 +27,8 @@ description: Use when creating, transcribing, editing, solving, proofreading, co
 2. 读取目标子项目的 `README.md`,主文件,`preamble.tex`,章节入口和共享内容文件.
 3. 读取 [通用规则](references/common-rules.md).
 4. 若目标是 `数学分析培优`,读取 [数学分析培优专属规则](references/math-analysis-excellence.md).
-5. 若任务包含静态检查,编译,日志或 PDF 验证,读取 [验证规则](references/validation-rules.md).
+5. 若目标是 `高等代数培优`,读取 [高等代数培优专属规则](references/advanced-algebra-excellence.md).
+6. 若任务包含静态检查,编译,日志或 PDF 验证,读取 [验证规则](references/validation-rules.md).
 
 先读取当前文件,再增量修改. 当前本地文件是代码层面的工作基线.
 
@@ -76,6 +77,8 @@ python .agents/skills/writing-math-competition-lectures/scripts/validate_lecture
 ```powershell
 python .agents/skills/writing-math-competition-lectures/scripts/validate_lecture.py check --scope project --project PATH
 ```
+
+`project` 和 `changed` 范围会按主文件名自动识别 `数学分析培优` 或 `高等代数培优`,并套用该书的章节档案. 两本书的 chapter profile 和 `section_break_required` 设置各自独立, 互不影响.
 
 验证器只报告确定性的文本和结构问题,不会改写文件,也不能代替数学审查.
 
