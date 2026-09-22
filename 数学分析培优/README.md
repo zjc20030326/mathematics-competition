@@ -15,7 +15,7 @@
 以第一章为例:
 
 ```text
-章节/第一章_数列极限/
+章节/01_第一章_数列极限/
 ├─ 第一章_数列极限_内容.tex
 ├─ 第一章_数列极限.tex
 └─ 第一章_数列极限(答案版).tex
@@ -33,5 +33,23 @@ latexmk -xelatex "数学分析培优讲义(答案版).tex"
 ```
 
 任一章的普通版、答案版入口也都可以直接单独编译.
+
+## 项目级 Skill 与检查
+
+本讲义的编写,解答,校对,编译和验证遵循项目级 `writing-math-competition-lectures` Skill.
+
+默认检查当前 Git 新增和修改行:
+
+```powershell
+python ..\.agents\skills\writing-math-competition-lectures\scripts\validate_lecture.py check --scope changed
+```
+
+全项目检查:
+
+```powershell
+python ..\.agents\skills\writing-math-competition-lectures\scripts\validate_lecture.py check --scope project --project .
+```
+
+检查器只报告问题,不会自动改写源码. 数学正确性仍需人工复核.
 
 本次迁移只调整工程结构与排版体系,不擅自修改既有题面、答案或疑问题面.后续工作是逐题数学二审与原始 PDF 校勘.

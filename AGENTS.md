@@ -48,6 +48,14 @@ writing-mathematical-latex Skill
 
 如果规则发生冲突，以更高优先级为准。
 
+涉及讲义创建,录入,编辑,解答,校对,编译或验证时,必须先读取项目级 Skill:
+
+```text
+.agents/skills/writing-math-competition-lectures/SKILL.md
+```
+
+该 Skill 管理讲义工作流和各书专属规则. 数学公式细节继续由 `writing-mathematical-latex` 管理,数学推理由 `math-reasoning` 管理,PDF 读取与渲染检查由 `pdf` 管理.
+
 涉及数学公式、数学环境、LaTeX 源码时，必须先读取：
 
 ```text
@@ -400,7 +408,7 @@ result=answer
 \exampleblank
 ```
 
-其具体行为由 `preamble.tex` 根据 `\ifshowanswer` 控制：
+其具体行为由 `preamble.tex` 根据 ElegantBook 的 `result` 模式控制:
 
 - 普通版留出书写空间；
 - 答案版不额外留白。

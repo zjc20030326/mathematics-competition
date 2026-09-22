@@ -1,0 +1,6 @@
+interface:
+  display_name: "数学竞赛讲义编写"
+  short_description: "编写,解答,校对,编译并验证数学竞赛与数学课程讲义"
+  default_prompt: "Use $writing-math-competition-lectures to edit and validate the current lecture-note task."
+policy:
+  allow_implicit_invocation: true
