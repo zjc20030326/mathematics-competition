@@ -13,25 +13,10 @@
 % 控制水印，而统一读取主文件中定义的项目级开关。
 \usepackage{draftwatermark}
 
-% ================= 中文字体:楷体粗体映射 =================
-% 楷体 \textbf 真粗体补丁 (zhkai 补 BoldFont=SimHei) 的正式位置是
-% elegantbook.cls 的 chinesefont=ctexfont 分支; 补丁原因、写法禁忌与警告
-% 静音方式见该分支内的注释.
-% 单章独立编译读到的是 TeX Live 自带的 elegantbook.cls, 本地 class 的补丁
-% 不会执行, 因此这里按本地 class 是否定义了辅助宏来判断, 补做同样的处理,
-% 使单章 PDF 与整书 PDF 的楷体粗体保持一致.
-\ifdefined\elegantkaiboldsilence
-\else
-    \ifcsname setCJKfamilyfont\endcsname
-        \ExplSyntaxOn
-        \msg_redirect_name:nnn { xeCJK } { CJKfamily-redef } { none }
-        \ExplSyntaxOff
-        \setCJKfamilyfont{zhkai}[BoldFont={SimHei}]{KaiTi}
-        \ExplSyntaxOn
-        \msg_redirect_name:nnn { xeCJK } { CJKfamily-redef } { }
-        \ExplSyntaxOff
-    \fi
-\fi
+% ================= 中文强调命令 =================
+% ElegantBook 已提供 \cbfseries (中文环境下等于 \heiti), 这里包一层作为
+% 正文明文可用的中文强调命令, 供楷体/仿宋正文中的 \textbf 替换使用.
+\newcommand{\strongcn}[1]{{\cbfseries #1}}
 
 % ================= 水印内容 =================
 \SetWatermarkScale{0.4}

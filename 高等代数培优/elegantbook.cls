@@ -276,18 +276,6 @@
         Scale = 0.9]
 \fi
 
-% 【本地修改】楷体粗体映射用到的两个辅助宏: 局部静音 / 恢复 xeCJK 的
-% CJKfamily-redef 警告. 必须在参数之外用 expl3 语法定义: 若把 \ExplSyntaxOn
-% 写进 \ifdefstring 的分支参数里, 该参数在被记成记号时 catcode 已经确定,
-% 其中的 \ExplSyntaxOn 改变不了同一参数内后续记号的 catcode, 直接写
-% \msg_redirect_name:nnn 会被拆成 \msg 而报 Undefined control sequence.
-\ExplSyntaxOn
-\cs_new_protected:Npn \elegantkaiboldsilence
-  { \msg_redirect_name:nnn { xeCJK } { CJKfamily-redef } { none } }
-\cs_new_protected:Npn \elegantkaiboldrestore
-  { \msg_redirect_name:nnn { xeCJK } { CJKfamily-redef } { } }
-\ExplSyntaxOff
-
 \ifdefstring{\ELEGANT@lang}{cn}{
     \ifdefstring{\ELEGANT@chinesefont}{founder}{
         \RequirePackage[UTF8, scheme=plain, fontset=none]{ctex}
@@ -311,24 +299,6 @@
     \ifdefstring{\ELEGANT@chinesefont}{ctexfont}{
         \RequirePackage[UTF8,scheme=plain]{ctex}
         \xeCJKsetup{AutoFakeBold=true}
-        % 【本地修改】楷体粗体映射. ctex 的 Windows 字体集给出的是
-        %   \setCJKfamilyfont{zhkai}{KaiTi}
-        % 没有 BoldFont, 而 definition、theorem、remark 等环境的正文用
-        % \cnormal (= \kaishu) 排成楷体, 于是这些环境里的 \textbf 会去要
-        % "粗体楷体", 触发
-        %   LaTeX Font Warning: Font shape `TU/KaiTi(0)/b/n' undefined
-        % 并退回 AutoFakeBold 合成的伪粗体. 这里补上真粗体: 基础字形仍是
-        % Windows 楷体 KaiTi, 粗体用 SimHei, 与本书 \heiti 已在用的黑体同款,
-        % 加粗与黑体风格一致.
-        % 不要改写成 [BoldFont={FZHei-B01}]{FZKai-Z03}: 方括号外的 FZKai-Z03
-        % 是基础字体, 那样写会连楷体字形一起换成方正楷体_GBK, 与其余仍是
-        % Windows 字体的宋体、黑体、仿宋混成两套厂商的字.
-        % 下面一行是有意重定义 ctex 已经定义过的字体族, 因此只把这一次的
-        % xeCJK 警告 CJKfamily-redef 压掉, 结束处立即恢复该消息的默认处理,
-        % 以免掩盖以后真正出现的重复定义 (辅助宏见本文件上方).
-        \elegantkaiboldsilence
-        \setCJKfamilyfont{zhkai}[BoldFont={SimHei}]{KaiTi}
-        \elegantkaiboldrestore
     }{\relax}
 
     \AfterEndPreamble{
