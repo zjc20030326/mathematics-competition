@@ -14,12 +14,12 @@
 \[
   f(x)=g(x)q(x)+r(x),\qquad \deg r<\deg g
 \]
-的 $q(x),r(x)$。
+的 $q(x),r(x)$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-直接作带余除法：
+直接作带余除法:
 \[
   x^6-1=(x^3+x+1)(x^3-x-1)+(x^2+2x).
 \]
@@ -30,7 +30,7 @@
 \end{solution}
 
 \begin{example}
-求 $a,b$，使得
+求 $a,b$,使得
 \[
   x^2-2ax+2\mid x^4+3x^2+ax+b.
 \]
@@ -66,23 +66,23 @@
   \qquad
   g(x)=x^2-3x+1.
 \]
-若 $f(x)$ 除以 $g(x)$ 后余式为 $25x-5$，求 $a,b$。
+若 $f(x)$ 除以 $g(x)$ 后余式为 $25x-5$,求 $a,b$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-由 $x^2\equiv3x-1\pmod{g(x)}$ 逐次降幂，得到
+由 $x^2\equiv3x-1\pmod{g(x)}$ 逐次降幂,得到
 \[
   f(x)\equiv (a+30)x+b-11\pmod{g(x)}.
 \]
-与余式 $25x-5$ 比较系数，得
+与余式 $25x-5$ 比较系数,得
 \[
   a=-5,\qquad b=6.
 \]
 \end{solution}
 
 \begin{example}[\markstar]
-利用综合除法，将
+利用综合除法,将
 \[
   2x^4+x^3+7x^2-8x+14
 \]
@@ -92,12 +92,12 @@
   +bx(x-1)(x-2)
   +cx(x-1)+dx+e,
 \]
-求 $a,b,c,d,e$。
+求 $a,b,c,d,e$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-这是以节点 $0,1,2,3$ 为基点的 Newton 型展开。依次作综合除法可得：
+这是以节点 $0,1,2,3$ 为基点的 Newton 型展开.依次作综合除法可得:
 \[
 \begin{array}{c|rrrrr}
 0&2&1&7&-8&14\\
@@ -105,7 +105,7 @@
  &2&1&7&-8&14
 \end{array}
 \]
-故 $e=14$；再对商的相应差分依次在 $1,2,3$ 处作综合除法，可得
+故 $e=14$;再对商的相应差分依次在 $1,2,3$ 处作综合除法,可得
 \[
   d=2,\qquad c=24,\qquad b=13,\qquad a=2.
 \]
@@ -120,42 +120,42 @@
 \end{solution}
 
 \begin{example}[\markstar]
-证明：
+证明:
 \[
   x^d-1\mid x^n-1
 \]
-的充要条件是 $d\mid n$。
+的充要条件是 $d\mid n$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-若 $d\mid n$，设 $n=qd$，则
+若 $d\mid n$,设 $n=qd$,则
 \[
   x^n-1=(x^d)^q-1
   =(x^d-1)\left(1+x^d+\cdots+x^{(q-1)d}\right).
 \]
-故 $x^d-1\mid x^n-1$。
+故 $x^d-1\mid x^n-1$.
 
-反之，设 $n=qd+r$，其中 $0\le r<d$。模 $x^d-1$ 有 $x^d\equiv1$，故
+反之,设 $n=qd+r$,其中 $0\le r<d$.模 $x^d-1$ 有 $x^d\equiv1$,故
 \[
   x^n-1\equiv x^r-1\pmod{x^d-1}.
 \]
-若 $x^d-1\mid x^n-1$，则 $x^d-1\mid x^r-1$。当 $0<r<d$ 时，
-$\deg(x^r-1)<\deg(x^d-1)$，不可能被其整除。因此 $r=0$，即 $d\mid n$。
+若 $x^d-1\mid x^n-1$,则 $x^d-1\mid x^r-1$.当 $0<r<d$ 时,
+$\deg(x^r-1)<\deg(x^d-1)$,不可能被其整除.因此 $r=0$,即 $d\mid n$.
 \end{solution}
 
 \begin{example}[\markstar\ 不可约多项式的素性]
-设 $f(x)\in F[x]$ 是一个次数大于零的多项式。证明：$f(x)$ 不可约的充要条件是：
+设 $f(x)\in F[x]$ 是一个次数大于零的多项式.证明:$f(x)$ 不可约的充要条件是:
 若
 \[
   f(x)\mid g(x)h(x),
 \]
-则必有 $f(x)\mid g(x)$ 或 $f(x)\mid h(x)$。
+则必有 $f(x)\mid g(x)$ 或 $f(x)\mid h(x)$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-若 $f$ 不可约，而 $f\mid gh$。若 $f\nmid g$，则由 $f$ 不可约可知
+若 $f$ 不可约,而 $f\mid gh$.若 $f\nmid g$,则由 $f$ 不可约可知
 \[
   (f,g)=1.
 \]
@@ -167,15 +167,15 @@ $\deg(x^r-1)<\deg(x^d-1)$，不可能被其整除。因此 $r=0$，即 $d\mid n$
 \[
   ufh+vgh=h.
 \]
-左端两项均被 $f$ 整除，故 $f\mid h$。
+左端两项均被 $f$ 整除,故 $f\mid h$.
 
-反之，若题述素性成立而 $f$ 可约，则可写成
+反之,若题述素性成立而 $f$ 可约,则可写成
 \[
   f=gh,
   \qquad
   0<\deg g,\deg h<\deg f.
 \]
-显然 $f\mid gh$，但 $f\nmid g$ 且 $f\nmid h$，矛盾。因此 $f$ 不可约。
+显然 $f\mid gh$,但 $f\nmid g$ 且 $f\nmid h$,矛盾.因此 $f$ 不可约.
 \end{solution}
 
 
@@ -220,31 +220,31 @@ $\deg(x^r-1)<\deg(x^d-1)$，不可能被其整除。因此 $r=0$，即 $d\mid n$
 \end{solution}
 
 \begin{example}
-求下列多项式的最大公因式：
+求下列多项式的最大公因式:
 \begin{enumerate}
-  \item $f(x)=x^4-x^3-4x^2+4x+1$，$g(x)=x^2-x-1$；
-  \item $f(x)=x^4+3x^3-x^2-4x-3$，$g(x)=3x^3+10x^2+2x-3$。
+  \item $f(x)=x^4-x^3-4x^2+4x+1$,$g(x)=x^2-x-1$;
+  \item $f(x)=x^4+3x^3-x^2-4x-3$,$g(x)=3x^3+10x^2+2x-3$.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-由 Euclid 算法：
+由 Euclid 算法:
 \begin{enumerate}
-  \item $(f,g)=1$；
-  \item $(f,g)=x+3$。
+  \item $(f,g)=1$;
+  \item $(f,g)=x+3$.
 \end{enumerate}
 \end{solution}
 
 \begin{example}[\markstar]
-设 $f(x),g(x)\in F[x]$，$a,b,c,d\in F$，且
+设 $f(x),g(x)\in F[x]$,$a,b,c,d\in F$,且
 \[
   \begin{vmatrix}
     a&b\\
     c&d
   \end{vmatrix}\neq0.
 \]
-证明：
+证明:
 \[
   (f,g)=(af+bg,cf+dg).
 \]
@@ -256,21 +256,21 @@ $\deg(x^r-1)<\deg(x^d-1)$，不可能被其整除。因此 $r=0$，即 $d\mid n$
 \[
   F_1=af+bg,\qquad G_1=cf+dg.
 \]
-显然 $(f,g)$ 同时整除 $F_1,G_1$，故
+显然 $(f,g)$ 同时整除 $F_1,G_1$,故
 \[
   (f,g)\mid(F_1,G_1).
 \]
-又因 $ad-bc\neq0$，有
+又因 $ad-bc\neq0$,有
 \[
   f=\dfrac{dF_1-bG_1}{ad-bc},
   \qquad
   g=\dfrac{-cF_1+aG_1}{ad-bc}.
 \]
-于是 $(F_1,G_1)$ 同时整除 $f,g$，故
+于是 $(F_1,G_1)$ 同时整除 $f,g$,故
 \[
   (F_1,G_1)\mid(f,g).
 \]
-取首一最大公因式即得二者相等。
+取首一最大公因式即得二者相等.
 \end{solution}
 
 \begin{example}
@@ -280,7 +280,7 @@ $\deg(x^r-1)<\deg(x^d-1)$，不可能被其整除。因此 $r=0$，即 $d\mid n$
   \qquad
   g(x)=x^3+kx^2+l,
 \]
-且 $(f,g)$ 是二次多项式，求 $k,l$。
+且 $(f,g)$ 是二次多项式,求 $k,l$.
 \end{example}
 \exampleblank
 
@@ -289,35 +289,35 @@ $\deg(x^r-1)<\deg(x^d-1)$，不可能被其整除。因此 $r=0$，即 $d\mid n$
 \[
   f-g=x^2+2x+l,
 \]
-而 $(f,g)$ 为二次首一多项式，所以必有
+而 $(f,g)$ 为二次首一多项式,所以必有
 \[
   (f,g)=x^2+2x+l.
 \]
-令其整除 $g$，作带余除法并令余式为零，得到
+令其整除 $g$,作带余除法并令余式为零,得到
 \[
   (k,l)=(2,0)\quad\text{或}\quad(3,-2).
 \]
 \end{solution}
 
 \begin{example}[\markstar]
-证明：若 $(f,g)=1$ 且 $f\mid gh$，则 $f\mid h$。
+证明:若 $(f,g)=1$ 且 $f\mid gh$,则 $f\mid h$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-由 $(f,g)=1$，存在 $u,v\in F[x]$ 使
+由 $(f,g)=1$,存在 $u,v\in F[x]$ 使
 \[
   uf+vg=1.
 \]
-乘以 $h$：
+乘以 $h$:
 \[
   ufh+vgh=h.
 \]
-由 $f\mid ufh$ 且 $f\mid vgh$，故 $f\mid h$。
+由 $f\mid ufh$ 且 $f\mid vgh$,故 $f\mid h$.
 \end{solution}
 
 \begin{example}[\markstar]
-证明：若 $f_1\mid g$、$f_2\mid g$ 且 $(f_1,f_2)=1$，则
+证明:若 $f_1\mid g$,$f_2\mid g$ 且 $(f_1,f_2)=1$,则
 \[
   f_1f_2\mid g.
 \]
@@ -325,15 +325,15 @@ $\deg(x^r-1)<\deg(x^d-1)$，不可能被其整除。因此 $r=0$，即 $d\mid n$
 \exampleblank
 
 \begin{solution}
-设 $g=f_1q$。由 $f_2\mid g=f_1q$ 且 $(f_1,f_2)=1$，由上一题得 $f_2\mid q$。
-故 $q=f_2h$，于是
+设 $g=f_1q$.由 $f_2\mid g=f_1q$ 且 $(f_1,f_2)=1$,由上一题得 $f_2\mid q$.
+故 $q=f_2h$,于是
 \[
   g=f_1f_2h.
 \]
 \end{solution}
 
 \begin{example}[\markstar]
-证明：若 $(f,g)=d$，则
+证明:若 $(f,g)=d$,则
 \[
   (tf,tg)=td.
 \]
@@ -350,12 +350,12 @@ $\deg(x^r-1)<\deg(x^d-1)$，不可能被其整除。因此 $r=0$，即 $d\mid n$
 \[
   tf=(td)f_1,\qquad tg=(td)g_1.
 \]
-故 $td$ 是二者的公因式。又若 $c$ 是 $tf,tg$ 的任一公因式，利用
-$(f_1,g_1)=1$ 的 Bézout 等式可得 $c\mid td$。因此最大公因式为 $td$（相差非零常数时取相应的首一化）。
+故 $td$ 是二者的公因式.又若 $c$ 是 $tf,tg$ 的任一公因式,利用
+$(f_1,g_1)=1$ 的 Bézout 等式可得 $c\mid td$.因此最大公因式为 $td$(相差非零常数时取相应的首一化).
 \end{solution}
 
 \begin{example}
-设 $f,g$ 是次数不小于 $1$ 的互素多项式。证明：存在唯一的 $u,v$ 使
+设 $f,g$ 是次数不小于 $1$ 的互素多项式.证明:存在唯一的 $u,v$ 使
 \[
   uf+vg=1,
 \]
@@ -369,33 +369,33 @@ $(f_1,g_1)=1$ 的 Bézout 等式可得 $c\mid td$。因此最大公因式为 $td
 \exampleblank
 
 \begin{solution}
-由 $(f,g)=1$，Bézout 等式保证存在 $u_0,v_0$ 使
+由 $(f,g)=1$,Bézout 等式保证存在 $u_0,v_0$ 使
 \[
   u_0f+v_0g=1.
 \]
-将 $u_0$ 除以 $g$：
+将 $u_0$ 除以 $g$:
 \[
   u_0=qg+u,
   \qquad
   \deg u<\deg g.
 \]
-代入后令 $v=v_0+qf$，便有 $uf+vg=1$。由
+代入后令 $v=v_0+qf$,便有 $uf+vg=1$.由
 \[
   vg=1-uf
 \]
-及次数比较可得 $\deg v<\deg f$。
+及次数比较可得 $\deg v<\deg f$.
 
-若还有另一组 $u_1,v_1$ 满足相同次数限制，则
+若还有另一组 $u_1,v_1$ 满足相同次数限制,则
 \[
   (u-u_1)f=-(v-v_1)g.
 \]
-由 $(f,g)=1$ 得 $g\mid u-u_1$。但 $\deg(u-u_1)<\deg g$，故 $u=u_1$，进而 $v=v_1$。
+由 $(f,g)=1$ 得 $g\mid u-u_1$.但 $\deg(u-u_1)<\deg g$,故 $u=u_1$,进而 $v=v_1$.
 \end{solution}
 
-\subsection{中国剩余定理（孙子定理）}
+\subsection{中国剩余定理(孙子定理)}
 
 \begin{theorem}[\markstar\ 中国剩余定理]
-设 $f_1(x),\ldots,f_n(x)$ 两两互素，$a_1(x),\ldots,a_n(x)$ 为任意多项式，则存在多项式 $g(x)$ 使
+设 $f_1(x),\ldots,f_n(x)$ 两两互素,$a_1(x),\ldots,a_n(x)$ 为任意多项式,则存在多项式 $g(x)$ 使
 \[
   g(x)\equiv a_i(x)\pmod{f_i(x)},
   \qquad i=1,2,\ldots,n.
@@ -403,15 +403,15 @@ $(f_1,g_1)=1$ 的 Bézout 等式可得 $c\mid td$。因此最大公因式为 $td
 \end{theorem}
 
 \begin{proof}
-对每个 $i$，令
+对每个 $i$,令
 \[
   F_i(x)=\prod_{j\ne i}f_j(x).
 \]
-由于 $f_i$ 与 $F_i$ 互素，存在 $u_i,v_i$ 使
+由于 $f_i$ 与 $F_i$ 互素,存在 $u_i,v_i$ 使
 \[
   u_iF_i+v_if_i=1.
 \]
-令 $e_i=u_iF_i$，则
+令 $e_i=u_iF_i$,则
 \[
   e_i\equiv1\pmod{f_i},
   \qquad
@@ -421,11 +421,11 @@ $(f_1,g_1)=1$ 的 Bézout 等式可得 $c\mid td$。因此最大公因式为 $td
 \[
   g=\sum\limits_{i=1}^n a_ie_i
 \]
-满足全部同余式。
+满足全部同余式.
 \end{proof}
 
 \begin{example}
-求次数最小的多项式 $f(x)$，使
+求次数最小的多项式 $f(x)$,使
 \[
 \begin{cases}
   f(x)\equiv6\pmod{x+1},\\
@@ -437,11 +437,11 @@ $(f_1,g_1)=1$ 的 Bézout 等式可得 $c\mid td$。因此最大公因式为 $td
 \exampleblank
 
 \begin{solution}
-三个模多项式两两互素。设 $\deg f<1+2+3=6$，令
+三个模多项式两两互素.设 $\deg f<1+2+3=6$,令
 \[
   f(x)=c_0+c_1x+\cdots+c_5x^5.
 \]
-分别取余并比较系数，解得
+分别取余并比较系数,解得
 \[
   c_0=1,\quad c_1=0,\quad c_2=1,\quad c_3=0,\quad c_4=4,\quad c_5=0.
 \]
@@ -460,12 +460,12 @@ $(f_1,g_1)=1$ 的 Bézout 等式可得 $c\mid td$。因此最大公因式为 $td
   x\equiv5\pmod{11}
 \end{cases}
 \]
-的整数 $x$。
+的整数 $x$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-由中国剩余定理模 $5\cdot7\cdot11=385$ 有唯一解类。直接求得
+由中国剩余定理模 $5\cdot7\cdot11=385$ 有唯一解类.直接求得
 \[
   x\equiv302\pmod{385}.
 \]
@@ -478,7 +478,7 @@ $(f_1,g_1)=1$ 的 Bézout 等式可得 $c\mid td$。因此最大公因式为 $td
 \subsection{不可约因式的素性}
 
 \begin{example}
-设 $(f,g)=1$ 且 $(f,h)=1$，证明
+设 $(f,g)=1$ 且 $(f,h)=1$,证明
 \[
   (f,gh)=1.
 \]
@@ -486,12 +486,12 @@ $(f_1,g_1)=1$ 的 Bézout 等式可得 $c\mid td$。因此最大公因式为 $td
 \exampleblank
 
 \begin{solution}
-若不可约多项式 $p$ 同时整除 $f$ 与 $gh$，由不可约因式的素性，$p\mid g$ 或 $p\mid h$，
-从而与 $(f,g)=1$ 或 $(f,h)=1$ 矛盾。因此 $f$ 与 $gh$ 无公共不可约因式，即 $(f,gh)=1$。
+若不可约多项式 $p$ 同时整除 $f$ 与 $gh$,由不可约因式的素性,$p\mid g$ 或 $p\mid h$,
+从而与 $(f,g)=1$ 或 $(f,h)=1$ 矛盾.因此 $f$ 与 $gh$ 无公共不可约因式,即 $(f,gh)=1$.
 \end{solution}
 
 \begin{example}
-证明：对任意正整数 $n$，
+证明:对任意正整数 $n$,
 \[
   (f,g)^n=(f^n,g^n).
 \]
@@ -505,7 +505,7 @@ $(f_1,g_1)=1$ 的 Bézout 等式可得 $c\mid td$。因此最大公因式为 $td
   \qquad
   g=d\prod p_i^{\beta_i},
 \]
-其中对缺失因子允许相应指数为 $0$。则
+其中对缺失因子允许相应指数为 $0$.则
 \[
   (f,g)=\prod p_i^{\min(\alpha_i,\beta_i)}.
 \]
@@ -519,7 +519,7 @@ $(f_1,g_1)=1$ 的 Bézout 等式可得 $c\mid td$。因此最大公因式为 $td
 \end{solution}
 
 \begin{example}
-设 $(f,g)=1$，证明
+设 $(f,g)=1$,证明
 \[
   (fg,f+g)=1.
 \]
@@ -527,8 +527,8 @@ $(f_1,g_1)=1$ 的 Bézout 等式可得 $c\mid td$。因此最大公因式为 $td
 \exampleblank
 
 \begin{solution}
-若不可约多项式 $p\mid fg$ 且 $p\mid f+g$，则由 $p\mid fg$ 知 $p\mid f$ 或 $p\mid g$。
-若 $p\mid f$，再由 $p\mid f+g$ 得 $p\mid g$；另一种情形同理。均与 $(f,g)=1$ 矛盾。
+若不可约多项式 $p\mid fg$ 且 $p\mid f+g$,则由 $p\mid fg$ 知 $p\mid f$ 或 $p\mid g$.
+若 $p\mid f$,再由 $p\mid f+g$ 得 $p\mid g$;另一种情形同理.均与 $(f,g)=1$ 矛盾.
 \end{solution}
 
 \begin{example}
@@ -546,24 +546,24 @@ $(f_1,g_1)=1$ 的 Bézout 等式可得 $c\mid td$。因此最大公因式为 $td
 \exampleblank
 
 \begin{solution}
-若某不可约多项式 $p$ 同时整除两边的两个乘积，则由素性可得某个 $i,j$ 使
+若某不可约多项式 $p$ 同时整除两边的两个乘积,则由素性可得某个 $i,j$ 使
 \[
   p\mid f_i,
   \qquad
   p\mid g_j,
 \]
-与 $(f_i,g_j)=1$ 矛盾。
+与 $(f_i,g_j)=1$ 矛盾.
 \end{solution}
 
 \subsection{最大公因式的不变性}
 
 \begin{theorem}[\markstar]
-设 $f(x),g(x)\in K[x]$，且数域 $F\supseteq K$。则 $f,g$ 在 $K[x]$ 中的首一最大公因式，
-等于它们在 $F[x]$ 中的首一最大公因式。特别地，两个多项式的互素性不随数域扩大而改变。
+设 $f(x),g(x)\in K[x]$,且数域 $F\supseteq K$.则 $f,g$ 在 $K[x]$ 中的首一最大公因式,
+等于它们在 $F[x]$ 中的首一最大公因式.特别地,两个多项式的互素性不随数域扩大而改变.
 \end{theorem}
 
 \begin{example}
-设 $f(x)\in\mathbb Q[x]$，且 $1+\sqrt3$ 为 $f(x)$ 的根。证明 $1-\sqrt3$ 也是 $f(x)$ 的根。
+设 $f(x)\in\mathbb Q[x]$,且 $1+\sqrt3$ 为 $f(x)$ 的根.证明 $1-\sqrt3$ 也是 $f(x)$ 的根.
 \end{example}
 \exampleblank
 
@@ -572,16 +572,16 @@ $1+\sqrt3$ 在 $\mathbb Q$ 上的最小多项式为
 \[
   (x-1)^2-3=x^2-2x-2,
 \]
-它在 $\mathbb Q[x]$ 中不可约。既然 $f(1+\sqrt3)=0$，则最小多项式整除 $f$，
-故其另一根 $1-\sqrt3$ 也必为 $f$ 的根。
+它在 $\mathbb Q[x]$ 中不可约.既然 $f(1+\sqrt3)=0$,则最小多项式整除 $f$,
+故其另一根 $1-\sqrt3$ 也必为 $f$ 的根.
 \end{solution}
 
 \begin{example}
-设 $f(x)\in\mathbb Q[x]$，且
+设 $f(x)\in\mathbb Q[x]$,且
 \[
   a\sqrt b+c\sqrt d
 \]
-为 $f(x)$ 的根，其中 $b,d$ 不是平方数。证明
+为 $f(x)$ 的根,其中 $b,d$ 不是平方数.证明
 \[
   a\sqrt b-c\sqrt d,
   \quad
@@ -589,74 +589,74 @@ $1+\sqrt3$ 在 $\mathbb Q$ 上的最小多项式为
   \quad
   -a\sqrt b-c\sqrt d
 \]
-也为 $f(x)$ 的根。
+也为 $f(x)$ 的根.
 \end{example}
 \exampleblank
 
 \begin{solution}
-按题面当前条件，此结论并非总成立。若补充通常所需条件
+按题面当前条件,此结论并非总成立.若补充通常所需条件
 \[
   [\mathbb Q(\sqrt b,\sqrt d):\mathbb Q]=4
 \]
-（例如 $b,d,bd$ 均不是有理数平方，且 $ac\ne0$），则
+(例如 $b,d,bd$ 均不是有理数平方,且 $ac\ne0$),则
 $\mathbb Q(\sqrt b,\sqrt d)$ 的四个 $\mathbb Q$-自同构分别独立改变
-$\sqrt b,\sqrt d$ 的符号。将这些自同构作用于
+$\sqrt b,\sqrt d$ 的符号.将这些自同构作用于
 \[
   f(a\sqrt b+c\sqrt d)=0
 \]
-即可得到另外三个数也都是 $f$ 的根。
+即可得到另外三个数也都是 $f$ 的根.
 
-原题条件不足，具体反例与说明见项目根目录的《解答问题记录.md》。
+原题条件不足,具体反例与说明见项目根目录的《解答问题记录.md》.
 \end{solution}
 
 \begin{example}
-设 $f(x)\in\mathbb Q[x]$，$d\in\mathbb Q$，且 $\sqrt[3]{d}$ 为无理数并且是 $f(x)$ 的一个根。
-证明 $\sqrt[3]{d}\,\omega$ 与 $\sqrt[3]{d}\,\omega^2$ 也是 $f(x)$ 的根，其中 $\omega$ 为三次单位根。
+设 $f(x)\in\mathbb Q[x]$,$d\in\mathbb Q$,且 $\sqrt[3]{d}$ 为无理数并且是 $f(x)$ 的一个根.
+证明 $\sqrt[3]{d}\,\omega$ 与 $\sqrt[3]{d}\,\omega^2$ 也是 $f(x)$ 的根,其中 $\omega$ 为三次单位根.
 \end{example}
 \exampleblank
 
 \begin{solution}
-由于 $\sqrt[3]{d}\notin\mathbb Q$，三次多项式
+由于 $\sqrt[3]{d}\notin\mathbb Q$,三次多项式
 \[
   x^3-d
 \]
-在 $\mathbb Q[x]$ 中没有有理根，故不可约。它就是 $\sqrt[3]{d}$ 的最小多项式。
-由 $f(\sqrt[3]{d})=0$ 可知 $x^3-d\mid f(x)$。因此 $x^3-d$ 的另外两个根
+在 $\mathbb Q[x]$ 中没有有理根,故不可约.它就是 $\sqrt[3]{d}$ 的最小多项式.
+由 $f(\sqrt[3]{d})=0$ 可知 $x^3-d\mid f(x)$.因此 $x^3-d$ 的另外两个根
 \[
   \sqrt[3]{d}\,\omega,
   \qquad
   \sqrt[3]{d}\,\omega^2
 \]
-也都是 $f$ 的根。
+也都是 $f$ 的根.
 \end{solution}
 
 \begin{example}
-设 $f(x)$ 是 $\mathbb Q$ 上的 $n$ 次不可约多项式。若 $f$ 的某个根的倒数也是 $f$ 的根，
-证明：$f$ 的每一个根的倒数仍是 $f$ 的根。
+设 $f(x)$ 是 $\mathbb Q$ 上的 $n$ 次不可约多项式.若 $f$ 的某个根的倒数也是 $f$ 的根,
+证明:$f$ 的每一个根的倒数仍是 $f$ 的根.
 \end{example}
 \exampleblank
 
 \begin{solution}
-设 $f(x)=a_0x^n+a_1x^{n-1}+\cdots+a_n$，并令
+设 $f(x)=a_0x^n+a_1x^{n-1}+\cdots+a_n$,并令
 \[
   f^*(x)=x^n f\left(\dfrac1x\right)
   =a_0+a_1x+\cdots+a_nx^n.
 \]
-若 $\alpha$ 与 $\alpha^{-1}$ 都是 $f$ 的根，则
+若 $\alpha$ 与 $\alpha^{-1}$ 都是 $f$ 的根,则
 \[
   f(\alpha)=0,
   \qquad
   f^*(\alpha)=\alpha^n f(\alpha^{-1})=0.
 \]
-故不可约多项式 $f$ 与 $f^*$ 有公共根，从而二者在 $\mathbb Q[x]$ 中相伴：
+故不可约多项式 $f$ 与 $f^*$ 有公共根,从而二者在 $\mathbb Q[x]$ 中相伴:
 \[
   f^*=cf
 \]
-其中 $c\ne0$。因此若 $\beta$ 为 $f$ 的任意根，则
+其中 $c\ne0$.因此若 $\beta$ 为 $f$ 的任意根,则
 \[
   0=f^*(\beta^{-1})=\beta^{-n}f(\beta),
 \]
-等价地，$\beta^{-1}$ 也是 $f$ 的根。
+等价地,$\beta^{-1}$ 也是 $f$ 的根.
 \end{solution}
 
 
@@ -665,7 +665,7 @@ $\sqrt b,\sqrt d$ 的符号。将这些自同构作用于
 \section{因式分解}
 
 \begin{example}[\markstar]
-证明：实系数奇数次方程必有实数根。
+证明:实系数奇数次方程必有实数根.
 \end{example}
 \exampleblank
 
@@ -675,13 +675,13 @@ $\sqrt b,\sqrt d$ 的符号。将这些自同构作用于
   f(x)=a_{2m+1}x^{2m+1}+\cdots+a_0,
   \qquad a_{2m+1}\ne0.
 \]
-则当 $x\to+\infty$ 与 $x\to-\infty$ 时，首项决定 $f(x)$ 分别趋向异号的无穷大。
-因此存在充分大的 $M>0$ 使 $f(M)f(-M)<0$。由连续函数介值定理，存在
-$\xi\in(-M,M)$ 使 $f(\xi)=0$。
+则当 $x\to+\infty$ 与 $x\to-\infty$ 时,首项决定 $f(x)$ 分别趋向异号的无穷大.
+因此存在充分大的 $M>0$ 使 $f(M)f(-M)<0$.由连续函数介值定理,存在
+$\xi\in(-M,M)$ 使 $f(\xi)=0$.
 \end{solution}
 
 \begin{example}
-证明：
+证明:
 \[
   (f^n,g^n)=(f,g)^n.
 \]
@@ -689,7 +689,7 @@ $\xi\in(-M,M)$ 使 $f(\xi)=0$。
 \exampleblank
 
 \begin{solution}
-这与例题 1.2.12 相同。由不可约因式标准分解，最大公因式中每个不可约因式的指数等于两边指数的较小者，
+这与例题 1.2.12 相同.由不可约因式标准分解,最大公因式中每个不可约因式的指数等于两边指数的较小者,
 故幂次整体乘以 $n$ 后仍有
 \[
   (f^n,g^n)=(f,g)^n.
@@ -697,7 +697,7 @@ $\xi\in(-M,M)$ 使 $f(\xi)=0$。
 \end{solution}
 
 \begin{example}
-设 $f(x),g(x)$ 是数域 $F$ 上的多项式。证明：
+设 $f(x),g(x)$ 是数域 $F$ 上的多项式.证明:
 \[
   f(x)\mid g(x)
 \]
@@ -709,15 +709,15 @@ $\xi\in(-M,M)$ 使 $f(\xi)=0$。
 \exampleblank
 
 \begin{solution}
-若 $f\mid g$，设 $g=fh$，则
+若 $f\mid g$,设 $g=fh$,则
 \[
   g^n=f^nh^n,
 \]
-故 $f^n\mid g^n$。
+故 $f^n\mid g^n$.
 
-反之，题设对任意 $n>1$ 成立，特别地对 $n=2$ 成立。由唯一分解定理，若某不可约因式 $p$ 在 $f$ 中指数为
-$\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\beta$，故 $\alpha\le\beta$。
-于是 $f\mid g$。
+反之,题设对任意 $n>1$ 成立,特别地对 $n=2$ 成立.由唯一分解定理,若某不可约因式 $p$ 在 $f$ 中指数为
+$\alpha$,在 $g$ 中指数为 $\beta$,则 $f^2\mid g^2$ 给出 $2\alpha\le2\beta$,故 $\alpha\le\beta$.
+于是 $f\mid g$.
 \end{solution}
 
 \subsection{单位分解}
@@ -743,12 +743,12 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
 \end{corollary}
 
 \begin{example}[\marktwostar]
-求多项式 $x^n-1$ 分别在 $\mathbb R$、$\mathbb C$ 上的因式分解。
+求多项式 $x^n-1$ 分别在 $\mathbb R$,$\mathbb C$ 上的因式分解.
 \end{example}
 \exampleblank
 
 \begin{solution}
-在 $\mathbb C$ 上，$n$ 个根为
+在 $\mathbb C$ 上,$n$ 个根为
 \[
   \omega_k=e^{\frac{2\pi ik}{n}},
   \qquad k=0,1,\ldots,n-1,
@@ -759,13 +759,13 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
   \left(x-e^{\frac{2\pi ik}{n}}\right).
 \]
 
-在 $\mathbb R$ 上，将共轭根配对。若 $n$ 为奇数，
+在 $\mathbb R$ 上,将共轭根配对.若 $n$ 为奇数,
 \[
   x^n-1=(x-1)
   \prod\limits_{k=1}^{\frac{n-1}{2}}
   \left(x^2-2x\cos\dfrac{2k\pi}{n}+1\right).
 \]
-若 $n$ 为偶数，
+若 $n$ 为偶数,
 \[
   x^n-1=(x-1)(x+1)
   \prod\limits_{k=1}^{\frac n2-1}
@@ -774,12 +774,12 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
 \end{solution}
 
 \begin{example}
-求多项式 $x^n+1$ 分别在 $\mathbb R$、$\mathbb C$ 上的因式分解。
+求多项式 $x^n+1$ 分别在 $\mathbb R$,$\mathbb C$ 上的因式分解.
 \end{example}
 \exampleblank
 
 \begin{solution}
-在 $\mathbb C$ 上，根为
+在 $\mathbb C$ 上,根为
 \[
   \zeta_k=e^{\frac{(2k+1)\pi i}{n}},
   \qquad k=0,1,\ldots,n-1,
@@ -789,13 +789,13 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
   x^n+1=\prod\limits_{k=0}^{n-1}
   \left(x-e^{\frac{(2k+1)\pi i}{n}}\right).
 \]
-在 $\mathbb R$ 上将共轭根配对：若 $n$ 为偶数，
+在 $\mathbb R$ 上将共轭根配对:若 $n$ 为偶数,
 \[
   x^n+1=
   \prod\limits_{k=0}^{\frac n2-1}
   \left(x^2-2x\cos\dfrac{(2k+1)\pi}{n}+1\right).
 \]
-若 $n$ 为奇数，$-1$ 是实根，故
+若 $n$ 为奇数,$-1$ 是实根,故
 \[
   x^n+1=(x+1)
   \prod\limits_{k=0}^{\frac{n-3}{2}}
@@ -804,22 +804,22 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
 \end{solution}
 
 \begin{example}
-求多项式 $x^n-a^n$（$a>0$）在 $\mathbb R$ 上的因式分解。
+求多项式 $x^n-a^n$($a>0$)在 $\mathbb R$ 上的因式分解.
 \end{example}
 \exampleblank
 
 \begin{solution}
-令 $x=ay$，则
+令 $x=ay$,则
 \[
   x^n-a^n=a^n(y^n-1).
 \]
-因此直接由上一题 $y^n-1$ 的实因式分解得到：若 $n$ 为奇数，
+因此直接由上一题 $y^n-1$ 的实因式分解得到:若 $n$ 为奇数,
 \[
   x^n-a^n=(x-a)
   \prod\limits_{k=1}^{\frac{n-1}{2}}
   \left(x^2-2ax\cos\dfrac{2k\pi}{n}+a^2\right),
 \]
-若 $n$ 为偶数，
+若 $n$ 为偶数,
 \[
   x^n-a^n=(x-a)(x+a)
   \prod\limits_{k=1}^{\frac n2-1}
@@ -828,7 +828,7 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
 \end{solution}
 
 \begin{example}
-证明：
+证明:
 \[
   \cos\dfrac{\pi}{2n+1}
   \cos\dfrac{2\pi}{2n+1}\cdots
@@ -850,19 +850,19 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
   \dfrac{\prod_{k=1}^{n}\sin\frac{2k\pi}{2n+1}}
         {\prod_{k=1}^{n}\sin\frac{k\pi}{2n+1}}.
 \]
-而模 $2n+1$ 看，$2,4,\ldots,2n$ 与 $1,2,\ldots,n$ 对应的正弦值只发生排列，
+而模 $2n+1$ 看,$2,4,\ldots,2n$ 与 $1,2,\ldots,n$ 对应的正弦值只发生排列,
 因为
 \[
   \sin\dfrac{(2n+1-k)\pi}{2n+1}
   =\sin\dfrac{k\pi}{2n+1}.
 \]
-故分子分母相等，结论成立。
+故分子分母相等,结论成立.
 \end{solution}
 
 \subsection{余数定理}
 
 \begin{example}
-设 $m,n,p$ 都是非负整数，证明：
+设 $m,n,p$ 都是非负整数,证明:
 \[
   x^2+x+1\mid x^{3m}+x^{3n+1}+x^{3p+2}.
 \]
@@ -874,7 +874,7 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
 \[
   x^3-1=(x-1)(x^2+x+1)\equiv0,
 \]
-故 $x^3\equiv1$。于是
+故 $x^3\equiv1$.于是
 \[
   x^{3m}+x^{3n+1}+x^{3p+2}
   \equiv1+x+x^2\equiv0.
@@ -886,12 +886,12 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
 \[
   x^2+x+1\mid f_1(x^3)+xf_2(x^3),
 \]
-证明：$x-1\mid f_1(x)$ 且 $x-1\mid f_2(x)$。
+证明:$x-1\mid f_1(x)$ 且 $x-1\mid f_2(x)$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-令 $\omega,\omega^2$ 为 $x^2+x+1$ 的两个根，则 $\omega^3=1$ 且 $\omega\ne\omega^2$。
+令 $\omega,\omega^2$ 为 $x^2+x+1$ 的两个根,则 $\omega^3=1$ 且 $\omega\ne\omega^2$.
 代入题设得到
 \[
 \begin{cases}
@@ -899,8 +899,8 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
   f_1(1)+\omega^2 f_2(1)=0.
 \end{cases}
 \]
-相减得 $(\omega-\omega^2)f_2(1)=0$，故 $f_2(1)=0$，进而 $f_1(1)=0$。
-由余数定理，$x-1$ 同时整除 $f_1,f_2$。
+相减得 $(\omega-\omega^2)f_2(1)=0$,故 $f_2(1)=0$,进而 $f_1(1)=0$.
+由余数定理,$x-1$ 同时整除 $f_1,f_2$.
 \end{solution}
 
 \begin{example}
@@ -908,7 +908,7 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
 \[
   f_0(x^5)+xf_1(x^{10})+x^2f_2(x^{15})+x^3f_3(x^{20})
 \]
-能被 $x^4+x^3+x^2+x+1$ 整除。证明：
+能被 $x^4+x^3+x^2+x+1$ 整除.证明:
 \[
   x-1\mid f_i(x),
   \qquad i=0,1,2,3.
@@ -917,7 +917,7 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
 \exampleblank
 
 \begin{solution}
-设 $\omega$ 为任意非 $1$ 的五次单位根，则 $\omega^5=1$。代入题设多项式得
+设 $\omega$ 为任意非 $1$ 的五次单位根,则 $\omega^5=1$.代入题设多项式得
 \[
   f_0(1)+\omega f_1(1)+\omega^2f_2(1)+\omega^3f_3(1)=0.
 \]
@@ -925,8 +925,8 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
 \[
   F(t)=f_0(1)+t f_1(1)+t^2f_2(1)+t^3f_3(1)
 \]
-的根。次数不超过 $3$ 的非零多项式不可能有四个不同根，故 $F\equiv0$。
-于是 $f_i(1)=0$（$i=0,1,2,3$），即 $x-1\mid f_i(x)$。
+的根.次数不超过 $3$ 的非零多项式不可能有四个不同根,故 $F\equiv0$.
+于是 $f_i(1)=0$($i=0,1,2,3$),即 $x-1\mid f_i(x)$.
 \end{solution}
 
 \begin{example}
@@ -937,7 +937,7 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
   (x^2+1)h(x)+(x-1)f(x)+(x+2)g(x)=0.
 \end{cases}
 \]
-证明：$x^2+1$ 是 $f(x)$ 和 $g(x)$ 的公因式。
+证明:$x^2+1$ 是 $f(x)$ 和 $g(x)$ 的公因式.
 \end{example}
 \exampleblank
 
@@ -946,7 +946,7 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
 \[
   2f-4g=0,
 \]
-故 $f=2g$。代回第一式：
+故 $f=2g$.代回第一式:
 \[
   (x^2+1)h+3xg=0.
 \]
@@ -954,11 +954,11 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
 \[
   (x^2+1,x)=1,
 \]
-故 $x^2+1\mid g$，于是也有 $x^2+1\mid f$。
+故 $x^2+1\mid g$,于是也有 $x^2+1\mid f$.
 \end{solution}
 
 \begin{example}
-证明：
+证明:
 \[
   x(x+1)(2x+1)
   \mid
@@ -968,7 +968,7 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
 \exampleblank
 
 \begin{solution}
-记右端为 $P(x)$。直接计算
+记右端为 $P(x)$.直接计算
 \[
   P(0)=0,
   \qquad
@@ -976,23 +976,23 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
   \qquad
   P\left(-\dfrac12\right)=0.
 \]
-故 $x$、$x+1$、$2x+1$ 均整除 $P(x)$。三者两两互素，因此
+故 $x$,$x+1$,$2x+1$ 均整除 $P(x)$.三者两两互素,因此
 \[
   x(x+1)(2x+1)\mid P(x).
 \]
 \end{solution}
 
 \begin{example}
-设 $f(x)$ 是一个 $n$ 次多项式，且当 $k=0,1,2,\ldots,n$ 时，
+设 $f(x)$ 是一个 $n$ 次多项式,且当 $k=0,1,2,\ldots,n$ 时,
 \[
   f(k)=k^{k+1}.
 \]
-求 $f(n+1)$。
+求 $f(n+1)$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-由于 $\deg f\le n$，其 $(n+1)$ 阶前向差分恒为零：
+由于 $\deg f\le n$,其 $(n+1)$ 阶前向差分恒为零:
 \[
   \sum\limits_{k=0}^{n+1}
   (-1)^{n+1-k}C_k^{n+1}f(k)=0.
@@ -1004,34 +1004,34 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
   \sum\limits_{k=0}^{n}
   (-1)^{n-k}C_k^{n+1}k^{k+1}}
 \]
-（其中 $k=0$ 项按 $0^{1}=0$ 处理）。
+(其中 $k=0$ 项按 $0^{1}=0$ 处理).
 \end{solution}
 
 \subsection{重因式}
 
 \begin{example}
-判断下列多项式有无重因式：
+判断下列多项式有无重因式:
 \begin{enumerate}
-  \item $f(x)=x^5-10x^3-20x^2-15x-4$；
-  \item $f(x)=4x^3-4x^2-7x-2$；
-  \item $f(x)=x^3+x+1$。
+  \item $f(x)=x^5-10x^3-20x^2-15x-4$;
+  \item $f(x)=4x^3-4x^2-7x-2$;
+  \item $f(x)=x^3+x+1$.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-直接分解：
+直接分解:
 \[
 \begin{aligned}
   x^5-10x^3-20x^2-15x-4&=(x-4)(x+1)^4,\\
   4x^3-4x^2-7x-2&=(x-2)(2x+1)^2.
 \end{aligned}
 \]
-故前两式分别有重因式 $x+1$ 与 $2x+1$。第三式
+故前两式分别有重因式 $x+1$ 与 $2x+1$.第三式
 \[
   (x^3+x+1,3x^2+1)=1,
 \]
-故无重因式。
+故无重因式.
 \end{solution}
 
 \begin{example}
@@ -1039,12 +1039,12 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
 \[
   f(x)=x^3+6x^2+3px+8,
 \]
-确定 $p$ 的值，使 $f(x)$ 有重根，并求其根。
+确定 $p$ 的值,使 $f(x)$ 有重根,并求其根.
 \end{example}
 \exampleblank
 
 \begin{solution}
-三次多项式有重根当且仅当判别式为零。计算得
+三次多项式有重根当且仅当判别式为零.计算得
 \[
   \Delta(f)=-108(p-4)^2(p+5).
 \]
@@ -1052,22 +1052,22 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
 \[
   p=4\quad\text{或}\quad p=-5.
 \]
-当 $p=4$ 时，
+当 $p=4$ 时,
 \[
   f(x)=(x+2)^3;
 \]
-当 $p=-5$ 时，
+当 $p=-5$ 时,
 \[
   f(x)=(x-1)^2(x+8).
 \]
 \end{solution}
 
 \begin{example}[\markstar]
-证明：
+证明:
 \[
   f(x)=1+\dfrac{x}{1!}+\dfrac{x^2}{2!}+\cdots+\dfrac{x^n}{n!}
 \]
-无重根。
+无重根.
 \end{example}
 \exampleblank
 
@@ -1082,35 +1082,35 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
   \qquad
   f_n(x)-f_{n-1}(x)=\dfrac{x^n}{n!}.
 \]
-若 $\alpha$ 是重根，则
+若 $\alpha$ 是重根,则
 \[
   f_n(\alpha)=f_n'(\alpha)=f_{n-1}(\alpha)=0,
 \]
-从而 $\alpha^n=0$，故 $\alpha=0$。但 $f_n(0)=1$，矛盾。因此无重根。
+从而 $\alpha^n=0$,故 $\alpha=0$.但 $f_n(0)=1$,矛盾.因此无重根.
 \end{solution}
 
 \begin{proposition}[\markstar]
 \[
   \dfrac{f(x)}{(f(x),f'(x))}
 \]
-是一个没有重因式的多项式，并且它的不可约因式与 $f(x)$ 的不可约因式相同。
+是一个没有重因式的多项式,并且它的不可约因式与 $f(x)$ 的不可约因式相同.
 \end{proposition}
 
 \begin{example}
-设 $\deg f(x)=n\ge1$。若
+设 $\deg f(x)=n\ge1$.若
 \[
   f'(x)\mid f(x),
 \]
-证明：$f(x)$ 有一个 $n$ 重根。
+证明:$f(x)$ 有一个 $n$ 重根.
 \end{example}
 \exampleblank
 
 \begin{solution}
-因为 $\deg f'=n-1$，存在一次多项式 $ax+b$ 使
+因为 $\deg f'=n-1$,存在一次多项式 $ax+b$ 使
 \[
   f=(ax+b)f'.
 \]
-比较最高次项可知 $a=\dfrac1n$。令 $\alpha=-b/a$，则
+比较最高次项可知 $a=\dfrac1n$.令 $\alpha=-b/a$,则
 \[
   f(x)=\dfrac{x-\alpha}{n}f'(x).
 \]
@@ -1122,143 +1122,143 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
 \[
   f(x)=C(x-\alpha)^n,
 \]
-故 $\alpha$ 是 $n$ 重根。
+故 $\alpha$ 是 $n$ 重根.
 \end{solution}
 
 
 \newpage
 
-\section{有理、整系数多项式}
+\section{有理,整系数多项式}
 
 \begin{example}
-求下列多项式的有理根：
+求下列多项式的有理根:
 \begin{enumerate}
-  \item $x^3-6x^2+15x-14$；
-  \item $4x^4-7x^2-5x-1$；
-  \item $x^5-12x^3+36x+12$。
+  \item $x^3-6x^2+15x-14$;
+  \item $4x^4-7x^2-5x-1$;
+  \item $x^5-12x^3+36x+12$.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-由有理根定理逐一检验候选值：
+由有理根定理逐一检验候选值:
 \begin{enumerate}
   \item
   \[
     x^3-6x^2+15x-14=(x-2)(x^2-4x+7),
   \]
-  故唯一有理根为 $2$；
+  故唯一有理根为 $2$;
   \item
   \[
     4x^4-7x^2-5x-1=(2x+1)^2(x^2-x-1),
   \]
-  故唯一有理根为 $-\dfrac12$，重数为 $2$；
-  \item 候选有理根为 $\pm1,\pm2,\pm3,\pm4,\pm6,\pm12$，逐一代入均不为零，故无有理根。
+  故唯一有理根为 $-\dfrac12$,重数为 $2$;
+  \item 候选有理根为 $\pm1,\pm2,\pm3,\pm4,\pm6,\pm12$,逐一代入均不为零,故无有理根.
 \end{enumerate}
 \end{solution}
 
 \begin{example}
-判断下列多项式在 $\mathbb Q$ 上是否可约：
+判断下列多项式在 $\mathbb Q$ 上是否可约:
 \begin{enumerate}
-  \item $x^4-8x^3+12x^2+2$；
-  \item $x^p+px+1$，其中 $p$ 为奇素数；
-  \item $x^{p-1}+x^{p-2}+\cdots+x+1$，其中 $p$ 为素数。
+  \item $x^4-8x^3+12x^2+2$;
+  \item $x^p+px+1$,其中 $p$ 为奇素数;
+  \item $x^{p-1}+x^{p-2}+\cdots+x+1$,其中 $p$ 为素数.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-三者均在 $\mathbb Q$ 上不可约。
+三者均在 $\mathbb Q$ 上不可约.
 
 (1) 模 $3$ 化简得到
 \[
   x^4+x^3-1\in\mathbb F_3[x].
 \]
-它在 $\mathbb F_3$ 中无一次因子；进一步检验唯一可能的首一不可约二次因子可知亦无二次因子，
-故在 $\mathbb F_3[x]$ 中不可约。由模素数判别法，原多项式在 $\mathbb Q[x]$ 中不可约。
+它在 $\mathbb F_3$ 中无一次因子;进一步检验唯一可能的首一不可约二次因子可知亦无二次因子,
+故在 $\mathbb F_3[x]$ 中不可约.由模素数判别法,原多项式在 $\mathbb Q[x]$ 中不可约.
 
-(2) 作平移 $x=y-1$：
+(2) 作平移 $x=y-1$:
 \[
   (y-1)^p+p(y-1)+1.
 \]
-由于 $p$ 为奇素数，除首项外各系数均被 $p$ 整除，而常数项为 $-p$，不被 $p^2$ 整除。
-由 Eisenstein 判别法知其不可约，故原多项式不可约。
+由于 $p$ 为奇素数,除首项外各系数均被 $p$ 整除,而常数项为 $-p$,不被 $p^2$ 整除.
+由 Eisenstein 判别法知其不可约,故原多项式不可约.
 
 (3) 这是素数阶分圆多项式
 \[
   \Phi_p(x)=\dfrac{x^p-1}{x-1}.
 \]
-作平移 $x=y+1$ 后，除首项外各项系数均被 $p$ 整除，而常数项为 $p$ 且不被 $p^2$ 整除。
-由 Eisenstein 判别法得不可约。
+作平移 $x=y+1$ 后,除首项外各项系数均被 $p$ 整除,而常数项为 $p$ 且不被 $p^2$ 整除.
+由 Eisenstein 判别法得不可约.
 \end{solution}
 
 \begin{example}
-设 $f(x)$ 是次数大于 $0$ 的首一整系数多项式。若 $f(0),f(1)$ 都是奇数，证明：$f(x)$ 没有有理根。
+设 $f(x)$ 是次数大于 $0$ 的首一整系数多项式.若 $f(0),f(1)$ 都是奇数,证明:$f(x)$ 没有有理根.
 \end{example}
 \exampleblank
 
 \begin{solution}
-首一整系数多项式的有理根必为整数。若整数根 $m$ 为偶数，则
+首一整系数多项式的有理根必为整数.若整数根 $m$ 为偶数,则
 \[
   f(m)\equiv f(0)\equiv1\pmod2,
 \]
-不可能为 $0$；若 $m$ 为奇数，则
+不可能为 $0$;若 $m$ 为奇数,则
 \[
   f(m)\equiv f(1)\equiv1\pmod2,
 \]
-同样不可能为 $0$。故无有理根。
+同样不可能为 $0$.故无有理根.
 \end{solution}
 
 \begin{example}[\markstar]
-设 $f(x)$ 是整系数多项式，且
+设 $f(x)$ 是整系数多项式,且
 \[
   f(0),f(1),\ldots,f(n-1)
 \]
-都不能被 $n$ 整除。证明：$f(x)$ 没有整数根。
+都不能被 $n$ 整除.证明:$f(x)$ 没有整数根.
 \end{example}
 \exampleblank
 
 \begin{solution}
-若整数 $m$ 是 $f$ 的根，取 $r\in\{0,1,\ldots,n-1\}$ 使 $m\equiv r\pmod n$。
-整系数多项式保持同余，故
+若整数 $m$ 是 $f$ 的根,取 $r\in\{0,1,\ldots,n-1\}$ 使 $m\equiv r\pmod n$.
+整系数多项式保持同余,故
 \[
   f(m)\equiv f(r)\pmod n.
 \]
-由于 $f(m)=0$，得到 $n\mid f(r)$，与题设矛盾。
+由于 $f(m)=0$,得到 $n\mid f(r)$,与题设矛盾.
 \end{solution}
 
 \begin{example}
-设 $a_1,a_2,\ldots,a_n$ 为互不相同的整数，令
+设 $a_1,a_2,\ldots,a_n$ 为互不相同的整数,令
 \[
   P(x)=\prod\limits_{i=1}^{n}(x-a_i),
   \qquad
   f(x)=P(x)-1.
 \]
 \begin{enumerate}
-  \item 证明 $f(x)$ 在 $\mathbb Q$ 上不可约；
-  \item 对整数 $t\ne-1$，讨论
+  \item 证明 $f(x)$ 在 $\mathbb Q$ 上不可约;
+  \item 对整数 $t\ne-1$,讨论
   \[
     g(x)=P(x)+t
   \]
-  在 $\mathbb Q$ 上是否一定不可约。
+  在 $\mathbb Q$ 上是否一定不可约.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-(1) 反设 $f=gh$ 在 $\mathbb Z[x]$ 中有非平凡分解，并取
+(1) 反设 $f=gh$ 在 $\mathbb Z[x]$ 中有非平凡分解,并取
 \[
   0<\deg g\le\deg h.
 \]
-由 $f(a_i)=-1$，知
+由 $f(a_i)=-1$,知
 \[
   g(a_i)=\pm1.
 \]
-于是 $g(x)^2-1$ 在 $a_1,\ldots,a_n$ 处均为零，故
+于是 $g(x)^2-1$ 在 $a_1,\ldots,a_n$ 处均为零,故
 \[
   P(x)\mid g(x)^2-1.
 \]
-又 $2\deg g\le n$。若 $2\deg g<n$，则次数矛盾；若 $2\deg g=n$，由首项系数比较只能有
+又 $2\deg g\le n$.若 $2\deg g<n$,则次数矛盾;若 $2\deg g=n$,由首项系数比较只能有
 \[
   g(x)^2-1=P(x).
 \]
@@ -1266,21 +1266,21 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
 \[
   f(x)=P(x)-1=g(x)^2-2.
 \]
-但 $g\mid f$ 将推出 $g\mid2$，与 $\deg g>0$ 矛盾。故 $f$ 不可约。
+但 $g\mid f$ 将推出 $g\mid2$,与 $\deg g>0$ 矛盾.故 $f$ 不可约.
 
-(2) 对 $t\ne-1$ 不能保证不可约。例如取 $t=0$，则
+(2) 对 $t\ne-1$ 不能保证不可约.例如取 $t=0$,则
 \[
   g(x)=P(x)=\prod\limits_{i=1}^{n}(x-a_i)
 \]
-显然可约（当 $n>1$）。因此题设中的 $t\ne-1$ 并不足以推出统一的不可约性结论。
+显然可约(当 $n>1$).因此题设中的 $t\ne-1$ 并不足以推出统一的不可约性结论.
 \end{solution}
 
 \begin{example}
-设 $a_1,a_2,\ldots,a_n$ 是互不相同的整数。证明
+设 $a_1,a_2,\ldots,a_n$ 是互不相同的整数.证明
 \[
   f(x)=\prod\limits_{i=1}^{n}(x-a_i)+1
 \]
-在 $\mathbb Q$ 上不可约，或者是某一有理系数多项式的平方。
+在 $\mathbb Q$ 上不可约,或者是某一有理系数多项式的平方.
 \end{example}
 \exampleblank
 
@@ -1289,13 +1289,13 @@ $\alpha$，在 $g$ 中指数为 $\beta$，则 $f^2\mid g^2$ 给出 $2\alpha\le2\
 \[
   P(x)=\prod\limits_{i=1}^{n}(x-a_i).
 \]
-若 $f=P+1$ 可约，由 Gauss 引理可在 $\mathbb Z[x]$ 中写成 $f=gh$，并取
-$0<\deg g\le\deg h$。由
+若 $f=P+1$ 可约,由 Gauss 引理可在 $\mathbb Z[x]$ 中写成 $f=gh$,并取
+$0<\deg g\le\deg h$.由
 \[
   f(a_i)=1
 \]
-知 $g(a_i)=h(a_i)=\pm1$，因而 $P\mid g^2-1$。与上一题同样的次数比较表明
-$2\deg g<n$ 不可能，故 $2\deg g=n$，并由首项系数比较得到
+知 $g(a_i)=h(a_i)=\pm1$,因而 $P\mid g^2-1$.与上一题同样的次数比较表明
+$2\deg g<n$ 不可能,故 $2\deg g=n$,并由首项系数比较得到
 \[
   P=g^2-1.
 \]
@@ -1303,15 +1303,15 @@ $2\deg g<n$ 不可能，故 $2\deg g=n$，并由首项系数比较得到
 \[
   f=P+1=g^2.
 \]
-因此若 $f$ 可约，它必为一个有理（事实上整系数）多项式的平方。
+因此若 $f$ 可约,它必为一个有理(事实上整系数)多项式的平方.
 \end{solution}
 
 \begin{example}
-设 $a_1,a_2,\ldots,a_n$ 是 $n$ 个互不相同的整数，证明
+设 $a_1,a_2,\ldots,a_n$ 是 $n$ 个互不相同的整数,证明
 \[
   f(x)=\prod\limits_{i=1}^{n}(x-a_i)^2+1
 \]
-在 $\mathbb Q$ 上不可约。
+在 $\mathbb Q$ 上不可约.
 \end{example}
 \exampleblank
 
@@ -1322,16 +1322,16 @@ $2\deg g<n$ 不可能，故 $2\deg g=n$，并由首项系数比较得到
   \qquad
   f=P^2+1.
 \]
-若 $f=gh$ 在 $\mathbb Z[x]$ 中非平凡分解，则 $f(x)>0$ 对所有实数 $x$ 成立，故 $g,h$ 均无实根，
-从而各自在 $\mathbb R$ 上不变号。又
+若 $f=gh$ 在 $\mathbb Z[x]$ 中非平凡分解,则 $f(x)>0$ 对所有实数 $x$ 成立,故 $g,h$ 均无实根,
+从而各自在 $\mathbb R$ 上不变号.又
 \[
   g(a_i)h(a_i)=1,
 \]
-所以对所有 $i$，$g(a_i)$ 必恒为同一个 $1$ 或恒为同一个 $-1$。
+所以对所有 $i$,$g(a_i)$ 必恒为同一个 $1$ 或恒为同一个 $-1$.
 
-不妨 $0<\deg g\le n$。若 $\deg g<n$，则 $g(x)\mp1$ 有 $n$ 个不同整数根，迫使 $g\equiv\pm1$，矛盾。
-故 $\deg g=n$，同理 $\deg h=n$。同时 $g(a_i)=h(a_i)$，故 $P\mid g-h$。
-取两个因子的首项系数同号并首一化后，$\deg(g-h)<n$，于是 $g=h$。这将给出
+不妨 $0<\deg g\le n$.若 $\deg g<n$,则 $g(x)\mp1$ 有 $n$ 个不同整数根,迫使 $g\equiv\pm1$,矛盾.
+故 $\deg g=n$,同理 $\deg h=n$.同时 $g(a_i)=h(a_i)$,故 $P\mid g-h$.
+取两个因子的首项系数同号并首一化后,$\deg(g-h)<n$,于是 $g=h$.这将给出
 \[
   P^2+1=g^2,
 \]
@@ -1339,7 +1339,7 @@ $2\deg g<n$ 不可能，故 $2\deg g=n$，并由首项系数比较得到
 \[
   (g-P)(g+P)=1,
 \]
-不可能。故 $f$ 在 $\mathbb Q$ 上不可约。
+不可能.故 $f$ 在 $\mathbb Q$ 上不可约.
 \end{solution}
 
 \begin{example}
@@ -1347,7 +1347,7 @@ $2\deg g<n$ 不可能，故 $2\deg g=n$，并由首项系数比较得到
 \[
   f(x)=\prod\limits_{i=1}^{2025}(x-i)^2+2026.
 \]
-判断 $f(x)$ 在 $\mathbb Q$ 上是否可约，并证明结论。
+判断 $f(x)$ 在 $\mathbb Q$ 上是否可约,并证明结论.
 \end{example}
 \exampleblank
 
@@ -1358,11 +1358,11 @@ $2\deg g<n$ 不可能，故 $2\deg g=n$，并由首项系数比较得到
   \qquad
   F(x)=P^2(x)+2026.
 \]
-反设 $F$ 在 $\mathbb Q[x]$ 中可约。由于 $F$ 为首一整系数多项式，由 Gauss 引理可写成
+反设 $F$ 在 $\mathbb Q[x]$ 中可约.由于 $F$ 为首一整系数多项式,由 Gauss 引理可写成
 \[
   F(x)=g(x)h(x),
 \]
-其中 $g,h\in\mathbb Z[x]$ 均首一，且
+其中 $g,h\in\mathbb Z[x]$ 均首一,且
 \[
   0<\deg g\leq\deg h.
 \]
@@ -1374,8 +1374,8 @@ $2\deg g<n$ 不可能，故 $2\deg g=n$，并由首项系数比较得到
 \[
   F(x)=P^2(x)+2026>0
 \]
-对所有实数 $x$ 成立，所以 $g,h$ 都没有实根。二者均首一，因此在实轴上恒正。
-特别地，对 $i=1,2,\ldots,2025$，
+对所有实数 $x$ 成立,所以 $g,h$ 都没有实根.二者均首一,因此在实轴上恒正.
+特别地,对 $i=1,2,\ldots,2025$,
 \[
   g(i)h(i)=F(i)=2026=2\times1013,
 \]
@@ -1384,7 +1384,7 @@ $2\deg g<n$ 不可能，故 $2\deg g=n$，并由首项系数比较得到
   g(i)\in\{1,2,1013,2026\}.
 \]
 
-对任意整数 $u,v$，有
+对任意整数 $u,v$,有
 \[
   u-v\mid g(u)-g(v).
 \]
@@ -1397,31 +1397,31 @@ $2\deg g<n$ 不可能，故 $2\deg g=n$，并由首项系数比较得到
   \ 2024,
   \ 2025,
 \]
-这些数没有一个能被 $6$ 或 $7$ 整除。因此，只要指标仍落在
-$\{1,2,\ldots,2025\}$ 内，就有
+这些数没有一个能被 $6$ 或 $7$ 整除.因此,只要指标仍落在
+$\{1,2,\ldots,2025\}$ 内,就有
 \[
   g(i+6)=g(i),
   \qquad
   g(i+7)=g(i).
 \]
-于是对 $1\leq i\leq2018$，
+于是对 $1\leq i\leq2018$,
 \[
   g(i)=g(i+7)=g(i+1),
 \]
-再利用步长 $6$ 可把最后几个整数也与前面连接起来，故
+再利用步长 $6$ 可把最后几个整数也与前面连接起来,故
 \[
   g(1)=g(2)=\cdots=g(2025)=c
 \]
-对某个 $c\in\{1,2,1013,2026\}$ 成立。
+对某个 $c\in\{1,2,1013,2026\}$ 成立.
 
-因此 $g(x)-c$ 有 $2025$ 个不同整数根。由于 $g$ 非常数且
-$\deg g\leq2025$，只能有
+因此 $g(x)-c$ 有 $2025$ 个不同整数根.由于 $g$ 非常数且
+$\deg g\leq2025$,只能有
 \[
   \deg g=2025,
   \qquad
   g(x)=P(x)+c.
 \]
-于是 $h$ 也为 $2025$ 次首一多项式。由同样的论证，存在整数 $d>0$ 使
+于是 $h$ 也为 $2025$ 次首一多项式.由同样的论证,存在整数 $d>0$ 使
 \[
   h(x)=P(x)+d.
 \]
@@ -1429,13 +1429,13 @@ $\deg g\leq2025$，只能有
 \[
   (P+c)(P+d)=P^2+2026
 \]
-的 $P$ 项与常数项，得到
+的 $P$ 项与常数项,得到
 \[
   c+d=0,
   \qquad
   cd=2026,
 \]
-矛盾。
+矛盾.
 
 故
 \[
@@ -1444,26 +1444,26 @@ $\deg g\leq2025$，只能有
 \end{solution}
 
 \begin{example}
-设 $f(x)$ 是整系数多项式，且
+设 $f(x)$ 是整系数多项式,且
 \[
   f(1)=f(2)=f(3)=p,
 \]
-其中 $p$ 为素数。证明：不存在整数 $m$ 使 $f(m)=2p$。
+其中 $p$ 为素数.证明:不存在整数 $m$ 使 $f(m)=2p$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-若存在整数 $m$ 使 $f(m)=2p$，则对 $i=1,2,3$，整系数多项式的差值性质给出
+若存在整数 $m$ 使 $f(m)=2p$,则对 $i=1,2,3$,整系数多项式的差值性质给出
 \[
   m-i\mid f(m)-f(i)=p.
 \]
-故每个 $m-i$ 都只能取 $\pm1,\pm p$ 的某个值。
-但 $m-1,m-2,m-3$ 是三个连续整数，不可能全部属于集合
-$\{\pm1,\pm p\}$。矛盾。
+故每个 $m-i$ 都只能取 $\pm1,\pm p$ 的某个值.
+但 $m-1,m-2,m-3$ 是三个连续整数,不可能全部属于集合
+$\{\pm1,\pm p\}$.矛盾.
 \end{solution}
 
 \begin{example}[\markstar]
-设 $f(x)$ 是实系数多项式，且对任意实数 $c$ 都有 $f(c)\ge0$。证明：存在实系数多项式 $g,h$ 使
+设 $f(x)$ 是实系数多项式,且对任意实数 $c$ 都有 $f(c)\ge0$.证明:存在实系数多项式 $g,h$ 使
 \[
   f(x)=g^2(x)+h^2(x).
 \]
@@ -1471,19 +1471,19 @@ $\{\pm1,\pm p\}$。矛盾。
 \exampleblank
 
 \begin{solution}
-将 $f$ 在 $\mathbb R[x]$ 中分解。由于 $f(x)\ge0$，每个实根的重数都是偶数，故实一次因子的乘积可并入一个平方。
+将 $f$ 在 $\mathbb R[x]$ 中分解.由于 $f(x)\ge0$,每个实根的重数都是偶数,故实一次因子的乘积可并入一个平方.
 其余不可约二次因子均形如
 \[
   (x-a)^2+b^2,
   \qquad b\ne0,
 \]
-本身就是两个实系数多项式平方之和。
+本身就是两个实系数多项式平方之和.
 再反复使用恒等式
 \[
   (u^2+v^2)(s^2+t^2)
   =(us-vt)^2+(ut+vs)^2,
 \]
-即可将全部因子的乘积写成两个实系数多项式平方之和。
+即可将全部因子的乘积写成两个实系数多项式平方之和.
 \end{solution}
 
 \begin{example}
@@ -1492,12 +1492,12 @@ $\{\pm1,\pm p\}$。矛盾。
   f(x)\mid f(x^m),
   \qquad m>1,
 \]
-证明：$f(x)$ 的根只能是 $0$ 或单位根。
+证明:$f(x)$ 的根只能是 $0$ 或单位根.
 \end{example}
 \exampleblank
 
 \begin{solution}
-设 $\alpha$ 为 $f$ 的根。由 $f\mid f(x^m)$ 得
+设 $\alpha$ 为 $f$ 的根.由 $f\mid f(x^m)$ 得
 \[
   f(\alpha^m)=0.
 \]
@@ -1505,7 +1505,7 @@ $\{\pm1,\pm p\}$。矛盾。
 \[
   \alpha,\alpha^m,\alpha^{m^2},\ldots
 \]
-全是 $f$ 的根。若 $\alpha=0$，结论成立；若 $\alpha\ne0$，由于 $f$ 只有有限多个根，
+全是 $f$ 的根.若 $\alpha=0$,结论成立;若 $\alpha\ne0$,由于 $f$ 只有有限多个根,
 必有 $r<s$ 使
 \[
   \alpha^{m^r}=\alpha^{m^s}.
@@ -1514,7 +1514,7 @@ $\{\pm1,\pm p\}$。矛盾。
 \[
   \alpha^{m^r(m^{s-r}-1)}=1.
 \]
-故 $\alpha$ 是单位根。
+故 $\alpha$ 是单位根.
 \end{solution}
 
 
@@ -1528,7 +1528,7 @@ $\{\pm1,\pm p\}$。矛盾。
   f(x)=a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n,
   \qquad a_0\ne0,
 \]
-设 $x_1,\ldots,x_n$ 为其在复数域中的全部根（按重数计），则
+设 $x_1,\ldots,x_n$ 为其在复数域中的全部根(按重数计),则
 \[
   \sigma_i
   =\sum\limits_{1\le k_1<\cdots<k_i\le n}
@@ -1543,12 +1543,12 @@ $\{\pm1,\pm p\}$。矛盾。
 \[
   s_k=x_1^k+x_2^k+\cdots+x_n^k.
 \]
-当 $1\le k\le n$ 时，
+当 $1\le k\le n$ 时,
 \[
   s_k-\sigma_1s_{k-1}+\sigma_2s_{k-2}-\cdots
   +(-1)^{k-1}\sigma_{k-1}s_1+(-1)^k k\sigma_k=0.
 \]
-当 $k>n$ 时，
+当 $k>n$ 时,
 \[
   s_k-\sigma_1s_{k-1}+\sigma_2s_{k-2}-\cdots
   +(-1)^n\sigma_ns_{k-n}=0.
@@ -1556,7 +1556,7 @@ $\{\pm1,\pm p\}$。矛盾。
 \end{theorem}
 
 \begin{theorem}[\markstar]
-设 $f(x_1,\ldots,x_n)$ 是数域 $K$ 上的对称多项式，则存在唯一的
+设 $f(x_1,\ldots,x_n)$ 是数域 $K$ 上的对称多项式,则存在唯一的
 $g(y_1,\ldots,y_n)\in K[y_1,\ldots,y_n]$ 使
 \[
   f(x_1,\ldots,x_n)=g(\sigma_1,\ldots,\sigma_n).
@@ -1564,16 +1564,16 @@ $g(y_1,\ldots,y_n)\in K[y_1,\ldots,y_n]$ 使
 \end{theorem}
 
 \begin{example}
-按字典排列法整理下列多项式：
+按字典排列法整理下列多项式:
 \begin{enumerate}
-  \item $x_1^2x_2+x_1^3x_3+3x_1x_2x_3-4x_2x_3^5$；
-  \item $(x_1^3-2x_3+x_1x_2x_3)(x_1^2-x_3^2-x_1x_2)$。
+  \item $x_1^2x_2+x_1^3x_3+3x_1x_2x_3-4x_2x_3^5$;
+  \item $(x_1^3-2x_3+x_1x_2x_3)(x_1^2-x_3^2-x_1x_2)$.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-按 $x_1>x_2>x_3$ 的字典序：
+按 $x_1>x_2>x_3$ 的字典序:
 \begin{enumerate}
   \item
   \[
@@ -1591,43 +1591,43 @@ $g(y_1,\ldots,y_n)\in K[y_1,\ldots,y_n]$ 使
 \end{solution}
 
 \begin{example}
-设 $f(x_1,\ldots,x_n),g(x_1,\ldots,x_n)$ 是数域 $K$ 上的多项式，且 $g$ 不是零多项式。
+设 $f(x_1,\ldots,x_n),g(x_1,\ldots,x_n)$ 是数域 $K$ 上的多项式,且 $g$ 不是零多项式.
 若对一切满足 $g(a_1,\ldots,a_n)\ne0$ 的 $(a_1,\ldots,a_n)\in K^n$ 都有
 \[
   f(a_1,\ldots,a_n)=0,
 \]
-证明 $f$ 是零多项式。
+证明 $f$ 是零多项式.
 \end{example}
 \exampleblank
 
 \begin{solution}
-数域 $K$ 为无限域。对变量个数作归纳。$n=1$ 时，非零一元多项式只有有限个根，
-而 $g$ 的零点也有限，因此不可能在所有 $g(a)\ne0$ 的点上均有 $f(a)=0$，除非 $f\equiv0$。
+数域 $K$ 为无限域.对变量个数作归纳.$n=1$ 时,非零一元多项式只有有限个根,
+而 $g$ 的零点也有限,因此不可能在所有 $g(a)\ne0$ 的点上均有 $f(a)=0$,除非 $f\equiv0$.
 
-设结论对 $n-1$ 个变量成立。将 $f,g$ 视为关于 $x_n$ 的多项式，其系数属于
-$K[x_1,\ldots,x_{n-1}]$。若 $f\not\equiv0$，可选取
-$(a_1,\ldots,a_{n-1})$ 使得 $f$ 的某个非零系数与 $g$ 的某个非零系数均不为零。
+设结论对 $n-1$ 个变量成立.将 $f,g$ 视为关于 $x_n$ 的多项式,其系数属于
+$K[x_1,\ldots,x_{n-1}]$.若 $f\not\equiv0$,可选取
+$(a_1,\ldots,a_{n-1})$ 使得 $f$ 的某个非零系数与 $g$ 的某个非零系数均不为零.
 于是得到两个非零的一元多项式
 \[
   f(a_1,\ldots,a_{n-1},x_n),
   \qquad
   g(a_1,\ldots,a_{n-1},x_n).
 \]
-在无限域中可选 $a_n$ 使后者不为零且前者也不为零，与题设矛盾。因此 $f\equiv0$。
+在无限域中可选 $a_n$ 使后者不为零且前者也不为零,与题设矛盾.因此 $f\equiv0$.
 \end{solution}
 
 \begin{example}
-用初等对称多项式 $\sigma_1,\sigma_2,\sigma_3$ 表示：
+用初等对称多项式 $\sigma_1,\sigma_2,\sigma_3$ 表示:
 \begin{enumerate}
-  \item $(x_1+x_2+x_1x_2)(x_2+x_3+x_2x_3)(x_1+x_3+x_1x_3)$；
-  \item $(x_1^2+x_2x_3)(x_2^2+x_1x_3)(x_3^2+x_1x_2)$；
-  \item $x_1^3+x_2^3+x_3^3-3x_1x_2x_3$。
+  \item $(x_1+x_2+x_1x_2)(x_2+x_3+x_2x_3)(x_1+x_3+x_1x_3)$;
+  \item $(x_1^2+x_2x_3)(x_2^2+x_1x_3)(x_3^2+x_1x_2)$;
+  \item $x_1^3+x_2^3+x_3^3-3x_1x_2x_3$.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-整理得：
+整理得:
 \begin{enumerate}
   \item
   \[
@@ -1651,7 +1651,7 @@ $(a_1,\ldots,a_{n-1})$ 使得 $f$ 的某个非零系数与 $g$ 的某个非零�
 \[
   x^3+px^2+qx+r=0
 \]
-的三根成等差数列，证明
+的三根成等差数列,证明
 \[
   2p^3-9pq+27r=0.
 \]
@@ -1659,7 +1659,7 @@ $(a_1,\ldots,a_{n-1})$ 使得 $f$ 的某个非零系数与 $g$ 的某个非零�
 \exampleblank
 
 \begin{solution}
-设三根为 $m-d,m,m+d$。由 Vieta 定理
+设三根为 $m-d,m,m+d$.由 Vieta 定理
 \[
   3m=-p,
 \]
@@ -1674,7 +1674,7 @@ $(a_1,\ldots,a_{n-1})$ 使得 $f$ 的某个非零系数与 $g$ 的某个非零�
 \[
   r=-m(q-2m^2).
 \]
-再代入 $m=-p/3$，整理即得
+再代入 $m=-p/3$,整理即得
 \[
   2p^3-9pq+27r=0.
 \]
@@ -1685,7 +1685,7 @@ $(a_1,\ldots,a_{n-1})$ 使得 $f$ 的某个非零系数与 $g$ 的某个非零�
 \[
   x^3+px^2+qx+r=0
 \]
-的三根都是实数，证明
+的三根都是实数,证明
 \[
   p^2\ge3q.
 \]
@@ -1693,7 +1693,7 @@ $(a_1,\ldots,a_{n-1})$ 使得 $f$ 的某个非零系数与 $g$ 的某个非零�
 \exampleblank
 
 \begin{solution}
-设三实根为 $x_1,x_2,x_3$。由 Vieta 定理
+设三实根为 $x_1,x_2,x_3$.由 Vieta 定理
 \[
   x_1+x_2+x_3=-p,
   \qquad
@@ -1704,7 +1704,7 @@ $(a_1,\ldots,a_{n-1})$ 使得 $f$ 的某个非零系数与 $g$ 的某个非零�
   (x_1+x_2+x_3)^2-3(x_1x_2+x_1x_3+x_2x_3)
   =\dfrac12\sum_{i<j}(x_i-x_j)^2\ge0.
 \]
-故 $p^2\ge3q$。
+故 $p^2\ge3q$.
 \end{solution}
 
 \begin{proposition}[\markstar\ Cardan 公式]
@@ -1724,7 +1724,7 @@ $(a_1,\ldots,a_{n-1})$ 使得 $f$ 的某个非零系数与 $g$ 的某个非零�
   \qquad
   v=\sqrt[3]{-\dfrac q2-\sqrt\Delta},
 \]
-并令 $\omega$ 为三次单位根，则三个根可写为
+并令 $\omega$ 为三次单位根,则三个根可写为
 \[
   u+v,
   \qquad
@@ -1732,11 +1732,11 @@ $(a_1,\ldots,a_{n-1})$ 使得 $f$ 的某个非零系数与 $g$ 的某个非零�
   \qquad
   \omega^2u+\omega v,
 \]
-再反代 $x=y-\dfrac a3$ 即得原方程的根。
+再反代 $x=y-\dfrac a3$ 即得原方程的根.
 \end{proposition}
 
 \begin{example}[\markstar]
-证明：方程
+证明:方程
 \[
   x^3+px+q=0
 \]
@@ -1752,18 +1752,18 @@ $(a_1,\ldots,a_{n-1})$ 使得 $f$ 的某个非零系数与 $g$ 的某个非零�
 \[
   f'(x)=3x^2+p
 \]
-有公共根 $\alpha$。于是
+有公共根 $\alpha$.于是
 \[
   3\alpha^2+p=0,
   \qquad
   \alpha^3+p\alpha+q=0.
 \]
-第一式给出 $p=-3\alpha^2$，代入第二式得 $q=2\alpha^3$，从而
+第一式给出 $p=-3\alpha^2$,代入第二式得 $q=2\alpha^3$,从而
 \[
   4p^3+27q^2
   =4(-3\alpha^2)^3+27(2\alpha^3)^2=0.
 \]
-反之，若 $4p^3+27q^2=0$，即该三次多项式判别式为零，故必有重根。
+反之,若 $4p^3+27q^2=0$,即该三次多项式判别式为零,故必有重根.
 \end{solution}
 
 \begin{example}
@@ -1771,8 +1771,8 @@ $(a_1,\ldots,a_{n-1})$ 使得 $f$ 的某个非零系数与 $g$ 的某个非零�
 \[
   x^3+px^2+qx+r=0
 \]
-的三个根为 $\alpha_1,\alpha_2,\alpha_3$。求一个以
-$\alpha_1^3,\alpha_2^3,\alpha_3^3$ 为根的三次方程。
+的三个根为 $\alpha_1,\alpha_2,\alpha_3$.求一个以
+$\alpha_1^3,\alpha_2^3,\alpha_3^3$ 为根的三次方程.
 \end{example}
 \exampleblank
 
@@ -1785,7 +1785,7 @@ $\alpha_1^3,\alpha_2^3,\alpha_3^3$ 为根的三次方程。
   \quad
   e_3=-r.
 \]
-令 $\beta_i=\alpha_i^3$。则
+令 $\beta_i=\alpha_i^3$.则
 \[
 \begin{aligned}
   \beta_1+\beta_2+\beta_3
@@ -1818,7 +1818,7 @@ $\alpha_1^3,\alpha_2^3,\alpha_3^3$ 为根的三次方程。
 \exampleblank
 
 \begin{solution}
-设 $e_k$ 为 $x,y,z,w$ 的初等对称多项式。由 Newton 公式，
+设 $e_k$ 为 $x,y,z,w$ 的初等对称多项式.由 Newton 公式,
 \[
   e_1=10,
 \]
@@ -1830,16 +1830,16 @@ $\alpha_1^3,\alpha_2^3,\alpha_3^3$ 为根的三次方程。
   e_3=\dfrac{s_3-e_1s_2+e_2s_1}{3}
   =\dfrac{100-300+350}{3}=50,
 \]
-且 $e_4=xyzw=24$。故 $x,y,z,w$ 是多项式
+且 $e_4=xyzw=24$.故 $x,y,z,w$ 是多项式
 \[
   t^4-10t^3+35t^2-50t+24
   =(t-1)(t-2)(t-3)(t-4)
 \]
-的四个根。因此
+的四个根.因此
 \[
   \{x,y,z,w\}=\{1,2,3,4\},
 \]
-即全部解由 $(1,2,3,4)$ 的任意排列给出。
+即全部解由 $(1,2,3,4)$ 的任意排列给出.
 \end{solution}
 
 \begin{example}
@@ -1847,11 +1847,11 @@ $\alpha_1^3,\alpha_2^3,\alpha_3^3$ 为根的三次方程。
 \[
   x^3-6x^2+ax+a=0
 \]
-的三个根。求使
+的三个根.求使
 \[
   (x_1-1)^3+(x_2-2)^3+(x_3-3)^3=0
 \]
-成立的所有实数 $a$，并求相应的 $x_1,x_2,x_3$。
+成立的所有实数 $a$,并求相应的 $x_1,x_2,x_3$.
 \end{example}
 \exampleblank
 
@@ -1864,7 +1864,7 @@ $\alpha_1^3,\alpha_2^3,\alpha_3^3$ 为根的三次方程。
   \qquad
   x_1x_2x_3=-a.
 \]
-与附加条件联立消元，可得
+与附加条件联立消元,可得
 \[
   (2a-5)(3a-16)(4a-27)=0.
 \]
@@ -1872,7 +1872,7 @@ $\alpha_1^3,\alpha_2^3,\alpha_3^3$ 为根的三次方程。
 \[
   a=\dfrac52,\qquad \dfrac{16}{3},\qquad \dfrac{27}{4}.
 \]
-相应的有序根为：
+相应的有序根为:
 \[
 \begin{array}{c|c}
  a & (x_1,x_2,x_3)\\ \hline
@@ -1881,7 +1881,7 @@ $\alpha_1^3,\alpha_2^3,\alpha_3^3$ 为根的三次方程。
  \dfrac{27}{4} & \left(\dfrac{3\pm3\sqrt2}{2},\dfrac{3\mp3\sqrt2}{2},3\right)
 \end{array}
 \]
-其中每一行的 $\pm$ 与 $\mp$ 同时取相反符号。
+其中每一行的 $\pm$ 与 $\mp$ 同时取相反符号.
 \end{solution}
 
 \begin{example}
@@ -1889,12 +1889,12 @@ $\alpha_1^3,\alpha_2^3,\alpha_3^3$ 为根的三次方程。
 \[
   x^9+x^7+x^3+x^2+x-1
 \]
-所有根的平方和、立方和及九次方之和。
+所有根的平方和,立方和及九次方之和.
 \end{example}
 \exampleblank
 
 \begin{solution}
-记根的 $k$ 次幂和为 $s_k$。由 Newton 公式递推可得
+记根的 $k$ 次幂和为 $s_k$.由 Newton 公式递推可得
 \[
   s_1=0,
   \qquad
@@ -1937,7 +1937,7 @@ $\alpha_1^3,\alpha_2^3,\alpha_3^3$ 为根的三次方程。
 \[
   t^4-4t^3+6t^2-4t+1=(t-1)^4
 \]
-的根，故唯一解为
+的根,故唯一解为
 \[
   \boxed{x_1=x_2=x_3=x_4=1}.
 \]
@@ -1948,17 +1948,17 @@ $\alpha_1^3,\alpha_2^3,\alpha_3^3$ 为根的三次方程。
 \[
   \tr(A^k)=0,
 \]
-证明：$A$ 的特征值均为零。
+证明:$A$ 的特征值均为零.
 \end{example}
 \exampleblank
 
 \begin{solution}
-设 $A$ 为 $n$ 阶方阵，特征值为 $\lambda_1,\ldots,\lambda_n$（按代数重数计）。则
+设 $A$ 为 $n$ 阶方阵,特征值为 $\lambda_1,\ldots,\lambda_n$(按代数重数计).则
 \[
   \tr(A^k)=\sum\limits_{i=1}^{n}\lambda_i^k=0,
   \qquad k=1,2,\ldots,n.
 \]
-由 Newton 公式，前 $n$ 个幂和全为零推出全部初等对称多项式
+由 Newton 公式,前 $n$ 个幂和全为零推出全部初等对称多项式
 \[
   \sigma_1=\sigma_2=\cdots=\sigma_n=0.
 \]
@@ -1966,11 +1966,11 @@ $\alpha_1^3,\alpha_2^3,\alpha_3^3$ 为根的三次方程。
 \[
   \lambda^n,
 \]
-从而所有特征值均为零。
+从而所有特征值均为零.
 \end{solution}
 
 \begin{example}[\markstar]
-证明：对 $1\le k\le n$，有
+证明:对 $1\le k\le n$,有
 \[
   s_k=
   \begin{vmatrix}
@@ -1996,14 +1996,14 @@ $\alpha_1^3,\alpha_2^3,\alpha_3^3$ 为根的三次方程。
 \exampleblank
 
 \begin{solution}
-Newton 公式对 $j=1,\ldots,k$ 构成关于 $s_1,\ldots,s_k$ 的三角线性方程组：
+Newton 公式对 $j=1,\ldots,k$ 构成关于 $s_1,\ldots,s_k$ 的三角线性方程组:
 \[
   s_j-\sigma_1s_{j-1}+\cdots+(-1)^j j\sigma_j=0.
 \]
-将其按 $s_1,\ldots,s_k$ 排列后，用 Cramer 法则求 $s_k$，即得到第一个行列式公式。
+将其按 $s_1,\ldots,s_k$ 排列后,用 Cramer 法则求 $s_k$,即得到第一个行列式公式.
 
-反过来，把同一组 Newton 公式视为关于 $\sigma_1,\ldots,\sigma_k$ 的三角线性方程组，
-其系数矩阵行列式为 $k!$。再次应用 Cramer 法则便得到第二个公式。
+反过来,把同一组 Newton 公式视为关于 $\sigma_1,\ldots,\sigma_k$ 的三角线性方程组,
+其系数矩阵行列式为 $k!$.再次应用 Cramer 法则便得到第二个公式.
 \end{solution}
 
 
@@ -2016,7 +2016,7 @@ Newton 公式对 $j=1,\ldots,k$ 构成关于 $s_1,\ldots,s_k$ 的三角线性方
 \[
   (f(x),g(x))=d(x).
 \]
-则 $d(x)\ne1$ 的充要条件是存在 $K[x]$ 中非零多项式 $u(x),v(x)$，满足
+则 $d(x)\ne1$ 的充要条件是存在 $K[x]$ 中非零多项式 $u(x),v(x)$,满足
 \[
   f(x)u(x)=g(x)v(x),
 \]
@@ -2035,18 +2035,18 @@ Newton 公式对 $j=1,\ldots,k$ 构成关于 $s_1,\ldots,s_k$ 的三角线性方
   g(x)&=b_0x^m+b_1x^{m-1}+\cdots+b_m.
 \end{aligned}
 \]
-由上引理，将
+由上引理,将
 \[
   u(x)=x_0x^{m-1}+x_1x^{m-2}+\cdots+x_{m-1},
 \]
 \[
   v(x)=y_0x^{n-1}+y_1x^{n-2}+\cdots+y_{n-1}
 \]
-代入 $fu=gv$ 并比较系数，得到一个 $m+n$ 元齐次线性方程组。
-其系数矩阵的行列式即引出结式。
+代入 $fu=gv$ 并比较系数,得到一个 $m+n$ 元齐次线性方程组.
+其系数矩阵的行列式即引出结式.
 
 \begin{definition}
-上述两个多项式的结式（Sylvester 行列式）记作
+上述两个多项式的结式(Sylvester 行列式)记作
 \[
   R(f,g)=\det S(f,g),
 \]
@@ -2064,21 +2064,21 @@ S(f,g)=
  0&\cdots&0&b_0&b_1&\cdots&b_m
 \end{pmatrix},
 \]
-其中前 $m$ 行由 $f$ 的系数错位排列，后 $n$ 行由 $g$ 的系数错位排列。
+其中前 $m$ 行由 $f$ 的系数错位排列,后 $n$ 行由 $g$ 的系数错位排列.
 \end{definition}
 
 \begin{theorem}[\markstar]
 \[
   (f,g)=1\iff R(f,g)\ne0,
 \]
-等价地，
+等价地,
 \[
   (f,g)\ne1\iff R(f,g)=0.
 \]
 \end{theorem}
 
 \begin{theorem}[\markstar]
-若 $f$ 的根为 $x_1,\ldots,x_n$，$g$ 的根为 $y_1,\ldots,y_m$，则
+若 $f$ 的根为 $x_1,\ldots,x_n$,$g$ 的根为 $y_1,\ldots,y_m$,则
 \[
 \begin{aligned}
   R(f,g)
@@ -2103,7 +2103,7 @@ $n$ 次多项式
 \end{definition}
 
 \begin{theorem}[\markstar]
-若 $x_1,\ldots,x_n$ 为 $f$ 的全部根，则
+若 $x_1,\ldots,x_n$ 为 $f$ 的全部根,则
 \[
   \Delta(f)
   =a_0^{2n-2}
@@ -2118,11 +2118,11 @@ $n$ 次多项式
 \end{theorem}
 
 \begin{example}
-求下列结式：
+求下列结式:
 \begin{enumerate}
-  \item $x^n+x+1$ 与 $x^2-3x+2$；
-  \item $x^n+1$ 与 $(x-1)^n$；
-  \item $x^n-1$ 与 $x^m-1$。
+  \item $x^n+x+1$ 与 $x^2-3x+2$;
+  \item $x^n+1$ 与 $(x-1)^n$;
+  \item $x^n-1$ 与 $x^m-1$.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -2139,24 +2139,24 @@ $n$ 次多项式
   =3(2^n+3).
 \]
 
-(2) 第二个多项式只有根 $1$，重数为 $n$。因此
+(2) 第二个多项式只有根 $1$,重数为 $n$.因此
 \[
   R(x^n+1,(x-1)^n)
   =(-1)^{n^2}[1^n+1]^n
   =(-1)^n2^n.
 \]
 
-(3) 两个多项式都有公共根 $1$，故
+(3) 两个多项式都有公共根 $1$,故
 \[
   R(x^n-1,x^m-1)=0.
 \]
 \end{solution}
 
 \begin{example}
-求判别式：
+求判别式:
 \begin{enumerate}
-  \item $x^n+ax+b$；
-  \item $x^n+ax^k+b$。
+  \item $x^n+ax+b$;
+  \item $x^n+ax^k+b$.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -2166,7 +2166,7 @@ $n$ 次多项式
 \[
   \Delta(f)=(-1)^{\frac{n(n-1)}2}R(f,f')
 \]
-及结式乘法性质可得：
+及结式乘法性质可得:
 
 (1)
 \[
@@ -2194,7 +2194,7 @@ $n$ 次多项式
   \right]^d.
 \end{aligned}}
 \]
-特别地，当 $(n,k)=1$ 时，上式化为
+特别地,当 $(n,k)=1$ 时,上式化为
 \[
   \Delta
   =(-1)^{\frac{n(n-1)}2}b^{k-1}
@@ -2204,7 +2204,7 @@ $n$ 次多项式
 \end{solution}
 
 \begin{example}
-解方程组：
+解方程组:
 \begin{enumerate}
   \item
   \[
@@ -2243,7 +2243,7 @@ $n$ 次多项式
 \[
   s(25-s^2)=0.
 \]
-故 $s=0,\pm5$。逐一求根，得到
+故 $s=0,\pm5$.逐一求根,得到
 \[
 \boxed{
 \begin{gathered}
@@ -2263,7 +2263,7 @@ $n$ 次多项式
 \[
   (1-\rho+ia)z=ia.
 \]
-若 $a\ne0$，取模得到
+若 $a\ne0$,取模得到
 \[
   \rho\bigl((1-\rho)^2+a^2\bigr)=a^2,
 \]
@@ -2275,7 +2275,7 @@ $n$ 次多项式
 \[
   (x,y)=(1,0).
 \]
-若 $|a|\le\dfrac12$，还可取
+若 $|a|\le\dfrac12$,还可取
 \[
   \rho_{\pm}=\dfrac{1\pm\sqrt{1-4a^2}}2,
 \]
@@ -2283,7 +2283,7 @@ $n$ 次多项式
 \[
   (x,y)=(\rho_{\pm},a).
 \]
-故当 $a\ne0$ 时：
+故当 $a\ne0$ 时:
 \[
 \boxed{
 \begin{cases}
@@ -2291,9 +2291,9 @@ $n$ 次多项式
 0<|a|\le\dfrac12:&(x,y)=(1,0),\ (\rho_+,a),\ (\rho_-,a),
 \end{cases}}
 \]
-其中 $|a|=\dfrac12$ 时 $\rho_+=\rho_-$，重复解只计一次。
+其中 $|a|=\dfrac12$ 时 $\rho_+=\rho_-$,重复解只计一次.
 
-若 $a=0$，原方程化为
+若 $a=0$,原方程化为
 \[
   x(1-x^2-y^2)=0,
   \qquad
@@ -2305,11 +2305,11 @@ $n$ 次多项式
   \quad\text{以及}\quad
   x^2+y^2=1
 \]
-上的所有实点。
+上的所有实点.
 \end{solution}
 
 \begin{example}
-判定以下方程组是否有有理解：
+判定以下方程组是否有有理解:
 \[
 \begin{cases}
   y^2+2x^2y-1=0,\\
@@ -2328,8 +2328,8 @@ $n$ 次多项式
 \[
   y^3+6y^2-3=0.
 \]
-若 $x,y\in\mathbb Q$，则 $y$ 必是上述首一整系数多项式的有理根，因此只能是整数且整除 $3$，
-即候选为 $\pm1,\pm3$。逐一代入均不为零，矛盾。因此该方程组无有理解。
+若 $x,y\in\mathbb Q$,则 $y$ 必是上述首一整系数多项式的有理根,因此只能是整数且整除 $3$,
+即候选为 $\pm1,\pm3$.逐一代入均不为零,矛盾.因此该方程组无有理解.
 \end{solution}
 
 \begin{example}
@@ -2340,7 +2340,7 @@ $n$ 次多项式
   y=\dfrac{t^2}{2t-1}
 \end{cases}
 \]
-的直角坐标方程。
+的直角坐标方程.
 \end{example}
 \exampleblank
 
@@ -2352,10 +2352,10 @@ $n$ 次多项式
 \[
   y(2t-1)-t^2=0
 \]
-消去参数 $t$，取两多项式关于 $t$ 的结式，得到
+消去参数 $t$,取两多项式关于 $t$ 的结式,得到
 \[
 \boxed{
   5x^2y^2-2x^2y+x^2-12xy^2-4x+12y+4=0.}
 \]
-参数表达式还要求 $t\ne\dfrac12$；上式给出参数曲线所落在的代数曲线。
+参数表达式还要求 $t\ne\dfrac12$;上式给出参数曲线所落在的代数曲线.
 \end{solution}

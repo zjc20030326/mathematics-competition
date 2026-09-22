@@ -702,7 +702,7 @@
                   \theta_n(1)=\sum\limits_{k=1}^{n}k^2
                   =\dfrac{n(n+1)(2n+1)}{6}.
               \]
-        \item 对 $(1+x)^n$ 求导一次、两次,并在 $x=1$ 处取值,得
+        \item 对 $(1+x)^n$ 求导一次,两次,并在 $x=1$ 处取值,得
               \[
                   \begin{aligned}
                       \sum\limits_{k=1}^{n}C_k^n k^2
@@ -712,7 +712,7 @@
                        & =n(n+1)2^{n-2}.
                   \end{aligned}
               \]
-        \item 该和是多项式 $P(k)=k^n$ 的 $2n$ 阶有限差（相差一个符号）.由于 $\deg P=n<2n$,其 $2n$ 阶有限差为零,故
+        \item 该和是多项式 $P(k)=k^n$ 的 $2n$ 阶有限差(相差一个符号).由于 $\deg P=n<2n$,其 $2n$ 阶有限差为零,故
               \[
                   I_n=0.
               \]
@@ -920,7 +920,7 @@
 \end{solution}
 
 \begin{example}
-    设函数 $f$ 在 $(0,1)$ 有界、可导,但 $\displaystyle\lim\limits_{x\to0^+}f(x)$ 不存在,试证存在数列 $x_n\to0^+\ (n\to\infty)$,使得
+    设函数 $f$ 在 $(0,1)$ 有界,可导,但 $\displaystyle\lim\limits_{x\to0^+}f(x)$ 不存在,试证存在数列 $x_n\to0^+\ (n\to\infty)$,使得
     \[
         \lim\limits_{n\to+\infty}f'(x_n)=0.
     \]
@@ -1002,7 +1002,7 @@
         =\dfrac{e^{\xi'}-1}{\xi'}
         \leq e-1<f'(\xi).
     \]
-    因而不存在题设的 $\xi'$.原题中“对任意 $\xi$”或割线端点条件需要核对.
+    因而不存在题设的 $\xi'$.原题中``对任意 $\xi$''或割线端点条件需要核对.
 \end{solution}
 
 
@@ -1385,7 +1385,7 @@ $\displaystyle f(x)e^{\int g(x)\,\mathrm{d}x}$,这是因为
     \[
         H(x)=2h(x)+h(1-x).
     \]
-    由 $f(0)=0$、$f(x)>0$ 及连续性,$H(x)\to-\infty$ 当 $x\to0^+$ 或 $x\to1^-$.因此 $H$ 在某个内点 $\xi\in(0,1)$ 取得最大值.于是
+    由 $f(0)=0$,$f(x)>0$ 及连续性,$H(x)\to-\infty$ 当 $x\to0^+$ 或 $x\to1^-$.因此 $H$ 在某个内点 $\xi\in(0,1)$ 取得最大值.于是
     \[
         0=H'(\xi)
         =2\dfrac{f'(\xi)}{f(\xi)}
@@ -1410,7 +1410,7 @@ $\displaystyle f(x)e^{\int g(x)\,\mathrm{d}x}$,这是因为
 \exampleblank
 
 \begin{solution}
-    记 $m=\dfrac{a+b}{2}$.作通过三点 $(a,f(a))$、$(m,f(m))$、$(b,f(b))$ 的二次插值多项式 $P$.函数 $f-P$ 在 $a,m,b$ 三点为零,连续使用两次 Rolle 定理,存在 $\xi\in(a,b)$ 使
+    记 $m=\dfrac{a+b}{2}$.作通过三点 $(a,f(a))$,$(m,f(m))$,$(b,f(b))$ 的二次插值多项式 $P$.函数 $f-P$ 在 $a,m,b$ 三点为零,连续使用两次 Rolle 定理,存在 $\xi\in(a,b)$ 使
     \[
         f''(\xi)=P''(\xi).
     \]
@@ -1540,7 +1540,7 @@ $\displaystyle f(x)e^{\int g(x)\,\mathrm{d}x}$,这是因为
 \exampleblank
 
 \begin{solution}
-    设 $P$ 是通过 $(a,f(a))$、$(b,f(b))$、$(c,f(c))$ 的二次插值多项式.由插值余项的 Rolle 定理证明,存在 $\xi\in(a,c)$ 使
+    设 $P$ 是通过 $(a,f(a))$,$(b,f(b))$,$(c,f(c))$ 的二次插值多项式.由插值余项的 Rolle 定理证明,存在 $\xi\in(a,c)$ 使
     \[
         f''(\xi)=P''(\xi).
     \]
@@ -1701,7 +1701,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
     \[
         \dfrac{a+b}{2\eta}f'(\eta)=0,
     \]
-    不可能等于 $f'(\xi)=1$.若补充 $a+b\neq0$,可分别对 $f$ 与 $x$、$x^2$ 使用 Cauchy 中值定理得到结论;原题应核对这一遗漏条件.
+    不可能等于 $f'(\xi)=1$.若补充 $a+b\neq0$,可分别对 $f$ 与 $x$,$x^2$ 使用 Cauchy 中值定理得到结论;原题应核对这一遗漏条件.
 \end{solution}
 
 \begin{example}
@@ -1713,7 +1713,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
 \exampleblank
 
 \begin{solution}
-    分别对 $f$ 与 $x$、$\dfrac{1}{x}$ 使用 Cauchy 中值定理.存在 $\xi,\eta\in(a,b)$ 使
+    分别对 $f$ 与 $x$,$\dfrac{1}{x}$ 使用 Cauchy 中值定理.存在 $\xi,\eta\in(a,b)$ 使
     \[
         \dfrac{f(b)-f(a)}{b-a}=f'(\xi)
     \]
@@ -1741,7 +1741,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
 \exampleblank
 
 \begin{solution}
-    题面中间一项的分母疑有排印错误.分别对 $f$ 与 $x^2$、$x^4$、$\ln x$ 使用 Cauchy 中值定理,可得 $x_1,x_2,x_3\in(a,b)$,使
+    题面中间一项的分母疑有排印错误.分别对 $f$ 与 $x^2$,$x^4$,$\ln x$ 使用 Cauchy 中值定理,可得 $x_1,x_2,x_3\in(a,b)$,使
     \[
         \dfrac{f(b)-f(a)}{b^2-a^2}
         =\dfrac{f'(x_1)}{2x_1},
@@ -1887,7 +1887,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
         \quad\Longrightarrow\quad
         |f'(x)-f'(x_n)|<\dfrac{\varepsilon}{2}.
     \]
-    取子列可设 $f'(x_n)\geq\varepsilon$,或恒有 $f'(x_n)\leq-\varepsilon$.在相应的长度为 $\delta$ 的区间上,$f'$ 保持同号且绝对值不小于 $\dfrac{\varepsilon}{2}$,于是 $f$ 的函数值变化至少为 $\dfrac{\varepsilon\delta}{2}$.这与 $f(x)$ 在无穷远处有有限极限、从而满足 Cauchy 条件矛盾.故 $f'(x)\to0$.
+    取子列可设 $f'(x_n)\geq\varepsilon$,或恒有 $f'(x_n)\leq-\varepsilon$.在相应的长度为 $\delta$ 的区间上,$f'$ 保持同号且绝对值不小于 $\dfrac{\varepsilon}{2}$,于是 $f$ 的函数值变化至少为 $\dfrac{\varepsilon\delta}{2}$.这与 $f(x)$ 在无穷远处有有限极限,从而满足 Cauchy 条件矛盾.故 $f'(x)\to0$.
 \end{solution}
 
 \begin{example}[\markstar]
@@ -2093,11 +2093,11 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
               \]
               不可能等于 $[g'(r)]^2$.
 
-        \item $P(x)=x^2-3x+3$ 的不动点为 $1,3$.若 $g$ 固定其中某一点,则该点处 $P'$ 应为平方而非负;但 $P'(1)=-1$,所以只能有 $g(1)=3$、$g(3)=1$.链式法则又给出
+        \item $P(x)=x^2-3x+3$ 的不动点为 $1,3$.若 $g$ 固定其中某一点,则该点处 $P'$ 应为平方而非负;但 $P'(1)=-1$,所以只能有 $g(1)=3$,$g(3)=1$.链式法则又给出
               \[
                   P'(1)=g'(3)g'(1)=P'(3),
               \]
-              这与 $P'(1)=-1$、$P'(3)=3$ 矛盾.
+              这与 $P'(1)=-1$,$P'(3)=3$ 矛盾.
     \end{enumerate}
 \end{solution}
 
@@ -2165,7 +2165,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
 \exampleblank
 
 \begin{solution}
-    通过三点 $(-1,0)$、$(0,0)$、$(1,1)$ 的二次插值多项式为
+    通过三点 $(-1,0)$,$(0,0)$,$(1,1)$ 的二次插值多项式为
     \[
         P(x)=\dfrac{x^2+x}{2},
     \]
@@ -2181,7 +2181,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
 \exampleblank
 
 \begin{solution}
-    上一题组中的三次 Hermite 插值论证在这里同样适用.事实上,$f(-1)=0$、$f(1)=1$、$f'(0)=0$ 已足以推出存在 $\xi\in(-1,1)$ 使
+    上一题组中的三次 Hermite 插值论证在这里同样适用.事实上,$f(-1)=0$,$f(1)=1$,$f'(0)=0$ 已足以推出存在 $\xi\in(-1,1)$ 使
     \[
         f'''(\xi)=3.
     \]
@@ -2202,7 +2202,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
 \exampleblank
 
 \begin{solution}
-    设 $f$ 在 $x_0\in(0,1)$ 处取得最大值 $2$,则 $f'(x_0)=0$.分别在区间 $\lbrack0,x_0\rbrack$ 与 $\lbrack x_0,1\rbrack$ 使用二阶 Taylor 公式,存在 $\xi_1\in(0,x_0)$、$\xi_2\in(x_0,1)$ 使
+    设 $f$ 在 $x_0\in(0,1)$ 处取得最大值 $2$,则 $f'(x_0)=0$.分别在区间 $\lbrack0,x_0\rbrack$ 与 $\lbrack x_0,1\rbrack$ 使用二阶 Taylor 公式,存在 $\xi_1\in(0,x_0)$,$\xi_2\in(x_0,1)$ 使
     \[
         f''(\xi_1)=-\dfrac{4}{x_0^2},
         \qquad
@@ -2224,7 +2224,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
 \exampleblank
 
 \begin{solution}
-    设 $f$ 在 $x_0\in(0,1)$ 处取得最小值 $-1$,则 $f'(x_0)=0$.由二阶 Taylor 公式,存在 $\xi_1\in(0,x_0)$、$\xi_2\in(x_0,1)$ 使
+    设 $f$ 在 $x_0\in(0,1)$ 处取得最小值 $-1$,则 $f'(x_0)=0$.由二阶 Taylor 公式,存在 $\xi_1\in(0,x_0)$,$\xi_2\in(x_0,1)$ 使
     \[
         f''(\xi_1)=\dfrac{2}{x_0^2},
         \qquad
@@ -2544,11 +2544,11 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
             (x-b)^3, & x>b,
         \end{cases}
     \]
-    并令 $g(x)=0$（$x\leq b$）,而当 $x>b$ 时令
+    并令 $g(x)=0$($x\leq b$),而当 $x>b$ 时令
     \[
         g(x)=\dfrac{x-b}{3}-\dfrac{2}{x-b}.
     \]
-    则 $f$ 二次可导、$f(a)=f(b)=0$,且逐点满足题设微分方程,但 $f$ 并不恒为零.
+    则 $f$ 二次可导,$f(a)=f(b)=0$,且逐点满足题设微分方程,但 $f$ 并不恒为零.
 
     若补充 $g$ 连续,则线性方程初值问题具有唯一性.由最大值原理先得 $f\equiv0$ 于 $\lbrack a,b\rbrack$,再利用 $f(b)=f'(b)=0$ 及唯一性即可推出全轴上 $f\equiv0$.因此原题需要补充 $g$ 的正则性条件.
 \end{solution}
@@ -2637,9 +2637,9 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
 \begin{theorem}[\markstar]
     \begin{enumerate}
         \item 一般情况下,定义 4.4.2 与定义 4.4.3 等价;
-        \item $f$ 连续时,定义 4.4.1、定义 4.4.2 与定义 4.4.3 等价;
-        \item $f$ 可导时,定义 4.4.1、定义 4.4.2、定义 4.4.3、定义 4.4.4 与 $f'$ 单增等价;
-        \item $f$ 二阶可导时,定义 4.4.1、定义 4.4.2、定义 4.4.3、定义 4.4.4、$f'$ 单增与 $f''>0$ 等价.
+        \item $f$ 连续时,定义 4.4.1,定义 4.4.2 与定义 4.4.3 等价;
+        \item $f$ 可导时,定义 4.4.1,定义 4.4.2,定义 4.4.3,定义 4.4.4 与 $f'$ 单增等价;
+        \item $f$ 二阶可导时,定义 4.4.1,定义 4.4.2,定义 4.4.3,定义 4.4.4,$f'$ 单增与 $f''>0$ 等价.
     \end{enumerate}
 \end{theorem}
 
@@ -2742,7 +2742,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
               \[
                   a=f(x),\quad b=f(y),\quad c=g(x),\quad d=g(y).
               \]
-              递增且非负给出 $0\leq a\leq b$、$0\leq c\leq d$.由凸性,
+              递增且非负给出 $0\leq a\leq b$,$0\leq c\leq d$.由凸性,
               \[
                   \begin{aligned}
                       f(\lambda x+(1-\lambda)y)
@@ -2775,7 +2775,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
     \[
         u''(x)=e^x[f''(x)+2f'(x)+f(x)]=0.
     \]
-    故 $u$ 是一次函数.又 $u(0)=f(0)=0$、$u(1)=ef(1)=0$,所以 $u\equiv0$,进而 $f\equiv0$.特别地,$f(x)\leq0$.
+    故 $u$ 是一次函数.又 $u(0)=f(0)=0$,$u(1)=ef(1)=0$,所以 $u\equiv0$,进而 $f\equiv0$.特别地,$f(x)\leq0$.
 \end{solution}
 
 \begin{example}
@@ -3087,7 +3087,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
               \]
               计算两端积分即得题设不等式.
 
-        \item 由 $e^t>1+t$（$t>0$）,
+        \item 由 $e^t>1+t$($t>0$),
               \[
                   e^\lambda
                   =\prod\limits_{k=1}^{n}e^{\frac{1}{k}}
@@ -3173,7 +3173,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
               \]
               取指数得到几何平均数不超过算术平均数.再对 $\dfrac{1}{a_i}$ 使用同一结论,便得调和平均数不超过几何平均数.
 
-        \item 当前题面写成 $0<p,q<1$ 且 $\dfrac{1}{p}+\dfrac{1}{q}=1$,这样的正数 $p,q$ 不存在.Young 不等式的标准条件应为 $p,q>1$.在该条件下,由凸函数 $\dfrac{x^p}{p}$ 的切线不等式,或令 $u=a^p$、$v=b^q$ 后使用加权算术—几何平均不等式,可得
+        \item 当前题面写成 $0<p,q<1$ 且 $\dfrac{1}{p}+\dfrac{1}{q}=1$,这样的正数 $p,q$ 不存在.Young 不等式的标准条件应为 $p,q>1$.在该条件下,由凸函数 $\dfrac{x^p}{p}$ 的切线不等式,或令 $u=a^p$,$v=b^q$ 后使用加权算术--几何平均不等式,可得
               \[
                   ab\leq\dfrac{a^p}{p}+\dfrac{b^q}{q}.
               \]

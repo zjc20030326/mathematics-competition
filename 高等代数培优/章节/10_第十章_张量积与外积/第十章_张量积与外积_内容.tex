@@ -3,14 +3,14 @@
 
 \chapter{张量积与外积 *}
 
-本章为选学内容。前面高等代数的核心对象主要是线性映射及其矩阵表示；
-本章把这一思想推广到多线性映射。张量积给出多线性映射的普适线性化工具，
-外积则进一步刻画交错多线性映射。
+本章为选学内容.前面高等代数的核心对象主要是线性映射及其矩阵表示;
+本章把这一思想推广到多线性映射.张量积给出多线性映射的普适线性化工具,
+外积则进一步刻画交错多线性映射.
 
 
 \section{张量积}
 
-设 $V_1,V_2,\ldots,V_r$ 为数域 $F$ 上的线性空间。考虑笛卡尔积
+设 $V_1,V_2,\ldots,V_r$ 为数域 $F$ 上的线性空间.考虑笛卡尔积
 \[
 V_1\times V_2\times\cdots\times V_r.
 \]
@@ -18,9 +18,9 @@ V_1\times V_2\times\cdots\times V_r.
 \[
 (v_1,v_2,\ldots,v_r)
 \]
-作为形式基向量生成一个自由线性空间 $M$。
+作为形式基向量生成一个自由线性空间 $M$.
 
-为了强制每个分量都满足线性性，令 $N$ 为由下列两类元素生成的子空间：
+为了强制每个分量都满足线性性,令 $N$ 为由下列两类元素生成的子空间:
 \[
 (v_1,\ldots,v_i+v_i',\ldots,v_r)
 -
@@ -52,7 +52,7 @@ V_1\times\cdots\times V_r
 =
 v_1\otimes\cdots\otimes v_r.
 \]
-称 $(T,\tau)$ 为 $V_1,\ldots,V_r$ 的张量积，记作
+称 $(T,\tau)$ 为 $V_1,\ldots,V_r$ 的张量积,记作
 \[
 V_1\otimes\cdots\otimes V_r.
 \]
@@ -60,10 +60,10 @@ V_1\otimes\cdots\otimes V_r.
 \[
 v_1\otimes\cdots\otimes v_r
 \]
-称为纯张量。
+称为纯张量.
 \end{definition}
 
-由商空间的构造直接得到张量积对每个分量都满足线性性。例如
+由商空间的构造直接得到张量积对每个分量都满足线性性.例如
 \[
 v_1\otimes\cdots\otimes(v_i+v_i')\otimes\cdots\otimes v_r
 \]
@@ -82,12 +82,12 @@ c(v_1\otimes\cdots\otimes v_i\otimes\cdots\otimes v_r).
 
 
 \begin{definition}[万有性]
-设 $T$ 为 $F$ 上线性空间，
+设 $T$ 为 $F$ 上线性空间,
 \[
 \tau:
 V_1\times\cdots\times V_r\to T
 \]
-为多线性映射。若对任意线性空间 $W$ 及任意多线性映射
+为多线性映射.若对任意线性空间 $W$ 及任意多线性映射
 \[
 f:
 V_1\times\cdots\times V_r\to W,
@@ -100,7 +100,7 @@ f^*:T\to W
 \[
 f^*\circ\tau=f,
 \]
-则称 $(T,\tau)$ 具有万有性。
+则称 $(T,\tau)$ 具有万有性.
 \end{definition}
 
 
@@ -109,9 +109,9 @@ f^*\circ\tau=f,
 \[
 T=M/N
 \]
-与自然映射 $\tau$ 具有万有性。
+与自然映射 $\tau$ 具有万有性.
 
-并且，任何两个具有上述万有性的张量积在唯一同构意义下相同。
+并且,任何两个具有上述万有性的张量积在唯一同构意义下相同.
 \end{theorem}
 
 \begin{proof}
@@ -119,7 +119,7 @@ T=M/N
 \[
 f:V_1\times\cdots\times V_r\to W
 \]
-为多线性映射。先在自由线性空间 $M$ 上定义
+为多线性映射.先在自由线性空间 $M$ 上定义
 \[
 \widetilde f
 \left(
@@ -128,7 +128,7 @@ f:V_1\times\cdots\times V_r\to W
 =
 \sum_v a_v f(v_1,\ldots,v_r).
 \]
-由于 $f$ 对各变量线性，$N$ 的所有生成元都落入
+由于 $f$ 对各变量线性,$N$ 的所有生成元都落入
 \[
 \ker\widetilde f.
 \]
@@ -146,9 +146,9 @@ f^*(v_1\otimes\cdots\otimes v_r)
 =
 f(v_1,\ldots,v_r).
 \]
-纯张量生成整个张量积，所以这样的 $f^*$ 唯一。
+纯张量生成整个张量积,所以这样的 $f^*$ 唯一.
 
-若 $(T,\tau)$ 与 $(T',\tau')$ 都具有万有性，则由万有性分别得到唯一线性映射
+若 $(T,\tau)$ 与 $(T',\tau')$ 都具有万有性,则由万有性分别得到唯一线性映射
 \[
 \Phi:T\to T',
 \qquad
@@ -166,7 +166,7 @@ f(v_1,\ldots,v_r).
 \qquad
 \Phi\Psi=I_{T'},
 \]
-故二者同构。
+故二者同构.
 \end{proof}
 
 
@@ -175,7 +175,7 @@ f(v_1,\ldots,v_r).
 \[
 L(T,W)
 \]
-表示从 $T$ 到 $W$ 的线性映射空间，
+表示从 $T$ 到 $W$ 的线性映射空间,
 \[
 L_{\mathrm{multi}}(V_1,\ldots,V_r;W)
 \]
@@ -183,7 +183,7 @@ L_{\mathrm{multi}}(V_1,\ldots,V_r;W)
 \[
 V_1\times\cdots\times V_r
 \]
-到 $W$ 的多线性映射空间，则
+到 $W$ 的多线性映射空间,则
 \[
 L(T,W)
 \cong
@@ -218,7 +218,7 @@ d_1d_2\cdots d_r.
 \qquad
 1\le j_i\le d_i,
 \]
-构成张量积的一组基。
+构成张量积的一组基.
 \end{theorem}
 
 
@@ -238,7 +238,7 @@ e_1,\ldots,e_n.
 \{\sigma(\varepsilon_i,e_j):
 1\le i\le m,\ 1\le j\le n\}
 \]
-构成 $W$ 的一组基，则 $(W,\sigma)$ 是 $V_1$ 与 $V_2$ 的一个张量积。
+构成 $W$ 的一组基,则 $(W,\sigma)$ 是 $V_1$ 与 $V_2$ 的一个张量积.
 \end{proposition}
 
 
@@ -262,13 +262,13 @@ V_1\otimes V_2
 \cong
 V_2\otimes V_1.
 \]
-最后一个式子表示存在自然交换同构，而不是把两个张量积中的元素
-机械视为完全相同。
+最后一个式子表示存在自然交换同构,而不是把两个张量积中的元素
+机械视为完全相同.
 \end{theorem}
 
 
 \begin{theorem}[\markstar]
-若 $V_1,V_2$ 有限维，则存在自然同构
+若 $V_1,V_2$ 有限维,则存在自然同构
 \[
 V_1^*\otimes V_2^*
 \cong
@@ -296,7 +296,7 @@ A\otimes B
 =
 (a_{ij}B)
 \]
-正是矩阵空间张量积在标准基下的具体表示。
+正是矩阵空间张量积在标准基下的具体表示.
 \end{example}
 \exampleblank
 
@@ -307,7 +307,7 @@ E_{ij}\in M_{m\times n}(F),
 \qquad
 F_{kl}\in M_{m'\times n'}(F)
 \]
-为矩阵单位。定义
+为矩阵单位.定义
 \[
 \sigma:
 M_{m\times n}(F)\times M_{m'\times n'}(F)
@@ -318,7 +318,7 @@ M_{mm'\times nn'}(F)
 \[
 \sigma(A,B)=A\otimes B.
 \]
-Kronecker 积对 $A,B$ 分别线性，因此 $\sigma$ 为双线性映射。
+Kronecker 积对 $A,B$ 分别线性,因此 $\sigma$ 为双线性映射.
 
 并且
 \[
@@ -330,13 +330,13 @@ E_{ij}\otimes F_{kl}
 \[
 ((i-1)m'+k,\ (j-1)n'+l)
 \]
-为 $1$ 的矩阵单位。随着 $i,j,k,l$ 遍历全部指标，这些矩阵单位构成
+为 $1$ 的矩阵单位.随着 $i,j,k,l$ 遍历全部指标,这些矩阵单位构成
 \[
 M_{mm'\times nn'}(F)
 \]
-的一组基。
+的一组基.
 
-由前面的判别命题，
+由前面的判别命题,
 \[
 \boxed{
 M_{m\times n}(F)\otimes M_{m'\times n'}(F)
@@ -344,7 +344,7 @@ M_{m\times n}(F)\otimes M_{m'\times n'}(F)
 M_{mm'\times nn'}(F),
 }
 \]
-而该同构在标准基下正对应通常的 Kronecker 积。
+而该同构在标准基下正对应通常的 Kronecker 积.
 \end{solution}
 
 
@@ -367,12 +367,12 @@ v_i=0.
 \exampleblank
 
 \begin{solution}
-若某个 $v_i=0$，由多线性性显然有
+若某个 $v_i=0$,由多线性性显然有
 \[
 v_1\otimes\cdots\otimes v_r=0.
 \]
 
-反之，设所有 $v_i\neq0$。对每个 $i$，可取线性函数
+反之,设所有 $v_i\neq0$.对每个 $i$,可取线性函数
 \[
 f_i\in V_i^*
 \]
@@ -380,7 +380,7 @@ f_i\in V_i^*
 \[
 f_i(v_i)=1.
 \]
-由张量积的万有性，多线性映射
+由张量积的万有性,多线性映射
 \[
 (x_1,\ldots,x_r)
 \longmapsto
@@ -395,7 +395,7 @@ V_1\otimes\cdots\otimes V_r\to F.
 \[
 F(v_1\otimes\cdots\otimes v_r)=1,
 \]
-故该纯张量不为零。
+故该纯张量不为零.
 \end{solution}
 
 
@@ -408,7 +408,7 @@ F(v_1\otimes\cdots\otimes v_r)=1,
 \[
 x_1,\ldots,x_s
 \]
-线性无关。证明
+线性无关.证明
 \[
 y_1=\cdots=y_s=0.
 \]
@@ -416,11 +416,11 @@ y_1=\cdots=y_s=0.
 \exampleblank
 
 \begin{solution}
-由于 $x_1,\ldots,x_s$ 线性无关，可以在其张成空间上构造对偶线性函数
+由于 $x_1,\ldots,x_s$ 线性无关,可以在其张成空间上构造对偶线性函数
 \[
 f_j(x_i)=\delta_{ij},
 \]
-再延拓为整个第一因子空间上的线性函数。
+再延拓为整个第一因子空间上的线性函数.
 
 对恒等式作用
 \[
@@ -443,21 +443,21 @@ y_j.
 
 
 \begin{example}[\markstar]
-设 $S,V,W$ 为有限维线性空间，
+设 $S,V,W$ 为有限维线性空间,
 \[
 \varphi:S\to V
 \]
-为单射。证明
+为单射.证明
 \[
 \varphi\otimes I_W:
 S\otimes W\to V\otimes W
 \]
-仍为单射。
+仍为单射.
 \end{example}
 \exampleblank
 
 \begin{solution}
-因为 $\varphi$ 单射，可以取 $S$ 的一组基
+因为 $\varphi$ 单射,可以取 $S$ 的一组基
 \[
 e_1,\ldots,e_m
 \]
@@ -465,7 +465,7 @@ e_1,\ldots,e_m
 \[
 \varphi(e_1),\ldots,\varphi(e_m)
 \]
-线性无关，并把它们扩充成 $V$ 的一组基。
+线性无关,并把它们扩充成 $V$ 的一组基.
 
 再取 $W$ 的一组基
 \[
@@ -475,13 +475,13 @@ w_1,\ldots,w_k.
 \[
 e_i\otimes w_j
 \]
-构成 $S\otimes W$ 的一组基，而
+构成 $S\otimes W$ 的一组基,而
 \[
 (\varphi\otimes I_W)(e_i\otimes w_j)
 =
 \varphi(e_i)\otimes w_j.
 \]
-这些像向量是 $V\otimes W$ 的一组线性无关向量，因此
+这些像向量是 $V\otimes W$ 的一组线性无关向量,因此
 \[
 \boxed{\varphi\otimes I_W\text{ 为单射}.}
 \]
@@ -497,12 +497,12 @@ e_i\otimes w_j
 \[
 \mathbb C\otimes_{\mathbb C}\mathbb C.
 \]
-分别求一组基，并说明二者运算关系的区别。
+分别求一组基,并说明二者运算关系的区别.
 \end{example}
 \exampleblank
 
 \begin{solution}
-把 $\mathbb C$ 看作实线性空间时，
+把 $\mathbb C$ 看作实线性空间时,
 \[
 \dim_{\mathbb R}\mathbb C=2.
 \]
@@ -521,7 +521,7 @@ i\otimes i.
 }
 \]
 
-而把 $\mathbb C$ 看作复线性空间时，
+而把 $\mathbb C$ 看作复线性空间时,
 \[
 \dim_{\mathbb C}\mathbb C=1,
 \]
@@ -534,7 +534,7 @@ i\otimes i.
 \[
 \boxed{1\otimes1}.
 \]
-此时张量积的平衡关系允许复数标量跨过张量号：
+此时张量积的平衡关系允许复数标量跨过张量号:
 \[
 i\otimes1
 =
@@ -553,17 +553,17 @@ i\otimes i
 \[
 \mathbb C\otimes_{\mathbb R}\mathbb C
 \]
-中，只有实数可以通过平衡关系在两个因子之间移动，因此上述四个实基向量
-不会被这些关系压缩为一个复维度。
+中,只有实数可以通过平衡关系在两个因子之间移动,因此上述四个实基向量
+不会被这些关系压缩为一个复维度.
 \end{solution}
 
 
 \begin{example}
-证明：
+证明:
 \begin{enumerate}
-    \item 两个酉方阵的 Kronecker 积仍为酉方阵；
-    \item 两个 Hermite 方阵的 Kronecker 积仍为 Hermite 方阵；
-    \item 两个正定方阵的 Kronecker 积仍为正定方阵。
+    \item 两个酉方阵的 Kronecker 积仍为酉方阵;
+    \item 两个 Hermite 方阵的 Kronecker 积仍为 Hermite 方阵;
+    \item 两个正定方阵的 Kronecker 积仍为正定方阵.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -578,7 +578,7 @@ i\otimes i
 (A\otimes B)(C\otimes D)=AC\otimes BD.
 \]
 
-若 $A,B$ 酉，则
+若 $A,B$ 酉,则
 \[
 (A\otimes B)^H(A\otimes B)
 =
@@ -588,9 +588,9 @@ I\otimes I
 =
 I.
 \]
-故 $A\otimes B$ 酉。
+故 $A\otimes B$ 酉.
 
-若 $A,B$ Hermite，则
+若 $A,B$ Hermite,则
 \[
 (A\otimes B)^H
 =
@@ -599,7 +599,7 @@ A^H\otimes B^H
 A\otimes B.
 \]
 
-若 $A,B$ 正定，则可酉对角化为
+若 $A,B$ 正定,则可酉对角化为
 \[
 A=U\diag(\lambda_i)U^H,
 \qquad
@@ -635,7 +635,7 @@ V^r=
 \[
 f:V^r\to W
 \]
-满足：只要存在 $i\neq j$ 使
+满足:只要存在 $i\neq j$ 使
 \[
 v_i=v_j,
 \]
@@ -643,21 +643,21 @@ v_i=v_j,
 \[
 f(v_1,\ldots,v_r)=0,
 \]
-则称 $f$ 为交错多线性映射。
+则称 $f$ 为交错多线性映射.
 \end{definition}
 
 
 \begin{definition}
-若多线性映射满足交换任意两个变量后改变符号，即
+若多线性映射满足交换任意两个变量后改变符号,即
 \[
 f(v_1,\ldots,v_i,\ldots,v_j,\ldots,v_r)
 =
 -f(v_1,\ldots,v_j,\ldots,v_i,\ldots,v_r),
 \]
-则称其为反对称多线性映射。
+则称其为反对称多线性映射.
 \end{definition}
 
-在通常高等代数所使用的特征不为 $2$ 的数域上，交错性与反对称性等价。
+在通常高等代数所使用的特征不为 $2$ 的数域上,交错性与反对称性等价.
 
 记
 \[
@@ -668,7 +668,7 @@ T^r(V)=
 \[
 v_1\otimes\cdots\otimes v_r
 \]
-中含有两个相同因子的纯张量生成的子空间。
+中含有两个相同因子的纯张量生成的子空间.
 
 \begin{definition}[外积空间]
 定义
@@ -689,12 +689,12 @@ v_1\wedge\cdots\wedge v_r.
 \[
 v_1\wedge\cdots\wedge v_r
 \]
-为 $v_1,\ldots,v_r$ 的外积。
+为 $v_1,\ldots,v_r$ 的外积.
 \end{definition}
 
 
 \begin{lemma}[\markstar]
-外积满足多线性与交错性。
+外积满足多线性与交错性.
 \end{lemma}
 
 
@@ -719,7 +719,7 @@ f(v_1,\ldots,v_r).
 \cong
 \operatorname{Alt}^r(V;F),
 \]
-其中右端表示 $V^r\to F$ 的交错 $r$-线性型空间。
+其中右端表示 $V^r\to F$ 的交错 $r$-线性型空间.
 \end{theorem}
 
 
@@ -741,13 +741,13 @@ C_r^n, & 0\le r\le n,\\
 \[
 e_1,\ldots,e_n
 \]
-是 $V$ 的一组基，则
+是 $V$ 的一组基,则
 \[
 e_{i_1}\wedge\cdots\wedge e_{i_r},
 \qquad
 1\le i_1<\cdots<i_r\le n,
 \]
-构成 $\Lambda^r(V)$ 的一组基。
+构成 $\Lambda^r(V)$ 的一组基.
 
 定义
 \[
@@ -767,7 +767,7 @@ e_{i_1}\wedge\cdots\wedge e_{i_r},
 
 
 \begin{theorem}[\markstar]
-设 $V$ 与 $V^*$ 互为对偶有限维线性空间，则存在自然同构
+设 $V$ 与 $V^*$ 互为对偶有限维线性空间,则存在自然同构
 \[
 \Psi:
 \Lambda^r(V^*)
@@ -781,27 +781,27 @@ e_{i_1}\wedge\cdots\wedge e_{i_r},
 =
 \det(f_i(v_j)).
 \]
-特别地，当
+特别地,当
 \[
 V=F^n,\qquad r=n
 \]
-时，行列式正是典型的交错 $n$-线性型。
+时,行列式正是典型的交错 $n$-线性型.
 \end{theorem}
 
 
 \begin{example}
-原讲义此处写为：
+原讲义此处写为:
 \[
 v_1\wedge\cdots\wedge v_r=0
 \iff
 v_1,\ldots,v_r\text{ 线性无关}.
 \]
-判断这一结论，并给出正确命题。
+判断这一结论,并给出正确命题.
 \end{example}
 \exampleblank
 
 \begin{solution}
-原讲义把“线性相关”误写成了“线性无关”。
+原讲义把``线性相关''误写成了``线性无关''.
 
 正确命题是
 \[
@@ -812,15 +812,15 @@ v_1,\ldots,v_r\text{ 线性相关}.
 }
 \]
 
-若向量线性相关，可通过多线性性与交错性把其中一个向量表示为其余向量的线性组合，
-每一项都会出现重复因子，因此外积为零。
+若向量线性相关,可通过多线性性与交错性把其中一个向量表示为其余向量的线性组合,
+每一项都会出现重复因子,因此外积为零.
 
-反之，若 $v_1,\ldots,v_r$ 线性无关，把它们扩充成 $V$ 的一组基。
-根据外积空间的基定理，
+反之,若 $v_1,\ldots,v_r$ 线性无关,把它们扩充成 $V$ 的一组基.
+根据外积空间的基定理,
 \[
 v_1\wedge\cdots\wedge v_r
 \]
-正是某个非零基向量，所以不为零。
+正是某个非零基向量,所以不为零.
 \end{solution}
 
 
@@ -844,24 +844,24 @@ v_1\wedge\cdots\wedge v_r
 \exampleblank
 
 \begin{solution}
-先对纯外积证明。设
+先对纯外积证明.设
 \[
 \omega_1=v_1\wedge\cdots\wedge v_r,
 \qquad
 \omega_2=u_1\wedge\cdots\wedge u_s.
 \]
-把 $r$ 个 $v$ 全部越过 $s$ 个 $u$，总共需要
+把 $r$ 个 $v$ 全部越过 $s$ 个 $u$,总共需要
 \[
 rs
 \]
-次相邻交换，每次交换带来一个负号。因此
+次相邻交换,每次交换带来一个负号.因此
 \[
 \omega_1\wedge\omega_2
 =
 (-1)^{rs}
 \omega_2\wedge\omega_1.
 \]
-一般情形由纯外积的线性组合及双线性性得到。
+一般情形由纯外积的线性组合及双线性性得到.
 \end{solution}
 
 
@@ -870,11 +870,11 @@ rs
 \[
 w_1,\ldots,w_r\in V
 \]
-线性无关，
+线性无关,
 \[
 \Phi\in\Lambda^s(V).
 \]
-证明下列条件等价：
+证明下列条件等价:
 \begin{enumerate}
     \item 存在
     \[
@@ -903,7 +903,7 @@ w_1,\ldots,w_r
 \[
 w_1,\ldots,w_r,u_{r+1},\ldots,u_n.
 \]
-把 $\Phi$ 按这组基对应的外积基展开。
+把 $\Phi$ 按这组基对应的外积基展开.
 
 若
 \[
@@ -915,9 +915,9 @@ w_1,\ldots,w_r,u_{r+1},\ldots,u_n.
 \[
 w_1\wedge\cdots\wedge w_r\wedge\Phi=0,
 \]
-因为每一项都至少重复一个 $w_i$。
+因为每一项都至少重复一个 $w_i$.
 
-反之，假设
+反之,假设
 \[
 w_1\wedge\cdots\wedge w_r\wedge\Phi=0.
 \]
@@ -929,11 +929,11 @@ w_1,\ldots,w_r,
 \[
 w_1\wedge\cdots\wedge w_r
 \]
-相乘后会得到一个非零外积基向量，并且不同这样的项不会互相抵消，
-与假设矛盾。
+相乘后会得到一个非零外积基向量,并且不同这样的项不会互相抵消,
+与假设矛盾.
 
-因此 $\Phi$ 的每一个外积基项至少含有一个 $w_i$。
-把所有含 $w_i$ 的项按选定的第一个 $w_i$ 分组，即可写成
+因此 $\Phi$ 的每一个外积基项至少含有一个 $w_i$.
+把所有含 $w_i$ 的项按选定的第一个 $w_i$ 分组,即可写成
 \[
 \Phi
 =

@@ -8,20 +8,20 @@
 \subsection{基础}
 
 \begin{example}
-设 $V$ 是 $n$ 维欧氏空间，$T$ 是 $V$ 的线性变换。定义
+设 $V$ 是 $n$ 维欧氏空间,$T$ 是 $V$ 的线性变换.定义
 \[
 f(\alpha,\beta)=(T\alpha,T\beta).
 \]
-问 $f$ 是否一定是 $V$ 上的内积。
+问 $f$ 是否一定是 $V$ 上的内积.
 \end{example}
 \exampleblank
 
 \begin{solution}
-$f$ 总满足双线性、对称性以及
+$f$ 总满足双线性,对称性以及
 \[
 f(\alpha,\alpha)=\|T\alpha\|^2\ge0.
 \]
-真正需要检查的是正定性：
+真正需要检查的是正定性:
 \[
 f(\alpha,\alpha)=0
 \iff
@@ -31,18 +31,18 @@ T\alpha=0.
 \[
 \boxed{f\text{ 是内积}\iff \ker T=\{0\}\iff T\text{ 单射}.}
 \]
-有限维且 $T:V\to V$ 时，这也等价于 $T$ 可逆。
+有限维且 $T:V\to V$ 时,这也等价于 $T$ 可逆.
 \end{solution}
 
 
 \begin{example}
-设 $W_1,W_2$ 是 $n$ 维欧氏空间 $V$ 的子空间，且
+设 $W_1,W_2$ 是 $n$ 维欧氏空间 $V$ 的子空间,且
 \[
 \dim W_1=s<t=\dim W_2.
 \]
-证明：
+证明:
 \begin{enumerate}
-    \item 存在非零 $\beta\in W_2$，使 $\beta\perp W_1$，并且
+    \item 存在非零 $\beta\in W_2$,使 $\beta\perp W_1$,并且
     \[
     \dim(W_1^\perp\cap W_2)\ge t-s;
     \]
@@ -63,13 +63,13 @@ P_{W_1}:W_2\to W_1.
 \[
 \ker P_{W_1}=W_2\cap W_1^\perp.
 \]
-由秩--零化度定理，
+由秩--零化度定理,
 \[
 \dim(W_2\cap W_1^\perp)
 =t-r(P_{W_1})
 \ge t-s>0.
 \]
-故第一问成立。
+故第一问成立.
 
 又
 \[
@@ -92,7 +92,7 @@ P_{W_1}:W_2\to W_1.
 
 
 \begin{example}
-在 $\mathbb R^4$ 中，令
+在 $\mathbb R^4$ 中,令
 \[
 V_1=\Span\{(1,0,1,-2),(1,2,-1,0),(1,1,0,-1)\},
 \]
@@ -108,7 +108,7 @@ V_2=\Span\{(0,-2,2,-2),(-1,3,0,4),(1,5,0,2),(-1,1,2,2)\}.
 
 \begin{solution}
 向量 $x=(x_1,x_2,x_3,x_4)^{\mathsf T}$ 属于 $(V_1+V_2)^\perp$ 的充分必要条件是
-它与题中全部生成向量正交。联立这些线性方程并化简，得到一维解空间
+它与题中全部生成向量正交.联立这些线性方程并化简,得到一维解空间
 \[
 (x_1,x_2,x_3,x_4)=t(7,-3,1,4).
 \]
@@ -120,7 +120,7 @@ V_2=\Span\{(0,-2,2,-2),(-1,3,0,4),(1,5,0,2),(-1,1,2,2)\}.
 
 
 \begin{example}
-设 $\alpha_1,\alpha_2,\alpha_3$ 是三维欧氏空间 $V$ 的一组基，其 Gram 矩阵为
+设 $\alpha_1,\alpha_2,\alpha_3$ 是三维欧氏空间 $V$ 的一组基,其 Gram 矩阵为
 \[
 G=
 \begin{pmatrix}
@@ -134,14 +134,14 @@ G=
 W=\Span\{\alpha_1+\alpha_2,\alpha_2+\alpha_3\}.
 \]
 \begin{enumerate}
-    \item 求 $W$ 的一组标准正交基；
-    \item 求 $W^\perp$ 的维数及一组标准正交基。
+    \item 求 $W$ 的一组标准正交基;
+    \item 求 $W^\perp$ 的维数及一组标准正交基.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-记向量在基 $\alpha_1,\alpha_2,\alpha_3$ 下的坐标列为 $x$，则内积为
+记向量在基 $\alpha_1,\alpha_2,\alpha_3$ 下的坐标列为 $x$,则内积为
 \[
 (x,y)=x^{\mathsf T}Gy.
 \]
@@ -165,7 +165,7 @@ e_1=u,
 \qquad
 v-(v,e_1)e_1=(-1,0,1)^{\mathsf T},
 \]
-而后者平方范数为 $2$。所以
+而后者平方范数为 $2$.所以
 \[
 \boxed{
  e_1=\alpha_1+\alpha_2,
@@ -173,9 +173,9 @@ v-(v,e_1)e_1=(-1,0,1)^{\mathsf T},
  e_2=\dfrac{-\alpha_1+\alpha_3}{\sqrt2}
 }
 \]
-是 $W$ 的标准正交基。
+是 $W$ 的标准正交基.
 
-设 $z=(z_1,z_2,z_3)^{\mathsf T}$ 属于 $W^\perp$，则
+设 $z=(z_1,z_2,z_3)^{\mathsf T}$ 属于 $W^\perp$,则
 \[
 z^{\mathsf T}Gu=0,
 \qquad
@@ -185,7 +185,7 @@ z^{\mathsf T}Gv=0.
 \[
 z=t(1,0,1)^{\mathsf T}.
 \]
-其平方范数为 $6$，故
+其平方范数为 $6$,故
 \[
 \boxed{
 \dim W^\perp=1,
@@ -193,7 +193,7 @@ z=t(1,0,1)^{\mathsf T}.
 \dfrac{\alpha_1+\alpha_3}{\sqrt6}
 }
 \]
-为 $W^\perp$ 的标准正交基。
+为 $W^\perp$ 的标准正交基.
 \end{solution}
 
 
@@ -215,7 +215,7 @@ z=t(1,0,1)^{\mathsf T}.
 \[
 \varepsilon_4=\dfrac12(-1+x+x^2-x^3),
 \]
-并定义线性变换 $\varphi$：
+并定义线性变换 $\varphi$:
 \[
 \varphi(\varepsilon_i)=\eta_i,
 \]
@@ -230,7 +230,7 @@ z=t(1,0,1)^{\mathsf T}.
 \quad
 \eta_4=1-4x-x^2.
 \]
-求 $\ker\varphi$ 的一组标准正交基。
+求 $\ker\varphi$ 的一组标准正交基.
 \end{example}
 \exampleblank
 
@@ -239,7 +239,7 @@ z=t(1,0,1)^{\mathsf T}.
 \[
 \eta_1+\eta_3=0
 \]
-且 $\eta_1,\eta_2,\eta_4$ 线性无关，可得
+且 $\eta_1,\eta_2,\eta_4$ 线性无关,可得
 \[
 \ker\varphi
 =
@@ -267,13 +267,13 @@ z=t(1,0,1)^{\mathsf T}.
 
 
 \begin{example}
-设 $\alpha\neq0$，以及 $\alpha_1,\ldots,\alpha_m$ 满足
+设 $\alpha\neq0$,以及 $\alpha_1,\ldots,\alpha_m$ 满足
 \[
 (\alpha,\alpha_i)>0,
 \qquad
 (\alpha_i,\alpha_j)\le0\quad(i\neq j).
 \]
-证明 $\alpha_1,\ldots,\alpha_m$ 线性无关。
+证明 $\alpha_1,\ldots,\alpha_m$ 线性无关.
 \end{example}
 \exampleblank
 
@@ -282,14 +282,14 @@ z=t(1,0,1)^{\mathsf T}.
 \[
 \sum c_i\alpha_i=0,
 \]
-把指标按 $c_i>0$ 与 $c_i<0$ 分为两组，则可写成
+把指标按 $c_i>0$ 与 $c_i<0$ 分为两组,则可写成
 \[
 \beta=
 \sum_{c_i>0}c_i\alpha_i
 =
 \sum_{c_j<0}(-c_j)\alpha_j.
 \]
-若两组都非空，则
+若两组都非空,则
 \[
 \|\beta\|^2
 =
@@ -297,53 +297,53 @@ z=t(1,0,1)^{\mathsf T}.
 c_i(-c_j)(\alpha_i,\alpha_j)
 \le0,
 \]
-所以 $\beta=0$。但与 $\alpha$ 作内积得到
+所以 $\beta=0$.但与 $\alpha$ 作内积得到
 \[
 (\alpha,\beta)
 =
 \sum_{c_i>0}c_i(\alpha,\alpha_i)>0,
 \]
-矛盾。
+矛盾.
 
-若只有一组非空，直接与 $\alpha$ 作内积也得到矛盾。因此只能所有 $c_i=0$。
+若只有一组非空,直接与 $\alpha$ 作内积也得到矛盾.因此只能所有 $c_i=0$.
 \end{solution}
 
 
 \begin{example}
-称 $\mathbb R^n$ 中非零向量为正向量，如果它的第一个非零分量为正数。
-设 $\alpha_1,\ldots,\alpha_p$ 都是正向量，并且
+称 $\mathbb R^n$ 中非零向量为正向量,如果它的第一个非零分量为正数.
+设 $\alpha_1,\ldots,\alpha_p$ 都是正向量,并且
 \[
 (\alpha_i,\alpha_j)\le0
 \qquad(i\neq j).
 \]
-证明它们线性无关。
+证明它们线性无关.
 \end{example}
 \exampleblank
 
 \begin{solution}
-若有非平凡线性关系，仍按系数正负分组，得到
+若有非平凡线性关系,仍按系数正负分组,得到
 \[
 \beta=
 \sum_{c_i>0}c_i\alpha_i
 =
 \sum_{c_j<0}(-c_j)\alpha_j.
 \]
-若两组都非空，则同上一题
+若两组都非空,则同上一题
 \[
 \|\beta\|^2\le0,
 \]
-故 $\beta=0$。
+故 $\beta=0$.
 
-但正向量的任意非零正线性组合仍是正向量：取所有参与向量中“第一个非零分量”出现的最小位置，
-该位置的总和严格为正。因此非零正线性组合不可能为零，矛盾。
+但正向量的任意非零正线性组合仍是正向量:取所有参与向量中``第一个非零分量''出现的最小位置,
+该位置的总和严格为正.因此非零正线性组合不可能为零,矛盾.
 
-若只有一组系数出现，同样由上述“正线性组合仍为正向量”得到矛盾。
-因此该向量组线性无关。
+若只有一组系数出现,同样由上述``正线性组合仍为正向量''得到矛盾.
+因此该向量组线性无关.
 \end{solution}
 
 
 \begin{example}[\markstar]
-证明：任一 $n$ 维欧氏空间中至多有 $n+1$ 个非零向量，使任意两个向量之间的夹角都大于
+证明:任一 $n$ 维欧氏空间中至多有 $n+1$ 个非零向量,使任意两个向量之间的夹角都大于
 \[
 \dfrac{\pi}{2}.
 \]
@@ -351,7 +351,7 @@ c_i(-c_j)(\alpha_i,\alpha_j)
 \exampleblank
 
 \begin{solution}
-设共有 $m$ 个这样的向量 $v_1,\ldots,v_m$，于是
+设共有 $m$ 个这样的向量 $v_1,\ldots,v_m$,于是
 \[
 (v_i,v_j)<0
 \qquad(i\neq j).
@@ -360,18 +360,18 @@ c_i(-c_j)(\alpha_i,\alpha_j)
 \[
 \sum c_iv_i=0,
 \]
-若系数同时有正有负，则像前两题一样分组可得某非零向量 $\beta$ 满足
+若系数同时有正有负,则像前两题一样分组可得某非零向量 $\beta$ 满足
 \[
 \|\beta\|^2<0,
 \]
-矛盾。因此任一非零线性关系的全部非零系数必须同号。
+矛盾.因此任一非零线性关系的全部非零系数必须同号.
 
-这说明关系空间的维数至多为 $1$：若有两个线性无关的关系，通过适当线性组合必可制造出同时含正、负系数的新关系。
+这说明关系空间的维数至多为 $1$:若有两个线性无关的关系,通过适当线性组合必可制造出同时含正,负系数的新关系.
 故
 \[
 m-r(v_1,\ldots,v_m)\le1.
 \]
-又秩不超过 $n$，所以
+又秩不超过 $n$,所以
 \[
  m-1\le n,
 \]
@@ -383,7 +383,7 @@ m-r(v_1,\ldots,v_m)\le1.
 
 
 \begin{example}[\markstar]
-设 $T$ 是欧氏空间 $V$ 上的对称线性变换，即
+设 $T$ 是欧氏空间 $V$ 上的对称线性变换,即
 \[
 (T\alpha,\beta)=(\alpha,T\beta).
 \]
@@ -395,7 +395,7 @@ m-r(v_1,\ldots,v_m)\le1.
 \exampleblank
 
 \begin{solution}
-若 $y=T x\in\operatorname{Im}T$，而 $z\in\ker T$，则
+若 $y=T x\in\operatorname{Im}T$,而 $z\in\ker T$,则
 \[
 (y,z)
 =
@@ -415,12 +415,12 @@ m-r(v_1,\ldots,v_m)\le1.
 =
 \dim(\ker T)^\perp.
 \]
-故二者相等。
+故二者相等.
 \end{solution}
 
 
 \begin{example}
-设 $A$ 为欧氏空间 $V$ 上的对称线性变换。证明对任意单位向量 $x$，有
+设 $A$ 为欧氏空间 $V$ 上的对称线性变换.证明对任意单位向量 $x$,有
 \[
 \|Ax\|^2\le\|A^2x\|.
 \]
@@ -428,13 +428,13 @@ m-r(v_1,\ldots,v_m)\le1.
 \exampleblank
 
 \begin{solution}
-因 $A$ 对称，
+因 $A$ 对称,
 \[
 \|Ax\|^2
 =(Ax,Ax)
 =(A^2x,x).
 \]
-由 Cauchy--Schwarz 不等式及 $\|x\|=1$，
+由 Cauchy--Schwarz 不等式及 $\|x\|=1$,
 \[
 \|Ax\|^2
 \le
@@ -446,7 +446,7 @@ m-r(v_1,\ldots,v_m)\le1.
 
 
 \begin{example}[\markstar]
-设 $\alpha_1,\ldots,\alpha_k$ 是欧氏空间 $V$ 中两两正交的单位向量，$\alpha\in V$。
+设 $\alpha_1,\ldots,\alpha_k$ 是欧氏空间 $V$ 中两两正交的单位向量,$\alpha\in V$.
 证明 Bessel 不等式
 \[
 \sum\limits_{i=1}^{k}(\alpha,\alpha_i)^2
@@ -460,12 +460,12 @@ m-r(v_1,\ldots,v_m)\le1.
 \alpha-
 \sum\limits_{i=1}^{k}(\alpha,\alpha_i)\alpha_i
 \]
-与每个 $\alpha_i$ 正交。
+与每个 $\alpha_i$ 正交.
 \end{example}
 \exampleblank
 
 \begin{solution}
-对任意 $j$，
+对任意 $j$,
 \[
 (\beta,\alpha_j)
 =
@@ -480,7 +480,7 @@ m-r(v_1,\ldots,v_m)\le1.
 =
 \sum_i(\alpha,\alpha_i)\alpha_i+\beta
 \]
-是正交分解。于是由 Pythagoras 定理
+是正交分解.于是由 Pythagoras 定理
 \[
 \|\alpha\|^2
 =
@@ -494,18 +494,18 @@ m-r(v_1,\ldots,v_m)\le1.
 \subsection{正射影与最小二乘法}
 
 \begin{proposition}[\markstar]
-设 $W$ 是酉空间 $V$ 的有限维子空间。向量 $\alpha\in W$ 是 $\beta\in V$ 到 $W$ 的正射影的充分必要条件为
+设 $W$ 是酉空间 $V$ 的有限维子空间.向量 $\alpha\in W$ 是 $\beta\in V$ 到 $W$ 的正射影的充分必要条件为
 \[
 \beta-\alpha\in W^\perp.
 \]
-正射影若存在则唯一。若 $\alpha_1,\ldots,\alpha_m$ 是 $W$ 的一组正交基，则
+正射影若存在则唯一.若 $\alpha_1,\ldots,\alpha_m$ 是 $W$ 的一组正交基,则
 \[
 P_W\beta
 =
 \sum\limits_{k=1}^{m}
 \dfrac{\langle\alpha_k,\beta\rangle}{\|\alpha_k\|^2}\alpha_k.
 \]
-对于实矩阵最小二乘问题，
+对于实矩阵最小二乘问题,
 \[
 \|Ay-b\|\text{ 最小}
 \iff
@@ -519,13 +519,13 @@ A^{\mathsf T}Ay=A^{\mathsf T}b.
 
 
 \begin{example}
-设 $W$ 是酉空间 $V$ 的有限维子空间，定义正射影
+设 $W$ 是酉空间 $V$ 的有限维子空间,定义正射影
 \[
 E:V\to W,
 \qquad
 \beta\mapsto P_W\beta.
 \]
-证明：
+证明:
 \begin{enumerate}
     \item
     \[
@@ -539,7 +539,7 @@ E:V\to W,
     \[
     V=W\oplus W^\perp;
     \]
-    \item $I-E$ 是到 $W^\perp$ 的正射影，且
+    \item $I-E$ 是到 $W^\perp$ 的正射影,且
     \[
     \operatorname{Im}(I-E)=W^\perp,
     \qquad
@@ -565,18 +565,18 @@ Ex=w.
 \[
 E^2x=Ew=w=Ex,
 \]
-且像空间、核空间分别为 $W$ 与 $W^\perp$。
+且像空间,核空间分别为 $W$ 与 $W^\perp$.
 
 同时
 \[
 (I-E)x=z,
 \]
-所以 $I-E$ 正是到 $W^\perp$ 的正射影，其像空间与核空间如题。
+所以 $I-E$ 正是到 $W^\perp$ 的正射影,其像空间与核空间如题.
 \end{solution}
 
 
 \begin{example}[\markstar]
-证明：欧氏空间中两个向量 $\alpha,\beta$ 正交的充分必要条件是
+证明:欧氏空间中两个向量 $\alpha,\beta$ 正交的充分必要条件是
 \[
 \|\alpha+t\beta\|\ge\|\alpha\|
 \qquad
@@ -594,18 +594,18 @@ E^2x=Ew=w=Ex,
 +2t(\alpha,\beta)
 +t^2\|\beta\|^2.
 \]
-若 $\alpha\perp\beta$，结论显然。
+若 $\alpha\perp\beta$,结论显然.
 
-反之，若对全部 $t$ 都有该不等式，则关于 $t$ 的二次函数在 $t=0$ 处取得最小值，故其一次项系数为零：
+反之,若对全部 $t$ 都有该不等式,则关于 $t$ 的二次函数在 $t=0$ 处取得最小值,故其一次项系数为零:
 \[
 2(\alpha,\beta)=0.
 \]
-所以 $\alpha\perp\beta$。
+所以 $\alpha\perp\beta$.
 \end{solution}
 
 
 \begin{example}
-设 $\sigma$ 是欧氏空间 $V$ 上的投影变换，即
+设 $\sigma$ 是欧氏空间 $V$ 上的投影变换,即
 \[
 \sigma^2=\sigma.
 \]
@@ -627,7 +627,7 @@ u\in\operatorname{Im}\sigma,
 \qquad
 v\in\ker\sigma.
 \]
-则对任意 $t\in\mathbb R$，
+则对任意 $t\in\mathbb R$,
 \[
 \sigma(u+tv)=u.
 \]
@@ -651,7 +651,7 @@ u\perp v.
 
 
 \begin{example}
-设 $\varepsilon_1,\varepsilon_2,\varepsilon_3$ 是三维欧氏空间的一组标准正交基，
+设 $\varepsilon_1,\varepsilon_2,\varepsilon_3$ 是三维欧氏空间的一组标准正交基,
 \[
 \alpha_1=\varepsilon_1+\varepsilon_2-\varepsilon_3,
 \qquad
@@ -661,18 +661,18 @@ u\perp v.
 W=\Span\{\alpha_1,\alpha_2\}.
 \]
 \begin{enumerate}
-    \item 求 $W,W^\perp$ 的标准正交基；
+    \item 求 $W,W^\perp$ 的标准正交基;
     \item 对
     \[
     \alpha=\varepsilon_2+2\varepsilon_3
     \]
-    求其在 $W$ 中的正射影及到 $W$ 的距离。
+    求其在 $W$ 中的正射影及到 $W$ 的距离.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-对 $\alpha_1,\alpha_2$ 作 Gram--Schmidt 正交化，可取
+对 $\alpha_1,\alpha_2$ 作 Gram--Schmidt 正交化,可取
 \[
  e_1
  =
@@ -715,13 +715,13 @@ P_W\alpha
 
 
 \begin{example}
-设 $A\in M_{m,n}(\mathbb R)$ 列满秩，$m>n$，$W$ 为 $A$ 的列空间。定义
+设 $A\in M_{m,n}(\mathbb R)$ 列满秩,$m>n$,$W$ 为 $A$ 的列空间.定义
 \[
 P=A(A^{\mathsf T}A)^{-1}A^{\mathsf T},
 \qquad
 \varphi(x)=Px.
 \]
-证明 $\varphi$ 是 $\mathbb R^m$ 到 $W$ 的正交投影。
+证明 $\varphi$ 是 $\mathbb R^m$ 到 $W$ 的正交投影.
 \end{example}
 \exampleblank
 
@@ -741,20 +741,20 @@ A(A^{\mathsf T}A)^{-1}A^{\mathsf T}A(A^{\mathsf T}A)^{-1}A^{\mathsf T}
 \[
 \operatorname{Im}P\subseteq\operatorname{Im}A=W,
 \]
-而对任意 $w=Ay\in W$，
+而对任意 $w=Ay\in W$,
 \[
 Pw=Ay=w,
 \]
-故 $\operatorname{Im}P=W$。
+故 $\operatorname{Im}P=W$.
 
-对称幂等矩阵正是正交投影矩阵，因此 $P$ 是到 $W$ 的正交投影。
+对称幂等矩阵正是正交投影矩阵,因此 $P$ 是到 $W$ 的正交投影.
 \end{solution}
 
 
 \subsection{伴随变换}
 
 \begin{proposition}[\markstar]
-设 $A$ 是有限维酉空间 $V$ 的线性变换，则
+设 $A$ 是有限维酉空间 $V$ 的线性变换,则
 \[
 \operatorname{Im}(A^*)=(\ker A)^\perp.
 \]
@@ -762,7 +762,7 @@ Pw=Ay=w,
 
 
 \begin{example}
-设 $E$ 是有限维酉空间 $V$ 到子空间 $W$ 的正射影。求 $E^*$。
+设 $E$ 是有限维酉空间 $V$ 到子空间 $W$ 的正射影.求 $E^*$.
 \end{example}
 \exampleblank
 
@@ -799,12 +799,12 @@ y=y_W+y_\perp,
 \[
 T_M(A)=MA.
 \]
-求 $T_M^*$。
+求 $T_M^*$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-对任意 $A,B$，
+对任意 $A,B$,
 \[
 \langle T_MA,B\rangle
 =
@@ -893,16 +893,16 @@ G(\alpha_1,\ldots,\alpha_m)=A^{\mathsf T}A.
 \[
 \alpha_1,\ldots,\alpha_m
 \]
-的 Gram 矩阵。证明
+的 Gram 矩阵.证明
 \[
 r(G)=r(\alpha_1,\ldots,\alpha_m).
 \]
-特别地，该向量组线性无关的充分必要条件是 $G$ 满秩。
+特别地,该向量组线性无关的充分必要条件是 $G$ 满秩.
 \end{example}
 \exampleblank
 
 \begin{solution}
-令 $A$ 的列向量为 $\alpha_i$ 在某标准正交基下的坐标，则
+令 $A$ 的列向量为 $\alpha_i$ 在某标准正交基下的坐标,则
 \[
 G=A^{\mathsf T}A.
 \]
@@ -914,12 +914,12 @@ G=A^{\mathsf T}A.
 \[
 r(G)=r(A).
 \]
-而 $r(A)$ 正是向量组的秩，故结论成立。
+而 $r(A)$ 正是向量组的秩,故结论成立.
 \end{solution}
 
 
 \begin{example}
-设 $A$ 是 $s\times n$ 的 $0$-$1$ 矩阵，每一行元素之和均为 $r$，任意两行的内积均为常数 $m$，且
+设 $A$ 是 $s\times n$ 的 $0$-$1$ 矩阵,每一行元素之和均为 $r$,任意两行的内积均为常数 $m$,且
 \[
 m<r.
 \]
@@ -928,14 +928,14 @@ m<r.
     \[
     \det(AA^{\mathsf T});
     \]
-    \item 证明 $s\le n$；
-    \item 证明 $AA^{\mathsf T}$ 的全部特征值均为正实数。
+    \item 证明 $s\le n$;
+    \item 证明 $AA^{\mathsf T}$ 的全部特征值均为正实数.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-因为每一行有 $r$ 个 $1$，所以自身内积为 $r$；不同行内积为 $m$。因此
+因为每一行有 $r$ 个 $1$,所以自身内积为 $r$;不同行内积为 $m$.因此
 \[
 AA^{\mathsf T}
 =
@@ -958,7 +958,7 @@ r+(s-1)m.
 }
 \]
 
-由于 $A$ 为 $0$-$1$ 矩阵，$m\ge0$，且 $m<r$，故上述全部特征值均为正。
+由于 $A$ 为 $0$-$1$ 矩阵,$m\ge0$,且 $m<r$,故上述全部特征值均为正.
 于是
 \[
 r(AA^{\mathsf T})=s.
@@ -971,20 +971,20 @@ r(AA^{\mathsf T})=r(A)\le n,
 \[
 \boxed{s\le n}.
 \]
-第三问也同时得到证明。
+第三问也同时得到证明.
 \end{solution}
 
 
 \begin{example}
-设 $W$ 是欧氏空间 $V$ 的子空间，$\alpha\in V$，并定义
+设 $W$ 是欧氏空间 $V$ 的子空间,$\alpha\in V$,并定义
 \[
 d(\alpha,W)=\|\alpha-\alpha'\|,
 \]
-其中 $\alpha'$ 是 $\alpha$ 在 $W$ 上的正交投影。若
+其中 $\alpha'$ 是 $\alpha$ 在 $W$ 上的正交投影.若
 \[
 \alpha_1,\ldots,\alpha_m
 \]
-是 $W$ 的一组基，证明
+是 $W$ 的一组基,证明
 \[
 \boxed{
  d(\alpha,W)
@@ -1022,7 +1022,7 @@ G&b\\
 b^{\mathsf T}&\|\alpha\|^2
 \end{pmatrix}.
 \]
-由于 $\alpha_i$ 是一组基，$G$ 可逆。Schur 补给出
+由于 $\alpha_i$ 是一组基,$G$ 可逆.Schur 补给出
 \[
 \det\widetilde G
 =
@@ -1037,7 +1037,7 @@ b^{\mathsf T}&\|\alpha\|^2
 =
 d(\alpha,W)^2.
 \]
-故所需公式成立。
+故所需公式成立.
 \end{solution}
 
 
@@ -1048,11 +1048,11 @@ d(\alpha,W)^2.
 \subsection{规范矩阵标准形}
 
 \begin{example}
-设 $A$ 为 $n$ 阶实方阵。证明：存在正交矩阵 $Q$ 使
+设 $A$ 为 $n$ 阶实方阵.证明:存在正交矩阵 $Q$ 使
 \[
 Q^{\mathsf T}AQ
 \]
-为实对角矩阵的充分必要条件是：$A$ 的全部特征值均为实数，并且
+为实对角矩阵的充分必要条件是:$A$ 的全部特征值均为实数,并且
 \[
 A^{\mathsf T}A=AA^{\mathsf T}.
 \]
@@ -1064,17 +1064,17 @@ A^{\mathsf T}A=AA^{\mathsf T}.
 \[
 Q^{\mathsf T}AQ=D
 \]
-为实对角矩阵，则 $A$ 与实对角矩阵相似，所以特征值均为实数；并且
+为实对角矩阵,则 $A$ 与实对角矩阵相似,所以特征值均为实数;并且
 \[
 A^{\mathsf T}A=AA^{\mathsf T}
 \]
-由 $D^{\mathsf T}D=DD^{\mathsf T}$ 立即得到。
+由 $D^{\mathsf T}D=DD^{\mathsf T}$ 立即得到.
 
-反之，条件
+反之,条件
 \[
 A^{\mathsf T}A=AA^{\mathsf T}
 \]
-说明 $A$ 是实正规矩阵。实正规矩阵在正交基下可化为由一阶实块与对应于非实共轭特征值的二阶实块组成的标准形。题设又保证全部特征值为实数，因此不存在二阶非实块，只剩一阶实对角块。故存在正交 $Q$ 使
+说明 $A$ 是实正规矩阵.实正规矩阵在正交基下可化为由一阶实块与对应于非实共轭特征值的二阶实块组成的标准形.题设又保证全部特征值为实数,因此不存在二阶非实块,只剩一阶实对角块.故存在正交 $Q$ 使
 \[
 \boxed{Q^{\mathsf T}AQ\text{ 为实对角矩阵}.}
 \]
@@ -1082,11 +1082,11 @@ A^{\mathsf T}A=AA^{\mathsf T}
 
 
 \begin{example}
-设 $\sigma$ 是 $n$ 维欧氏空间 $V$ 上的正规变换，满足
+设 $\sigma$ 是 $n$ 维欧氏空间 $V$ 上的正规变换,满足
 \[
 \sigma^2+I_V=0.
 \]
-证明对任意 $x\in V$，
+证明对任意 $x\in V$,
 \[
 \|x\|=\|\sigma x\|=\|\sigma^*x\|.
 \]
@@ -1102,18 +1102,18 @@ A^{\mathsf T}A=AA^{\mathsf T}
 \[
 S=\sigma^*\sigma.
 \]
-由于 $\sigma$ 与 $\sigma^*$ 可交换，
+由于 $\sigma$ 与 $\sigma^*$ 可交换,
 \[
 S^2
 =(\sigma^*)^2\sigma^2
 =(\sigma^2)^*\sigma^2
 =(-I)(-I)=I.
 \]
-而 $S$ 是正定自伴算子，所以其特征值都为正。由 $S^2=I$，只能有
+而 $S$ 是正定自伴算子,所以其特征值都为正.由 $S^2=I$,只能有
 \[
 S=I.
 \]
-因此 $\sigma$ 是正交变换：
+因此 $\sigma$ 是正交变换:
 \[
 \|\sigma x\|^2=(Sx,x)=\|x\|^2.
 \]
@@ -1129,7 +1129,7 @@ S=I.
 
 
 \begin{example}
-设 $\varphi$ 是欧氏空间 $V$ 上的正规变换，$\psi$ 是线性变换，并且
+设 $\varphi$ 是欧氏空间 $V$ 上的正规变换,$\psi$ 是线性变换,并且
 \[
 \varphi\psi=\psi\varphi.
 \]
@@ -1141,23 +1141,23 @@ S=I.
 \exampleblank
 
 \begin{solution}
-把 $V$ 复化。正规算子 $\varphi$ 可酉对角化，因此
+把 $V$ 复化.正规算子 $\varphi$ 可酉对角化,因此
 \[
 V_{\mathbb C}
 =
 \bigoplus_{\lambda}E_\lambda,
 \]
-其中 $E_\lambda$ 为 $\varphi$ 的特征子空间。
+其中 $E_\lambda$ 为 $\varphi$ 的特征子空间.
 
 由
 \[
 \varphi\psi=\psi\varphi
 \]
-可知 $\psi$ 保持每个 $E_\lambda$。另一方面，$\varphi^*$ 在 $E_\lambda$ 上等于标量
+可知 $\psi$ 保持每个 $E_\lambda$.另一方面,$\varphi^*$ 在 $E_\lambda$ 上等于标量
 \[
 \overline\lambda I.
 \]
-因此 $\psi$ 在每个特征子空间上都与 $\varphi^*$ 可交换，于是在整个空间上
+因此 $\psi$ 在每个特征子空间上都与 $\varphi^*$ 可交换,于是在整个空间上
 \[
 \boxed{\varphi^*\psi=\psi\varphi^*.}
 \]
@@ -1165,7 +1165,7 @@ V_{\mathbb C}
 
 
 \begin{example}
-设 $N$ 是有限维酉空间 $V$ 上的正规线性变换。证明存在复系数多项式 $f$，使
+设 $N$ 是有限维酉空间 $V$ 上的正规线性变换.证明存在复系数多项式 $f$,使
 \[
 N^*=f(N).
 \]
@@ -1173,22 +1173,22 @@ N^*=f(N).
 \exampleblank
 
 \begin{solution}
-正规算子可酉对角化。设其互不相同的特征值为
+正规算子可酉对角化.设其互不相同的特征值为
 \[
 \lambda_1,\ldots,\lambda_s.
 \]
-由 Lagrange 插值，存在多项式 $f$ 满足
+由 Lagrange 插值,存在多项式 $f$ 满足
 \[
 f(\lambda_j)=\overline{\lambda_j}
 \qquad(j=1,\ldots,s).
 \]
-在 $N$ 的酉特征基下，
+在 $N$ 的酉特征基下,
 \[
 N=\diag(\lambda_1,\ldots),
 \qquad
 N^*=\diag(\overline{\lambda_1},\ldots),
 \]
-而 $f(N)$ 的对角元恰为 $f(\lambda_j)=\overline{\lambda_j}$。因此
+而 $f(N)$ 的对角元恰为 $f(\lambda_j)=\overline{\lambda_j}$.因此
 \[
 \boxed{N^*=f(N)}.
 \]
@@ -1208,25 +1208,25 @@ O&N_3
 \[
 N_2=O.
 \]
-因此正规变换的任意不变子空间都是约化子空间：若 $W$ 对 $N$ 不变，则 $W^\perp$ 也对 $N$ 不变。
+因此正规变换的任意不变子空间都是约化子空间:若 $W$ 对 $N$ 不变,则 $W^\perp$ 也对 $N$ 不变.
 \end{proposition}
 
 
 \begin{example}
-设 $A$ 是酉空间 $V$ 上的正规变换，$W\subseteq V$ 是 $A$-不变子空间。证明限制
+设 $A$ 是酉空间 $V$ 上的正规变换,$W\subseteq V$ 是 $A$-不变子空间.证明限制
 \[
 A|_{W^\perp}
 \]
-也是正规变换。
+也是正规变换.
 \end{example}
 \exampleblank
 
 \begin{solution}
-由上面的分块命题，正规性与 $W$ 的不变性推出
+由上面的分块命题,正规性与 $W$ 的不变性推出
 \[
 W^\perp
 \]
-也同时对 $A$ 与 $A^*$ 不变。因此
+也同时对 $A$ 与 $A^*$ 不变.因此
 \[
 (A|_{W^\perp})^*=A^*|_{W^\perp}.
 \]
@@ -1240,14 +1240,14 @@ AA^*|_{W^\perp}
 =
 (A|_{W^\perp})(A|_{W^\perp})^*.
 \]
-故限制仍正规。
+故限制仍正规.
 \end{solution}
 
 
 \subsection{反称矩阵}
 
 \begin{proposition}[\marktwostar]
-实方阵 $A$ 为反称矩阵，即
+实方阵 $A$ 为反称矩阵,即
 \[
 A^{\mathsf T}=-A,
 \]
@@ -1262,12 +1262,12 @@ x^{\mathsf T}Ax=0
 
 \begin{example}
 \begin{enumerate}
-    \item 设 $A$ 为实反称矩阵，$B$ 为正定矩阵，证明 $AB$ 的全部特征值实部为 $0$；
-    \item 若 $\lambda_0\neq0$ 是实反称矩阵 $A$ 的特征值，证明存在两个正交单位向量 $\alpha,\beta\in\mathbb R^n$，使
+    \item 设 $A$ 为实反称矩阵,$B$ 为正定矩阵,证明 $AB$ 的全部特征值实部为 $0$;
+    \item 若 $\lambda_0\neq0$ 是实反称矩阵 $A$ 的特征值,证明存在两个正交单位向量 $\alpha,\beta\in\mathbb R^n$,使
     \[
     \alpha+i\beta
     \]
-    是属于 $\lambda_0$ 的复特征向量。
+    是属于 $\lambda_0$ 的复特征向量.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -1278,13 +1278,13 @@ x^{\mathsf T}Ax=0
     \[
     B^{1/2}AB^{1/2}
     \]
-    相似，而
+    相似,而
     \[
     (B^{1/2}AB^{1/2})^{\mathsf T}
     =
     -B^{1/2}AB^{1/2}.
     \]
-    实反称矩阵的特征值均为纯虚数或 $0$，故 $AB$ 的全部特征值实部为 $0$。
+    实反称矩阵的特征值均为纯虚数或 $0$,故 $AB$ 的全部特征值实部为 $0$.
 
     \item 设
     \[
@@ -1295,7 +1295,7 @@ x^{\mathsf T}Ax=0
     \[
     z=x+iy.
     \]
-    因 $A$ 为实正规矩阵，$\overline z$ 属于特征值 $-i\mu$，而两个不同特征值的特征向量在复内积下正交：
+    因 $A$ 为实正规矩阵,$\overline z$ 属于特征值 $-i\mu$,而两个不同特征值的特征向量在复内积下正交:
     \[
     z^*\overline z=0.
     \]
@@ -1320,7 +1320,7 @@ x^{\mathsf T}Ax=0
 
 
 \begin{example}
-设 $A$ 为 $n$ 阶实反称矩阵。
+设 $A$ 为 $n$ 阶实反称矩阵.
 \begin{enumerate}
     \item 若
     \[
@@ -1331,7 +1331,7 @@ x^{\mathsf T}Ax=0
     \[
     \det(A+B)>0;
     \]
-    \item 若 $B$ 为任意正定矩阵，证明
+    \item 若 $B$ 为任意正定矩阵,证明
     \[
     \det(A+B)>0;
     \]
@@ -1349,7 +1349,7 @@ x^{\mathsf T}Ax=0
 
 \begin{solution}
 \begin{enumerate}
-    \item $A+B$ 的对称部分为 $B>0$。若
+    \item $A+B$ 的对称部分为 $B>0$.若
     \[
     (A+B)x=0,
     \]
@@ -1357,27 +1357,27 @@ x^{\mathsf T}Ax=0
     \[
     0=x^{\mathsf T}(A+B)x=x^{\mathsf T}Bx,
     \]
-    从而 $x=0$，故 $A+B$ 可逆。又实矩阵 $A+B$ 的全部实特征值均为正，非实特征值成共轭对，因此
+    从而 $x=0$,故 $A+B$ 可逆.又实矩阵 $A+B$ 的全部实特征值均为正,非实特征值成共轭对,因此
     \[
     \det(A+B)>0.
     \]
 
-    \item 与第一问完全相同，不需要 $B$ 为对角矩阵。
+    \item 与第一问完全相同,不需要 $B$ 为对角矩阵.
 
-    \item 正交对角化 $B$。由于 $AB=BA$，$A$ 保持 $B$ 的每个特征子空间。
-    在 $B$ 的特征值为 $b\neq0$ 的特征子空间上，$A$ 的特征值为纯虚数 $i\mu$，所以
+    \item 正交对角化 $B$.由于 $AB=BA$,$A$ 保持 $B$ 的每个特征子空间.
+    在 $B$ 的特征值为 $b\neq0$ 的特征子空间上,$A$ 的特征值为纯虚数 $i\mu$,所以
     \[
     b+i\mu\neq0.
     \]
-    因此 $A+B$ 没有零特征值，故行列式非零。
+    因此 $A+B$ 没有零特征值,故行列式非零.
 \end{enumerate}
 \end{solution}
 
 
 \begin{example}
-设 $A$ 为 $n$ 阶实反称矩阵。证明：
+设 $A$ 为 $n$ 阶实反称矩阵.证明:
 \begin{enumerate}
-    \item 存在正交矩阵 $Q$，使
+    \item 存在正交矩阵 $Q$,使
     \[
     Q^{\mathsf T}A^2Q
     =
@@ -1387,12 +1387,12 @@ x^{\mathsf T}Ax=0
     -a_r^2,-a_r^2,
     0,\ldots,0),
     \]
-    其中 $a_i>0$；
+    其中 $a_i>0$;
     \item
     \[
     I-A^2
     \]
-    可逆。
+    可逆.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -1406,17 +1406,17 @@ J(a_i)=
 -a_i&0
 \end{pmatrix}
 \]
-以及零块组成。平方后
+以及零块组成.平方后
 \[
 J(a_i)^2=-a_i^2I_2.
 \]
-因此第一问成立。
+因此第一问成立.
 
 于是 $I-A^2$ 的特征值全部为
 \[
 1+a_i^2>0
 \]
-或 $1$，所以
+或 $1$,所以
 \[
 \boxed{I-A^2\text{ 正定且可逆}.}
 \]
@@ -1424,13 +1424,13 @@ J(a_i)^2=-a_i^2I_2.
 
 
 \begin{example}
-设 $A$ 为 $n$ 阶实反称矩阵。证明：
+设 $A$ 为 $n$ 阶实反称矩阵.证明:
 \begin{enumerate}
     \item
     \[
     \det A\ge0;
     \]
-    \item 若 $A$ 的元素全为整数，则 $\det A$ 是某个整数的平方。
+    \item 若 $A$ 的元素全为整数,则 $\det A$ 是某个整数的平方.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -1444,7 +1444,7 @@ J(a_i)^2=-a_i^2I_2.
 \[
 (ia_j)(-ia_j)=a_j^2>0.
 \]
-若 $n$ 为奇数，则必有零特征值，行列式为 $0$。因此总有
+若 $n$ 为奇数,则必有零特征值,行列式为 $0$.因此总有
 \[
 \boxed{\det A\ge0}.
 \]
@@ -1453,16 +1453,16 @@ J(a_i)^2=-a_i^2I_2.
 \[
 \det A=\operatorname{Pf}(A)^2.
 \]
-Pfaffian 是矩阵上三角元素的整系数多项式，因此当所有元素为整数时
+Pfaffian 是矩阵上三角元素的整系数多项式,因此当所有元素为整数时
 \[
 \operatorname{Pf}(A)\in\mathbb Z.
 \]
-奇阶时行列式为 $0=0^2$。故第二问成立。
+奇阶时行列式为 $0=0^2$.故第二问成立.
 \end{solution}
 
 
 \begin{example}
-设 $A$ 为 $n$ 阶实反称矩阵，$b\in\mathbb R^n$，并且
+设 $A$ 为 $n$ 阶实反称矩阵,$b\in\mathbb R^n$,并且
 \[
 r(A)=r(A,b).
 \]
@@ -1483,11 +1483,11 @@ A&b\\
 \[
 r(A)=r(A,b)
 \]
-可知 $b$ 属于 $A$ 的列空间，所以存在 $c$ 使
+可知 $b$ 属于 $A$ 的列空间,所以存在 $c$ 使
 \[
 b=Ac.
 \]
-又因 $A^{\mathsf T}=-A$，
+又因 $A^{\mathsf T}=-A$,
 \[
 -b^{\mathsf T}=c^{\mathsf T}A.
 \]
@@ -1503,25 +1503,25 @@ A&Ac\\
 c^{\mathsf T}A&0
 \end{pmatrix}.
 \]
-作可逆的分块行列变换消去最后一列、最后一行，其中
+作可逆的分块行列变换消去最后一列,最后一行,其中
 \[
 c^{\mathsf T}Ac=0
 \]
-由反称性成立，得到
+由反称性成立,得到
 \[
 \begin{pmatrix}
 A&0\\
 0&0
 \end{pmatrix}.
 \]
-故秩等于 $r(A)$。
+故秩等于 $r(A)$.
 \end{solution}
 
 
 \subsection{正交矩阵}
 
 \begin{theorem}[\markstar]
-奇异值分解：设 $A\in M_{m,n}(\mathbb R)$，$r(A)=r$，则存在 $m$ 阶正交矩阵 $U$ 与 $n$ 阶正交矩阵 $V$，使
+奇异值分解:设 $A\in M_{m,n}(\mathbb R)$,$r(A)=r$,则存在 $m$ 阶正交矩阵 $U$ 与 $n$ 阶正交矩阵 $V$,使
 \[
 UAV=
 \begin{pmatrix}
@@ -1535,15 +1535,15 @@ UAV=
 \[
 \lambda_1\ge\cdots\ge\lambda_r>0
 \]
-为 $A$ 的奇异值，$\lambda_i^2$ 是 $A^{\mathsf T}A$ 的全部非零特征值。
+为 $A$ 的奇异值,$\lambda_i^2$ 是 $A^{\mathsf T}A$ 的全部非零特征值.
 \end{theorem}
 
 \begin{theorem}[\markstar]
-极分解：任意实方阵 $A$ 可写成
+极分解:任意实方阵 $A$ 可写成
 \[
 A=S\Omega=\Omega_1S_1,
 \]
-其中 $S,S_1$ 为半正定实对称矩阵，$\Omega,\Omega_1$ 为实正交矩阵。
+其中 $S,S_1$ 为半正定实对称矩阵,$\Omega,\Omega_1$ 为实正交矩阵.
 正半定因子分别唯一等于
 \[
 S=(AA^{\mathsf T})^{1/2},
@@ -1564,26 +1564,26 @@ A=
 \end{pmatrix}.
 \]
 \begin{enumerate}
-    \item 求正交矩阵 $Q$ 与主对角元全正的上三角矩阵 $T$，使
+    \item 求正交矩阵 $Q$ 与主对角元全正的上三角矩阵 $T$,使
     \[
     A=QT;
     \]
-    \item 求正定矩阵 $P$ 与正交矩阵 $D$，使
+    \item 求正定矩阵 $P$ 与正交矩阵 $D$,使
     \[
     A=PD;
     \]
-    \item 求正交矩阵 $U,V$，使
+    \item 求正交矩阵 $U,V$,使
     \[
     UAV
     \]
-    为对角矩阵。
+    为对角矩阵.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
 \begin{enumerate}
-    \item 对 $A$ 的列向量作 Gram--Schmidt 正交化，可取
+    \item 对 $A$ 的列向量作 Gram--Schmidt 正交化,可取
     \[
     Q=
     \begin{pmatrix}
@@ -1624,7 +1624,7 @@ A=
     0&\dfrac{-1+\sqrt3}{2}&\dfrac{1+\sqrt3}{2}
     \end{pmatrix}.
     \]
-    令 $D=P^{-1}A$，得到
+    令 $D=P^{-1}A$,得到
     \[
     D=
     \begin{pmatrix}
@@ -1633,7 +1633,7 @@ A=
     \dfrac12-\dfrac{\sqrt3}{6}&-\dfrac12-\dfrac{\sqrt3}{6}&\dfrac{\sqrt3}{3}
     \end{pmatrix}.
     \]
-    可验证 $D^{\mathsf T}D=I$，故
+    可验证 $D^{\mathsf T}D=I$,故
     \[
     \boxed{A=PD}.
     \]
@@ -1702,13 +1702,13 @@ A=
     \[
     PAQ
     \]
-    为对角矩阵。
+    为对角矩阵.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-这三问与上一题的极分解、奇异值分解完全对应。
+这三问与上一题的极分解,奇异值分解完全对应.
 
 第一问唯一的正定平方根为
 \[
@@ -1725,7 +1725,7 @@ B=
 \[
 \boxed{C=B},
 \]
-以及上一题中的正交矩阵 $D=B^{-1}A$。
+以及上一题中的正交矩阵 $D=B^{-1}A$.
 
 第三问可取上一题中的
 \[
@@ -1739,7 +1739,7 @@ PAQ=\diag(1,\sqrt3,\sqrt3).
 
 
 \begin{example}[\markstar]
-证明任意二阶实正交矩阵必为下列两种形式之一：
+证明任意二阶实正交矩阵必为下列两种形式之一:
 \[
 \begin{pmatrix}
 \cos\varphi&\sin\varphi\\
@@ -1763,7 +1763,7 @@ PAQ=\diag(1,\sqrt3,\sqrt3).
 \[
 (\cos\varphi,\sin\varphi)^{\mathsf T}.
 \]
-第二列必须是与它正交的单位向量，因此只有两种可能：
+第二列必须是与它正交的单位向量,因此只有两种可能:
 \[
 (-\sin\varphi,\cos\varphi)^{\mathsf T}
 \]
@@ -1771,17 +1771,17 @@ PAQ=\diag(1,\sqrt3,\sqrt3).
 \[
 (\sin\varphi,-\cos\varphi)^{\mathsf T}.
 \]
-按题中列的书写约定重新把角度换成 $-\varphi$，即可得到所列两种形式。
-第一类行列式为 $1$，第二类行列式为 $-1$。
+按题中列的书写约定重新把角度换成 $-\varphi$,即可得到所列两种形式.
+第一类行列式为 $1$,第二类行列式为 $-1$.
 \end{solution}
 
 
 \begin{example}[\markstar]
-对下列正交矩阵 $A$，求正交矩阵 $\Omega$ 使
+对下列正交矩阵 $A$,求正交矩阵 $\Omega$ 使
 \[
 \Omega^{-1}A\Omega
 \]
-为实标准形：
+为实标准形:
 \begin{enumerate}
     \item
     \[
@@ -1806,7 +1806,7 @@ PAQ=\diag(1,\sqrt3,\sqrt3).
 \exampleblank
 
 \begin{solution}
-两题的标准形实际上相同，均为绕某一实轴旋转 $\pi/3$。
+两题的标准形实际上相同,均为绕某一实轴旋转 $\pi/3$.
 
 \begin{enumerate}
     \item 可取
@@ -1846,38 +1846,38 @@ PAQ=\diag(1,\sqrt3,\sqrt3).
     \[
     \Omega=(q_1,q_2,q_3),
     \]
-    则得到完全相同的标准形。
+    则得到完全相同的标准形.
 \end{enumerate}
 \end{solution}
 
 
 \begin{example}[\markstar]
-设 $A$ 为 $n$ 阶实正交矩阵，$\lambda=\alpha+i\beta$，$\beta\neq0$，是 $A$ 的特征值，
+设 $A$ 为 $n$ 阶实正交矩阵,$\lambda=\alpha+i\beta$,$\beta\neq0$,是 $A$ 的特征值,
 \[
 x=x_1+ix_2
 \]
-是相应复特征向量，其中 $x_1,x_2\in\mathbb R^n$。
+是相应复特征向量,其中 $x_1,x_2\in\mathbb R^n$.
 
-原 PDF 写作“证明 $|\alpha|=|\beta|,(\alpha,\beta)=0$”。结合符号与标准结论，这里应核对为
+原 PDF 写作``证明 $|\alpha|=|\beta|,(\alpha,\beta)=0$''.结合符号与标准结论,这里应核对为
 \[
 \|x_1\|=\|x_2\|,
 \qquad
 (x_1,x_2)=0.
 \]
-证明这一标准结论。
+证明这一标准结论.
 \end{example}
 \exampleblank
 
 \begin{solution}
-因为 $A$ 为实矩阵，
+因为 $A$ 为实矩阵,
 \[
 A\overline x=\overline\lambda\,\overline x.
 \]
-又 $A$ 为正规矩阵，属于不同特征值
+又 $A$ 为正规矩阵,属于不同特征值
 \[
 \lambda\neq\overline\lambda
 \]
-的特征向量在复内积下正交，所以
+的特征向量在复内积下正交,所以
 \[
 x^*\overline x=0.
 \]
@@ -1893,7 +1893,7 @@ x=x_1+ix_2
 \[
 \|x_1\|^2-\|x_2\|^2-2i(x_1,x_2)=0.
 \]
-比较实部、虚部，得到
+比较实部,虚部,得到
 \[
 \boxed{
 \|x_1\|=\|x_2\|,
@@ -1905,7 +1905,7 @@ x=x_1+ix_2
 
 
 \begin{example}
-设 $A$ 为三阶实正交矩阵，并且
+设 $A$ 为三阶实正交矩阵,并且
 \[
 \det A=-1.
 \]
@@ -1917,7 +1917,7 @@ x=x_1+ix_2
 \exampleblank
 
 \begin{solution}
-三阶实正交矩阵且行列式为 $-1$，其特征值可写成
+三阶实正交矩阵且行列式为 $-1$,其特征值可写成
 \[
 -1,
 \quad
@@ -1941,16 +1941,16 @@ e^{-i\theta}.
 =2(-1+2\cos\theta)+(-1+2\cos\theta)^2
 =4\cos^2\theta-1.
 \]
-故结论成立。
+故结论成立.
 \end{solution}
 
 
 \begin{example}
-对实方阵 $A=(a_{ij})$，记
+对实方阵 $A=(a_{ij})$,记
 \[
 \sigma(A)=\sum\limits_{i=1}^{n}\sum\limits_{j=1}^{n}a_{ij}^2.
 \]
-证明：
+证明:
 \begin{enumerate}
     \item
     \[
@@ -1960,7 +1960,7 @@ e^{-i\theta}.
     \[
     \sigma(A^{\mathsf T}A)=\sigma(AA^{\mathsf T});
     \]
-    \item $A$ 为正交矩阵的充分必要条件是：对任意实方阵 $B$，
+    \item $A$ 为正交矩阵的充分必要条件是:对任意实方阵 $B$,
     \[
     \sigma(A^{\mathsf T}BA)=\sigma(B).
     \]
@@ -1969,14 +1969,14 @@ e^{-i\theta}.
 \exampleblank
 
 \begin{solution}
-第一式是 Frobenius 范数的基本恒等式：
+第一式是 Frobenius 范数的基本恒等式:
 \[
 \tr(A^{\mathsf T}A)
 =
 \sum_{i,j}a_{ij}^2.
 \]
 
-第二式利用迹的循环性：
+第二式利用迹的循环性:
 \[
 \sigma(A^{\mathsf T}A)
 =
@@ -1987,9 +1987,9 @@ e^{-i\theta}.
 \sigma(AA^{\mathsf T}).
 \]
 
-若 $A$ 正交，则 Frobenius 范数在左右乘正交矩阵时保持不变，因此第三式成立。
+若 $A$ 正交,则 Frobenius 范数在左右乘正交矩阵时保持不变,因此第三式成立.
 
-反之，取任意 $x\in\mathbb R^n$，令
+反之,取任意 $x\in\mathbb R^n$,令
 \[
 B=xx^{\mathsf T}.
 \]
@@ -2017,16 +2017,16 @@ A^{\mathsf T}BA
 \[
 AA^{\mathsf T}=I,
 \]
-即 $A$ 正交。
+即 $A$ 正交.
 \end{solution}
 
 
 \begin{example}
-设 $A,B$ 都是 $n$ 阶实正交矩阵，并且
+设 $A,B$ 都是 $n$ 阶实正交矩阵,并且
 \[
 \det A+\det B=0.
 \]
-证明存在非零 $\xi\in\mathbb R^n$，使
+证明存在非零 $\xi\in\mathbb R^n$,使
 \[
 A\xi=-B\xi.
 \]
@@ -2038,15 +2038,15 @@ A\xi=-B\xi.
 \[
 C=B^{\mathsf T}A.
 \]
-则 $C$ 仍为正交矩阵，并且
+则 $C$ 仍为正交矩阵,并且
 \[
 \det C
 =
 \det B\det A
 =-1.
 \]
-实正交矩阵的非实特征值成共轭对，乘积为 $1$。因为总行列式为 $-1$，所以 $C$ 必有特征值 $-1$。
-取相应非零实特征向量 $\xi$，则
+实正交矩阵的非实特征值成共轭对,乘积为 $1$.因为总行列式为 $-1$,所以 $C$ 必有特征值 $-1$.
+取相应非零实特征向量 $\xi$,则
 \[
 B^{\mathsf T}A\xi=-\xi.
 \]
@@ -2058,7 +2058,7 @@ B^{\mathsf T}A\xi=-\xi.
 
 
 \begin{example}
-设 $A$ 为 $n$ 阶实正交矩阵。证明
+设 $A$ 为 $n$ 阶实正交矩阵.证明
 \[
 \det A=1
 \]
@@ -2070,12 +2070,12 @@ A=B^2.
 \exampleblank
 
 \begin{solution}
-若 $A=B^2$，则
+若 $A=B^2$,则
 \[
 \det A=(\det B)^2=1.
 \]
 
-反之设 $\det A=1$。由实正交标准形，$A$ 正交相似于若干块的直和，其中块只可能为
+反之设 $\det A=1$.由实正交标准形,$A$ 正交相似于若干块的直和,其中块只可能为
 \[
 1,
 \qquad
@@ -2087,11 +2087,11 @@ R(\theta)=
 \sin\theta&\cos\theta
 \end{pmatrix}.
 \]
-因为总行列式为 $1$，一阶 $-1$ 块的个数为偶数。把两个 $-1$ 块合并看成
+因为总行列式为 $1$,一阶 $-1$ 块的个数为偶数.把两个 $-1$ 块合并看成
 \[
 R(\pi)=-I_2.
 \]
-于是每个块都有实正交平方根：
+于是每个块都有实正交平方根:
 \[
 1=1^2,
 \qquad
@@ -2099,7 +2099,7 @@ R(\theta)=R(\theta/2)^2,
 \qquad
 R(\pi)=R(\pi/2)^2.
 \]
-对所有块取平方根并共轭回去，即得所求正交矩阵 $B$。
+对所有块取平方根并共轭回去,即得所求正交矩阵 $B$.
 \end{solution}
 
 
@@ -2108,28 +2108,28 @@ R(\pi)=R(\pi/2)^2.
 \section{正交变换}
 
 \begin{definition}
-设 $V$ 为 $n$ 维欧氏空间，$\varepsilon\in V$ 为单位向量。定义
+设 $V$ 为 $n$ 维欧氏空间,$\varepsilon\in V$ 为单位向量.定义
 \[
 \psi_\varepsilon(\alpha)
 =
 \alpha-2(\alpha,\varepsilon)\varepsilon.
 \]
-称 $\psi_\varepsilon$ 为关于超平面 $\varepsilon^\perp$ 的镜面反射。
-其在标准正交基下的矩阵称为实镜像矩阵。
+称 $\psi_\varepsilon$ 为关于超平面 $\varepsilon^\perp$ 的镜面反射.
+其在标准正交基下的矩阵称为实镜像矩阵.
 \end{definition}
 
 \begin{lemma}[\markstar]
-镜面反射满足：
+镜面反射满足:
 \begin{enumerate}
     \item
     \[
     \psi_\varepsilon(\varepsilon)=-\varepsilon;
     \]
-    \item 若 $\alpha\perp\varepsilon$，则
+    \item 若 $\alpha\perp\varepsilon$,则
     \[
     \psi_\varepsilon(\alpha)=\alpha;
     \]
-    \item $\psi_\varepsilon$ 是正交变换；
+    \item $\psi_\varepsilon$ 是正交变换;
     \item 实方阵 $A$ 是镜像矩阵的充分必要条件是存在单位向量 $w$ 使
     \[
     A=I-2ww^{\mathsf T}.
@@ -2146,23 +2146,23 @@ R(\pi)=R(\pi/2)^2.
 \[
 \psi(\alpha)=\beta.
 \]
-具体可取反射法向量与 $\alpha-\beta$ 同方向。
+具体可取反射法向量与 $\alpha-\beta$ 同方向.
 \end{lemma}
 
 \begin{theorem}[\markstar]
-Cartan--Dieudonné 定理：若 $n$ 维欧氏空间上的正交变换 $\sigma\neq I$，则
-$\sigma$ 可以表示为至多 $n$ 个镜面反射之积。
+Cartan--Dieudonné 定理:若 $n$ 维欧氏空间上的正交变换 $\sigma\neq I$,则
+$\sigma$ 可以表示为至多 $n$ 个镜面反射之积.
 \end{theorem}
 
 
 \begin{example}
-设 $\varepsilon_1,\varepsilon_2,\varepsilon_3$ 是三维欧氏空间的一组标准正交基，
+设 $\varepsilon_1,\varepsilon_2,\varepsilon_3$ 是三维欧氏空间的一组标准正交基,
 \[
 \alpha=\varepsilon_1-2\varepsilon_2,
 \qquad
 \beta=2\varepsilon_1+\varepsilon_3.
 \]
-求一个正交变换 $H$，使
+求一个正交变换 $H$,使
 \[
 H(\alpha)=\beta.
 \]
@@ -2196,7 +2196,7 @@ H=
 \end{pmatrix}.
 }
 \]
-$H$ 对称且正交，并直接验证
+$H$ 对称且正交,并直接验证
 \[
 H(1,-2,0)^{\mathsf T}=(2,0,1)^{\mathsf T}.
 \]
@@ -2204,50 +2204,50 @@ H(1,-2,0)^{\mathsf T}=(2,0,1)^{\mathsf T}.
 
 
 \begin{example}
-设 $\alpha\in\mathbb R^n$，且
+设 $\alpha\in\mathbb R^n$,且
 \[
 \|\alpha\|=1.
 \]
-证明存在 $n$ 阶实对称正交矩阵 $A$，使 $\alpha$ 为 $A$ 的第一列。
+证明存在 $n$ 阶实对称正交矩阵 $A$,使 $\alpha$ 为 $A$ 的第一列.
 \end{example}
 \exampleblank
 
 \begin{solution}
-记第一标准基向量为 $e_1$。
+记第一标准基向量为 $e_1$.
 若
 \[
 \alpha=e_1,
 \]
-直接取 $A=I$。
+直接取 $A=I$.
 
-若 $\alpha\neq e_1$，令
+若 $\alpha\neq e_1$,令
 \[
 w=\dfrac{e_1-\alpha}{\|e_1-\alpha\|},
 \qquad
 A=I-2ww^{\mathsf T}.
 \]
-这是 Householder 镜像矩阵，因此
+这是 Householder 镜像矩阵,因此
 \[
 A^{\mathsf T}=A,
 \qquad
 A^{\mathsf T}A=I.
 \]
-又因 $e_1,\alpha$ 都是单位向量，
+又因 $e_1,\alpha$ 都是单位向量,
 \[
 Ae_1=\alpha.
 \]
-所以 $A$ 的第一列正是 $\alpha$。
+所以 $A$ 的第一列正是 $\alpha$.
 \end{solution}
 
 
 \begin{example}[\markstar]
-设 $V$ 为 $n$ 维欧氏空间，$\alpha_1,\alpha_2$ 与 $\beta_1,\beta_2$ 是两对向量，满足
+设 $V$ 为 $n$ 维欧氏空间,$\alpha_1,\alpha_2$ 与 $\beta_1,\beta_2$ 是两对向量,满足
 \[
 (\alpha_i,\alpha_j)=(\beta_i,\beta_j)
 \qquad
 (i,j=1,2).
 \]
-证明存在正交变换 $\sigma:V\to V$，使
+证明存在正交变换 $\sigma:V\to V$,使
 \[
 \sigma(\alpha_i)=\beta_i,
 \qquad i=1,2.
@@ -2266,15 +2266,15 @@ T(c_1\alpha_1+c_2\alpha_2)
 =
 c_1\beta_1+c_2\beta_2.
 \]
-Gram 矩阵相同保证该定义良好：若
+Gram 矩阵相同保证该定义良好:若
 \[
 c_1\alpha_1+c_2\alpha_2=0,
 \]
-则其平方范数为零；同一系数下 $\beta$ 组合的平方范数也为零，因此也为零。
+则其平方范数为零;同一系数下 $\beta$ 组合的平方范数也为零,因此也为零.
 
-同样由 Gram 矩阵相等，$T$ 保持内积，所以 $T:U\to T(U)$ 是等距同构。
-取 $U$ 的标准正交基并扩充为 $V$ 的标准正交基；再把其像的标准正交基扩充为 $V$ 的标准正交基。
-定义扩充后的基之间逐项对应，即得到整个 $V$ 上的正交变换 $\sigma$，并满足所需映射关系。
+同样由 Gram 矩阵相等,$T$ 保持内积,所以 $T:U\to T(U)$ 是等距同构.
+取 $U$ 的标准正交基并扩充为 $V$ 的标准正交基;再把其像的标准正交基扩充为 $V$ 的标准正交基.
+定义扩充后的基之间逐项对应,即得到整个 $V$ 上的正交变换 $\sigma$,并满足所需映射关系.
 \end{solution}
 
 
@@ -2285,7 +2285,7 @@ c_1\alpha_1+c_2\alpha_2=0,
 \qquad
 \beta_1,\ldots,\beta_m
 \]
-是 $n$ 维欧氏空间 $V$ 中的两组向量。证明存在正交变换 $\tau$ 满足
+是 $n$ 维欧氏空间 $V$ 中的两组向量.证明存在正交变换 $\tau$ 满足
 \[
 \tau(\alpha_i)=\beta_i
 \qquad(i=1,\ldots,m)
@@ -2302,9 +2302,9 @@ c_1\alpha_1+c_2\alpha_2=0,
 \exampleblank
 
 \begin{solution}
-必要性显然，因为正交变换保持内积。
+必要性显然,因为正交变换保持内积.
 
-反之，假设两组向量的 Gram 矩阵相同。在
+反之,假设两组向量的 Gram 矩阵相同.在
 \[
 U=\Span\{\alpha_1,\ldots,\alpha_m\}
 \]
@@ -2314,11 +2314,11 @@ T\left(\sum_i c_i\alpha_i\right)
 =
 \sum_i c_i\beta_i.
 \]
-若左侧组合为零，则其平方范数
+若左侧组合为零,则其平方范数
 \[
 \sum_{i,j}c_ic_j(\alpha_i,\alpha_j)=0.
 \]
-Gram 矩阵相同，所以右侧组合的平方范数也为零，故右侧也为零。于是 $T$ 定义良好。
+Gram 矩阵相同,所以右侧组合的平方范数也为零,故右侧也为零.于是 $T$ 定义良好.
 
 同理可验证
 \[
@@ -2328,16 +2328,16 @@ Gram 矩阵相同，所以右侧组合的平方范数也为零，故右侧也为
 \[
 \Span\{\beta_1,\ldots,\beta_m\}
 \]
-的等距同构。把它按标准正交基扩充到整个 $V$，即可得到所求正交变换 $\tau$。
+的等距同构.把它按标准正交基扩充到整个 $V$,即可得到所求正交变换 $\tau$.
 \end{solution}
 
 
 \begin{example}
-设 $A,B$ 为 $n\times m$ 实矩阵。证明
+设 $A,B$ 为 $n\times m$ 实矩阵.证明
 \[
 A^{\mathsf T}A=B^{\mathsf T}B
 \]
-的充分必要条件是存在 $n$ 阶正交矩阵 $Q$，使
+的充分必要条件是存在 $n$ 阶正交矩阵 $Q$,使
 \[
 B=QA.
 \]
@@ -2361,7 +2361,7 @@ A^{\mathsf T}A=B^{\mathsf T}B
 \qquad
 (\forall i,j).
 \]
-由上一题，存在正交变换 $Q$ 使
+由上一题,存在正交变换 $Q$ 使
 \[
 Qa_i=b_i
 \qquad(i=1,\ldots,m).
@@ -2371,11 +2371,11 @@ Qa_i=b_i
 B=QA.
 \]
 
-反之若 $B=QA$ 且 $Q$ 正交，则
+反之若 $B=QA$ 且 $Q$ 正交,则
 \[
 B^{\mathsf T}B
 =A^{\mathsf T}Q^{\mathsf T}QA
 =A^{\mathsf T}A.
 \]
-故两者等价。
+故两者等价.
 \end{solution}

@@ -273,7 +273,7 @@
                       \arctan\left(\sinh\dfrac{1}{2}\right)}.
               \]
 
-        \item 将正、负半轴配对,并使用
+        \item 将正,负半轴配对,并使用
               \[
                   \ln(1+e^x)-\ln(1+e^{-x})=x,
               \]
@@ -297,7 +297,7 @@
                   I=\boxed{\dfrac{\pi}{4}}.
               \]
 
-        \item 记 $A=a^n$、$B=b^n$.被积函数以 $\pi$ 为周期,且令 $t=\tan x$ 后
+        \item 记 $A=a^n$,$B=b^n$.被积函数以 $\pi$ 为周期,且令 $t=\tan x$ 后
               \[
                   \begin{aligned}
                       \int_0^{\frac{\pi}{2}}
@@ -454,7 +454,7 @@
 \exampleblank
 
 \begin{solution}
-    写成 $x=k\pi+r$,其中 $k\in\mathbb{N}$、$0\leq r<\pi$.由于
+    写成 $x=k\pi+r$,其中 $k\in\mathbb{N}$,$0\leq r<\pi$.由于
     \[
         \int_0^\pi|\sin t|\,\mathrm{d}t=2,
     \]
@@ -484,7 +484,7 @@
     \begin{enumerate}
         \item 在 $0\leq x<\dfrac{\pi}{2}$ 上有 $\sin^n x\to0$,且 $0\leq\sin^n x\leq1$.由控制收敛定理,积分趋于 $0$.
 
-        \item 在 $0<x\leq\dfrac{\pi}{2}$ 上有 $(1-\sin x)^n\to0$,且该函数被 $1$ 控制,故积分也趋于 $0$.题面末尾的“其中 $a\in(0,1)$”未在公式中出现,应为多余文字或漏项.
+        \item 在 $0<x\leq\dfrac{\pi}{2}$ 上有 $(1-\sin x)^n\to0$,且该函数被 $1$ 控制,故积分也趋于 $0$.题面末尾的``其中 $a\in(0,1)$''未在公式中出现,应为多余文字或漏项.
 
         \item 对 $0\leq x<1$,有 $x^n\to0$,故 $e^{x^n}\to1$;同时 $1\leq e^{x^n}\leq e$.由控制收敛定理,
               \[
@@ -792,7 +792,7 @@
 \end{remark}
 
 \begin{example}[\markstar]
-    设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上可积,$g(x)\geq0$,且 $g$ 是以 $T>0$ 为周期、在 $\lbrack 0,T\rbrack$ 上可积的函数.试证:
+    设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上可积,$g(x)\geq0$,且 $g$ 是以 $T>0$ 为周期,在 $\lbrack 0,T\rbrack$ 上可积的函数.试证:
     \[
         \lim\limits_{n\to\infty}\int_a^b f(x)g(nx)\,\mathrm{d}x
         =\dfrac{1}{T}\int_0^Tg(x)\,\mathrm{d}x\int_a^b f(x)\,\mathrm{d}x.
@@ -867,7 +867,7 @@
     \[
         a_n=\int_0^1f(x)g(x)\,\mathrm{d}x
     \]
-    完全不含 $n$,所以结论一般不成立.取 $f(x)\equiv1$、$g(x)\equiv1$,则所有条件均满足,但 $a_n=1$,从而 $na_n=n\not\to0$.
+    完全不含 $n$,所以结论一般不成立.取 $f(x)\equiv1$,$g(x)\equiv1$,则所有条件均满足,但 $a_n=1$,从而 $na_n=n\not\to0$.
 
     原题很可能应为
     \[
@@ -897,7 +897,7 @@
     \[
         \int_0^1s(x)\,\mathrm{d}x=0.
     \]
-    对上一题的 Riemann 引理取 $g=s$、$T=1$,便有
+    对上一题的 Riemann 引理取 $g=s$,$T=1$,便有
     \[
         \lim\limits_{n\to\infty}\int_0^1f(x)s(nx)\,\mathrm{d}x
         =\left(\int_0^1s(x)\,\mathrm{d}x\right)
@@ -1028,7 +1028,7 @@
     \]
     任取 $\varepsilon>0$,选 $N$ 使 $\dfrac{1}{N}<\varepsilon$.分母不超过 $N$ 的既约分数在 $\lbrack0,1\rbrack$ 中只有有限个,可用总长度任意小的有限个区间覆盖它们.在其余点上有 $0\leq R(x)<\varepsilon$.
 
-    因此可作分割,使覆盖上述有限点的小区间对 Darboux 上和的贡献任意小,而其余区间上的振幅不超过 $\varepsilon$.故上、下 Darboux 和之差可以任意小,$R$ 可积;并且由于每个区间都含无理数,下和为零,所以
+    因此可作分割,使覆盖上述有限点的小区间对 Darboux 上和的贡献任意小,而其余区间上的振幅不超过 $\varepsilon$.故上,下 Darboux 和之差可以任意小,$R$ 可积;并且由于每个区间都含无理数,下和为零,所以
     \[
         \int_0^1R(x)\,\mathrm{d}x=0.
     \]
@@ -1091,7 +1091,7 @@
             -1, & x\notin\mathbb{Q}.
         \end{cases}
     \]
-    则 $|f|\equiv1$、$f^2\equiv1$ 都可积,但 $f$ 在每一点都不连续,因而不可积.
+    则 $|f|\equiv1$,$f^2\equiv1$ 都可积,但 $f$ 在每一点都不连续,因而不可积.
 \end{solution}
 
 \begin{proposition}[\markstar]
@@ -1181,7 +1181,7 @@
                   \int_a^b|f(x)-g_1(x)|\,\mathrm{d}x<\varepsilon.
               \]
 
-        \item 阶梯函数只有有限个跳跃点.在每个跳跃点两侧取互不相交、总长度充分小的区间,并在这些区间内用线段连接左右常值,得到折线函数 $g_2$.因各函数有界,可使
+        \item 阶梯函数只有有限个跳跃点.在每个跳跃点两侧取互不相交,总长度充分小的区间,并在这些区间内用线段连接左右常值,得到折线函数 $g_2$.因各函数有界,可使
               \[
                   \int_a^b|g_1-g_2|\,\mathrm{d}x
               \]
@@ -1297,7 +1297,7 @@
               \[
                   F(x)=\int_a^xf(t)\,\mathrm{d}t.
               \]
-              因 $f>0$,$F$ 连续严格递增,且 $F(a)=0$、$F(b)=\displaystyle\int_a^bf$.由介值定理,存在唯一的 $\xi\in(a,b)$ 使
+              因 $f>0$,$F$ 连续严格递增,且 $F(a)=0$,$F(b)=\displaystyle\int_a^bf$.由介值定理,存在唯一的 $\xi\in(a,b)$ 使
               \[
                   F(\xi)=\dfrac{1}{2}F(b).
               \]
@@ -1374,7 +1374,7 @@
     \[
         F(x)=\int_0^xf(t)\,\mathrm{d}t.
     \]
-    则 $F(0)=0$、$F'(x)=f(x)\geq0$,且题设给出 $F'(x)\leq F(x)$.于是
+    则 $F(0)=0$,$F'(x)=f(x)\geq0$,且题设给出 $F'(x)\leq F(x)$.于是
     \[
         [e^{-x}F(x)]'\leq0.
     \]
@@ -1416,7 +1416,7 @@
         \leq\dfrac{1}{4}\left(\int_0^aq\right)^2
         \leq\dfrac{a}{4}\int_0^a(f')^2.
     \]
-    若 $f\left(\dfrac{a}{2}\right)=0$,分别在 $\lbrack0,\dfrac{a}{2}\rbrack$、$\lbrack \dfrac{a}{2},a\rbrack$ 使用第一种估计,每段长度为 $\dfrac{a}{2}$,同样得到系数 $\boxed{\dfrac{a}{4}}$.
+    若 $f\left(\dfrac{a}{2}\right)=0$,分别在 $\lbrack0,\dfrac{a}{2}\rbrack$,$\lbrack \dfrac{a}{2},a\rbrack$ 使用第一种估计,每段长度为 $\dfrac{a}{2}$,同样得到系数 $\boxed{\dfrac{a}{4}}$.
 \end{solution}
 
 \begin{example}[Gronwall 引理]
@@ -1517,7 +1517,7 @@
 
 \subsection{各种变形}
 
-所谓各种变形即包括代数变形、换元(对称性)、分部积分、中值定理、Taylor 公式等.另外,被积函数放大、缩小,区间放大和缩小也是获得估计的重要方法.
+所谓各种变形即包括代数变形,换元(对称性),分部积分,中值定理,Taylor 公式等.另外,被积函数放大,缩小,区间放大和缩小也是获得估计的重要方法.
 
 
 
@@ -2228,7 +2228,7 @@
         {1-\displaystyle\int_0^1f(x)\,\mathrm{d}x}
         =\dfrac{2}{3}.
     \]
-    故不等式方向或右端分子（常见形式为该积分的平方）需要核对.
+    故不等式方向或右端分子(常见形式为该积分的平方)需要核对.
 \end{solution}
 
 \begin{example}
@@ -2305,17 +2305,17 @@
               \[
                   f+\dfrac{mM}{f}\leq m+M.
               \]
-              积分后记 $A=\displaystyle\int_a^bf$、$B=\displaystyle\int_a^b\dfrac{1}{f}$,得到
+              积分后记 $A=\displaystyle\int_a^bf$,$B=\displaystyle\int_a^b\dfrac{1}{f}$,得到
               \[
                   A+mMB\leq(m+M)(b-a).
               \]
-              又由算术—几何平均不等式,
+              又由算术--几何平均不等式,
               \[
                   2\sqrt{mMAB}\leq A+mMB.
               \]
               合并并平方即得第 (1) 问.
 
-        \item 逐点使用算术—几何平均不等式:
+        \item 逐点使用算术--几何平均不等式:
               \[
                   \dfrac{f(x)}{M}+\dfrac{m}{f(x)}
                   \geq2\sqrt{\dfrac{m}{M}}.
@@ -2349,7 +2349,7 @@
     \[
         \dfrac{\pi^2}{2}<\dfrac{\pi^3}{4}.
     \]
-    因此右端常数或被积函数的底数、指数存在错误,需要核对原始资料.
+    因此右端常数或被积函数的底数,指数存在错误,需要核对原始资料.
 \end{solution}
 
 \begin{example}
@@ -2760,7 +2760,7 @@
 \exampleblank
 
 \begin{solution}
-    把正、负半轴配对.令
+    把正,负半轴配对.令
     \[
         h(x)=f(x)-f(-x),
         \qquad 0\leq x\leq\pi.

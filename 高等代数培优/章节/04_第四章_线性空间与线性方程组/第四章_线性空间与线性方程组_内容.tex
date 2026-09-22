@@ -6,117 +6,117 @@
 \section{线性空间与向量组的线性相关性}
 
 \begin{example}[\markstar]
-若向量组 $\alpha_1,\alpha_2,\ldots,\alpha_m$ 线性无关，而
-$\beta,\alpha_1,\alpha_2,\ldots,\alpha_m$ 线性相关，证明：$\beta$ 可由
-$\alpha_1,\ldots,\alpha_m$ 线性表示，且表示式唯一。
+若向量组 $\alpha_1,\alpha_2,\ldots,\alpha_m$ 线性无关,而
+$\beta,\alpha_1,\alpha_2,\ldots,\alpha_m$ 线性相关,证明:$\beta$ 可由
+$\alpha_1,\ldots,\alpha_m$ 线性表示,且表示式唯一.
 \end{example}
 \exampleblank
 
 \begin{solution}
-由线性相关性，存在不全为零的数 $c,c_1,\ldots,c_m$ 使
+由线性相关性,存在不全为零的数 $c,c_1,\ldots,c_m$ 使
 \[
  c\beta+\sum\limits_{i=1}^m c_i\alpha_i=0.
 \]
-若 $c=0$，则 $\sum c_i\alpha_i=0$ 与 $\alpha_1,\ldots,\alpha_m$ 线性无关矛盾，故 $c\neq0$，从而
+若 $c=0$,则 $\sum c_i\alpha_i=0$ 与 $\alpha_1,\ldots,\alpha_m$ 线性无关矛盾,故 $c\neq0$,从而
 \[
  \beta=-\sum\limits_{i=1}^m\dfrac{c_i}{c}\alpha_i.
 \]
-若还有另一表示，两式相减即得到 $\alpha_1,\ldots,\alpha_m$ 的非平凡线性关系，故表示唯一。
+若还有另一表示,两式相减即得到 $\alpha_1,\ldots,\alpha_m$ 的非平凡线性关系,故表示唯一.
 \end{solution}
 
 \begin{example}[\markstar]
-证明：若 $\alpha_1,\ldots,\alpha_r$ 线性相关，则
-$\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关。
+证明:若 $\alpha_1,\ldots,\alpha_r$ 线性相关,则
+$\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关.
 \end{example}
 \exampleblank
 
 \begin{solution}
-在 $\alpha_1,\ldots,\alpha_r$ 的非平凡线性关系后补零系数即可得到扩大向量组的非平凡线性关系。
+在 $\alpha_1,\ldots,\alpha_r$ 的非平凡线性关系后补零系数即可得到扩大向量组的非平凡线性关系.
 \end{solution}
 
 \begin{example}[\markstar]
-证明：若一组 $r$ 维向量线性无关，则给每个向量添加相同位置的 $n-r$ 个分量后所得的 $n$ 维向量组仍线性无关。
+证明:若一组 $r$ 维向量线性无关,则给每个向量添加相同位置的 $n-r$ 个分量后所得的 $n$ 维向量组仍线性无关.
 \end{example}
 \exampleblank
 
 \begin{solution}
-设扩充后的向量为 $\widetilde\alpha_i$。若
+设扩充后的向量为 $\widetilde\alpha_i$.若
 \[
  \sum_i c_i\widetilde\alpha_i=0,
 \]
-只看原来的前 $r$ 个分量，就有 $\sum_i c_i\alpha_i=0$。原向量组线性无关，故所有 $c_i=0$。
+只看原来的前 $r$ 个分量,就有 $\sum_i c_i\alpha_i=0$.原向量组线性无关,故所有 $c_i=0$.
 \end{solution}
 
 \begin{example}
-设 $\alpha_1,\ldots,\alpha_m$ 线性无关，$\beta_1$ 可由它们线性表示，而 $\beta_2$ 不能由它们线性表示。证明：对任意常数 $l$，
+设 $\alpha_1,\ldots,\alpha_m$ 线性无关,$\beta_1$ 可由它们线性表示,而 $\beta_2$ 不能由它们线性表示.证明:对任意常数 $l$,
 \[
  \alpha_1,\ldots,\alpha_m,l\beta_1+\beta_2
 \]
-总线性无关。
+总线性无关.
 \end{example}
 \exampleblank
 
 \begin{solution}
-若该组线性相关，则因 $\alpha_1,\ldots,\alpha_m$ 线性无关，最后一个向量必可由它们线性表示。又 $l\beta_1$ 已可由它们表示，因此 $\beta_2$ 也可由它们表示，矛盾。
+若该组线性相关,则因 $\alpha_1,\ldots,\alpha_m$ 线性无关,最后一个向量必可由它们线性表示.又 $l\beta_1$ 已可由它们表示,因此 $\beta_2$ 也可由它们表示,矛盾.
 \end{solution}
 
 \begin{example}
-设 $\alpha_1,\ldots,\alpha_m$ 线性无关，而 $\alpha_2,\ldots,\alpha_{m+1}$ 线性相关。证明：$\alpha_1$ 不能由 $\alpha_2,\ldots,\alpha_{m+1}$ 线性表出。
+设 $\alpha_1,\ldots,\alpha_m$ 线性无关,而 $\alpha_2,\ldots,\alpha_{m+1}$ 线性相关.证明:$\alpha_1$ 不能由 $\alpha_2,\ldots,\alpha_{m+1}$ 线性表出.
 \end{example}
 \exampleblank
 
 \begin{solution}
-若 $\alpha_1$ 可由 $\alpha_2,\ldots,\alpha_{m+1}$ 表出，而 $\alpha_2,\ldots,\alpha_{m+1}$ 线性相关，则去掉其中一个可由其余向量表示的向量，可推出 $\alpha_1,\ldots,\alpha_m$ 线性相关，矛盾。等价地，也可将两条线性关系消元得到 $\alpha_1,\ldots,\alpha_m$ 的非平凡关系。
+若 $\alpha_1$ 可由 $\alpha_2,\ldots,\alpha_{m+1}$ 表出,而 $\alpha_2,\ldots,\alpha_{m+1}$ 线性相关,则去掉其中一个可由其余向量表示的向量,可推出 $\alpha_1,\ldots,\alpha_m$ 线性相关,矛盾.等价地,也可将两条线性关系消元得到 $\alpha_1,\ldots,\alpha_m$ 的非平凡关系.
 \end{solution}
 
 \begin{example}
-设 $\alpha_1,\ldots,\alpha_s$ 线性无关。判断
+设 $\alpha_1,\ldots,\alpha_s$ 线性无关.判断
 \[
  \alpha_1+\alpha_2,\ \alpha_2+\alpha_3,\ \ldots,\ \alpha_{s-1}+\alpha_s,\ \alpha_s+\alpha_1
 \]
-是否线性无关。
+是否线性无关.
 \end{example}
 \exampleblank
 
 \begin{solution}
-设这些向量的系数为 $c_1,\ldots,c_s$。由原向量组线性无关，得到
+设这些向量的系数为 $c_1,\ldots,c_s$.由原向量组线性无关,得到
 \[
  c_1+c_s=0,\qquad c_1+c_2=0,\qquad\ldots,\qquad c_{s-1}+c_s=0.
 \]
-于是 $c_{i+1}=-c_i$，并有 $c_s=(-1)^{s-1}c_1$ 与 $c_s=-c_1$。故当 $s$ 为奇数时只能 $c_1=0$，向量组线性无关；当 $s$ 为偶数时可取
+于是 $c_{i+1}=-c_i$,并有 $c_s=(-1)^{s-1}c_1$ 与 $c_s=-c_1$.故当 $s$ 为奇数时只能 $c_1=0$,向量组线性无关;当 $s$ 为偶数时可取
 \[
  (c_1,c_2,\ldots,c_s)=(1,-1,1,-1,\ldots,-1),
 \]
-得到非平凡关系。因此
+得到非平凡关系.因此
 \[
  \boxed{\text{线性无关当且仅当 }s\text{ 为奇数}.}
 \]
 \end{solution}
 
 \begin{example}[\markstar]
-设 $\alpha_1,\ldots,\alpha_r$ 线性无关，且
+设 $\alpha_1,\ldots,\alpha_r$ 线性无关,且
 \[
  \beta_i=\sum\limits_{j=1}^r k_{ij}\alpha_j,\qquad i=1,\ldots,r.
 \]
-证明：$\beta_1,\ldots,\beta_r$ 线性相关的充要条件是系数矩阵 $K=(k_{ij})$ 不可逆。
+证明:$\beta_1,\ldots,\beta_r$ 线性相关的充要条件是系数矩阵 $K=(k_{ij})$ 不可逆.
 \end{example}
 \exampleblank
 
 \begin{solution}
-若 $c=(c_1,\ldots,c_r)^{\mathsf T}$，则
+若 $c=(c_1,\ldots,c_r)^{\mathsf T}$,则
 \[
  \sum_i c_i\beta_i
  =\sum_j (K^{\mathsf T}c)_j\alpha_j.
 \]
-因 $\alpha_j$ 线性无关，左端为零当且仅当 $K^{\mathsf T}c=0$。存在非零 $c$ 当且仅当 $K$ 不可逆。
+因 $\alpha_j$ 线性无关,左端为零当且仅当 $K^{\mathsf T}c=0$.存在非零 $c$ 当且仅当 $K$ 不可逆.
 \end{solution}
 
 \begin{example}[\markstar]
-设 $\alpha_1,\ldots,\alpha_m$ 线性无关，
+设 $\alpha_1,\ldots,\alpha_m$ 线性无关,
 \[
  \beta_i=\sum\limits_{j=1}^m a_{ij}\alpha_j,\qquad i=1,\ldots,k,
 \]
-记 $A=(a_{ij})_{k\times m}$。证明：向量组 $\beta_1,\ldots,\beta_k$ 的秩等于 $r(A)$。
+记 $A=(a_{ij})_{k\times m}$.证明:向量组 $\beta_1,\ldots,\beta_k$ 的秩等于 $r(A)$.
 \end{example}
 \exampleblank
 
@@ -125,20 +125,20 @@ $\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关。
 \[
  (c_1,\ldots,c_m)\longmapsto \sum\limits_{j=1}^m c_j\alpha_j
 \]
-因 $\alpha_j$ 线性无关而为单射。$\beta_i$ 的坐标行正是 $A$ 的各行，因此这些向量之间的线性关系与 $A$ 的行向量之间的线性关系完全一致，故秩相等。
+因 $\alpha_j$ 线性无关而为单射.$\beta_i$ 的坐标行正是 $A$ 的各行,因此这些向量之间的线性关系与 $A$ 的行向量之间的线性关系完全一致,故秩相等.
 \end{solution}
 
 \begin{example}
-设 $\alpha_1,\ldots,\alpha_s,\beta$ 为 $s+1$ 个向量，$s>1$，且
+设 $\alpha_1,\ldots,\alpha_s,\beta$ 为 $s+1$ 个向量,$s>1$,且
 \[
  \beta=\alpha_1+\cdots+\alpha_s.
 \]
-证明：$\beta-\alpha_1,\ldots,\beta-\alpha_s$ 线性无关的充要条件是 $\alpha_1,\ldots,\alpha_s$ 线性无关。
+证明:$\beta-\alpha_1,\ldots,\beta-\alpha_s$ 线性无关的充要条件是 $\alpha_1,\ldots,\alpha_s$ 线性无关.
 \end{example}
 \exampleblank
 
 \begin{solution}
-记 $\gamma_i=\beta-\alpha_i$。由
+记 $\gamma_i=\beta-\alpha_i$.由
 \[
  \sum\limits_{i=1}^s\gamma_i=(s-1)\beta
 \]
@@ -148,50 +148,50 @@ $\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关。
  \qquad
  \alpha_i=\beta-\gamma_i.
 \]
-故两组向量可以互相线性表示。它们的向量个数相同，因此一组线性无关当且仅当另一组线性无关。
+故两组向量可以互相线性表示.它们的向量个数相同,因此一组线性无关当且仅当另一组线性无关.
 \end{solution}
 
 \begin{theorem}[\markstar]
-对于向量组 $A:\alpha_1,\ldots,\alpha_r$ 与 $B:\beta_1,\ldots,\beta_s$，若 $A$ 线性无关且 $A$ 可由 $B$ 线性表示，则 $r\leq s$。
+对于向量组 $A:\alpha_1,\ldots,\alpha_r$ 与 $B:\beta_1,\ldots,\beta_s$,若 $A$ 线性无关且 $A$ 可由 $B$ 线性表示,则 $r\leq s$.
 \end{theorem}
 
 \begin{corollary}[\markstar]
-若 $m>n$，则任意 $m$ 个 $n$ 维向量必线性相关。
+若 $m>n$,则任意 $m$ 个 $n$ 维向量必线性相关.
 \end{corollary}
 
 \begin{theorem}[\markstar]
-若向量组 $A$ 的秩为 $r_1$，向量组 $B$ 的秩为 $r_2$，且 $A$ 可由 $B$ 线性表示，则 $r_1\leq r_2$。
+若向量组 $A$ 的秩为 $r_1$,向量组 $B$ 的秩为 $r_2$,且 $A$ 可由 $B$ 线性表示,则 $r_1\leq r_2$.
 \end{theorem}
 
 \begin{corollary}[\markstar]
-等价向量组具有相同的秩；任一向量组的任意两个极大无关组所含向量个数相同。
+等价向量组具有相同的秩;任一向量组的任意两个极大无关组所含向量个数相同.
 \end{corollary}
 
 \begin{example}[\markstar]
-设 $\alpha_1,\ldots,\alpha_s$ 线性无关，并且可由 $\beta_1,\ldots,\beta_t$ 线性表示。证明：必存在某个 $\beta_j$，使
+设 $\alpha_1,\ldots,\alpha_s$ 线性无关,并且可由 $\beta_1,\ldots,\beta_t$ 线性表示.证明:必存在某个 $\beta_j$,使
 \[
  \beta_j,\alpha_2,\ldots,\alpha_s
 \]
-线性无关。
+线性无关.
 \end{example}
 \exampleblank
 
 \begin{solution}
-若对所有 $j$，$\beta_j,\alpha_2,\ldots,\alpha_s$ 都线性相关，则每个 $\beta_j$ 都可由 $\alpha_2,\ldots,\alpha_s$ 线性表示。于是由 $\beta_j$ 可表示的 $\alpha_1$ 也可由 $\alpha_2,\ldots,\alpha_s$ 表示，矛盾。
+若对所有 $j$,$\beta_j,\alpha_2,\ldots,\alpha_s$ 都线性相关,则每个 $\beta_j$ 都可由 $\alpha_2,\ldots,\alpha_s$ 线性表示.于是由 $\beta_j$ 可表示的 $\alpha_1$ 也可由 $\alpha_2,\ldots,\alpha_s$ 表示,矛盾.
 \end{solution}
 
 \begin{example}
-设 $A=(\alpha_1,\ldots,\alpha_r)$ 为 $n\times r$ 矩阵，$B=(\beta_1,\ldots,\beta_s)$ 为 $n\times s$ 矩阵，且 $r(A)=r,r(B)=s$。证明：若 $r+s>n$，则存在非零向量 $\xi$，既可由 $\alpha_i$ 线性表示，也可由 $\beta_j$ 线性表示。
+设 $A=(\alpha_1,\ldots,\alpha_r)$ 为 $n\times r$ 矩阵,$B=(\beta_1,\ldots,\beta_s)$ 为 $n\times s$ 矩阵,且 $r(A)=r,r(B)=s$.证明:若 $r+s>n$,则存在非零向量 $\xi$,既可由 $\alpha_i$ 线性表示,也可由 $\beta_j$ 线性表示.
 \end{example}
 \exampleblank
 
 \begin{solution}
-令 $U=L(\alpha_1,\ldots,\alpha_r)$，$W=L(\beta_1,\ldots,\beta_s)$。由维数公式
+令 $U=L(\alpha_1,\ldots,\alpha_r)$,$W=L(\beta_1,\ldots,\beta_s)$.由维数公式
 \[
  \dim(U\cap W)=\dim U+\dim W-\dim(U+W)
  \ge r+s-n>0.
 \]
-故 $U\cap W$ 中存在非零向量 $\xi$。
+故 $U\cap W$ 中存在非零向量 $\xi$.
 \end{solution}
 
 \begin{example}
@@ -199,18 +199,18 @@ $\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关。
 \[
 V=\{(a+ib,c+id)\mid a,b,c,d\in\mathbb R\}.
 \]
-分别把它看作复数域和实数域上的线性空间 $V_{\mathbb C},V_{\mathbb R}$，求其维数。又设 $M_2(\mathbb C)$ 分别按复数域和实数域看作线性空间 $U_{\mathbb C},U_{\mathbb R}$，求其维数。
+分别把它看作复数域和实数域上的线性空间 $V_{\mathbb C},V_{\mathbb R}$,求其维数.又设 $M_2(\mathbb C)$ 分别按复数域和实数域看作线性空间 $U_{\mathbb C},U_{\mathbb R}$,求其维数.
 \end{example}
 \exampleblank
 
 \begin{solution}
-显然 $V\cong\mathbb C^2$，故
+显然 $V\cong\mathbb C^2$,故
 \[
  \dim_{\mathbb C}V_{\mathbb C}=2,
  \qquad
  \dim_{\mathbb R}V_{\mathbb R}=4.
 \]
-同理 $M_2(\mathbb C)\cong\mathbb C^4$，故
+同理 $M_2(\mathbb C)\cong\mathbb C^4$,故
 \[
  \dim_{\mathbb C}U_{\mathbb C}=4,
  \qquad
@@ -219,16 +219,16 @@ V=\{(a+ib,c+id)\mid a,b,c,d\in\mathbb R\}.
 \end{solution}
 
 \begin{example}
-设 $V_1,V_2$ 是数域 $P$ 上的线性空间，在 $V_1\times V_2$ 上按分量定义加法与数乘。证明它构成线性空间；若 $\dim V_1=m,\dim V_2=n$，求 $\dim(V_1\times V_2)$。
+设 $V_1,V_2$ 是数域 $P$ 上的线性空间,在 $V_1\times V_2$ 上按分量定义加法与数乘.证明它构成线性空间;若 $\dim V_1=m,\dim V_2=n$,求 $\dim(V_1\times V_2)$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-线性空间公理由两个分量逐项验证。若 $\alpha_1,\ldots,\alpha_m$ 与 $\beta_1,\ldots,\beta_n$ 分别为 $V_1,V_2$ 的基，则
+线性空间公理由两个分量逐项验证.若 $\alpha_1,\ldots,\alpha_m$ 与 $\beta_1,\ldots,\beta_n$ 分别为 $V_1,V_2$ 的基,则
 \[
  (\alpha_1,0),\ldots,(\alpha_m,0),(0,\beta_1),\ldots,(0,\beta_n)
 \]
-是 $V_1\times V_2$ 的一组基。因此
+是 $V_1\times V_2$ 的一组基.因此
 \[
  \boxed{\dim(V_1\times V_2)=m+n}.
 \]
@@ -242,7 +242,7 @@ V=\{(a+ib,c+id)\mid a,b,c,d\in\mathbb R\}.
 \[
 k\circ(a,b)=\left(ka,kb+\dfrac{k(k-1)}{2}a^2\right).
 \]
-证明这构成 $\mathbb R$ 上的线性空间，并讨论 $\alpha_1=(1,1),\alpha_2=(a,b)$ 的线性相关性。
+证明这构成 $\mathbb R$ 上的线性空间,并讨论 $\alpha_1=(1,1),\alpha_2=(a,b)$ 的线性相关性.
 \end{example}
 \exampleblank
 
@@ -257,7 +257,7 @@ k\circ(a,b)=\left(ka,kb+\dfrac{k(k-1)}{2}a^2\right).
  \qquad
  \Phi(k\circ u)=k\Phi(u),
 \]
-故 $V$ 与通常的 $\mathbb R^2$ 线性同构，从而确为线性空间。
+故 $V$ 与通常的 $\mathbb R^2$ 线性同构,从而确为线性空间.
 
 又
 \[
@@ -288,28 +288,28 @@ k\circ(a,b)=\left(ka,kb+\dfrac{k(k-1)}{2}a^2\right).
 \[
 \beta=(4,2,4,a)^{\mathsf T}.
 \]
-设 $W=L(\alpha_1,\alpha_2,\alpha_3,\alpha_4)$。
+设 $W=L(\alpha_1,\alpha_2,\alpha_3,\alpha_4)$.
 \begin{enumerate}
-\item 求 $\dim W$ 及一组基；
-\item 求 $a$ 使 $\beta\in W$，并求 $\beta$ 在所选基下的坐标。
+\item 求 $\dim W$ 及一组基;
+\item 求 $a$ 使 $\beta\in W$,并求 $\beta$ 在所选基下的坐标.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-对列矩阵作行化简可得主元列为第 $1,2,4$ 列，故
+对列矩阵作行化简可得主元列为第 $1,2,4$ 列,故
 \[
  \dim W=3,
  \qquad
  \{\alpha_1,\alpha_2,\alpha_4\}
 \]
-可取为一组基。
+可取为一组基.
 
 计算
 \[
  \det(\alpha_1,\alpha_2,\alpha_4,\beta)=8(a-9),
 \]
-故 $\beta\in W$ 当且仅当 $a=9$。此时
+故 $\beta\in W$ 当且仅当 $a=9$.此时
 \[
  \beta=4\alpha_1+3\alpha_2-3\alpha_4,
 \]
@@ -324,12 +324,12 @@ k\circ(a,b)=\left(ka,kb+\dfrac{k(k-1)}{2}a^2\right).
 \[
 W=\{f(x)\in\mathbb R[x]_n\mid f(1)=0\},
 \]
-其中 $\mathbb R[x]_n$ 表示次数小于 $n$ 的多项式及零多项式。证明 $W$ 是子空间，并求其维数和一组基。
+其中 $\mathbb R[x]_n$ 表示次数小于 $n$ 的多项式及零多项式.证明 $W$ 是子空间,并求其维数和一组基.
 \end{example}
 \exampleblank
 
 \begin{solution}
-条件 $f(1)=0$ 对加法和数乘封闭，故 $W$ 为子空间。由因式定理，
+条件 $f(1)=0$ 对加法和数乘封闭,故 $W$ 为子空间.由因式定理,
 \[
  f(1)=0\iff f(x)=(x-1)g(x),\qquad \deg g<n-1.
 \]
@@ -345,40 +345,40 @@ W=\{f(x)\in\mathbb R[x]_n\mid f(1)=0\},
 \end{solution}
 
 \begin{example}
-设 $M_n(K)$ 为数域 $K$ 上的 $n$ 阶方阵空间，$U$ 为全体循环矩阵组成的集合。证明 $U$ 是 $M_n(K)$ 的子空间，并求一组基和维数。
+设 $M_n(K)$ 为数域 $K$ 上的 $n$ 阶方阵空间,$U$ 为全体循环矩阵组成的集合.证明 $U$ 是 $M_n(K)$ 的子空间,并求一组基和维数.
 \end{example}
 \exampleblank
 
 \begin{solution}
-设 $P$ 为循环移位矩阵，则任一循环矩阵唯一写成
+设 $P$ 为循环移位矩阵,则任一循环矩阵唯一写成
 \[
  a_0E+a_1P+\cdots+a_{n-1}P^{n-1}.
 \]
-因此 $U$ 对加法和数乘封闭，且
+因此 $U$ 对加法和数乘封闭,且
 \[
  \boxed{E,P,\ldots,P^{n-1}}
 \]
-为一组基，从而
+为一组基,从而
 \[
  \boxed{\dim U=n}.
 \]
 \end{solution}
 
 \begin{example}
-设 $A=J_n(\lambda)$ 为一个 $n$ 阶 Jordan 块，
+设 $A=J_n(\lambda)$ 为一个 $n$ 阶 Jordan 块,
 \[
 V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
 \]
-证明 $V$ 是线性空间，并求 $\dim V$。
+证明 $V$ 是线性空间,并求 $\dim V$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-可交换条件对加法和数乘封闭，故 $V$ 为子空间。写
+可交换条件对加法和数乘封闭,故 $V$ 为子空间.写
 \[
  A=\lambda E+N,
 \]
-其中 $N$ 为幂零 Jordan 移位矩阵。$BA=AB$ 等价于 $BN=NB$。比较矩阵元素可知 $B$ 必为上三角 Toeplitz 矩阵，即
+其中 $N$ 为幂零 Jordan 移位矩阵.$BA=AB$ 等价于 $BN=NB$.比较矩阵元素可知 $B$ 必为上三角 Toeplitz 矩阵,即
 \[
  B=c_0E+c_1N+\cdots+c_{n-1}N^{n-1}.
 \]
@@ -394,33 +394,33 @@ V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
 \section{向量组与矩阵的秩}
 
 \begin{proposition}[\markstar\ 求极大无关组]
-把向量组作为列向量排成矩阵，对矩阵作初等行变换化为阶梯形；主元列在原矩阵中对应的向量可组成一个极大无关组。
+把向量组作为列向量排成矩阵,对矩阵作初等行变换化为阶梯形;主元列在原矩阵中对应的向量可组成一个极大无关组.
 \end{proposition}
 
 \begin{remark}
-初等行变换不改变列向量之间的线性关系，因此也可据此求向量的线性表示坐标。极大无关组通常不唯一。
+初等行变换不改变列向量之间的线性关系,因此也可据此求向量的线性表示坐标.极大无关组通常不唯一.
 \end{remark}
 
 \begin{example}
-求下列向量组的秩，并给出一个极大无关组：
+求下列向量组的秩,并给出一个极大无关组:
 \begin{enumerate}
-  \item $(1,2,3),(4,8,12),(3,0,1),(4,5,8)$；
-  \item $(1,2,3,4),(1,0,1,0),(-1,1,1,-1),(-2,3,2,3)$；
-  \item $(4,-5,2,6),(2,-2,1,3),(6,-3,3,9),(4,-1,5,6)$；
-  \item $(1,0,0,2,5),(0,1,0,3,4),(0,0,1,4,7),(2,-3,4,11,12)$。
+  \item $(1,2,3),(4,8,12),(3,0,1),(4,5,8)$;
+  \item $(1,2,3,4),(1,0,1,0),(-1,1,1,-1),(-2,3,2,3)$;
+  \item $(4,-5,2,6),(2,-2,1,3),(6,-3,3,9),(4,-1,5,6)$;
+  \item $(1,0,0,2,5),(0,1,0,3,4),(0,0,1,4,7),(2,-3,4,11,12)$.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-把每组向量作为列排成矩阵并作行化简。可分别取下列主元列：
+把每组向量作为列排成矩阵并作行化简.可分别取下列主元列:
 \begin{enumerate}
-  \item 第 $1,3$ 列，故秩为 $2$；
-  \item 第 $1,2,3$ 列，故秩为 $3$；
-  \item 第 $1,2,4$ 列，故秩为 $3$；
-  \item 四列全为主元列，故秩为 $4$。
+  \item 第 $1,3$ 列,故秩为 $2$;
+  \item 第 $1,2,3$ 列,故秩为 $3$;
+  \item 第 $1,2,4$ 列,故秩为 $3$;
+  \item 四列全为主元列,故秩为 $4$.
 \end{enumerate}
-对应原向量即为所求极大无关组。
+对应原向量即为所求极大无关组.
 \end{solution}
 
 \begin{example}
@@ -438,9 +438,9 @@ V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
 \beta_3=(a,1,1)^{\mathsf T}.
 \]
 \begin{enumerate}
-  \item 求 $a$ 使向量组 $(I)$ 线性相关；
-  \item 求 $a$ 使向量组 $(I)$ 不能由向量组 $(II)$ 线性表示；
-  \item 在前两问同时成立时，将 $\gamma=(1,-2,-5)^{\mathsf T}$ 用 $\beta_1,\beta_2,\alpha_3$ 线性表示。
+  \item 求 $a$ 使向量组 $(I)$ 线性相关;
+  \item 求 $a$ 使向量组 $(I)$ 不能由向量组 $(II)$ 线性表示;
+  \item 在前两问同时成立时,将 $\gamma=(1,-2,-5)^{\mathsf T}$ 用 $\beta_1,\beta_2,\alpha_3$ 线性表示.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -458,7 +458,7 @@ V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
 \[
  \det(\beta_1,\beta_2,\beta_3)=-(a-1)^2(a+2).
 \]
-当 $a=4$ 时，$(II)$ 为一组基，故可表示任意三维向量；于是前两问同时成立只能取
+当 $a=4$ 时,$(II)$ 为一组基,故可表示任意三维向量;于是前两问同时成立只能取
 \[
  \boxed{a=-2}.
 \]
@@ -469,14 +469,14 @@ V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
 \end{solution}
 
 \begin{proposition}[\marktwostar]
-若 $A_{m\times n},B_{n\times s}$，则
+若 $A_{m\times n},B_{n\times s}$,则
 \[
  r(AB)\leq\min\{r(A),r(B)\}.
 \]
 \end{proposition}
 
 \begin{proposition}[\marktwostar]
-若 $A,B$ 同型，则
+若 $A,B$ 同型,则
 \[
  r(A\pm B)\leq r(A)+r(B).
 \]
@@ -490,36 +490,36 @@ V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
 \end{proposition}
 
 \begin{proposition}[\marktwostar]
-对适当阶数的分块矩阵，
+对适当阶数的分块矩阵,
 \[
  r\begin{pmatrix}A&O\\C&B\end{pmatrix}\geq r(A)+r(B).
 \]
 \end{proposition}
 
 \begin{proposition}[\markstar]
-若 $A_{m\times n}B_{n\times s}=O$，则
+若 $A_{m\times n}B_{n\times s}=O$,则
 \[
  r(A)+r(B)\leq n.
 \]
 \end{proposition}
 
 \begin{lemma}[\marktwostar]
-若 $\alpha$ 是 $n$ 维实列向量，则
+若 $\alpha$ 是 $n$ 维实列向量,则
 \[
  \alpha^{\mathsf T}\alpha=0\iff \alpha=0.
 \]
-复向量情形必须把普通转置改为共轭转置。
+复向量情形必须把普通转置改为共轭转置.
 \end{lemma}
 
 \begin{proposition}[\marktwostar]
-若 $A$ 为实矩阵，则
+若 $A$ 为实矩阵,则
 \[
  r(A^{\mathsf T}A)=r(AA^{\mathsf T})=r(A).
 \]
 \end{proposition}
 
 \begin{example}
-设 $A_{m\times n},B_{s\times n}$，证明
+设 $A_{m\times n},B_{s\times n}$,证明
 \[
  r\begin{pmatrix}A\\B\end{pmatrix}\leq r(A)+r(B).
 \]
@@ -527,7 +527,7 @@ V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
 \exampleblank
 
 \begin{solution}
-矩阵的行空间包含于 $A$ 的行空间与 $B$ 的行空间之和，故
+矩阵的行空间包含于 $A$ 的行空间与 $B$ 的行空间之和,故
 \[
  r\begin{pmatrix}A\\B\end{pmatrix}
  =\dim(R(A)+R(B))
@@ -536,7 +536,7 @@ V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
 \end{solution}
 
 \begin{example}
-设 $A_{m\times n},B_{m\times s}$，证明
+设 $A_{m\times n},B_{m\times s}$,证明
 \[
  r(A,B)\leq r(A)+r(B).
 \]
@@ -544,14 +544,14 @@ V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
 \exampleblank
 
 \begin{solution}
-同理，$(A,B)$ 的列空间为 $C(A)+C(B)$，故
+同理,$(A,B)$ 的列空间为 $C(A)+C(B)$,故
 \[
  r(A,B)=\dim(C(A)+C(B))\leq r(A)+r(B).
 \]
 \end{solution}
 
 \begin{example}
-设 $A,B$ 为 $n$ 阶幂等矩阵，且 $E-A-B$ 可逆。证明
+设 $A,B$ 为 $n$ 阶幂等矩阵,且 $E-A-B$ 可逆.证明
 \[
  r(A)=r(B).
 \]
@@ -559,22 +559,22 @@ V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
 \exampleblank
 
 \begin{solution}
-令 $T=E-A-B$。若 $x\in\operatorname{Im}A$，则 $Ax=x$，故
+令 $T=E-A-B$.若 $x\in\operatorname{Im}A$,则 $Ax=x$,故
 \[
  Tx=-Bx\in\operatorname{Im}B.
 \]
-因为 $T$ 可逆，$T$ 在 $\operatorname{Im}A$ 上的限制是单射，所以
+因为 $T$ 可逆,$T$ 在 $\operatorname{Im}A$ 上的限制是单射,所以
 \[
  r(A)\leq r(B).
 \]
-交换 $A,B$ 得 $r(B)\leq r(A)$，于是
+交换 $A,B$ 得 $r(B)\leq r(A)$,于是
 \[
  \boxed{r(A)=r(B)}.
 \]
 \end{solution}
 
 \begin{example}
-设 $A,B$ 为 $n$ 阶方阵，证明
+设 $A,B$ 为 $n$ 阶方阵,证明
 \[
  r(AB-E)\leq r(A-E)+r(B-E).
 \]
@@ -586,7 +586,7 @@ V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
 \[
  AB-E=A(B-E)+(A-E)
 \]
-及秩的不等式，
+及秩的不等式,
 \[
  r(AB-E)
  \leq r(A(B-E))+r(A-E)
@@ -595,10 +595,10 @@ V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
 \end{solution}
 
 \begin{example}
-设 $A,B$ 为 $n$ 阶方阵，证明：
+设 $A,B$ 为 $n$ 阶方阵,证明:
 \begin{enumerate}
-  \item $r(A-B)\geq r(A)-r(B)$；
-  \item 若 $A$ 可逆，则第一问等号成立当且仅当
+  \item $r(A-B)\geq r(A)-r(B)$;
+  \item 若 $A$ 可逆,则第一问等号成立当且仅当
   \[
   BA^{-1}B=B.
   \]
@@ -611,9 +611,9 @@ V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
 \[
  r(A)\leq r(A-B)+r(B),
 \]
-即第一式。
+即第一式.
 
-当 $A$ 可逆时，令 $C=BA^{-1}$，则
+当 $A$ 可逆时,令 $C=BA^{-1}$,则
 \[
  r(A-B)=r((E-C)A)=r(E-C),\qquad r(B)=r(C).
 \]
@@ -625,7 +625,7 @@ V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
 \[
  r(E-C)=n-r(C)
 \]
-当且仅当 $\ker(E-C)=\operatorname{Im}C$，这又等价于 $C^2=C$。故
+当且仅当 $\ker(E-C)=\operatorname{Im}C$,这又等价于 $C^2=C$.故
 \[
  C^2=C
  \iff BA^{-1}BA^{-1}=BA^{-1}
@@ -634,7 +634,7 @@ V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
 \end{solution}
 
 \begin{example}
-设 $A,D$ 分别为 $m,n$ 阶可逆矩阵，$B,C$ 分别为 $m\times n,n\times m$ 矩阵。证明
+设 $A,D$ 分别为 $m,n$ 阶可逆矩阵,$B,C$ 分别为 $m\times n,n\times m$ 矩阵.证明
 \[
  r(A)-r(A-BD^{-1}C)
  =r(D)-r(D-CA^{-1}B).
@@ -647,7 +647,7 @@ V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
 \[
  M=\begin{pmatrix}A&B\\C&D\end{pmatrix}
 \]
-分别以 $A,D$ 作 Schur 消元，有
+分别以 $A,D$ 作 Schur 消元,有
 \[
  r(M)=m+r(D-CA^{-1}B)
 \]
@@ -655,11 +655,11 @@ V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
 \[
  r(M)=n+r(A-BD^{-1}C).
 \]
-两式相等并整理即得结论。
+两式相等并整理即得结论.
 \end{solution}
 
 \begin{corollary}[\markstar]
-特别地，令 $A=\lambda_0E_m,D=E_n$，则
+特别地,令 $A=\lambda_0E_m,D=E_n$,则
 \[
  m-r(\lambda_0E_m-BC)
  =n-r(\lambda_0E_n-CB).
@@ -667,11 +667,11 @@ V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
 \end{corollary}
 
 \begin{example}[\markstar]
-设 $A$ 为 $m\times n$ 矩阵，$B$ 为 $n\times s$ 矩阵，且
+设 $A$ 为 $m\times n$ 矩阵,$B$ 为 $n\times s$ 矩阵,且
 \[
  r(AB)=r(B).
 \]
-证明：对任意 $s\times t$ 矩阵 $C$，有
+证明:对任意 $s\times t$ 矩阵 $C$,有
 \[
  r(ABC)=r(BC).
 \]
@@ -679,26 +679,26 @@ V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
 \exampleblank
 
 \begin{solution}
-条件 $r(AB)=r(B)$ 等价于线性映射 $A$ 在 $\operatorname{Im}B$ 上为单射。由于
+条件 $r(AB)=r(B)$ 等价于线性映射 $A$ 在 $\operatorname{Im}B$ 上为单射.由于
 \[
  \operatorname{Im}(BC)\subseteq\operatorname{Im}B,
 \]
-$A$ 在 $\operatorname{Im}(BC)$ 上仍单射，故
+$A$ 在 $\operatorname{Im}(BC)$ 上仍单射,故
 \[
  \dim A(\operatorname{Im}(BC))=\dim\operatorname{Im}(BC),
 \]
-即 $r(ABC)=r(BC)$。
+即 $r(ABC)=r(BC)$.
 \end{solution}
 
 \begin{proposition}[\marktwostar]
-设 $A$ 是 $n$ 阶方阵，则存在 $1\leq k\leq n$，使
+设 $A$ 是 $n$ 阶方阵,则存在 $1\leq k\leq n$,使
 \[
  r(A^k)=r(A^{k+1})=r(A^{k+2})=\cdots.
 \]
 \end{proposition}
 
 \begin{example}
-设 $A$ 为 $n$ 阶实方阵，满足
+设 $A$ 为 $n$ 阶实方阵,满足
 \[
  AA^{\mathsf T}=a^2E_n.
 \]
@@ -710,26 +710,26 @@ $A$ 在 $\operatorname{Im}(BC)$ 上仍单射，故
 \exampleblank
 
 \begin{solution}
-若 $a=0$，则 $A=0$，结论显然。以下设 $a\neq0$，令 $Q=A/a$，则 $QQ^{\mathsf T}=E$，即 $Q$ 为正交矩阵。
+若 $a=0$,则 $A=0$,结论显然.以下设 $a\neq0$,令 $Q=A/a$,则 $QQ^{\mathsf T}=E$,即 $Q$ 为正交矩阵.
 
 只需证明
 \[
  \ker(E-Q)^2=\ker(E-Q).
 \]
-若 $(E-Q)^2x=0$，令 $y=(E-Q)x$，则 $Qy=y$。另一方面，正交矩阵满足
+若 $(E-Q)^2x=0$,令 $y=(E-Q)x$,则 $Qy=y$.另一方面,正交矩阵满足
 \[
  \operatorname{Im}(E-Q)\perp\ker(E-Q),
 \]
-而 $y\in\operatorname{Im}(E-Q)\cap\ker(E-Q)$，故 $y=0$。于是 $(E-Q)x=0$，两核相同，因此两矩阵秩相同。
+而 $y\in\operatorname{Im}(E-Q)\cap\ker(E-Q)$,故 $y=0$.于是 $(E-Q)x=0$,两核相同,因此两矩阵秩相同.
 \end{solution}
 
 \begin{example}
 \begin{enumerate}
-  \item 设 $A,B$ 都是 $n$ 阶方阵且 $AB=O$，证明
+  \item 设 $A,B$ 都是 $n$ 阶方阵且 $AB=O$,证明
   \[
   r(BA)\leq\left\lfloor\dfrac n2\right\rfloor;
   \]
-  \item 对任意正整数 $n$，构造 $n$ 阶矩阵 $A,B$，使 $AB=O$ 且
+  \item 对任意正整数 $n$,构造 $n$ 阶矩阵 $A,B$,使 $AB=O$ 且
   \[
   r(BA)=\left\lfloor\dfrac n2\right\rfloor.
   \]
@@ -750,22 +750,22 @@ $A$ 在 $\operatorname{Im}(BC)$ 上仍单射，故
 \[
  r(BA)\leq n-r(BA),
 \]
-即第一式。
+即第一式.
 
-令 $k=\lfloor n/2\rfloor$，按分解 $\mathbb F^n=U\oplus W$，其中 $\dim U=k$。取
+令 $k=\lfloor n/2\rfloor$,按分解 $\mathbb F^n=U\oplus W$,其中 $\dim U=k$.取
 \[
  B=\begin{pmatrix}E_k&O\\O&O\end{pmatrix},
  \qquad
  A=\begin{pmatrix}O&C\\O&O\end{pmatrix},
 \]
-其中 $C$ 为 $k\times(n-k)$ 的满行秩矩阵。则 $AB=O$，而 $BA=A$，故
+其中 $C$ 为 $k\times(n-k)$ 的满行秩矩阵.则 $AB=O$,而 $BA=A$,故
 \[
  r(BA)=r(A)=k.
 \]
 \end{solution}
 
 \begin{example}[\markstar\ Sylvester 不等式]
-设 $A_{m\times n},B_{n\times s}$，证明
+设 $A_{m\times n},B_{n\times s}$,证明
 \[
  r(AB)\geq r(A)+r(B)-n.
 \]
@@ -773,7 +773,7 @@ $A$ 在 $\operatorname{Im}(BC)$ 上仍单射，故
 \exampleblank
 
 \begin{solution}
-把 $A$ 限制在 $\operatorname{Im}B$ 上。由秩--零度定理，
+把 $A$ 限制在 $\operatorname{Im}B$ 上.由秩--零度定理,
 \[
  r(AB)
  =\dim\operatorname{Im}B-
@@ -791,7 +791,7 @@ $A$ 在 $\operatorname{Im}(BC)$ 上仍单射，故
 \end{solution}
 
 \begin{example}[\markstar\ Frobenius 不等式]
-设 $A_{m\times n},B_{n\times s},C_{s\times t}$，证明
+设 $A_{m\times n},B_{n\times s},C_{s\times t}$,证明
 \[
  r(ABC)\geq r(AB)+r(BC)-r(B).
 \]
@@ -799,7 +799,7 @@ $A$ 在 $\operatorname{Im}(BC)$ 上仍单射，故
 \exampleblank
 
 \begin{solution}
-把 $A$ 限制在 $\operatorname{Im}B$ 上，并进一步限制到 $\operatorname{Im}(BC)$。有
+把 $A$ 限制在 $\operatorname{Im}B$ 上,并进一步限制到 $\operatorname{Im}(BC)$.有
 \[
  r(ABC)=\dim\operatorname{Im}(BC)-\dim(\operatorname{Im}(BC)\cap\ker A),
 \]
@@ -819,7 +819,7 @@ $A$ 在 $\operatorname{Im}(BC)$ 上仍单射，故
 \end{solution}
 
 \begin{example}
-设 $A$ 为 $n$ 阶方阵，证明：
+设 $A$ 为 $n$ 阶方阵,证明:
 \begin{enumerate}
   \item $A^2=E$ 当且仅当
   \[
@@ -838,27 +838,27 @@ $A$ 在 $\operatorname{Im}(BC)$ 上仍单射，故
 \[
  n=r(2E)=r((A+E)-(A-E))\leq r(A+E)+r(A-E).
 \]
-若 $A^2=E$，则 $(A+E)(A-E)=O$，由秩不等式得反向不等式，因此等号成立。
+若 $A^2=E$,则 $(A+E)(A-E)=O$,由秩不等式得反向不等式,因此等号成立.
 
-反之若秩和等于 $n$，则
+反之若秩和等于 $n$,则
 \[
  \operatorname{Im}(A+E)\cap\operatorname{Im}(A-E)=\{0\}.
 \]
-而 $(A+E)(A-E)$ 的像同时包含于这两个像空间，故只能为零，于是 $A^2=E$。
+而 $(A+E)(A-E)$ 的像同时包含于这两个像空间,故只能为零,于是 $A^2=E$.
 
-第二问同理。由
+第二问同理.由
 \[
  E=A+(E-A)
 \]
-知秩和至少为 $n$；若 $A(E-A)=O$ 则至多为 $n$。反过来若秩和恰为 $n$，两像空间交为零，而 $A(E-A)$ 的像属于二者之交，故 $A(E-A)=O$，即 $A^2=A$。
+知秩和至少为 $n$;若 $A(E-A)=O$ 则至多为 $n$.反过来若秩和恰为 $n$,两像空间交为零,而 $A(E-A)$ 的像属于二者之交,故 $A(E-A)=O$,即 $A^2=A$.
 \end{solution}
 
 \begin{example}
-设 $A^3=E$，证明
+设 $A^3=E$,证明
 \[
  r(A-E)+r(A^2+A+E)=n.
 \]
-进一步，若 $A\in M_n(\mathbb C)$，$f,g\in\mathbb C[x]$ 且 $(f,g)=1$，证明
+进一步,若 $A\in M_n(\mathbb C)$,$f,g\in\mathbb C[x]$ 且 $(f,g)=1$,证明
 \[
  n=r(f(A))+r(g(A))-r(f(A)g(A)).
 \]
@@ -866,7 +866,7 @@ $A$ 在 $\operatorname{Im}(BC)$ 上仍单射，故
 \exampleblank
 
 \begin{solution}
-先证推广式。由 Bézout 恒等式，存在 $u,v\in\mathbb C[x]$ 使
+先证推广式.由 Bézout 恒等式,存在 $u,v\in\mathbb C[x]$ 使
 \[
  u(A)f(A)+v(A)g(A)=E.
 \]
@@ -874,49 +874,49 @@ $A$ 在 $\operatorname{Im}(BC)$ 上仍单射，故
 \[
  \operatorname{Im}f(A)+\operatorname{Im}g(A)=\mathbb C^n.
 \]
-又因为 $f(A),g(A)$ 可交换，若
+又因为 $f(A),g(A)$ 可交换,若
 \[
  y\in\operatorname{Im}f(A)\cap\operatorname{Im}g(A),
 \]
-写 $y=f(A)x=g(A)z$，则
+写 $y=f(A)x=g(A)z$,则
 \[
  y=u(A)f(A)g(A)z+v(A)g(A)f(A)x
  \in\operatorname{Im}(f(A)g(A)).
 \]
-反向包含显然，故
+反向包含显然,故
 \[
  \operatorname{Im}f(A)\cap\operatorname{Im}g(A)
  =\operatorname{Im}(f(A)g(A)).
 \]
-由维数公式即得推广式。
+由维数公式即得推广式.
 
 取
 \[
  f(x)=x-1,\qquad g(x)=x^2+x+1.
 \]
-在特征为零的数域上二者互素，且 $f(A)g(A)=A^3-E=O$，故得到所求秩和等式。
+在特征为零的数域上二者互素,且 $f(A)g(A)=A^3-E=O$,故得到所求秩和等式.
 \end{solution}
 
 \subsection{满秩矩阵}
 
 \begin{definition}
-若 $C_{m\times n}$ 满足 $r(C)=m$，称为行满秩矩阵；若 $r(C)=n$，称为列满秩矩阵。
+若 $C_{m\times n}$ 满足 $r(C)=m$,称为行满秩矩阵;若 $r(C)=n$,称为列满秩矩阵.
 \end{definition}
 
 \begin{theorem}[\marktwostar]
-设 $C$ 为列满秩矩阵，则下列命题等价：
+设 $C$ 为列满秩矩阵,则下列命题等价:
 \begin{enumerate}
-  \item $Cx=0$ 只有零解；
-  \item $C$ 保持线性无关组的线性无关性；
-  \item $C$ 有左逆；
-  \item $C$ 可扩充成可逆矩阵；
-  \item 对任意适当维数的 $b$，$C^{\mathsf T}x=b$ 总有解。
+  \item $Cx=0$ 只有零解;
+  \item $C$ 保持线性无关组的线性无关性;
+  \item $C$ 有左逆;
+  \item $C$ 可扩充成可逆矩阵;
+  \item 对任意适当维数的 $b$,$C^{\mathsf T}x=b$ 总有解.
 \end{enumerate}
-转置后得到行满秩矩阵的对应结论。
+转置后得到行满秩矩阵的对应结论.
 \end{theorem}
 
 \begin{example}
-设 $A_{3\times2},B_{2\times3}$，且
+设 $A_{3\times2},B_{2\times3}$,且
 \[
 AB=
 \begin{pmatrix}
@@ -925,22 +925,22 @@ AB=
 -2&4&5
 \end{pmatrix}.
 \]
-证明：
+证明:
 \begin{enumerate}
-  \item $r(A)=r(B)=2$；
-  \item $BA=9E_2$。
+  \item $r(A)=r(B)=2$;
+  \item $BA=9E_2$.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-直接计算可知 $r(AB)=2$。又
+直接计算可知 $r(AB)=2$.又
 \[
  r(AB)\leq r(A)\leq2,
  \qquad
  r(AB)\leq r(B)\leq2,
 \]
-故 $r(A)=r(B)=2$。
+故 $r(A)=r(B)=2$.
 
 再计算得到
 \[
@@ -950,14 +950,14 @@ AB=
 \[
  A(BA-9E_2)B=O.
 \]
-因 $A$ 列满秩，存在左逆；$B$ 行满秩，存在右逆。两边分别乘相应左逆、右逆，得
+因 $A$ 列满秩,存在左逆;$B$ 行满秩,存在右逆.两边分别乘相应左逆,右逆,得
 \[
  \boxed{BA=9E_2}.
 \]
 \end{solution}
 
 \begin{example}
-设 $A$ 为 $n\times m$ 实矩阵，$r(A)=m$，$n\geq m$，且
+设 $A$ 为 $n\times m$ 实矩阵,$r(A)=m$,$n\geq m$,且
 \[
  (AA^{\mathsf T})^2=aAA^{\mathsf T}.
 \]
@@ -973,7 +973,7 @@ AB=
 \[
  A(A^{\mathsf T}A-aE_m)A^{\mathsf T}=O.
 \]
-因 $A$ 列满秩，存在左逆；$A^{\mathsf T}$ 行满秩，存在右逆。左右相乘消去 $A,A^{\mathsf T}$，即得
+因 $A$ 列满秩,存在左逆;$A^{\mathsf T}$ 行满秩,存在右逆.左右相乘消去 $A,A^{\mathsf T}$,即得
 \[
  \boxed{A^{\mathsf T}A=aE_m}.
 \]
@@ -982,10 +982,10 @@ AB=
 \subsection{秩一矩阵}
 
 \begin{theorem}[\marktwostar]
-设 $A$ 为 $n$ 阶矩阵且 $r(A)=1$，则：
+设 $A$ 为 $n$ 阶矩阵且 $r(A)=1$,则:
 \begin{enumerate}
-  \item 存在列向量 $\alpha,\beta$，使 $A=\alpha\beta^{\mathsf T}$；
-  \item $A$ 的特征值为 $0$（至少 $n-1$ 重）以及 $\operatorname{tr}A$；
+  \item 存在列向量 $\alpha,\beta$,使 $A=\alpha\beta^{\mathsf T}$;
+  \item $A$ 的特征值为 $0$(至少 $n-1$ 重)以及 $\operatorname{tr}A$;
   \item
   \[
   A^2=(\operatorname{tr}A)A,
@@ -996,7 +996,7 @@ AB=
 \end{theorem}
 
 \begin{example}
-设 $A$ 为 $n$ 阶不可逆矩阵，$A^*$ 为伴随矩阵，且
+设 $A$ 为 $n$ 阶不可逆矩阵,$A^*$ 为伴随矩阵,且
 \[
  \operatorname{tr}(A^*)=a\neq0.
 \]
@@ -1008,27 +1008,27 @@ AB=
 \exampleblank
 
 \begin{solution}
-因 $A^*\neq O$，故 $r(A)\geq n-1$；又 $A$ 不可逆，所以
+因 $A^*\neq O$,故 $r(A)\geq n-1$;又 $A$ 不可逆,所以
 \[
  \boxed{r(A)=n-1}.
 \]
-此时 $r(A^*)=1$。秩一矩阵 $A^*$ 的非零特征值等于其迹 $a$，故
+此时 $r(A^*)=1$.秩一矩阵 $A^*$ 的非零特征值等于其迹 $a$,故
 \[
  \boxed{|\lambda E-A^*|=\lambda^{n-1}(\lambda-a)}.
 \]
 \end{solution}
 
 \begin{example}
-设 $A$ 为二阶方阵，且存在正整数 $k\geq2$ 使
+设 $A$ 为二阶方阵,且存在正整数 $k\geq2$ 使
 \[
  A^k=O.
 \]
-证明 $A^2=O$。
+证明 $A^2=O$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-$A$ 为幂零矩阵，因此其全部特征值为零，故
+$A$ 为幂零矩阵,因此其全部特征值为零,故
 \[
  \operatorname{tr}A=0,\qquad |A|=0.
 \]
@@ -1045,41 +1045,41 @@ $A$ 为幂零矩阵，因此其全部特征值为零，故
 
 \newpage
 
-\section{子空间的交、和与直和}
+\section{子空间的交,和与直和}
 
 \begin{definition}
-设 $V_1,V_2$ 为数域 $F$ 上的线性空间，定义
+设 $V_1,V_2$ 为数域 $F$ 上的线性空间,定义
 \[
 V_1\oplus V_2
 =
 \{(\alpha,\beta)\mid \alpha\in V_1,\beta\in V_2\},
 \]
-并按分量定义加法和数乘，称为 $V_1,V_2$ 的外直和。
+并按分量定义加法和数乘,称为 $V_1,V_2$ 的外直和.
 \end{definition}
 
-若 $\alpha_1,\ldots,\alpha_m$ 与 $\beta_1,\ldots,\beta_n$ 分别为 $V_1,V_2$ 的基，则
+若 $\alpha_1,\ldots,\alpha_m$ 与 $\beta_1,\ldots,\beta_n$ 分别为 $V_1,V_2$ 的基,则
 \[
 (\alpha_1,0),\ldots,(\alpha_m,0),(0,\beta_1),\ldots,(0,\beta_n)
 \]
-是外直和的一组基，因此
+是外直和的一组基,因此
 \[
 \dim(V_1\oplus V_2)=\dim V_1+\dim V_2.
 \]
-外直和与通常的内直和在有限维情形下具有自然的同构关系。
+外直和与通常的内直和在有限维情形下具有自然的同构关系.
 
 \begin{theorem}[\markstar\ 有限不覆盖定理]
-设 $V$ 是数域 $K$ 上的有限维线性空间，$V_1,\ldots,V_s$ 为有限个真子空间，则存在向量
+设 $V$ 是数域 $K$ 上的有限维线性空间,$V_1,\ldots,V_s$ 为有限个真子空间,则存在向量
 \[
 \alpha\notin V_1\cup\cdots\cup V_s.
 \]
 \end{theorem}
 
 \begin{remark}
-这里“数域”按通常高等代数约定为特征零的无限域。对有限域，该结论一般不成立。
+这里``数域''按通常高等代数约定为特征零的无限域.对有限域,该结论一般不成立.
 \end{remark}
 
 \begin{example}
-设 $\alpha_1,\ldots,\alpha_r$ 与 $\beta_1,\ldots,\beta_s$ 分别是 $K^n$ 中的线性无关向量组。证明：
+设 $\alpha_1,\ldots,\alpha_r$ 与 $\beta_1,\ldots,\beta_s$ 分别是 $K^n$ 中的线性无关向量组.证明:
 \[
 L(\alpha_1,\ldots,\alpha_r)\cap L(\beta_1,\ldots,\beta_s)
 \]
@@ -1088,7 +1088,7 @@ L(\alpha_1,\ldots,\alpha_r)\cap L(\beta_1,\ldots,\beta_s)
  x_1\alpha_1+\cdots+x_r\alpha_r
  +y_1\beta_1+\cdots+y_s\beta_s=0
 \]
-的解空间维数。
+的解空间维数.
 \end{example}
 \exampleblank
 
@@ -1097,22 +1097,22 @@ L(\alpha_1,\ldots,\alpha_r)\cap L(\beta_1,\ldots,\beta_s)
 \[
 \sum_{i=1}^r x_i\alpha_i=-\sum_{j=1}^s y_j\beta_j.
 \]
-所得向量属于两子空间之交。由于两组向量各自线性无关，该映射既单射又满射，因此解空间与交空间线性同构，维数相同。
+所得向量属于两子空间之交.由于两组向量各自线性无关,该映射既单射又满射,因此解空间与交空间线性同构,维数相同.
 \end{solution}
 
 \begin{example}
-在 $\mathbb R^4$ 中，令
+在 $\mathbb R^4$ 中,令
 \[
 \alpha_1=(1,2,1,0),\quad
 \alpha_2=(-1,1,1,1),\quad
 \alpha_3=(0,3,2,1),
 \]
-生成子空间 $V_1$，并令
+生成子空间 $V_1$,并令
 \[
 \beta_1=(2,-1,0,1),\qquad
 \beta_2=(1,-1,3,7)
 \]
-生成子空间 $V_2$。求 $V_1+V_2$ 与 $V_1\cap V_2$ 的基。
+生成子空间 $V_2$.求 $V_1+V_2$ 与 $V_1\cap V_2$ 的基.
 \end{example}
 \exampleblank
 
@@ -1121,11 +1121,11 @@ L(\alpha_1,\ldots,\alpha_r)\cap L(\beta_1,\ldots,\beta_s)
 \[
 \alpha_3=\alpha_1+\alpha_2,
 \]
-故 $V_1=L(\alpha_1,\alpha_2)$。行化简可得
+故 $V_1=L(\alpha_1,\alpha_2)$.行化简可得
 \[
 \{\alpha_1,\alpha_2,\beta_1\}
 \]
-为 $V_1+V_2$ 的一组基。
+为 $V_1+V_2$ 的一组基.
 
 解
 \[
@@ -1155,12 +1155,12 @@ A_2=\begin{pmatrix}1&0\\1&1\end{pmatrix},
 B_1=\begin{pmatrix}0&0\\1&1\end{pmatrix},\quad
 B_2=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
 \]
-求 $W_1+W_2$、$W_1\cap W_2$，并判断是否有 $M_2(K)=W_1\oplus W_2$。
+求 $W_1+W_2$,$W_1\cap W_2$,并判断是否有 $M_2(K)=W_1\oplus W_2$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-把矩阵按 $(a_{11},a_{12},a_{21},a_{22})$ 向量化。四个向量线性无关，因此
+把矩阵按 $(a_{11},a_{12},a_{21},a_{22})$ 向量化.四个向量线性无关,因此
 \[
 \dim(W_1+W_2)=4,
 \qquad W_1\cap W_2=\{O\}.
@@ -1169,11 +1169,11 @@ B_2=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
 \[
 \boxed{M_2(K)=W_1\oplus W_2}.
 \]
-并且 $A_1,A_2,B_1,B_2$ 就是和空间的一组基。
+并且 $A_1,A_2,B_1,B_2$ 就是和空间的一组基.
 \end{solution}
 
 \begin{example}
-设 $W$ 为 $\mathbb R^n$ 的子空间，且 $W$ 中每个非零向量的零分量个数不超过 $r$。证明
+设 $W$ 为 $\mathbb R^n$ 的子空间,且 $W$ 中每个非零向量的零分量个数不超过 $r$.证明
 \[
 \dim W\leq r+1.
 \]
@@ -1181,11 +1181,11 @@ B_2=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
 \exampleblank
 
 \begin{solution}
-若 $\dim W\geq r+2$，任选 $r+1$ 个坐标位置，令这些坐标都等于零，相当于在 $W$ 上施加至多 $r+1$ 个齐次线性条件。由于 $\dim W>r+1$，必存在非零解，即存在 $W$ 中非零向量至少有 $r+1$ 个零分量，矛盾。
+若 $\dim W\geq r+2$,任选 $r+1$ 个坐标位置,令这些坐标都等于零,相当于在 $W$ 上施加至多 $r+1$ 个齐次线性条件.由于 $\dim W>r+1$,必存在非零解,即存在 $W$ 中非零向量至少有 $r+1$ 个零分量,矛盾.
 \end{solution}
 
 \begin{example}
-证明：子空间 $L_1,L_2$ 的和 $S=L_1+L_2$ 是直和，当且仅当至少存在一个向量 $x\in S$ 能唯一写成
+证明:子空间 $L_1,L_2$ 的和 $S=L_1+L_2$ 是直和,当且仅当至少存在一个向量 $x\in S$ 能唯一写成
 \[
 x=x_1+x_2,\qquad x_i\in L_i.
 \]
@@ -1193,17 +1193,17 @@ x=x_1+x_2,\qquad x_i\in L_i.
 \exampleblank
 
 \begin{solution}
-若 $L_1\cap L_2=\{0\}$，则所有向量的分解都唯一。
+若 $L_1\cap L_2=\{0\}$,则所有向量的分解都唯一.
 
-反之，若 $L_1\cap L_2$ 中有非零向量 $u$，则任意一个分解 $x=x_1+x_2$ 都可改写为
+反之,若 $L_1\cap L_2$ 中有非零向量 $u$,则任意一个分解 $x=x_1+x_2$ 都可改写为
 \[
 x=(x_1+u)+(x_2-u),
 \]
-且两项仍分别属于 $L_1,L_2$，所以没有任何向量的分解是唯一的。故只要存在一个唯一分解，就必有交为零。
+且两项仍分别属于 $L_1,L_2$,所以没有任何向量的分解是唯一的.故只要存在一个唯一分解,就必有交为零.
 \end{solution}
 
 \begin{example}
-设 $W,W_1,W_2$ 都是 $V$ 的子空间，$W_1\subseteq W$，且
+设 $W,W_1,W_2$ 都是 $V$ 的子空间,$W_1\subseteq W$,且
 \[
 V=W_1\oplus W_2.
 \]
@@ -1215,31 +1215,31 @@ V=W_1\oplus W_2.
 \exampleblank
 
 \begin{solution}
-任取 $w\in W$，在 $V=W_1\oplus W_2$ 中唯一写成 $w=w_1+w_2$。因为 $w,w_1\in W$，故 $w_2\in W\cap W_2$。所以
+任取 $w\in W$,在 $V=W_1\oplus W_2$ 中唯一写成 $w=w_1+w_2$.因为 $w,w_1\in W$,故 $w_2\in W\cap W_2$.所以
 \[
 W=W_1\oplus(W\cap W_2),
 \]
-取维数即得结论。
+取维数即得结论.
 \end{solution}
 
 \begin{example}
-设 $V$ 为 $n$ 维线性空间，$V_1$ 为其子空间，且
+设 $V$ 为 $n$ 维线性空间,$V_1$ 为其子空间,且
 \[
 \dim V_1\geq\dfrac n2.
 \]
 \begin{enumerate}
-  \item 证明存在子空间 $W_1,W_2$，使
+  \item 证明存在子空间 $W_1,W_2$,使
   \[
   V=V_1\oplus W_1=V_1\oplus W_2,
   \qquad W_1\cap W_2=\{0\};
   \]
-  \item 若 $\dim V_1<n/2$，上述结论是否仍成立？
+  \item 若 $\dim V_1<n/2$,上述结论是否仍成立?
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-记 $k=\dim V_1$，$m=n-k$，则 $m\leq k$。取 $V_1$ 的基 $e_1,\ldots,e_k$，扩充为 $V$ 的基
+记 $k=\dim V_1$,$m=n-k$,则 $m\leq k$.取 $V_1$ 的基 $e_1,\ldots,e_k$,扩充为 $V$ 的基
 \[
 e_1,\ldots,e_k,f_1,\ldots,f_m.
 \]
@@ -1250,21 +1250,21 @@ W_1=L(f_1,\ldots,f_m),
 \[
 W_2=L(f_1+e_1,\ldots,f_m+e_m).
 \]
-则两者都是 $V_1$ 的补空间，而且 $W_1\cap W_2=\{0\}$。
+则两者都是 $V_1$ 的补空间,而且 $W_1\cap W_2=\{0\}$.
 
-若 $k<n/2$，任意两个补空间维数均为 $n-k$，于是
+若 $k<n/2$,任意两个补空间维数均为 $n-k$,于是
 \[
 \dim(W_1\cap W_2)\geq2(n-k)-n=n-2k>0,
 \]
-故不可能交为零。
+故不可能交为零.
 \end{solution}
 
 \begin{example}
-设 $A,B,C,D$ 为两两可交换的 $n$ 阶矩阵，满足
+设 $A,B,C,D$ 为两两可交换的 $n$ 阶矩阵,满足
 \[
 AC+BD=E_n.
 \]
-令 $W,V_1,V_2$ 分别为 $ABx=0,Bx=0,Ax=0$ 的解空间。证明
+令 $W,V_1,V_2$ 分别为 $ABx=0,Bx=0,Ax=0$ 的解空间.证明
 \[
 W=V_1\oplus V_2.
 \]
@@ -1272,29 +1272,29 @@ W=V_1\oplus V_2.
 \exampleblank
 
 \begin{solution}
-显然 $V_1,V_2\subseteq W$。若 $x\in W$，则
+显然 $V_1,V_2\subseteq W$.若 $x\in W$,则
 \[
 x=(AC+BD)x=ACx+BDx.
 \]
-因为各矩阵可交换且 $ABx=0$，有
+因为各矩阵可交换且 $ABx=0$,有
 \[
 B(ACx)=AC(Bx)=C(ABx)=0,
 \]
-所以 $ACx\in V_1$；同理 $BDx\in V_2$。故 $W=V_1+V_2$。
+所以 $ACx\in V_1$;同理 $BDx\in V_2$.故 $W=V_1+V_2$.
 
-若 $y\in V_1\cap V_2$，则 $Ay=By=0$，从而
+若 $y\in V_1\cap V_2$,则 $Ay=By=0$,从而
 \[
 y=(AC+BD)y=0.
 \]
-故交为零。
+故交为零.
 \end{solution}
 
 \begin{example}[\markstar]
-设 $M\in P^{n\times n}$，$f,g\in P[x]$ 且 $(f,g)=1$。令
+设 $M\in P^{n\times n}$,$f,g\in P[x]$ 且 $(f,g)=1$.令
 \[
 A=f(M),\qquad B=g(M),
 \]
-$W,W_1,W_2$ 分别为 $ABx=0,Ax=0,Bx=0$ 的解空间。证明
+$W,W_1,W_2$ 分别为 $ABx=0,Ax=0,Bx=0$ 的解空间.证明
 \[
 W=W_1\oplus W_2.
 \]
@@ -1302,19 +1302,19 @@ W=W_1\oplus W_2.
 \exampleblank
 
 \begin{solution}
-由 Bézout 恒等式，存在 $u,v\in P[x]$ 使
+由 Bézout 恒等式,存在 $u,v\in P[x]$ 使
 \[
 u(M)A+v(M)B=E.
 \]
-且所有这些矩阵都可交换。于是完全按上一题的证明，任意 $x\in W$ 有
+且所有这些矩阵都可交换.于是完全按上一题的证明,任意 $x\in W$ 有
 \[
 x=u(M)Ax+v(M)Bx,
 \]
-其中两项分别属于 $W_2,W_1$，且交空间为零，故结论成立。
+其中两项分别属于 $W_2,W_1$,且交空间为零,故结论成立.
 \end{solution}
 
 \begin{example}
-设 $m<n$，$A\in P^{m\times n}$，$B\in P^{(n-m)\times n}$。令 $V_1,V_2$ 分别为 $Ax=0,Bx=0$ 的解空间。证明
+设 $m<n$,$A\in P^{m\times n}$,$B\in P^{(n-m)\times n}$.令 $V_1,V_2$ 分别为 $Ax=0,Bx=0$ 的解空间.证明
 \[
 P^n=V_1\oplus V_2
 \]
@@ -1322,7 +1322,7 @@ P^n=V_1\oplus V_2
 \[
 \begin{pmatrix}A\\B\end{pmatrix}x=0
 \]
-只有零解。
+只有零解.
 \end{example}
 \exampleblank
 
@@ -1332,38 +1332,38 @@ P^n=V_1\oplus V_2
 V_1\cap V_2
 =\ker\begin{pmatrix}A\\B\end{pmatrix}.
 \]
-若块矩阵方程只有零解，则其秩为 $n$。又
+若块矩阵方程只有零解,则其秩为 $n$.又
 \[
 r(A)\leq m,\qquad r(B)\leq n-m,
 \]
-所以必有 $r(A)=m,r(B)=n-m$。于是
+所以必有 $r(A)=m,r(B)=n-m$.于是
 \[
 \dim V_1=n-m,\qquad \dim V_2=m,
 \]
-加上交为零，得到直和为 $P^n$。
+加上交为零,得到直和为 $P^n$.
 
-反之若 $P^n=V_1\oplus V_2$，则交为零，因此块方程只有零解。
+反之若 $P^n=V_1\oplus V_2$,则交为零,因此块方程只有零解.
 \end{solution}
 
 \begin{example}[\markstar]
-设 $V$ 为数域 $F$ 上全体 $n$ 阶对称矩阵组成的线性空间，
+设 $V$ 为数域 $F$ 上全体 $n$ 阶对称矩阵组成的线性空间,
 \[
 U=\{A\in V\mid\operatorname{tr}A=0\},
 \qquad
 W=\{\lambda E\mid\lambda\in F\}.
 \]
 \begin{enumerate}
-  \item 证明 $U,W$ 为子空间；
-  \item 求各自一组基和维数；
-  \item 证明 $V=U\oplus W$。
+  \item 证明 $U,W$ 为子空间;
+  \item 求各自一组基和维数;
+  \item 证明 $V=U\oplus W$.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-迹为线性函数，故其核 $U$ 为子空间；$W$ 显然为一维子空间。
+迹为线性函数,故其核 $U$ 为子空间;$W$ 显然为一维子空间.
 
-$V$ 的维数为 $n(n+1)/2$。$U$ 可取基
+$V$ 的维数为 $n(n+1)/2$.$U$ 可取基
 \[
 E_{ij}+E_{ji}\quad(1\leq i<j\leq n),
 \]
@@ -1377,13 +1377,13 @@ E_{11}-E_{nn},\ E_{22}-E_{nn},\ldots,E_{n-1,n-1}-E_{nn}.
 \qquad \dim W=1.
 \]
 
-对任意对称矩阵 $A$，写
+对任意对称矩阵 $A$,写
 \[
 A=
 \left(A-\dfrac{\operatorname{tr}A}{n}E\right)
 +\dfrac{\operatorname{tr}A}{n}E.
 \]
-第一项属于 $U$，第二项属于 $W$。又 $U\cap W=\{O\}$，故
+第一项属于 $U$,第二项属于 $W$.又 $U\cap W=\{O\}$,故
 \[
 \boxed{V=U\oplus W}.
 \]
@@ -1394,7 +1394,7 @@ A=
 \[
 AB-BA
 \]
-生成的子空间。证明
+生成的子空间.证明
 \[
 \dim\mathfrak s=n^2-1.
 \]
@@ -1406,27 +1406,27 @@ AB-BA
 \[
 \operatorname{tr}(AB-BA)=0,
 \]
-故 $\mathfrak s$ 包含于零迹矩阵空间。
+故 $\mathfrak s$ 包含于零迹矩阵空间.
 
-反之，零迹矩阵空间由
+反之,零迹矩阵空间由
 \[
 E_{ij}\quad(i\neq j),
 \qquad E_{ii}-E_{nn}\quad(i=1,\ldots,n-1)
 \]
-张成，而
+张成,而
 \[
 E_{ij}=[E_{ii},E_{ij}],
 \qquad
 E_{ii}-E_{nn}=[E_{in},E_{ni}].
 \]
-故两空间相等，因此
+故两空间相等,因此
 \[
 \boxed{\dim\mathfrak s=n^2-1}.
 \]
 \end{solution}
 
 \begin{example}[\markstar]
-设 $\mathfrak{gl}(n,F)=M_n(F)$，定义
+设 $\mathfrak{gl}(n,F)=M_n(F)$,定义
 \[
 [A,B]=AB-BA.
 \]
@@ -1439,39 +1439,39 @@ E_{ii}-E_{nn}=[E_{in},E_{ni}].
   \[
   \mathfrak{sl}(n,F)=\{A\mid\operatorname{tr}A=0\},
   \]
-  证明它是子空间并给出一组基；
-  \item 设 $D_n$ 为数量矩阵空间，证明
+  证明它是子空间并给出一组基;
+  \item 设 $D_n$ 为数量矩阵空间,证明
   \[
   \mathfrak{gl}(n,F)=\mathfrak{sl}(n,F)\oplus D_n;
   \]
-  \item 证明 $\mathfrak{sl}(n,F)$ 等于所有有限个交换子的线性和所成的空间。
+  \item 证明 $\mathfrak{sl}(n,F)$ 等于所有有限个交换子的线性和所成的空间.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-第一问直接展开六项，逐项相消即可。
+第一问直接展开六项,逐项相消即可.
 
-第二问中 $\mathfrak{sl}(n,F)$ 是迹映射的核，因此为子空间。一组基为
+第二问中 $\mathfrak{sl}(n,F)$ 是迹映射的核,因此为子空间.一组基为
 \[
 E_{ij}\ (i\neq j),
 \qquad
 E_{ii}-E_{nn}\ (i=1,\ldots,n-1).
 \]
 
-第三问在特征零数域上，任意 $A$ 有唯一分解
+第三问在特征零数域上,任意 $A$ 有唯一分解
 \[
 A=
 \left(A-\dfrac{\operatorname{tr}A}{n}E\right)
 +\dfrac{\operatorname{tr}A}{n}E,
 \]
-故为直和。
+故为直和.
 
-第四问由上一题中基向量均可写成交换子立即得到。
+第四问由上一题中基向量均可写成交换子立即得到.
 \end{solution}
 
 \begin{example}
-设 $W_1,\ldots,W_s$ 是 $V$ 的子空间。证明
+设 $W_1,\ldots,W_s$ 是 $V$ 的子空间.证明
 \[
 \sum\limits_{i=1}^sW_i
 \]
@@ -1484,26 +1484,26 @@ W_i\cap\sum\limits_{k=1}^{i-1}W_k=\{0\},
 \exampleblank
 
 \begin{solution}
-若为直和，任一 $W_i$ 与其余各项之和的交都只能为零，故必要性成立。
+若为直和,任一 $W_i$ 与其余各项之和的交都只能为零,故必要性成立.
 
-反之，若逐项满足上述交为零，则对
+反之,若逐项满足上述交为零,则对
 \[
 w_1+\cdots+w_s=0,
 \qquad w_i\in W_i,
 \]
-从最后一项开始，有
+从最后一项开始,有
 \[
 w_s\in W_s\cap(W_1+\cdots+W_{s-1})=\{0\}.
 \]
-依次倒推得到所有 $w_i=0$，故分解唯一，即为直和。
+依次倒推得到所有 $w_i=0$,故分解唯一,即为直和.
 \end{solution}
 
 \begin{example}
-设 $U_1,U_2$ 是 $n$ 维空间 $V$ 的子空间，且
+设 $U_1,U_2$ 是 $n$ 维空间 $V$ 的子空间,且
 \[
 \dim U_1\leq m,\qquad \dim U_2\leq m<n.
 \]
-证明存在子空间 $W$，满足
+证明存在子空间 $W$,满足
 \[
 \dim W=n-m,
 \qquad W\cap U_1=W\cap U_2=\{0\}.
@@ -1512,17 +1512,17 @@ w_s\in W_s\cap(W_1+\cdots+W_{s-1})=\{0\}.
 \exampleblank
 
 \begin{solution}
-利用有限不覆盖定理归纳选取 $w_1,\ldots,w_{n-m}$。已选 $k<n-m$ 个时，两个空间
+利用有限不覆盖定理归纳选取 $w_1,\ldots,w_{n-m}$.已选 $k<n-m$ 个时,两个空间
 \[
 U_i+L(w_1,\ldots,w_k)
 \]
-的维数至多为 $m+k<n$，均为真子空间。可选 $w_{k+1}$ 同时不落在这两个子空间中。
+的维数至多为 $m+k<n$,均为真子空间.可选 $w_{k+1}$ 同时不落在这两个子空间中.
 
-最后令 $W=L(w_1,\ldots,w_{n-m})$。构造保证 $w_i$ 线性无关，且 $W$ 与两个 $U_i$ 的交都为零。
+最后令 $W=L(w_1,\ldots,w_{n-m})$.构造保证 $w_i$ 线性无关,且 $W$ 与两个 $U_i$ 的交都为零.
 \end{solution}
 
 \begin{example}
-证明：$V$ 的两个子空间 $V_1,V_2$ 的并集 $V_1\cup V_2$ 是子空间，当且仅当
+证明:$V$ 的两个子空间 $V_1,V_2$ 的并集 $V_1\cup V_2$ 是子空间,当且仅当
 \[
 V_1\subseteq V_2
 \quad\text{或}\quad
@@ -1532,30 +1532,30 @@ V_2\subseteq V_1.
 \exampleblank
 
 \begin{solution}
-充分性显然。反之若二者互不包含，取
+充分性显然.反之若二者互不包含,取
 \[
 x\in V_1\setminus V_2,
 \qquad
 y\in V_2\setminus V_1.
 \]
-若并集是子空间，则 $x+y\in V_1\cup V_2$。若 $x+y\in V_1$，则 $y=(x+y)-x\in V_1$，矛盾；另一种情形同理。
+若并集是子空间,则 $x+y\in V_1\cup V_2$.若 $x+y\in V_1$,则 $y=(x+y)-x\in V_1$,矛盾;另一种情形同理.
 \end{solution}
 
 \begin{example}
-设 $V$ 为数域 $K$ 上的 $n$ 维线性空间。证明：对任意自然数 $m>n$，存在 $V$ 中 $m$ 个向量，使其中任意 $n$ 个都构成 $V$ 的一组基。
+设 $V$ 为数域 $K$ 上的 $n$ 维线性空间.证明:对任意自然数 $m>n$,存在 $V$ 中 $m$ 个向量,使其中任意 $n$ 个都构成 $V$ 的一组基.
 \end{example}
 \exampleblank
 
 \begin{solution}
-取 $V$ 的一组基，把 $V$ 与 $K^n$ 同一。因数域 $K$ 为无限域，可取两两不同的 $t_1,\ldots,t_m\in K$，令
+取 $V$ 的一组基,把 $V$ 与 $K^n$ 同一.因数域 $K$ 为无限域,可取两两不同的 $t_1,\ldots,t_m\in K$,令
 \[
 v(t_j)=(1,t_j,t_j^2,\ldots,t_j^{n-1})^{\mathsf T}.
 \]
-任取其中 $n$ 个向量所成矩阵都是 Vandermonde 矩阵，其行列式为
+任取其中 $n$ 个向量所成矩阵都是 Vandermonde 矩阵,其行列式为
 \[
 \prod_{i<j}(t_j-t_i)\neq0.
 \]
-故任意 $n$ 个都为一组基。
+故任意 $n$ 个都为一组基.
 \end{solution}
 
 
@@ -1566,18 +1566,18 @@ v(t_j)=(1,t_j,t_j^2,\ldots,t_j^{n-1})^{\mathsf T}.
 \subsection{齐次线性方程组}
 
 \begin{definition}
-齐次方程组 $Ax=0$ 的全部解构成一个线性子空间，称为解空间。非零解空间的一组基称为该方程组的基础解系。
+齐次方程组 $Ax=0$ 的全部解构成一个线性子空间,称为解空间.非零解空间的一组基称为该方程组的基础解系.
 \end{definition}
 
 \begin{theorem}[\marktwostar]
-设 $A$ 为 $m\times n$ 矩阵，$r(A)=r$。则 $Ax=0$ 有非零解的充要条件是 $r<n$。此时解空间维数为 $n-r$，若 $\xi_1,\ldots,\xi_{n-r}$ 为一组基础解系，则通解为
+设 $A$ 为 $m\times n$ 矩阵,$r(A)=r$.则 $Ax=0$ 有非零解的充要条件是 $r<n$.此时解空间维数为 $n-r$,若 $\xi_1,\ldots,\xi_{n-r}$ 为一组基础解系,则通解为
 \[
 x=k_1\xi_1+\cdots+k_{n-r}\xi_{n-r}.
 \]
 \end{theorem}
 
 \begin{example}
-求 $\lambda$，使齐次方程组
+求 $\lambda$,使齐次方程组
 \[
 \begin{cases}
 (\lambda+3)x_1+x_2+2x_3=0,\\
@@ -1585,7 +1585,7 @@ x=k_1\xi_1+\cdots+k_{n-r}\xi_{n-r}.
 3(\lambda+1)x_1+\lambda x_2+(\lambda+3)x_3=0
 \end{cases}
 \]
-有非零解，并求一般解。
+有非零解,并求一般解.
 \end{example}
 \exampleblank
 
@@ -1594,9 +1594,9 @@ x=k_1\xi_1+\cdots+k_{n-r}\xi_{n-r}.
 \[
 \lambda^2(\lambda-1).
 \]
-故只需考虑 $\lambda=0,1$。
+故只需考虑 $\lambda=0,1$.
 
-当 $\lambda=0$ 时，基础解系可取
+当 $\lambda=0$ 时,基础解系可取
 \[
 (-1,1,1)^{\mathsf T},
 \]
@@ -1604,7 +1604,7 @@ x=k_1\xi_1+\cdots+k_{n-r}\xi_{n-r}.
 \[
 x=t(-1,1,1)^{\mathsf T}.
 \]
-当 $\lambda=1$ 时，基础解系可取
+当 $\lambda=1$ 时,基础解系可取
 \[
 (-1,2,1)^{\mathsf T},
 \]
@@ -1624,10 +1624,10 @@ ax_1+cx_2-ex_4=0,\\
 bx_1+dx_2-ex_3=0
 \end{cases}
 \]
-的一般解以 $x_3,x_4$ 为自由未知量。
+的一般解以 $x_3,x_4$ 为自由未知量.
 \begin{enumerate}
-  \item 求 $a,b,c,d,e$ 满足的条件；
-  \item 求基础解系。
+  \item 求 $a,b,c,d,e$ 满足的条件;
+  \item 求基础解系.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -1639,7 +1639,7 @@ x_1=cx_3+dx_4,
 \qquad
 x_2=-ax_3-bx_4.
 \]
-代入后两式，要求对任意 $x_3,x_4$ 恒成立，得到
+代入后两式,要求对任意 $x_3,x_4$ 恒成立,得到
 \[
 ad-bc-e=0,
 \qquad
@@ -1674,8 +1674,8 @@ k_1(0,1,1,0)^{\mathsf T}
 +k_2(-1,2,2,1)^{\mathsf T}.
 \]
 \begin{enumerate}
-  \item 求 $(I)$ 的基础解系；
-  \item 求两方程组的全部非零公共解。
+  \item 求 $(I)$ 的基础解系;
+  \item 求两方程组的全部非零公共解.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -1691,7 +1691,7 @@ $(I)$ 的通解为
 \qquad
 (0,1,0,1)^{\mathsf T}.
 \]
-求两个解空间的交，得到一维空间
+求两个解空间的交,得到一维空间
 \[
 L((-1,1,1,1)^{\mathsf T}).
 \]
@@ -1716,8 +1716,8 @@ x_1+2x_2+x_3-x_4=0,
 \alpha_2=(-1,2,4,a+8)^{\mathsf T}.
 \]
 \begin{enumerate}
-  \item 求 $(I)$ 的基础解系；
-  \item 求 $a$，使 $(I),(II)$ 有非零公共解，并求全部公共解。
+  \item 求 $(I)$ 的基础解系;
+  \item 求 $a$,使 $(I),(II)$ 有非零公共解,并求全部公共解.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -1737,7 +1737,7 @@ $(I)$ 的基础解系可取
 \[
 \boxed{a=-1}.
 \]
-此时直接代入可知 $\alpha_1,\alpha_2$ 都满足 $(I)$，而两者线性无关，因此两个解空间实际上相同。全部公共解为
+此时直接代入可知 $\alpha_1,\alpha_2$ 都满足 $(I)$,而两者线性无关,因此两个解空间实际上相同.全部公共解为
 \[
 \boxed{s(2,-1,1,1)^{\mathsf T}+t(-1,2,4,7)^{\mathsf T}}.
 \]
@@ -1761,12 +1761,12 @@ x_1+bx_2+cx_3=0,\\
 2x_1+b^2x_2+(c+1)x_3=0
 \end{cases}
 \]
-同解，求 $a,b,c$。
+同解,求 $a,b,c$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-$(II)$ 是两方程三未知量，必有非零解，所以 $(I)$ 也必须有非零解。由
+$(II)$ 是两方程三未知量,必有非零解,所以 $(I)$ 也必须有非零解.由
 \[
 \det
 \begin{pmatrix}
@@ -1774,17 +1774,17 @@ $(II)$ 是两方程三未知量，必有非零解，所以 $(I)$ 也必须有非
 \end{pmatrix}
 =2-a
 \]
-得 $a=2$。此时 $(I)$ 的解空间为
+得 $a=2$.此时 $(I)$ 的解空间为
 \[
 L((-1,-1,1)^{\mathsf T}).
 \]
-要使 $(II)$ 同解，两行都必须与该向量正交：
+要使 $(II)$ 同解,两行都必须与该向量正交:
 \[
 -1-b+c=0,
 \qquad
 -2-b^2+c+1=0.
 \]
-故 $c=1+b=1+b^2$，即 $b=0$ 或 $1$。$b=0$ 时两行相关，解空间维数为 $2$，舍去。因此
+故 $c=1+b=1+b^2$,即 $b=0$ 或 $1$.$b=0$ 时两行相关,解空间维数为 $2$,舍去.因此
 \[
 \boxed{a=2,\quad b=1,\quad c=2}.
 \]
@@ -1800,7 +1800,7 @@ a_1x_1+(a_2+b)x_2+\cdots+a_nx_n=0,\\
 a_1x_1+a_2x_2+\cdots+(a_n+b)x_n=0,
 \end{cases}
 \]
-其中 $\prod_{i=1}^na_i\neq0$。讨论何时只有零解，何时有非零解，并给出基础解系。
+其中 $\prod_{i=1}^na_i\neq0$.讨论何时只有零解,何时有非零解,并给出基础解系.
 \end{example}
 \exampleblank
 
@@ -1821,13 +1821,13 @@ b\neq0,
 \qquad
 b+\sum a_i\neq0,
 \]
-则只有零解。
+则只有零解.
 
-若 $b=0$，方程组退化为
+若 $b=0$,方程组退化为
 \[
 \sum a_ix_i=0,
 \]
-解空间维数 $n-1$，可取基础解系
+解空间维数 $n-1$,可取基础解系
 \[
 a_{j+1}e_j-a_je_{j+1},
 \qquad j=1,\ldots,n-1.
@@ -1841,36 +1841,36 @@ b+\sum a_i=0,
 \[
 A\boldsymbol{1}=0,
 \]
-且秩为 $n-1$，故基础解系为
+且秩为 $n-1$,故基础解系为
 \[
 \boxed{(1,1,\ldots,1)^{\mathsf T}}.
 \]
 \end{solution}
 
 \begin{example}
-设 $A,B$ 为 $n$ 阶方阵，且
+设 $A,B$ 为 $n$ 阶方阵,且
 \[
 r(A)+r(B)<n.
 \]
-证明 $Ax=0$ 与 $Bx=0$ 有非零公共解。
+证明 $Ax=0$ 与 $Bx=0$ 有非零公共解.
 \end{example}
 \exampleblank
 
 \begin{solution}
-设 $V_A=\ker A,V_B=\ker B$。则
+设 $V_A=\ker A,V_B=\ker B$.则
 \[
 \dim V_A+\dim V_B
 =2n-r(A)-r(B)>n.
 \]
-由维数公式，
+由维数公式,
 \[
 \dim(V_A\cap V_B)>0,
 \]
-故存在非零公共解。
+故存在非零公共解.
 \end{solution}
 
 \begin{example}
-设 $AB=BA$，证明
+设 $AB=BA$,证明
 \[
 r(A+B)\leq r(A)+r(B)-r(AB).
 \]
@@ -1882,7 +1882,7 @@ r(A+B)\leq r(A)+r(B)-r(AB).
 \[
 \operatorname{Im}(A+B)\subseteq\operatorname{Im}A+\operatorname{Im}B.
 \]
-又因 $AB=BA$，
+又因 $AB=BA$,
 \[
 \operatorname{Im}(AB)\subseteq\operatorname{Im}A\cap\operatorname{Im}B.
 \]
@@ -1898,11 +1898,11 @@ r(A+B)
 \end{solution}
 
 \begin{example}
-设 $\eta_1,\ldots,\eta_{n-r}$ 是 $Ax=0$ 的基础解系，
+设 $\eta_1,\ldots,\eta_{n-r}$ 是 $Ax=0$ 的基础解系,
 \[
 B=(\eta_1,\ldots,\eta_{n-r}).
 \]
-若 $AC=O$，证明存在唯一矩阵 $D$，使
+若 $AC=O$,证明存在唯一矩阵 $D$,使
 \[
 C=BD.
 \]
@@ -1910,32 +1910,32 @@ C=BD.
 \exampleblank
 
 \begin{solution}
-$AC=O$ 表明 $C$ 的每一列都属于 $\ker A$。由于 $B$ 的列向量是 $\ker A$ 的一组基，每一列都能唯一表示成 $B$ 的列向量线性组合。把这些唯一坐标列排在一起即得唯一矩阵 $D$，满足 $C=BD$。
+$AC=O$ 表明 $C$ 的每一列都属于 $\ker A$.由于 $B$ 的列向量是 $\ker A$ 的一组基,每一列都能唯一表示成 $B$ 的列向量线性组合.把这些唯一坐标列排在一起即得唯一矩阵 $D$,满足 $C=BD$.
 \end{solution}
 
 \begin{proposition}[\markstar]
-设 $A,B$ 都是 $m\times n$ 矩阵，$W_A,W_B$ 分别为 $Ax=0,Bx=0$ 的解空间。则：
+设 $A,B$ 都是 $m\times n$ 矩阵,$W_A,W_B$ 分别为 $Ax=0,Bx=0$ 的解空间.则:
 \begin{enumerate}
-  \item $W_A\subseteq W_B$ 当且仅当存在 $m$ 阶矩阵 $P$ 使 $PA=B$；
-  \item $W_A=W_B$ 当且仅当 $A,B$ 的行空间相同；在两矩阵行秩相同并取相同行数表示时，可由可逆行变换互相得到。
+  \item $W_A\subseteq W_B$ 当且仅当存在 $m$ 阶矩阵 $P$ 使 $PA=B$;
+  \item $W_A=W_B$ 当且仅当 $A,B$ 的行空间相同;在两矩阵行秩相同并取相同行数表示时,可由可逆行变换互相得到.
 \end{enumerate}
 \end{proposition}
 
 \begin{example}
-设 $V_0=\ker(AB)$，求
+设 $V_0=\ker(AB)$,求
 \[
 BV_0=\{Bx\mid x\in V_0\}
 \]
-的维数。
+的维数.
 \end{example}
 \exampleblank
 
 \begin{solution}
-考虑 $B$ 在 $V_0$ 上的限制。其核为
+考虑 $B$ 在 $V_0$ 上的限制.其核为
 \[
 V_0\cap\ker B=\ker B,
 \]
-因为 $\ker B\subseteq\ker(AB)$。故
+因为 $\ker B\subseteq\ker(AB)$.故
 \[
 \dim BV_0
 =\dim V_0-\dim\ker B
@@ -1952,7 +1952,7 @@ V_0\cap\ker B=\ker B,
 \[
 A=\begin{pmatrix}A_1\\A_2\end{pmatrix}
 \]
-为数域 $P$ 上的 $n$ 阶方阵，其中 $A_1,A_2$ 分别为 $k\times n$ 与 $(n-k)\times n$ 矩阵。令 $V_1,V_2$ 分别为 $A_1x=0,A_2x=0$ 的解空间。原题要求证明
+为数域 $P$ 上的 $n$ 阶方阵,其中 $A_1,A_2$ 分别为 $k\times n$ 与 $(n-k)\times n$ 矩阵.令 $V_1,V_2$ 分别为 $A_1x=0,A_2x=0$ 的解空间.原题要求证明
 \[
 P^n=V_1\oplus V_2
 \iff
@@ -1962,7 +1962,7 @@ r(A)=r(A_1)+r(A_2).
 \exampleblank
 
 \begin{solution}
-原命题按字面并不成立。例如取 $A_1=A_2=O$，则右端成立，但 $V_1=V_2=P^n$，不可能为直和。
+原命题按字面并不成立.例如取 $A_1=A_2=O$,则右端成立,但 $V_1=V_2=P^n$,不可能为直和.
 
 由维数公式可得
 \[
@@ -1973,7 +1973,7 @@ r(A)=r(A_1)+r(A_2).
 \[
 V_1+V_2=P^n,
 \]
-而不是直和。
+而不是直和.
 
 若要求
 \[
@@ -1987,18 +1987,18 @@ P^n=V_1\oplus V_2,
 \[
 \boxed{r(A)=n}.
 \]
-此时因 $A$ 的 $n$ 行线性无关，自然有 $r(A_1)=k,r(A_2)=n-k$，从而右端秩等式也成立。
+此时因 $A$ 的 $n$ 行线性无关,自然有 $r(A_1)=k,r(A_2)=n-k$,从而右端秩等式也成立.
 \end{solution}
 
 \begin{example}
-设 $A$ 为 $(n-1)\times n$ 矩阵，划去第 $j$ 列所得的 $(n-1)$ 阶子式为 $\mu_j$。证明：
+设 $A$ 为 $(n-1)\times n$ 矩阵,划去第 $j$ 列所得的 $(n-1)$ 阶子式为 $\mu_j$.证明:
 \begin{enumerate}
   \item
   \[
   (\mu_1,-\mu_2,\ldots,(-1)^{n-1}\mu_n)^{\mathsf T}
   \]
-  是 $Ax=0$ 的一个解；
-  \item 若 $r(A)=n-1$，则所有解都是该向量的倍数。
+  是 $Ax=0$ 的一个解;
+  \item 若 $r(A)=n-1$,则所有解都是该向量的倍数.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -2008,24 +2008,24 @@ P^n=V_1\oplus V_2,
 \[
 \eta=(\mu_1,-\mu_2,\ldots,(-1)^{n-1}\mu_n)^{\mathsf T}.
 \]
-对 $A$ 的任一行与 $\eta$ 作内积，正好等于把该行重复添加成第 $n$ 行所得 $n$ 阶行列式按最后一行展开，因此为零。故 $A\eta=0$。
+对 $A$ 的任一行与 $\eta$ 作内积,正好等于把该行重复添加成第 $n$ 行所得 $n$ 阶行列式按最后一行展开,因此为零.故 $A\eta=0$.
 
-若 $r(A)=n-1$，则至少有一个 $\mu_j\neq0$，所以 $\eta\neq0$；同时 $\ker A$ 为一维，故所有解都是 $\eta$ 的倍数。
+若 $r(A)=n-1$,则至少有一个 $\mu_j\neq0$,所以 $\eta\neq0$;同时 $\ker A$ 为一维,故所有解都是 $\eta$ 的倍数.
 \end{solution}
 
 \begin{example}
-设 $A,B$ 都是数域 $F$ 上的 $(n-1)\times n$ 行满秩矩阵。记 $a_i,b_i$ 为分别划去第 $i$ 列所得的 $(n-1)$ 阶子式。若 $Ax=0$ 与 $Bx=0$ 同解，证明向量
+设 $A,B$ 都是数域 $F$ 上的 $(n-1)\times n$ 行满秩矩阵.记 $a_i,b_i$ 为分别划去第 $i$ 列所得的 $(n-1)$ 阶子式.若 $Ax=0$ 与 $Bx=0$ 同解,证明向量
 \[
 (a_1,a_2,\ldots,a_n),
 \qquad
 (b_1,b_2,\ldots,b_n)
 \]
-的对应分量成比例。
+的对应分量成比例.
 \end{example}
 \exampleblank
 
 \begin{solution}
-由上一题，$\ker A$ 与 $\ker B$ 分别由
+由上一题,$\ker A$ 与 $\ker B$ 分别由
 \[
 (a_1,-a_2,\ldots,(-1)^{n-1}a_n)^{\mathsf T}
 \]
@@ -2033,7 +2033,7 @@ P^n=V_1\oplus V_2,
 \[
 (b_1,-b_2,\ldots,(-1)^{n-1}b_n)^{\mathsf T}
 \]
-张成。两核相同且均为一维，因此两个向量成比例。消去相同的交替符号，即得 $(a_i)$ 与 $(b_i)$ 对应分量成比例。
+张成.两核相同且均为一维,因此两个向量成比例.消去相同的交替符号,即得 $(a_i)$ 与 $(b_i)$ 对应分量成比例.
 \end{solution}
 
 \begin{example}
@@ -2041,28 +2041,28 @@ P^n=V_1\oplus V_2,
 \[
 x_1+x_2+\cdots+x_n=0.
 \]
-记划去第 $i$ 列所得子式为 $\mu_i$。
+记划去第 $i$ 列所得子式为 $\mu_i$.
 \begin{enumerate}
   \item 证明
   \[
   \sum\limits_{i=1}^n(-1)^i\mu_i=0
   \]
-  当且仅当 $A$ 的行向量不是该超平面的基础解系；
+  当且仅当 $A$ 的行向量不是该超平面的基础解系;
   \item 若
   \[
   \sum\limits_{i=1}^n(-1)^i\mu_i=1,
   \]
-  求 $\mu_i$。
+  求 $\mu_i$.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-因为每一行坐标和为零，故
+因为每一行坐标和为零,故
 \[
 A\boldsymbol{1}=0.
 \]
-若 $r(A)=n-1$，则上一题中的余子式向量非零且张成 $\ker A$，因此存在 $c\neq0$ 使
+若 $r(A)=n-1$,则上一题中的余子式向量非零且张成 $\ker A$,因此存在 $c\neq0$ 使
 \[
 (\mu_1,-\mu_2,\ldots,(-1)^{n-1}\mu_n)=c(1,1,\ldots,1).
 \]
@@ -2074,7 +2074,7 @@ A\boldsymbol{1}=0.
 \[
 \sum_{i=1}^n(-1)^i\mu_i=-nc\neq0.
 \]
-反之若 $r(A)<n-1$，所有 $\mu_i=0$，该和为零。因此第一问成立。
+反之若 $r(A)<n-1$,所有 $\mu_i=0$,该和为零.因此第一问成立.
 
 第二问有
 \[
@@ -2089,20 +2089,20 @@ A\boldsymbol{1}=0.
 \subsection{非齐次线性方程组}
 
 \begin{theorem}[\marktwostar]
-对非齐次方程组 $Ax=\beta$，下列命题等价：
+对非齐次方程组 $Ax=\beta$,下列命题等价:
 \begin{enumerate}
-  \item 方程有解；
-  \item $\beta$ 属于 $A$ 的列空间；
-  \item $r(A)=r(A,\beta)$。
+  \item 方程有解;
+  \item $\beta$ 属于 $A$ 的列空间;
+  \item $r(A)=r(A,\beta)$.
 \end{enumerate}
-若 $\eta_0$ 是一个特解，而 $\xi_1,\ldots,\xi_{n-r}$ 是导出组 $Ax=0$ 的基础解系，则通解为
+若 $\eta_0$ 是一个特解,而 $\xi_1,\ldots,\xi_{n-r}$ 是导出组 $Ax=0$ 的基础解系,则通解为
 \[
 x=\eta_0+k_1\xi_1+\cdots+k_{n-r}\xi_{n-r}.
 \]
 \end{theorem}
 
 \begin{example}
-求解下列方程组：
+求解下列方程组:
 \begin{enumerate}
 \item
 \[
@@ -2145,24 +2145,24 @@ x_2+2x_3+2x_4+6x_5=5,\\
 \exampleblank
 
 \begin{solution}
-逐一行化简得：
+逐一行化简得:
 \begin{enumerate}
   \item 唯一解
   \[
   \boxed{(x_1,x_2,x_3)=(1,2,-2)};
   \]
-  \item 令 $x_3=s,x_4=t$，则
+  \item 令 $x_3=s,x_4=t$,则
   \[
   \boxed{
   x_1=-26s+17t+6,
   \quad x_2=7s-5t-1
   };
   \]
-  \item 系数矩阵秩为 $2$，增广矩阵秩为 $3$，故
+  \item 系数矩阵秩为 $2$,增广矩阵秩为 $3$,故
   \[
   \boxed{\text{无解}};
   \]
-  \item 令 $x_3=s,x_4=t,x_5=u$，则
+  \item 令 $x_3=s,x_4=t,x_5=u$,则
   \[
   \boxed{
   x_1=s+t+5u-4,
@@ -2179,16 +2179,16 @@ x_2+2x_3+2x_4+6x_5=5,\\
 \begin{cases}
 x-3y+z=2,\\2x+y+tz=-1,\\7x-2z=-1\end{cases}
 \]
-的三个互异解向量。
+的三个互异解向量.
 \begin{enumerate}
-  \item 求 $t$；
-  \item 证明 $\alpha_1-\alpha_2$ 与 $\alpha_1-\alpha_3$ 线性相关。
+  \item 求 $t$;
+  \item 证明 $\alpha_1-\alpha_2$ 与 $\alpha_1-\alpha_3$ 线性相关.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-存在三个互异解说明解集不是单点，因此系数矩阵奇异。其行列式为
+存在三个互异解说明解集不是单点,因此系数矩阵奇异.其行列式为
 \[
 -21(t+1),
 \]
@@ -2196,11 +2196,11 @@ x-3y+z=2,\\2x+y+tz=-1,\\7x-2z=-1\end{cases}
 \[
 \boxed{t=-1}.
 \]
-此时系数矩阵秩为 $2$，导出齐次方程组解空间维数为 $1$。任意两个特解之差都属于这一维空间，因此 $\alpha_1-\alpha_2$ 与 $\alpha_1-\alpha_3$ 必线性相关。
+此时系数矩阵秩为 $2$,导出齐次方程组解空间维数为 $1$.任意两个特解之差都属于这一维空间,因此 $\alpha_1-\alpha_2$ 与 $\alpha_1-\alpha_3$ 必线性相关.
 \end{solution}
 
 \begin{example}
-讨论参数 $a,b$，使方程组
+讨论参数 $a,b$,使方程组
 \[
 \begin{cases}
 ax_1+(b+1)x_2+2x_3=1,\\
@@ -2208,31 +2208,31 @@ ax_1+(2b+1)x_2+3x_3=1,\\
 ax_1+(b+1)x_2+(b+4)x_3=2b+1
 \end{cases}
 \]
-有解，并求其解。
+有解,并求其解.
 \end{example}
 \exampleblank
 
 \begin{solution}
-第二式减第一式、第三式减第一式，得到
+第二式减第一式,第三式减第一式,得到
 \[
 bx_2+x_3=0,
 \qquad
 (b+2)x_3=2b.
 \]
-分情况：
+分情况:
 
-若 $b=-2$，第二个式子化为 $0=-4$，故无解。
+若 $b=-2$,第二个式子化为 $0=-4$,故无解.
 
-若 $b=0$，则 $x_3=0$，原方程化为
+若 $b=0$,则 $x_3=0$,原方程化为
 \[
 ax_1+x_2=1,
 \]
-故对任意 $a$ 均有无穷多解：
+故对任意 $a$ 均有无穷多解:
 \[
 \boxed{x_1=t,\quad x_2=1-at,\quad x_3=0}.
 \]
 
-若 $b\neq0,-2$，则
+若 $b\neq0,-2$,则
 \[
 x_3=\dfrac{2b}{b+2},
 \qquad
@@ -2242,7 +2242,7 @@ x_2=-\dfrac{2}{b+2}.
 \[
 a x_1=\dfrac{4-b}{b+2}.
 \]
-若 $a\neq0$，有唯一解
+若 $a\neq0$,有唯一解
 \[
 \boxed{
  x_1=\dfrac{4-b}{a(b+2)},
@@ -2250,11 +2250,11 @@ a x_1=\dfrac{4-b}{b+2}.
  \quad x_3=\dfrac{2b}{b+2}
  }.
 \]
-若 $a=0$，仅当 $b=4$ 时有解，此时
+若 $a=0$,仅当 $b=4$ 时有解,此时
 \[
 \boxed{x_1=t,\quad x_2=-\dfrac13,\quad x_3=\dfrac43}.
 \]
-其余 $a=0$ 的情形无解。
+其余 $a=0$ 的情形无解.
 \end{solution}
 
 \begin{example}
@@ -2269,17 +2269,17 @@ a^2&2a&1&\ddots&\vdots\\
 0&\cdots&0&a^2&2a
 \end{pmatrix}_{n\times n},
 \]
-且 $Ax=e_1$。
+且 $Ax=e_1$.
 \begin{enumerate}
-  \item 证明 $|A|=(n+1)a^n$；
-  \item 何时有唯一解，并求 $x_1$；
-  \item 何时有无穷多解，并求通解。
+  \item 证明 $|A|=(n+1)a^n$;
+  \item 何时有唯一解,并求 $x_1$;
+  \item 何时有无穷多解,并求通解.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-记 $D_n=|A|$，则
+记 $D_n=|A|$,则
 \[
 D_n=2aD_{n-1}-a^2D_{n-2},
 \qquad
@@ -2291,24 +2291,24 @@ D_0=1,
 \boxed{D_n=(n+1)a^n}.
 \]
 
-因此 $a\neq0$ 时有唯一解。由 Cramer 法则，
+因此 $a\neq0$ 时有唯一解.由 Cramer 法则,
 \[
 x_1=\dfrac{D_{n-1}}{D_n}
 =\boxed{\dfrac{n}{(n+1)a}}.
 \]
 
-当 $a=0$ 时，矩阵只在超对角线上有 $1$，方程组为
+当 $a=0$ 时,矩阵只在超对角线上有 $1$,方程组为
 \[
 x_2=1,\quad x_3=\cdots=x_n=0,
 \]
-而 $x_1$ 自由，因此
+而 $x_1$ 自由,因此
 \[
 \boxed{x=(t,1,0,\ldots,0)^{\mathsf T}}.
 \]
 \end{solution}
 
 \begin{example}
-讨论参数 $a,b$，使方程组
+讨论参数 $a,b$,使方程组
 \[
 \begin{cases}
 x_1+x_2+x_3+x_4+x_5=1,\\
@@ -2317,7 +2317,7 @@ x_2+2x_3+2x_4+6x_5=3,\\
 5x_1+4x_2+3x_3+3x_4-x_5=b
 \end{cases}
 \]
-有解，并求一般解。
+有解,并求一般解.
 \end{example}
 \exampleblank
 
@@ -2338,7 +2338,7 @@ x_2+2x_3+2x_4+6x_5=3,\\
 \[
 \boxed{a=0,\qquad b=2}.
 \]
-此时令 $x_3=s,x_4=t,x_5=u$，通解为
+此时令 $x_3=s,x_4=t,x_5=u$,通解为
 \[
 \boxed{
  x_1=s+t+5u-2,
@@ -2367,7 +2367,7 @@ x_2+2x_3+2x_4+6x_5=3,\\
 \[
 \beta=(1,1,b+3,5)^{\mathsf T}.
 \]
-讨论何时 $\beta$ 能或不能由 $\alpha_1,\ldots,\alpha_4$ 线性表示，并写出表示式。
+讨论何时 $\beta$ 能或不能由 $\alpha_1,\ldots,\alpha_4$ 线性表示,并写出表示式.
 \end{example}
 \exampleblank
 
@@ -2376,7 +2376,7 @@ x_2+2x_3+2x_4+6x_5=3,\\
 \[
 \det(\alpha_1,\alpha_2,\alpha_3,\alpha_4)=(a+1)^2.
 \]
-若 $a\neq-1$，四向量为一组基，因此任意 $b$ 都可表示，且解为
+若 $a\neq-1$,四向量为一组基,因此任意 $b$ 都可表示,且解为
 \[
 \boxed{
 \beta
@@ -2386,30 +2386,30 @@ x_2+2x_3+2x_4+6x_5=3,\\
 }.
 \]
 
-若 $a=-1$，四向量张成二维子空间。代入检验可得 $\beta$ 属于该子空间当且仅当 $b=0$。因此
+若 $a=-1$,四向量张成二维子空间.代入检验可得 $\beta$ 属于该子空间当且仅当 $b=0$.因此
 \[
 \boxed{a=-1,\ b\neq0}
 \]
-时不能表示；而 $a=-1,b=0$ 时有无穷多种表示，例如
+时不能表示;而 $a=-1,b=0$ 时有无穷多种表示,例如
 \[
 \boxed{\beta=\alpha_2}.
 \]
 \end{solution}
 
 \begin{example}
-设 $A=(\alpha_1,\ldots,\alpha_n)$ 的前 $n-1$ 个列向量线性相关，而后 $n-1$ 个列向量线性无关，令
+设 $A=(\alpha_1,\ldots,\alpha_n)$ 的前 $n-1$ 个列向量线性相关,而后 $n-1$ 个列向量线性无关,令
 \[
 \beta=\alpha_1+\cdots+\alpha_n.
 \]
 \begin{enumerate}
-  \item 证明 $Ax=\beta$ 有无穷多解；
-  \item 求通解的形式。
+  \item 证明 $Ax=\beta$ 有无穷多解;
+  \item 求通解的形式.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-后 $n-1$ 列线性无关，故 $r(A)\geq n-1$；前 $n-1$ 列线性相关说明 $A$ 不可能满秩，因此
+后 $n-1$ 列线性无关,故 $r(A)\geq n-1$;前 $n-1$ 列线性相关说明 $A$ 不可能满秩,因此
 \[
 r(A)=n-1.
 \]
@@ -2417,9 +2417,9 @@ r(A)=n-1.
 \[
 A\boldsymbol{1}=\beta,
 \]
-故方程有解且导出组有一维非零解空间，所以有无穷多解。
+故方程有解且导出组有一维非零解空间,所以有无穷多解.
 
-因 $\alpha_2,\ldots,\alpha_n$ 线性无关，可唯一写
+因 $\alpha_2,\ldots,\alpha_n$ 线性无关,可唯一写
 \[
 \alpha_1=c_2\alpha_2+\cdots+c_n\alpha_n.
 \]
@@ -2427,14 +2427,14 @@ A\boldsymbol{1}=\beta,
 \[
 \eta=(1,-c_2,\ldots,-c_n)^{\mathsf T}
 \]
-张成 $\ker A$。通解为
+张成 $\ker A$.通解为
 \[
 \boxed{x=\boldsymbol{1}+t\eta}.
 \]
 \end{solution}
 
 \begin{example}
-设 $A=(A_1,\ldots,A_n)$，方程 $Ax=b$ 的通解为
+设 $A=(A_1,\ldots,A_n)$,方程 $Ax=b$ 的通解为
 \[
 x=\eta_0+k_1\xi_1+\cdots+k_s\xi_s,
 \]
@@ -2442,11 +2442,11 @@ x=\eta_0+k_1\xi_1+\cdots+k_s\xi_s,
 \[
 \eta_0=(1,1,\ldots,1)^{\mathsf T},
 \]
-而 $\xi_i$ 的前 $i$ 个分量为 $1$、其余为 $0$。又设
+而 $\xi_i$ 的前 $i$ 个分量为 $1$,其余为 $0$.又设
 \[
 B=(nA_n,(n-1)A_{n-1},\ldots,2A_2,A_1).
 \]
-求 $Bx=b$ 的通解。
+求 $Bx=b$ 的通解.
 \end{example}
 \exampleblank
 
@@ -2459,9 +2459,9 @@ B=(nA_n,(n-1)A_{n-1},\ldots,2A_2,A_1).
 \[
 Bx=A(Tx).
 \]
-所以 $Bx=b$ 当且仅当 $y=Tx$ 是 $Ay=b$ 的解。
+所以 $Bx=b$ 当且仅当 $y=Tx$ 是 $Ay=b$ 的解.
 
-由 $x=T^{-1}y$，特解变为
+由 $x=T^{-1}y$,特解变为
 \[
 \eta_0'=\left(\dfrac1n,\dfrac1{n-1},\ldots,\dfrac12,1\right)^{\mathsf T}.
 \]
@@ -2469,14 +2469,14 @@ Bx=A(Tx).
 \[
 \dfrac1i,\dfrac1{i-1},\ldots,1
 \]
-、其余为零的向量，记为 $\zeta_i$。故
+,其余为零的向量,记为 $\zeta_i$.故
 \[
 \boxed{x=\eta_0'+k_1\zeta_1+\cdots+k_s\zeta_s}.
 \]
 \end{solution}
 
 \begin{example}
-设 $A$ 为 $n$ 阶方阵，$A^*=(A_{ij})$ 为伴随矩阵且 $A_{11}\neq0$，又设 $b\neq0$。证明：
+设 $A$ 为 $n$ 阶方阵,$A^*=(A_{ij})$ 为伴随矩阵且 $A_{11}\neq0$,又设 $b\neq0$.证明:
 \[
 Ax=b\text{ 有无穷多解}
 \iff
@@ -2486,23 +2486,23 @@ A^*b=0.
 \exampleblank
 
 \begin{solution}
-因为 $A_{11}\neq0$，只要 $|A|=0$ 就有 $r(A)=n-1$，从而 $r(A^*)=1$。
+因为 $A_{11}\neq0$,只要 $|A|=0$ 就有 $r(A)=n-1$,从而 $r(A^*)=1$.
 
-若 $Ax=b$ 有无穷多解，则 $|A|=0$ 且 $b\in\operatorname{Im}A$。由
+若 $Ax=b$ 有无穷多解,则 $|A|=0$ 且 $b\in\operatorname{Im}A$.由
 \[
 A^*A=|A|E=O
 \]
-得 $\operatorname{Im}A\subseteq\ker A^*$，故 $A^*b=0$。
+得 $\operatorname{Im}A\subseteq\ker A^*$,故 $A^*b=0$.
 
-反之若 $A^*b=0$。若 $|A|\neq0$，则 $A^*$ 可逆，会推出 $b=0$，矛盾。因此 $|A|=0$，且由 $A_{11}\neq0$ 得 $r(A)=n-1$。此时
+反之若 $A^*b=0$.若 $|A|\neq0$,则 $A^*$ 可逆,会推出 $b=0$,矛盾.因此 $|A|=0$,且由 $A_{11}\neq0$ 得 $r(A)=n-1$.此时
 \[
 \dim\ker A^*=n-1=\dim\operatorname{Im}A,
 \]
-结合 $\operatorname{Im}A\subseteq\ker A^*$ 得二者相等，所以 $b\in\operatorname{Im}A$，方程有解；又 $\ker A$ 一维，故有无穷多解。
+结合 $\operatorname{Im}A\subseteq\ker A^*$ 得二者相等,所以 $b\in\operatorname{Im}A$,方程有解;又 $\ker A$ 一维,故有无穷多解.
 \end{solution}
 
 \begin{example}
-设 $A$ 为 $n$ 阶方阵，$A^*$ 为伴随矩阵，且存在非零列向量 $\alpha$ 满足
+设 $A$ 为 $n$ 阶方阵,$A^*$ 为伴随矩阵,且存在非零列向量 $\alpha$ 满足
 \[
 A\alpha=0.
 \]
@@ -2516,9 +2516,9 @@ r(A)=n-1.
 \exampleblank
 
 \begin{solution}
-若 $r(A)\leq n-2$，则 $A^*=O$，而 $\alpha\neq0$，故方程无解。
+若 $r(A)\leq n-2$,则 $A^*=O$,而 $\alpha\neq0$,故方程无解.
 
-若 $r(A)=n-1$，则 $r(A^*)=1$。又
+若 $r(A)=n-1$,则 $r(A^*)=1$.又
 \[
 AA^*=O,
 \]
@@ -2526,63 +2526,63 @@ AA^*=O,
 \[
 \operatorname{Im}A^*\subseteq\ker A.
 \]
-两边维数都为 $1$，所以二者相等。因 $\alpha\in\ker A$ 且非零，必有 $\alpha\in\operatorname{Im}A^*$，故方程有解。
+两边维数都为 $1$,所以二者相等.因 $\alpha\in\ker A$ 且非零,必有 $\alpha\in\operatorname{Im}A^*$,故方程有解.
 \end{solution}
 
 \subsection{对角占优矩阵}
 
 \begin{proposition}[\markstar]
-设 $A=(a_{ij})\in M_n(\mathbb R)$。
+设 $A=(a_{ij})\in M_n(\mathbb R)$.
 \begin{enumerate}
   \item 若
   \[
   |a_{ii}|>\sum\limits_{j\neq i}|a_{ij}|,
   \qquad i=1,\ldots,n,
   \]
-  则 $|A|\neq0$；
+  则 $|A|\neq0$;
   \item 若
   \[
   a_{ii}>\sum\limits_{j\neq i}|a_{ij}|,
   \qquad i=1,\ldots,n,
   \]
-  则 $|A|>0$。
+  则 $|A|>0$.
 \end{enumerate}
 \end{proposition}
 
 \begin{proof}
-第一问若 $Ax=0$ 有非零解，取 $|x_k|=\max_i|x_i|>0$，则
+第一问若 $Ax=0$ 有非零解,取 $|x_k|=\max_i|x_i|>0$,则
 \[
 |a_{kk}||x_k|
 =\left|\sum_{j\neq k}a_{kj}x_j\right|
 \leq\sum_{j\neq k}|a_{kj}||x_j|
 \leq\left(\sum_{j\neq k}|a_{kj}|\right)|x_k|,
 \]
-与严格对角占优矛盾，故 $A$ 可逆。
+与严格对角占优矛盾,故 $A$ 可逆.
 
 第二问考虑连续矩阵族
 \[
 A(t)=D+t(A-D),\qquad 0\leq t\leq1,
 \]
-其中 $D=\diag(a_{11},\ldots,a_{nn})$。每个 $A(t)$ 仍严格对角占优，所以行列式从不为零。又
+其中 $D=\diag(a_{11},\ldots,a_{nn})$.每个 $A(t)$ 仍严格对角占优,所以行列式从不为零.又
 \[
 |A(0)|=\prod_i a_{ii}>0,
 \]
-故连续性给出 $|A(1)|=|A|>0$。
+故连续性给出 $|A(1)|=|A|>0$.
 \end{proof}
 
-\subsection{行（列）和相等}
+\subsection{行(列)和相等}
 
 \begin{example}
-设 $A$ 为可逆矩阵，且每行元素之和均为 $a$。证明对任意正整数 $k$，$A^{-k}$ 的每行元素之和均为 $a^{-k}$。
+设 $A$ 为可逆矩阵,且每行元素之和均为 $a$.证明对任意正整数 $k$,$A^{-k}$ 的每行元素之和均为 $a^{-k}$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-令 $\boldsymbol{1}=(1,\ldots,1)^{\mathsf T}$，则
+令 $\boldsymbol{1}=(1,\ldots,1)^{\mathsf T}$,则
 \[
 A\boldsymbol{1}=a\boldsymbol{1}.
 \]
-因 $A$ 可逆，必有 $a\neq0$，且
+因 $A$ 可逆,必有 $a\neq0$,且
 \[
 A^{-1}\boldsymbol{1}=a^{-1}\boldsymbol{1}.
 \]
@@ -2590,37 +2590,37 @@ A^{-1}\boldsymbol{1}=a^{-1}\boldsymbol{1}.
 \[
 A^{-k}\boldsymbol{1}=a^{-k}\boldsymbol{1}.
 \]
-这正表示每行元素之和为 $a^{-k}$。
+这正表示每行元素之和为 $a^{-k}$.
 \end{solution}
 
 \begin{example}
-设 $A$ 为行等和矩阵。证明：
+设 $A$ 为行等和矩阵.证明:
 \begin{enumerate}
-  \item 对任意正整数 $k$，$A^k$ 仍为行等和矩阵；
-  \item 若 $A$ 可逆，则 $A^{-1}$ 仍为行等和矩阵。
+  \item 对任意正整数 $k$,$A^k$ 仍为行等和矩阵;
+  \item 若 $A$ 可逆,则 $A^{-1}$ 仍为行等和矩阵.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-若 $A\boldsymbol{1}=a\boldsymbol{1}$，则
+若 $A\boldsymbol{1}=a\boldsymbol{1}$,则
 \[
 A^k\boldsymbol{1}=a^k\boldsymbol{1}.
 \]
-若 $A$ 可逆，则 $a\neq0$，且
+若 $A$ 可逆,则 $a\neq0$,且
 \[
 A^{-1}\boldsymbol{1}=a^{-1}\boldsymbol{1}.
 \]
-故结论成立。
+故结论成立.
 \end{solution}
 
 \begin{example}
-证明：若可逆矩阵 $A$ 的各行元素之和相等，则 $A$ 中各列元素的代数余子式之和也相等。
+证明:若可逆矩阵 $A$ 的各行元素之和相等,则 $A$ 中各列元素的代数余子式之和也相等.
 \end{example}
 \exampleblank
 
 \begin{solution}
-设 $A\boldsymbol{1}=a\boldsymbol{1}$。由可逆性 $a\neq0$，所以
+设 $A\boldsymbol{1}=a\boldsymbol{1}$.由可逆性 $a\neq0$,所以
 \[
 A^{-1}\boldsymbol{1}=a^{-1}\boldsymbol{1}.
 \]
@@ -2632,16 +2632,16 @@ A^*=|A|A^{-1},
 \[
 A^*\boldsymbol{1}=|A|a^{-1}\boldsymbol{1}.
 \]
-$A^*$ 的第 $i$ 行正由 $A$ 的第 $i$ 列代数余子式组成，因此上式恰说明各列代数余子式之和相等。
+$A^*$ 的第 $i$ 行正由 $A$ 的第 $i$ 列代数余子式组成,因此上式恰说明各列代数余子式之和相等.
 \end{solution}
 
 \begin{example}
-设 $A=(a_{ij})_{n\times n}$ 且每行元素之和为零，即
+设 $A=(a_{ij})_{n\times n}$ 且每行元素之和为零,即
 \[
 \sum\limits_{j=1}^na_{ij}=0,
 \qquad i=1,\ldots,n.
 \]
-证明第一行各元素的代数余子式相等：
+证明第一行各元素的代数余子式相等:
 \[
 A_{11}=A_{12}=\cdots=A_{1n}.
 \]
@@ -2657,11 +2657,11 @@ A\boldsymbol{1}=0.
 \[
 A^*A=|A|E
 \]
-且 $A$ 奇异可得 $A^*A=O$。更直接地，$A\boldsymbol{1}=0$ 表明 $A$ 的各列线性关系系数全为 $1$。当 $r(A)=n-1$ 时，任一非零的伴随矩阵行都张成 $\ker A$，故第一行
+且 $A$ 奇异可得 $A^*A=O$.更直接地,$A\boldsymbol{1}=0$ 表明 $A$ 的各列线性关系系数全为 $1$.当 $r(A)=n-1$ 时,任一非零的伴随矩阵行都张成 $\ker A$,故第一行
 \[
 (A_{11},A_{12},\ldots,A_{1n})
 \]
-必与 $(1,1,\ldots,1)$ 成比例；当 $r(A)\leq n-2$ 时伴随矩阵为零。两种情形都得到
+必与 $(1,1,\ldots,1)$ 成比例;当 $r(A)\leq n-2$ 时伴随矩阵为零.两种情形都得到
 \[
 \boxed{A_{11}=A_{12}=\cdots=A_{1n}}.
 \]
@@ -2673,38 +2673,38 @@ A^*A=|A|E
 \section{对偶空间与商空间}
 
 \begin{definition}
-设 $V$ 为数域 $F$ 上的线性空间。若映射 $f:V\to F$ 满足
+设 $V$ 为数域 $F$ 上的线性空间.若映射 $f:V\to F$ 满足
 \[
 f(\alpha+\beta)=f(\alpha)+f(\beta),
 \qquad
 f(k\alpha)=kf(\alpha),
 \]
-则称 $f$ 为 $V$ 上的线性函数或线性泛函。所有线性函数组成的空间记为
+则称 $f$ 为 $V$ 上的线性函数或线性泛函.所有线性函数组成的空间记为
 \[
 V^*=\operatorname{Hom}(V,F),
 \]
-称为 $V$ 的对偶空间。
+称为 $V$ 的对偶空间.
 \end{definition}
 
-若 $V$ 为有限维且 $\alpha_1,\ldots,\alpha_n$ 为一组基，则任意 $f\in V^*$ 完全由 $f(\alpha_1),\ldots,f(\alpha_n)$ 决定。因此有：
+若 $V$ 为有限维且 $\alpha_1,\ldots,\alpha_n$ 为一组基,则任意 $f\in V^*$ 完全由 $f(\alpha_1),\ldots,f(\alpha_n)$ 决定.因此有:
 
 \begin{proposition}[\markstar]
-若 $\dim V<\infty$，则
+若 $\dim V<\infty$,则
 \[
 \dim V^*=\dim V.
 \]
 \end{proposition}
 
 \begin{definition}
-给定 $V$ 的基 $\alpha_1,\ldots,\alpha_n$，若 $V^*$ 的基 $f_1,\ldots,f_n$ 满足
+给定 $V$ 的基 $\alpha_1,\ldots,\alpha_n$,若 $V^*$ 的基 $f_1,\ldots,f_n$ 满足
 \[
 f_i(\alpha_j)=\delta_{ij},
 \]
-则称 $f_1,\ldots,f_n$ 为关于该基的对偶基。
+则称 $f_1,\ldots,f_n$ 为关于该基的对偶基.
 \end{definition}
 
 \begin{theorem}[\markstar\ 自然映射到二重对偶]
-若 $V$ 为有限维线性空间，则映射
+若 $V$ 为有限维线性空间,则映射
 \[
 \tau:V\to V^{**},
 \qquad
@@ -2715,7 +2715,7 @@ f_i(\alpha_j)=\delta_{ij},
 \varphi_\alpha(f)=f(\alpha),
 \qquad f\in V^*,
 \]
-是自然同构。
+是自然同构.
 \end{theorem}
 
 \begin{example}
@@ -2725,7 +2725,7 @@ f_i(\alpha_j)=\delta_{ij},
 \alpha_2=(1,0,2),\quad
 \alpha_3=(0,3,-5)
 \]
-是 $\mathbb R^3$ 的一组基。求其对偶基。
+是 $\mathbb R^3$ 的一组基.求其对偶基.
 \end{example}
 \exampleblank
 
@@ -2740,7 +2740,7 @@ P=(\alpha_1,\alpha_2,\alpha_3)
 4&2&-5
 \end{pmatrix}.
 \]
-若把线性泛函写成行向量，则对偶基的行向量正是 $P^{-1}$ 的各行。计算得
+若把线性泛函写成行向量,则对偶基的行向量正是 $P^{-1}$ 的各行.计算得
 \[
 P^{-1}=
 \begin{pmatrix}
@@ -2761,15 +2761,15 @@ f_3(x)&=-2x_1+2x_2+x_3.
 \end{solution}
 
 \begin{example}
-设 $a_1,\ldots,a_n\in\mathbb R$ 两两不同，令
+设 $a_1,\ldots,a_n\in\mathbb R$ 两两不同,令
 \[
 f_i(x)=\prod_{j\neq i}(x-a_j),
 \qquad i=1,\ldots,n.
 \]
 \begin{enumerate}
-  \item 证明 $f_1,\ldots,f_n$ 是 $\mathbb R[x]_n$ 的一组基；
-  \item 求由基 $f_1,\ldots,f_n$ 到基 $1,x,\ldots,x^{n-1}$ 的过渡矩阵；
-  \item 求 $f_1,\ldots,f_n$ 的对偶基。
+  \item 证明 $f_1,\ldots,f_n$ 是 $\mathbb R[x]_n$ 的一组基;
+  \item 求由基 $f_1,\ldots,f_n$ 到基 $1,x,\ldots,x^{n-1}$ 的过渡矩阵;
+  \item 求 $f_1,\ldots,f_n$ 的对偶基.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -2783,7 +2783,7 @@ f_i(x)=\prod_{j\neq i}(x-a_j),
 \[
 c_kf_k(a_k)=0.
 \]
-因 $a_i$ 两两不同，$f_k(a_k)\neq0$，故所有 $c_k=0$。又共有 $n$ 个向量，故构成 $\mathbb R[x]_n$ 的一组基。
+因 $a_i$ 两两不同,$f_k(a_k)\neq0$,故所有 $c_k=0$.又共有 $n$ 个向量,故构成 $\mathbb R[x]_n$ 的一组基.
 
 设
 \[
@@ -2791,7 +2791,7 @@ e_r^{(i)}
 =
  e_r(a_1,\ldots,\widehat{a_i},\ldots,a_n)
 \]
-表示删去 $a_i$ 后的第 $r$ 个初等对称多项式，则
+表示删去 $a_i$ 后的第 $r$ 个初等对称多项式,则
 \[
 f_i(x)
 =
@@ -2809,7 +2809,7 @@ f_i(x)
 \bigr)^{\mathsf T}.
 \]
 
-对偶基最简洁地写成评价泛函：
+对偶基最简洁地写成评价泛函:
 \[
 \boxed{
 \phi_i(p)
@@ -2819,11 +2819,11 @@ f_i(x)
 \dfrac{p(a_i)}{\displaystyle\prod_{j\neq i}(a_i-a_j)}
 }.
 \]
-显然 $\phi_i(f_j)=\delta_{ij}$。
+显然 $\phi_i(f_j)=\delta_{ij}$.
 \end{solution}
 
 \begin{example}
-设 $V$ 为 $n$ 维线性空间。证明：$n$ 个线性函数 $f_1,\ldots,f_n$ 构成 $V^*$ 的一组基，当且仅当不存在非零向量 $x\in V$ 使
+设 $V$ 为 $n$ 维线性空间.证明:$n$ 个线性函数 $f_1,\ldots,f_n$ 构成 $V^*$ 的一组基,当且仅当不存在非零向量 $x\in V$ 使
 \[
 f_1(x)=\cdots=f_n(x)=0.
 \]
@@ -2837,15 +2837,15 @@ f_1(x)=\cdots=f_n(x)=0.
 \qquad
 x\longmapsto(f_1(x),\ldots,f_n(x))^{\mathsf T}.
 \]
-题中条件正是 $\ker\Phi=\{0\}$。由于 $\dim V=\dim F^n=n$，这等价于 $\Phi$ 可逆。取 $V$ 的任一基后，$\Phi$ 的矩阵各行正是 $f_i$ 的坐标行，因此 $\Phi$ 可逆当且仅当这些行线性无关，即 $f_1,\ldots,f_n$ 构成 $V^*$ 的一组基。
+题中条件正是 $\ker\Phi=\{0\}$.由于 $\dim V=\dim F^n=n$,这等价于 $\Phi$ 可逆.取 $V$ 的任一基后,$\Phi$ 的矩阵各行正是 $f_i$ 的坐标行,因此 $\Phi$ 可逆当且仅当这些行线性无关,即 $f_1,\ldots,f_n$ 构成 $V^*$ 的一组基.
 \end{solution}
 
 \begin{definition}
-设 $W$ 为线性空间 $V$ 的子空间，$\alpha,\beta\in V$。若
+设 $W$ 为线性空间 $V$ 的子空间,$\alpha,\beta\in V$.若
 \[
 \alpha-\beta\in W,
 \]
-称 $\alpha,\beta$ 模 $W$ 同余，记为
+称 $\alpha,\beta$ 模 $W$ 同余,记为
 \[
 \alpha\equiv\beta\pmod W.
 \]
@@ -2864,14 +2864,14 @@ V/W=\{\alpha+W\mid\alpha\in V\}
 \[
 c(\alpha+W)=c\alpha+W
 \]
-定义运算，称为商空间。
+定义运算,称为商空间.
 \end{definition}
 
 \begin{theorem}[\markstar]
-设 $W$ 为 $V$ 的子空间，则：
+设 $W$ 为 $V$ 的子空间,则:
 \begin{enumerate}
-  \item $V/W$ 是数域 $F$ 上的线性空间；
-  \item 若 $\varepsilon_1,\ldots,\varepsilon_r$ 为 $W$ 的基，并扩充成 $V$ 的基
+  \item $V/W$ 是数域 $F$ 上的线性空间;
+  \item 若 $\varepsilon_1,\ldots,\varepsilon_r$ 为 $W$ 的基,并扩充成 $V$ 的基
   \[
   \varepsilon_1,\ldots,\varepsilon_r,\varepsilon_{r+1},\ldots,\varepsilon_n,
   \]
@@ -2879,7 +2879,7 @@ c(\alpha+W)=c\alpha+W
   \[
   \overline\varepsilon_{r+1},\ldots,\overline\varepsilon_n
   \]
-  是 $V/W$ 的一组基，且
+  是 $V/W$ 的一组基,且
   \[
   \dim(V/W)=\dim V-\dim W;
   \]
@@ -2889,12 +2889,12 @@ c(\alpha+W)=c\alpha+W
   \qquad
   \alpha\mapsto\alpha+W
   \]
-  为满线性映射，且 $\ker\varphi_W=W$。
+  为满线性映射,且 $\ker\varphi_W=W$.
 \end{enumerate}
 \end{theorem}
 
 \begin{theorem}[\marktwostar\ 第一同构定理]
-设 $\psi:V_1\to V_2$ 为线性映射，则存在自然同构
+设 $\psi:V_1\to V_2$ 为线性映射,则存在自然同构
 \[
 V_1/\ker\psi\cong\operatorname{Im}\psi,
 \]
@@ -2902,11 +2902,11 @@ V_1/\ker\psi\cong\operatorname{Im}\psi,
 \[
 \alpha+\ker\psi\longmapsto\psi(\alpha)
 \]
-给出。
+给出.
 \end{theorem}
 
 \begin{theorem}[\markstar\ 核的泛性]
-设 $\sigma:V_1\to V_2$ 为线性映射，$W\subseteq\ker\sigma$。则存在唯一线性映射
+设 $\sigma:V_1\to V_2$ 为线性映射,$W\subseteq\ker\sigma$.则存在唯一线性映射
 \[
 \sigma':V_1/W\to V_2
 \]
@@ -2917,11 +2917,11 @@ V_1/\ker\psi\cong\operatorname{Im}\psi,
 \end{theorem}
 
 \begin{example}
-设 $V$ 为数域 $F$ 上的线性空间，$W$ 为其子空间，$V^*$ 为对偶空间，
+设 $V$ 为数域 $F$ 上的线性空间,$W$ 为其子空间,$V^*$ 为对偶空间,
 \[
 W^0=\{f\in V^*\mid f(W)=0\}
 \]
-为 $W$ 的零化子。证明
+为 $W$ 的零化子.证明
 \[
 W^*\cong V^*/W^0.
 \]
@@ -2935,7 +2935,7 @@ R:V^*\to W^*,
 \qquad
 R(f)=f|_W.
 \]
-其核显然为 $W^0$。有限维情形下，任意 $W$ 上线性泛函都可把 $W$ 的基扩充为 $V$ 的基后延拓到 $V$，故 $R$ 为满射。由第一同构定理，
+其核显然为 $W^0$.有限维情形下,任意 $W$ 上线性泛函都可把 $W$ 的基扩充为 $V$ 的基后延拓到 $V$,故 $R$ 为满射.由第一同构定理,
 \[
 \boxed{V^*/W^0\cong W^*}.
 \]
@@ -2950,29 +2950,29 @@ f(x)=x^4+3x^3-x^2-4x-3,
 g(x)=3x^3+10x^2+2x-3.
 \]
 \begin{enumerate}
-  \item 求 $(f,g)$；
+  \item 求 $(f,g)$;
   \item 令
   \[
   U=\{uf+vg\mid u,v\in F[x]\},
   \]
-  求 $F[x]/U$ 的维数。
+  求 $F[x]/U$ 的维数.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-在通常特征零数域上，
+在通常特征零数域上,
 \[
 f=(x+3)(x^3-x-1),
 \]
 \[
 g=(x+3)(3x^2+x-1),
 \]
-而后两个因子互素，因此
+而后两个因子互素,因此
 \[
 \boxed{(f,g)=x+3}.
 \]
-由 Bézout 定理，
+由 Bézout 定理,
 \[
 U=(f,g)=(x+3),
 \]
@@ -2980,14 +2980,14 @@ U=(f,g)=(x+3),
 \[
 F[x]/U\cong F[x]/(x+3)
 \]
-为一维空间。因此
+为一维空间.因此
 \[
 \boxed{\dim(F[x]/U)=1}.
 \]
 \end{solution}
 
 \begin{example}
-设 $A,B$ 是有限维向量空间 $V$ 的两个子空间。
+设 $A,B$ 是有限维向量空间 $V$ 的两个子空间.
 \begin{enumerate}
   \item 证明
   \[
@@ -3010,7 +3010,7 @@ F[x]/U\cong F[x]/(x+3)
 \qquad
 \phi(a)=a+B.
 \]
-其核为 $A\cap B$，像为整个 $(A+B)/B$，由第一同构定理得
+其核为 $A\cap B$,像为整个 $(A+B)/B$,由第一同构定理得
 \[
 \boxed{A/(A\cap B)\cong(A+B)/B}.
 \]
@@ -3027,5 +3027,5 @@ A/(A\cap B)\oplus B/(A\cap B)
 \Psi\bigl(a+(A\cap B),b+(A\cap B)\bigr)
 =a+b+(A\cap B).
 \]
-它良定义且显然满射。若其像为零，则 $a+b\in A\cap B$。因为 $a\in A,b\in B$，由此推出 $a,b\in A\cap B$，故核为零。因此 $\Psi$ 为同构。
+它良定义且显然满射.若其像为零,则 $a+b\in A\cap B$.因为 $a\in A,b\in B$,由此推出 $a,b\in A\cap B$,故核为零.因此 $\Psi$ 为同构.
 \end{solution}

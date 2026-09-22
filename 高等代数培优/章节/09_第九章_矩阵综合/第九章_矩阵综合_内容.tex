@@ -3,8 +3,8 @@
 
 \chapter{矩阵综合}
 
-本章主要作为一个归纳章节，大部分内容在前文已经以定理、命题或例题的形式出现。
-这里按照原讲义的组织重新汇总，便于复习矩阵分解与常见特殊矩阵。
+本章主要作为一个归纳章节,大部分内容在前文已经以定理,命题或例题的形式出现.
+这里按照原讲义的组织重新汇总,便于复习矩阵分解与常见特殊矩阵.
 
 
 \section{矩阵分解}
@@ -30,10 +30,10 @@ A=FG,
 \qquad
 r(F)=r(G)=r.
 \]
-这样的分解称为 $A$ 的满秩分解。
+这样的分解称为 $A$ 的满秩分解.
 \end{theorem}
 
-具体求解时，可以先对 $A$ 作初等行变换得到
+具体求解时,可以先对 $A$ 作初等行变换得到
 \[
 CA=
 \begin{pmatrix}
@@ -41,13 +41,13 @@ G\\
 O
 \end{pmatrix},
 \]
-再从 $C^{-1}$ 中取对应的前 $r$ 列组成 $F$；也可以直接选取 $A$ 的
-$r$ 个线性无关列组成 $F$，然后把其余各列写成这些列的线性组合，
-相应坐标组成 $G$。
+再从 $C^{-1}$ 中取对应的前 $r$ 列组成 $F$;也可以直接选取 $A$ 的
+$r$ 个线性无关列组成 $F$,然后把其余各列写成这些列的线性组合,
+相应坐标组成 $G$.
 
 
 \begin{example}
-求下列矩阵的满秩分解：
+求下列矩阵的满秩分解:
 \begin{enumerate}
     \item
     \[
@@ -82,7 +82,7 @@ $r$ 个线性无关列组成 $F$，然后把其余各列写成这些列的线性
     0&0&0&0
     \end{pmatrix},
     \]
-    因而 $r(A)=2$，第一、二列可作为列空间的一组基。取
+    因而 $r(A)=2$,第一,二列可作为列空间的一组基.取
     \[
     F=
     \begin{pmatrix}
@@ -111,7 +111,7 @@ $r$ 个线性无关列组成 $F$，然后把其余各列写成这些列的线性
     0&0&0&0&0
     \end{pmatrix},
     \]
-    所以 $r(A)=2$，第一、三列线性无关。取
+    所以 $r(A)=2$,第一,三列线性无关.取
     \[
     F=
     \begin{pmatrix}
@@ -137,7 +137,7 @@ $r$ 个线性无关列组成 $F$，然后把其余各列写成这些列的线性
 \subsection{平方根分解}
 
 \begin{theorem}[\marktwostar]
-设 $A$ 为实对称半正定矩阵，则存在唯一实对称半正定矩阵
+设 $A$ 为实对称半正定矩阵,则存在唯一实对称半正定矩阵
 \[
 X=A^{1/2}
 \]
@@ -149,7 +149,7 @@ X^2=A.
 
 
 \begin{example}
-求下列矩阵的半正定平方根：
+求下列矩阵的半正定平方根:
 \begin{enumerate}
     \item
     \[
@@ -223,26 +223,26 @@ X^2=A.
 \subsection{Schur 分解}
 
 \begin{theorem}[\markstar]
-设 $A\in M_n(\mathbb C)$。则存在酉矩阵 $U$，使
+设 $A\in M_n(\mathbb C)$.则存在酉矩阵 $U$,使
 \[
 U^HAU=T,
 \]
-其中 $T$ 为上三角矩阵，其对角元恰为 $A$ 的全部特征值。
-这称为复 Schur 分解。
+其中 $T$ 为上三角矩阵,其对角元恰为 $A$ 的全部特征值.
+这称为复 Schur 分解.
 \end{theorem}
 
 \begin{theorem}[\markstar]
-设 $A\in M_n(\mathbb R)$。则存在正交矩阵 $Q$，使
+设 $A\in M_n(\mathbb R)$.则存在正交矩阵 $Q$,使
 \[
 Q^{\mathsf T}AQ
 \]
-为实准上三角矩阵，其对角块是一阶实块或由一对共轭复特征值对应的
-二阶实块。这称为实 Schur 分解。
+为实准上三角矩阵,其对角块是一阶实块或由一对共轭复特征值对应的
+二阶实块.这称为实 Schur 分解.
 \end{theorem}
 
 
 \begin{example}
-求下列矩阵的实 Schur 分解：
+求下列矩阵的实 Schur 分解:
 \begin{enumerate}
     \item
     \[
@@ -267,7 +267,7 @@ Q^{\mathsf T}AQ
 
 \begin{solution}
 \begin{enumerate}
-    \item $A_1$ 为实对称矩阵。取
+    \item $A_1$ 为实对称矩阵.取
     \[
     Q=
     \dfrac1{\sqrt2}
@@ -288,7 +288,7 @@ Q^{\mathsf T}AQ
     }
     \]
 
-    \item $A_2$ 已经是实 Schur 标准形式：
+    \item $A_2$ 已经是实 Schur 标准形式:
     \[
     A_2=
     \begin{pmatrix}
@@ -305,7 +305,7 @@ Q^{\mathsf T}AQ
 
 
 \begin{example}
-求下列矩阵的复 Schur 分解：
+求下列矩阵的复 Schur 分解:
 \begin{enumerate}
     \item
     \[
@@ -329,7 +329,7 @@ Q^{\mathsf T}AQ
 
 \begin{solution}
 \begin{enumerate}
-    \item $A_1$ 为 Hermite 矩阵，特征值为 $0,2$。取单位特征向量
+    \item $A_1$ 为 Hermite 矩阵,特征值为 $0,2$.取单位特征向量
     \[
     u_1=\dfrac1{\sqrt2}
     \begin{pmatrix}
@@ -352,7 +352,7 @@ Q^{\mathsf T}AQ
     }
     \]
 
-    \item $A_2$ 本身已经是上三角矩阵，所以可取
+    \item $A_2$ 本身已经是上三角矩阵,所以可取
     \[
     \boxed{U=I_2,\qquad T=A_2}.
     \]
@@ -363,7 +363,7 @@ Q^{\mathsf T}AQ
 \subsection{谱分解}
 
 \begin{theorem}[\marktwostar]
-设 $A\in M_n(\mathbb C)$ 为正规矩阵，即
+设 $A\in M_n(\mathbb C)$ 为正规矩阵,即
 \[
 A^HA=AA^H.
 \]
@@ -377,7 +377,7 @@ U^HAU
 
 
 \begin{example}
-求下列正规矩阵的谱分解：
+求下列正规矩阵的谱分解:
 \begin{enumerate}
     \item
     \[
@@ -429,7 +429,7 @@ U^HAU
     }
     \]
 
-    \item 特征值为 $1,-1,1$。取
+    \item 特征值为 $1,-1,1$.取
     \[
     u_1=
     \dfrac1{\sqrt2}
@@ -446,7 +446,7 @@ U^HAU
     \[
     U=(u_1,u_2,u_3)
     \]
-    为正交矩阵，并且
+    为正交矩阵,并且
     \[
     \boxed{
     U^{\mathsf T}A_2U=\diag(1,-1,1).
@@ -465,7 +465,7 @@ A\in M_{m\times n}(\mathbb C),
 \qquad
 r(A)=r.
 \]
-则存在酉矩阵 $U\in M_m(\mathbb C)$、$V\in M_n(\mathbb C)$，使
+则存在酉矩阵 $U\in M_m(\mathbb C)$,$V\in M_n(\mathbb C)$,使
 \[
 U^HAV
 =
@@ -480,12 +480,12 @@ O&O
 \qquad
 \sigma_1\ge\cdots\ge\sigma_r>0,
 \]
-而 $\sigma_i^2$ 是 $A^HA$ 的非零特征值。
+而 $\sigma_i^2$ 是 $A^HA$ 的非零特征值.
 \end{theorem}
 
 
 \begin{example}
-求下列矩阵的奇异值分解：
+求下列矩阵的奇异值分解:
 \begin{enumerate}
     \item
     \[
@@ -510,7 +510,7 @@ O&O
 
 \begin{solution}
 \begin{enumerate}
-    \item $A_1$ 的秩为 $1$，唯一非零奇异值为
+    \item $A_1$ 的秩为 $1$,唯一非零奇异值为
     \[
     \sigma_1=5\sqrt2.
     \]
@@ -583,8 +583,8 @@ O&O
 \subsection{极分解}
 
 \begin{theorem}[\markstar]
-设 $A\in M_n(\mathbb C)$。则存在酉矩阵 $U$ 与 Hermite 半正定矩阵
-$H_1,H_2$，使
+设 $A\in M_n(\mathbb C)$.则存在酉矩阵 $U$ 与 Hermite 半正定矩阵
+$H_1,H_2$,使
 \[
 A=H_1U=UH_2,
 \]
@@ -594,12 +594,12 @@ H_1=(AA^H)^{1/2},
 \qquad
 H_2=(A^HA)^{1/2}.
 \]
-半正定因子 $H_1,H_2$ 唯一；当 $A$ 可逆时，酉因子也唯一。
+半正定因子 $H_1,H_2$ 唯一;当 $A$ 可逆时,酉因子也唯一.
 \end{theorem}
 
 
 \begin{example}
-求下列矩阵的极分解：
+求下列矩阵的极分解:
 \begin{enumerate}
     \item
     \[
@@ -678,8 +678,8 @@ H_2=(A^HA)^{1/2}.
     =
     I_3+J_3.
     \]
-    该矩阵在 $(1,1,1)^{\mathsf T}$ 方向上的特征值为 $4$，
-    在其正交补上的特征值为 $1$，因此
+    该矩阵在 $(1,1,1)^{\mathsf T}$ 方向上的特征值为 $4$,
+    在其正交补上的特征值为 $1$,因此
     \[
     H_1=H_2=
     I_3+\dfrac13J_3
@@ -712,17 +712,17 @@ H_2=(A^HA)^{1/2}.
 \subsection{QR 分解}
 
 \begin{theorem}[\markstar]
-设 $A$ 为实可逆矩阵，则存在唯一正交矩阵 $Q$ 与主对角元均为正数的
-上三角矩阵 $R$，使
+设 $A$ 为实可逆矩阵,则存在唯一正交矩阵 $Q$ 与主对角元均为正数的
+上三角矩阵 $R$,使
 \[
 A=QR.
 \]
-这正是 Gram--Schmidt 正交化的矩阵形式。
+这正是 Gram--Schmidt 正交化的矩阵形式.
 \end{theorem}
 
 
 \begin{example}
-求下列矩阵的 QR 分解：
+求下列矩阵的 QR 分解:
 \begin{enumerate}
     \item
     \[
@@ -747,7 +747,7 @@ A=QR.
 
 \begin{solution}
 \begin{enumerate}
-    \item 对列向量作 Gram--Schmidt 正交化，得到
+    \item 对列向量作 Gram--Schmidt 正交化,得到
     \[
     Q=
     \dfrac1{\sqrt2}
@@ -803,28 +803,28 @@ A=QR.
 
 \section{特殊矩阵}
 
-本节按照原讲义要求，对前文已经多次出现的特殊矩阵作集中归纳。
+本节按照原讲义要求,对前文已经多次出现的特殊矩阵作集中归纳.
 
 \begin{example}[\marktwostar]
-分析下列矩阵的主要性质，包括特征值、标准形以及常见等价刻画：
+分析下列矩阵的主要性质,包括特征值,标准形以及常见等价刻画:
 \begin{enumerate}
-    \item 实对称（Hermite）矩阵；
-，    \item 实反称（反 Hermite）矩阵；
-    \item 正交（酉）矩阵；
-    \item 正规矩阵；
-    \item 幂零矩阵；
-    \item 幂等矩阵；
-    \item 秩 $1$ 矩阵；
-    \item 镜像矩阵；
-    \item 对合矩阵；
-    \item 循环矩阵。
+    \item 实对称(Hermite)矩阵;
+,    \item 实反称(反 Hermite)矩阵;
+    \item 正交(酉)矩阵;
+    \item 正规矩阵;
+    \item 幂零矩阵;
+    \item 幂等矩阵;
+    \item 秩 $1$ 矩阵;
+    \item 镜像矩阵;
+    \item 对合矩阵;
+    \item 循环矩阵.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
 \begin{enumerate}
-    \item \strongcn{实对称 / Hermite 矩阵。}
+    \item \strongcn{实对称 / Hermite 矩阵.}
     实对称矩阵满足
     \[
     A^{\mathsf T}=A,
@@ -833,21 +833,21 @@ A=QR.
     \[
     A^H=A.
     \]
-    特征值全为实数；属于不同特征值的特征向量正交；存在正交或酉矩阵
+    特征值全为实数;属于不同特征值的特征向量正交;存在正交或酉矩阵
     $Q$ 使
     \[
     Q^HAQ=\diag(\lambda_1,\ldots,\lambda_n).
     \]
-    因而一定可对角化。
+    因而一定可对角化.
 
-    \item \strongcn{实反称 / 反 Hermite 矩阵。}
+    \item \strongcn{实反称 / 反 Hermite 矩阵.}
     分别满足
     \[
     A^{\mathsf T}=-A,
     \qquad
     A^H=-A.
     \]
-    反 Hermite 矩阵的特征值均为纯虚数或 $0$。
+    反 Hermite 矩阵的特征值均为纯虚数或 $0$.
     实反称矩阵的非零特征值成对为
     \[
     \pm i\mu_j.
@@ -859,43 +859,43 @@ A=QR.
     -\mu_j&0
     \end{pmatrix}
     \]
-    与零块组成。
+    与零块组成.
 
-    \item \strongcn{正交 / 酉矩阵。}
+    \item \strongcn{正交 / 酉矩阵.}
     分别满足
     \[
     A^{\mathsf T}A=I,
     \qquad
     A^HA=I.
     \]
-    等价地，保持内积与长度。全部复特征值满足
+    等价地,保持内积与长度.全部复特征值满足
     \[
     |\lambda|=1.
     \]
-    正交、酉矩阵都是正规矩阵，因此在复数域上可酉对角化。
-    实正交矩阵在实数域上的标准形由 $\pm1$ 与二维旋转块组成。
+    正交,酉矩阵都是正规矩阵,因此在复数域上可酉对角化.
+    实正交矩阵在实数域上的标准形由 $\pm1$ 与二维旋转块组成.
 
-    \item \strongcn{正规矩阵。}
+    \item \strongcn{正规矩阵.}
     满足
     \[
     A^HA=AA^H.
     \]
-    其核心等价刻画是：存在酉矩阵 $U$ 使
+    其核心等价刻画是:存在酉矩阵 $U$ 使
     \[
     U^HAU
     \]
-    为对角矩阵。Hermite、反 Hermite、酉矩阵都是正规矩阵。
+    为对角矩阵.Hermite,反 Hermite,酉矩阵都是正规矩阵.
 
-    \item \strongcn{幂零矩阵。}
+    \item \strongcn{幂零矩阵.}
     存在正整数 $k$ 使
     \[
     A^k=O.
     \]
-    全部特征值均为 $0$；特征多项式为 $\lambda^n$；
-    Jordan 标准形只含零特征值的 Jordan 块。
-    若最小的 $k$ 满足 $A^k=0$，则最大 Jordan 块的阶数为 $k$。
+    全部特征值均为 $0$;特征多项式为 $\lambda^n$;
+    Jordan 标准形只含零特征值的 Jordan 块.
+    若最小的 $k$ 满足 $A^k=0$,则最大 Jordan 块的阶数为 $k$.
 
-    \item \strongcn{幂等矩阵。}
+    \item \strongcn{幂等矩阵.}
     满足
     \[
     A^2=A.
@@ -904,13 +904,13 @@ A=QR.
     \[
     x(x-1),
     \]
-    因而一定可对角化，特征值只能为 $0,1$。并且
+    因而一定可对角化,特征值只能为 $0,1$.并且
     \[
     \boxed{r(A)=\operatorname{tr}A}.
     \]
-    几何上它对应某个直和分解下的投影。
+    几何上它对应某个直和分解下的投影.
 
-    \item \strongcn{秩 $1$ 矩阵。}
+    \item \strongcn{秩 $1$ 矩阵.}
     非零秩一矩阵可写成
     \[
     A=uv^{\mathsf T}.
@@ -919,15 +919,15 @@ A=QR.
     \[
     A^2=(v^{\mathsf T}u)A=(\operatorname{tr}A)A.
     \]
-    因而其特征值中至多有一个非零值，且该非零值为
+    因而其特征值中至多有一个非零值,且该非零值为
     \[
     \operatorname{tr}A.
     \]
-    若 $\operatorname{tr}A\neq0$，则 $A$ 可对角化；
-    若 $\operatorname{tr}A=0$，则 $A^2=0$。
+    若 $\operatorname{tr}A\neq0$,则 $A$ 可对角化;
+    若 $\operatorname{tr}A=0$,则 $A^2=0$.
 
-    \item \strongcn{镜像矩阵。}
-    对单位向量 $w$，
+    \item \strongcn{镜像矩阵.}
+    对单位向量 $w$,
     \[
     H=I-2ww^{\mathsf T}.
     \]
@@ -935,7 +935,7 @@ A=QR.
     \[
     H^{\mathsf T}=H,\qquad H^2=I,
     \]
-    因而既对称又正交。其特征值为
+    因而既对称又正交.其特征值为
     \[
     -1\quad(1\text{ 重}),\qquad
     1\quad(n-1\text{ 重}),
@@ -945,19 +945,19 @@ A=QR.
     \det H=-1.
     \]
 
-    \item \strongcn{对合矩阵。}
+    \item \strongcn{对合矩阵.}
     满足
     \[
     A^2=I.
     \]
-    在特征不为 $2$ 的数域上，最小多项式整除
+    在特征不为 $2$ 的数域上,最小多项式整除
     \[
     (x-1)(x+1),
     \]
-    无重根，因此 $A$ 可对角化，特征值只可能为 $\pm1$。
-    若再满足 $A^{\mathsf T}=A$，则它是正交矩阵。
+    无重根,因此 $A$ 可对角化,特征值只可能为 $\pm1$.
+    若再满足 $A^{\mathsf T}=A$,则它是正交矩阵.
 
-    \item \strongcn{循环矩阵。}
+    \item \strongcn{循环矩阵.}
     若
     \[
     A=
@@ -971,8 +971,8 @@ A=QR.
     \[
     f(\omega_k),
     \]
-    其中 $\omega_k$ 遍历全部 $n$ 次单位根。
-    离散 Fourier 矩阵可同时对角化所有循环矩阵，因此循环矩阵彼此可交换，
+    其中 $\omega_k$ 遍历全部 $n$ 次单位根.
+    离散 Fourier 矩阵可同时对角化所有循环矩阵,因此循环矩阵彼此可交换,
     且
     \[
     \det A=\prod\limits_{k=1}^{n}f(\omega_k).

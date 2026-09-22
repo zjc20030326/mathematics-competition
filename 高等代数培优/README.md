@@ -118,6 +118,27 @@ latexmk -xelatex "高等代数培优讲义(答案版).tex"
 
 各章普通版、答案版入口也都支持独立编译。
 
+## 字体、中文强调与标点
+
+字体机制保持 ElegantBook 原样:定理类环境与 `solution`、`note` 等楷体正文环境用
+`\citshape`(楷体),`proof` 用 `\cfs`(仿宋),`remark` 不切字体,`example` 等用宋体;
+没有对 `zhkai` / `zhfs` 做任何 `BoldFont` 补丁.
+
+楷体/仿宋正文里的中文强调统一用 `preamble.tex` 提供的 `\strongcn`:
+
+```latex
+\newcommand{\strongcn}[1]{{\cbfseries #1}}
+```
+
+`\cbfseries` 在中文环境下等于 `\heiti`,所以这类正文里写 `\strongcn{...}`,
+不要写 `\textbf{...}`(楷体/仿宋没有声明粗体字重,`\textbf` 会退回伪粗体并报警).
+宋体正文里 `\textbf{...}` 照常可用;ElegantBook 环境标题自身的 `\textbf` 不要改.
+
+章节正文的自然语言使用 ASCII 标点(`,`、`.`、`;`、`:`、`()`、`` ``…'' ``、`--`),
+不使用全角标点(如 `，`、`。`、`；`、`：`、`（）`、`“”`、`、`、`—`、`…`),
+与 validator 的 `PUNC001` 一致;`$...$` 与数学环境内不受影响,省略号仍用
+`\ldots` / `\cdots`.
+
 ## 解答问题记录
 
 `解答问题记录.md` 专门保存整理过程中发现的：

@@ -3,30 +3,30 @@
 
 \chapter{相似标准型}
 
-本章是上册“线性变换”之后的进一步深化，核心目标是把线性变换按照
-最小多项式、准素分解、循环分解与三种因子逐步化为有理标准形和
-Jordan 标准形，并在此基础上讨论矩阵幂、可对角化、幂零矩阵、方阵函数
-以及矩阵可交换问题。
+本章是上册``线性变换''之后的进一步深化,核心目标是把线性变换按照
+最小多项式,准素分解,循环分解与三种因子逐步化为有理标准形和
+Jordan 标准形,并在此基础上讨论矩阵幂,可对角化,幂零矩阵,方阵函数
+以及矩阵可交换问题.
 
-\section{准素分解与循环分解（Jordan 标准型 1）}
+\section{准素分解与循环分解(Jordan 标准型 1)}
 
-\subsection{零化多项式、最小多项式与特征多项式}
+\subsection{零化多项式,最小多项式与特征多项式}
 
 \begin{definition}
-设 $A$ 为方阵，若 $g(\lambda)\in F[\lambda]$ 且
+设 $A$ 为方阵,若 $g(\lambda)\in F[\lambda]$ 且
 \[
 g(A)=O,
 \]
-则称 $g(\lambda)$ 为 $A$ 的\strongcn{零化多项式}。
+则称 $g(\lambda)$ 为 $A$ 的\strongcn{零化多项式}.
 \end{definition}
 
 \begin{definition}
-$A$ 的次数最低的首一零化多项式称为 $A$ 的\strongcn{最小多项式}，
-记为 $m_A(\lambda)$。
+$A$ 的次数最低的首一零化多项式称为 $A$ 的\strongcn{最小多项式},
+记为 $m_A(\lambda)$.
 \end{definition}
 
 \begin{theorem}[\markstar]
-最小多项式存在且唯一，并且整除 $A$ 的任意零化多项式。
+最小多项式存在且唯一,并且整除 $A$ 的任意零化多项式.
 \end{theorem}
 
 \begin{theorem}[\markstar\ Cayley--Hamilton 定理]
@@ -34,20 +34,20 @@ $A$ 的次数最低的首一零化多项式称为 $A$ 的\strongcn{最小多项�
 \[
 f_A(\lambda)=\det(\lambda I-A)
 \]
-是 $A$ 的特征多项式，则
+是 $A$ 的特征多项式,则
 \[
 f_A(A)=O.
 \]
 \end{theorem}
 
 \begin{theorem}[\markstar]
-在复数域上，$A$ 的特征多项式与最小多项式具有相同的根集，
-但各根的重数可以不同。
+在复数域上,$A$ 的特征多项式与最小多项式具有相同的根集,
+但各根的重数可以不同.
 \end{theorem}
 
 
 \begin{example}
-求下列方阵的最小多项式：
+求下列方阵的最小多项式:
 \begin{enumerate}
     \item
     \[
@@ -75,7 +75,7 @@ f_A(A)=O.
     1&0
     \end{pmatrix};
     \]
-    \item Jordan 块 $J_n(\lambda_0)$。
+    \item Jordan 块 $J_n(\lambda_0)$.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -93,13 +93,13 @@ f_A(A)=O.
 \[
 \boxed{m_{A_1}(\lambda)=(\lambda-1)(\lambda-2)}.
 \]
-而 $A_2$ 的特征值 $2$ 的几何重数为 $1$，故最小多项式中
-$(\lambda-2)$ 的指数必须为 $2$：
+而 $A_2$ 的特征值 $2$ 的几何重数为 $1$,故最小多项式中
+$(\lambda-2)$ 的指数必须为 $2$:
 \[
 \boxed{m_{A_2}(\lambda)=(\lambda-1)(\lambda-2)^2}.
 \]
 
-对第三问，
+对第三问,
 \[
 A_3^2=-I,
 \]
@@ -108,7 +108,7 @@ A_3^2=-I,
 \boxed{m_{A_3}(\lambda)=\lambda^2+1}.
 \]
 
-最后，
+最后,
 \[
 (J_n(\lambda_0)-\lambda_0I)^n=O,
 \qquad
@@ -137,16 +137,16 @@ C(f)=
 0&0&\cdots&1&-c_{n-1}
 \end{pmatrix}.
 \]
-证明 $C(f)$ 的最小多项式和特征多项式均为 $f$。
+证明 $C(f)$ 的最小多项式和特征多项式均为 $f$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-令 $e_1,\ldots,e_n$ 为标准基，则
+令 $e_1,\ldots,e_n$ 为标准基,则
 \[
 e_1,\ C(f)e_1,\ \ldots,\ C(f)^{n-1}e_1
 \]
-恰好构成一组基，因此 $e_1$ 是循环向量。
+恰好构成一组基,因此 $e_1$ 是循环向量.
 由最后一列可得
 \[
 C(f)^ne_1
@@ -156,19 +156,19 @@ C(f)^ne_1
 \[
 f(C(f))e_1=0.
 \]
-由于 $e_1$ 生成整个空间，
+由于 $e_1$ 生成整个空间,
 \[
 f(C(f))=O.
 \]
-若存在次数小于 $n$ 的非零多项式 $g$ 使 $g(C(f))=O$，则
+若存在次数小于 $n$ 的非零多项式 $g$ 使 $g(C(f))=O$,则
 \[
 e_1,C(f)e_1,\ldots,C(f)^{n-1}e_1
 \]
-线性相关，矛盾。因此最小多项式次数为 $n$，从而
+线性相关,矛盾.因此最小多项式次数为 $n$,从而
 \[
 m_{C(f)}=f.
 \]
-最小多项式整除特征多项式，且二者均为 $n$ 次首一多项式，故
+最小多项式整除特征多项式,且二者均为 $n$ 次首一多项式,故
 \[
 \boxed{m_{C(f)}(\lambda)=f_{C(f)}(\lambda)=f(\lambda)}.
 \]
@@ -180,15 +180,15 @@ m_{C(f)}=f.
 \[
 f(x)=x^3+x^2+x+2
 \]
-的根，令
+的根,令
 \[
 h(x)=x^2+x+1.
 \]
-求一个有理系数多项式 $g(x)$，使
+求一个有理系数多项式 $g(x)$,使
 \[
 h(\lambda_1),h(\lambda_2),h(\lambda_3)
 \]
-均为 $g(x)$ 的根。
+均为 $g(x)$ 的根.
 \end{example}
 \exampleblank
 
@@ -197,7 +197,7 @@ h(\lambda_1),h(\lambda_2),h(\lambda_3)
 \[
 y=h(x)=x^2+x+1.
 \]
-消去 $x$，计算结式
+消去 $x$,计算结式
 \[
 \operatorname{Res}_x
 \bigl(x^3+x^2+x+2,\ x^2+x+1-y\bigr)
@@ -212,11 +212,11 @@ y=h(x)=x^2+x+1.
 
 
 \begin{example}[\markstar]
-设 $A\in M_n(\mathbb C)$，
+设 $A\in M_n(\mathbb C)$,
 \[
 W=\{f(A):f(x)\in\mathbb C[x]\},
 \]
-且 $m_A(x)$ 为 $A$ 的最小多项式。证明
+且 $m_A(x)$ 为 $A$ 的最小多项式.证明
 \[
 \dim W=\deg m_A.
 \]
@@ -228,7 +228,7 @@ W=\{f(A):f(x)\in\mathbb C[x]\},
 \[
 m_A(x)=x^r+c_{r-1}x^{r-1}+\cdots+c_0.
 \]
-由带余除法，任意 $f(x)$ 都可写成
+由带余除法,任意 $f(x)$ 都可写成
 \[
 f(x)=q(x)m_A(x)+r(x),
 \qquad
@@ -242,8 +242,8 @@ f(A)=r(A),
 \[
 W=\Span\{I,A,\ldots,A^{r-1}\}.
 \]
-若这些矩阵线性相关，则存在次数小于 $r$ 的非零多项式零化 $A$，
-与最小多项式的最小性矛盾。因此它们线性无关，
+若这些矩阵线性相关,则存在次数小于 $r$ 的非零多项式零化 $A$,
+与最小多项式的最小性矛盾.因此它们线性无关,
 \[
 \boxed{\dim W=r=\deg m_A}.
 \]
@@ -253,22 +253,22 @@ W=\Span\{I,A,\ldots,A^{r-1}\}.
 \subsection{准素分解}
 
 \begin{lemma}[\markstar]
-设 $f,g\in F[\lambda]$，$A$ 为有限维线性空间 $V$ 上的线性变换，则：
+设 $f,g\in F[\lambda]$,$A$ 为有限维线性空间 $V$ 上的线性变换,则:
 \begin{enumerate}
-    \item $\ker I=\{0\}$，$\ker m_A(A)=V$；
-    \item 若 $g\mid f$，则
+    \item $\ker I=\{0\}$,$\ker m_A(A)=V$;
+    \item 若 $g\mid f$,则
     \[
     \ker g(A)\subseteq\ker f(A);
     \]
-    \item 若 $d=(f,g)$，则
+    \item 若 $d=(f,g)$,则
     \[
     \ker f(A)\cap\ker g(A)=\ker d(A);
     \]
-    \item 若 $M=[f,g]$，则
+    \item 若 $M=[f,g]$,则
     \[
     \ker f(A)+\ker g(A)=\ker M(A);
     \]
-    \item 若 $(f,g)=1$，则
+    \item 若 $(f,g)=1$,则
     \[
     \ker(fg)(A)=\ker f(A)\oplus\ker g(A).
     \]
@@ -283,19 +283,19 @@ m_A(\lambda)
 =
 p_1(\lambda)^{r_1}\cdots p_s(\lambda)^{r_s},
 \]
-其中 $p_i$ 是 $F[\lambda]$ 中两两不同的首一不可约多项式。令
+其中 $p_i$ 是 $F[\lambda]$ 中两两不同的首一不可约多项式.令
 \[
 W_i=\ker p_i(A)^{r_i}.
 \]
-则：
+则:
 \begin{enumerate}
     \item
     \[
     V=W_1\oplus\cdots\oplus W_s;
     \]
-    \item $A_i=A|_{W_i}$ 的最小多项式为 $p_i^{r_i}$；
-    \item 投影 $E_i:V\to W_i$ 可以表示成 $A$ 的多项式；
-    \item 若 $B$ 与 $A$ 可交换，则每个 $W_i$ 都是 $B$ 的不变子空间。
+    \item $A_i=A|_{W_i}$ 的最小多项式为 $p_i^{r_i}$;
+    \item 投影 $E_i:V\to W_i$ 可以表示成 $A$ 的多项式;
+    \item 若 $B$ 与 $A$ 可交换,则每个 $W_i$ 都是 $B$ 的不变子空间.
 \end{enumerate}
 \end{theorem}
 
@@ -314,23 +314,23 @@ W_i
 =
 \bigcup_{k\geq1}\ker p_i(A)^k.
 \]
-当 $F=\mathbb C$ 时，$p_i(\lambda)=\lambda-\lambda_i$，
-$W_i$ 称为属于 $\lambda_i$ 的根子空间。
+当 $F=\mathbb C$ 时,$p_i(\lambda)=\lambda-\lambda_i$,
+$W_i$ 称为属于 $\lambda_i$ 的根子空间.
 \end{proposition}
 
 \begin{proposition}[\marktwostar]
-方阵 $A$ 在 $F$ 上可对角化，当且仅当其最小多项式在 $F$ 上分解为
-两两互素的一次因子的乘积。
+方阵 $A$ 在 $F$ 上可对角化,当且仅当其最小多项式在 $F$ 上分解为
+两两互素的一次因子的乘积.
 \end{proposition}
 
 \begin{proposition}[\markstar]
-若 $A$ 在 $F$ 中有 $n$ 个特征根（重根按重数计算），则存在唯一的
+若 $A$ 在 $F$ 中有 $n$ 个特征根(重根按重数计算),则存在唯一的
 \[
 A=D+N,
 \qquad
 DN=ND,
 \]
-其中 $D$ 在 $F$ 上可对角化，$N$ 为幂零矩阵，并且 $D,N$ 均为 $A$ 的多项式。
+其中 $D$ 在 $F$ 上可对角化,$N$ 为幂零矩阵,并且 $D,N$ 均为 $A$ 的多项式.
 \end{proposition}
 
 
@@ -345,7 +345,7 @@ A=
 1&1&-2&1
 \end{pmatrix}
 \]
-定义 $\mathbb R^4$ 上的线性变换。求 $V$ 与 $A$ 的准素分解。
+定义 $\mathbb R^4$ 上的线性变换.求 $V$ 与 $A$ 的准素分解.
 \end{example}
 \exampleblank
 
@@ -382,7 +382,7 @@ W_2
 \begin{pmatrix}-1\\0\\0\\1\end{pmatrix}
 \right\}.
 \]
-令 $P$ 的列依次取上述四个向量，则
+令 $P$ 的列依次取上述四个向量,则
 \[
 P^{-1}AP
 =
@@ -395,7 +395,7 @@ P^{-1}AP
 \end{pmatrix}
 }.
 \]
-这正是实数域上的准对角分解。
+这正是实数域上的准对角分解.
 \end{solution}
 
 
@@ -410,8 +410,8 @@ A=
 1&1&-2&-1
 \end{pmatrix}.
 \]
-分别把它看作 $\mathbb C^4$ 与 $\mathbb R^4$ 上的线性变换，
-求相应的准素分解。
+分别把它看作 $\mathbb C^4$ 与 $\mathbb R^4$ 上的线性变换,
+求相应的准素分解.
 \end{example}
 \exampleblank
 
@@ -420,12 +420,12 @@ A=
 \[
 (\lambda-3)(\lambda+1)(\lambda^2+1).
 \]
-故在 $\mathbb C$ 上有四个一维根子空间，$A$ 可对角化，特征值为
+故在 $\mathbb C$ 上有四个一维根子空间,$A$ 可对角化,特征值为
 \[
 3,\ -1,\ i,\ -i.
 \]
 
-在 $\mathbb R$ 上，
+在 $\mathbb R$ 上,
 \[
 V=W_3\oplus W_{-1}\oplus W_q,
 \]
@@ -464,7 +464,7 @@ P=
 v,Av
 \right)
 \]
-为过渡矩阵，
+为过渡矩阵,
 \[
 \boxed{
 P^{-1}AP
@@ -485,7 +485,7 @@ P^{-1}AP
 \[
 V=W_1\oplus W_2\oplus\cdots\oplus W_s
 \]
-是 $V$ 关于线性变换 $A$ 的准素分解，而 $W$ 是 $A$ 的任意不变子空间。
+是 $V$ 关于线性变换 $A$ 的准素分解,而 $W$ 是 $A$ 的任意不变子空间.
 证明
 \[
 W=(W_1\cap W)\oplus\cdots\oplus(W_s\cap W).
@@ -494,12 +494,12 @@ W=(W_1\cap W)\oplus\cdots\oplus(W_s\cap W).
 \exampleblank
 
 \begin{solution}
-准素分解对应的正则投影 $E_i$ 都是 $A$ 的多项式。
-因为 $W$ 对 $A$ 不变，所以也对任意 $A$ 的多项式不变，于是
+准素分解对应的正则投影 $E_i$ 都是 $A$ 的多项式.
+因为 $W$ 对 $A$ 不变,所以也对任意 $A$ 的多项式不变,于是
 \[
 E_i(W)\subseteq W.
 \]
-对任意 $w\in W$，
+对任意 $w\in W$,
 \[
 w=E_1w+\cdots+E_sw,
 \]
@@ -507,7 +507,7 @@ w=E_1w+\cdots+E_sw,
 \[
 E_iw\in W_i\cap W.
 \]
-原准素分解本身是直和，因此
+原准素分解本身是直和,因此
 \[
 \boxed{
 W=(W_1\cap W)\oplus\cdots\oplus(W_s\cap W).
@@ -519,21 +519,21 @@ W=(W_1\cap W)\oplus\cdots\oplus(W_s\cap W).
 \subsection{循环分解}
 
 \begin{definition}
-对 $\alpha\in V$，定义
+对 $\alpha\in V$,定义
 \[
 F[A]\alpha
 =
 \{g(A)\alpha:g(\lambda)\in F[\lambda]\},
 \]
-称为由 $\alpha$ 生成的 $A$ 的\strongcn{循环子空间}。
+称为由 $\alpha$ 生成的 $A$ 的\strongcn{循环子空间}.
 若
 \[
 F[A]\alpha=V,
 \]
-则称 $V$ 为循环空间，$\alpha$ 为循环向量。
+则称 $V$ 为循环空间,$\alpha$ 为循环向量.
 
-若 $g(A)\alpha=0$，则称 $g$ 为 $\alpha$ 的零化子；
-次数最低的首一零化子称为 $\alpha$ 的最小零化子，记为 $m_\alpha$。
+若 $g(A)\alpha=0$,则称 $g$ 为 $\alpha$ 的零化子;
+次数最低的首一零化子称为 $\alpha$ 的最小零化子,记为 $m_\alpha$.
 \end{definition}
 
 \begin{theorem}[\markstar]
@@ -545,7 +545,7 @@ W=F[A]\alpha.
 \[
 \alpha,A\alpha,\ldots,A^{k-1}\alpha
 \]
-线性无关，而再加入 $A^k\alpha$ 后线性相关，并且
+线性无关,而再加入 $A^k\alpha$ 后线性相关,并且
 \[
 A^k\alpha+c_{k-1}A^{k-1}\alpha+\cdots+c_0\alpha=0,
 \]
@@ -555,7 +555,7 @@ m_\alpha(\lambda)
 =
 \lambda^k+c_{k-1}\lambda^{k-1}+\cdots+c_0.
 \]
-此外：
+此外:
 \begin{enumerate}
     \item
     \[
@@ -565,9 +565,9 @@ m_\alpha(\lambda)
     \[
     \alpha,A\alpha,\ldots,A^{k-1}\alpha
     \]
-    是 $W$ 的一组基；
-    \item $A|_W$ 在该基下的矩阵为 $m_\alpha$ 的友矩阵；
-    \item $A|_W$ 的最小多项式、特征多项式与 $m_\alpha$ 三者相等。
+    是 $W$ 的一组基;
+    \item $A|_W$ 在该基下的矩阵为 $m_\alpha$ 的友矩阵;
+    \item $A|_W$ 的最小多项式,特征多项式与 $m_\alpha$ 三者相等.
 \end{enumerate}
 \end{theorem}
 
@@ -584,7 +584,7 @@ A=
 \qquad
 \varepsilon_1=(1,0,0)^{\mathsf T}.
 \]
-求 $\varepsilon_1$ 的最小零化子，并给出相应循环基与矩阵表示。
+求 $\varepsilon_1$ 的最小零化子,并给出相应循环基与矩阵表示.
 \end{example}
 \exampleblank
 
@@ -612,7 +612,7 @@ N^3\varepsilon_1=0.
 \[
 \varepsilon_1,\ N\varepsilon_1,\ N^2\varepsilon_1
 \]
-是一组循环基，在此基下
+是一组循环基,在此基下
 \[
 [A]
 =
@@ -624,27 +624,27 @@ N^3\varepsilon_1=0.
 \end{pmatrix}
 }
 \]
-即一个转置约定下的 Jordan 链矩阵；反向排列基向量即可得到通常的
-$J_3(1)$。
+即一个转置约定下的 Jordan 链矩阵;反向排列基向量即可得到通常的
+$J_3(1)$.
 \end{solution}
 
 
 \begin{example}[\markstar]
-设 $A$ 在某一基下的矩阵是首一多项式 $f$ 的友矩阵。
-证明 $V$ 是循环空间。
+设 $A$ 在某一基下的矩阵是首一多项式 $f$ 的友矩阵.
+证明 $V$ 是循环空间.
 \end{example}
 \exampleblank
 
 \begin{solution}
-在友矩阵的标准基下，
+在友矩阵的标准基下,
 \[
 e_1,Ae_1,\ldots,A^{n-1}e_1
 \]
-恰好为一组基，因此
+恰好为一组基,因此
 \[
 F[A]e_1=V.
 \]
-故 $e_1$ 是循环向量。
+故 $e_1$ 是循环向量.
 \end{solution}
 
 
@@ -653,12 +653,12 @@ F[A]e_1=V.
 \[
 A=\diag(3,3,-2)
 \]
-是 $\mathbb R^3$ 上的线性变换。
-证明 $A$ 没有循环向量，并求
+是 $\mathbb R^3$ 上的线性变换.
+证明 $A$ 没有循环向量,并求
 \[
 v=(1,-1,3)^{\mathsf T}
 \]
-生成的循环子空间。
+生成的循环子空间.
 \end{example}
 \exampleblank
 
@@ -667,14 +667,14 @@ $A$ 的最小多项式为
 \[
 m_A(\lambda)=(\lambda-3)(\lambda+2),
 \]
-次数只有 $2<3$。循环空间若等于整个 $\mathbb R^3$，其循环向量的最小零化子
-必须等于 $A$ 的特征多项式并有次数 $3$，故不存在循环向量。
+次数只有 $2<3$.循环空间若等于整个 $\mathbb R^3$,其循环向量的最小零化子
+必须等于 $A$ 的特征多项式并有次数 $3$,故不存在循环向量.
 
 把
 \[
 v=(1,-1,0)^{\mathsf T}+(0,0,3)^{\mathsf T}
 \]
-分解到两个特征子空间，得到
+分解到两个特征子空间,得到
 \[
 F[A]v
 =
@@ -697,13 +697,13 @@ A=
 0&1&1
 \end{pmatrix}
 \]
-作用于 $\mathbb C^3$。求
+作用于 $\mathbb C^3$.求
 \[
 \alpha=(1,0,0)^{\mathsf T},
 \qquad
 \beta=(1,0,i)^{\mathsf T}
 \]
-的最小零化子。
+的最小零化子.
 \end{example}
 \exampleblank
 
@@ -732,28 +732,28 @@ A\beta=\beta,
 
 
 \begin{example}
-设 $A$ 是 $n$ 维线性空间上的可对角化线性变换。证明：
+设 $A$ 是 $n$ 维线性空间上的可对角化线性变换.证明:
 \begin{enumerate}
-    \item 若 $A$ 有循环向量，则 $A$ 有 $n$ 个互异特征值；
-    \item 若 $A$ 有 $n$ 个互异特征值，$\alpha_1,\ldots,\alpha_n$
-    为对应特征向量，则
+    \item 若 $A$ 有循环向量,则 $A$ 有 $n$ 个互异特征值;
+    \item 若 $A$ 有 $n$ 个互异特征值,$\alpha_1,\ldots,\alpha_n$
+    为对应特征向量,则
     \[
     \alpha_1+\cdots+\alpha_n
     \]
-    是循环向量。
+    是循环向量.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-若 $A$ 可对角化，则最小多项式中所有一次因子指数均为 $1$。
-若又有循环向量，则
+若 $A$ 可对角化,则最小多项式中所有一次因子指数均为 $1$.
+若又有循环向量,则
 \[
 m_A=f_A,
 \]
-所以特征多项式也无重根，即有 $n$ 个互异特征值。
+所以特征多项式也无重根,即有 $n$ 个互异特征值.
 
-反之设特征值 $\lambda_1,\ldots,\lambda_n$ 两两不同，令
+反之设特征值 $\lambda_1,\ldots,\lambda_n$ 两两不同,令
 \[
 \alpha=\alpha_1+\cdots+\alpha_n.
 \]
@@ -761,17 +761,17 @@ m_A=f_A,
 \[
 \alpha,A\alpha,\ldots,A^{n-1}\alpha
 \]
-关于特征向量基的坐标矩阵是 Vandermonde 矩阵，
+关于特征向量基的坐标矩阵是 Vandermonde 矩阵,
 行列式为
 \[
 \prod_{i<j}(\lambda_j-\lambda_i)\neq0.
 \]
-故这些向量构成一组基，$\alpha$ 是循环向量。
+故这些向量构成一组基,$\alpha$ 是循环向量.
 \end{solution}
 
 
 \begin{theorem}[\markstar\ 循环分解]
-设 $A$ 是有限维线性空间 $V$ 上的线性变换，则存在非零向量
+设 $A$ 是有限维线性空间 $V$ 上的线性变换,则存在非零向量
 $\alpha_1,\ldots,\alpha_r$ 使
 \[
 V
@@ -786,7 +786,7 @@ m_1,\ldots,m_r,
 \[
 m_r\mid m_{r-1}\mid\cdots\mid m_1.
 \]
-这些多项式由 $A$ 唯一确定，称为 $A$ 的不变因子，并且
+这些多项式由 $A$ 唯一确定,称为 $A$ 的不变因子,并且
 \[
 m_A=m_1,
 \qquad
@@ -795,18 +795,18 @@ f_A=m_1m_2\cdots m_r.
 \end{theorem}
 
 \begin{theorem}[\markstar\ 有理标准形]
-在上述记号下，存在可逆矩阵 $P$ 使
+在上述记号下,存在可逆矩阵 $P$ 使
 \[
 P^{-1}AP
 =
 \diag\bigl(C(m_1),C(m_2),\ldots,C(m_r)\bigr).
 \]
-该块对角矩阵称为 $A$ 的有理标准形。
+该块对角矩阵称为 $A$ 的有理标准形.
 \end{theorem}
 
 
 \begin{example}
-求下列实矩阵的有理标准形，并给出一组相应过渡矩阵：
+求下列实矩阵的有理标准形,并给出一组相应过渡矩阵:
 \begin{enumerate}
     \item
     \[
@@ -956,22 +956,22 @@ A=
 0&0&b&2
 \end{pmatrix}.
 \]
-求特征多项式；并分别讨论
+求特征多项式;并分别讨论
 \[
 (a,b)=(1,1),\qquad(0,0),\qquad(0,1)
 \]
-时的最小多项式与循环分解。
+时的最小多项式与循环分解.
 \end{example}
 \exampleblank
 
 \begin{solution}
-无论 $a,b$ 如何，
+无论 $a,b$ 如何,
 \[
 \boxed{f_A(\lambda)=(\lambda-2)^4}.
 \]
-记 $N=A-2I$。
+记 $N=A-2I$.
 
-当 $a=b=1$ 时，
+当 $a=b=1$ 时,
 \[
 N^3e_1=e_4\neq0,\qquad N^4=0,
 \]
@@ -979,12 +979,12 @@ N^3e_1=e_4\neq0,\qquad N^4=0,
 \[
 m_A=(\lambda-2)^4,
 \]
-且 $e_1$ 是循环向量：
+且 $e_1$ 是循环向量:
 \[
 V=F[A]e_1.
 \]
 
-当 $a=b=0$ 时，$N^2=0$ 且 $N\neq0$，
+当 $a=b=0$ 时,$N^2=0$ 且 $N\neq0$,
 \[
 m_A=(\lambda-2)^2.
 \]
@@ -994,9 +994,9 @@ V
 =
 F[A]e_1\oplus F[A]e_3\oplus F[A]e_4,
 \]
-对应块大小为 $2,1,1$。
+对应块大小为 $2,1,1$.
 
-当 $a=0,b=1$ 时，同样
+当 $a=0,b=1$ 时,同样
 \[
 m_A=(\lambda-2)^2,
 \]
@@ -1006,24 +1006,24 @@ m_A=(\lambda-2)^2,
 V=F[A]e_1\oplus F[A]e_3,
 }
 \]
-两个循环分量都为二维，对应两个 $J_2(2)$ 型块。
+两个循环分量都为二维,对应两个 $J_2(2)$ 型块.
 \end{solution}
 
 
 \begin{example}
-设 $A$ 为 $F$ 上 $n$ 维线性空间 $V$ 的线性变换。
-证明：$V$ 的每个非零向量都是循环向量，当且仅当
-$A$ 的特征多项式在 $F$ 上不可约。
+设 $A$ 为 $F$ 上 $n$ 维线性空间 $V$ 的线性变换.
+证明:$V$ 的每个非零向量都是循环向量,当且仅当
+$A$ 的特征多项式在 $F$ 上不可约.
 \end{example}
 \exampleblank
 
 \begin{solution}
-若 $f_A$ 不可约，取任意 $0\neq v\in V$。其最小零化子 $m_v$ 整除
-$m_A$，而
+若 $f_A$ 不可约,取任意 $0\neq v\in V$.其最小零化子 $m_v$ 整除
+$m_A$,而
 \[
 m_A\mid f_A.
 \]
-由于 $f_A$ 不可约且 $m_v$ 非常数，只能有
+由于 $f_A$ 不可约且 $m_v$ 非常数,只能有
 \[
 m_v=f_A.
 \]
@@ -1031,108 +1031,108 @@ m_v=f_A.
 \[
 \dim F[A]v=\deg m_v=n,
 \]
-所以 $v$ 是循环向量。
+所以 $v$ 是循环向量.
 
-反之，若每个非零向量都是循环向量，而 $f_A$ 可约，则 $m_A=f_A$。
-取 $f_A=gh$ 为两个正次数因子。由 Cayley--Hamilton，
+反之,若每个非零向量都是循环向量,而 $f_A$ 可约,则 $m_A=f_A$.
+取 $f_A=gh$ 为两个正次数因子.由 Cayley--Hamilton,
 \[
 g(A)h(A)=0.
 \]
-若 $h(A)\neq0$，取 $v$ 使 $h(A)v\neq0$，则非零向量
-$w=h(A)v$ 被 $g(A)$ 零化，其最小零化子次数小于 $n$，不可能循环。
-若 $h(A)=0$，则 $h$ 本身已是次数小于 $n$ 的零化多项式，同样矛盾。
-故 $f_A$ 必不可约。
+若 $h(A)\neq0$,取 $v$ 使 $h(A)v\neq0$,则非零向量
+$w=h(A)v$ 被 $g(A)$ 零化,其最小零化子次数小于 $n$,不可能循环.
+若 $h(A)=0$,则 $h$ 本身已是次数小于 $n$ 的零化多项式,同样矛盾.
+故 $f_A$ 必不可约.
 \end{solution}
 
 
 \begin{proposition}[\markstar]
-对 $n$ 维空间上的线性变换 $A$，下列命题彼此等价：
+对 $n$ 维空间上的线性变换 $A$,下列命题彼此等价:
 \begin{enumerate}
     \item
     \[
     m_A=f_A;
     \]
-    \item $V$ 是循环空间；
+    \item $V$ 是循环空间;
     \item 存在 $\alpha$ 使
     \[
     \alpha,A\alpha,\ldots,A^{n-1}\alpha
     \]
-    为一组基；
-    \item 与 $A$ 可交换的每个线性变换都是 $A$ 的多项式；
-    \item 对每个特征值，其特征子空间都是一维；
-    \item $A$ 在某一基下为一个友矩阵。
+    为一组基;
+    \item 与 $A$ 可交换的每个线性变换都是 $A$ 的多项式;
+    \item 对每个特征值,其特征子空间都是一维;
+    \item $A$ 在某一基下为一个友矩阵.
 \end{enumerate}
 \end{proposition}
 
 
 \begin{example}
-设 $V$ 是有限维实线性空间，$T:V\to V$ 满足：
+设 $V$ 是有限维实线性空间,$T:V\to V$ 满足:
 \begin{enumerate}
-    \item $T$ 的最小多项式在 $\mathbb R$ 上不可约；
+    \item $T$ 的最小多项式在 $\mathbb R$ 上不可约;
     \item 存在 $v\in V$ 使
     \[
     \{T^i(v):i\geq0\}
     \]
-    张成 $V$。
+    张成 $V$.
 \end{enumerate}
-证明 $V$ 中不存在非平凡的 $T$-不变子空间。
+证明 $V$ 中不存在非平凡的 $T$-不变子空间.
 \end{example}
 \exampleblank
 
 \begin{solution}
-第二个条件说明 $V$ 是循环 $\,\mathbb R[x]\,$-模，
+第二个条件说明 $V$ 是循环 $\,\mathbb R[x]\,$-模,
 \[
 V\cong \mathbb R[x]/(m_T).
 \]
-由于 $m_T$ 不可约，商环
+由于 $m_T$ 不可约,商环
 \[
 \mathbb R[x]/(m_T)
 \]
-是域。循环模的 $T$-不变子空间对应于该商环的理想，而域只有
-$\{0\}$ 和自身两个理想。因此只有
+是域.循环模的 $T$-不变子空间对应于该商环的理想,而域只有
+$\{0\}$ 和自身两个理想.因此只有
 \[
 \boxed{\{0\},V}
 \]
-两个 $T$-不变子空间。
+两个 $T$-不变子空间.
 \end{solution}
 
 
 \begin{example}
-设 $T$ 是 $n$ 维线性空间上的可对角化线性变换。证明下列命题等价：
+设 $T$ 是 $n$ 维线性空间上的可对角化线性变换.证明下列命题等价:
 \begin{enumerate}
-    \item $T$ 在底域中有 $n$ 个互不相同的特征值；
+    \item $T$ 在底域中有 $n$ 个互不相同的特征值;
     \item 存在 $\alpha\in V$ 使
     \[
     \alpha,T\alpha,\ldots,T^{n-1}\alpha
     \]
-    线性无关。
+    线性无关.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-这正是前面“可对角化变换存在循环向量”的等价表述。
-若有 $n$ 个互异特征值，取各特征向量之和，利用 Vandermonde 行列式即可得到第二条。
-反之，第二条说明 $\alpha$ 为循环向量，因此
+这正是前面``可对角化变换存在循环向量''的等价表述.
+若有 $n$ 个互异特征值,取各特征向量之和,利用 Vandermonde 行列式即可得到第二条.
+反之,第二条说明 $\alpha$ 为循环向量,因此
 \[
 m_T=f_T.
 \]
-又因 $T$ 可对角化，$m_T$ 无重根，于是 $f_T$ 也无重根，
-即有 $n$ 个互异特征值。
+又因 $T$ 可对角化,$m_T$ 无重根,于是 $f_T$ 也无重根,
+即有 $n$ 个互异特征值.
 \end{solution}
 
 
 \subsection{Jordan 标准形}
 
 \begin{theorem}[\marktwostar\ Jordan 标准形]
-对任一复方阵 $A$，存在可逆复矩阵 $P$ 使
+对任一复方阵 $A$,存在可逆复矩阵 $P$ 使
 \[
 P^{-1}AP
 =
 \diag\{J_{k_{11}}(\lambda_1),\ldots,J_{k_{sr_s}}(\lambda_s)\}.
 \]
-其中各 $J_k(\lambda)$ 为 Jordan 块。
-更一般地，只要 $A$ 的特征多项式在底域中完全分裂，同样结论成立。
+其中各 $J_k(\lambda)$ 为 Jordan 块.
+更一般地,只要 $A$ 的特征多项式在底域中完全分裂,同样结论成立.
 \end{theorem}
 
 \begin{proposition}[\markstar]
@@ -1140,25 +1140,25 @@ P^{-1}AP
 \[
 \ker(A-\lambda I)
 \]
-的维数。
+的维数.
 \end{proposition}
 
 
 \begin{example}[\markstar]
-设 $J_{10}(0)$ 为 $10$ 阶幂零 Jordan 块，求
+设 $J_{10}(0)$ 为 $10$ 阶幂零 Jordan 块,求
 \[
 J_{10}(0)^3
 \]
-的 Jordan 标准形。
+的 Jordan 标准形.
 \end{example}
 \exampleblank
 
 \begin{solution}
-对 $J_n(0)^k$，若
+对 $J_n(0)^k$,若
 \[
 n=qk+r,\qquad0\leq r<k,
 \]
-则其 Jordan 块为 $r$ 个 $J_{q+1}(0)$ 与 $k-r$ 个 $J_q(0)$。
+则其 Jordan 块为 $r$ 个 $J_{q+1}(0)$ 与 $k-r$ 个 $J_q(0)$.
 这里
 \[
 10=3\cdot3+1,
@@ -1175,25 +1175,25 @@ J_4(0)\oplus J_3(0)\oplus J_3(0).
 
 
 \begin{example}[\markstar]
-设 $J_n(a)$ 为 $n$ 阶 Jordan 块，求
+设 $J_n(a)$ 为 $n$ 阶 Jordan 块,求
 \[
 J_n(a)^2
 \]
-的 Jordan 标准形。
+的 Jordan 标准形.
 \end{example}
 \exampleblank
 
 \begin{solution}
-若 $a\neq0$，函数 $f(x)=x^2$ 在 $a$ 处满足
+若 $a\neq0$,函数 $f(x)=x^2$ 在 $a$ 处满足
 \[
 f'(a)=2a\neq0,
 \]
-故 Jordan 块大小保持不变：
+故 Jordan 块大小保持不变:
 \[
 \boxed{J_n(a)^2\sim J_n(a^2)}.
 \]
 
-若 $a=0$，写
+若 $a=0$,写
 \[
 n=2q+r,\qquad r\in\{0,1\},
 \]
@@ -1212,13 +1212,13 @@ J_{q+1}(0)\oplus J_q(0),&r=1.
 
 
 \begin{proposition}[\marktwostar]
-更一般地，对 $J_n(a)^k$：
+更一般地,对 $J_n(a)^k$:
 \begin{enumerate}
-    \item 若 $a\neq0$，则
+    \item 若 $a\neq0$,则
     \[
     J_n(a)^k\sim J_n(a^k);
     \]
-    \item 若 $a=0$，写
+    \item 若 $a=0$,写
     \[
     n=qk+r,\qquad0\leq r<k,
     \]
@@ -1230,12 +1230,12 @@ J_{q+1}(0)\oplus J_q(0),&r=1.
     \oplus
     \underbrace{J_q(0)\oplus\cdots\oplus J_q(0)}_{k-r\text{ 个}},
     \]
-    其中零阶块应忽略。
+    其中零阶块应忽略.
 \end{enumerate}
 \end{proposition}
 
 \begin{proposition}[\markstar]
-设属于 $\lambda_0$ 的 $k$ 阶 Jordan 块个数为 $\delta_k$，则
+设属于 $\lambda_0$ 的 $k$ 阶 Jordan 块个数为 $\delta_k$,则
 \[
 \boxed{
 \delta_k
@@ -1250,19 +1250,19 @@ J_{q+1}(0)\oplus J_q(0),&r=1.
 
 \newpage
 
-\section{三种因子（Jordan 标准型 2）}
+\section{三种因子(Jordan 标准型 2)}
 
 \subsection{三种因子的定义与性质}
 
 \begin{definition}
-对多项式矩阵 $A(\lambda)$，以下操作称为初等行变换：
-交换两行；某行乘以非零常数；某行乘以多项式后加到另一行。
-列变换同理。
+对多项式矩阵 $A(\lambda)$,以下操作称为初等行变换:
+交换两行;某行乘以非零常数;某行乘以多项式后加到另一行.
+列变换同理.
 \end{definition}
 
 \begin{theorem}[\markstar\ Smith 标准形]
-设 $A(\lambda)$ 是多项式矩阵，则存在可逆多项式矩阵
-$P(\lambda),Q(\lambda)$，使
+设 $A(\lambda)$ 是多项式矩阵,则存在可逆多项式矩阵
+$P(\lambda),Q(\lambda)$,使
 \[
 P(\lambda)A(\lambda)Q(\lambda)
 =
@@ -1272,12 +1272,12 @@ P(\lambda)A(\lambda)Q(\lambda)
 \[
 d_1\mid d_2\mid\cdots\mid d_r.
 \]
-$d_i$ 称为 $A(\lambda)$ 的不变因子。
+$d_i$ 称为 $A(\lambda)$ 的不变因子.
 \end{theorem}
 
 \begin{definition}
 $A(\lambda)$ 的全部 $k$ 阶非零子式的首一最大公因式记为
-$D_k(\lambda)$，称为第 $k$ 阶行列式因子。它们满足
+$D_k(\lambda)$,称为第 $k$ 阶行列式因子.它们满足
 \[
 D_k=d_1d_2\cdots d_k,
 \]
@@ -1289,8 +1289,8 @@ d_k=\dfrac{D_k}{D_{k-1}}.
 \end{definition}
 
 \begin{definition}
-把所有非平凡不变因子在底域上分解为不可约多项式的幂，
-所得全部准素因子（重复者重复计入）称为初等因子。
+把所有非平凡不变因子在底域上分解为不可约多项式的幂,
+所得全部准素因子(重复者重复计入)称为初等因子.
 \end{definition}
 
 \begin{proposition}[\markstar]
@@ -1298,17 +1298,17 @@ d_k=\dfrac{D_k}{D_{k-1}}.
 \[
 \diag(A_1(\lambda),A_2(\lambda))
 \]
-的初等因子组等于两个块的初等因子组的合并。
+的初等因子组等于两个块的初等因子组的合并.
 \end{proposition}
 
 \begin{theorem}[\marktwostar]
-对同阶方阵 $A,B$，下列命题等价：
+对同阶方阵 $A,B$,下列命题等价:
 \begin{enumerate}
-    \item $A\sim B$；
-    \item $\lambda I-A$ 与 $\lambda I-B$ 相抵；
-    \item 两者不变因子组相同；
-    \item 两者行列式因子组相同；
-    \item 两者初等因子组相同。
+    \item $A\sim B$;
+    \item $\lambda I-A$ 与 $\lambda I-B$ 相抵;
+    \item 两者不变因子组相同;
+    \item 两者行列式因子组相同;
+    \item 两者初等因子组相同.
 \end{enumerate}
 \end{theorem}
 
@@ -1330,7 +1330,7 @@ J_{k_1}(\lambda_1),\ldots,J_{k_s}(\lambda_s)
 
 
 \begin{example}
-求下列多项式矩阵的 Smith 标准形：
+求下列多项式矩阵的 Smith 标准形:
 \begin{enumerate}
     \item
     \[
@@ -1366,7 +1366,7 @@ J_{k_1}(\lambda_1),\ldots,J_{k_s}(\lambda_s)
 \exampleblank
 
 \begin{solution}
-第一问所有 $1$ 阶子式的最大公因式为 $1$，行列式为 $\lambda^2$，故
+第一问所有 $1$ 阶子式的最大公因式为 $1$,行列式为 $\lambda^2$,故
 \[
 \boxed{\diag(1,\lambda^2)}.
 \]
@@ -1417,7 +1417,7 @@ D_2=(\lambda^2-1)(\lambda-1)^3
 }
 \]
 
-第四问原矩阵秩为 $2$，$D_1=1$，全部二阶子式的最大公因式为 $\lambda$，
+第四问原矩阵秩为 $2$,$D_1=1$,全部二阶子式的最大公因式为 $\lambda$,
 故 Smith 标准形为
 \[
 \boxed{\diag(1,\lambda,0)}.
@@ -1426,8 +1426,8 @@ D_2=(\lambda^2-1)(\lambda-1)^3
 
 
 \begin{example}
-求下列方阵在 $\mathbb C$ 上的 Jordan 标准形，并给出可逆矩阵 $P$
-使 $P^{-1}AP=J$：
+求下列方阵在 $\mathbb C$ 上的 Jordan 标准形,并给出可逆矩阵 $P$
+使 $P^{-1}AP=J$:
 \begin{enumerate}
     \item
     \[
@@ -1476,7 +1476,7 @@ D_2=(\lambda^2-1)(\lambda-1)^3
 \exampleblank
 
 \begin{solution}
-可分别取：
+可分别取:
 
 \[
 J_1=J_3(2),\qquad
@@ -1538,9 +1538,9 @@ P_5=
 
 
 \begin{example}
-求下列矩阵的不变因子与初等因子：
+求下列矩阵的不变因子与初等因子:
 \begin{enumerate}
-    \item 原讲义给出的一个含参数 $a,b$ 的 $6$ 阶矩阵；
+    \item 原讲义给出的一个含参数 $a,b$ 的 $6$ 阶矩阵;
     \item
     \[
     L(\lambda)=
@@ -1552,7 +1552,7 @@ P_5=
     0&\cdots&0&-1&\lambda+a_1
     \end{pmatrix};
     \]
-    \item $A=\alpha^{\mathsf T}\beta$，且
+    \item $A=\alpha^{\mathsf T}\beta$,且
     \[
     \operatorname{tr}A=0;
     \]
@@ -1571,9 +1571,9 @@ P_5=
 \exampleblank
 
 \begin{solution}
-第一问中原 PDF 只给出含参数矩阵而没有说明 $a,b$ 的取值条件。
-不变因子会在 $a=0$、$b=0$、$a=\pm b$ 等退化情形发生改变，因此不能在
-不分类的前提下给出唯一答案。本题已列入《解答问题记录》，正式定稿时应先明确参数条件。
+第一问中原 PDF 只给出含参数矩阵而没有说明 $a,b$ 的取值条件.
+不变因子会在 $a=0$,$b=0$,$a=\pm b$ 等退化情形发生改变,因此不能在
+不分类的前提下给出唯一答案.本题已列入《解答问题记录》,正式定稿时应先明确参数条件.
 
 第二问正是某个 $n$ 次首一多项式
 \[
@@ -1581,16 +1581,16 @@ p(\lambda)
 =
 \lambda^n+a_1\lambda^{n-1}+\cdots+a_n
 \]
-的友矩阵对应的 $\lambda I-C(p)$ 型矩阵。
-其前 $n-1$ 个 Smith 因子均为 $1$，最后一个为 $p(\lambda)$：
+的友矩阵对应的 $\lambda I-C(p)$ 型矩阵.
+其前 $n-1$ 个 Smith 因子均为 $1$,最后一个为 $p(\lambda)$:
 \[
 \boxed{
 1,\ldots,1,p(\lambda).
 }
 \]
-初等因子即 $p$ 在底域上的准素因子。
+初等因子即 $p$ 在底域上的准素因子.
 
-第三问若 $A\neq0$，则 $r(A)=1$ 且
+第三问若 $A\neq0$,则 $r(A)=1$ 且
 \[
 A^2=(\operatorname{tr}A)A=0.
 \]
@@ -1611,42 +1611,42 @@ J_2(0)\oplus 0\oplus\cdots\oplus0.
 }
 \]
 
-第四问若 $b\neq0$，令 $N=A-aI$，则
+第四问若 $b\neq0$,令 $N=A-aI$,则
 \[
 N^{n-1}\neq0,\qquad N^n=0,
 \]
-所以 $A$ 相似于单个 Jordan 块 $J_n(a)$。
+所以 $A$ 相似于单个 Jordan 块 $J_n(a)$.
 故
 \[
 \boxed{
 1,\ldots,1,(\lambda-a)^n
 }
 \]
-是不变因子组的非平凡部分，初等因子仅有
+是不变因子组的非平凡部分,初等因子仅有
 \[
 \boxed{(\lambda-a)^n}.
 \]
-若 $b=0$，则 $A=aI$，应另行退化为 $n$ 个一阶块。
+若 $b=0$,则 $A=aI$,应另行退化为 $n$ 个一阶块.
 \end{solution}
 
 
 \begin{example}
-设 $A$ 为 $n$ 阶方阵，
+设 $A$ 为 $n$ 阶方阵,
 \[
 |A|=18,
 \qquad
 3A+A^*=15I_n,
 \]
-其中 $A^*$ 为伴随矩阵。求 $A$ 的最小多项式与 Jordan 标准形。
+其中 $A^*$ 为伴随矩阵.求 $A$ 的最小多项式与 Jordan 标准形.
 \end{example}
 \exampleblank
 
 \begin{solution}
-因为 $\det A=18\neq0$，
+因为 $\det A=18\neq0$,
 \[
 A^*=18A^{-1}.
 \]
-原式右乘 $A$：
+原式右乘 $A$:
 \[
 3A^2-15A+18I=0,
 \]
@@ -1658,7 +1658,7 @@ A^2-5A+6I=0,
 \[
 m_A(\lambda)\mid(\lambda-2)(\lambda-3).
 \]
-$A$ 可对角化，特征值只能为 $2,3$。设重数为 $r,s$，则
+$A$ 可对角化,特征值只能为 $2,3$.设重数为 $r,s$,则
 \[
 2^r3^s=18=2\cdot3^2,
 \]
@@ -1678,22 +1678,22 @@ J=\diag(2,3,3).
 
 
 \begin{example}
-设 $A$ 为秩 $n-1$ 的 $n$ 阶矩阵，特征值为
+设 $A$ 为秩 $n-1$ 的 $n$ 阶矩阵,特征值为
 \[
 \lambda_1,\ldots,\lambda_n,
 \qquad
 \lambda_n=0.
 \]
-求 $A^*$ 的 Jordan 标准形。
+求 $A^*$ 的 Jordan 标准形.
 \end{example}
 \exampleblank
 
 \begin{solution}
-由于 $r(A)=n-1$，
+由于 $r(A)=n-1$,
 \[
 r(A^*)=1.
 \]
-又 $AA^*=0$，故
+又 $AA^*=0$,故
 \[
 \operatorname{Im}A^*\subseteq\ker A.
 \]
@@ -1702,14 +1702,14 @@ r(A^*)=1.
 \[
 \mu=\lambda_1\lambda_2\cdots\lambda_{n-1}\neq0,
 \]
-则零特征值为单根，$A^*$ 的唯一非零特征值为 $\mu$，于是
+则零特征值为单根,$A^*$ 的唯一非零特征值为 $\mu$,于是
 \[
 \boxed{
 A^*\sim\diag(\mu,0,\ldots,0).
 }
 \]
 
-若 $\mu=0$，则 $A^*$ 的全部特征值都为 $0$，但秩为 $1$，故
+若 $\mu=0$,则 $A^*$ 的全部特征值都为 $0$,但秩为 $1$,故
 \[
 (A^*)^2=0,\qquad A^*\neq0,
 \]
@@ -1723,7 +1723,7 @@ A^*\sim J_2(0)\oplus0\oplus\cdots\oplus0.
 
 
 \begin{example}
-判断下列两组矩阵是否相似：
+判断下列两组矩阵是否相似:
 \begin{enumerate}
     \item
     \[
@@ -1770,7 +1770,7 @@ A^*\sim J_2(0)\oplus0\oplus\cdots\oplus0.
 (-1)\oplus J_2(0)\oplus(1),
 }
 \]
-故二者相似。
+故二者相似.
 
 第二组的特征多项式均为
 \[
@@ -1792,29 +1792,29 @@ J_3(1).
 
 
 \begin{example}
-设 $A,B,C,D\in M_3(\mathbb C)$ 具有相同的特征多项式。
-证明其中必有两个矩阵相似。
+设 $A,B,C,D\in M_3(\mathbb C)$ 具有相同的特征多项式.
+证明其中必有两个矩阵相似.
 \end{example}
 \exampleblank
 
 \begin{solution}
-三阶复矩阵在特征多项式固定后，Jordan 型最多只有三种：
+三阶复矩阵在特征多项式固定后,Jordan 型最多只有三种:
 \begin{enumerate}
-    \item 三个互异特征值时只有一种；
-    \item 一个二重根与一个单根时，对二重根只有
-    $J_2$ 或两个 $J_1$ 两种；
-    \item 只有一个三重特征值时，Jordan 块大小只有分拆
+    \item 三个互异特征值时只有一种;
+    \item 一个二重根与一个单根时,对二重根只有
+    $J_2$ 或两个 $J_1$ 两种;
+    \item 只有一个三重特征值时,Jordan 块大小只有分拆
     \[
     3,\qquad2+1,\qquad1+1+1
     \]
-    三种。
+    三种.
 \end{enumerate}
-因此相似类最多三个。四个矩阵由抽屉原理必有两个属于同一相似类。
+因此相似类最多三个.四个矩阵由抽屉原理必有两个属于同一相似类.
 \end{solution}
 
 
 \begin{example}
-设 $A,B\in M_3(\mathbb C)$ 都只有一个特征值 $\lambda_0$。
+设 $A,B\in M_3(\mathbb C)$ 都只有一个特征值 $\lambda_0$.
 证明
 \[
 A\sim B
@@ -1825,7 +1825,7 @@ A\sim B
 \exampleblank
 
 \begin{solution}
-三阶、单一特征值的 Jordan 型只有
+三阶,单一特征值的 Jordan 型只有
 \[
 J_3(\lambda_0),\qquad
 J_2(\lambda_0)\oplus J_1(\lambda_0),\qquad
@@ -1835,13 +1835,13 @@ J_2(\lambda_0)\oplus J_1(\lambda_0),\qquad
 \[
 1,\qquad2,\qquad3.
 \]
-因此该维数唯一决定 Jordan 型，故结论成立。
+因此该维数唯一决定 Jordan 型,故结论成立.
 \end{solution}
 
 
 \begin{example}[\markstar]
-设 $A$ 为 $n$ 阶复方阵，全部特征值均为 $1$。
-证明对任意正整数 $k$，
+设 $A$ 为 $n$ 阶复方阵,全部特征值均为 $1$.
+证明对任意正整数 $k$,
 \[
 A^k\sim A.
 \]
@@ -1849,7 +1849,7 @@ A^k\sim A.
 \exampleblank
 
 \begin{solution}
-把 $A$ 化为 Jordan 标准形。对任意块
+把 $A$ 化为 Jordan 标准形.对任意块
 \[
 J_s(1)=I+N,
 \]
@@ -1863,7 +1863,7 @@ I+kN+\cdots.
 \[
 k\neq0
 \]
-在复数域中为非零数，所以一次项系数不为零，Jordan 块大小保持不变。
+在复数域中为非零数,所以一次项系数不为零,Jordan 块大小保持不变.
 因此
 \[
 J_s(1)^k\sim J_s(1).
@@ -1876,7 +1876,7 @@ J_s(1)^k\sim J_s(1).
 
 
 \begin{example}[\markstar]
-设 $A$ 是复方阵，全部特征值均为 $\pm1$。证明
+设 $A$ 是复方阵,全部特征值均为 $\pm1$.证明
 \[
 A^{\mathsf T}\sim A^{-1}.
 \]
@@ -1884,11 +1884,11 @@ A^{\mathsf T}\sim A^{-1}.
 \exampleblank
 
 \begin{solution}
-任意矩阵与其转置相似，所以
+任意矩阵与其转置相似,所以
 \[
 A^{\mathsf T}\sim A.
 \]
-另一方面，对 Jordan 块 $J_s(\lambda)$，$\lambda=\pm1$，
+另一方面,对 Jordan 块 $J_s(\lambda)$,$\lambda=\pm1$,
 函数
 \[
 f(x)=x^{-1}
@@ -1915,7 +1915,7 @@ A^{-1}\sim A.
 \subsection{平方根问题}
 
 \begin{proposition}[\markstar]
-任一可逆复矩阵 $A$ 都存在平方根，即存在复矩阵 $B$ 使
+任一可逆复矩阵 $A$ 都存在平方根,即存在复矩阵 $B$ 使
 \[
 B^2=A.
 \]
@@ -1936,12 +1936,12 @@ A=
 \[
 X^2=A
 \]
-在三阶复方阵中无解。
+在三阶复方阵中无解.
 \end{example}
 \exampleblank
 
 \begin{solution}
-$A$ 为幂零矩阵，且
+$A$ 为幂零矩阵,且
 \[
 A^2=
 \begin{pmatrix}
@@ -1953,7 +1953,7 @@ A^2=
 \qquad
 A^3=0.
 \]
-若 $X^2=A$，则 $X$ 的所有特征值平方均为 $0$，故 $X$ 也是三阶幂零矩阵，
+若 $X^2=A$,则 $X$ 的所有特征值平方均为 $0$,故 $X$ 也是三阶幂零矩阵,
 所以
 \[
 X^3=0.
@@ -1962,7 +1962,7 @@ X^3=0.
 \[
 A^2=X^4=0,
 \]
-矛盾。
+矛盾.
 \end{solution}
 
 
@@ -1976,7 +1976,7 @@ A=
 -2&1&0
 \end{pmatrix}.
 \]
-判断 $A$ 是否有平方根；若有，给出一个。
+判断 $A$ 是否有平方根;若有,给出一个.
 \end{example}
 \exampleblank
 
@@ -1993,7 +1993,7 @@ A\sim J_2(0)\oplus(0).
 \[
 J_3(0)^2\sim J_2(0)\oplus(0),
 \]
-所以 $A$ 有平方根。
+所以 $A$ 有平方根.
 
 例如可取
 \[
@@ -2014,7 +2014,7 @@ B^2=A.
 
 
 \begin{example}
-设 $A$ 是 $F$ 上的 $n$ 阶幂零矩阵，且幂零指数为 $n$：
+设 $A$ 是 $F$ 上的 $n$ 阶幂零矩阵,且幂零指数为 $n$:
 \[
 A^{n-1}\neq0,\qquad A^n=0.
 \]
@@ -2026,7 +2026,7 @@ A=B^2.
 \exampleblank
 
 \begin{solution}
-若 $A=B^2$，则 $B$ 也只有零特征值，因而是 $n$ 阶幂零矩阵，
+若 $A=B^2$,则 $B$ 也只有零特征值,因而是 $n$ 阶幂零矩阵,
 所以
 \[
 B^n=0.
@@ -2035,17 +2035,17 @@ B^n=0.
 \[
 m=\left\lceil\dfrac n2\right\rceil.
 \]
-则 $m\leq n-1$（$n\geq2$），并且
+则 $m\leq n-1$($n\geq2$),并且
 \[
 A^m=B^{2m}=0
 \]
-因为 $2m\geq n$。这与 $A$ 的幂零指数恰为 $n$ 矛盾。
+因为 $2m\geq n$.这与 $A$ 的幂零指数恰为 $n$ 矛盾.
 \end{solution}
 
 
 \subsection{\texorpdfstring{$A^n$}{A 的 n 次方} 问题}
 
-原讲义把常见方法分为数学归纳法、秩一矩阵法、零化多项式法与相似标准形法。
+原讲义把常见方法分为数学归纳法,秩一矩阵法,零化多项式法与相似标准形法.
 
 \begin{example}
 设
@@ -2056,12 +2056,12 @@ A=
 \sin\varphi&\cos\varphi
 \end{pmatrix}.
 \]
-求 $A^n$。
+求 $A^n$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-$A$ 表示旋转角 $\varphi$，连续复合 $n$ 次即旋转 $n\varphi$：
+$A$ 表示旋转角 $\varphi$,连续复合 $n$ 次即旋转 $n\varphi$:
 \[
 \boxed{
 A^n=
@@ -2096,13 +2096,13 @@ a^n&
 \exampleblank
 
 \begin{solution}
-对 $n$ 归纳即可。若结论对 $n$ 成立，则右乘 $A$ 后右上角变为
+对 $n$ 归纳即可.若结论对 $n$ 成立,则右乘 $A$ 后右上角变为
 \[
 c\left(
 a^n+a^{n-1}b+\cdots+b^n
 \right),
 \]
-恰为 $n+1$ 时公式。
+恰为 $n+1$ 时公式.
 \end{solution}
 
 
@@ -2115,13 +2115,13 @@ a^n+a^{n-1}b+\cdots+b^n
 \[
 R^2=kR.
 \]
-因此：
+因此:
 \begin{enumerate}
-    \item 若 $k=0$，
+    \item 若 $k=0$,
     \[
     (aI+R)^n=a^nI+na^{n-1}R;
     \]
-    \item 若 $k\neq0$，
+    \item 若 $k\neq0$,
     \[
     (aI+R)^n
     =
@@ -2134,7 +2134,7 @@ R^2=kR.
 
 
 \begin{example}
-原讲义在“秩一矩阵”方法下给出
+原讲义在``秩一矩阵''方法下给出
 \[
 A=
 \begin{pmatrix}
@@ -2143,7 +2143,7 @@ A=
 3&6&16
 \end{pmatrix}
 \]
-并写“求 $A$”。结合本节标题与上下文，应理解为求 $A^n$。
+并写``求 $A$''.结合本节标题与上下文,应理解为求 $A^n$.
 \end{example}
 \exampleblank
 
@@ -2160,7 +2160,7 @@ R=A-4I.
 \[
 r(R)=1,\qquad \operatorname{tr}R=9.
 \]
-应用上一命题：
+应用上一命题:
 \[
 \boxed{
 A^n
@@ -2170,13 +2170,13 @@ A^n
 \dfrac{13^n-4^n}{9}(A-4I).
 }
 \]
-原题文字“求 $A$”显然与本节内容不符，已在问题记录中注明。
+原题文字``求 $A$''显然与本节内容不符,已在问题记录中注明.
 \end{solution}
 
 
 \begin{example}
-设 $A$ 为 $n$ 阶矩阵，对角元均为 $2$，非对角元均为 $1$。
-求 $A^m$。
+设 $A$ 为 $n$ 阶矩阵,对角元均为 $2$,非对角元均为 $1$.
+求 $A^m$.
 \end{example}
 \exampleblank
 
@@ -2185,7 +2185,7 @@ A^n
 \[
 A=I+J,
 \]
-其中 $J$ 为全 $1$ 矩阵。$J$ 为秩一矩阵且
+其中 $J$ 为全 $1$ 矩阵.$J$ 为秩一矩阵且
 \[
 J^2=nJ.
 \]
@@ -2210,7 +2210,7 @@ A=
 0&4&3
 \end{pmatrix}.
 \]
-求 $A^n$。
+求 $A^n$.
 \end{example}
 \exampleblank
 
@@ -2219,11 +2219,11 @@ A=
 \[
 -5,\quad1,\quad5
 \]
-且两两不同，因此最小多项式为
+且两两不同,因此最小多项式为
 \[
 (\lambda+5)(\lambda-1)(\lambda-5).
 \]
-将 $\lambda^n$ 对该三次多项式取余，设
+将 $\lambda^n$ 对该三次多项式取余,设
 \[
 \lambda^n\equiv c_0+c_1\lambda+c_2\lambda^2,
 \]
@@ -2265,7 +2265,7 @@ A=
 \qquad
 f(x)=1+x+x^2+\cdots+x^7.
 \]
-求 $f(A)$。
+求 $f(A)$.
 \end{example}
 \exampleblank
 
@@ -2276,7 +2276,7 @@ A=2I+N,
 \qquad
 N^3=0.
 \]
-由 Taylor 展开，
+由 Taylor 展开,
 \[
 f(A)=f(2)I+f'(2)N+\dfrac{f''(2)}{2}N^2.
 \]
@@ -2303,7 +2303,7 @@ f(A)=
 
 
 \begin{example}
-求下列矩阵的 $n$ 次方：
+求下列矩阵的 $n$ 次方:
 \begin{enumerate}
     \item
     \[
@@ -2337,7 +2337,7 @@ f(A)=
 \exampleblank
 
 \begin{solution}
-第一问的特征值为 $-1,0,1$，且可对角化。因此对 $n\geq1$，
+第一问的特征值为 $-1,0,1$,且可对角化.因此对 $n\geq1$,
 \[
 \boxed{
 A_1^n=
@@ -2385,9 +2385,9 @@ A_3^n=I+n(A_3-I).
 \end{solution}
 
 \begin{remark}[快速处理矩阵幂]
-原讲义给出的顺序是：先检查幂等、对合、幂零、秩一以及便于归纳的结构；
-其次观察是否为数量矩阵加秩一矩阵；再考虑较低次零化多项式；
-最后使用 Jordan 标准形或其他相似标准形作为通法。
+原讲义给出的顺序是:先检查幂等,对合,幂零,秩一以及便于归纳的结构;
+其次观察是否为数量矩阵加秩一矩阵;再考虑较低次零化多项式;
+最后使用 Jordan 标准形或其他相似标准形作为通法.
 \end{remark}
 
 
@@ -2396,19 +2396,19 @@ A_3^n=I+n(A_3-I).
 \section{可对角化问题深化}
 
 \begin{proposition}[\marktwostar]
-设 $\varphi$ 是复数域上 $n$ 维线性空间 $V$ 的线性变换，$A$ 为其矩阵。
-下列命题等价：
+设 $\varphi$ 是复数域上 $n$ 维线性空间 $V$ 的线性变换,$A$ 为其矩阵.
+下列命题等价:
 \begin{enumerate}
-    \item $A$ 可对角化；
-    \item $A$ 有 $n$ 个线性无关的特征向量；
-    \item $A$ 的全部初等因子均为一次多项式；
-    \item $A$ 的全部不变因子均无重根；
-    \item $A$ 的最小多项式无重根；
-    \item 对任意 $c\in\mathbb C$，
+    \item $A$ 可对角化;
+    \item $A$ 有 $n$ 个线性无关的特征向量;
+    \item $A$ 的全部初等因子均为一次多项式;
+    \item $A$ 的全部不变因子均无重根;
+    \item $A$ 的最小多项式无重根;
+    \item 对任意 $c\in\mathbb C$,
     \[
     \rank(cI-A)=\rank(cI-A)^2;
     \]
-    \item 对任意特征值 $\lambda_0$，
+    \item 对任意特征值 $\lambda_0$,
     \[
     \operatorname{Im}(\varphi-\lambda_0I)
     \cap
@@ -2421,8 +2421,8 @@ A_3^n=I+n(A_3-I).
 
 
 \begin{example}[\markstar]
-设 $\varphi$ 是 $n$ 维复线性空间 $V$ 的线性变换，
-$\lambda_0$ 是特征值，$m_0$ 是 $\lambda_0$ 在最小多项式中的重数。
+设 $\varphi$ 是 $n$ 维复线性空间 $V$ 的线性变换,
+$\lambda_0$ 是特征值,$m_0$ 是 $\lambda_0$ 在最小多项式中的重数.
 证明
 \[
 m_0
@@ -2439,21 +2439,21 @@ k\in\mathbb Z_+:
 \exampleblank
 
 \begin{solution}
-限制到 $\lambda_0$ 的根子空间 $W$，令
+限制到 $\lambda_0$ 的根子空间 $W$,令
 \[
 N=(\varphi-\lambda_0I)|_W.
 \]
-则 $N$ 为幂零变换，其幂零指数恰等于最小多项式中
-$(x-\lambda_0)$ 的指数 $m_0$。对幂零变换，
+则 $N$ 为幂零变换,其幂零指数恰等于最小多项式中
+$(x-\lambda_0)$ 的指数 $m_0$.对幂零变换,
 \[
 \ker N\subsetneq\ker N^2\subsetneq\cdots\subsetneq\ker N^{m_0}=W,
 \]
-而当 $k\geq m_0$ 时核不再增大。因此第一次稳定正发生在 $k=m_0$。
+而当 $k\geq m_0$ 时核不再增大.因此第一次稳定正发生在 $k=m_0$.
 \end{solution}
 
 
 \begin{example}[\markstar]
-判断下列矩阵是否可对角化：
+判断下列矩阵是否可对角化:
 \begin{enumerate}
     \item 循环矩阵
     \[
@@ -2465,8 +2465,8 @@ $(x-\lambda_0)$ 的指数 $m_0$。对幂零变换，
     a_1&a_2&\cdots&a_0
     \end{pmatrix};
     \]
-    \item 幂等矩阵 $A^2=A$；
-    \item 对合矩阵 $A^2=I$；
+    \item 幂等矩阵 $A^2=A$;
+    \item 对合矩阵 $A^2=I$;
     \item
     \[
     A=
@@ -2480,23 +2480,23 @@ $(x-\lambda_0)$ 的指数 $m_0$。对幂零变换，
 \exampleblank
 
 \begin{solution}
-第一问在 $\mathbb C$ 上总可对角化。离散 Fourier 基
+第一问在 $\mathbb C$ 上总可对角化.离散 Fourier 基
 \[
 (1,\omega,\omega^2,\ldots,\omega^{n-1})^{\mathsf T}
 \]
-给出 $n$ 个线性无关特征向量。
+给出 $n$ 个线性无关特征向量.
 
 第二问最小多项式整除
 \[
 x(x-1),
 \]
-无重根，因此可对角化。
+无重根,因此可对角化.
 
 第三问最小多项式整除
 \[
 (x-1)(x+1).
 \]
-若底域特征不为 $2$，则可对角化；在特征 $2$ 的域上该结论需另论。
+若底域特征不为 $2$,则可对角化;在特征 $2$ 的域上该结论需另论.
 
 第四问直接计算
 \[
@@ -2506,7 +2506,7 @@ A^2-A-I_{2n}=0.
 \[
 x^2-x-1,
 \]
-该多项式在 $\mathbb C$（以及 $\mathbb R$）上有两个不同的根，
+该多项式在 $\mathbb C$(以及 $\mathbb R$)上有两个不同的根,
 故
 \[
 \boxed{A\text{ 可对角化}.}
@@ -2515,11 +2515,11 @@ x^2-x-1,
 
 
 \begin{example}
-设 $A$ 是线性空间上的线性变换，且
+设 $A$ 是线性空间上的线性变换,且
 \[
 \rank A=1.
 \]
-证明：$A$ 或可对角化，或为幂零变换。
+证明:$A$ 或可对角化,或为幂零变换.
 \end{example}
 \exampleblank
 
@@ -2536,7 +2536,7 @@ A^2=(\operatorname{tr}A)A.
 \[
 x(x-\operatorname{tr}A),
 \]
-其根互异，故 $A$ 可对角化。
+其根互异,故 $A$ 可对角化.
 若
 \[
 \operatorname{tr}A=0,
@@ -2545,31 +2545,31 @@ x(x-\operatorname{tr}A),
 \[
 A^2=0,
 \]
-所以 $A$ 为幂零变换。
+所以 $A$ 为幂零变换.
 \end{solution}
 
 
 \begin{example}
-设 $A$ 为 $n$ 阶实方阵，把同一矩阵分别看作
-$\mathbb R^n$ 与 $\mathbb C^n$ 上的线性变换。
+设 $A$ 为 $n$ 阶实方阵,把同一矩阵分别看作
+$\mathbb R^n$ 与 $\mathbb C^n$ 上的线性变换.
 若 $A$ 在 $\mathbb R^n$ 中只有
 \[
 \{0\},\ \mathbb R^n
 \]
-两个不变子空间，证明它在 $\mathbb C^n$ 上可对角化。
+两个不变子空间,证明它在 $\mathbb C^n$ 上可对角化.
 \end{example}
 \exampleblank
 
 \begin{solution}
-若 $n>2$，实特征多项式必有一个次数为 $1$ 或 $2$ 的不可约因子，
-对应的核空间给出维数 $1$ 或 $2$ 的非平凡实不变子空间，矛盾。
+若 $n>2$,实特征多项式必有一个次数为 $1$ 或 $2$ 的不可约因子,
+对应的核空间给出维数 $1$ 或 $2$ 的非平凡实不变子空间,矛盾.
 因此非平凡情形只能有
 \[
 n=2.
 \]
-又不能有实特征值，否则其特征向量张成一维实不变子空间。
-故特征多项式是不可约二次多项式，在 $\mathbb C$ 上分裂为两个不同的共轭根。
-因此复化后的矩阵有两个互异特征值，故可对角化。
+又不能有实特征值,否则其特征向量张成一维实不变子空间.
+故特征多项式是不可约二次多项式,在 $\mathbb C$ 上分裂为两个不同的共轭根.
+因此复化后的矩阵有两个互异特征值,故可对角化.
 \end{solution}
 
 
@@ -2583,10 +2583,10 @@ A=
 3&1&1
 \end{pmatrix}.
 \]
-证明：
+证明:
 \begin{enumerate}
-    \item $A$ 在复数域上可对角化；
-    \item $A$ 在有理数域上不可对角化。
+    \item $A$ 在复数域上可对角化;
+    \item $A$ 在有理数域上不可对角化.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -2602,15 +2602,15 @@ p(\lambda)
 \[
 (p,p')=1,
 \]
-所以在 $\mathbb C$ 上三个根互不相同，因此 $A$ 可对角化。
+所以在 $\mathbb C$ 上三个根互不相同,因此 $A$ 可对角化.
 
-另一方面，由有理根定理，$p$ 的有理根只能是
+另一方面,由有理根定理,$p$ 的有理根只能是
 \[
 \pm1,\pm2,\pm4,\pm8,
 \]
-逐一代入均不为零，所以 $p$ 在 $\mathbb Q$ 上没有一次因子。
-若 $A$ 能在 $\mathbb Q$ 上对角化，其特征值必须都属于 $\mathbb Q$，
-矛盾。
+逐一代入均不为零,所以 $p$ 在 $\mathbb Q$ 上没有一次因子.
+若 $A$ 能在 $\mathbb Q$ 上对角化,其特征值必须都属于 $\mathbb Q$,
+矛盾.
 \end{solution}
 
 
@@ -2625,8 +2625,8 @@ b&c&-1
 \end{pmatrix}.
 \]
 \begin{enumerate}
-    \item 求所有可能的 Jordan 标准形；
-    \item 求 $A$ 可对角化的充分必要条件。
+    \item 求所有可能的 Jordan 标准形;
+    \item 求 $A$ 可对角化的充分必要条件.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -2636,7 +2636,7 @@ b&c&-1
 \[
 2\quad(2\text{ 重}),\qquad -1.
 \]
-对特征值 $2$，
+对特征值 $2$,
 \[
 A-2I=
 \begin{pmatrix}
@@ -2645,9 +2645,9 @@ a&0&0\\
 b&c&-3
 \end{pmatrix}.
 \]
-若 $a=0$，其核维数为 $2$，故 $2$ 对应两个一阶 Jordan 块；
-若 $a\neq0$，核维数为 $1$，故对应一个二阶 Jordan 块。
-因此只有两种可能：
+若 $a=0$,其核维数为 $2$,故 $2$ 对应两个一阶 Jordan 块;
+若 $a\neq0$,核维数为 $1$,故对应一个二阶 Jordan 块.
+因此只有两种可能:
 \[
 \boxed{
 \diag(2,2,-1)
@@ -2675,24 +2675,24 @@ f_A(\lambda)
 =
 \prod\limits_{i=1}^{s}p_i(\lambda),
 \]
-其中 $p_i$ 是数域 $K$ 上两两不同的首一不可约多项式。
-证明：$A$ 的有理标准形只有一个非平凡 Frobenius 块，并且
-$A$ 在复数域上可对角化。
+其中 $p_i$ 是数域 $K$ 上两两不同的首一不可约多项式.
+证明:$A$ 的有理标准形只有一个非平凡 Frobenius 块,并且
+$A$ 在复数域上可对角化.
 \end{example}
 \exampleblank
 
 \begin{solution}
-特征多项式没有重复不可约因子，因此
+特征多项式没有重复不可约因子,因此
 \[
 m_A=f_A.
 \]
-于是 $A$ 是循环矩阵意义下的循环变换，有理标准形只有一个友矩阵块
+于是 $A$ 是循环矩阵意义下的循环变换,有理标准形只有一个友矩阵块
 \[
 C(f_A).
 \]
-另一方面在 $\mathbb C$ 上，各不可约因子继续分裂为一次因子，
-而原特征多项式是平方自由的，所以全部复特征值互不相同，
-故 $A$ 在 $\mathbb C$ 上可对角化。
+另一方面在 $\mathbb C$ 上,各不可约因子继续分裂为一次因子,
+而原特征多项式是平方自由的,所以全部复特征值互不相同,
+故 $A$ 在 $\mathbb C$ 上可对角化.
 \end{solution}
 
 
@@ -2703,7 +2703,7 @@ V=M_n(\mathbb C),
 \qquad
 \sigma(X)=AX.
 \]
-证明：$A$ 可对角化，当且仅当 $\sigma$ 可对角化。
+证明:$A$ 可对角化,当且仅当 $\sigma$ 可对角化.
 \end{example}
 \exampleblank
 
@@ -2714,11 +2714,11 @@ M_n(\mathbb C)
 \cong
 \mathbb C^n\oplus\cdots\oplus\mathbb C^n
 \]
-共 $n$ 份。$\sigma$ 在每一份上都由 $A$ 作用，因此其矩阵相似于
+共 $n$ 份.$\sigma$ 在每一份上都由 $A$ 作用,因此其矩阵相似于
 \[
 \diag(A,\ldots,A).
 \]
-故 $\sigma$ 可对角化当且仅当每个 $A$ 块可对角化，即
+故 $\sigma$ 可对角化当且仅当每个 $A$ 块可对角化,即
 \[
 \boxed{\sigma\text{ 可对角化}\iff A\text{ 可对角化}.}
 \]
@@ -2726,7 +2726,7 @@ M_n(\mathbb C)
 
 
 \begin{example}
-设 $A$ 是可对角化复矩阵，在
+设 $A$ 是可对角化复矩阵,在
 \[
 V=M_n(\mathbb C)
 \]
@@ -2734,7 +2734,7 @@ V=M_n(\mathbb C)
 \[
 \sigma(X)=AX+XA.
 \]
-判断 $\sigma$ 是否可对角化。
+判断 $\sigma$ 是否可对角化.
 \end{example}
 \exampleblank
 
@@ -2743,13 +2743,13 @@ V=M_n(\mathbb C)
 \[
 P^{-1}AP=\diag(\lambda_1,\ldots,\lambda_n).
 \]
-在相应矩阵单位基 $E_{ij}$ 下，
+在相应矩阵单位基 $E_{ij}$ 下,
 \[
 \sigma(E_{ij})
 =
 (\lambda_i+\lambda_j)E_{ij}.
 \]
-因此全部 $E_{ij}$ 都是 $\sigma$ 的特征向量，
+因此全部 $E_{ij}$ 都是 $\sigma$ 的特征向量,
 \[
 \boxed{\sigma\text{ 可对角化}.}
 \]
@@ -2757,7 +2757,7 @@ P^{-1}AP=\diag(\lambda_1,\ldots,\lambda_n).
 
 
 \begin{example}
-设 $A$ 为可逆复矩阵，最小多项式次数为 $s$。令
+设 $A$ 为可逆复矩阵,最小多项式次数为 $s$.令
 \[
 B=(b_{ij})_{s\times s},
 \qquad
@@ -2779,7 +2779,7 @@ A\text{ 可对角化}
 \[
 \lambda_1,\ldots,\lambda_r,
 \]
-代数重数为 $m_1,\ldots,m_r$。
+代数重数为 $m_1,\ldots,m_r$.
 则
 \[
 \operatorname{tr}A^k
@@ -2801,23 +2801,23 @@ D=\diag(m_1,\ldots,m_r).
 \rank B\leq r.
 \]
 
-另一方面，若最小多项式中 $\lambda_\ell$ 的指数为 $d_\ell$，则
+另一方面,若最小多项式中 $\lambda_\ell$ 的指数为 $d_\ell$,则
 \[
 s=\sum_{\ell=1}^{r}d_\ell\geq r,
 \]
-且等号成立当且仅当全部 $d_\ell=1$，也就是 $A$ 可对角化。
-若 $A$ 可对角化，则 $s=r$；又 $A$ 可逆，所以各 $\lambda_\ell\neq0$，
-$V$ 是非奇异 Vandermonde 型矩阵，因而 $|B|\neq0$。
-反之若 $|B|\neq0$，则
+且等号成立当且仅当全部 $d_\ell=1$,也就是 $A$ 可对角化.
+若 $A$ 可对角化,则 $s=r$;又 $A$ 可逆,所以各 $\lambda_\ell\neq0$,
+$V$ 是非奇异 Vandermonde 型矩阵,因而 $|B|\neq0$.
+反之若 $|B|\neq0$,则
 \[
 s=\rank B\leq r\leq s,
 \]
-故 $r=s$，从而全部 $d_\ell=1$，$A$ 可对角化。
+故 $r=s$,从而全部 $d_\ell=1$,$A$ 可对角化.
 \end{solution}
 
 
 \begin{example}
-设 $A,B$ 为 $n$ 阶实方阵，满足
+设 $A,B$ 为 $n$ 阶实方阵,满足
 \[
 AB=BA,\qquad A^n=B^n=I,
 \qquad
@@ -2835,8 +2835,8 @@ AB=BA,\qquad A^n=B^n=I,
 \[
 x^n-1
 \]
-在特征 $0$ 中无重根，所以 $A,B$ 都可对角化。
-又二者可交换，故可在 $\mathbb C$ 上同时对角化：
+在特征 $0$ 中无重根,所以 $A,B$ 都可对角化.
+又二者可交换,故可在 $\mathbb C$ 上同时对角化:
 \[
 A\sim\diag(\alpha_1,\ldots,\alpha_n),
 \qquad
@@ -2850,12 +2850,12 @@ B\sim\diag(\beta_1,\ldots,\beta_n),
 \[
 \sum_{i=1}^{n}\alpha_i\beta_i=n.
 \]
-$n$ 个模为 $1$ 的复数之和的模达到最大值 $n$，只能全部等于 $1$，故
+$n$ 个模为 $1$ 的复数之和的模达到最大值 $n$,只能全部等于 $1$,故
 \[
 \alpha_i\beta_i=1.
 \]
-于是 $B$ 与 $A^{-1}$ 有相同对角表示。
-由于 $A$ 为实矩阵，
+于是 $B$ 与 $A^{-1}$ 有相同对角表示.
+由于 $A$ 为实矩阵,
 \[
 \operatorname{tr}(A^{-1})
 =
@@ -2880,25 +2880,25 @@ $n$ 个模为 $1$ 的复数之和的模达到最大值 $n$，只能全部等于 
     \[
     A^2+A-2I=O;
     \]
-    \item 若 $1$ 是 $A$ 的特征值，$x_0$ 是相应特征向量，证明
+    \item 若 $1$ 是 $A$ 的特征值,$x_0$ 是相应特征向量,证明
     \[
     (I-A)x=x_0
     \]
-    无解。
+    无解.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-由秩--零化度，
+由秩--零化度,
 \[
 \dim\ker(A-I)+\dim\ker(A+2I)=n.
 \]
-两个核的交为零，因此
+两个核的交为零,因此
 \[
 V=\ker(A-I)\oplus\ker(A+2I).
 \]
-于是 $A$ 在这两个子空间上分别等于 $I$ 与 $-2I$，故
+于是 $A$ 在这两个子空间上分别等于 $I$ 与 $-2I$,故
 \[
 (A-I)(A+2I)=O,
 \]
@@ -2915,11 +2915,11 @@ V=\ker(A-I)\oplus\ker(A+2I).
 \[
 x_0\in\operatorname{Im}(I-A)\cap\ker(I-A).
 \]
-但由上面的直和分解，$A$ 可对角化，所以
+但由上面的直和分解,$A$ 可对角化,所以
 \[
 \operatorname{Im}(I-A)\cap\ker(I-A)=\{0\},
 \]
-与 $x_0\neq0$ 矛盾。
+与 $x_0\neq0$ 矛盾.
 \end{solution}
 
 
@@ -2932,14 +2932,14 @@ x_0\in\operatorname{Im}(I-A)\cap\ker(I-A).
 \[
 A^k=O,
 \]
-则称 $A$ 为幂零矩阵。最小的此类 $k$ 称为幂零指数。
+则称 $A$ 为幂零矩阵.最小的此类 $k$ 称为幂零指数.
 \end{definition}
 
 \begin{proposition}[\markstar]
-对复矩阵 $A$，下列命题等价：
+对复矩阵 $A$,下列命题等价:
 \begin{enumerate}
-    \item $A$ 幂零；
-    \item $A$ 的全部特征值都是 $0$；
+    \item $A$ 幂零;
+    \item $A$ 的全部特征值都是 $0$;
     \item
     \[
     \operatorname{tr}A^k=0
@@ -2951,13 +2951,13 @@ A^k=O,
 
 \begin{example}
 \begin{enumerate}
-    \item 设 $\sigma$ 是 $n$ 维线性空间上的线性变换，满足
+    \item 设 $\sigma$ 是 $n$ 维线性空间上的线性变换,满足
     \[
     \sigma^{n-1}\neq0,\qquad
     \sigma^n=0.
     \]
-    证明存在一组基使 $\sigma$ 的矩阵为 $J_n(0)$；
-    \item 若 $M,N$ 均为 $n$ 阶幂零矩阵，且幂零指数都为 $n$，证明
+    证明存在一组基使 $\sigma$ 的矩阵为 $J_n(0)$;
+    \item 若 $M,N$ 均为 $n$ 阶幂零矩阵,且幂零指数都为 $n$,证明
     \[
     M\sim N.
     \]
@@ -2974,10 +2974,10 @@ A^k=O,
 \[
 \sigma^{n-1}v,\sigma^{n-2}v,\ldots,\sigma v,v
 \]
-线性无关，因而构成一组基。$\sigma$ 在此基下正是一个 $n$ 阶幂零
-Jordan 块。
+线性无关,因而构成一组基.$\sigma$ 在此基下正是一个 $n$ 阶幂零
+Jordan 块.
 
-第二问中 $M,N$ 都相似于 $J_n(0)$，故
+第二问中 $M,N$ 都相似于 $J_n(0)$,故
 \[
 \boxed{M\sim N}.
 \]
@@ -2985,7 +2985,7 @@ Jordan 块。
 
 
 \begin{example}
-设 $\lambda_0$ 是 $A$ 的 $n$ 重特征值，且
+设 $\lambda_0$ 是 $A$ 的 $n$ 重特征值,且
 \[
 \rank(\lambda_0I-A)=n-1.
 \]
@@ -2994,9 +2994,9 @@ Jordan 块。
     \[
     (\lambda_0I-A)^m=0
     \]
-    的最小正整数 $m$；
+    的最小正整数 $m$;
     \item 证明 $(\lambda_0I-A)^{n-1}$ 中必有一个非零列向量是
-    $A$ 属于 $\lambda_0$ 的特征向量。
+    $A$ 属于 $\lambda_0$ 的特征向量.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -3006,11 +3006,11 @@ Jordan 块。
 \[
 N=\lambda_0I-A.
 \]
-$N$ 为幂零矩阵，且
+$N$ 为幂零矩阵,且
 \[
 \rank N=n-1.
 \]
-这说明 $N$ 的 Jordan 块只有一个，因此
+这说明 $N$ 的 Jordan 块只有一个,因此
 \[
 N\sim J_n(0),
 \]
@@ -3023,7 +3023,7 @@ N\sim J_n(0),
 \[
 N^{n-1}\neq0,\qquad N^n=0.
 \]
-故 $N^{n-1}$ 至少有一个非零列 $v$，且
+故 $N^{n-1}$ 至少有一个非零列 $v$,且
 \[
 Nv=0.
 \]
@@ -3031,23 +3031,23 @@ Nv=0.
 \[
 (\lambda_0I-A)v=0,
 \]
-所以 $v$ 是属于 $\lambda_0$ 的特征向量。
+所以 $v$ 是属于 $\lambda_0$ 的特征向量.
 \end{solution}
 
 
 \begin{example}
-设 $A,B,C$ 为复矩阵，满足
+设 $A,B,C$ 为复矩阵,满足
 \[
 C=AB-BA,
 \qquad
 AC=CA.
 \]
-证明 $C$ 是幂零矩阵。
+证明 $C$ 是幂零矩阵.
 \end{example}
 \exampleblank
 
 \begin{solution}
-由 $AC=CA$，$A$ 与 $C^k$ 对任意 $k$ 都可交换。
+由 $AC=CA$,$A$ 与 $C^k$ 对任意 $k$ 都可交换.
 于是
 \[
 \begin{aligned}
@@ -3068,7 +3068,7 @@ AC=CA.
 \operatorname{tr}C^k=0
 \qquad(\forall k\geq1).
 \]
-由幂零判别命题，
+由幂零判别命题,
 \[
 \boxed{C\text{ 为幂零矩阵}.}
 \]
@@ -3076,14 +3076,14 @@ AC=CA.
 
 
 \begin{example}
-设 $\sigma$ 是 $n$ 维线性空间上的幂零变换，幂零指数为 $p$。
-证明：
+设 $\sigma$ 是 $n$ 维线性空间上的幂零变换,幂零指数为 $p$.
+证明:
 \begin{enumerate}
     \item
     \[
     p\leq1+\dim\sigma(V);
     \]
-    \item 若 $\sigma$ 有两个线性无关的特征向量，则
+    \item 若 $\sigma$ 有两个线性无关的特征向量,则
     \[
     p<n.
     \]
@@ -3100,16 +3100,16 @@ AC=CA.
 \[
 \sigma v,\sigma^2v,\ldots,\sigma^{p-1}v
 \]
-线性无关，并且都属于 $\sigma(V)$，故
+线性无关,并且都属于 $\sigma(V)$,故
 \[
 p-1\leq\dim\sigma(V).
 \]
 
-幂零变换的唯一特征值为 $0$，所以特征向量都在
+幂零变换的唯一特征值为 $0$,所以特征向量都在
 \[
 \ker\sigma.
 \]
-若有两个线性无关特征向量，则
+若有两个线性无关特征向量,则
 \[
 \dim\ker\sigma\geq2,
 \]
@@ -3125,9 +3125,9 @@ p\leq1+\rank\sigma\leq n-1<n.
 
 
 \begin{example}
-设 $A$ 是 $n$ 阶实矩阵，全部特征值均为实数。
-若所有一阶主子式之和为 $0$，所有二阶主子式之和也为 $0$，
-证明 $A$ 为幂零矩阵。
+设 $A$ 是 $n$ 阶实矩阵,全部特征值均为实数.
+若所有一阶主子式之和为 $0$,所有二阶主子式之和也为 $0$,
+证明 $A$ 为幂零矩阵.
 \end{example}
 \exampleblank
 
@@ -3136,7 +3136,7 @@ p\leq1+\rank\sigma\leq n-1<n.
 \[
 \lambda_1,\ldots,\lambda_n\in\mathbb R.
 \]
-一阶主子式之和为特征多项式的第一基本对称系数，故
+一阶主子式之和为特征多项式的第一基本对称系数,故
 \[
 \sum_i\lambda_i=0.
 \]
@@ -3155,11 +3155,11 @@ p\leq1+\rank\sigma\leq n-1<n.
 =
 \sum_i\lambda_i^2.
 \]
-所有 $\lambda_i$ 都为实数，所以
+所有 $\lambda_i$ 都为实数,所以
 \[
 \lambda_i=0
 \]
-对所有 $i$ 成立。故 $A$ 全部特征值为零，从而幂零。
+对所有 $i$ 成立.故 $A$ 全部特征值为零,从而幂零.
 \end{solution}
 
 
@@ -3168,17 +3168,17 @@ p\leq1+\rank\sigma\leq n-1<n.
 \[
 \sigma_A(B)=AB-BA.
 \]
-证明：
+证明:
 \begin{enumerate}
-    \item $\sigma_A$ 是线性变换；
-    \item 若 $A$ 幂零，则 $\sigma_A$ 幂零；
-    \item 若 $A$ 为对角矩阵，则 $\sigma_A$ 可对角化。
+    \item $\sigma_A$ 是线性变换;
+    \item 若 $A$ 幂零,则 $\sigma_A$ 幂零;
+    \item 若 $A$ 为对角矩阵,则 $\sigma_A$ 可对角化.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-第一问由矩阵乘法的分配律直接得到。
+第一问由矩阵乘法的分配律直接得到.
 
 令
 \[
@@ -3190,15 +3190,15 @@ L_A(B)=AB,\qquad R_A(B)=BA.
 \qquad
 L_AR_A=R_AL_A.
 \]
-若 $A^m=0$，则
+若 $A^m=0$,则
 \[
 L_A^m=R_A^m=0.
 \]
-由于二者可交换，二项式展开可知
+由于二者可交换,二项式展开可知
 \[
 (L_A-R_A)^{2m-1}=0,
 \]
-所以 $\sigma_A$ 幂零。
+所以 $\sigma_A$ 幂零.
 
 若
 \[
@@ -3210,7 +3210,7 @@ A=\diag(a_1,\ldots,a_n),
 =
 (a_i-a_j)E_{ij}.
 \]
-因此全部 $E_{ij}$ 构成特征向量基，
+因此全部 $E_{ij}$ 构成特征向量基,
 \[
 \boxed{\sigma_A\text{ 可对角化}.}
 \]
@@ -3218,7 +3218,7 @@ A=\diag(a_1,\ldots,a_n),
 
 
 \begin{example}
-设 $n$ 为奇数，$A,B\in M_n(\mathbb C)$ 且
+设 $n$ 为奇数,$A,B\in M_n(\mathbb C)$ 且
 \[
 A^2=0.
 \]
@@ -3226,7 +3226,7 @@ A^2=0.
 \[
 AB-BA
 \]
-不可逆。
+不可逆.
 \end{example}
 \exampleblank
 
@@ -3249,7 +3249,7 @@ A^2B-BA^2
 \[
 AC=-CA.
 \]
-对任意奇数 $k$，$C^{k-1}$ 与 $A$ 可交换，故
+对任意奇数 $k$,$C^{k-1}$ 与 $A$ 可交换,故
 \[
 \operatorname{tr}C^k
 =
@@ -3257,12 +3257,12 @@ AC=-CA.
 =
 0.
 \]
-于是 $C$ 的全部奇次幂迹都为零。由 Newton 恒等式，特征多项式只含与
-$n$ 同奇偶性的幂次；当 $n$ 为奇数时其常数项必为零。因此
+于是 $C$ 的全部奇次幂迹都为零.由 Newton 恒等式,特征多项式只含与
+$n$ 同奇偶性的幂次;当 $n$ 为奇数时其常数项必为零.因此
 \[
 \boxed{\det C=0}.
 \]
-即 $AB-BA$ 不可逆。
+即 $AB-BA$ 不可逆.
 \end{solution}
 
 
@@ -3270,11 +3270,11 @@ $n$ 同奇偶性的幂次；当 $n$ 为奇数时其常数项必为零。因此
 
 \section{方阵函数}
 
-设 $A=PJP^{-1}$，其中
+设 $A=PJP^{-1}$,其中
 \[
 J=\diag(J_{r_1}(\lambda_1),\ldots,J_{r_s}(\lambda_s)).
 \]
-对多项式或在谱附近具有足够阶导数的函数 $f$，
+对多项式或在谱附近具有足够阶导数的函数 $f$,
 \[
 f(A)=Pf(J)P^{-1},
 \]
@@ -3304,15 +3304,15 @@ f^{(j)}(\lambda_i):
 0\leq j\leq r_i-1
 \right\}
 \]
-决定。反过来，对任意给定的这样一组数，都存在多项式
-$f_*(\lambda)$ 具有这些 Hermite 插值数据，并满足
+决定.反过来,对任意给定的这样一组数,都存在多项式
+$f_*(\lambda)$ 具有这些 Hermite 插值数据,并满足
 \[
 f(A)=f_*(A).
 \]
 \end{theorem}
 
 \begin{proposition}[\markstar]
-当谱位于相应收敛圆内时，可以用幂级数定义
+当谱位于相应收敛圆内时,可以用幂级数定义
 \[
 e^A,\qquad
 \sin A,\qquad
@@ -3320,7 +3320,7 @@ e^A,\qquad
 \log(I+A),\qquad
 (I+A)^a.
 \]
-特别地，
+特别地,
 \[
 e^A=\sum\limits_{k=0}^{\infty}\dfrac{A^k}{k!}.
 \]
@@ -3338,7 +3338,7 @@ A=
 0&0&0&0
 \end{pmatrix}.
 \]
-求 $A$ 的 Jordan 标准形，并计算 $e^A$。
+求 $A$ 的 Jordan 标准形,并计算 $e^A$.
 \end{example}
 \exampleblank
 
@@ -3347,11 +3347,11 @@ A=
 \[
 A^3\neq0,\qquad A^4=0,
 \]
-故幂零指数为 $4$，于是
+故幂零指数为 $4$,于是
 \[
 \boxed{A\sim J_4(0)}.
 \]
-由于 $A^4=0$，
+由于 $A^4=0$,
 \[
 e^A
 =
@@ -3373,7 +3373,7 @@ e^A=
 
 
 \begin{example}
-计算下列方阵函数：
+计算下列方阵函数:
 \begin{enumerate}
     \item
     \[
@@ -3423,7 +3423,7 @@ A=4I+N,
 \qquad
 N^2=0.
 \]
-对 $f(x)=\sqrt x$，
+对 $f(x)=\sqrt x$,
 \[
 f(4)=2,\qquad f'(4)=\dfrac14.
 \]
@@ -3441,11 +3441,11 @@ f(4)=2,\qquad f'(4)=\dfrac14.
 }
 \]
 
-第二问 $A$ 的特征值为 $0,1$，且可对角化，故用一次插值多项式
+第二问 $A$ 的特征值为 $0,1$,且可对角化,故用一次插值多项式
 \[
 e^x\equiv1+(e-1)x
 \]
-作用于 $A$：
+作用于 $A$:
 \[
 \boxed{
 e^A=I+(e-1)A.
@@ -3509,7 +3509,7 @@ B=
 0&0&0
 \end{pmatrix}.
 \]
-问是否存在三阶复方阵 $X$ 以及多项式 $f,g\in\mathbb C[x]$，使
+问是否存在三阶复方阵 $X$ 以及多项式 $f,g\in\mathbb C[x]$,使
 \[
 A=f(X),\qquad B=g(X).
 \]
@@ -3517,7 +3517,7 @@ A=f(X),\qquad B=g(X).
 \exampleblank
 
 \begin{solution}
-若存在，则 $X$ 必同时与 $A,B$ 可交换。
+若存在,则 $X$ 必同时与 $A,B$ 可交换.
 直接解
 \[
 XA=AX,\qquad XB=BX
@@ -3535,9 +3535,9 @@ aI+bA+cB.
 \[
 h(X)=uI+v(bA+cB),
 \]
-也就是说其非数量部分最多是一维的。
+也就是说其非数量部分最多是一维的.
 
-但 $A,B$ 线性无关，不可能同时属于同一个一维非数量子空间。
+但 $A,B$ 线性无关,不可能同时属于同一个一维非数量子空间.
 故
 \[
 \boxed{\text{不存在这样的 }X,f,g.}
@@ -3546,16 +3546,16 @@ h(X)=uI+v(bA+cB),
 
 
 \begin{example}
-证明对任意复方阵 $A$，
+证明对任意复方阵 $A$,
 \[
 e^A
 \]
-都可逆。
+都可逆.
 \end{example}
 \exampleblank
 
 \begin{solution}
-因为 $A$ 与 $-A$ 可交换，幂级数乘法给出
+因为 $A$ 与 $-A$ 可交换,幂级数乘法给出
 \[
 e^Ae^{-A}=e^{A-A}=I.
 \]
@@ -3571,7 +3571,7 @@ e^Ae^{-A}=e^{A-A}=I.
 \[
 |e^A|,
 \]
-其中 $A$ 为 $n$ 阶复方阵。
+其中 $A$ 为 $n$ 阶复方阵.
 \end{example}
 \exampleblank
 
@@ -3580,7 +3580,7 @@ e^Ae^{-A}=e^{A-A}=I.
 \[
 \lambda_1,\ldots,\lambda_n
 \]
-（重数计入），则 $e^A$ 的特征值为
+(重数计入),则 $e^A$ 的特征值为
 \[
 e^{\lambda_1},\ldots,e^{\lambda_n}.
 \]
@@ -3621,16 +3621,16 @@ AB=BA
 \iff
 J_iB_{ij}=B_{ij}J_j.
 \]
-当 $\lambda_i\neq\lambda_j$ 时必有 $B_{ij}=0$；
-当 $\lambda_i=\lambda_j$ 时，$B_{ij}$ 是相应的截断 Toeplitz 型矩阵。
+当 $\lambda_i\neq\lambda_j$ 时必有 $B_{ij}=0$;
+当 $\lambda_i=\lambda_j$ 时,$B_{ij}$ 是相应的截断 Toeplitz 型矩阵.
 
 \begin{theorem}[\marktwostar]
-与复矩阵 $A$ 可交换的全部矩阵，可通过上述 Jordan 分块逐块描述。
-特别地，当
+与复矩阵 $A$ 可交换的全部矩阵,可通过上述 Jordan 分块逐块描述.
+特别地,当
 \[
 m_A=f_A,
 \]
-即 $A$ 为循环变换时，其交换子代数恰为
+即 $A$ 为循环变换时,其交换子代数恰为
 \[
 \boxed{\mathbb C[A]}.
 \]
@@ -3638,7 +3638,7 @@ m_A=f_A,
 
 
 \begin{example}
-求与下列矩阵可交换的全部方阵：
+求与下列矩阵可交换的全部方阵:
 \begin{enumerate}
     \item
     \[
@@ -3756,27 +3756,27 @@ a&b&c&d\\
 P_3^{-1},
 }
 \]
-其中参数任意。
+其中参数任意.
 \end{solution}
 
 
 \begin{example}
-证明：若方阵 $A,B$ 可交换，则 $A$ 的每个根子空间都是 $B$ 的不变子空间。
+证明:若方阵 $A,B$ 可交换,则 $A$ 的每个根子空间都是 $B$ 的不变子空间.
 \end{example}
 \exampleblank
 
 \begin{solution}
-设 $\lambda$ 是 $A$ 的特征值，根子空间为
+设 $\lambda$ 是 $A$ 的特征值,根子空间为
 \[
 W_\lambda=\ker(A-\lambda I)^m
 \]
-其中 $m$ 充分大。由 $AB=BA$，
+其中 $m$ 充分大.由 $AB=BA$,
 \[
 B(A-\lambda I)^m
 =
 (A-\lambda I)^mB.
 \]
-若 $x\in W_\lambda$，则
+若 $x\in W_\lambda$,则
 \[
 (A-\lambda I)^mBx
 =

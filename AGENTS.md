@@ -333,6 +333,29 @@ $a_1+a_2+\cdots+a_n$
 
 ---
 
+### 6.5 正文标点：使用 ASCII
+
+讲义源码（尤其章节正文 `_内容.tex`）里的自然语言使用 ASCII 标点，不使用中文全角
+标点；这条约定与 validator 的 `PUNC001`（"所选自然语言中出现中文标点"）一致。
+
+| 全角 | ASCII |
+|---|---|
+| `，` `、` | `,` |
+| `。` | `.` |
+| `；` `：` | `;` `:` |
+| `！` `？` | `!` `?` |
+| `（` `）` | `(` `)` |
+| `【` `】` | `[` `]` |
+| `“` `”` | `` `` `` 与 `''`（LaTeX 引号） |
+| `—` `——` | `--` 与 `---` |
+| `…` | `...`（文字中；数学模式内仍用 `\ldots` / `\cdots`，见 §6.4） |
+
+规则：
+
+- 只转换自然语言；`$...$`、`\[...\]`、数学环境与 verbatim 内容内一律不动；
+- 标点后不额外加空格，与现有正文风格一致；
+- 本约定约束讲义源码；`AGENTS.md`、`README.md`、skill 说明文档不受此约束。
+
 ## 7. 语义化环境
 
 正式讲义优先使用语义化环境：
@@ -531,47 +554,60 @@ result=answer
 该开关由两本讲义共用的 `preamble.tex` 读取，因此这条规则对两本同时生效；
 两本的主文件都必须定义同名开关。
 
-### 8.7 中文字体与楷体粗体
+### 8.7 中文字体与中文强调
 
-`definition`、`theorem`、`remark` 等环境的正文用 `\cnormal`（即 `\kaishu`）
-排成楷体。ctex 的 Windows 字体集没有给楷体声明 BoldFont，因此在楷体环境里
-`\textbf` 会去要「粗体楷体」，触发：
+字体机制保持 ElegantBook 原样，不对字体族做任何重定义：
+
+- `definition`、`theorem`、`lemma`、`proposition`、`corollary`、`axiom`、
+  `solution`、`note`、`assumption`、`conclusion`、`property`、`custom`、
+  `introduction` 的正文用 ElegantBook 原有的 `\citshape`（中文下即楷体）；
+- `proof` 正文用原有的 `\cfs`（仿宋）；
+- `remark` 不切字体；`example`、`exercise`、`problem` 用 `\rmfamily`（宋体）；
+- 不要把上述环境改成 `\normalfont`，也不要改 `\newtheoremstyle`。
+
+ctex 的 Windows 字体集没有给 `zhkai`（楷体）与 `zhfs`（仿宋）声明 BoldFont，因此
+在楷体/仿宋正文里 `\textbf` 会去要「粗体楷体 / 粗体仿宋」，触发
 
 ```text
 LaTeX Font Warning: Font shape `TU/KaiTi(0)/b/n' undefined
 ```
 
-并退回常规字重，只能靠 AutoFakeBold 合成伪粗体。
+并退回 AutoFakeBold 合成的伪粗体。
 
-共享 `elegantbook.cls` 的 `chinesefont=ctexfont` 分支（默认分支）中已补上真粗体：
-
-```latex
-\setCJKfamilyfont{zhkai}[BoldFont={SimHei}]{KaiTi}
-```
-
-- 方括号外的 `KaiTi` 是基础字体，楷体字形保持不变；
-- 粗体用 `SimHei`，与本书 `\heiti` 已经在用的黑体是同一款，加粗与黑体风格一致；
-- 这一行是有意重定义 ctex 已经定义过的字体族，所以只把这一次的 xeCJK 警告
-  `CJKfamily-redef` 压掉，结束处立即恢复该消息的默认处理，以后真出现重复
-  定义仍会报警。两个辅助宏 `\elegantkaiboldsilence`、`\elegantkaiboldrestore`
-  必须定义在参数之外：把 `\ExplSyntaxOn` 写进 `\ifdefstring` 的分支参数里
-  不生效，参数在被记成记号时 catcode 已经确定，直接写 `\msg_redirect_name:nnn`
-  会被拆成 `\msg` 而报 `Undefined control sequence`；
-- `preamble.tex` 中保留同一补丁的兜底分支：单章独立编译读到的是 TeX Live 自带的
-  `elegantbook.cls`，class 中的补丁不会执行，此时按本地 class 是否定义了
-  `\elegantkaiboldsilence` 判断并补做一次，使单章 PDF 与整书 PDF 的楷体粗体一致。
-
-不要为了消除提示去删掉这一行或改成 `AutoFakeBold` 伪粗体；也不要把字体族的
-定义重新挪回 `preamble.tex` 并与 class 各留一份。
-
-不要改写成下面这种写法：
+楷体/仿宋正文里的中文强调统一用 `\strongcn`，它定义在共享 `preamble.tex`：
 
 ```latex
-\setCJKfamilyfont{zhkai}[BoldFont={FZHei-B01}]{FZKai-Z03}
+\newcommand{\strongcn}[1]{{\cbfseries #1}}
 ```
 
-方括号外的 `FZKai-Z03` 是基础字体，那样写会连楷体字形一起换成方正楷体_GBK，
-而宋体、黑体、仿宋仍是 Windows 字体，一本书里混两套厂商的字，风格不统一。
+`\cbfseries` 是 ElegantBook 已经提供的中文加粗接口，中文环境下实际切换到
+`\heiti`，因此不需要任何字体族补丁：
+
+- 楷体/仿宋正文（定理类环境、`solution`、`note`、`assumption`、`conclusion`、
+  `property`、`custom`、`proof`、`introduction` 与 `\question` 内容）里的中文强调
+  写 `\strongcn{...}`，不要写 `\textbf{...}`；
+- 宋体正文里 `\textbf{...}` 照常可用（走主族的 `BoldFont=SimHei`）；
+- ElegantBook 环境标题自身已有的 `\textbf`，例如
+  `\textbf{\color{main}\solutionname}`、`\textbf{\color{second}\proofname}`，
+  是 class 的标题格式而非正文强调，不要改。
+
+不要再引入历史上的那套 KaiTi Bold 补丁：
+`\setCJKfamilyfont{zhkai}[BoldFont={SimHei}]{KaiTi}`、与之配套的
+`CJKfamily-redef` 局部静音辅助宏（`\elegantkaiboldsilence` /
+`\elegantkaiboldrestore`），以及 `preamble.tex` 中按
+`\ifdefined\elegantkaiboldsilence` 判断的单章兜底分支。它们都已删除，
+`\strongcn` 这条路线不需要它们。
+
+已知的潜在缺口（当前章节正文 0 处命中，写新内容时留意）：
+
+- `\textbf` 与另一个形状请求叠加仍会缺形状：`\textbf{\emph{中}}`、
+  `\emph{\textbf{中}}`、`\textsl`、`\textsc`、`\texttt`；
+- 显式切到 `\heiti`、`\songti`、`\fangsong`、`\cbfseries` 之后再写 `\textbf`，
+  这些字体族没有声明 BoldFont，粗体丢失并报警 —— 需要中文强调就用 `\strongcn`。
+
+单章独立编译与整书都读同一份 `preamble.tex`，所以 `\strongcn` 在两种编译下都可用；
+单章编译读到的是 TeX Live 自带的 `elegantbook.cls`，其字体机制与本地 class 一致
+（本地 class 已不含任何字体补丁），因此单章与整书的中文强调表现相同。
 
 若要整套改用方正字族，正确做法是在主文件传 `chinesefont=founder`，
 由 `elegantbook.cls` 的四族一起替换，而不是只改 `zhkai` 一行。
@@ -920,6 +956,9 @@ undefined references
 ```
 
 warning 要理解原因后再处理，不要机械屏蔽。
+
+另外，章节正文的自然语言应为 ASCII 标点（见 §6.5）；validator 的 `PUNC001` 目前
+只覆盖 Markdown 文档，章节 `.tex` 需要人工核对，或在扩展 validator 后纳入自动检查。
 
 ---
 

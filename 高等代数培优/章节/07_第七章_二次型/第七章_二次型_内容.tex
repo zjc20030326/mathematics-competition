@@ -6,11 +6,11 @@
 \section{双线性型}
 
 \begin{definition}
-设 $V',V,W$ 是域 $F$ 上的线性空间。若映射
+设 $V',V,W$ 是域 $F$ 上的线性空间.若映射
 \[
 g:V'\times V\to W
 \]
-对两个变量分别都是线性的，则称 $g$ 为一个双线性型。常记
+对两个变量分别都是线性的,则称 $g$ 为一个双线性型.常记
 \[
 g(\alpha,\beta)=\langle\alpha,\beta\rangle.
 \]
@@ -38,8 +38,8 @@ g_{ij}=g(\varepsilon_i,\eta_j).
 \]
 
 \begin{theorem}[\markstar]
-固定 $V',V$ 的基以后，$V'\times V$ 上的双线性型与 $F$ 上的
-$m\times n$ 矩阵一一对应。若分别换基
+固定 $V',V$ 的基以后,$V'\times V$ 上的双线性型与 $F$ 上的
+$m\times n$ 矩阵一一对应.若分别换基
 \[
 x=P\widehat x,\qquad y=Q\widehat y,
 \]
@@ -50,24 +50,24 @@ x=P\widehat x,\qquad y=Q\widehat y,
 \end{theorem}
 
 \begin{definition}
-若存在非零 $\alpha\in V'$，使
+若存在非零 $\alpha\in V'$,使
 \[
 g(\alpha,\beta)=0
 \qquad
 (\forall\,\beta\in V),
 \]
-则称 $g$ 左退化；右退化类似定义。若既非左退化也非右退化，则称
-$g$ 非退化。
+则称 $g$ 左退化;右退化类似定义.若既非左退化也非右退化,则称
+$g$ 非退化.
 \end{definition}
 
-由矩阵表示立即得到：
+由矩阵表示立即得到:
 \[
 g\text{ 非右退化}\iff r(G)=n,
 \]
 \[
 g\text{ 非左退化}\iff r(G)=m.
 \]
-有限维情况下，
+有限维情况下,
 \[
 g\text{ 非退化}
 \iff
@@ -77,11 +77,11 @@ G\text{ 可逆}.
 \]
 
 \begin{theorem}[\markstar]
-设 $V',V$ 都有限维，则 $V'\times V$ 上双线性型 $g$ 非退化的充分必要条件为
+设 $V',V$ 都有限维,则 $V'\times V$ 上双线性型 $g$ 非退化的充分必要条件为
 \[
 \dim V'=\dim V
 \]
-且其表示矩阵可逆。
+且其表示矩阵可逆.
 \end{theorem}
 
 \begin{definition}
@@ -98,29 +98,29 @@ G\text{ 可逆}.
 \end{definition}
 
 \begin{theorem}[\markstar]
-若 $\varphi$ 在 $V_1,V_2$ 的基下矩阵为 $A$，而
-$\varphi^*$ 在相应对偶基下矩阵为 $B$，则
+若 $\varphi$ 在 $V_1,V_2$ 的基下矩阵为 $A$,而
+$\varphi^*$ 在相应对偶基下矩阵为 $B$,则
 \[
 \boxed{B=A^{\mathsf T}}.
 \]
 \end{theorem}
 
-下面取 $V'=V$。
+下面取 $V'=V$.
 
 \begin{definition}
 若
 \[
 g(\alpha,\beta)=g(\beta,\alpha)
 \]
-对任意 $\alpha,\beta\in V$ 成立，则称 $g$ 为对称双线性型。
-在给定基下，其矩阵 $G$ 为对称矩阵。相应函数
+对任意 $\alpha,\beta\in V$ 成立,则称 $g$ 为对称双线性型.
+在给定基下,其矩阵 $G$ 为对称矩阵.相应函数
 \[
 Q(\alpha)=g(\alpha,\alpha)
 \]
-称为二次型。
+称为二次型.
 \end{definition}
 
-在特征不为 $2$ 的数域上，二次型与对称双线性型可由极化公式互相确定：
+在特征不为 $2$ 的数域上,二次型与对称双线性型可由极化公式互相确定:
 \[
 g(\alpha,\beta)
 =
@@ -136,20 +136,20 @@ g(\alpha,\alpha)>0
 \qquad
 (\forall\,\alpha\neq0),
 \]
-则称其为正定双线性型；对应二次型也称为正定二次型。
+则称其为正定双线性型;对应二次型也称为正定二次型.
 
 
 \begin{example}
-设 $\mathbb R[x]$ 为实多项式空间。对 $f,g\in\mathbb R[x]$ 定义
+设 $\mathbb R[x]$ 为实多项式空间.对 $f,g\in\mathbb R[x]$ 定义
 \[
 \varphi(f,g)=f(x)g'(x).
 \]
-证明 $\varphi$ 是 $\mathbb R[x]$ 上的双线性映射。
+证明 $\varphi$ 是 $\mathbb R[x]$ 上的双线性映射.
 \end{example}
 \exampleblank
 
 \begin{solution}
-对固定 $g$，
+对固定 $g$,
 \[
 \varphi(af_1+bf_2,g)
 =
@@ -157,7 +157,7 @@ g(\alpha,\alpha)>0
 =
 a\varphi(f_1,g)+b\varphi(f_2,g).
 \]
-又因求导是线性映射，对固定 $f$，
+又因求导是线性映射,对固定 $f$,
 \[
 \varphi(f,ag_1+bg_2)
 =
@@ -165,7 +165,7 @@ f(ag_1'+bg_2')
 =
 a\varphi(f,g_1)+b\varphi(f,g_2).
 \]
-因此 $\varphi$ 对两个变量分别线性。
+因此 $\varphi$ 对两个变量分别线性.
 \end{solution}
 
 
@@ -179,19 +179,19 @@ A=(a_{ij})_{2\times2}\in M_2(K),
 f(X,Y)=\tr(X^{\mathsf T}AY).
 \]
 \begin{enumerate}
-    \item 证明 $f$ 是双线性型；
+    \item 证明 $f$ 是双线性型;
     \item 求它在基
     \[
     E_{11},E_{12},E_{21},E_{22}
     \]
-    下的矩阵；
-    \item 判断 $f$ 何时非退化。
+    下的矩阵;
+    \item 判断 $f$ 何时非退化.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-迹、矩阵乘法以及转置对相应变量均为线性的，所以第一问成立。
+迹,矩阵乘法以及转置对相应变量均为线性的,所以第一问成立.
 
 按基顺序
 \[
@@ -231,12 +231,12 @@ A\otimes I_2.
 \[
 f(X,Y)=\tr(XY)
 \]
-是非退化的。
+是非退化的.
 \end{example}
 \exampleblank
 
 \begin{solution}
-设 $X\neq0$，取某个 $x_{ij}\neq0$。令
+设 $X\neq0$,取某个 $x_{ij}\neq0$.令
 \[
 Y=E_{ji}.
 \]
@@ -244,14 +244,14 @@ Y=E_{ji}.
 \[
 \tr(XY)=x_{ij}\neq0.
 \]
-因此不存在非零 $X$ 与全部 $Y$ 正交；右侧同理，故该双线性型非退化。
+因此不存在非零 $X$ 与全部 $Y$ 正交;右侧同理,故该双线性型非退化.
 \end{solution}
 
 
 \begin{example}
-设 $V$ 是数域 $K$ 上的 $n$ 维线性空间，
-$f(\alpha,\beta)$ 是 $V$ 上的非退化双线性型。证明：对任意
-$g\in V^*$，存在唯一 $\alpha\in V$，使
+设 $V$ 是数域 $K$ 上的 $n$ 维线性空间,
+$f(\alpha,\beta)$ 是 $V$ 上的非退化双线性型.证明:对任意
+$g\in V^*$,存在唯一 $\alpha\in V$,使
 \[
 g(\beta)=f(\alpha,\beta)
 \qquad
@@ -271,17 +271,17 @@ T(\alpha)=f(\alpha,\cdot).
 \[
 \ker T=\{0\},
 \]
-故 $T$ 单射。又
+故 $T$ 单射.又
 \[
 \dim V=\dim V^*=n,
 \]
-所以 $T$ 是同构。于是任意 $g\in V^*$ 都有唯一原像 $\alpha$。
+所以 $T$ 是同构.于是任意 $g\in V^*$ 都有唯一原像 $\alpha$.
 \end{solution}
 
 
 \begin{example}
-设 $f(\alpha,\beta)$ 是线性空间 $V$ 上的对称或反对称双线性型，
-$W$ 是 $V$ 的真子空间。证明：对任意 $\xi\notin W$，存在非零
+设 $f(\alpha,\beta)$ 是线性空间 $V$ 上的对称或反对称双线性型,
+$W$ 是 $V$ 的真子空间.证明:对任意 $\xi\notin W$,存在非零
 \[
 \eta\in W+\Span\{\xi\}
 \]
@@ -299,7 +299,7 @@ f(\eta,\alpha)=0
 \[
 U=W+\Span\{\xi\}.
 \]
-因为 $\xi\notin W$，
+因为 $\xi\notin W$,
 \[
 \dim U=\dim W+1.
 \]
@@ -313,50 +313,50 @@ T(\eta)=f(\eta,\cdot)|_W.
 \[
 \dim U>\dim W^*,
 \]
-故 $\ker T\neq\{0\}$。取非零 $\eta\in\ker T$ 即得结论。
+故 $\ker T\neq\{0\}$.取非零 $\eta\in\ker T$ 即得结论.
 \end{solution}
 
 
 \begin{example}
-设 $f(\alpha,\beta)$ 是数域 $K$ 上线性空间 $V$ 上的双线性型，定义
+设 $f(\alpha,\beta)$ 是数域 $K$ 上线性空间 $V$ 上的双线性型,定义
 \[
 V_1=\{x\in V:f(x,y)=0,\ \forall y\in V\},
 \]
 \[
 V_2=\{y\in V:f(x,y)=0,\ \forall x\in V\}.
 \]
-证明 $V_1,V_2$ 都是 $V$ 的子空间。
+证明 $V_1,V_2$ 都是 $V$ 的子空间.
 \end{example}
 \exampleblank
 
 \begin{solution}
-以 $V_1$ 为例。若 $x_1,x_2\in V_1$，$a,b\in K$，则对任意 $y$，
+以 $V_1$ 为例.若 $x_1,x_2\in V_1$,$a,b\in K$,则对任意 $y$,
 \[
 f(ax_1+bx_2,y)
 =
 af(x_1,y)+bf(x_2,y)=0.
 \]
-故 $ax_1+bx_2\in V_1$。$V_2$ 同理。
+故 $ax_1+bx_2\in V_1$.$V_2$ 同理.
 \end{solution}
 
 
 \begin{example}
-设 $V',V$ 是域 $F$ 上的 $n$ 维线性空间，
+设 $V',V$ 是域 $F$ 上的 $n$ 维线性空间,
 \[
 g:V'\times V\to F
 \]
-为双线性型。证明下列条件等价：
+为双线性型.证明下列条件等价:
 \begin{enumerate}
-    \item $g$ 非左退化；
-    \item $g$ 非右退化；
-    \item $g$ 非退化；
-    \item $g$ 在任意基下的矩阵均可逆。
+    \item $g$ 非左退化;
+    \item $g$ 非右退化;
+    \item $g$ 非退化;
+    \item $g$ 在任意基下的矩阵均可逆.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-取任意两组基，设 $g$ 的矩阵为 $G\in M_n(F)$。
+取任意两组基,设 $g$ 的矩阵为 $G\in M_n(F)$.
 有
 \[
 g\text{ 非左退化}\iff r(G)=n,
@@ -364,13 +364,13 @@ g\text{ 非左退化}\iff r(G)=n,
 \[
 g\text{ 非右退化}\iff r(G)=n.
 \]
-因此前三条等价，并且均等价于 $G$ 可逆。
+因此前三条等价,并且均等价于 $G$ 可逆.
 
 换基后矩阵为
 \[
 P^{\mathsf T}GQ,
 \]
-其中 $P,Q$ 可逆，所以可逆性与基的选择无关，第四条也等价。
+其中 $P,Q$ 可逆,所以可逆性与基的选择无关,第四条也等价.
 \end{solution}
 
 
@@ -379,66 +379,66 @@ P^{\mathsf T}GQ,
 \[
 g:V'\times V\to F
 \]
-为双线性型，定义左核、右核
+为双线性型,定义左核,右核
 \[
 k_l(g)=\{\alpha\in V':g(\alpha,\beta)=0,\ \forall\beta\in V\},
 \]
 \[
 k_r(g)=\{\beta\in V:g(\alpha,\beta)=0,\ \forall\alpha\in V'\}.
 \]
-证明：
+证明:
 \begin{enumerate}
-    \item $k_l(g),k_r(g)$ 都是子空间；
+    \item $k_l(g),k_r(g)$ 都是子空间;
     \item $g$ 自然诱导出
     \[
     \overline g:(V'/k_l(g))\times V\to F,
     \]
-    且 $\overline g$ 非左退化；
+    且 $\overline g$ 非左退化;
     \item 进一步诱导出
     \[
     \widetilde g:(V'/k_l(g))\times(V/k_r(g))\to F,
     \]
-    且 $\widetilde g$ 非退化。
+    且 $\widetilde g$ 非退化.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-第一问由双线性直接验证。
+第一问由双线性直接验证.
 
 定义
 \[
 \overline g(\alpha+k_l(g),\beta)=g(\alpha,\beta).
 \]
-若更换 $\alpha$ 的陪集代表元，只会增加左核中的向量，故定义良好。
-若某陪集对所有 $\beta$ 都取零，则其代表元属于左核，所以该陪集为零，
-故 $\overline g$ 非左退化。
+若更换 $\alpha$ 的陪集代表元,只会增加左核中的向量,故定义良好.
+若某陪集对所有 $\beta$ 都取零,则其代表元属于左核,所以该陪集为零,
+故 $\overline g$ 非左退化.
 
 再定义
 \[
 \widetilde g(\alpha+k_l(g),\beta+k_r(g))=g(\alpha,\beta).
 \]
-同理定义良好。若任一侧元素与另一侧全部元素配对均为零，则其代表元分别落入
-对应核中，因此两侧均非退化。
+同理定义良好.若任一侧元素与另一侧全部元素配对均为零,则其代表元分别落入
+对应核中,因此两侧均非退化.
 \end{solution}
 
 
 \begin{example}[\markstar]
-设 $f(\alpha,\beta)$ 是实数域上 $n$ 维线性空间 $V$ 上的对称双线性型，
-其在某基下的矩阵为 $A$。已知二次型
+设 $f(\alpha,\beta)$ 是实数域上 $n$ 维线性空间 $V$ 上的对称双线性型,
+其在某基下的矩阵为 $A$.已知二次型
 \[
 q(x)=x^{\mathsf T}Ax
 \]
-的负惯性指数为 $0$。令
+的负惯性指数为 $0$.令
 \[
 W=\{\alpha\in V:f(\alpha,\alpha)=0\}.
 \]
-证明 $W$ 是子空间，并求 $\dim W$。
+证明 $W$ 是子空间,并求 $\dim W$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-负惯性指数为 $0$，故 $A$ 半正定。半正定矩阵满足
+负惯性指数为 $0$,故 $A$ 半正定.半正定矩阵满足
 \[
 x^{\mathsf T}Ax=0
 \iff
@@ -448,7 +448,7 @@ Ax=0.
 \[
 W=\ker A.
 \]
-故 $W$ 是子空间，并且
+故 $W$ 是子空间,并且
 \[
 \boxed{\dim W=n-r(A)}.
 \]
@@ -481,7 +481,7 @@ f(Xu,v)=-f(u,Xv),\ \forall u,v\}.
 \[
 2n^2+n
 \]
-的线性子空间，并给出一组基。
+的线性子空间,并给出一组基.
 \end{example}
 \exampleblank
 
@@ -517,7 +517,7 @@ X=
 \end{pmatrix},
 }
 \]
-其中 $p,q\in\mathbb R^n$，$B$ 任意，而 $C_1,D$ 反对称。
+其中 $p,q\in\mathbb R^n$,$B$ 任意,而 $C_1,D$ 反对称.
 
 自由参数个数为
 \[
@@ -526,7 +526,7 @@ X=
 \boxed{2n^2+n}.
 \]
 
-一组基可由下列参数逐个取为标准基得到：
+一组基可由下列参数逐个取为标准基得到:
 \[
 p=e_i,\quad q=e_i,\quad B=E_{ij},
 \]
@@ -534,17 +534,17 @@ p=e_i,\quad q=e_i,\quad B=E_{ij},
 \[
 E_{ij}-E_{ji}\qquad(i<j),
 \]
-其余参数取零。
+其余参数取零.
 \end{solution}
 
 
 \begin{example}
-设 $f(\alpha,\beta)$ 是数域 $K$ 上线性空间 $V$ 上的对称双线性型，
+设 $f(\alpha,\beta)$ 是数域 $K$ 上线性空间 $V$ 上的对称双线性型,
 并且存在 $f_1,f_2\in V^*$ 使
 \[
 f(\alpha,\beta)=f_1(\alpha)f_2(\beta).
 \]
-证明：存在非零常数 $k\in K$ 与线性函数 $g\in V^*$，使
+证明:存在非零常数 $k\in K$ 与线性函数 $g\in V^*$,使
 \[
 f(\alpha,\beta)=k\,g(\alpha)g(\beta).
 \]
@@ -552,37 +552,37 @@ f(\alpha,\beta)=k\,g(\alpha)g(\beta).
 \exampleblank
 
 \begin{solution}
-若 $f\equiv0$，取任意 $k\neq0$ 与 $g=0$ 即可。
+若 $f\equiv0$,取任意 $k\neq0$ 与 $g=0$ 即可.
 
-以下设 $f\neq0$。对称性给出
+以下设 $f\neq0$.对称性给出
 \[
 f_1(\alpha)f_2(\beta)
 =
 f_1(\beta)f_2(\alpha).
 \]
-取 $\alpha_0$ 使 $f_1(\alpha_0)\neq0$，则对任意 $\beta$，
+取 $\alpha_0$ 使 $f_1(\alpha_0)\neq0$,则对任意 $\beta$,
 \[
 f_2(\beta)
 =
 \dfrac{f_2(\alpha_0)}{f_1(\alpha_0)}f_1(\beta).
 \]
-故 $f_2=c f_1$，其中 $c\neq0$。令
+故 $f_2=c f_1$,其中 $c\neq0$.令
 \[
 g=f_1,\qquad k=c,
 \]
-即得结论。
+即得结论.
 \end{solution}
 
 
 \begin{example}
 \begin{enumerate}
-    \item 设 $V$ 是实线性空间，$f$ 是 $V$ 上正定对称双线性型，
-    $U$ 是有限维子空间。证明
+    \item 设 $V$ 是实线性空间,$f$ 是 $V$ 上正定对称双线性型,
+    $U$ 是有限维子空间.证明
     \[
     V=U\oplus U^\perp.
     \]
-    \item 设 $V$ 是数域 $K$ 上的 $n$ 维线性空间，$g$ 是非退化对称双线性型，
-    $W$ 是子空间。证明
+    \item 设 $V$ 是数域 $K$ 上的 $n$ 维线性空间,$g$ 是非退化对称双线性型,
+    $W$ 是子空间.证明
     \[
     \dim V=\dim W+\dim W^\perp,
     \qquad
@@ -593,18 +593,18 @@ g=f_1,\qquad k=c,
 \exampleblank
 
 \begin{solution}
-第一问取 $U$ 的一组基并对 $f$ 作 Gram--Schmidt 正交化，
-得到正交基 $e_1,\ldots,e_r$。对任意 $v\in V$，令
+第一问取 $U$ 的一组基并对 $f$ 作 Gram--Schmidt 正交化,
+得到正交基 $e_1,\ldots,e_r$.对任意 $v\in V$,令
 \[
 u=
 \sum\limits_{i=1}^{r}
 \dfrac{f(v,e_i)}{f(e_i,e_i)}e_i.
 \]
-则 $u\in U$ 且 $v-u\in U^\perp$。又正定性保证
+则 $u\in U$ 且 $v-u\in U^\perp$.又正定性保证
 \[
 U\cap U^\perp=\{0\},
 \]
-所以为直和。
+所以为直和.
 
 第二问定义
 \[
@@ -612,7 +612,7 @@ T:V\to W^*,
 \qquad
 T(v)=g(v,\cdot)|_W.
 \]
-非退化性保证 $T$ 满射，而
+非退化性保证 $T$ 满射,而
 \[
 \ker T=W^\perp.
 \]
@@ -624,7 +624,7 @@ n=\dim W+\dim W^\perp.
 \[
 W\subseteq(W^\perp)^\perp,
 \]
-两者维数相同，故相等。
+两者维数相同,故相等.
 \end{solution}
 
 
@@ -633,19 +633,19 @@ W\subseteq(W^\perp)^\perp,
 \section{二次型的标准形}
 
 \begin{theorem}[\markstar]
-Witt 消去定理给出合同分解中的消去原则；在实数域上，惯性定理说明
+Witt 消去定理给出合同分解中的消去原则;在实数域上,惯性定理说明
 任意实二次型都可经非退化实线性替换化为
 \[
 y_1^2+\cdots+y_p^2-y_{p+1}^2-\cdots-y_r^2,
 \]
-其中正惯性指数 $p$、负惯性指数 $r-p$ 唯一确定。
+其中正惯性指数 $p$,负惯性指数 $r-p$ 唯一确定.
 \end{theorem}
 
 
 \subsection{基础计算}
 
 \begin{example}
-用可逆线性代换化下列二次型为规范形，并说明其惯性指数：
+用可逆线性代换化下列二次型为规范形,并说明其惯性指数:
 \begin{enumerate}
     \item
     \[
@@ -694,27 +694,27 @@ y_1^2+\cdots+y_p^2-y_{p+1}^2-\cdots-y_r^2,
     \[
     Q=y_1^2+y_2^2-y_3^2.
     \]
-    故正、负惯性指数为 $2,1$。
+    故正,负惯性指数为 $2,1$.
 
     \item 先写成
     \[
     Q=(x_1+x_2)^2+(2x_2-x_3)^2-5x_3^2.
     \]
-    再令 $y_3=\sqrt5\,x_3$，即得
+    再令 $y_3=\sqrt5\,x_3$,即得
     \[
     Q=y_1^2+y_2^2-y_3^2.
     \]
-    正、负惯性指数为 $2,1$。
+    正,负惯性指数为 $2,1$.
 
     \item
     \[
     Q=(x_1-x_2+x_3)^2-(2x_2+x_3)^2.
     \]
-    取第三个独立新变量补成可逆变换，得到规范形
+    取第三个独立新变量补成可逆变换,得到规范形
     \[
     Q=y_1^2-y_2^2.
     \]
-    正、负、零指数分别为 $1,1,1$。
+    正,负,零指数分别为 $1,1,1$.
 
     \item 对每一对
     \[
@@ -730,9 +730,9 @@ y_1^2+\cdots+y_p^2-y_{p+1}^2-\cdots-y_r^2,
     \[
     x_ix_{2n+1-i}=u_i^2-v_i^2.
     \]
-    因而规范形有 $n$ 个正平方与 $n$ 个负平方。
+    因而规范形有 $n$ 个正平方与 $n$ 个负平方.
 
-    \item 该二次型的对称矩阵只有相邻两条副对角线上元素为 $\dfrac12$。
+    \item 该二次型的对称矩阵只有相邻两条副对角线上元素为 $\dfrac12$.
     其特征值为
     \[
     \lambda_k=\cos\dfrac{k\pi}{n+1},
@@ -747,18 +747,18 @@ y_1^2+\cdots+y_p^2-y_{p+1}^2-\cdots-y_r^2,
     \sin\dfrac{nk\pi}{n+1}
     \right)^{\mathsf T}.
     \]
-    因此正、负惯性指数均为
+    因此正,负惯性指数均为
     \[
     \left\lfloor\dfrac n2\right\rfloor,
     \]
-    当 $n$ 为奇数时另有一个零平方项。
+    当 $n$ 为奇数时另有一个零平方项.
 
     \item
     \[
     Q=\|x\|^2+(x_1+\cdots+x_n)^2.
     \]
-    在向量 $(1,\ldots,1)^{\mathsf T}$ 方向上的特征值为 $n+1$，
-    在其正交补上的特征值均为 $1$，故为正定二次型，规范形为
+    在向量 $(1,\ldots,1)^{\mathsf T}$ 方向上的特征值为 $n+1$,
+    在其正交补上的特征值均为 $1$,故为正定二次型,规范形为
     \[
     y_1^2+\cdots+y_n^2.
     \]
@@ -775,18 +775,18 @@ y_1^2+\cdots+y_p^2-y_{p+1}^2-\cdots-y_r^2,
     \[
     I-\dfrac1nJ.
     \]
-    在 $(1,\ldots,1)^{\mathsf T}$ 上特征值为 $0$，其正交补上特征值为 $1$。
+    在 $(1,\ldots,1)^{\mathsf T}$ 上特征值为 $0$,其正交补上特征值为 $1$.
     因此规范形为
     \[
     y_1^2+\cdots+y_{n-1}^2,
     \]
-    秩为 $n-1$。
+    秩为 $n-1$.
 \end{enumerate}
 \end{solution}
 
 
 \begin{example}
-设 $A$ 为 $n$ 阶可逆实矩阵，
+设 $A$ 为 $n$ 阶可逆实矩阵,
 \[
 B=
 \begin{pmatrix}
@@ -794,12 +794,12 @@ O&A\\
 A^{\mathsf T}&O
 \end{pmatrix}.
 \]
-求 $B$ 的正、负惯性指数。
+求 $B$ 的正,负惯性指数.
 \end{example}
 \exampleblank
 
 \begin{solution}
-作合同变换可先把 $A$ 化成 $I_n$，于是 $B$ 合同于
+作合同变换可先把 $A$ 化成 $I_n$,于是 $B$ 合同于
 \[
 \begin{pmatrix}
 O&I_n\\
@@ -839,7 +839,7 @@ a_{11}&\cdots&a_{1n}\\
 a_{s1}&\cdots&a_{sn}
 \end{pmatrix}
 \]
-的秩。
+的秩.
 \end{example}
 \exampleblank
 
@@ -856,7 +856,7 @@ f(x)=\|Ax\|^2=x^{\mathsf T}A^{\mathsf T}Ax.
 \[
 r(A^{\mathsf T}A)=r(A).
 \]
-二次型的秩即其对称矩阵 $A^{\mathsf T}A$ 的秩，所以结论成立。
+二次型的秩即其对称矩阵 $A^{\mathsf T}A$ 的秩,所以结论成立.
 \end{solution}
 
 
@@ -865,7 +865,7 @@ r(A^{\mathsf T}A)=r(A).
 \[
 f(x)=x^{\mathsf T}Ax
 \]
-是实二次型，并存在 $x_1,x_2\in\mathbb R^n$ 使
+是实二次型,并存在 $x_1,x_2\in\mathbb R^n$ 使
 \[
 x_1^{\mathsf T}Ax_1>0,
 \qquad
@@ -879,13 +879,13 @@ f(x_0)=x_0^{\mathsf T}Ax_0.
 \exampleblank
 
 \begin{solution}
-按原题字面，
+按原题字面,
 \[
 f(x)=x^{\mathsf T}Ax
 \]
-本就是定义，因此结论对任意非零 $x_0$ 都成立，命题没有实质内容。
+本就是定义,因此结论对任意非零 $x_0$ 都成立,命题没有实质内容.
 
-结合本节上下文，原题极可能漏写了右端的 ``$=0$''。若 intended 结论为
+结合本节上下文,原题极可能漏写了右端的 ``$=0$''.若 intended 结论为
 \[
 f(x_0)=0,\qquad x_0\neq0,
 \]
@@ -893,21 +893,21 @@ f(x_0)=0,\qquad x_0\neq0,
 \[
 \phi(t)=f((1-t)x_1+tx_2).
 \]
-有 $\phi(0)>0,\phi(1)<0$，由介值定理存在 $t_0\in(0,1)$ 使
+有 $\phi(0)>0,\phi(1)<0$,由介值定理存在 $t_0\in(0,1)$ 使
 \[
 \phi(t_0)=0.
 \]
-若相应向量恰为零，则 $x_1,x_2$ 共线，但同一直线上的二次型取值不可能一正一负，
-故该向量非零。
+若相应向量恰为零,则 $x_1,x_2$ 共线,但同一直线上的二次型取值不可能一正一负,
+故该向量非零.
 \end{solution}
 
 
 \begin{example}
-设 $A$ 为 $n$ 阶实对称矩阵，各阶顺序主子式
+设 $A$ 为 $n$ 阶实对称矩阵,各阶顺序主子式
 \[
 \Delta_1,\ldots,\Delta_n
 \]
-均非零。证明二次型 $x^{\mathsf T}Ax$ 可经非退化线性替换化为
+均非零.证明二次型 $x^{\mathsf T}Ax$ 可经非退化线性替换化为
 \[
 \lambda_1y_1^2+\cdots+\lambda_ny_n^2,
 \qquad
@@ -919,11 +919,11 @@ f(x_0)=0,\qquad x_0\neq0,
 \exampleblank
 
 \begin{solution}
-由于各顺序主子式均非零，$A$ 存在不选主元的分解
+由于各顺序主子式均非零,$A$ 存在不选主元的分解
 \[
 A=LDL^{\mathsf T},
 \]
-其中 $L$ 为单位下三角矩阵，
+其中 $L$ 为单位下三角矩阵,
 \[
 D=\diag(d_1,\ldots,d_n).
 \]
@@ -939,18 +939,18 @@ d_k=\dfrac{\Delta_k}{\Delta_{k-1}}.
 \[
 y=L^{\mathsf T}x,
 \]
-即可得到所需标准形。
+即可得到所需标准形.
 \end{solution}
 
 
 \subsection{零点集合与子空间}
 
 \begin{lemma}[\markstar]
-设 $A$ 为实对称矩阵，则
+设 $A$ 为实对称矩阵,则
 \[
 A\text{ 半正定或半负定}
 \]
-的充分必要条件为：对任意 $x$，
+的充分必要条件为:对任意 $x$,
 \[
 x^{\mathsf T}Ax=0
 \Longrightarrow
@@ -963,7 +963,7 @@ Ax=0.
 \[
 V_0=\{x\in\mathbb R^n:x^{\mathsf T}Ax=0\}.
 \]
-则 $V_0$ 是线性子空间的充分必要条件是二次型半正定或半负定。
+则 $V_0$ 是线性子空间的充分必要条件是二次型半正定或半负定.
 此时
 \[
 \dim V_0=n-r(A).
@@ -972,7 +972,7 @@ V_0=\{x\in\mathbb R^n:x^{\mathsf T}Ax=0\}.
 
 
 \begin{example}
-设 $A^{\mathsf T}=A$，并存在 $x_1,x_2$ 使
+设 $A^{\mathsf T}=A$,并存在 $x_1,x_2$ 使
 \[
 x_1^{\mathsf T}Ax_1>0,
 \qquad
@@ -982,17 +982,17 @@ x_2^{\mathsf T}Ax_2<0.
 \[
 W=\{x\in\mathbb R^n:x^{\mathsf T}Ax=0\}.
 \]
-原题进一步提出：
+原题进一步提出:
 \begin{enumerate}
-    \item 证明 $W\cap\mathbb R^n=\{0\}$；
-    \item 确定 $W$ 中一个极大线性无关组；
-    \item 判断 $W$ 是否为 $\mathbb R^n$ 的线性子空间。
+    \item 证明 $W\cap\mathbb R^n=\{0\}$;
+    \item 确定 $W$ 中一个极大线性无关组;
+    \item 判断 $W$ 是否为 $\mathbb R^n$ 的线性子空间.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-第一问按原题字面明显不成立，因为
+第一问按原题字面明显不成立,因为
 \[
 W\subseteq\mathbb R^n,
 \]
@@ -1000,21 +1000,21 @@ W\subseteq\mathbb R^n,
 \[
 W\cap\mathbb R^n=W.
 \]
-并且由二次型既取正值又取负值，可知存在非零零点，故 $W\neq\{0\}$。
-此处原题存在印刷问题。
+并且由二次型既取正值又取负值,可知存在非零零点,故 $W\neq\{0\}$.
+此处原题存在印刷问题.
 
-对第二问，设规范形的正、负惯性指数分别为 $p,q$，零指数为 $r$，
-其中 $p,q>0$。在规范坐标中可取
+对第二问,设规范形的正,负惯性指数分别为 $p,q$,零指数为 $r$,
+其中 $p,q>0$.在规范坐标中可取
 \[
 e_i+f_1\quad(i=1,\ldots,p),
 \]
 \[
 e_1-f_1,\qquad e_1+f_j\quad(j=2,\ldots,q),
 \]
-再加上全部零方向基向量。上述向量总数恰为 $n$，并且线性无关，
-因此 $W$ 中存在含 $n$ 个向量的极大线性无关组。
+再加上全部零方向基向量.上述向量总数恰为 $n$,并且线性无关,
+因此 $W$ 中存在含 $n$ 个向量的极大线性无关组.
 
-第三问由前述命题立即得到：因为二次型既取正值又取负值，不可能半正定或半负定，
+第三问由前述命题立即得到:因为二次型既取正值又取负值,不可能半正定或半负定,
 所以
 \[
 \boxed{W\text{ 不是线性子空间}.}
@@ -1027,17 +1027,17 @@ e_1-f_1,\qquad e_1+f_j\quad(j=2,\ldots,q),
 \[
 f(x)=x^{\mathsf T}Ax
 \]
-秩为 $n$，正、负惯性指数分别为 $p,q$，且
+秩为 $n$,正,负惯性指数分别为 $p,q$,且
 \[
 p\ge q>0.
 \]
 \begin{enumerate}
-    \item 证明存在 $q$ 维子空间 $W$，使 $f$ 在 $W$ 上恒为零；
+    \item 证明存在 $q$ 维子空间 $W$,使 $f$ 在 $W$ 上恒为零;
     \item 令
     \[
     T=\{x:f(x)=0\},
     \]
-    判断 $T$ 是否等于 $W$。
+    判断 $T$ 是否等于 $W$.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -1061,9 +1061,9 @@ w=\sum c_i(e_i+f_i)
 \[
 f(w)=\sum c_i^2-\sum c_i^2=0,
 \]
-故 $\dim W=q$ 且 $f|_W\equiv0$。
+故 $\dim W=q$ 且 $f|_W\equiv0$.
 
-但 $T$ 是整个零锥，一般不是线性子空间，而 $W$ 是其中一个最大维的全零子空间。
+但 $T$ 是整个零锥,一般不是线性子空间,而 $W$ 是其中一个最大维的全零子空间.
 因此
 \[
 \boxed{T\neq W}.
@@ -1072,7 +1072,7 @@ f(w)=\sum c_i^2-\sum c_i^2=0,
 
 
 \begin{example}
-设 $A\in M_n(\mathbb R)$ 为对称矩阵，令
+设 $A\in M_n(\mathbb R)$ 为对称矩阵,令
 \[
 T_1=\{x:x^{\mathsf T}Ax=0\},
 \qquad
@@ -1088,10 +1088,10 @@ T_1\text{ 是 }\mathbb R^n\text{ 的线性子空间}.
 \exampleblank
 
 \begin{solution}
-若 $T_1=T_2$，则 $T_1=\ker A$，当然是子空间。
+若 $T_1=T_2$,则 $T_1=\ker A$,当然是子空间.
 
-反之若 $T_1$ 是子空间，由前述命题可知二次型半正定或半负定。
-在半正定或半负定情形，
+反之若 $T_1$ 是子空间,由前述命题可知二次型半正定或半负定.
+在半正定或半负定情形,
 \[
 x^{\mathsf T}Ax=0
 \iff
@@ -1115,7 +1115,7 @@ l_i=c_{i1}x_1+\cdots+c_{in}x_n,
 \[
 f=l_1^2+\cdots+l_p^2-l_{p+1}^2-\cdots-l_{p+q}^2
 \]
-的正惯性指数不超过 $p$，负惯性指数不超过 $q$。
+的正惯性指数不超过 $p$,负惯性指数不超过 $q$.
 \end{proposition}
 
 
@@ -1126,33 +1126,33 @@ A=D^{\mathsf T}BD,
 \qquad
 B=C^{\mathsf T}AC,
 \]
-其中 $C,D$ 不要求可逆。证明 $A,B$ 具有相同的规范形。
+其中 $C,D$ 不要求可逆.证明 $A,B$ 具有相同的规范形.
 \end{example}
 \exampleblank
 
 \begin{solution}
-由合同型惯性指数单调性，
+由合同型惯性指数单调性,
 \[
 A=D^{\mathsf T}BD
 \Longrightarrow
 p(A)\le p(B),\qquad q(A)\le q(B).
 \]
-另一方面，
+另一方面,
 \[
 B=C^{\mathsf T}AC
 \Longrightarrow
 p(B)\le p(A),\qquad q(B)\le q(A).
 \]
-故正、负惯性指数分别相等。又
+故正,负惯性指数分别相等.又
 \[
 r(A)=p(A)+q(A)=r(B),
 \]
-零指数也相同。因此二者规范形相同。
+零指数也相同.因此二者规范形相同.
 \end{solution}
 
 
 \begin{example}[\markstar]
-设 $A,B$ 为 $n$ 阶实对称矩阵，并且
+设 $A,B$ 为 $n$ 阶实对称矩阵,并且
 \[
 A=C^{\mathsf T}BC.
 \]
@@ -1174,17 +1174,17 @@ q(A)\le q(B).
 \[
 x^{\mathsf T}Ax=(Cx)^{\mathsf T}B(Cx)
 \]
-是至多 $p$ 个线性函数平方之和减去至多 $q$ 个线性函数平方之和。
-由前述命题，
+是至多 $p$ 个线性函数平方之和减去至多 $q$ 个线性函数平方之和.
+由前述命题,
 \[
 p(A)\le p,\qquad q(A)\le q.
 \]
-即得结论。
+即得结论.
 \end{solution}
 
 
 \begin{example}
-设 $A,B$ 均为 $n$ 阶半正定矩阵。证明
+设 $A,B$ 均为 $n$ 阶半正定矩阵.证明
 \[
 p(A+B)\le p(A)+p(B).
 \]
@@ -1192,7 +1192,7 @@ p(A+B)\le p(A)+p(B).
 \exampleblank
 
 \begin{solution}
-半正定矩阵的正惯性指数等于秩。并且
+半正定矩阵的正惯性指数等于秩.并且
 \[
 \ker(A+B)=\ker A\cap\ker B.
 \]
@@ -1209,20 +1209,20 @@ r(A+B)
 
 
 \begin{example}
-设 $A,B$ 为 $n$ 阶半正定矩阵，且
+设 $A,B$ 为 $n$ 阶半正定矩阵,且
 \[
 r(A)\le p,\qquad r(B)\le q.
 \]
-证明 $A-B$ 的正惯性指数不超过 $p$，负惯性指数不超过 $q$。
+证明 $A-B$ 的正惯性指数不超过 $p$,负惯性指数不超过 $q$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-由惯性指数的加法估计，
+由惯性指数的加法估计,
 \[
 p(A-B)\le p(A)+p(-B)=r(A)\le p,
 \]
-因为 $-B$ 没有正惯性指数。类似地，
+因为 $-B$ 没有正惯性指数.类似地,
 \[
 q(A-B)\le q(A)+q(-B)=r(B)\le q.
 \]
@@ -1232,7 +1232,7 @@ q(A-B)\le q(A)+q(-B)=r(B)\le q.
 \subsection{实对称矩阵的正交对角化}
 
 \begin{example}
-将下列实对称矩阵正交对角化，并给出一个正交过渡矩阵：
+将下列实对称矩阵正交对角化,并给出一个正交过渡矩阵:
 \begin{enumerate}
     \item
     \[
@@ -1279,7 +1279,7 @@ q(A-B)\le q(A)+q(-B)=r(B)\le q.
     \[
     \lambda_1<\lambda_2<\lambda_3.
     \]
-    对任一根 $\lambda$，可取特征向量
+    对任一根 $\lambda$,可取特征向量
     \[
     v(\lambda)=
     \begin{pmatrix}
@@ -1288,7 +1288,7 @@ q(A-B)\le q(A)+q(-B)=r(B)\le q.
     \lambda^2-\lambda-1
     \end{pmatrix}.
     \]
-    由于 $A_1$ 为实对称矩阵，属于不同特征值的这些向量彼此正交。
+    由于 $A_1$ 为实对称矩阵,属于不同特征值的这些向量彼此正交.
     因此令
     \[
     q_i=\dfrac{v(\lambda_i)}{\|v(\lambda_i)\|},
@@ -1331,7 +1331,7 @@ q(A-B)\le q(A)+q(-B)=r(B)\le q.
     \sin4\theta_k
     \end{pmatrix}.
     \]
-    令 $Q=(q_1,q_2,q_3,q_4)$，则
+    令 $Q=(q_1,q_2,q_3,q_4)$,则
     \[
     \boxed{
     Q^{\mathsf T}A_2Q
@@ -1372,7 +1372,7 @@ q(A-B)\le q(A)+q(-B)=r(B)\le q.
 
 
 \begin{example}
-设三阶实对称矩阵 $A$ 的秩为 $2$，并且
+设三阶实对称矩阵 $A$ 的秩为 $2$,并且
 \[
 AB=C,
 \]
@@ -1392,12 +1392,12 @@ C=
 1&1
 \end{pmatrix}.
 \]
-求 $A$ 的全部特征值、相应特征向量，并求 $A$。
+求 $A$ 的全部特征值,相应特征向量,并求 $A$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-设 $B$ 的两列为 $b_1,b_2$，$C$ 的两列为 $c_1,c_2$。由
+设 $B$ 的两列为 $b_1,b_2$,$C$ 的两列为 $c_1,c_2$.由
 \[
 Ab_1=c_1,\qquad Ab_2=c_2
 \]
@@ -1408,11 +1408,11 @@ A(e_1-e_3)=(-1,0,1)^{\mathsf T},
 \[
 A(e_1+e_3)=(1,0,1)^{\mathsf T}.
 \]
-相加、相减可得
+相加,相减可得
 \[
 Ae_1=e_3,\qquad Ae_3=e_1.
 \]
-由于 $A$ 对称，
+由于 $A$ 对称,
 \[
 A=
 \begin{pmatrix}
@@ -1421,7 +1421,7 @@ A=
 1&0&0
 \end{pmatrix}.
 \]
-又 $r(A)=2$，故 $a=0$。因此
+又 $r(A)=2$,故 $a=0$.因此
 \[
 \boxed{
 A=
@@ -1446,7 +1446,7 @@ A=
 
 
 \begin{example}
-设 $A\in M_n(\mathbb R)$ 为实对称矩阵，其中心化子为
+设 $A\in M_n(\mathbb R)$ 为实对称矩阵,其中心化子为
 \[
 C(A)=\{X\in M_n(\mathbb R):AX=XA\}.
 \]
@@ -1454,7 +1454,7 @@ C(A)=\{X\in M_n(\mathbb R):AX=XA\}.
 \[
 \dim C(A)\ge n,
 \]
-且等号成立当且仅当 $A$ 有 $n$ 个互不相同的特征值。
+且等号成立当且仅当 $A$ 有 $n$ 个互不相同的特征值.
 \end{example}
 \exampleblank
 
@@ -1469,7 +1469,7 @@ Q^{\mathsf T}AQ
 \lambda_sI_{m_s}
 ),
 \]
-其中 $\lambda_i$ 两两不同，
+其中 $\lambda_i$ 两两不同,
 \[
 m_1+\cdots+m_s=n.
 \]
@@ -1491,16 +1491,16 @@ X_i\in M_{m_i}(\mathbb R).
 \[
 \dim C(A)\ge n.
 \]
-等号成立当且仅当所有 $m_i=1$，即 $A$ 有 $n$ 个互异特征值。
+等号成立当且仅当所有 $m_i=1$,即 $A$ 有 $n$ 个互异特征值.
 \end{solution}
 
 
 \begin{proposition}[\markstar]
-设 $A$ 是 $n$ 阶实对称矩阵，特征值按
+设 $A$ 是 $n$ 阶实对称矩阵,特征值按
 \[
 \lambda_1\le\lambda_2\le\cdots\le\lambda_n
 \]
-排列，则
+排列,则
 \[
 \lambda_1
 =
@@ -1520,7 +1520,7 @@ X_i\in M_{m_i}(\mathbb R).
 \[
 f(x)=x^{\mathsf T}Ax,
 \]
-其中 $A$ 是三阶实对称矩阵，并满足
+其中 $A$ 是三阶实对称矩阵,并满足
 \[
 A^3-6A^2+11A-6I=O.
 \]
@@ -1538,7 +1538,7 @@ t^3-6t^2+11t-6
 =
 (t-1)(t-2)(t-3).
 \]
-由于 $A$ 为实对称矩阵，其特征值都属于
+由于 $A$ 为实对称矩阵,其特征值都属于
 \[
 \{1,2,3\}.
 \]
@@ -1553,7 +1553,7 @@ t^3-6t^2+11t-6
 \[
 A=3I
 \]
-时原矩阵方程成立，并且最小特征值为 $3$。故
+时原矩阵方程成立,并且最小特征值为 $3$.故
 \[
 \boxed{3}.
 \]
@@ -1561,30 +1561,30 @@ A=3I
 
 
 \begin{example}
-设 $A$ 为 $n$ 阶实方阵，$\lambda=a+bi$ 是 $A$ 的任一复特征值。
+设 $A$ 为 $n$ 阶实方阵,$\lambda=a+bi$ 是 $A$ 的任一复特征值.
 \begin{enumerate}
     \item 证明
     \[
     S=\dfrac12(A+A^{\mathsf T})
     \]
-    的特征值都为实数；
+    的特征值都为实数;
     \item 若
     \[
     \mu_1\le\cdots\le\mu_n
     \]
-    是 $S$ 的特征值，证明
+    是 $S$ 的特征值,证明
     \[
     \mu_1\le a\le\mu_n;
     \]
-    \item 对 $b$ 给出类似估计。
+    \item 对 $b$ 给出类似估计.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-第一问因为 $S$ 为实对称矩阵，所以全部特征值均为实数。
+第一问因为 $S$ 为实对称矩阵,所以全部特征值均为实数.
 
-设 $z\in\mathbb C^n$ 为 $\lambda$ 的特征向量：
+设 $z\in\mathbb C^n$ 为 $\lambda$ 的特征向量:
 \[
 Az=\lambda z.
 \]
@@ -1605,7 +1605,7 @@ a
 \[
 H=\dfrac{A-A^{\mathsf T}}{2i}.
 \]
-$H$ 是 Hermitian 矩阵。若其特征值为
+$H$ 是 Hermitian 矩阵.若其特征值为
 \[
 \nu_1\le\cdots\le\nu_n,
 \]
@@ -1631,9 +1631,9 @@ A&B\\
 B^{\mathsf T}&C
 \end{pmatrix}
 \]
-为实对称矩阵，其中 $A$ 为 $s$ 阶、$C$ 为 $t$ 阶。
-设 $M$ 的最小、最大特征值分别为 $\lambda_1,\lambda_2$，
-而 $A,C$ 的最大特征值分别为 $\mu_1,\mu_2$。证明
+为实对称矩阵,其中 $A$ 为 $s$ 阶,$C$ 为 $t$ 阶.
+设 $M$ 的最小,最大特征值分别为 $\lambda_1,\lambda_2$,
+而 $A,C$ 的最大特征值分别为 $\mu_1,\mu_2$.证明
 \[
 \lambda_1+\lambda_2\le\mu_1+\mu_2.
 \]
@@ -1647,7 +1647,7 @@ B^{\mathsf T}&C
 \qquad
 \|x\|^2+\|y\|^2=1.
 \]
-若 $x,y$ 都非零，令
+若 $x,y$ 都非零,令
 \[
 u=\dfrac{x}{\|x\|},
 \qquad
@@ -1660,7 +1660,7 @@ v=\dfrac{y}{\|y\|}.
 \begin{pmatrix}0\\v\end{pmatrix}
 \right\}
 \]
-上的压缩。该二维压缩包含 $\lambda_2$ 这一特征值，另一特征值记为 $\theta$。
+上的压缩.该二维压缩包含 $\lambda_2$ 这一特征值,另一特征值记为 $\theta$.
 由 Rayleigh 商有
 \[
 \theta\ge\lambda_1.
@@ -1680,7 +1680,7 @@ u^{\mathsf T}Au+v^{\mathsf T}Cv
 \le
 \mu_1+\mu_2.
 \]
-若 $x=0$ 或 $y=0$，作同样的一维退化讨论即可。
+若 $x=0$ 或 $y=0$,作同样的一维退化讨论即可.
 \end{solution}
 
 
@@ -1691,7 +1691,7 @@ u^{\mathsf T}Au+v^{\mathsf T}Cv
 \subsection{平方根}
 
 \begin{proposition}[\marktwostar]
-若 $S$ 为实对称正定矩阵，则存在唯一实对称正定矩阵 $S_1$ 使
+若 $S$ 为实对称正定矩阵,则存在唯一实对称正定矩阵 $S_1$ 使
 \[
 S=S_1^2.
 \]
@@ -1703,7 +1703,7 @@ S_1=S^{1/2}.
 
 
 \begin{example}[\markstar]
-设 $A\in M_n(\mathbb R)$ 可逆。证明存在正定矩阵 $P$ 与正交矩阵 $U$，
+设 $A\in M_n(\mathbb R)$ 可逆.证明存在正定矩阵 $P$ 与正交矩阵 $U$,
 使
 \[
 A=PU.
@@ -1716,7 +1716,7 @@ A=PU.
 \[
 P=(AA^{\mathsf T})^{1/2}.
 \]
-因为 $A$ 可逆，所以 $AA^{\mathsf T}$ 正定，故 $P$ 正定且可逆。
+因为 $A$ 可逆,所以 $AA^{\mathsf T}$ 正定,故 $P$ 正定且可逆.
 定义
 \[
 U=P^{-1}A.
@@ -1731,7 +1731,7 @@ P^{-1}P^2P^{-1}
 =
 I.
 \]
-故 $U$ 正交，并且
+故 $U$ 正交,并且
 \[
 \boxed{A=PU}.
 \]
@@ -1739,7 +1739,7 @@ I.
 
 
 \begin{example}
-设 $A$ 为 $n$ 阶半正定矩阵，$B$ 为 $n$ 阶实方阵。
+设 $A$ 为 $n$ 阶半正定矩阵,$B$ 为 $n$ 阶实方阵.
 若存在正整数 $r$ 使
 \[
 A^rB=BA^r,
@@ -1764,19 +1764,19 @@ A^r
 =
 Q\diag(\lambda_1^r,\ldots,\lambda_n^r)Q^{\mathsf T}.
 \]
-在非负实数上，映射 $t\mapsto t^r$ 是单射，因此
+在非负实数上,映射 $t\mapsto t^r$ 是单射,因此
 \[
 \lambda_i^r=\lambda_j^r
 \iff
 \lambda_i=\lambda_j.
 \]
-所以 $A$ 与 $A^r$ 的特征空间分解完全相同。与 $A^r$ 可交换的矩阵必保持这些特征空间，
-故也与 $A$ 可交换。
+所以 $A$ 与 $A^r$ 的特征空间分解完全相同.与 $A^r$ 可交换的矩阵必保持这些特征空间,
+故也与 $A$ 可交换.
 \end{solution}
 
 
 \begin{example}
-设 $A,B$ 为实对称半正定矩阵，且
+设 $A,B$ 为实对称半正定矩阵,且
 \[
 AB+BA=O.
 \]
@@ -1802,7 +1802,7 @@ AB=BA=O.
 \[
 A^{1/2}BA^{1/2}
 \]
-半正定，迹为零，因此它只能是零矩阵。于是
+半正定,迹为零,因此它只能是零矩阵.于是
 \[
 B^{1/2}A^{1/2}=O.
 \]
@@ -1816,7 +1816,7 @@ AB=(BA)^{\mathsf T}=O.
 
 
 \begin{example}
-设 $A$ 为 $n$ 阶实方阵，$B$ 为 $n$ 阶正定矩阵，且
+设 $A$ 为 $n$ 阶实方阵,$B$ 为 $n$ 阶正定矩阵,且
 \[
 AB^2=B^2A.
 \]
@@ -1838,13 +1838,13 @@ B=Q\diag(\lambda_1,\ldots,\lambda_n)Q^{\mathsf T},
 \[
 B^2=Q\diag(\lambda_1^2,\ldots,\lambda_n^2)Q^{\mathsf T}.
 \]
-因 $\lambda_i>0$，
+因 $\lambda_i>0$,
 \[
 \lambda_i^2=\lambda_j^2
 \iff
 \lambda_i=\lambda_j.
 \]
-因此 $B$ 与 $B^2$ 的特征空间分解相同，故二者的中心化子相同。
+因此 $B$ 与 $B^2$ 的特征空间分解相同,故二者的中心化子相同.
 于是
 \[
 AB^2=B^2A
@@ -1857,7 +1857,7 @@ AB=BA.
 \subsection{同时对角化}
 
 \begin{proposition}[\markstar]
-设 $A,B$ 为 $n$ 阶实对称矩阵，且 $A$ 正定，则存在实可逆矩阵 $P$ 使
+设 $A,B$ 为 $n$ 阶实对称矩阵,且 $A$ 正定,则存在实可逆矩阵 $P$ 使
 \[
 P^{\mathsf T}AP=I,
 \qquad
@@ -1869,12 +1869,12 @@ P^{\mathsf T}BP
 \[
 \det(\lambda A-B)=0
 \]
-的全部实根，也就是 $A^{-1}B$ 的特征值。
+的全部实根,也就是 $A^{-1}B$ 的特征值.
 \end{proposition}
 
 
 \begin{example}
-设 $A,B$ 为 $n$ 阶实对称矩阵，且 $B$ 正定。设
+设 $A,B$ 为 $n$ 阶实对称矩阵,且 $B$ 正定.设
 \[
 \lambda_1,\ldots,\lambda_n
 \]
@@ -1882,9 +1882,9 @@ P^{\mathsf T}BP
 \[
 \det(\lambda B-A)=0
 \]
-的全部根。证明：
+的全部根.证明:
 \begin{enumerate}
-    \item $\lambda_i$ 全为实数；
+    \item $\lambda_i$ 全为实数;
     \item 存在 $\mathbb R^n$ 的一组基
     \[
     \varepsilon_1,\ldots,\varepsilon_n
@@ -1904,11 +1904,11 @@ P^{\mathsf T}BP
 \[
 C=B^{-1/2}AB^{-1/2}.
 \]
-则 $C$ 为实对称矩阵，所以存在正交矩阵 $Q=(q_1,\ldots,q_n)$ 使
+则 $C$ 为实对称矩阵,所以存在正交矩阵 $Q=(q_1,\ldots,q_n)$ 使
 \[
 Cq_i=\lambda_iq_i,
 \]
-且全部 $\lambda_i$ 为实数。
+且全部 $\lambda_i$ 为实数.
 
 令
 \[
@@ -1936,7 +1936,7 @@ q_i^{\mathsf T}q_j
 
 
 \begin{example}
-设 $f,g$ 为 $\mathbb R^n$ 上的实二次型，并且 $f$ 正定。证明方程组
+设 $f,g$ 为 $\mathbb R^n$ 上的实二次型,并且 $f$ 正定.证明方程组
 \[
 \begin{cases}
 f(x)=1,\\
@@ -1947,42 +1947,42 @@ g(x)=1
 \[
 f-g
 \]
-为正定或负定二次型。
+为正定或负定二次型.
 \end{example}
 \exampleblank
 
 \begin{solution}
-若 $f-g$ 正定或负定，则显然不可能同时有 $f(x)=g(x)=1$。
+若 $f-g$ 正定或负定,则显然不可能同时有 $f(x)=g(x)=1$.
 
-反之设方程组无解。集合
+反之设方程组无解.集合
 \[
 S=\{x:f(x)=1\}
 \]
-在 $f$ 所定义的内积下是单位球面，且
+在 $f$ 所定义的内积下是单位球面,且
 \[
 h(x)=f(x)-g(x)
 \]
-在 $S$ 上处处非零。由于 $h(-x)=h(x)$，即使 $n=1$ 两点取值符号也一致；
-当 $n\ge2$ 时 $S$ 连通，所以 $h$ 在 $S$ 上恒正或恒负。
+在 $S$ 上处处非零.由于 $h(-x)=h(x)$,即使 $n=1$ 两点取值符号也一致;
+当 $n\ge2$ 时 $S$ 连通,所以 $h$ 在 $S$ 上恒正或恒负.
 
 任意 $x\neq0$ 都可缩放为
 \[
 y=\dfrac{x}{\sqrt{f(x)}}\in S.
 \]
-由二次齐次性，
+由二次齐次性,
 \[
 h(x)=f(x)h(y).
 \]
-故 $h$ 对全部非零 $x$ 恒正或恒负，即 $f-g$ 正定或负定。
+故 $h$ 对全部非零 $x$ 恒正或恒负,即 $f-g$ 正定或负定.
 \end{solution}
 
 
 \begin{example}
-设 $A,B,A-B$ 都是实对称正定矩阵。证明
+设 $A,B,A-B$ 都是实对称正定矩阵.证明
 \[
 B^{-1}-A^{-1}
 \]
-也是正定矩阵。
+也是正定矩阵.
 \end{example}
 \exampleblank
 
@@ -1995,7 +1995,7 @@ A-B>0
 \[
 B^{-1/2}AB^{-1/2}>I.
 \]
-正定矩阵取逆会反转 Loewner 次序，所以
+正定矩阵取逆会反转 Loewner 次序,所以
 \[
 (B^{-1/2}AB^{-1/2})^{-1}<I.
 \]
@@ -2009,7 +2009,7 @@ B^{1/2}A^{-1}B^{1/2}.
 \[
 B^{1/2}(B^{-1}-A^{-1})B^{1/2}>0.
 \]
-由合同保持正定性，得到
+由合同保持正定性,得到
 \[
 \boxed{B^{-1}-A^{-1}>0}.
 \]
@@ -2017,7 +2017,7 @@ B^{1/2}(B^{-1}-A^{-1})B^{1/2}>0.
 
 
 \begin{example}[\markstar]
-设 $A,B$ 都是 $n$ 阶正定矩阵。证明
+设 $A,B$ 都是 $n$ 阶正定矩阵.证明
 \[
 \det(A+B)\ge\det A+\det B.
 \]
@@ -2029,7 +2029,7 @@ B^{1/2}(B^{-1}-A^{-1})B^{1/2}>0.
 \[
 C=A^{-1/2}BA^{-1/2}>0
 \]
-的特征值为 $\lambda_1,\ldots,\lambda_n>0$。则
+的特征值为 $\lambda_1,\ldots,\lambda_n>0$.则
 \[
 \det(A+B)
 =
@@ -2046,7 +2046,7 @@ C=A^{-1/2}BA^{-1/2}>0
 \ge
 1+\prod\limits_{i=1}^{n}\lambda_i,
 \]
-因为展开式中其余各项均非负。因此
+因为展开式中其余各项均非负.因此
 \[
 \boxed{\det(A+B)\ge\det A+\det B}.
 \]
@@ -2054,7 +2054,7 @@ C=A^{-1/2}BA^{-1/2}>0
 
 
 \begin{example}
-设 $A\in M_n(\mathbb R)$ 为实对称矩阵，$B\in M_m(\mathbb R)$ 正定。
+设 $A\in M_n(\mathbb R)$ 为实对称矩阵,$B\in M_m(\mathbb R)$ 正定.
 证明存在非零矩阵
 \[
 H\in M_{m,n}(\mathbb R)
@@ -2063,7 +2063,7 @@ H\in M_{m,n}(\mathbb R)
 \[
 B-HAH^{\mathsf T}
 \]
-正定。
+正定.
 \end{example}
 \exampleblank
 
@@ -2082,23 +2082,23 @@ B-HAH^{\mathsf T}
 =
 B-t^2H_0AH_0^{\mathsf T}.
 \]
-正定矩阵集合是开集，因此当 $t\neq0$ 且充分小时，上式仍为正定矩阵。
-于是所求非零 $H$ 存在。
+正定矩阵集合是开集,因此当 $t\neq0$ 且充分小时,上式仍为正定矩阵.
+于是所求非零 $H$ 存在.
 \end{solution}
 
 
 \begin{example}
-设 $A,B$ 为 $n$ 阶实对称矩阵，$B$ 正定，且
+设 $A,B$ 为 $n$ 阶实对称矩阵,$B$ 正定,且
 \[
 A-B
 \]
-半正定。
+半正定.
 \begin{enumerate}
     \item 若 $\lambda$ 是
     \[
     \det(A-\lambda B)=0
     \]
-    的根，证明 $\lambda\ge1$；
+    的根,证明 $\lambda\ge1$;
     \item 证明
     \[
     \det A\ge\det B.
@@ -2112,15 +2112,15 @@ A-B
 \[
 C=B^{-1/2}AB^{-1/2}.
 \]
-由 $A-B\ge0$，
+由 $A-B\ge0$,
 \[
 C-I\ge0,
 \]
-故 $C$ 的全部特征值都不小于 $1$。而广义特征值方程
+故 $C$ 的全部特征值都不小于 $1$.而广义特征值方程
 \[
 \det(A-\lambda B)=0
 \]
-的根正是 $C$ 的特征值，所以第一问成立。
+的根正是 $C$ 的特征值,所以第一问成立.
 
 进一步
 \[
@@ -2141,7 +2141,7 @@ C-I\ge0,
 \subsection{两个重要不等式}
 
 \begin{proposition}[\markstar]
-设 $A,B$ 都是 $n$ 阶半正定矩阵，则
+设 $A,B$ 都是 $n$ 阶半正定矩阵,则
 \[
 \det(A+B)\ge\det A+\det B
 \ge
@@ -2151,18 +2151,18 @@ C-I\ge0,
 
 
 \begin{example}
-设 $A,B$ 分别为 $m\times n$ 与 $s\times n$ 的行满秩实矩阵，令
+设 $A,B$ 分别为 $m\times n$ 与 $s\times n$ 的行满秩实矩阵,令
 \[
 Q=
 AB^{\mathsf T}(BB^{\mathsf T})^{-1}BA^{\mathsf T}.
 \]
-证明：
+证明:
 \begin{enumerate}
     \item
     \[
     AA^{\mathsf T}-Q
     \]
-    半正定；
+    半正定;
     \item
     \[
     0\le\det Q\le\det(AA^{\mathsf T}).
@@ -2177,7 +2177,7 @@ AB^{\mathsf T}(BB^{\mathsf T})^{-1}BA^{\mathsf T}.
 P=
 B^{\mathsf T}(BB^{\mathsf T})^{-1}B.
 \]
-因为 $B$ 行满秩，$P$ 是到 $B$ 的行空间的正交投影，所以
+因为 $B$ 行满秩,$P$ 是到 $B$ 的行空间的正交投影,所以
 \[
 P^2=P,\qquad P^{\mathsf T}=P,\qquad 0\le P\le I.
 \]
@@ -2191,9 +2191,9 @@ AA^{\mathsf T}-Q
 =
 A(I-P)A^{\mathsf T}\ge0.
 \]
-这证明第一问。
+这证明第一问.
 
-又因 $A$ 行满秩，
+又因 $A$ 行满秩,
 \[
 AA^{\mathsf T}>0.
 \]
@@ -2201,7 +2201,7 @@ AA^{\mathsf T}>0.
 \[
 0\le Q\le AA^{\mathsf T}
 \]
-作合同归一化，得到一个特征值均落在 $[0,1]$ 的半正定矩阵，故
+作合同归一化,得到一个特征值均落在 $[0,1]$ 的半正定矩阵,故
 \[
 0\le
 \dfrac{\det Q}{\det(AA^{\mathsf T})}
@@ -2221,7 +2221,7 @@ AA^{\mathsf T}>0.
 \[
 A=(B,C)
 \]
-是 $n$ 阶实方阵，其中
+是 $n$ 阶实方阵,其中
 \[
 B\in M_{n,m}(\mathbb R),
 \qquad
@@ -2250,18 +2250,18 @@ B^{\mathsf T}B&B^{\mathsf T}C\\
 C^{\mathsf T}B&C^{\mathsf T}C
 \end{pmatrix}.
 \]
-矩阵 $A^{\mathsf T}A$ 半正定。对半正定分块矩阵应用 Fischer 行列式不等式，
+矩阵 $A^{\mathsf T}A$ 半正定.对半正定分块矩阵应用 Fischer 行列式不等式,
 \[
 \det(A^{\mathsf T}A)
 \le
 \det(B^{\mathsf T}B)\det(C^{\mathsf T}C).
 \]
-于是结论成立。
+于是结论成立.
 \end{solution}
 
 
 \begin{example}
-设 $S,T$ 均为 $n$ 阶实对称半正定矩阵。证明
+设 $S,T$ 均为 $n$ 阶实对称半正定矩阵.证明
 \[
 \det(S+T)
 \ge
@@ -2288,11 +2288,11 @@ C^{\mathsf T}B&C^{\mathsf T}C
 
 
 \begin{example}
-设 $A$ 为 $n$ 阶实矩阵，
+设 $A$ 为 $n$ 阶实矩阵,
 \[
 S=\dfrac12(A^{\mathsf T}+A),
 \]
-并且对任意非零 $x\in\mathbb R^n$，
+并且对任意非零 $x\in\mathbb R^n$,
 \[
 x^{\mathsf T}Ax>0.
 \]
@@ -2300,7 +2300,7 @@ x^{\mathsf T}Ax>0.
 \[
 \det A\ge\det S,
 \]
-且等号成立当且仅当 $A$ 是对称矩阵。
+且等号成立当且仅当 $A$ 是对称矩阵.
 \end{example}
 \exampleblank
 
@@ -2311,11 +2311,11 @@ x^{\mathsf T}Ax
 =
 x^{\mathsf T}Sx,
 \]
-所以 $S$ 正定。令
+所以 $S$ 正定.令
 \[
 K=\dfrac12(A-A^{\mathsf T}),
 \]
-则 $K^{\mathsf T}=-K$，且
+则 $K^{\mathsf T}=-K$,且
 \[
 A=S+K.
 \]
@@ -2333,7 +2333,7 @@ S^{1/2}.
 \[
 C=S^{-1/2}KS^{-1/2}.
 \]
-$C$ 为实反对称矩阵，其非零特征值成对为
+$C$ 为实反对称矩阵,其非零特征值成对为
 \[
 \pm i\mu_j.
 \]
@@ -2351,7 +2351,7 @@ $C$ 为实反对称矩阵，其非零特征值成对为
 \ge
 \det S.
 \]
-等号成立当且仅当全部 $\mu_j=0$，即 $C=0$，也就是 $K=0$。
+等号成立当且仅当全部 $\mu_j=0$,即 $C=0$,也就是 $K=0$.
 因此等号成立当且仅当
 \[
 \boxed{A=A^{\mathsf T}}.
@@ -2360,23 +2360,23 @@ $C$ 为实反对称矩阵，其非零特征值成对为
 
 
 \begin{lemma}[\markstar]
-若 $A=(a_{ij})$ 为正定矩阵，则
+若 $A=(a_{ij})$ 为正定矩阵,则
 \[
 \det A
 \le
 a_{nn}\Delta_{n-1},
 \]
-其中 $\Delta_{n-1}$ 是左上角 $(n-1)$ 阶顺序主子式。
+其中 $\Delta_{n-1}$ 是左上角 $(n-1)$ 阶顺序主子式.
 \end{lemma}
 
 \begin{proposition}[\markstar]
-Hadamard 不等式：
+Hadamard 不等式:
 \begin{enumerate}
-    \item 若 $A=(a_{ij})$ 半正定，则
+    \item 若 $A=(a_{ij})$ 半正定,则
     \[
     \det A\le a_{11}a_{22}\cdots a_{nn};
     \]
-    \item 若 $A=(a_{ij})$ 为任意实方阵，则
+    \item 若 $A=(a_{ij})$ 为任意实方阵,则
     \[
     |\det A|^2
     \le
@@ -2390,7 +2390,7 @@ Hadamard 不等式：
 
 
 \begin{example}
-设 $A=(a_{ij})$ 为 $n$ 阶实方阵，并满足
+设 $A=(a_{ij})$ 为 $n$ 阶实方阵,并满足
 \[
 |a_{ij}|\le1.
 \]
@@ -2407,7 +2407,7 @@ Hadamard 不等式：
 \sum\limits_{i=1}^{n}a_{ij}^2
 \le n.
 \]
-由 Hadamard 不等式，
+由 Hadamard 不等式,
 \[
 |\det A|^2
 \le
@@ -2424,19 +2424,19 @@ n^n.
 \subsection{\texorpdfstring{$AB$ 与 $B^{\mathsf T}AB$}{AB 与 BTAB} 型问题}
 
 \begin{proposition}[\markstar]
-设 $A$ 为 $n$ 阶正定矩阵，$B$ 为 $n$ 阶实对称矩阵，则：
+设 $A$ 为 $n$ 阶正定矩阵,$B$ 为 $n$ 阶实对称矩阵,则:
 \begin{enumerate}
-    \item $AB$ 的全部特征值均为实数；
-    \item $B$ 正定当且仅当 $AB$ 的全部特征值均大于 $0$；
-    \item $B$ 半正定当且仅当 $AB$ 的全部特征值均大于等于 $0$。
+    \item $AB$ 的全部特征值均为实数;
+    \item $B$ 正定当且仅当 $AB$ 的全部特征值均大于 $0$;
+    \item $B$ 半正定当且仅当 $AB$ 的全部特征值均大于等于 $0$.
 \end{enumerate}
 \end{proposition}
 
 \begin{proposition}[\markstar]
-设 $A$ 为 $n$ 阶实对称矩阵，$B$ 为 $n\times m$ 实矩阵，则：
+设 $A$ 为 $n$ 阶实对称矩阵,$B$ 为 $n\times m$ 实矩阵,则:
 \begin{enumerate}
-    \item 若 $A$ 半正定，则 $B^{\mathsf T}AB$ 半正定；
-    \item 若 $A$ 正定，则
+    \item 若 $A$ 半正定,则 $B^{\mathsf T}AB$ 半正定;
+    \item 若 $A$ 正定,则
     \[
     B^{\mathsf T}AB\text{ 正定}
     \iff
@@ -2447,7 +2447,7 @@ n^n.
 
 
 \begin{example}
-设 $A,B$ 为 $n$ 阶正定矩阵，$A-B$ 也正定，且
+设 $A,B$ 为 $n$ 阶正定矩阵,$A-B$ 也正定,且
 \[
 AB=BA.
 \]
@@ -2455,12 +2455,12 @@ AB=BA.
 \[
 A^2-B^2
 \]
-正定，并举例说明可交换条件不可缺少。
+正定,并举例说明可交换条件不可缺少.
 \end{example}
 \exampleblank
 
 \begin{solution}
-因为 $A,B$ 都是实对称矩阵且可交换，所以可以同时正交对角化：
+因为 $A,B$ 都是实对称矩阵且可交换,所以可以同时正交对角化:
 \[
 Q^{\mathsf T}AQ=\diag(a_1,\ldots,a_n),
 \]
@@ -2480,7 +2480,7 @@ a_i^2-b_i^2=(a_i-b_i)(a_i+b_i)>0,
 A^2-B^2>0.
 \]
 
-若去掉可交换条件，可取
+若去掉可交换条件,可取
 \[
 A=
 \begin{pmatrix}
@@ -2494,7 +2494,7 @@ B=
 -1&2
 \end{pmatrix}.
 \]
-则 $A,B,A-B$ 都正定，但
+则 $A,B,A-B$ 都正定,但
 \[
 A^2-B^2
 =
@@ -2507,14 +2507,14 @@ A^2-B^2
 \[
 43\cdot13-24^2=-17<0,
 \]
-故不是正定矩阵。
+故不是正定矩阵.
 \end{solution}
 
 
 \begin{example}
-设 $A,B$ 为 $n$ 阶正定矩阵。证明：
+设 $A,B$ 为 $n$ 阶正定矩阵.证明:
 \begin{enumerate}
-    \item $AB$ 的全部特征值都大于 $0$；
+    \item $AB$ 的全部特征值都大于 $0$;
     \item
     \[
     AB=BA
@@ -2530,15 +2530,15 @@ $AB$ 与
 \[
 A^{1/2}BA^{1/2}
 \]
-相似，而后者正定，所以 $AB$ 的全部特征值均为正实数。
+相似,而后者正定,所以 $AB$ 的全部特征值均为正实数.
 
-若 $AB=BA$，则
+若 $AB=BA$,则
 \[
 (AB)^{\mathsf T}=BA=AB,
 \]
-所以 $AB$ 对称；结合其正特征值，得到 $AB$ 正定。
+所以 $AB$ 对称;结合其正特征值,得到 $AB$ 正定.
 
-反之若 $AB$ 正定，则按定义 $AB$ 对称，于是
+反之若 $AB$ 正定,则按定义 $AB$ 对称,于是
 \[
 AB=(AB)^{\mathsf T}=BA.
 \]
@@ -2546,8 +2546,8 @@ AB=(AB)^{\mathsf T}=BA.
 
 
 \begin{example}
-设 $B_1$ 为实对称矩阵，$B_2$ 为同阶正定矩阵。
-证明 $B_1B_2$ 的特征值全为实数，并且 $B_1B_2$ 可对角化。
+设 $B_1$ 为实对称矩阵,$B_2$ 为同阶正定矩阵.
+证明 $B_1B_2$ 的特征值全为实数,并且 $B_1B_2$ 可对角化.
 \end{example}
 \exampleblank
 
@@ -2558,16 +2558,16 @@ B_1B_2
 \sim
 B_2^{1/2}B_1B_2^{1/2}.
 \]
-右端是实对称矩阵，因此有实特征值并且可正交对角化。
-相似矩阵具有相同谱以及相同的可对角化性，所以
+右端是实对称矩阵,因此有实特征值并且可正交对角化.
+相似矩阵具有相同谱以及相同的可对角化性,所以
 \[
-\boxed{B_1B_2\text{ 在实数域上可对角化，且谱为实数}.}
+\boxed{B_1B_2\text{ 在实数域上可对角化,且谱为实数}.}
 \]
 \end{solution}
 
 
 \begin{example}
-设 $B$ 为 $n$ 阶正定矩阵，
+设 $B$ 为 $n$ 阶正定矩阵,
 \[
 C\in M_{n,m}(\mathbb R),
 \qquad
@@ -2581,12 +2581,12 @@ B&C\\
 C^{\mathsf T}&O
 \end{pmatrix}.
 \]
-证明 $A$ 有 $n$ 个正特征值、$m$ 个负特征值。
+证明 $A$ 有 $n$ 个正特征值,$m$ 个负特征值.
 \end{example}
 \exampleblank
 
 \begin{solution}
-作分块合同变换，
+作分块合同变换,
 \[
 A
 \sim_{\mathrm c}
@@ -2595,17 +2595,17 @@ B&O\\
 O&-C^{\mathsf T}B^{-1}C
 \end{pmatrix}.
 \]
-因为 $B>0$，所以第一块有 $n$ 个正惯性指数。
-又 $C$ 列满秩，所以
+因为 $B>0$,所以第一块有 $n$ 个正惯性指数.
+又 $C$ 列满秩,所以
 \[
 C^{\mathsf T}B^{-1}C>0,
 \]
-于是第二块是 $m$ 阶负定矩阵。
-由惯性定理，
+于是第二块是 $m$ 阶负定矩阵.
+由惯性定理,
 \[
 \boxed{p(A)=n,\qquad q(A)=m}.
 \]
-实对称矩阵的惯性指数就是正、负特征值的个数。
+实对称矩阵的惯性指数就是正,负特征值的个数.
 \end{solution}
 
 
@@ -2623,7 +2623,7 @@ b+8&3&3&\cdots&3\\
 3&1&1&\cdots&b
 \end{pmatrix}.
 \]
-求实数 $b$ 的范围，使 $A$ 正定。
+求实数 $b$ 的范围,使 $A$ 正定.
 \end{example}
 \exampleblank
 
@@ -2636,7 +2636,7 @@ b+8&3\boldsymbol{1}^{\mathsf T}\\
 3\boldsymbol{1}&D
 \end{pmatrix},
 \]
-其中 $\boldsymbol{1}\in\mathbb R^{n-1}$，
+其中 $\boldsymbol{1}\in\mathbb R^{n-1}$,
 \[
 D=(b-1)I_{n-1}+J_{n-1}.
 \]
@@ -2650,7 +2650,7 @@ b+n-2.
 \[
 b>1.
 \]
-在此前提下，用 Schur 补：
+在此前提下,用 Schur 补:
 \[
 b+8
 -
@@ -2675,7 +2675,7 @@ b+8-\dfrac{9(n-1)}{b+n-2}>0.
 \[
 \dfrac{(b-1)(b+n+7)}{b+n-2}>0.
 \]
-结合 $b>1$，最终得到
+结合 $b>1$,最终得到
 \[
 \boxed{b>1}.
 \]
@@ -2691,10 +2691,10 @@ A&C\\
 C^{\mathsf T}&B
 \end{pmatrix}
 \]
-为正定矩阵，其中 $A,B$ 分别为 $m$ 阶、$n$ 阶实对称矩阵，
-$C$ 为 $m\times n$ 实矩阵。
+为正定矩阵,其中 $A,B$ 分别为 $m$ 阶,$n$ 阶实对称矩阵,
+$C$ 为 $m\times n$ 实矩阵.
 \begin{enumerate}
-    \item 证明 $A$ 可逆；
+    \item 证明 $A$ 可逆;
     \item 证明 $D$ 合同于
     \[
     \begin{pmatrix}
@@ -2702,17 +2702,17 @@ $C$ 为 $m\times n$ 实矩阵。
     O&B-C^{\mathsf T}A^{-1}C
     \end{pmatrix};
     \]
-    \item 判断 $C^{\mathsf T}A^{-1}C$ 是否正定。
+    \item 判断 $C^{\mathsf T}A^{-1}C$ 是否正定.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-$A$ 是正定矩阵 $D$ 的主子矩阵，因此
+$A$ 是正定矩阵 $D$ 的主子矩阵,因此
 \[
 A>0,
 \]
-从而 $A$ 可逆。
+从而 $A$ 可逆.
 
 作合同变换
 \[
@@ -2732,24 +2732,24 @@ O&B-C^{\mathsf T}A^{-1}C
 \end{pmatrix}.
 \]
 
-对任意 $x$，
+对任意 $x$,
 \[
 x^{\mathsf T}C^{\mathsf T}A^{-1}Cx
 =
 (Cx)^{\mathsf T}A^{-1}(Cx)\ge0,
 \]
-故它总是半正定。
+故它总是半正定.
 它正定的充分必要条件是
 \[
 \ker C=\{0\},
 \]
-即 $C$ 列满秩。原题条件没有保证这一点，例如 $C=0$ 时它就是零矩阵。
+即 $C$ 列满秩.原题条件没有保证这一点,例如 $C=0$ 时它就是零矩阵.
 \end{solution}
 
 
 \begin{example}
-设 $A$ 为 $n$ 阶正定矩阵，$\alpha\in\mathbb R^n$。
-证明：若
+设 $A$ 为 $n$ 阶正定矩阵,$\alpha\in\mathbb R^n$.
+证明:若
 \[
 \det(A-\alpha\alpha^{\mathsf T})=\det A,
 \]
@@ -2761,7 +2761,7 @@ x^{\mathsf T}C^{\mathsf T}A^{-1}Cx
 \exampleblank
 
 \begin{solution}
-由矩阵行列式引理，
+由矩阵行列式引理,
 \[
 \det(A-\alpha\alpha^{\mathsf T})
 =
@@ -2774,7 +2774,7 @@ x^{\mathsf T}C^{\mathsf T}A^{-1}Cx
 \[
 \alpha^{\mathsf T}A^{-1}\alpha=0.
 \]
-因为 $A^{-1}$ 正定，只能有
+因为 $A^{-1}$ 正定,只能有
 \[
 \boxed{\alpha=0}.
 \]
@@ -2782,7 +2782,7 @@ x^{\mathsf T}C^{\mathsf T}A^{-1}Cx
 
 
 \begin{example}
-若 $A,B$ 为半正定矩阵，证明
+若 $A,B$ 为半正定矩阵,证明
 \[
 \tr(AB)\ge0,
 \]
@@ -2804,9 +2804,9 @@ AB=O.
 \[
 A^{1/2}BA^{1/2}
 \]
-半正定，所以迹非负。
+半正定,所以迹非负.
 
-若迹为零，则这个半正定矩阵所有特征值都为零，因此
+若迹为零,则这个半正定矩阵所有特征值都为零,因此
 \[
 A^{1/2}BA^{1/2}=O.
 \]
@@ -2820,12 +2820,12 @@ BA=O,
 \qquad
 AB=(BA)^{\mathsf T}=O.
 \]
-反向显然。
+反向显然.
 \end{solution}
 
 
 \begin{example}
-设 $A$ 为 $n$ 阶半正定矩阵，并分块为
+设 $A$ 为 $n$ 阶半正定矩阵,并分块为
 \[
 A=
 \begin{pmatrix}
@@ -2833,7 +2833,7 @@ B&C\\
 C^{\mathsf T}&D
 \end{pmatrix},
 \]
-其中 $B$ 为 $m$ 阶方阵。证明
+其中 $B$ 为 $m$ 阶方阵.证明
 \[
 r(B,C)=r(B).
 \]
@@ -2853,7 +2853,7 @@ A
 =
 x^{\mathsf T}Bx=0.
 \]
-因为 $A$ 半正定，
+因为 $A$ 半正定,
 \[
 z^{\mathsf T}Az=0
 \Longrightarrow
@@ -2871,7 +2871,7 @@ C^{\mathsf T}x=0.
 \[
 \ker B\subseteq\ker C^{\mathsf T}.
 \]
-这等价于 $C$ 的每一列都属于 $B$ 的列空间，因此把 $C$ 接在 $B$ 后不会增加秩：
+这等价于 $C$ 的每一列都属于 $B$ 的列空间,因此把 $C$ 接在 $B$ 后不会增加秩:
 \[
 \boxed{r(B,C)=r(B)}.
 \]
@@ -2879,7 +2879,7 @@ C^{\mathsf T}x=0.
 
 
 \begin{example}
-设整数 $n\ge3$，实数 $x_1,\ldots,x_n$ 满足
+设整数 $n\ge3$,实数 $x_1,\ldots,x_n$ 满足
 \[
 x_1+\cdots+x_n=0,
 \qquad
@@ -2895,8 +2895,8 @@ x_1x_2+x_2x_3+\cdots+x_{n-1}x_n+x_nx_1
 \exampleblank
 
 \begin{solution}
-令 $C$ 为循环实对称矩阵，其相邻两个位置（包括首尾）元素均为
-$\dfrac12$，其余为零。则
+令 $C$ 为循环实对称矩阵,其相邻两个位置(包括首尾)元素均为
+$\dfrac12$,其余为零.则
 \[
 x^{\mathsf T}Cx
 =
@@ -2916,11 +2916,11 @@ k=0,1,\ldots,n-1.
 \[
 x_1+\cdots+x_n=0
 \]
-说明 $x$ 位于该特征向量的正交补上。在这一子空间中最大特征值为
+说明 $x$ 位于该特征向量的正交补上.在这一子空间中最大特征值为
 \[
 \cos\dfrac{2\pi}{n}.
 \]
-又 $\|x\|=1$，故由 Rayleigh 商
+又 $\|x\|=1$,故由 Rayleigh 商
 \[
 \boxed{
 x^{\mathsf T}Cx
@@ -2932,9 +2932,9 @@ x^{\mathsf T}Cx
 
 
 \begin{example}[\markstar]
-设 $A$ 为 $n$ 阶实方阵。
+设 $A$ 为 $n$ 阶实方阵.
 \begin{enumerate}
-    \item 证明对任意非零 $x\in\mathbb R^n$，
+    \item 证明对任意非零 $x\in\mathbb R^n$,
     \[
     x^{\mathsf T}Ax>0
     \iff
@@ -2961,31 +2961,31 @@ x^{\mathsf T}(A+A^{\mathsf T})x
 =
 2x^{\mathsf T}Ax.
 \]
-第一问成立。
+第一问成立.
 
 令
 \[
 S=\dfrac12(A+A^{\mathsf T})>0.
 \]
-若 $\lambda$ 是 $A$ 的实特征值，对相应实特征向量 $x$ 有
+若 $\lambda$ 是 $A$ 的实特征值,对相应实特征向量 $x$ 有
 \[
 \lambda\|x\|^2=x^{\mathsf T}Ax>0,
 \]
-所以所有实特征值都为正。
-非实特征值成共轭对出现，每一对的乘积为
+所以所有实特征值都为正.
+非实特征值成共轭对出现,每一对的乘积为
 \[
 |\lambda|^2>0.
 \]
-因此所有特征值之积为正，即
+因此所有特征值之积为正,即
 \[
 \boxed{\det A>0}.
 \]
-原题若把第一问写成“对任意 $x$”而未排除 $x=0$，则应补充 $x\neq0$。
+原题若把第一问写成``对任意 $x$''而未排除 $x=0$,则应补充 $x\neq0$.
 \end{solution}
 
 
 \begin{example}
-设 $A_1,\ldots,A_m$ 为 $n$ 阶实对称矩阵，并且
+设 $A_1,\ldots,A_m$ 为 $n$ 阶实对称矩阵,并且
 \[
 \sum\limits_{i=1}^{m}A_i^2=O.
 \]
@@ -2999,7 +2999,7 @@ A_i=O
 \exampleblank
 
 \begin{solution}
-对任意 $x\in\mathbb R^n$，
+对任意 $x\in\mathbb R^n$,
 \[
 0
 =
@@ -3011,13 +3011,13 @@ x^{\mathsf T}
 \sum\limits_{i=1}^{m}
 x^{\mathsf T}A_i^2x.
 \]
-由于 $A_i$ 对称，
+由于 $A_i$ 对称,
 \[
 x^{\mathsf T}A_i^2x
 =
 \|A_ix\|^2\ge0.
 \]
-非负数之和恒为零，故对任意 $i,x$，
+非负数之和恒为零,故对任意 $i,x$,
 \[
 A_ix=0.
 \]

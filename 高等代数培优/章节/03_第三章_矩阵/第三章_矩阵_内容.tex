@@ -8,24 +8,24 @@
 \subsection{迹}
 
 \begin{definition}
-方阵 $A=(a_{ij})\in M_n(F)$ 的迹（trace）定义为主对角线元素之和：
+方阵 $A=(a_{ij})\in M_n(F)$ 的迹(trace)定义为主对角线元素之和:
 \[
 \tr(A)=a_{11}+a_{22}+\cdots+a_{nn}.
 \]
 \end{definition}
 
 \begin{theorem}[\markstar]
-设 $A,B\in M_n(F)$，$\lambda\in F$，则：
+设 $A,B\in M_n(F)$,$\lambda\in F$,则:
 \begin{enumerate}
-  \item $\tr(A+B)=\tr(A)+\tr(B)$；
-  \item $\tr(\lambda A)=\lambda\tr(A)$；
-  \item $\tr(A)=\tr(A^{\mathsf T})$；
-  \item $\tr(AB)=\tr(BA)$；
-  \item 若 $F\subseteq\mathbb R$，则
+  \item $\tr(A+B)=\tr(A)+\tr(B)$;
+  \item $\tr(\lambda A)=\lambda\tr(A)$;
+  \item $\tr(A)=\tr(A^{\mathsf T})$;
+  \item $\tr(AB)=\tr(BA)$;
+  \item 若 $F\subseteq\mathbb R$,则
   \[
   \tr(AA^{\mathsf T})=0\iff A=O.
   \]
-  复数情形应将转置改为共轭转置，即
+  复数情形应将转置改为共轭转置,即
   \[
   \tr(AA^{\mathrm H})=0\iff A=O.
   \]
@@ -33,22 +33,22 @@
 \end{theorem}
 
 \begin{remark}
-复数情形若不加共轭，结论一般不成立。例如
+复数情形若不加共轭,结论一般不成立.例如
 \[
 A=\begin{pmatrix}1&i\\ i&1\end{pmatrix}
 \]
-满足 $\tr(AA^{\mathsf T})=0$，但 $A\neq O$。性质 (5) 常用于证明矩阵等式：若要证明 $A=B$，可以尝试证明
+满足 $\tr(AA^{\mathsf T})=0$,但 $A\neq O$.性质 (5) 常用于证明矩阵等式:若要证明 $A=B$,可以尝试证明
 \[
 \tr\bigl((A-B)(A-B)^{\mathsf T}\bigr)=0.
 \]
 \end{remark}
 
 \begin{example}
-设 $A$ 为二阶方阵，且存在方阵 $B$ 使得
+设 $A$ 为二阶方阵,且存在方阵 $B$ 使得
 \[
 AB-BA=A.
 \]
-证明：$A^2=O$。
+证明:$A^2=O$.
 \end{example}
 \exampleblank
 
@@ -57,26 +57,26 @@ AB-BA=A.
 \[
 AB-BA=A
 \]
-取迹得 $\tr(A)=0$。进一步，利用
+取迹得 $\tr(A)=0$.进一步,利用
 \[
 A^2B-BA^2=A(AB-BA)+(AB-BA)A=2A^2,
 \]
-取迹得 $\tr(A^2)=0$。
+取迹得 $\tr(A^2)=0$.
 
-设 $A$ 的两个特征值为 $\lambda_1,\lambda_2$，则
+设 $A$ 的两个特征值为 $\lambda_1,\lambda_2$,则
 \[
 \lambda_1+\lambda_2=0,
 \qquad
 \lambda_1^2+\lambda_2^2=0,
 \]
-从而 $\lambda_1=\lambda_2=0$。故 $A$ 的特征多项式为 $x^2$。由 Cayley--Hamilton 定理，
+从而 $\lambda_1=\lambda_2=0$.故 $A$ 的特征多项式为 $x^2$.由 Cayley--Hamilton 定理,
 \[
 \boxed{A^2=O}.
 \]
 \end{solution}
 
 \begin{example}
-证明：对任意二阶复方阵 $A,B,C$，有
+证明:对任意二阶复方阵 $A,B,C$,有
 \[
 A(BC-CB)^2-(BC-CB)^2A=O.
 \]
@@ -88,7 +88,7 @@ A(BC-CB)^2-(BC-CB)^2A=O.
 \[
 D=BC-CB.
 \]
-由迹的循环性质，$\tr(D)=0$。对二阶矩阵 $D$ 使用 Cayley--Hamilton 定理：
+由迹的循环性质,$\tr(D)=0$.对二阶矩阵 $D$ 使用 Cayley--Hamilton 定理:
 \[
 D^2-\tr(D)D+|D|I_2=O,
 \]
@@ -96,40 +96,40 @@ D^2-\tr(D)D+|D|I_2=O,
 \[
 D^2=-|D|I_2.
 \]
-因此 $D^2$ 为数量矩阵，与任意二阶矩阵 $A$ 可交换，故
+因此 $D^2$ 为数量矩阵,与任意二阶矩阵 $A$ 可交换,故
 \[
 AD^2-D^2A=O.
 \]
 \end{solution}
 
 \begin{example}
-证明：对任意 $n$ 阶方阵 $A,B$，等式
+证明:对任意 $n$ 阶方阵 $A,B$,等式
 \[
 AB-BA=I_n
 \]
-都不成立。
+都不成立.
 \end{example}
 \exampleblank
 
 \begin{solution}
-若等式成立，则两边取迹：
+若等式成立,则两边取迹:
 \[
 \tr(AB)-\tr(BA)=\tr(I_n)=n.
 \]
-左端由 $\tr(AB)=\tr(BA)$ 等于 $0$，于是得到 $0=n$，矛盾。因此该等式不可能成立。
+左端由 $\tr(AB)=\tr(BA)$ 等于 $0$,于是得到 $0=n$,矛盾.因此该等式不可能成立.
 \end{solution}
 
 \begin{example}
-设 $A$ 是 $n$ 阶实方阵，且
+设 $A$ 是 $n$ 阶实方阵,且
 \[
 A^2=AA^{\mathsf T}.
 \]
-证明：$A$ 是对称矩阵。
+证明:$A$ 是对称矩阵.
 \end{example}
 \exampleblank
 
 \begin{solution}
-对已知等式取转置，得
+对已知等式取转置,得
 \[
 (A^{\mathsf T})^2=AA^{\mathsf T}.
 \]
@@ -143,12 +143,12 @@ DD^{\mathsf T}
 =(A-A^{\mathsf T})(A^{\mathsf T}-A)
 =AA^{\mathsf T}-A^2-(A^{\mathsf T})^2+A^{\mathsf T}A.
 \]
-由两个已知关系，
+由两个已知关系,
 \[
 \tr(DD^{\mathsf T})
 =\tr(A^{\mathsf T}A)-\tr(AA^{\mathsf T})=0.
 \]
-因 $A$ 为实矩阵，由迹的性质知 $D=O$，即
+因 $A$ 为实矩阵,由迹的性质知 $D=O$,即
 \[
 \boxed{A=A^{\mathsf T}}.
 \]
@@ -159,7 +159,7 @@ DD^{\mathsf T}
 \[
 AB-BA=A,
 \]
-证明：对任意正整数 $k$，都有
+证明:对任意正整数 $k$,都有
 \[
 \tr(A^k)=0.
 \]
@@ -171,7 +171,7 @@ AB-BA=A,
 \[
 A^kB-BA^k=kA^k.
 \]
-当 $k=1$ 时即为已知条件。若对 $k$ 成立，则
+当 $k=1$ 时即为已知条件.若对 $k$ 成立,则
 \[
 \begin{aligned}
 A^{k+1}B-BA^{k+1}
@@ -180,7 +180,7 @@ A^{k+1}B-BA^{k+1}
 &=(k+1)A^{k+1}.
 \end{aligned}
 \]
-故归纳成立。两边取迹得
+故归纳成立.两边取迹得
 \[
 0=k\tr(A^k),
 \]
@@ -191,10 +191,10 @@ A^{k+1}B-BA^{k+1}
 \end{solution}
 
 
-\subsection{Kronecker 积（张量积）}
+\subsection{Kronecker 积(张量积)}
 
 \begin{definition}
-设 $A=(a_{ij})$、$B$ 分别为数域 $F$ 上的 $n$ 阶、$m$ 阶方阵，定义
+设 $A=(a_{ij})$,$B$ 分别为数域 $F$ 上的 $n$ 阶,$m$ 阶方阵,定义
 \[
 A\otimes B
 =
@@ -205,18 +205,18 @@ a_{21}B&a_{22}B&\cdots&a_{2n}B\\
 a_{n1}B&a_{n2}B&\cdots&a_{nn}B
 \end{pmatrix},
 \]
-称为 $A$ 与 $B$ 的 Kronecker 积（或张量积）。
+称为 $A$ 与 $B$ 的 Kronecker 积(或张量积).
 \end{definition}
 
 \begin{theorem}[\markstar]
-若矩阵乘法的尺寸相容，则：
+若矩阵乘法的尺寸相容,则:
 \begin{enumerate}
-  \item $(AC)\otimes(BD)=(A\otimes B)(C\otimes D)$；
-  \item 若 $A,B$ 可逆，则 $A\otimes B$ 可逆，且
+  \item $(AC)\otimes(BD)=(A\otimes B)(C\otimes D)$;
+  \item 若 $A,B$ 可逆,则 $A\otimes B$ 可逆,且
   \[
   (A\otimes B)^{-1}=A^{-1}\otimes B^{-1};
   \]
-  \item 若 $A$ 为 $n$ 阶、$B$ 为 $m$ 阶，则
+  \item 若 $A$ 为 $n$ 阶,$B$ 为 $m$ 阶,则
   \[
   |A\otimes B|=|A|^m|B|^n.
   \]
@@ -224,7 +224,7 @@ a_{n1}B&a_{n2}B&\cdots&a_{nn}B
 \end{theorem}
 
 \begin{proposition}[\markstar]
-设 $A,B$ 分别是 $n,m$ 阶矩阵，$A$ 的特征值为 $\lambda_i$，$B$ 的特征值为 $\mu_j$，则 $A\otimes B$ 的全部特征值为
+设 $A,B$ 分别是 $n,m$ 阶矩阵,$A$ 的特征值为 $\lambda_i$,$B$ 的特征值为 $\mu_j$,则 $A\otimes B$ 的全部特征值为
 \[
 \lambda_i\mu_j,
 \qquad
@@ -232,11 +232,11 @@ a_{n1}B&a_{n2}B&\cdots&a_{nn}B
 \quad
 1\leq j\leq m,
 \]
-重数按乘积计算。
+重数按乘积计算.
 \end{proposition}
 
 \begin{example}
-证明上述 Kronecker 积的三个性质以及特征值命题。
+证明上述 Kronecker 积的三个性质以及特征值命题.
 \end{example}
 \exampleblank
 
@@ -245,7 +245,7 @@ a_{n1}B&a_{n2}B&\cdots&a_{nn}B
 \[
 (A\otimes B)(C\otimes D)=(AC)\otimes(BD).
 \]
-于是若 $A,B$ 可逆，
+于是若 $A,B$ 可逆,
 \[
 (A\otimes B)(A^{-1}\otimes B^{-1})=I_n\otimes I_m=I_{nm},
 \]
@@ -254,18 +254,18 @@ a_{n1}B&a_{n2}B&\cdots&a_{nn}B
 (A\otimes B)^{-1}=A^{-1}\otimes B^{-1}.
 \]
 
-在代数闭包中，取可逆矩阵 $P,Q$ 使
+在代数闭包中,取可逆矩阵 $P,Q$ 使
 \[
 P^{-1}AP=T_A,
 \qquad
 Q^{-1}BQ=T_B
 \]
-均为上三角矩阵。则
+均为上三角矩阵.则
 \[
 (P\otimes Q)^{-1}(A\otimes B)(P\otimes Q)
 =T_A\otimes T_B,
 \]
-后者仍为上三角矩阵，其对角元恰为所有 $\lambda_i\mu_j$。因此
+后者仍为上三角矩阵,其对角元恰为所有 $\lambda_i\mu_j$.因此
 \[
 \operatorname{spec}(A\otimes B)
 =
@@ -278,43 +278,43 @@ Q^{-1}BQ=T_B
 \prod_{i=1}^{n}\prod_{j=1}^{m}\lambda_i\mu_j
 =|A|^m|B|^n.
 \]
-这些恒等式的两端均属于原数域 $F$，故结论成立。
+这些恒等式的两端均属于原数域 $F$,故结论成立.
 \end{solution}
 
 
 \subsection{矩阵可交换问题}
 
-若 $AB=BA$，则称方阵 $A,B$ 可交换。
+若 $AB=BA$,则称方阵 $A,B$ 可交换.
 
 \begin{proposition}[\markstar]
-设 $J_n(\lambda)$ 为 $n$ 阶 Jordan 块，则对任意 $n$ 阶方阵 $A$，
+设 $J_n(\lambda)$ 为 $n$ 阶 Jordan 块,则对任意 $n$ 阶方阵 $A$,
 \[
 AJ_n(\lambda)=J_n(\lambda)A
 \]
-当且仅当 $A$ 是 $J_n(\lambda)$ 的次数小于 $n$ 的多项式。
+当且仅当 $A$ 是 $J_n(\lambda)$ 的次数小于 $n$ 的多项式.
 \end{proposition}
 
 \begin{example}
-求与下列矩阵可交换的全部矩阵：
+求与下列矩阵可交换的全部矩阵:
 \begin{enumerate}
-  \item $\begin{pmatrix}0&1\\0&0\end{pmatrix}$；
-  \item $\begin{pmatrix}0&1&0&0\\0&0&1&0\\0&0&0&1\\0&0&0&0\end{pmatrix}$；
-  \item $\begin{pmatrix}3&0&0\\-1&3&0\\0&-1&3\end{pmatrix}$；
-  \item $\diag\bigl(J_2(1),J_2(1)\bigr)$；
-  \item $\diag(1,1,2,2)$。
+  \item $\begin{pmatrix}0&1\\0&0\end{pmatrix}$;
+  \item $\begin{pmatrix}0&1&0&0\\0&0&1&0\\0&0&0&1\\0&0&0&0\end{pmatrix}$;
+  \item $\begin{pmatrix}3&0&0\\-1&3&0\\0&-1&3\end{pmatrix}$;
+  \item $\diag\bigl(J_2(1),J_2(1)\bigr)$;
+  \item $\diag(1,1,2,2)$.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
 \begin{enumerate}
-  \item 由 Jordan 块的交换子结构，全部矩阵为
+  \item 由 Jordan 块的交换子结构,全部矩阵为
   \[
   \boxed{
   \begin{pmatrix}a&b\\0&a\end{pmatrix}
   }.
   \]
-  \item 全部矩阵为四阶上三角 Toeplitz 矩阵：
+  \item 全部矩阵为四阶上三角 Toeplitz 矩阵:
   \[
   \boxed{
   \begin{pmatrix}
@@ -325,7 +325,7 @@ a&b&c&d\\
 \end{pmatrix}
   }.
   \]
-  \item 全部矩阵为下三角 Toeplitz 矩阵：
+  \item 全部矩阵为下三角 Toeplitz 矩阵:
   \[
   \boxed{
   \begin{pmatrix}
@@ -339,13 +339,13 @@ c&b&a
   \[
   X=\begin{pmatrix}X_{11}&X_{12}\\X_{21}&X_{22}\end{pmatrix}.
   \]
-  每个 $X_{ij}$ 都必须与 $J_2(1)$ 可交换，因此
+  每个 $X_{ij}$ 都必须与 $J_2(1)$ 可交换,因此
   \[
   \boxed{
   X_{ij}=\begin{pmatrix}a_{ij}&b_{ij}\\0&a_{ij}\end{pmatrix}
   }.
   \]
-  \item 由两个互异特征值对应的块不能相互混合，全部矩阵为
+  \item 由两个互异特征值对应的块不能相互混合,全部矩阵为
   \[
   \boxed{
   \begin{pmatrix}
@@ -353,7 +353,7 @@ c&b&a
   \end{pmatrix}
   },
   \]
-  其中 $B_1,B_2$ 为任意二阶方阵。
+  其中 $B_1,B_2$ 为任意二阶方阵.
 \end{enumerate}
 \end{solution}
 
@@ -363,45 +363,45 @@ c&b&a
   \[
   A=\diag(a_1,a_2,\ldots,a_n),
   \]
-  且 $a_i$ 两两不同，则与 $A$ 可交换的矩阵只能是对角矩阵；
+  且 $a_i$ 两两不同,则与 $A$ 可交换的矩阵只能是对角矩阵;
   \item 若
   \[
   A=\diag(a_1I_{r_1},a_2I_{r_2},\ldots,a_sI_{r_s}),
   \]
-  且 $a_i$ 两两不同，则与 $A$ 可交换的矩阵恰为
+  且 $a_i$ 两两不同,则与 $A$ 可交换的矩阵恰为
   \[
   \diag(B_1,B_2,\ldots,B_s),
   \]
-  其中 $B_i$ 为任意 $r_i$ 阶方阵；
-  \item 与所有 $n$ 阶可逆矩阵可交换的矩阵恰为数量矩阵 $kI_n$。
+  其中 $B_i$ 为任意 $r_i$ 阶方阵;
+  \item 与所有 $n$ 阶可逆矩阵可交换的矩阵恰为数量矩阵 $kI_n$.
 \end{enumerate}
 \end{theorem}
 
 \begin{example}
-证明上述定理。
+证明上述定理.
 \end{example}
 \exampleblank
 
 \begin{solution}
-设 $X=(x_{ij})$。
+设 $X=(x_{ij})$.
 
-第一问中，$XA=AX$ 的 $(i,j)$ 元给出
+第一问中,$XA=AX$ 的 $(i,j)$ 元给出
 \[
 (a_j-a_i)x_{ij}=0.
 \]
-当 $i\neq j$ 时 $a_i\neq a_j$，故 $x_{ij}=0$，所以 $X$ 为对角矩阵。
+当 $i\neq j$ 时 $a_i\neq a_j$,故 $x_{ij}=0$,所以 $X$ 为对角矩阵.
 
-第二问按 $r_i\times r_j$ 分块写 $X=(X_{ij})$，则
+第二问按 $r_i\times r_j$ 分块写 $X=(X_{ij})$,则
 \[
 (a_j-a_i)X_{ij}=O.
 \]
-因此 $i\neq j$ 时 $X_{ij}=O$，而对角块任意。
+因此 $i\neq j$ 时 $X_{ij}=O$,而对角块任意.
 
-第三问中，若 $X$ 与所有可逆矩阵可交换，则对任意矩阵 $Y$，取足够多个标量 $t$ 使 $Y+tI_n$ 可逆，便有
+第三问中,若 $X$ 与所有可逆矩阵可交换,则对任意矩阵 $Y$,取足够多个标量 $t$ 使 $Y+tI_n$ 可逆,便有
 \[
 X(Y+tI_n)=(Y+tI_n)X,
 \]
-从而 $XY=YX$。于是 $X$ 与所有矩阵可交换。特别地，与全部对角矩阵可交换说明 $X$ 为对角矩阵；再与各初等矩阵 $E_{ij}$ 可交换，则所有对角元相等。因此
+从而 $XY=YX$.于是 $X$ 与所有矩阵可交换.特别地,与全部对角矩阵可交换说明 $X$ 为对角矩阵;再与各初等矩阵 $E_{ij}$ 可交换,则所有对角元相等.因此
 \[
 \boxed{X=kI_n}.
 \]
@@ -413,7 +413,7 @@ X(Y+tI_n)=(Y+tI_n)X,
 \section{逆矩阵与伴随矩阵}
 
 \begin{theorem}[\markstar]
-若 $A,B$ 是同阶方阵，且
+若 $A,B$ 是同阶方阵,且
 \[
 AB=I_n,
 \]
@@ -432,7 +432,7 @@ A=\begin{pmatrix}a&b\\c&d\end{pmatrix},
 \[
 A^*=\begin{pmatrix}d&-b\\-c&a\end{pmatrix}.
 \]
-若 $A$ 可逆，则
+若 $A$ 可逆,则
 \[
 A^{-1}
 =\dfrac{1}{ad-bc}
@@ -441,11 +441,11 @@ A^{-1}
 \end{proposition}
 
 \begin{example}
-设 $A,B$ 都是 $n$ 阶方阵，且
+设 $A,B$ 都是 $n$ 阶方阵,且
 \[
 A+B=AB.
 \]
-证明：$AB=BA$。
+证明:$AB=BA$.
 \end{example}
 \exampleblank
 
@@ -458,7 +458,7 @@ A+B=AB
 \[
 (A-I_n)(B-I_n)=I_n.
 \]
-根据单侧逆即双侧逆，
+根据单侧逆即双侧逆,
 \[
 (B-I_n)(A-I_n)=I_n.
 \]
@@ -466,18 +466,18 @@ A+B=AB
 \[
 BA-B-A=O.
 \]
-与已知式比较，
+与已知式比较,
 \[
 \boxed{AB=BA}.
 \]
 \end{solution}
 
 \begin{example}
-设 $A,B$ 都是 $n$ 阶方阵，且
+设 $A,B$ 都是 $n$ 阶方阵,且
 \[
 AB=A-B.
 \]
-证明：$A$ 可逆的充要条件是 $B$ 可逆。
+证明:$A$ 可逆的充要条件是 $B$ 可逆.
 \end{example}
 \exampleblank
 
@@ -486,7 +486,7 @@ AB=A-B.
 \[
 (A+I_n)(B-I_n)=-I_n,
 \]
-故 $A+I_n$ 与 $B-I_n$ 均可逆。
+故 $A+I_n$ 与 $B-I_n$ 均可逆.
 
 又
 \[
@@ -496,9 +496,9 @@ AB=A-B.
 \[
 B=(A+I_n)^{-1}A.
 \]
-所以 $A$ 可逆推出 $B$ 可逆。
+所以 $A$ 可逆推出 $B$ 可逆.
 
-另一方面，
+另一方面,
 \[
 A(B-I_n)=-B,
 \]
@@ -506,20 +506,20 @@ A(B-I_n)=-B,
 \[
 A=-B(B-I_n)^{-1}.
 \]
-所以 $B$ 可逆推出 $A$ 可逆。综上二者等价。
+所以 $B$ 可逆推出 $A$ 可逆.综上二者等价.
 \end{solution}
 
 \begin{theorem}[\markstar]
-伴随矩阵具有下列性质：
+伴随矩阵具有下列性质:
 \begin{enumerate}
-  \item $AA^*=A^*A=|A|I_n$；
-  \item $(\lambda A)^*=\lambda^{n-1}A^*$；
-  \item $|A^*|=|A|^{n-1}$；
-  \item $(A^*)^{\mathsf T}=(A^{\mathsf T})^*$；
-  \item $(AB)^*=B^*A^*$；
-  \item $A$ 可逆时，$A^*=|A|A^{-1}$；
-  \item $A$ 可逆时，$(A^*)^{-1}=\dfrac{1}{|A|}A$；
-  \item $A$ 可逆时，$(A^*)^{-1}=(A^{-1})^*$；
+  \item $AA^*=A^*A=|A|I_n$;
+  \item $(\lambda A)^*=\lambda^{n-1}A^*$;
+  \item $|A^*|=|A|^{n-1}$;
+  \item $(A^*)^{\mathsf T}=(A^{\mathsf T})^*$;
+  \item $(AB)^*=B^*A^*$;
+  \item $A$ 可逆时,$A^*=|A|A^{-1}$;
+  \item $A$ 可逆时,$(A^*)^{-1}=\dfrac{1}{|A|}A$;
+  \item $A$ 可逆时,$(A^*)^{-1}=(A^{-1})^*$;
   \item
   \[
   (A^*)^*
@@ -543,15 +543,15 @@ A=-B(B-I_n)^{-1}.
 \end{theorem}
 
 \begin{remark}
-处理伴随矩阵恒等式时，常先假设矩阵可逆，利用
+处理伴随矩阵恒等式时,常先假设矩阵可逆,利用
 \[
 A^*=|A|A^{-1}
 \]
-化简，再通过摄动或多项式恒等原理推广到一般矩阵。这是高等代数中常用的“摄动法”思路。
+化简,再通过摄动或多项式恒等原理推广到一般矩阵.这是高等代数中常用的``摄动法''思路.
 \end{remark}
 
 \begin{example}
-设 $A,B$ 为 $n$ 阶方阵，证明：
+设 $A,B$ 为 $n$ 阶方阵,证明:
 \[
 (AB)^*=B^*A^*.
 \]
@@ -559,7 +559,7 @@ A^*=|A|A^{-1}
 \exampleblank
 
 \begin{solution}
-若 $A,B$ 均可逆，则
+若 $A,B$ 均可逆,则
 \[
 (AB)^*
 =|AB|(AB)^{-1}
@@ -567,11 +567,11 @@ A^*=|A|A^{-1}
 =B^*A^*.
 \]
 
-一般情形下，将 $A,B$ 分别替换为 $A+tI_n,B+sI_n$。除有限多个 $t,s$ 外它们均可逆，于是上述恒等式在无穷多个参数点成立。两边各元素都是 $t,s$ 的多项式，因此恒等式恒成立。令 $t=s=0$ 即得结论。
+一般情形下,将 $A,B$ 分别替换为 $A+tI_n,B+sI_n$.除有限多个 $t,s$ 外它们均可逆,于是上述恒等式在无穷多个参数点成立.两边各元素都是 $t,s$ 的多项式,因此恒等式恒成立.令 $t=s=0$ 即得结论.
 \end{solution}
 
 \begin{example}
-设 $A$ 为 $n$ 阶方阵，证明：
+设 $A$ 为 $n$ 阶方阵,证明:
 \[
 |A^*|=|A|^{n-1}.
 \]
@@ -579,7 +579,7 @@ A^*=|A|A^{-1}
 \exampleblank
 
 \begin{solution}
-若 $A$ 可逆，则
+若 $A$ 可逆,则
 \[
 A^*=|A|A^{-1},
 \]
@@ -589,11 +589,11 @@ A^*=|A|A^{-1},
 =|A|^n|A^{-1}|
 =|A|^{n-1}.
 \]
-一般情形可由摄动法或注意到两端均为 $A$ 的元素的多项式而推广得到。
+一般情形可由摄动法或注意到两端均为 $A$ 的元素的多项式而推广得到.
 \end{solution}
 
 \begin{example}
-设 $A,B,C,D$ 都是 $n$ 阶方阵，且 $AC=CA$。证明：
+设 $A,B,C,D$ 都是 $n$ 阶方阵,且 $AC=CA$.证明:
 \[
 \begin{vmatrix}
 A&B\\C&D
@@ -604,12 +604,12 @@ A&B\\C&D
 \exampleblank
 
 \begin{solution}
-先设 $A$ 可逆。由 Schur 补公式，
+先设 $A$ 可逆.由 Schur 补公式,
 \[
 \begin{vmatrix}A&B\\C&D\end{vmatrix}
 =|A|\,|D-CA^{-1}B|.
 \]
-由于 $AC=CA$，故 $A^{-1}C=CA^{-1}$，于是
+由于 $AC=CA$,故 $A^{-1}C=CA^{-1}$,于是
 \[
 A(D-CA^{-1}B)=AD-CB.
 \]
@@ -618,15 +618,15 @@ A(D-CA^{-1}B)=AD-CB.
 |A|\,|D-CA^{-1}B|=|AD-CB|.
 \]
 
-若 $A$ 不可逆，考虑 $A+tI_n$。它仍与 $C$ 可交换，且除有限多个 $t$ 外可逆。上式对无穷多个 $t$ 成立，故由多项式恒等原理对 $t=0$ 也成立。
+若 $A$ 不可逆,考虑 $A+tI_n$.它仍与 $C$ 可交换,且除有限多个 $t$ 外可逆.上式对无穷多个 $t$ 成立,故由多项式恒等原理对 $t=0$ 也成立.
 \end{solution}
 
 \begin{example}
-设 $A,B,C,D$ 都是 $n$ 阶方阵，且
+设 $A,B,C,D$ 都是 $n$ 阶方阵,且
 \[
 AB^{\mathsf T}=BA^{\mathsf T}.
 \]
-证明：
+证明:
 \[
 \begin{vmatrix}
 A&B\\C&D
@@ -637,7 +637,7 @@ A&B\\C&D
 \exampleblank
 
 \begin{solution}
-先设 $A$ 可逆。由条件
+先设 $A$ 可逆.由条件
 \[
 AB^{\mathsf T}=BA^{\mathsf T}
 \]
@@ -656,19 +656,19 @@ B^{\mathsf T}=A^{-1}BA^{\mathsf T}.
 \begin{vmatrix}A&B\\C&D\end{vmatrix}.
 \end{aligned}
 \]
-一般奇异情形可由该块行列式恒等式的多项式延拓得到。
+一般奇异情形可由该块行列式恒等式的多项式延拓得到.
 \end{solution}
 
 \begin{example}
-设 $A,B,C,D$ 都是 $n$ 阶矩阵，若
+设 $A,B,C,D$ 都是 $n$ 阶矩阵,若
 \[
 M=\begin{pmatrix}A&B\\C&D\end{pmatrix}
 \]
-的秩为 $n$，证明：
+的秩为 $n$,证明:
 \[
 \begin{vmatrix}|A|&|B|\\|C|&|D|\end{vmatrix}=0.
 \]
-且若 $A$ 可逆，则
+且若 $A$ 可逆,则
 \[
 D=CA^{-1}B.
 \]
@@ -676,7 +676,7 @@ D=CA^{-1}B.
 \exampleblank
 
 \begin{solution}
-若 $A$ 可逆，对 $M$ 作可逆块初等变换：
+若 $A$ 可逆,对 $M$ 作可逆块初等变换:
 \[
 \begin{pmatrix}I&O\\-CA^{-1}&I\end{pmatrix}
 \begin{pmatrix}A&B\\C&D\end{pmatrix}
@@ -687,7 +687,7 @@ D=CA^{-1}B.
 \[
 \rank(M)=n+\rank(D-CA^{-1}B).
 \]
-已知 $\rank(M)=n$，故
+已知 $\rank(M)=n$,故
 \[
 \boxed{D=CA^{-1}B}.
 \]
@@ -696,11 +696,11 @@ D=CA^{-1}B.
 |A||D|=|A|\,|CA^{-1}B|=|C||B|.
 \]
 
-若 $A$ 不可逆，则 $|A|=0$。若同时 $|B|\neq0$ 且 $|C|\neq0$，利用 $B$ 可逆作同样的块消元可得
+若 $A$ 不可逆,则 $|A|=0$.若同时 $|B|\neq0$ 且 $|C|\neq0$,利用 $B$ 可逆作同样的块消元可得
 \[
 C=DB^{-1}A,
 \]
-右端奇异，与 $C$ 可逆矛盾。因此 $|B||C|=0$，仍有
+右端奇异,与 $C$ 可逆矛盾.因此 $|B||C|=0$,仍有
 \[
 |A||D|-|B||C|=0.
 \]
@@ -730,22 +730,22 @@ J=J_n(1)=
 \[
 J=I_n+N,
 \]
-其中 $N$ 的超对角线上全为 $1$。方程化为
+其中 $N$ 的超对角线上全为 $1$.方程化为
 \[
 X=XN+NX.
 \]
-设 $X=(x_{ij})$，约定 $x_{i0}=0,x_{n+1,j}=0$，则
+设 $X=(x_{ij})$,约定 $x_{i0}=0,x_{n+1,j}=0$,则
 \[
 x_{ij}=x_{i,j-1}+x_{i+1,j}.
 \]
-从 $i=n,j=1$ 开始有 $x_{n1}=0$，继而递推得到第 $n$ 行全为零；再向上逐行递推，最终所有元素均为零。因此
+从 $i=n,j=1$ 开始有 $x_{n1}=0$,继而递推得到第 $n$ 行全为零;再向上逐行递推,最终所有元素均为零.因此
 \[
 \boxed{X=O}.
 \]
 \end{solution}
 
 \begin{example}
-设 $A$ 为 $n$ 阶可逆矩阵，$\alpha,\beta$ 均为 $n$ 维列向量，且
+设 $A$ 为 $n$ 阶可逆矩阵,$\alpha,\beta$ 均为 $n$ 维列向量,且
 \[
 1+\beta^{\mathsf T}A^{-1}\alpha\neq0.
 \]
@@ -754,12 +754,12 @@ x_{ij}=x_{i,j-1}+x_{i+1,j}.
   \[
   P=\begin{pmatrix}A&\alpha\\-\beta^{\mathsf T}&1\end{pmatrix}
   \]
-  可逆，并求 $P^{-1}$；
+  可逆,并求 $P^{-1}$;
   \item 证明
   \[
   Q=A+\alpha\beta^{\mathsf T}
   \]
-  可逆，并求 $Q^{-1}$。
+  可逆,并求 $Q^{-1}$.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -769,7 +769,7 @@ x_{ij}=x_{i,j-1}+x_{i+1,j}.
 \[
 s=1+\beta^{\mathsf T}A^{-1}\alpha.
 \]
-由于 $s\neq0$，由 Schur 补公式，$P$ 可逆，且
+由于 $s\neq0$,由 Schur 补公式,$P$ 可逆,且
 \[
 \boxed{
 P^{-1}
@@ -783,7 +783,7 @@ A^{-1}-\dfrac{A^{-1}\alpha\beta^{\mathsf T}A^{-1}}{s}
 }.
 \]
 
-第二问为 Sherman--Morrison 公式：
+第二问为 Sherman--Morrison 公式:
 \[
 \boxed{
 Q^{-1}
@@ -792,11 +792,11 @@ Q^{-1}
 {1+\beta^{\mathsf T}A^{-1}\alpha}
 }.
 \]
-直接相乘即可验证。
+直接相乘即可验证.
 \end{solution}
 
 \begin{example}
-设 $A,B,C$ 都是 $n$ 阶方阵，
+设 $A,B,C$ 都是 $n$ 阶方阵,
 \[
 Q=
 \begin{pmatrix}
@@ -805,14 +805,14 @@ C-B&C
 \end{pmatrix}.
 \]
 \begin{enumerate}
-  \item 证明：$Q$ 可逆的充要条件是 $AB$ 可逆；
-  \item 当 $Q$ 可逆时，求 $Q^{-1}$。
+  \item 证明:$Q$ 可逆的充要条件是 $AB$ 可逆;
+  \item 当 $Q$ 可逆时,求 $Q^{-1}$.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-作块列变换“第二块列减第一块列”，即右乘
+作块列变换``第二块列减第一块列'',即右乘
 \[
 R=\begin{pmatrix}I_n&-I_n\\O&I_n\end{pmatrix},
 \]
@@ -825,7 +825,7 @@ A&O\\
 C-B&B
 \end{pmatrix}.
 \]
-因此 $Q$ 可逆当且仅当 $A,B$ 都可逆，也即当且仅当 $AB$ 可逆。
+因此 $Q$ 可逆当且仅当 $A,B$ 都可逆,也即当且仅当 $AB$ 可逆.
 
 此时
 \[
@@ -836,7 +836,7 @@ A^{-1}&O\\
 -B^{-1}(C-B)A^{-1}&B^{-1}
 \end{pmatrix}.
 \]
-因为 $Q^{-1}=R(QR)^{-1}$，故
+因为 $Q^{-1}=R(QR)^{-1}$,故
 \[
 \boxed{
 Q^{-1}
@@ -850,14 +850,14 @@ B^{-1}(B-C)A^{-1}&B^{-1}
 \end{solution}
 
 \begin{example}
-设 $A$ 是 $n$ 阶方阵（$n\geq2$），且存在 $n$ 阶方阵 $B$，使得
+设 $A$ 是 $n$ 阶方阵($n\geq2$),且存在 $n$ 阶方阵 $B$,使得
 \[
 A^*B-BA^*=A^*.
 \]
-证明：
+证明:
 \begin{enumerate}
-  \item $|A|=0$；
-  \item $(A^*)^2=O$。
+  \item $|A|=0$;
+  \item $(A^*)^2=O$.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -871,12 +871,12 @@ C=A^*.
 \[
 CB-BC=C.
 \]
-由例题 3.1.5，
+由例题 3.1.5,
 \[
 \tr(C^k)=0,
 \qquad k=1,2,\ldots.
 \]
-若 $C$ 可逆，则其特征值全非零；但 Newton 恒等式结合 $\tr(C^k)=0\ (1\leq k\leq n)$ 会推出 $C$ 的特征多项式为 $x^n$，矛盾。因此 $|C|=0$。又
+若 $C$ 可逆,则其特征值全非零;但 Newton 恒等式结合 $\tr(C^k)=0\ (1\leq k\leq n)$ 会推出 $C$ 的特征多项式为 $x^n$,矛盾.因此 $|C|=0$.又
 \[
 |C|=|A^*|=|A|^{n-1},
 \]
@@ -885,22 +885,22 @@ CB-BC=C.
 \boxed{|A|=0}.
 \]
 
-于是 $\rank(A)\leq n-1$，由伴随矩阵秩的性质，$\rank(C)\leq1$。又由原方程取迹得
+于是 $\rank(A)\leq n-1$,由伴随矩阵秩的性质,$\rank(C)\leq1$.又由原方程取迹得
 \[
 \tr(C)=0.
 \]
-若 $C=uv^{\mathsf T}$ 为秩一矩阵，则
+若 $C=uv^{\mathsf T}$ 为秩一矩阵,则
 \[
 C^2=(v^{\mathsf T}u)C=\tr(C)C=O.
 \]
-若 $C=O$ 更显然。因此
+若 $C=O$ 更显然.因此
 \[
 \boxed{(A^*)^2=O}.
 \]
 \end{solution}
 
 \begin{example}[\markstar]
-设 $A,B$ 是 $n$ 阶矩阵，$I_n+AB$ 可逆。证明：$I_n+BA$ 也可逆。
+设 $A,B$ 是 $n$ 阶矩阵,$I_n+AB$ 可逆.证明:$I_n+BA$ 也可逆.
 \end{example}
 \exampleblank
 
@@ -913,11 +913,11 @@ C^2=(v^{\mathsf T}u)C=\tr(C)C=O.
 \[
 (I_n+AB)Ax=A(I_n+BA)x=0.
 \]
-由于 $I_n+AB$ 可逆，故 $Ax=0$。代回原式得到
+由于 $I_n+AB$ 可逆,故 $Ax=0$.代回原式得到
 \[
 x=-BAx=0.
 \]
-因此 $I_n+BA$ 的核只有零向量，作为方阵它必可逆。
+因此 $I_n+BA$ 的核只有零向量,作为方阵它必可逆.
 \end{solution}
 
 
@@ -926,7 +926,7 @@ x=-BAx=0.
 \section{等价标准型}
 
 \begin{theorem}[\marktwostar]
-设 $A_{m\times n}$ 满足 $\rank(A)=r$，则存在 $m$ 阶可逆矩阵 $P$ 与 $n$ 阶可逆矩阵 $Q$，使
+设 $A_{m\times n}$ 满足 $\rank(A)=r$,则存在 $m$ 阶可逆矩阵 $P$ 与 $n$ 阶可逆矩阵 $Q$,使
 \[
 A=P
 \begin{pmatrix}
@@ -937,11 +937,11 @@ Q.
 \end{theorem}
 
 \begin{remark}
-该标准型常用于处理“只知道矩阵的秩而没有更多结构”的问题。
+该标准型常用于处理``只知道矩阵的秩而没有更多结构''的问题.
 \end{remark}
 
 \begin{example}
-设 $A$ 是 $n$ 阶方阵。证明：存在 $n$ 阶可逆矩阵 $B$ 以及 $n$ 阶幂等矩阵 $C$（即 $C^2=C$），使得
+设 $A$ 是 $n$ 阶方阵.证明:存在 $n$ 阶可逆矩阵 $B$ 以及 $n$ 阶幂等矩阵 $C$(即 $C^2=C$),使得
 \[
 A=BC.
 \]
@@ -949,7 +949,7 @@ A=BC.
 \exampleblank
 
 \begin{solution}
-设 $\rank(A)=r$。由等价标准型，存在可逆矩阵 $P,Q$ 使
+设 $\rank(A)=r$.由等价标准型,存在可逆矩阵 $P,Q$ 使
 \[
 A=P E_r Q,
 \qquad
@@ -961,7 +961,7 @@ B=PQ,
 \qquad
 C=Q^{-1}E_rQ.
 \]
-则 $B$ 可逆，且
+则 $B$ 可逆,且
 \[
 C^2=Q^{-1}E_r^2Q=C,
 \]
@@ -972,13 +972,13 @@ BC=PQ\,Q^{-1}E_rQ=PE_rQ=A.
 \end{solution}
 
 \begin{example}[\markstar]
-设矩阵 $A_{m\times n}$ 行满秩，即 $\rank(A)=m$。证明：
+设矩阵 $A_{m\times n}$ 行满秩,即 $\rank(A)=m$.证明:
 \begin{enumerate}
-  \item 存在可逆矩阵 $Q$，使
+  \item 存在可逆矩阵 $Q$,使
   \[
   A=(I_m,O)Q;
   \]
-  \item 存在矩阵 $B_{n\times m}$，使
+  \item 存在矩阵 $B_{n\times m}$,使
   \[
   AB=I_m.
   \]
@@ -987,15 +987,15 @@ BC=PQ\,Q^{-1}E_rQ=PE_rQ=A.
 \exampleblank
 
 \begin{solution}
-由等价标准型，
+由等价标准型,
 \[
 A=P(I_m,O)Q_0
 \]
-其中 $P,Q_0$ 可逆。令
+其中 $P,Q_0$ 可逆.令
 \[
 Q=\begin{pmatrix}P&O\\O&I_{n-m}\end{pmatrix}Q_0,
 \]
-则 $Q$ 可逆，且
+则 $Q$ 可逆,且
 \[
 A=(I_m,O)Q.
 \]
@@ -1012,11 +1012,11 @@ AB=(I_m,O)QQ^{-1}\begin{pmatrix}I_m\\O\end{pmatrix}=I_m.
 
 \begin{example}[\markstar]
 \begin{enumerate}
-  \item 证明：若 $A_{m\times n}$ 且 $\rank(A)=r$，则存在列满秩矩阵 $B_{m\times r}$ 和行满秩矩阵 $C_{r\times n}$，使
+  \item 证明:若 $A_{m\times n}$ 且 $\rank(A)=r$,则存在列满秩矩阵 $B_{m\times r}$ 和行满秩矩阵 $C_{r\times n}$,使
   \[
   A=BC.
   \]
-  这称为 $A$ 的满秩分解；
+  这称为 $A$ 的满秩分解;
   \item 求矩阵
   \[
   A=
@@ -1027,21 +1027,21 @@ AB=(I_m,O)QQ^{-1}\begin{pmatrix}I_m\\O\end{pmatrix}=I_m.
   6&12&1&7&5&73
   \end{pmatrix}
   \]
-  的一个满秩分解；
-  \item 若 $A=BC$ 是满秩分解，证明 $Ax=0$ 与 $Cx=0$ 同解。
+  的一个满秩分解;
+  \item 若 $A=BC$ 是满秩分解,证明 $Ax=0$ 与 $Cx=0$ 同解.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
 \begin{enumerate}
-  \item 从 $A$ 中取 $r$ 个线性无关列组成 $B$。由于 $B$ 的列构成 $A$ 的列空间的一组基，每一列 $A_j$ 都可唯一写成 $B$ 的列的线性组合。把这些坐标作为 $C$ 的各列，即有
+  \item 从 $A$ 中取 $r$ 个线性无关列组成 $B$.由于 $B$ 的列构成 $A$ 的列空间的一组基,每一列 $A_j$ 都可唯一写成 $B$ 的列的线性组合.把这些坐标作为 $C$ 的各列,即有
   \[
   A=BC.
   \]
-  因为所选的 $r$ 个基列对应的坐标列构成 $I_r$，故 $C$ 行满秩。
+  因为所选的 $r$ 个基列对应的坐标列构成 $I_r$,故 $C$ 行满秩.
 
-  \item 该矩阵的秩为 $3$。取第 $1,3,6$ 列作为基列，令
+  \item 该矩阵的秩为 $3$.取第 $1,3,6$ 列作为基列,令
   \[
   B=
   \begin{pmatrix}
@@ -1063,7 +1063,7 @@ AB=(I_m,O)QQ^{-1}\begin{pmatrix}I_m\\O\end{pmatrix}=I_m.
   \boxed{A=BC}.
   \]
 
-  \item 因 $B$ 列满秩，线性映射 $y\mapsto By$ 的核为零。因此
+  \item 因 $B$ 列满秩,线性映射 $y\mapsto By$ 的核为零.因此
   \[
   Ax=0
   \iff BCx=0
@@ -1073,7 +1073,7 @@ AB=(I_m,O)QQ^{-1}\begin{pmatrix}I_m\\O\end{pmatrix}=I_m.
 \end{solution}
 
 \begin{example}
-设 $A$ 是 $n$ 阶方阵且 $|A|=0$。证明：存在非零 $n$ 阶方阵 $B$，使
+设 $A$ 是 $n$ 阶方阵且 $|A|=0$.证明:存在非零 $n$ 阶方阵 $B$,使
 \[
 AB=BA=O.
 \]
@@ -1081,7 +1081,7 @@ AB=BA=O.
 \exampleblank
 
 \begin{solution}
-因为 $A$ 奇异，存在非零列向量 $u,v$ 使
+因为 $A$ 奇异,存在非零列向量 $u,v$ 使
 \[
 Au=0,
 \qquad
@@ -1091,7 +1091,7 @@ A^{\mathsf T}v=0.
 \[
 B=uv^{\mathsf T}.
 \]
-则 $B\neq O$，且
+则 $B\neq O$,且
 \[
 AB=(Au)v^{\mathsf T}=O,
 \]
@@ -1102,7 +1102,7 @@ BA=u(v^{\mathsf T}A)=u(A^{\mathsf T}v)^{\mathsf T}=O.
 \end{solution}
 
 \begin{example}
-证明：任意秩为 $r>0$ 的矩阵都可以分解为 $r$ 个秩为 $1$ 的矩阵之和。
+证明:任意秩为 $r>0$ 的矩阵都可以分解为 $r$ 个秩为 $1$ 的矩阵之和.
 \end{example}
 \exampleblank
 
@@ -1128,11 +1128,11 @@ c_r^{\mathsf T}
 A
 =\sum\limits_{i=1}^{r}b_ic_i^{\mathsf T}.
 \]
-由于 $B$ 列满秩、$C$ 行满秩，每个 $b_i,c_i$ 均非零，所以每个 $b_ic_i^{\mathsf T}$ 的秩都为 $1$。
+由于 $B$ 列满秩,$C$ 行满秩,每个 $b_i,c_i$ 均非零,所以每个 $b_ic_i^{\mathsf T}$ 的秩都为 $1$.
 \end{solution}
 
 \begin{example}
-若 $A^2=O$，证明存在可逆矩阵 $P$，使
+若 $A^2=O$,证明存在可逆矩阵 $P$,使
 \[
 P^{-1}AP
 =
@@ -1147,7 +1147,7 @@ O&O&O
 \exampleblank
 
 \begin{solution}
-因为 $A^2=O$，有
+因为 $A^2=O$,有
 \[
 \operatorname{Im}A\subseteq\ker A.
 \]
@@ -1155,7 +1155,7 @@ O&O&O
 \[
 v_1,\ldots,v_r
 \]
-为 $\operatorname{Im}A$ 的一组基。对每个 $v_i$ 取 $u_i$ 使
+为 $\operatorname{Im}A$ 的一组基.对每个 $v_i$ 取 $u_i$ 使
 \[
 Au_i=v_i.
 \]
@@ -1167,7 +1167,7 @@ v_1,\ldots,v_r,w_1,\ldots,w_{n-2r}.
 \[
 v_1,\ldots,v_r,u_1,\ldots,u_r,w_1,\ldots,w_{n-2r}
 \]
-构成全空间的一组基。在这组基下，$A$ 的矩阵恰为
+构成全空间的一组基.在这组基下,$A$ 的矩阵恰为
 \[
 \boxed{
 \begin{pmatrix}
@@ -1180,33 +1180,33 @@ O&O&O
 \end{solution}
 
 \begin{example}
-已知 $n$ 阶矩阵 $A$ 的 $n$ 个顺序主子式均非零。证明：存在 $n$ 阶下三角矩阵 $B$，使 $BA$ 为上三角矩阵。
+已知 $n$ 阶矩阵 $A$ 的 $n$ 个顺序主子式均非零.证明:存在 $n$ 阶下三角矩阵 $B$,使 $BA$ 为上三角矩阵.
 \end{example}
 \exampleblank
 
 \begin{solution}
-条件“所有顺序主子式非零”恰好保证 Gaussian 消元过程中不需要交换行，因此 $A$ 存在分解
+条件``所有顺序主子式非零''恰好保证 Gaussian 消元过程中不需要交换行,因此 $A$ 存在分解
 \[
 A=LU,
 \]
-其中 $L$ 为可逆下三角矩阵，$U$ 为上三角矩阵。令
+其中 $L$ 为可逆下三角矩阵,$U$ 为上三角矩阵.令
 \[
 B=L^{-1},
 \]
-则 $B$ 仍为下三角矩阵，并且
+则 $B$ 仍为下三角矩阵,并且
 \[
 \boxed{BA=U}
 \]
-为上三角矩阵。
+为上三角矩阵.
 \end{solution}
 
 \begin{example}
-设 $A$ 为 $n$ 阶实方阵，$A$ 的所有顺序主子式都大于零，且所有非主对角元均小于零。证明：$A^{-1}$ 的所有元素都大于零。
+设 $A$ 为 $n$ 阶实方阵,$A$ 的所有顺序主子式都大于零,且所有非主对角元均小于零.证明:$A^{-1}$ 的所有元素都大于零.
 \end{example}
 \exampleblank
 
 \begin{solution}
-对 $n$ 作归纳。$n=1$ 显然。设结论对 $n-1$ 阶成立，将 $A$ 分块为
+对 $n$ 作归纳.$n=1$ 显然.设结论对 $n-1$ 阶成立,将 $A$ 分块为
 \[
 A=
 \begin{pmatrix}
@@ -1214,7 +1214,7 @@ A_{n-1}&b\\
 c^{\mathsf T}&a
 \end{pmatrix}.
 \]
-由条件，$A_{n-1}$ 同样满足归纳假设，因此 $A_{n-1}^{-1}$ 的所有元素均为正，而 $b,c$ 的所有元素均为负。
+由条件,$A_{n-1}$ 同样满足归纳假设,因此 $A_{n-1}^{-1}$ 的所有元素均为正,而 $b,c$ 的所有元素均为负.
 
 Schur 补
 \[
@@ -1235,7 +1235,7 @@ A_{n-1}^{-1}+A_{n-1}^{-1}bs^{-1}c^{\mathsf T}A_{n-1}^{-1}
 &s^{-1}
 \end{pmatrix}.
 \]
-其中 $A_{n-1}^{-1}b$ 与 $c^{\mathsf T}A_{n-1}^{-1}$ 的元素均为负，故上式四个块的元素全部严格为正。因此 $A^{-1}$ 的所有元素均大于零。
+其中 $A_{n-1}^{-1}b$ 与 $c^{\mathsf T}A_{n-1}^{-1}$ 的元素均为负,故上式四个块的元素全部严格为正.因此 $A^{-1}$ 的所有元素均大于零.
 \end{solution}
 
 
@@ -1263,7 +1263,7 @@ X
 \exampleblank
 
 \begin{solution}
-右乘系数矩阵的逆，得到
+右乘系数矩阵的逆,得到
 \[
 \boxed{
 X=
@@ -1293,7 +1293,7 @@ B=
 a&2
 \end{pmatrix},
 \]
-且矩阵方程 $AX=B$ 有解。求 $a,b,X$。
+且矩阵方程 $AX=B$ 有解.求 $a,b,X$.
 \end{example}
 \exampleblank
 
@@ -1302,7 +1302,7 @@ a&2
 \[
 (1,1,1)A=0,
 \]
-方程有解必须满足 $B$ 的每一列与左零空间正交，即
+方程有解必须满足 $B$ 的每一列与左零空间正交,即
 \[
 1+2+a=0,
 \qquad
@@ -1327,7 +1327,7 @@ s&t
 \end{solution}
 
 \begin{example}
-解下列矩阵方程：
+解下列矩阵方程:
 \begin{enumerate}
   \item
   \[
@@ -1398,7 +1398,7 @@ s&t
 
 \begin{solution}
 \begin{enumerate}
-  \item 系数矩阵可逆，直接右乘其逆得
+  \item 系数矩阵可逆,直接右乘其逆得
   \[
   \boxed{
   X=
@@ -1409,11 +1409,11 @@ s&t
   \end{pmatrix}
   }.
   \]
-  \item 左侧系数矩阵的列空间由 $(2,3)^{\mathsf T}$ 张成，而右端每一列为 $(1,1)^{\mathsf T}$，不属于该列空间，故
+  \item 左侧系数矩阵的列空间由 $(2,3)^{\mathsf T}$ 张成,而右端每一列为 $(1,1)^{\mathsf T}$,不属于该列空间,故
   \[
   \boxed{\text{无解}}.
   \]
-  \item 左右两个系数矩阵均可逆，因此
+  \item 左右两个系数矩阵均可逆,因此
   \[
   \boxed{
   X=
@@ -1424,7 +1424,7 @@ s&t
   \end{pmatrix}
   }.
   \]
-  \item 右端矩阵恰为 $U^2$，故
+  \item 右端矩阵恰为 $U^2$,故
   \[
   \boxed{X=U}.
   \]
@@ -1432,58 +1432,58 @@ s&t
 \end{solution}
 
 \begin{proposition}[\markstar]
-设 $A,B$ 分别为数域 $F$ 上的 $n,m$ 阶矩阵。若 $A,B$ 有 $r$ 个互异公共特征值，则矩阵方程
+设 $A,B$ 分别为数域 $F$ 上的 $n,m$ 阶矩阵.若 $A,B$ 有 $r$ 个互异公共特征值,则矩阵方程
 \[
 AX-XB=O
 \]
-存在秩为 $r$ 的矩阵解。
+存在秩为 $r$ 的矩阵解.
 \end{proposition}
 
 \begin{proposition}[\markstar]
-设 $A,B$ 分别为复数域上的 $n,m$ 阶矩阵。若矩阵方程
+设 $A,B$ 分别为复数域上的 $n,m$ 阶矩阵.若矩阵方程
 \[
 AX-XB=O
 \]
-存在秩为 $r$ 的矩阵解，则 $A,B$ 至少有 $r$ 个公共特征值，重根按重数计算。
+存在秩为 $r$ 的矩阵解,则 $A,B$ 至少有 $r$ 个公共特征值,重根按重数计算.
 \end{proposition}
 
 \begin{proposition}[\marktwostar]
-设 $A,B$ 分别为复数域上的 $n,m$ 阶矩阵，则矩阵方程
+设 $A,B$ 分别为复数域上的 $n,m$ 阶矩阵,则矩阵方程
 \[
 AX=XB
 \]
-只有零解的充要条件是 $A,B$ 没有公共特征值。
+只有零解的充要条件是 $A,B$ 没有公共特征值.
 \end{proposition}
 
 \begin{example}
-证明上述三个命题。
+证明上述三个命题.
 \end{example}
 \exampleblank
 
 \begin{solution}
-对第一个命题，设 $\lambda_1,\ldots,\lambda_r$ 是互异公共特征值。取
+对第一个命题,设 $\lambda_1,\ldots,\lambda_r$ 是互异公共特征值.取
 \[
 A\alpha_i=\lambda_i\alpha_i,
 \qquad
 \beta_i^{\mathsf T}B=\lambda_i\beta_i^{\mathsf T},
 \]
-其中 $\alpha_i$ 为 $A$ 的右特征向量，$\beta_i^{\mathsf T}$ 为 $B$ 的左特征向量。令
+其中 $\alpha_i$ 为 $A$ 的右特征向量,$\beta_i^{\mathsf T}$ 为 $B$ 的左特征向量.令
 \[
 X=\sum\limits_{i=1}^{r}\alpha_i\beta_i^{\mathsf T}.
 \]
-则 $AX=XB$。由于互异特征值对应的左右特征向量组分别线性无关，故 $\rank(X)=r$。
+则 $AX=XB$.由于互异特征值对应的左右特征向量组分别线性无关,故 $\rank(X)=r$.
 
-对第二个命题，把 $X$ 看作线性映射
+对第二个命题,把 $X$ 看作线性映射
 \[
 X:\mathbb C^m\longrightarrow\mathbb C^n.
 \]
-由 $AX=XB$，$\operatorname{Im}X$ 是 $A$-不变子空间，而 $\ker X$ 是 $B$-不变子空间。诱导映射
+由 $AX=XB$,$\operatorname{Im}X$ 是 $A$-不变子空间,而 $\ker X$ 是 $B$-不变子空间.诱导映射
 \[
 \bar X:\mathbb C^m/\ker X\longrightarrow\operatorname{Im}X
 \]
-是一个 $r$ 维空间之间的同构，并且 intertwine 两边的诱导算子。因此 $A|_{\operatorname{Im}X}$ 与 $B$ 在商空间上的诱导算子相似，具有相同的 $r$ 次特征多项式。该多项式分别整除 $A,B$ 的特征多项式，故二者至少有 $r$ 个公共特征值（计重数）。
+是一个 $r$ 维空间之间的同构,并且 intertwine 两边的诱导算子.因此 $A|_{\operatorname{Im}X}$ 与 $B$ 在商空间上的诱导算子相似,具有相同的 $r$ 次特征多项式.该多项式分别整除 $A,B$ 的特征多项式,故二者至少有 $r$ 个公共特征值(计重数).
 
-第三个命题立即由前两个命题得到：若有公共特征值，则第一命题给出非零解；若存在非零解，则其秩至少为 $1$，第二命题推出存在公共特征值。
+第三个命题立即由前两个命题得到:若有公共特征值,则第一命题给出非零解;若存在非零解,则其秩至少为 $1$,第二命题推出存在公共特征值.
 \end{solution}
 
 \begin{example}
@@ -1493,27 +1493,27 @@ A=J_m(a)^{\mathsf T},
 \qquad
 B=J_n(b)^{\mathsf T},
 \]
-即二者主对角线分别为 $a,b$，次对角线为 $1$。若
+即二者主对角线分别为 $a,b$,次对角线为 $1$.若
 \[
 AX=XB,
 \]
-证明：当 $a\neq b$ 时，$X=O$。
+证明:当 $a\neq b$ 时,$X=O$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-$A$ 的全部特征值均为 $a$，$B$ 的全部特征值均为 $b$。当 $a\neq b$ 时，两者没有公共特征值。由上一命题，矩阵方程
+$A$ 的全部特征值均为 $a$,$B$ 的全部特征值均为 $b$.当 $a\neq b$ 时,两者没有公共特征值.由上一命题,矩阵方程
 \[
 AX=XB
 \]
-只有零解。因此
+只有零解.因此
 \[
 \boxed{X=O}.
 \]
 \end{solution}
 
 \begin{example}
-设 $J=J_n(1)$（$n\geq2$），求解
+设 $J=J_n(1)$($n\geq2$),求解
 \[
 3X=XJ+JX.
 \]
@@ -1521,18 +1521,18 @@ AX=XB
 \exampleblank
 
 \begin{solution}
-与例题 3.2.8 相同，唯一解为
+与例题 3.2.8 相同,唯一解为
 \[
 \boxed{X=O}.
 \]
 \end{solution}
 
 \begin{example}
-设 $A,B$ 为 $n$ 阶实矩阵，并且 $A,B$ 的全部特征值都大于零。证明：若
+设 $A,B$ 为 $n$ 阶实矩阵,并且 $A,B$ 的全部特征值都大于零.证明:若
 \[
 A^2=B^2,
 \]
-则 $A=B$。
+则 $A=B$.
 \end{example}
 \exampleblank
 
@@ -1551,14 +1551,14 @@ AX+XB
 \[
 AX=X(-B).
 \]
-矩阵 $A$ 的特征值全部为正，而 $-B$ 的特征值全部为负，因此二者没有公共特征值。由上一命题，$X=O$。所以
+矩阵 $A$ 的特征值全部为正,而 $-B$ 的特征值全部为负,因此二者没有公共特征值.由上一命题,$X=O$.所以
 \[
 \boxed{A=B}.
 \]
 \end{solution}
 
 \begin{example}
-设 $A_{m\times n}$，求矩阵 $X$ 使
+设 $A_{m\times n}$,求矩阵 $X$ 使
 \[
 A^{\mathsf T}X=X^{\mathsf T}A.
 \]
@@ -1566,7 +1566,7 @@ A^{\mathsf T}X=X^{\mathsf T}A.
 \exampleblank
 
 \begin{solution}
-该方程要求 $A^{\mathsf T}X$ 为对称矩阵，因此解一般不唯一。最直接的一族解是
+该方程要求 $A^{\mathsf T}X$ 为对称矩阵,因此解一般不唯一.最直接的一族解是
 \[
 \boxed{X=AS},
 \]
@@ -1574,25 +1574,25 @@ A^{\mathsf T}X=X^{\mathsf T}A.
 \[
 A^{\mathsf T}AS=S^{\mathsf T}A^{\mathsf T}A.
 \]
-特别地，取任意标量 $c$，都有
+特别地,取任意标量 $c$,都有
 \[
 \boxed{X=cA}
 \]
-满足条件；尤其 $X=A$ 是一个非零自然解（当 $A\neq O$）。
+满足条件;尤其 $X=A$ 是一个非零自然解(当 $A\neq O$).
 
-若 $A$ 列满秩，则还可以写出全部解：令
+若 $A$ 列满秩,则还可以写出全部解:令
 \[
 G=A^{\mathsf T}A
 \]
-可逆，则任取对称矩阵 $H$ 以及满足 $A^{\mathsf T}Z=O$ 的矩阵 $Z$，
+可逆,则任取对称矩阵 $H$ 以及满足 $A^{\mathsf T}Z=O$ 的矩阵 $Z$,
 \[
 \boxed{X=AG^{-1}H+Z}
 \]
-给出全部解。
+给出全部解.
 \end{solution}
 
 \begin{example}[\markstar\ Roth 定理]
-设 $A_{m\times n}$、$B_{p\times q}$、$C_{m\times q}$。证明矩阵方程
+设 $A_{m\times n}$,$B_{p\times q}$,$C_{m\times q}$.证明矩阵方程
 \[
 AX-YB=C
 \]
@@ -1608,7 +1608,7 @@ AX-YB=C
 \exampleblank
 
 \begin{solution}
-若存在 $X,Y$ 使 $AX-YB=C$，则
+若存在 $X,Y$ 使 $AX-YB=C$,则
 \[
 \begin{pmatrix}I_m&-Y\\O&I_p\end{pmatrix}
 \begin{pmatrix}A&O\\O&B\end{pmatrix}
@@ -1616,9 +1616,9 @@ AX-YB=C
 =
 \begin{pmatrix}A&C\\O&B\end{pmatrix}.
 \]
-左右两个因子均可逆，因此两块矩阵秩相等。
+左右两个因子均可逆,因此两块矩阵秩相等.
 
-反过来，分别用可逆行、列变换把 $A,B$ 化为秩标准型
+反过来,分别用可逆行,列变换把 $A,B$ 化为秩标准型
 \[
 A\sim
 \begin{pmatrix}I_r&O\\O&O\end{pmatrix},
@@ -1626,11 +1626,11 @@ A\sim
 B\sim
 \begin{pmatrix}I_s&O\\O&O\end{pmatrix}.
 \]
-对应地把 $C$ 分块。此时右侧块矩阵与对角块矩阵秩相等，当且仅当 $C$ 中同时落在 $A$ 的零行部分与 $B$ 的零列部分的右下角块为零。该条件恰好保证其余三个块分别可以写成 $AX$ 或 $YB$ 的相应块，因此可以构造 $X,Y$ 使
+对应地把 $C$ 分块.此时右侧块矩阵与对角块矩阵秩相等,当且仅当 $C$ 中同时落在 $A$ 的零行部分与 $B$ 的零列部分的右下角块为零.该条件恰好保证其余三个块分别可以写成 $AX$ 或 $YB$ 的相应块,因此可以构造 $X,Y$ 使
 \[
 AX-YB=C.
 \]
-故秩条件也是充分的。
+故秩条件也是充分的.
 \end{solution}
 
 
@@ -1641,35 +1641,35 @@ AX-YB=C.
 \subsection{加号广义逆}
 
 \begin{definition}
-设 $A$ 为 $m\times n$ 实矩阵。满足
+设 $A$ 为 $m\times n$ 实矩阵.满足
 \begin{enumerate}
-  \item $AA^+A=A$；
-  \item $A^+AA^+=A^+$；
-  \item $(AA^+)^{\mathsf T}=AA^+$；
+  \item $AA^+A=A$;
+  \item $A^+AA^+=A^+$;
+  \item $(AA^+)^{\mathsf T}=AA^+$;
   \item $(A^+A)^{\mathsf T}=A^+A$
 \end{enumerate}
-的矩阵 $A^+$ 称为 $A$ 的 Moore--Penrose 广义逆。
+的矩阵 $A^+$ 称为 $A$ 的 Moore--Penrose 广义逆.
 
-在复数情形中，上述转置应改为共轭转置 $\mathrm H$。
+在复数情形中,上述转置应改为共轭转置 $\mathrm H$.
 \end{definition}
 
 \begin{theorem}[\markstar]
-任意实矩阵 $A$ 的 Moore--Penrose 广义逆存在且唯一。若
+任意实矩阵 $A$ 的 Moore--Penrose 广义逆存在且唯一.若
 \[
 A=CR
 \]
-是 $A$ 的满秩分解，其中 $C$ 列满秩、$R$ 行满秩，则
+是 $A$ 的满秩分解,其中 $C$ 列满秩,$R$ 行满秩,则
 \[
 \boxed{
 A^+
 =R^{\mathsf T}(RR^{\mathsf T})^{-1}(C^{\mathsf T}C)^{-1}C^{\mathsf T}
 }.
 \]
-复数情形相应把转置改为共轭转置。
+复数情形相应把转置改为共轭转置.
 \end{theorem}
 
 \begin{example}
-证明上述 Moore--Penrose 广义逆公式以及唯一性。
+证明上述 Moore--Penrose 广义逆公式以及唯一性.
 \end{example}
 \exampleblank
 
@@ -1704,18 +1704,18 @@ AX=CC^+,
 \qquad
 XA=R^+R
 \]
-分别是到 $\operatorname{col}(C)$ 与 $\operatorname{row}(R)$ 的正交投影，因此都为对称矩阵。故 $X$ 满足四个 Penrose 方程，即 $X=A^+$。
+分别是到 $\operatorname{col}(C)$ 与 $\operatorname{row}(R)$ 的正交投影,因此都为对称矩阵.故 $X$ 满足四个 Penrose 方程,即 $X=A^+$.
 
-若 $X,Y$ 都满足四个 Penrose 方程，则 $AX,AY$ 都是到 $\operatorname{col}(A)$ 的正交投影，故 $AX=AY$；同理 $XA=YA$。于是
+若 $X,Y$ 都满足四个 Penrose 方程,则 $AX,AY$ 都是到 $\operatorname{col}(A)$ 的正交投影,故 $AX=AY$;同理 $XA=YA$.于是
 \[
 X=XAX=XAY=YAY=Y.
 \]
-故 Moore--Penrose 广义逆唯一。
+故 Moore--Penrose 广义逆唯一.
 \end{solution}
 
 \begin{proposition}[\markstar]
 \begin{enumerate}
-  \item $(A^+)^+=A$；
+  \item $(A^+)^+=A$;
   \item
   \[
   \rank(A)=\rank(A^+)=\rank(A^+A)=\rank(AA^+).
@@ -1724,12 +1724,12 @@ X=XAX=XAY=YAY=Y.
 \end{proposition}
 
 \begin{example}
-证明上述两个性质。
+证明上述两个性质.
 \end{example}
 \exampleblank
 
 \begin{solution}
-四个 Penrose 方程在交换 $A$ 与 $A^+$ 后保持同样的形式，因此 $A$ 是 $A^+$ 的 Moore--Penrose 广义逆。由唯一性，
+四个 Penrose 方程在交换 $A$ 与 $A^+$ 后保持同样的形式,因此 $A$ 是 $A^+$ 的 Moore--Penrose 广义逆.由唯一性,
 \[
 \boxed{(A^+)^+=A}.
 \]
@@ -1744,7 +1744,7 @@ AA^+A=A
 \leq\rank(AA^+)
 \leq\rank(A),
 \]
-故 $\rank(AA^+)=\rank(A)$。类似地，由 $A^+AA^+=A^+$ 得
+故 $\rank(AA^+)=\rank(A)$.类似地,由 $A^+AA^+=A^+$ 得
 \[
 \rank(A^+A)=\rank(A^+).
 \]
@@ -1763,13 +1763,13 @@ AA^+A=A
 \end{solution}
 
 \begin{example}
-求下列矩阵的 Moore--Penrose 广义逆：
+求下列矩阵的 Moore--Penrose 广义逆:
 \begin{enumerate}
-  \item $O_{1\times1}$；
-  \item $\diag(\lambda_1,\ldots,\lambda_r,0,\ldots,0)$，其中 $\lambda_i\neq0$；
-  \item $\begin{pmatrix}I_r&O\\O&O\end{pmatrix}$；
-  \item $\begin{pmatrix}I_r\\O\end{pmatrix}$；
-  \item $(I_r,O)$。
+  \item $O_{1\times1}$;
+  \item $\diag(\lambda_1,\ldots,\lambda_r,0,\ldots,0)$,其中 $\lambda_i\neq0$;
+  \item $\begin{pmatrix}I_r&O\\O&O\end{pmatrix}$;
+  \item $\begin{pmatrix}I_r\\O\end{pmatrix}$;
+  \item $(I_r,O)$.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -1777,7 +1777,7 @@ AA^+A=A
 \begin{solution}
 分别有
 \begin{enumerate}
-  \item $\boxed{A^+=0}$；
+  \item $\boxed{A^+=0}$;
   \item
   \[
   \boxed{
@@ -1809,7 +1809,7 @@ AA^+A=A
 \[
 AA^-A=A
 \]
-的矩阵 $A^-$ 称为 $A$ 的减号广义逆（或一般广义逆）。
+的矩阵 $A^-$ 称为 $A$ 的减号广义逆(或一般广义逆).
 \end{definition}
 
 \begin{theorem}[\markstar]
@@ -1818,7 +1818,7 @@ AA^-A=A
 PAQ=
 \begin{pmatrix}I_r&O\\O&O\end{pmatrix}
 \]
-其中 $P,Q$ 可逆，则 $A$ 的所有减号广义逆为
+其中 $P,Q$ 可逆,则 $A$ 的所有减号广义逆为
 \[
 \boxed{
 A^-
@@ -1830,55 +1830,55 @@ Y_3&Y_4
 P
 },
 \]
-其中 $Y_2,Y_3,Y_4$ 的元素任意。
+其中 $Y_2,Y_3,Y_4$ 的元素任意.
 \end{theorem}
 
 \begin{remark}
-只满足 Penrose 条件 (1)、(3) 的广义逆常记为 $A_l^-$，称为最小二乘广义逆；只满足条件 (1)、(4) 的常记为 $A_m^-$，称为极小范数广义逆。
+只满足 Penrose 条件 (1),(3) 的广义逆常记为 $A_l^-$,称为最小二乘广义逆;只满足条件 (1),(4) 的常记为 $A_m^-$,称为极小范数广义逆.
 \end{remark}
 
 \begin{example}
-求下列矩阵的一个减号广义逆 $A^-$ 和 Moore--Penrose 广义逆 $A^+$：
+求下列矩阵的一个减号广义逆 $A^-$ 和 Moore--Penrose 广义逆 $A^+$:
 \begin{enumerate}
-  \item $(a,b,c)$；
-  \item $(a,b,c)^{\mathsf T}$；
-  \item $\diag(a,b,0)$；
-  \item $\begin{pmatrix}a&b\\2a&2b\end{pmatrix}$；
-  \item $\begin{pmatrix}a&b&c\\e&f&g\\0&0&0\end{pmatrix}$；
-  \item $\begin{pmatrix}a&e&0\\b&f&0\\c&g&0\end{pmatrix}$；
-  \item $\begin{pmatrix}a&b&c\\2a&2b&2c\\3a&3b&3c\end{pmatrix}$；
-  \item $J_n(0)$；
-  \item $E_{1n}$。
+  \item $(a,b,c)$;
+  \item $(a,b,c)^{\mathsf T}$;
+  \item $\diag(a,b,0)$;
+  \item $\begin{pmatrix}a&b\\2a&2b\end{pmatrix}$;
+  \item $\begin{pmatrix}a&b&c\\e&f&g\\0&0&0\end{pmatrix}$;
+  \item $\begin{pmatrix}a&e&0\\b&f&0\\c&g&0\end{pmatrix}$;
+  \item $\begin{pmatrix}a&b&c\\2a&2b&2c\\3a&3b&3c\end{pmatrix}$;
+  \item $J_n(0)$;
+  \item $E_{1n}$.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-以下给出一个减号广义逆；由于 $A^+$ 本身总满足 $AA^+A=A$，可以直接取
+以下给出一个减号广义逆;由于 $A^+$ 本身总满足 $AA^+A=A$,可以直接取
 \[
 A^-=A^+.
 \]
-因此只需写出 $A^+$。参数退化导致秩下降时，应按实际秩重新计算。
+因此只需写出 $A^+$.参数退化导致秩下降时,应按实际秩重新计算.
 
 \begin{enumerate}
-  \item 若 $(a,b,c)\neq0$，则
+  \item 若 $(a,b,c)\neq0$,则
   \[
   \boxed{
   A^+=\dfrac{1}{a^2+b^2+c^2}
   \begin{pmatrix}a\\b\\c\end{pmatrix}
   }.
   \]
-  \item 若 $(a,b,c)\neq0$，则
+  \item 若 $(a,b,c)\neq0$,则
   \[
   \boxed{
   A^+=\dfrac{1}{a^2+b^2+c^2}(a,b,c)
   }.
   \]
-  \item 若 $ab\neq0$，则
+  \item 若 $ab\neq0$,则
   \[
   \boxed{A^+=\diag(a^{-1},b^{-1},0)}.
   \]
-  \item 若 $(a,b)\neq(0,0)$，写
+  \item 若 $(a,b)\neq(0,0)$,写
   \[
   A=uv^{\mathsf T},
   \qquad
@@ -1896,7 +1896,7 @@ a&2a\\b&2b
 \end{pmatrix}
   }.
   \]
-  \item 若前两行线性无关，令
+  \item 若前两行线性无关,令
   \[
   R=\begin{pmatrix}a&b&c\\e&f&g\end{pmatrix}.
   \]
@@ -1906,7 +1906,7 @@ a&2a\\b&2b
   A^+=R^{\mathsf T}(RR^{\mathsf T})^{-1}(I_2,O)
   }.
   \]
-  \item 若前两列线性无关，令
+  \item 若前两列线性无关,令
   \[
   C=\begin{pmatrix}a&e\\b&f\\c&g\end{pmatrix}.
   \]
@@ -1918,7 +1918,7 @@ a&2a\\b&2b
   (C^{\mathsf T}C)^{-1}C^{\mathsf T}
   }.
   \]
-  \item 若 $(a,b,c)\neq0$，写
+  \item 若 $(a,b,c)\neq0$,写
   \[
   u=\begin{pmatrix}1\\2\\3\end{pmatrix},
   \qquad
@@ -1936,7 +1936,7 @@ c&2c&3c
 \end{pmatrix}
   }.
   \]
-  \item $J_n(0)$ 是超对角线为 $1$ 的部分置换矩阵，因此
+  \item $J_n(0)$ 是超对角线为 $1$ 的部分置换矩阵,因此
   \[
   \boxed{A^+=J_n(0)^{\mathsf T}}.
   \]
@@ -1948,35 +1948,35 @@ c&2c&3c
 \end{solution}
 
 \begin{example}
-证明：
+证明:
 \begin{enumerate}
-  \item 对任意矩阵 $A$，矩阵方程
+  \item 对任意矩阵 $A$,矩阵方程
   \[
   AXA=A
   \]
-  都有解；
-  \item 如果矩阵方程 $AY=C$ 与 $ZB=C$ 都有解，那么方程
+  都有解;
+  \item 如果矩阵方程 $AY=C$ 与 $ZB=C$ 都有解,那么方程
   \[
   AXB=C
   \]
-  有解。
+  有解.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
 \begin{enumerate}
-  \item 任意矩阵都存在减号广义逆 $A^-$，取
+  \item 任意矩阵都存在减号广义逆 $A^-$,取
   \[
   X=A^-
   \]
-  即有 $AXA=A$。
+  即有 $AXA=A$.
 
-  \item 取 $A^-,B^-$ 为任意减号广义逆。由 $AY=C$，
+  \item 取 $A^-,B^-$ 为任意减号广义逆.由 $AY=C$,
   \[
   AA^-C=AA^-AY=AY=C.
   \]
-  由 $ZB=C$，
+  由 $ZB=C$,
   \[
   CB^-B=ZBB^-B=ZB=C.
   \]
@@ -1992,22 +1992,22 @@ c&2c&3c
 \end{solution}
 
 \begin{example}
-设 $A$ 为实数域上的 $m\times n$ 矩阵。证明：存在实数域上的 $n\times m$ 矩阵 $B$，使
+设 $A$ 为实数域上的 $m\times n$ 矩阵.证明:存在实数域上的 $n\times m$ 矩阵 $B$,使
 \[
 ABA=A,
 \qquad
 BAB=B.
 \]
-并分析：
+并分析:
 \begin{enumerate}
-  \item 这样的 $B$ 是否唯一？
-  \item 若增加要求 $AB$ 与 $BA$ 均为对称矩阵，这样的 $B$ 是否仍然存在？若存在是否唯一？
+  \item 这样的 $B$ 是否唯一?
+  \item 若增加要求 $AB$ 与 $BA$ 均为对称矩阵,这样的 $B$ 是否仍然存在?若存在是否唯一?
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-设 $\rank(A)=r$。取可逆矩阵 $P,Q$ 使
+设 $\rank(A)=r$.取可逆矩阵 $P,Q$ 使
 \[
 PAQ=E_r=
 \begin{pmatrix}I_r&O\\O&O\end{pmatrix}.
@@ -2032,13 +2032,13 @@ ABA=A,
 \qquad
 BAB=B.
 \]
-所以这样的 $B$ 总存在。
+所以这样的 $B$ 总存在.
 
-一般情况下并不唯一。例如
+一般情况下并不唯一.例如
 \[
 A=\begin{pmatrix}1&0\\0&0\end{pmatrix}
 \]
-时，
+时,
 \[
 B=
 \begin{pmatrix}
@@ -2046,9 +2046,9 @@ B=
 \end{pmatrix},
 \qquad s,t\in\mathbb R,
 \]
-均满足 $ABA=A,BAB=B$。
+均满足 $ABA=A,BAB=B$.
 
-若再要求 $AB$ 与 $BA$ 都为对称矩阵，则四个 Penrose 条件全部成立，因此 $B$ 必须是 $A$ 的 Moore--Penrose 广义逆。它总存在且唯一。所以
+若再要求 $AB$ 与 $BA$ 都为对称矩阵,则四个 Penrose 条件全部成立,因此 $B$ 必须是 $A$ 的 Moore--Penrose 广义逆.它总存在且唯一.所以
 \[
 \boxed{B=A^+}.
 \]

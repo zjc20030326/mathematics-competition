@@ -660,7 +660,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 
 
 
-\methodsection{(E) 利用上、下极限 *}
+\methodsection{(E) 利用上,下极限 *}
 
 这部分方法由于预备知识理论性较强,故放在本章最后一节作为选学内容.
 
@@ -863,7 +863,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
     S_{2n}-S_n=\sum\limits_{k=n+1}^{2n}\dfrac{1}{k}
     \geq n\dfrac{1}{2n}=\dfrac{1}{2}.
   \]
-  因此对 $\varepsilon=1/4$,无论 $N$ 多大,取 $n>N$、$m=2n$,总有
+  因此对 $\varepsilon=1/4$,无论 $N$ 多大,取 $n>N$,$m=2n$,总有
   $|S_m-S_n|\geq1/2>\varepsilon$.故 $\{S_n\}$ 不满足 Cauchy 准则,从而发散.
 \end{solution}
 
@@ -1249,7 +1249,7 @@ $\{x_n-x_{n-1}\}$ 绝对收敛 $\Rightarrow \displaystyle \lim\limits_{n\to\inft
 
 \methodsection{(D) Stolz 定理}
 
-Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0}$、$\dfrac{*}{\infty}$ 未定式极限问题十分有效.
+Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0}$,$\dfrac{*}{\infty}$ 未定式极限问题十分有效.
 
 \begin{example}
   证明:
@@ -1604,7 +1604,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
   \item 若 $x_{n+1}=f(x_n)$,$f'(x)\geq0$,则若 $x_1\leq x_2$,则 $x_n$ 单增;若 $x_1\geq x_2$,则 $x_n$ 单减.
 \end{enumerate}
 
-此外,数学归纳法及常用不等式都是证明单调、有界的重要工具.
+此外,数学归纳法及常用不等式都是证明单调,有界的重要工具.
 
 \begin{example}
   证明数列
@@ -1880,7 +1880,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 
 \begin{solution}
   令 $f(x)=3+x^{-1/2}$.当 $n\geq1$ 时 $x_n>3$.函数
-  $x-3-x^{-1/2}$ 在 $(0,+\infty)$ 上严格递增,且在 $3$ 处为负、在 $4$ 处为正,故方程
+  $x-3-x^{-1/2}$ 在 $(0,+\infty)$ 上严格递增,且在 $3$ 处为负,在 $4$ 处为正,故方程
   $x=f(x)$ 有唯一正根 $c\in(3,4)$.
 
   当 $x,y\geq3$ 时,由 Lagrange 中值定理,
@@ -2070,7 +2070,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 
 \begin{solution}
   因为 $f$ 连续且把 $\lbrack a,b\rbrack$ 映为自身,函数 $f(x)-x$ 在
-  $a$ 处非负、在 $b$ 处非正,故至少存在一个不动点 $p\in\lbrack a,b\rbrack$.
+  $a$ 处非负,在 $b$ 处非正,故至少存在一个不动点 $p\in\lbrack a,b\rbrack$.
   对任一这样的 $p$,由恒等式
   \[
     \left|\dfrac{u+v}{2}\right|^2
@@ -2144,9 +2144,9 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 
 \newpage
 
-\section{上、下极限 *}
+\section{上,下极限 *}
 
-本节通过几个等价定义由不同角度来刻画上、下极限,其中最直观的是用极限点来定义:
+本节通过几个等价定义由不同角度来刻画上,下极限,其中最直观的是用极限点来定义:
 
 \begin{definition}
   数列的收敛子列的极限称为数列的极值点,而数列的最大(小)极值点称为数列的上(下)极限,记为
@@ -2182,7 +2182,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \end{proposition}
 
 \begin{theorem}[\markstar]
-  上、下极限满足如下性质:
+  上,下极限满足如下性质:
   \begin{enumerate}
     \item
           \[
@@ -2265,7 +2265,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \end{proposition}
 
 \begin{example}
-  请求下列数列 $\{a_n\}$ 的上、下极限:
+  请求下列数列 $\{a_n\}$ 的上,下极限:
   \begin{enumerate}
     \item $\displaystyle a_n=\sqrt[n]{1+2^{n(-1)^n}}$;
     \item $\displaystyle a_n=1+\dfrac{n-\cos\dfrac{n\pi}{2}}{n+1}$;
@@ -2294,7 +2294,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
   \[
     a_n=2-\dfrac{1+\cos(n\pi/2)}{n+1}\longrightarrow2.
   \]
-  故上、下极限均为 $2$.
+  故上,下极限均为 $2$.
 
   (3) $a_n$ 是 $n/3$ 的小数部分,依次循环取 $1/3,2/3,0$.故
   \[
@@ -2321,7 +2321,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
   \]
   迭代后得到 $|a_n|\leq|a_1|+M$,故 $\{a_n\}$ 有界.
 
-  记其下极限和上极限分别为 $\alpha,\beta$.利用移位不改变上、下极限,以及
+  记其下极限和上极限分别为 $\alpha,\beta$.利用移位不改变上,下极限,以及
   $a_n-2a_{n+1}\to A$,在恒等式
   \[
     a_{n+1}=\dfrac{1}{2}a_n-\dfrac{1}{2}(a_n-2a_{n+1})
@@ -2520,11 +2520,10 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
   因此 $\{x_n\}$ 与 $\{y_n\}$ 同时收敛或同时发散.
 \end{solution}
 
-可以，精简后用“次可加数列 + 对数化”处理第二问会更干净。下面所有环境都不带星号，并按你的分式规范处理：
 
 \begin{example}
 
-  证明下列命题：
+  证明下列命题:
 
   \begin{enumerate}
 
@@ -2532,13 +2531,13 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
           \[
             a_{m+n}\leq a_m+a_n,
           \]
-          则数列 $\left\{\dfrac{a_n}{n}\right\}$ 收敛；
+          则数列 $\left\{\dfrac{a_n}{n}\right\}$ 收敛;
 
     \item 若非负数列 $\{a_n\}$ 满足对任意正整数 $m,n$ 都有
           \[
             a_{m+n}\leq a_m a_n,
           \]
-          则数列 $\{\sqrt[n]{a_n}\}$ 收敛。
+          则数列 $\{\sqrt[n]{a_n}\}$ 收敛.
 
   \end{enumerate}
 
@@ -2557,15 +2556,15 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
     \varliminf\limits_{n\to\infty}\dfrac{a_n}{n}\geq\alpha.
   \]
 
-  固定正整数 $k$。将 $n$ 写成
+  固定正整数 $k$.将 $n$ 写成
   \[
     n=qk+r,\qquad 0\leq r<k.
   \]
-  由题设反复使用次可加性，得到
+  由题设反复使用次可加性,得到
   \[
     a_n\leq qa_k+a_r,
   \]
-  其中 $r=0$ 时略去末项。
+  其中 $r=0$ 时略去末项.
 
   令
   \[
@@ -2577,13 +2576,13 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
     \leq
     \dfrac{qa_k+C_k}{qk+r}.
   \]
-  令 $n\to\infty$，即 $q\to\infty$，可得
+  令 $n\to\infty$,即 $q\to\infty$,可得
   \[
     \varlimsup\limits_{n\to\infty}\dfrac{a_n}{n}
     \leq
     \dfrac{a_k}{k}.
   \]
-  由于 $k$ 任意，对 $k$ 取下确界，得到
+  由于 $k$ 任意,对 $k$ 取下确界,得到
   \[
     \varlimsup\limits_{n\to\infty}\dfrac{a_n}{n}
     \leq\alpha.
@@ -2602,16 +2601,16 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
     =\alpha.
   \]
 
-  (2) 若存在正整数 $k$ 使 $a_k=0$，则对任意 $n>k$，
+  (2) 若存在正整数 $k$ 使 $a_k=0$,则对任意 $n>k$,
   \[
     0\leq a_n\leq a_k a_{n-k}=0,
   \]
-  故 $a_n=0$ 对所有 $n\geq k$ 成立，于是
+  故 $a_n=0$ 对所有 $n\geq k$ 成立,于是
   \[
     \lim\limits_{n\to\infty}\sqrt[n]{a_n}=0.
   \]
 
-  以下设 $a_n>0$ 对所有正整数 $n$ 成立。令
+  以下设 $a_n>0$ 对所有正整数 $n$ 成立.令
   \[
     b_n=\ln a_n.
   \]
@@ -2623,11 +2622,11 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
   \[
     b_{m+n}\leq b_m+b_n.
   \]
-  因此由第 (1) 问，
+  因此由第 (1) 问,
   \[
     \lim\limits_{n\to\infty}\dfrac{b_n}{n}
   \]
-  存在。
+  存在.
 
   又因为
   \[
@@ -2635,7 +2634,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
     =a_n^{\frac{1}{n}}
     =\exp\left(\dfrac{b_n}{n}\right),
   \]
-  且指数函数连续，所以 $\{\sqrt[n]{a_n}\}$ 收敛。
+  且指数函数连续,所以 $\{\sqrt[n]{a_n}\}$ 收敛.
 
 \end{solution}
 

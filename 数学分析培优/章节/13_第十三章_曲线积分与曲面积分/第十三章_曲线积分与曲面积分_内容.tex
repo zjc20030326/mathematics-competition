@@ -31,7 +31,7 @@
 若能解出其中两个变量为第三个变量的函数, 可直接参数化; 也可代入球坐标或柱坐标, 或先消去一个变量得到平面投影曲线, 再恢复第三个坐标.
 
 \begin{theorem}[\markstar\ 对称性]
-    若 $L$ 可划分为互相对称的两部分 $L_1,L_2$, 且在对称点上 $f(P)$ 大小相等、符号相反, 则 $L_1,L_2$ 上的积分相互抵消; 若大小相等且符号相同, 则 $L$ 上的积分等于 $L_1$ 上积分的 $2$ 倍.
+    若 $L$ 可划分为互相对称的两部分 $L_1,L_2$, 且在对称点上 $f(P)$ 大小相等,符号相反, 则 $L_1,L_2$ 上的积分相互抵消; 若大小相等且符号相同, 则 $L$ 上的积分等于 $L_1$ 上积分的 $2$ 倍.
 \end{theorem}
 
 \begin{remark}
@@ -110,7 +110,7 @@
     对第二型曲线积分, 除被积函数的大小与符号外, 还需考虑投影元素的符号. 例如对 $\displaystyle\int\limits_L f(P)\,\mathrm{d}x$, 若对称点上 $f(P)\,\mathrm{d}x$ 取相反符号, 则积分为零; 若取相同符号, 则积分等于一半曲线积分的 $2$ 倍.
 \end{theorem}
 
-\begin{theorem}[\markstar\ 第一、二型曲线积分的关系]
+\begin{theorem}[\markstar\ 第一,二型曲线积分的关系]
     设 $\bm t,\bm n$ 分别为平面曲线的单位切向量与单位法向量, 则
     \[
         \cos(\bm n,x)\,\mathrm{d}s=\mathrm{d}y,
@@ -543,7 +543,7 @@
 \end{solution}
 
 \begin{example}[\markstar]
-    设 $P,Q$ 在全平面上有连续偏导数, 且以任意点 $(x_0,y_0)$ 为中心、任意 $r>0$ 为半径的上半圆 $C$ 上恒有
+    设 $P,Q$ 在全平面上有连续偏导数, 且以任意点 $(x_0,y_0)$ 为中心,任意 $r>0$ 为半径的上半圆 $C$ 上恒有
     \[
         \int\limits_C P(x,y)\,\mathrm{d}x+Q(x,y)\,\mathrm{d}y=0,
     \]
@@ -557,7 +557,7 @@
 \exampleblank
 
 \begin{solution}
-    按通常的“上半圆弧”参数化 $x=x_0+r\cos t,y=y_0+r\sin t$,$0\leq t\leq\pi$.除以 $r$ 后令 $r\to0$,得到 $P(x_0,y_0)=0$.再展开到下一阶则得到 $Q_x(x_0,y_0)=0$.
+    按通常的``上半圆弧''参数化 $x=x_0+r\cos t,y=y_0+r\sin t$,$0\leq t\leq\pi$.除以 $r$ 后令 $r\to0$,得到 $P(x_0,y_0)=0$.再展开到下一阶则得到 $Q_x(x_0,y_0)=0$.
 
     题面所写 $Q_y\equiv0$ 不成立.例如 $P=0,Q=y$ 时任意上半圆弧上 $\int Q\,\mathrm{d}y=\frac{1}{2}[y^2]_{y_0}^{y_0}=0$,但 $Q_y=1$.因此原结论应核对,按现有题面正确条件是 $P\equiv0,Q_x\equiv0$.
 \end{solution}
@@ -695,7 +695,7 @@
 \exampleblank
 
 \begin{solution}
-    连续函数在紧集 $\overline D$ 上取到极值.若非常值调和函数在内部取到最大值或最小值,平均值性质迫使其在一个邻域、继而在整个连通区域为常值,矛盾.因此极值均可在边界 $L$ 上取到.
+    连续函数在紧集 $\overline D$ 上取到极值.若非常值调和函数在内部取到最大值或最小值,平均值性质迫使其在一个邻域,继而在整个连通区域为常值,矛盾.因此极值均可在边界 $L$ 上取到.
 \end{solution}
 
 \begin{example}
@@ -717,7 +717,7 @@
 \exampleblank
 
 \begin{solution}
-    若“任意球面”指任意球心和任意充分小半径,则球面平均恒为零.令半径趋于零,由连续性得 $f$ 在每个球心处都为零,故 $f\equiv0$,特别地 $\Delta f=0$.
+    若``任意球面''指任意球心和任意充分小半径,则球面平均恒为零.令半径趋于零,由连续性得 $f$ 在每个球心处都为零,故 $f\equiv0$,特别地 $\Delta f=0$.
 
     若原意仅指以原点为心的球面,则结论一般不成立;齐次函数在单位球面上的平均为零并不足以推出调和性.
 \end{solution}
@@ -750,7 +750,7 @@
 \begin{theorem}[\markstar]
     若 $P,Q$ 在区域 $D$ 内连续并有连续一阶偏导数, 且 $D$ 为单连通区域, 则下列命题等价:
     \begin{enumerate}
-        \item $\displaystyle\int\limits_LP\,\mathrm{d}x+Q\,\mathrm{d}y$ 只与起点、终点有关;
+        \item $\displaystyle\int\limits_LP\,\mathrm{d}x+Q\,\mathrm{d}y$ 只与起点,终点有关;
         \item 对 $D$ 内任意分段光滑闭曲线 $C$, $\displaystyle\int\limits_CP\,\mathrm{d}x+Q\,\mathrm{d}y=0$;
         \item $P\,\mathrm{d}x+Q\,\mathrm{d}y$ 为恰当微分, 即存在 $u$ 使 $u_x=P,u_y=Q$;
         \item 在 $D$ 内处处成立 $\dfrac{\partial Q}{\partial x}=\dfrac{\partial P}{\partial y}$.
@@ -1020,7 +1020,7 @@
     \[
         \iint_S|z|\,\mathrm{d}S=\dfrac{\pi a^3}{2}.
     \]
-    若“表面”指两个实体交集的整个边界,还需加上球面部分;球面部分同样为 $\pi a^3/2$,此时总值为 $\pi a^3$.原题措辞需据原始资料确定.
+    若``表面''指两个实体交集的整个边界,还需加上球面部分;球面部分同样为 $\pi a^3/2$,此时总值为 $\pi a^3$.原题措辞需据原始资料确定.
 \end{solution}
 
 \begin{example}
@@ -1070,7 +1070,7 @@
     \[
         \iint\limits_\Sigma\dfrac{\mathrm{d}S}{\sqrt{x^2+y^2+(z+a)^2}},
     \]
-    其中 $\Sigma$ 为以原点为中心、$a$ 为半径的上半球面.
+    其中 $\Sigma$ 为以原点为中心,$a$ 为半径的上半球面.
 \end{example}
 \exampleblank
 
@@ -1162,7 +1162,7 @@
 \exampleblank
 
 \begin{solution}
-    设椭球半轴为 $a,b,c$,写成 $\bm x=A\bm u$,其中 $A=\operatorname{diag}(a,b,c)$、$|\bm u|=1$.有
+    设椭球半轴为 $a,b,c$,写成 $\bm x=A\bm u$,其中 $A=\operatorname{diag}(a,b,c)$,$|\bm u|=1$.有
     \[
         \mathrm{d}S=abc|A^{-T}\bm u|\,\mathrm{d}\Omega,\qquad
         \rho=\dfrac{1}{|A^{-T}\bm u|}.
@@ -1181,7 +1181,7 @@
 
 \subsection{第二型曲面积分}
 
-求第二型曲面积分常用方法为: Stokes 公式、Gauss 公式以及参数方程. 计算时必须注意投影面积元素的符号.
+求第二型曲面积分常用方法为: Stokes 公式,Gauss 公式以及参数方程. 计算时必须注意投影面积元素的符号.
 
 \begin{theorem}[\markstar]
     \[
@@ -1564,7 +1564,7 @@
 为 Nabla 算子. 设 $u(x,y,z)$ 为光滑数量场, $\bm A=P\bm i+Q\bm j+R\bm k$ 为光滑向量场.
 
 \begin{definition}
-    梯度、散度和旋度分别定义为
+    梯度,散度和旋度分别定义为
     \[
         \operatorname{grad}u=\nabla u
         =\left(\dfrac{\partial u}{\partial x},\dfrac{\partial u}{\partial y},\dfrac{\partial u}{\partial z}\right),
@@ -1607,7 +1607,7 @@
 \exampleblank
 
 \begin{solution}
-    逐坐标求偏导即可.偏导算子的线性性给出 (1)、(2);对每个坐标使用乘积法则得到 (3);对每个坐标使用一元复合函数链式法则得到 (4).
+    逐坐标求偏导即可.偏导算子的线性性给出 (1),(2);对每个坐标使用乘积法则得到 (3);对每个坐标使用一元复合函数链式法则得到 (4).
 \end{solution}
 
 \begin{example}
@@ -1621,7 +1621,7 @@
 \exampleblank
 
 \begin{solution}
-    把 $\bm A=(P,Q,R)$ 代入 $\operatorname{div}\bm A=P_x+Q_y+R_z$.线性性立即给出 (1)、(2),而
+    把 $\bm A=(P,Q,R)$ 代入 $\operatorname{div}\bm A=P_x+Q_y+R_z$.线性性立即给出 (1),(2),而
     \[
         \operatorname{div}(u\bm A)=(uP)_x+(uQ)_y+(uR)_z
         =u\operatorname{div}\bm A+\bm A\cdot\nabla u
@@ -1647,7 +1647,7 @@
         \begin{vmatrix}\bm i      & \bm j      & \bm k      \\
                \partial_x & \partial_y & \partial_z \\P&Q&R\end{vmatrix}.
     \]
-    线性性给出 (1)、(2),乘积法则展开给出 (3).对 (4) 逐分量展开两边,混合项逐一抵消,即得
+    线性性给出 (1),(2),乘积法则展开给出 (3).对 (4) 逐分量展开两边,混合项逐一抵消,即得
     $\nabla\cdot(\bm F_1\times\bm F_2)=(\nabla\times\bm F_1)\cdot\bm F_2-(\nabla\times\bm F_2)\cdot\bm F_1$.
 \end{solution}
 
@@ -1669,7 +1669,7 @@
 \exampleblank
 
 \begin{solution}
-    本题内容是“无旋场”的定义而不是待证命题:满足 $\nabla\times\bm F=0$ 的向量场称为无旋场,无需另作证明.
+    本题内容是``无旋场''的定义而不是待证命题:满足 $\nabla\times\bm F=0$ 的向量场称为无旋场,无需另作证明.
 \end{solution}
 
 \begin{theorem}[\markstar]
@@ -1687,7 +1687,7 @@
 \exampleblank
 
 \begin{solution}
-    这里“上述定理”指:在曲面单连通区域 $D$ 中,$C^2$ 向量场的“有势、无旋、保守”三者等价.
+    这里``上述定理''指:在曲面单连通区域 $D$ 中,$C^2$ 向量场的``有势,无旋,保守''三者等价.
 
     若 $\bm F=\nabla\varphi$,混合偏导可交换,故 $\nabla\times\bm F=0$;并且任意曲线积分只等于势函数的端点差,所以闭路积分为零.若 $\bm F$ 保守,固定 $x_0\in D$ 并定义
     \[
