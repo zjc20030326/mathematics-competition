@@ -543,7 +543,7 @@ LaTeX Font Warning: Font shape `TU/KaiTi(0)/b/n' undefined
 
 并退回常规字重，只能靠 AutoFakeBold 合成伪粗体。
 
-共享 `preamble.tex` 中已补上真粗体：
+共享 `elegantbook.cls` 的 `chinesefont=ctexfont` 分支（默认分支）中已补上真粗体：
 
 ```latex
 \setCJKfamilyfont{zhkai}[BoldFont={SimHei}]{KaiTi}
@@ -551,8 +551,18 @@ LaTeX Font Warning: Font shape `TU/KaiTi(0)/b/n' undefined
 
 - 方括号外的 `KaiTi` 是基础字体，楷体字形保持不变；
 - 粗体用 `SimHei`，与本书 `\heiti` 已经在用的黑体是同一款，加粗与黑体风格一致；
-- 编译时会出现 `xeCJK Warning: Redefining CJKfamily`，这是覆盖生效的告知，
-  属正常现象，不要为了消除它去改动字体配置。
+- 这一行是有意重定义 ctex 已经定义过的字体族，所以只把这一次的 xeCJK 警告
+  `CJKfamily-redef` 压掉，结束处立即恢复该消息的默认处理，以后真出现重复
+  定义仍会报警。两个辅助宏 `\elegantkaiboldsilence`、`\elegantkaiboldrestore`
+  必须定义在参数之外：把 `\ExplSyntaxOn` 写进 `\ifdefstring` 的分支参数里
+  不生效，参数在被记成记号时 catcode 已经确定，直接写 `\msg_redirect_name:nnn`
+  会被拆成 `\msg` 而报 `Undefined control sequence`；
+- `preamble.tex` 中保留同一补丁的兜底分支：单章独立编译读到的是 TeX Live 自带的
+  `elegantbook.cls`，class 中的补丁不会执行，此时按本地 class 是否定义了
+  `\elegantkaiboldsilence` 判断并补做一次，使单章 PDF 与整书 PDF 的楷体粗体一致。
+
+不要为了消除提示去删掉这一行或改成 `AutoFakeBold` 伪粗体；也不要把字体族的
+定义重新挪回 `preamble.tex` 并与 class 各留一份。
 
 不要改写成下面这种写法：
 

@@ -14,17 +14,24 @@
 \usepackage{draftwatermark}
 
 % ================= 中文字体:楷体粗体映射 =================
-% ctex 的 Windows 字体集没有给楷体声明 BoldFont,而 definition,theorem,
-% remark 等环境的正文用 \cnormal (= \kaishu) 排成楷体. 于是在这些环境里
-% \textbf 会去要"粗体楷体", 触发
-%   LaTeX Font Warning: Font shape `TU/KaiTi(0)/b/n' undefined
-% 并退回常规字重, 只靠 AutoFakeBold 合成伪粗体.
-% 这里补上真粗体: 基础楷体仍是 Windows 楷体, 粗体用 SimHei, 与本书
-% \heiti 已经在用的黑体是同一款, 加粗与黑体风格一致.
-% 不要改写成 [BoldFont={FZHei-B01}]{FZKai-Z03}: 方括号外的 FZKai-Z03 是
-% 基础字体, 那样写会连楷体字形一起换成方正楷体_GBK, 与其余仍是 Windows
-% 字体的宋体,黑体,仿宋风格不统一.
-\setCJKfamilyfont{zhkai}[BoldFont={SimHei}]{KaiTi}
+% 楷体 \textbf 真粗体补丁 (zhkai 补 BoldFont=SimHei) 的正式位置是
+% elegantbook.cls 的 chinesefont=ctexfont 分支; 补丁原因、写法禁忌与警告
+% 静音方式见该分支内的注释.
+% 单章独立编译读到的是 TeX Live 自带的 elegantbook.cls, 本地 class 的补丁
+% 不会执行, 因此这里按本地 class 是否定义了辅助宏来判断, 补做同样的处理,
+% 使单章 PDF 与整书 PDF 的楷体粗体保持一致.
+\ifdefined\elegantkaiboldsilence
+\else
+    \ifcsname setCJKfamilyfont\endcsname
+        \ExplSyntaxOn
+        \msg_redirect_name:nnn { xeCJK } { CJKfamily-redef } { none }
+        \ExplSyntaxOff
+        \setCJKfamilyfont{zhkai}[BoldFont={SimHei}]{KaiTi}
+        \ExplSyntaxOn
+        \msg_redirect_name:nnn { xeCJK } { CJKfamily-redef } { }
+        \ExplSyntaxOff
+    \fi
+\fi
 
 % ================= 水印内容 =================
 \SetWatermarkScale{0.4}
