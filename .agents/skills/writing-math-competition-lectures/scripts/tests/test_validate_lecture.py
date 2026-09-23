@@ -277,6 +277,8 @@ def test_markdown_punctuation_ignores_fenced_and_inline_code(tmp_path):
         ("$$x$$\n", "LATEX001"),
         (r"$\binom{n}{k}$" + "\n", "LATEX002"),
         (r"$\tfrac{1}{2}$" + "\n", "LATEX003"),
+        (r"$\bigl(x\bigr)$" + "\n", "LATEX006"),
+        (r"$\mathbb R$" + "\n", "LATEX007"),
         ("正文\x08控制符\n", "CTRL001"),
         (r"\begin{align}x&=1\end{gather}" + "\n", "LATEX004"),
         ("{\n", "LATEX005"),

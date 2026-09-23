@@ -171,7 +171,7 @@
 \exampleblank
 
 \begin{solution}
-    不存在.若 $f$ 连续且非常值,则其值域含有一个非退化区间.该区间中有不可数多个无理数 $y$,而每个这样的 $y$ 的原像都必须是有理数;这会从可数集 $\mathbb Q$ 向不可数集给出满射,矛盾.若 $f$ 为常值,又不可能同时在有理点取无理值,在无理点取有理值.
+    不存在.若 $f$ 连续且非常值,则其值域含有一个非退化区间.该区间中有不可数多个无理数 $y$,而每个这样的 $y$ 的原像都必须是有理数;这会从可数集 $\mathbb{Q}$ 向不可数集给出满射,矛盾.若 $f$ 为常值,又不可能同时在有理点取无理值,在无理点取有理值.
 \end{solution}
 
 \begin{example}
@@ -510,7 +510,7 @@
 \exampleblank
 
 \begin{solution}
-    连续函数 $f(x)-x$ 无零点,故在连通集 $\mathbb R$ 上恒正或恒负.因而迭代列 $x_{n+1}=f(x_n)$ 严格单调.若它有界,则存在有限极限 $L$,由连续性
+    连续函数 $f(x)-x$ 无零点,故在连通集 $\mathbb{R}$ 上恒正或恒负.因而迭代列 $x_{n+1}=f(x_n)$ 严格单调.若它有界,则存在有限极限 $L$,由连续性
     \[
         L=\lim\limits_{n\to\infty}x_{n+1}
         =\lim\limits_{n\to\infty}f(x_n)=f(L),
@@ -565,7 +565,7 @@
     \]
     与非常值矛盾.故 $T_0>0$.取周期 $T_n\downarrow T_0$,由连续性 $f(x+T_0)=f(x)$,故 $T_0$ 是最小正周期.
 
-    对任一正周期 $T$,写成 $T=qT_0+r$,$0\leq r<T_0$.周期之差仍为周期,故 $r=0$,即 $T=qT_0$.若 $T$ 和 $\alpha T$ 都是周期,则它们均为 $T_0$ 的整数倍,从而 $\alpha\in\mathbb Q$.
+    对任一正周期 $T$,写成 $T=qT_0+r$,$0\leq r<T_0$.周期之差仍为周期,故 $r=0$,即 $T=qT_0$.若 $T$ 和 $\alpha T$ 都是周期,则它们均为 $T_0$ 的整数倍,从而 $\alpha\in\mathbb{Q}$.
 \end{solution}
 
 \begin{example}
@@ -580,9 +580,9 @@
 \begin{solution}
     因 $T_1/T_2$ 为无理数,集合
     \[
-        \{mT_1+nT_2:m,n\in\mathbb Z\}
+        \{mT_1+nT_2:m,n\in\mathbb{Z}\}
     \]
-    在 $\mathbb R$ 中稠密.任取 $x,y$,可取 $m_k,n_k$ 使 $x+m_kT_1+n_kT_2\to y$.利用周期性和连续性得
+    在 $\mathbb{R}$ 中稠密.任取 $x,y$,可取 $m_k,n_k$ 使 $x+m_kT_1+n_kT_2\to y$.利用周期性和连续性得
     \[
         f(y)=\lim\limits_{k\to\infty}f(x+m_kT_1+n_kT_2)=f(x).
     \]
@@ -599,7 +599,7 @@
     \[
         f(x)\equiv0,\qquad g(x)=\sin x,qquad T_1=\sqrt2,quad T_2=2\pi.
     \]
-    则 $T_1/T_2\notin\mathbb Q$,但 $h(x)=\sin x$ 显然是周期函数.
+    则 $T_1/T_2\notin\mathbb{Q}$,但 $h(x)=\sin x$ 显然是周期函数.
 \end{solution}
 
 
@@ -638,7 +638,7 @@
 \begin{solution}
     令 $y=0$ 得 $f(0)=0$,再由方程得 $f(-x)=-f(x)$.归纳得 $f(nx)=nf(x)$,进而对有理数 $r$ 有 $f(rx)=rf(x)$.取 $x=1$,记 $a=f(1)$,由有理数的稠密性和 $f$ 的连续性,
     \[
-        f(x)=ax,qquad x\in\mathbb R.
+        f(x)=ax,qquad x\in\mathbb{R}.
     \]
     题面中``非零解时 $a>0$''不正确;$a$ 可为任意非零实数,例如 $f(x)=-x$ 也是解.
 \end{solution}
@@ -702,7 +702,7 @@
     \]
     解这个二阶常系数差分方程,再利用 $f$ 的连续性和加法公式的相容性,得两类实值解
     \[
-        f(x)=\cos(ax),\qquad f(x)=\operatorname{ch}(ax),qquad a\in\mathbb R.
+        f(x)=\cos(ax),\qquad f(x)=\operatorname{ch}(ax),qquad a\in\mathbb{R}.
     \]
     直接代入并用三角函数或双曲函数的和差化积公式,可验证它们均满足原方程.
 \end{solution}

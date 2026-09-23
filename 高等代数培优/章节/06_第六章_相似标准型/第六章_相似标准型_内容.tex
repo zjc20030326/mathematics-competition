@@ -200,7 +200,7 @@ y=h(x)=x^2+x+1.
 消去 $x$,计算结式
 \[
 \operatorname{Res}_x
-\bigl(x^3+x^2+x+2,\ x^2+x+1-y\bigr)
+\left(x^3+x^2+x+2,\ x^2+x+1-y\right)
 =
 -y^3+y^2-2y+4.
 \]
@@ -212,9 +212,9 @@ y=h(x)=x^2+x+1.
 
 
 \begin{example}[\markstar]
-设 $A\in M_n(\mathbb C)$,
+设 $A\in M_n(\mathbb{C})$,
 \[
-W=\{f(A):f(x)\in\mathbb C[x]\},
+W=\{f(A):f(x)\in\mathbb{C}[x]\},
 \]
 且 $m_A(x)$ 为 $A$ 的最小多项式.证明
 \[
@@ -314,7 +314,7 @@ W_i
 =
 \bigcup_{k\geq1}\ker p_i(A)^k.
 \]
-当 $F=\mathbb C$ 时,$p_i(\lambda)=\lambda-\lambda_i$,
+当 $F=\mathbb{C}$ 时,$p_i(\lambda)=\lambda-\lambda_i$,
 $W_i$ 称为属于 $\lambda_i$ 的根子空间.
 \end{proposition}
 
@@ -345,7 +345,7 @@ A=
 1&1&-2&1
 \end{pmatrix}
 \]
-定义 $\mathbb R^4$ 上的线性变换.求 $V$ 与 $A$ 的准素分解.
+定义 $\mathbb{R}^4$ 上的线性变换.求 $V$ 与 $A$ 的准素分解.
 \end{example}
 \exampleblank
 
@@ -410,7 +410,7 @@ A=
 1&1&-2&-1
 \end{pmatrix}.
 \]
-分别把它看作 $\mathbb C^4$ 与 $\mathbb R^4$ 上的线性变换,
+分别把它看作 $\mathbb{C}^4$ 与 $\mathbb{R}^4$ 上的线性变换,
 求相应的准素分解.
 \end{example}
 \exampleblank
@@ -420,12 +420,12 @@ A=
 \[
 (\lambda-3)(\lambda+1)(\lambda^2+1).
 \]
-故在 $\mathbb C$ 上有四个一维根子空间,$A$ 可对角化,特征值为
+故在 $\mathbb{C}$ 上有四个一维根子空间,$A$ 可对角化,特征值为
 \[
 3,\ -1,\ i,\ -i.
 \]
 
-在 $\mathbb R$ 上,
+在 $\mathbb{R}$ 上,
 \[
 V=W_3\oplus W_{-1}\oplus W_q,
 \]
@@ -653,7 +653,7 @@ F[A]e_1=V.
 \[
 A=\diag(3,3,-2)
 \]
-是 $\mathbb R^3$ 上的线性变换.
+是 $\mathbb{R}^3$ 上的线性变换.
 证明 $A$ 没有循环向量,并求
 \[
 v=(1,-1,3)^{\mathsf T}
@@ -667,7 +667,7 @@ $A$ 的最小多项式为
 \[
 m_A(\lambda)=(\lambda-3)(\lambda+2),
 \]
-次数只有 $2<3$.循环空间若等于整个 $\mathbb R^3$,其循环向量的最小零化子
+次数只有 $2<3$.循环空间若等于整个 $\mathbb{R}^3$,其循环向量的最小零化子
 必须等于 $A$ 的特征多项式并有次数 $3$,故不存在循环向量.
 
 把
@@ -697,7 +697,7 @@ A=
 0&1&1
 \end{pmatrix}
 \]
-作用于 $\mathbb C^3$.求
+作用于 $\mathbb{C}^3$.求
 \[
 \alpha=(1,0,0)^{\mathsf T},
 \qquad
@@ -799,7 +799,7 @@ f_A=m_1m_2\cdots m_r.
 \[
 P^{-1}AP
 =
-\diag\bigl(C(m_1),C(m_2),\ldots,C(m_r)\bigr).
+\diag\left(C(m_1),C(m_2),\ldots,C(m_r)\right).
 \]
 该块对角矩阵称为 $A$ 的有理标准形.
 \end{theorem}
@@ -912,7 +912,7 @@ m_2=\lambda-1.
 B_3=
 \diag\left(
 1,\
-C\bigl((\lambda-1)(\lambda^2+1)\bigr)
+C\left((\lambda-1)(\lambda^2+1)\right)
 \right),
 \]
 而
@@ -1068,7 +1068,7 @@ $w=h(A)v$ 被 $g(A)$ 零化,其最小零化子次数小于 $n$,不可能循环.
 \begin{example}
 设 $V$ 是有限维实线性空间,$T:V\to V$ 满足:
 \begin{enumerate}
-    \item $T$ 的最小多项式在 $\mathbb R$ 上不可约;
+    \item $T$ 的最小多项式在 $\mathbb{R}$ 上不可约;
     \item 存在 $v\in V$ 使
     \[
     \{T^i(v):i\geq0\}
@@ -1080,13 +1080,13 @@ $w=h(A)v$ 被 $g(A)$ 零化,其最小零化子次数小于 $n$,不可能循环.
 \exampleblank
 
 \begin{solution}
-第二个条件说明 $V$ 是循环 $\,\mathbb R[x]\,$-模,
+第二个条件说明 $V$ 是循环 $\,\mathbb{R}[x]\,$-模,
 \[
-V\cong \mathbb R[x]/(m_T).
+V\cong \mathbb{R}[x]/(m_T).
 \]
 由于 $m_T$ 不可约,商环
 \[
-\mathbb R[x]/(m_T)
+\mathbb{R}[x]/(m_T)
 \]
 是域.循环模的 $T$-不变子空间对应于该商环的理想,而域只有
 $\{0\}$ 和自身两个理想.因此只有
@@ -1266,7 +1266,7 @@ $P(\lambda),Q(\lambda)$,使
 \[
 P(\lambda)A(\lambda)Q(\lambda)
 =
-\diag\bigl(d_1(\lambda),\ldots,d_r(\lambda),0,\ldots,0\bigr),
+\diag\left(d_1(\lambda),\ldots,d_r(\lambda),0,\ldots,0\right),
 \]
 其中
 \[
@@ -1322,9 +1322,9 @@ d_k=\dfrac{D_k}{D_{k-1}}.
 \[
 A
 \sim
-\diag\bigl(
+\diag\left(
 J_{k_1}(\lambda_1),\ldots,J_{k_s}(\lambda_s)
-\bigr).
+\right).
 \]
 \end{theorem}
 
@@ -1392,10 +1392,10 @@ d_2
 所以
 \[
 \boxed{
-\diag\bigl(
+\diag\left(
 \lambda+1,\,
 (\lambda+1)(\lambda^2-2)
-\bigr).
+\right).
 }
 \]
 
@@ -1410,10 +1410,10 @@ D_2=(\lambda^2-1)(\lambda-1)^3
 故
 \[
 \boxed{
-\diag\bigl(
+\diag\left(
 \lambda-1,\,
 (\lambda-1)^3(\lambda+1)
-\bigr).
+\right).
 }
 \]
 
@@ -1426,7 +1426,7 @@ D_2=(\lambda^2-1)(\lambda-1)^3
 
 
 \begin{example}
-求下列方阵在 $\mathbb C$ 上的 Jordan 标准形,并给出可逆矩阵 $P$
+求下列方阵在 $\mathbb{C}$ 上的 Jordan 标准形,并给出可逆矩阵 $P$
 使 $P^{-1}AP=J$:
 \begin{enumerate}
     \item
@@ -1792,7 +1792,7 @@ J_3(1).
 
 
 \begin{example}
-设 $A,B,C,D\in M_3(\mathbb C)$ 具有相同的特征多项式.
+设 $A,B,C,D\in M_3(\mathbb{C})$ 具有相同的特征多项式.
 证明其中必有两个矩阵相似.
 \end{example}
 \exampleblank
@@ -1814,7 +1814,7 @@ J_3(1).
 
 
 \begin{example}
-设 $A,B\in M_3(\mathbb C)$ 都只有一个特征值 $\lambda_0$.
+设 $A,B\in M_3(\mathbb{C})$ 都只有一个特征值 $\lambda_0$.
 证明
 \[
 A\sim B
@@ -2088,7 +2088,7 @@ a&c\\
 A^n=
 \begin{pmatrix}
 a^n&
-\bigl(a^{n-1}+a^{n-2}b+\cdots+b^{n-1}\bigr)c\\
+\left(a^{n-1}+a^{n-2}b+\cdots+b^{n-1}\right)c\\
 0&b^n
 \end{pmatrix}.
 \]
@@ -2404,7 +2404,7 @@ A_3^n=I+n(A_3-I).
     \item $A$ 的全部初等因子均为一次多项式;
     \item $A$ 的全部不变因子均无重根;
     \item $A$ 的最小多项式无重根;
-    \item 对任意 $c\in\mathbb C$,
+    \item 对任意 $c\in\mathbb{C}$,
     \[
     \rank(cI-A)=\rank(cI-A)^2;
     \]
@@ -2429,7 +2429,7 @@ m_0
 =
 \min
 \left\{
-k\in\mathbb Z_+:
+k\in\mathbb{Z}_+:
 \ker(\lambda_0I-\varphi)^k
 =
 \ker(\lambda_0I-\varphi)^{k+1}
@@ -2480,7 +2480,7 @@ $(x-\lambda_0)$ 的指数 $m_0$.对幂零变换,
 \exampleblank
 
 \begin{solution}
-第一问在 $\mathbb C$ 上总可对角化.离散 Fourier 基
+第一问在 $\mathbb{C}$ 上总可对角化.离散 Fourier 基
 \[
 (1,\omega,\omega^2,\ldots,\omega^{n-1})^{\mathsf T}
 \]
@@ -2506,7 +2506,7 @@ A^2-A-I_{2n}=0.
 \[
 x^2-x-1,
 \]
-该多项式在 $\mathbb C$(以及 $\mathbb R$)上有两个不同的根,
+该多项式在 $\mathbb{C}$(以及 $\mathbb{R}$)上有两个不同的根,
 故
 \[
 \boxed{A\text{ 可对角化}.}
@@ -2551,12 +2551,12 @@ A^2=0,
 
 \begin{example}
 设 $A$ 为 $n$ 阶实方阵,把同一矩阵分别看作
-$\mathbb R^n$ 与 $\mathbb C^n$ 上的线性变换.
-若 $A$ 在 $\mathbb R^n$ 中只有
+$\mathbb{R}^n$ 与 $\mathbb{C}^n$ 上的线性变换.
+若 $A$ 在 $\mathbb{R}^n$ 中只有
 \[
-\{0\},\ \mathbb R^n
+\{0\},\ \mathbb{R}^n
 \]
-两个不变子空间,证明它在 $\mathbb C^n$ 上可对角化.
+两个不变子空间,证明它在 $\mathbb{C}^n$ 上可对角化.
 \end{example}
 \exampleblank
 
@@ -2568,7 +2568,7 @@ $\mathbb R^n$ 与 $\mathbb C^n$ 上的线性变换.
 n=2.
 \]
 又不能有实特征值,否则其特征向量张成一维实不变子空间.
-故特征多项式是不可约二次多项式,在 $\mathbb C$ 上分裂为两个不同的共轭根.
+故特征多项式是不可约二次多项式,在 $\mathbb{C}$ 上分裂为两个不同的共轭根.
 因此复化后的矩阵有两个互异特征值,故可对角化.
 \end{solution}
 
@@ -2602,14 +2602,14 @@ p(\lambda)
 \[
 (p,p')=1,
 \]
-所以在 $\mathbb C$ 上三个根互不相同,因此 $A$ 可对角化.
+所以在 $\mathbb{C}$ 上三个根互不相同,因此 $A$ 可对角化.
 
 另一方面,由有理根定理,$p$ 的有理根只能是
 \[
 \pm1,\pm2,\pm4,\pm8,
 \]
-逐一代入均不为零,所以 $p$ 在 $\mathbb Q$ 上没有一次因子.
-若 $A$ 能在 $\mathbb Q$ 上对角化,其特征值必须都属于 $\mathbb Q$,
+逐一代入均不为零,所以 $p$ 在 $\mathbb{Q}$ 上没有一次因子.
+若 $A$ 能在 $\mathbb{Q}$ 上对角化,其特征值必须都属于 $\mathbb{Q}$,
 矛盾.
 \end{solution}
 
@@ -2690,16 +2690,16 @@ m_A=f_A.
 \[
 C(f_A).
 \]
-另一方面在 $\mathbb C$ 上,各不可约因子继续分裂为一次因子,
+另一方面在 $\mathbb{C}$ 上,各不可约因子继续分裂为一次因子,
 而原特征多项式是平方自由的,所以全部复特征值互不相同,
-故 $A$ 在 $\mathbb C$ 上可对角化.
+故 $A$ 在 $\mathbb{C}$ 上可对角化.
 \end{solution}
 
 
 \begin{example}
 令
 \[
-V=M_n(\mathbb C),
+V=M_n(\mathbb{C}),
 \qquad
 \sigma(X)=AX.
 \]
@@ -2710,9 +2710,9 @@ V=M_n(\mathbb C),
 \begin{solution}
 按列分解
 \[
-M_n(\mathbb C)
+M_n(\mathbb{C})
 \cong
-\mathbb C^n\oplus\cdots\oplus\mathbb C^n
+\mathbb{C}^n\oplus\cdots\oplus\mathbb{C}^n
 \]
 共 $n$ 份.$\sigma$ 在每一份上都由 $A$ 作用,因此其矩阵相似于
 \[
@@ -2728,7 +2728,7 @@ M_n(\mathbb C)
 \begin{example}
 设 $A$ 是可对角化复矩阵,在
 \[
-V=M_n(\mathbb C)
+V=M_n(\mathbb{C})
 \]
 上定义
 \[
@@ -2836,7 +2836,7 @@ AB=BA,\qquad A^n=B^n=I,
 x^n-1
 \]
 在特征 $0$ 中无重根,所以 $A,B$ 都可对角化.
-又二者可交换,故可在 $\mathbb C$ 上同时对角化:
+又二者可交换,故可在 $\mathbb{C}$ 上同时对角化:
 \[
 A\sim\diag(\alpha_1,\ldots,\alpha_n),
 \qquad
@@ -2943,7 +2943,7 @@ A^k=O,
     \item
     \[
     \operatorname{tr}A^k=0
-    \qquad(\forall k\in\mathbb Z_+).
+    \qquad(\forall k\in\mathbb{Z}_+).
     \]
 \end{enumerate}
 \end{proposition}
@@ -3053,7 +3053,7 @@ AC=CA.
 \begin{aligned}
 \operatorname{tr}C^k
 &=
-\operatorname{tr}\bigl(C^{k-1}(AB-BA)\bigr)\\
+\operatorname{tr}\left(C^{k-1}(AB-BA)\right)\\
 &=
 \operatorname{tr}(C^{k-1}AB)
 -\operatorname{tr}(C^{k-1}BA)\\
@@ -3134,7 +3134,7 @@ p\leq1+\rank\sigma\leq n-1<n.
 \begin{solution}
 设特征值为
 \[
-\lambda_1,\ldots,\lambda_n\in\mathbb R.
+\lambda_1,\ldots,\lambda_n\in\mathbb{R}.
 \]
 一阶主子式之和为特征多项式的第一基本对称系数,故
 \[
@@ -3218,7 +3218,7 @@ A=\diag(a_1,\ldots,a_n),
 
 
 \begin{example}
-设 $n$ 为奇数,$A,B\in M_n(\mathbb C)$ 且
+设 $n$ 为奇数,$A,B\in M_n(\mathbb{C})$ 且
 \[
 A^2=0.
 \]
@@ -3253,7 +3253,7 @@ AC=-CA.
 \[
 \operatorname{tr}C^k
 =
-\operatorname{tr}\bigl(C^{k-1}[A,B]\bigr)
+\operatorname{tr}\left(C^{k-1}[A,B]\right)
 =
 0.
 \]
@@ -3509,7 +3509,7 @@ B=
 0&0&0
 \end{pmatrix}.
 \]
-问是否存在三阶复方阵 $X$ 以及多项式 $f,g\in\mathbb C[x]$,使
+问是否存在三阶复方阵 $X$ 以及多项式 $f,g\in\mathbb{C}[x]$,使
 \[
 A=f(X),\qquad B=g(X).
 \]
@@ -3632,7 +3632,7 @@ m_A=f_A,
 \]
 即 $A$ 为循环变换时,其交换子代数恰为
 \[
-\boxed{\mathbb C[A]}.
+\boxed{\mathbb{C}[A]}.
 \]
 \end{theorem}
 
@@ -3697,7 +3697,7 @@ a&b&c\\
 \end{pmatrix}
 P_1^{-1},
 \qquad
-a,b,c,d,e\in\mathbb C.
+a,b,c,d,e\in\mathbb{C}.
 }
 \]
 

@@ -51,6 +51,8 @@ warning 不等于自动修复请求. 先判断是否为允许的代码,路径,�
 - `LATEX001`: `.tex` 中使用 double-dollar 行间公式.
 - `LATEX002`: 使用 `\binom`. 组合数改用 `C_n^k`; 上下堆叠的列向量改用 `\begin{pmatrix}` 环境 (`\pmatrix{...}` 是 amsmath 不接受的旧写法).
 - `LATEX003`: 使用 `\tfrac`.
+- `LATEX006`: 使用 `\bigl`, `\bigr` 等固定尺寸定界符命令. 改用 `\left` 和 `\right`; 定界符内需要跨 `\\` 换行时改用普通 `\lbrack`, `\rbrack`.
+- `LATEX007`: 使用不带花括号的 `\mathbb R` 等集合记号. 改为 `\mathbb{R}`.
 - `LATEX004`: `\begin` 和 `\end` 环境不匹配.
 - `LATEX005`: 花括号,数学定界符或 `\left` 和 `\right` 不匹配.
 - `CTRL001`: 出现异常控制字符.

@@ -471,7 +471,7 @@ $(f_1,g_1)=1$ 的 Bézout 等式可得 $c\mid td$.因此最大公因式为 $td$(
 \]
 故全部整数解为
 \[
-  \boxed{x=302+385k,\qquad k\in\mathbb Z}.
+  \boxed{x=302+385k,\qquad k\in\mathbb{Z}}.
 \]
 \end{solution}
 
@@ -563,21 +563,21 @@ $(f_1,g_1)=1$ 的 Bézout 等式可得 $c\mid td$.因此最大公因式为 $td$(
 \end{theorem}
 
 \begin{example}
-设 $f(x)\in\mathbb Q[x]$,且 $1+\sqrt3$ 为 $f(x)$ 的根.证明 $1-\sqrt3$ 也是 $f(x)$ 的根.
+设 $f(x)\in\mathbb{Q}[x]$,且 $1+\sqrt3$ 为 $f(x)$ 的根.证明 $1-\sqrt3$ 也是 $f(x)$ 的根.
 \end{example}
 \exampleblank
 
 \begin{solution}
-$1+\sqrt3$ 在 $\mathbb Q$ 上的最小多项式为
+$1+\sqrt3$ 在 $\mathbb{Q}$ 上的最小多项式为
 \[
   (x-1)^2-3=x^2-2x-2,
 \]
-它在 $\mathbb Q[x]$ 中不可约.既然 $f(1+\sqrt3)=0$,则最小多项式整除 $f$,
+它在 $\mathbb{Q}[x]$ 中不可约.既然 $f(1+\sqrt3)=0$,则最小多项式整除 $f$,
 故其另一根 $1-\sqrt3$ 也必为 $f$ 的根.
 \end{solution}
 
 \begin{example}
-设 $f(x)\in\mathbb Q[x]$,且
+设 $f(x)\in\mathbb{Q}[x]$,且
 \[
   a\sqrt b+c\sqrt d
 \]
@@ -596,10 +596,10 @@ $1+\sqrt3$ 在 $\mathbb Q$ 上的最小多项式为
 \begin{solution}
 按题面当前条件,此结论并非总成立.若补充通常所需条件
 \[
-  [\mathbb Q(\sqrt b,\sqrt d):\mathbb Q]=4
+  [\mathbb{Q}(\sqrt b,\sqrt d):\mathbb{Q}]=4
 \]
 (例如 $b,d,bd$ 均不是有理数平方,且 $ac\ne0$),则
-$\mathbb Q(\sqrt b,\sqrt d)$ 的四个 $\mathbb Q$-自同构分别独立改变
+$\mathbb{Q}(\sqrt b,\sqrt d)$ 的四个 $\mathbb{Q}$-自同构分别独立改变
 $\sqrt b,\sqrt d$ 的符号.将这些自同构作用于
 \[
   f(a\sqrt b+c\sqrt d)=0
@@ -610,17 +610,17 @@ $\sqrt b,\sqrt d$ 的符号.将这些自同构作用于
 \end{solution}
 
 \begin{example}
-设 $f(x)\in\mathbb Q[x]$,$d\in\mathbb Q$,且 $\sqrt[3]{d}$ 为无理数并且是 $f(x)$ 的一个根.
+设 $f(x)\in\mathbb{Q}[x]$,$d\in\mathbb{Q}$,且 $\sqrt[3]{d}$ 为无理数并且是 $f(x)$ 的一个根.
 证明 $\sqrt[3]{d}\,\omega$ 与 $\sqrt[3]{d}\,\omega^2$ 也是 $f(x)$ 的根,其中 $\omega$ 为三次单位根.
 \end{example}
 \exampleblank
 
 \begin{solution}
-由于 $\sqrt[3]{d}\notin\mathbb Q$,三次多项式
+由于 $\sqrt[3]{d}\notin\mathbb{Q}$,三次多项式
 \[
   x^3-d
 \]
-在 $\mathbb Q[x]$ 中没有有理根,故不可约.它就是 $\sqrt[3]{d}$ 的最小多项式.
+在 $\mathbb{Q}[x]$ 中没有有理根,故不可约.它就是 $\sqrt[3]{d}$ 的最小多项式.
 由 $f(\sqrt[3]{d})=0$ 可知 $x^3-d\mid f(x)$.因此 $x^3-d$ 的另外两个根
 \[
   \sqrt[3]{d}\,\omega,
@@ -631,7 +631,7 @@ $\sqrt b,\sqrt d$ 的符号.将这些自同构作用于
 \end{solution}
 
 \begin{example}
-设 $f(x)$ 是 $\mathbb Q$ 上的 $n$ 次不可约多项式.若 $f$ 的某个根的倒数也是 $f$ 的根,
+设 $f(x)$ 是 $\mathbb{Q}$ 上的 $n$ 次不可约多项式.若 $f$ 的某个根的倒数也是 $f$ 的根,
 证明:$f$ 的每一个根的倒数仍是 $f$ 的根.
 \end{example}
 \exampleblank
@@ -648,7 +648,7 @@ $\sqrt b,\sqrt d$ 的符号.将这些自同构作用于
   \qquad
   f^*(\alpha)=\alpha^n f(\alpha^{-1})=0.
 \]
-故不可约多项式 $f$ 与 $f^*$ 有公共根,从而二者在 $\mathbb Q[x]$ 中相伴:
+故不可约多项式 $f$ 与 $f^*$ 有公共根,从而二者在 $\mathbb{Q}[x]$ 中相伴:
 \[
   f^*=cf
 \]
@@ -731,24 +731,24 @@ $\alpha$,在 $g$ 中指数为 $\beta$,则 $f^2\mid g^2$ 给出 $2\alpha\le2\beta
 \]
 则
 \[
-  z_1z_2=r_1r_2\bigl[\cos(\alpha+\beta)+i\sin(\alpha+\beta)\bigr].
+  z_1z_2=r_1r_2\left[\cos(\alpha+\beta)+i\sin(\alpha+\beta)\right].
 \]
 \end{theorem}
 
 \begin{corollary}[\markstar\ De Moivre 公式]
 \[
-  \bigl[r(\cos\theta+i\sin\theta)\bigr]^n
-  =r^n\bigl(\cos n\theta+i\sin n\theta\bigr).
+  \left[r(\cos\theta+i\sin\theta)\right]^n
+  =r^n\left(\cos n\theta+i\sin n\theta\right).
 \]
 \end{corollary}
 
 \begin{example}[\marktwostar]
-求多项式 $x^n-1$ 分别在 $\mathbb R$,$\mathbb C$ 上的因式分解.
+求多项式 $x^n-1$ 分别在 $\mathbb{R}$,$\mathbb{C}$ 上的因式分解.
 \end{example}
 \exampleblank
 
 \begin{solution}
-在 $\mathbb C$ 上,$n$ 个根为
+在 $\mathbb{C}$ 上,$n$ 个根为
 \[
   \omega_k=e^{\frac{2\pi ik}{n}},
   \qquad k=0,1,\ldots,n-1,
@@ -759,7 +759,7 @@ $\alpha$,在 $g$ 中指数为 $\beta$,则 $f^2\mid g^2$ 给出 $2\alpha\le2\beta
   \left(x-e^{\frac{2\pi ik}{n}}\right).
 \]
 
-在 $\mathbb R$ 上,将共轭根配对.若 $n$ 为奇数,
+在 $\mathbb{R}$ 上,将共轭根配对.若 $n$ 为奇数,
 \[
   x^n-1=(x-1)
   \prod\limits_{k=1}^{\frac{n-1}{2}}
@@ -774,12 +774,12 @@ $\alpha$,在 $g$ 中指数为 $\beta$,则 $f^2\mid g^2$ 给出 $2\alpha\le2\beta
 \end{solution}
 
 \begin{example}
-求多项式 $x^n+1$ 分别在 $\mathbb R$,$\mathbb C$ 上的因式分解.
+求多项式 $x^n+1$ 分别在 $\mathbb{R}$,$\mathbb{C}$ 上的因式分解.
 \end{example}
 \exampleblank
 
 \begin{solution}
-在 $\mathbb C$ 上,根为
+在 $\mathbb{C}$ 上,根为
 \[
   \zeta_k=e^{\frac{(2k+1)\pi i}{n}},
   \qquad k=0,1,\ldots,n-1,
@@ -789,7 +789,7 @@ $\alpha$,在 $g$ 中指数为 $\beta$,则 $f^2\mid g^2$ 给出 $2\alpha\le2\beta
   x^n+1=\prod\limits_{k=0}^{n-1}
   \left(x-e^{\frac{(2k+1)\pi i}{n}}\right).
 \]
-在 $\mathbb R$ 上将共轭根配对:若 $n$ 为偶数,
+在 $\mathbb{R}$ 上将共轭根配对:若 $n$ 为偶数,
 \[
   x^n+1=
   \prod\limits_{k=0}^{\frac n2-1}
@@ -804,7 +804,7 @@ $\alpha$,在 $g$ 中指数为 $\beta$,则 $f^2\mid g^2$ 给出 $2\alpha\le2\beta
 \end{solution}
 
 \begin{example}
-求多项式 $x^n-a^n$($a>0$)在 $\mathbb R$ 上的因式分解.
+求多项式 $x^n-a^n$($a>0$)在 $\mathbb{R}$ 上的因式分解.
 \end{example}
 \exampleblank
 
@@ -1158,7 +1158,7 @@ $\alpha$,在 $g$ 中指数为 $\beta$,则 $f^2\mid g^2$ 给出 $2\alpha\le2\beta
 \end{solution}
 
 \begin{example}
-判断下列多项式在 $\mathbb Q$ 上是否可约:
+判断下列多项式在 $\mathbb{Q}$ 上是否可约:
 \begin{enumerate}
   \item $x^4-8x^3+12x^2+2$;
   \item $x^p+px+1$,其中 $p$ 为奇素数;
@@ -1168,14 +1168,14 @@ $\alpha$,在 $g$ 中指数为 $\beta$,则 $f^2\mid g^2$ 给出 $2\alpha\le2\beta
 \exampleblank
 
 \begin{solution}
-三者均在 $\mathbb Q$ 上不可约.
+三者均在 $\mathbb{Q}$ 上不可约.
 
 (1) 模 $3$ 化简得到
 \[
-  x^4+x^3-1\in\mathbb F_3[x].
+  x^4+x^3-1\in\mathbb{F}_3[x].
 \]
-它在 $\mathbb F_3$ 中无一次因子;进一步检验唯一可能的首一不可约二次因子可知亦无二次因子,
-故在 $\mathbb F_3[x]$ 中不可约.由模素数判别法,原多项式在 $\mathbb Q[x]$ 中不可约.
+它在 $\mathbb{F}_3$ 中无一次因子;进一步检验唯一可能的首一不可约二次因子可知亦无二次因子,
+故在 $\mathbb{F}_3[x]$ 中不可约.由模素数判别法,原多项式在 $\mathbb{Q}[x]$ 中不可约.
 
 (2) 作平移 $x=y-1$:
 \[
@@ -1235,18 +1235,18 @@ $\alpha$,在 $g$ 中指数为 $\beta$,则 $f^2\mid g^2$ 给出 $2\alpha\le2\beta
   f(x)=P(x)-1.
 \]
 \begin{enumerate}
-  \item 证明 $f(x)$ 在 $\mathbb Q$ 上不可约;
+  \item 证明 $f(x)$ 在 $\mathbb{Q}$ 上不可约;
   \item 对整数 $t\ne-1$,讨论
   \[
     g(x)=P(x)+t
   \]
-  在 $\mathbb Q$ 上是否一定不可约.
+  在 $\mathbb{Q}$ 上是否一定不可约.
 \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
-(1) 反设 $f=gh$ 在 $\mathbb Z[x]$ 中有非平凡分解,并取
+(1) 反设 $f=gh$ 在 $\mathbb{Z}[x]$ 中有非平凡分解,并取
 \[
   0<\deg g\le\deg h.
 \]
@@ -1280,7 +1280,7 @@ $\alpha$,在 $g$ 中指数为 $\beta$,则 $f^2\mid g^2$ 给出 $2\alpha\le2\beta
 \[
   f(x)=\prod\limits_{i=1}^{n}(x-a_i)+1
 \]
-在 $\mathbb Q$ 上不可约,或者是某一有理系数多项式的平方.
+在 $\mathbb{Q}$ 上不可约,或者是某一有理系数多项式的平方.
 \end{example}
 \exampleblank
 
@@ -1289,7 +1289,7 @@ $\alpha$,在 $g$ 中指数为 $\beta$,则 $f^2\mid g^2$ 给出 $2\alpha\le2\beta
 \[
   P(x)=\prod\limits_{i=1}^{n}(x-a_i).
 \]
-若 $f=P+1$ 可约,由 Gauss 引理可在 $\mathbb Z[x]$ 中写成 $f=gh$,并取
+若 $f=P+1$ 可约,由 Gauss 引理可在 $\mathbb{Z}[x]$ 中写成 $f=gh$,并取
 $0<\deg g\le\deg h$.由
 \[
   f(a_i)=1
@@ -1311,7 +1311,7 @@ $2\deg g<n$ 不可能,故 $2\deg g=n$,并由首项系数比较得到
 \[
   f(x)=\prod\limits_{i=1}^{n}(x-a_i)^2+1
 \]
-在 $\mathbb Q$ 上不可约.
+在 $\mathbb{Q}$ 上不可约.
 \end{example}
 \exampleblank
 
@@ -1322,8 +1322,8 @@ $2\deg g<n$ 不可能,故 $2\deg g=n$,并由首项系数比较得到
   \qquad
   f=P^2+1.
 \]
-若 $f=gh$ 在 $\mathbb Z[x]$ 中非平凡分解,则 $f(x)>0$ 对所有实数 $x$ 成立,故 $g,h$ 均无实根,
-从而各自在 $\mathbb R$ 上不变号.又
+若 $f=gh$ 在 $\mathbb{Z}[x]$ 中非平凡分解,则 $f(x)>0$ 对所有实数 $x$ 成立,故 $g,h$ 均无实根,
+从而各自在 $\mathbb{R}$ 上不变号.又
 \[
   g(a_i)h(a_i)=1,
 \]
@@ -1339,7 +1339,7 @@ $2\deg g<n$ 不可能,故 $2\deg g=n$,并由首项系数比较得到
 \[
   (g-P)(g+P)=1,
 \]
-不可能.故 $f$ 在 $\mathbb Q$ 上不可约.
+不可能.故 $f$ 在 $\mathbb{Q}$ 上不可约.
 \end{solution}
 
 \begin{example}
@@ -1347,7 +1347,7 @@ $2\deg g<n$ 不可能,故 $2\deg g=n$,并由首项系数比较得到
 \[
   f(x)=\prod\limits_{i=1}^{2025}(x-i)^2+2026.
 \]
-判断 $f(x)$ 在 $\mathbb Q$ 上是否可约,并证明结论.
+判断 $f(x)$ 在 $\mathbb{Q}$ 上是否可约,并证明结论.
 \end{example}
 \exampleblank
 
@@ -1358,11 +1358,11 @@ $2\deg g<n$ 不可能,故 $2\deg g=n$,并由首项系数比较得到
   \qquad
   F(x)=P^2(x)+2026.
 \]
-反设 $F$ 在 $\mathbb Q[x]$ 中可约.由于 $F$ 为首一整系数多项式,由 Gauss 引理可写成
+反设 $F$ 在 $\mathbb{Q}[x]$ 中可约.由于 $F$ 为首一整系数多项式,由 Gauss 引理可写成
 \[
   F(x)=g(x)h(x),
 \]
-其中 $g,h\in\mathbb Z[x]$ 均首一,且
+其中 $g,h\in\mathbb{Z}[x]$ 均首一,且
 \[
   0<\deg g\leq\deg h.
 \]
@@ -1439,7 +1439,7 @@ $\deg g\leq2025$,只能有
 
 故
 \[
-  \boxed{F(x)\text{ 在 }\mathbb Q[x]\text{ 上不可约}.}
+  \boxed{F(x)\text{ 在 }\mathbb{Q}[x]\text{ 上不可约}.}
 \]
 \end{solution}
 
@@ -1471,7 +1471,7 @@ $\{\pm1,\pm p\}$.矛盾.
 \exampleblank
 
 \begin{solution}
-将 $f$ 在 $\mathbb R[x]$ 中分解.由于 $f(x)\ge0$,每个实根的重数都是偶数,故实一次因子的乘积可并入一个平方.
+将 $f$ 在 $\mathbb{R}[x]$ 中分解.由于 $f(x)\ge0$,每个实根的重数都是偶数,故实一次因子的乘积可并入一个平方.
 其余不可约二次因子均形如
 \[
   (x-a)^2+b^2,
@@ -2265,7 +2265,7 @@ $n$ 次多项式
 \]
 若 $a\ne0$,取模得到
 \[
-  \rho\bigl((1-\rho)^2+a^2\bigr)=a^2,
+  \rho\left((1-\rho)^2+a^2\right)=a^2,
 \]
 即
 \[
@@ -2328,7 +2328,7 @@ $n$ 次多项式
 \[
   y^3+6y^2-3=0.
 \]
-若 $x,y\in\mathbb Q$,则 $y$ 必是上述首一整系数多项式的有理根,因此只能是整数且整除 $3$,
+若 $x,y\in\mathbb{Q}$,则 $y$ 必是上述首一整系数多项式的有理根,因此只能是整数且整除 $3$,
 即候选为 $\pm1,\pm3$.逐一代入均不为零,矛盾.因此该方程组无有理解.
 \end{solution}
 

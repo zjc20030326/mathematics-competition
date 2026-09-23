@@ -132,7 +132,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
   \]
   给定 $\varepsilon>0$,取 $n$ 充分大使右端小于 $\varepsilon$,即得结论.
   若 $a=0$,则对充分大的 $n$ 有 $|x_n|<\varepsilon^3$,故
-  $|\sqrt[3]{x_n}|<\varepsilon$.所以结论对一切 $a\in\mathbb R$ 均成立.
+  $|\sqrt[3]{x_n}|<\varepsilon$.所以结论对一切 $a\in\mathbb{R}$ 均成立.
 
   (3) 任给 $\varepsilon>0$,取 $N_0$,使得 $k>N_0$ 时
   $|x_k-A|<\dfrac{\varepsilon}{2}$.令
@@ -369,7 +369,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 \]
 
 \begin{remark}
-  值得注意的是,后者的 $p$ 应是关于 $p\in\mathbb N$ 一致成立,即
+  值得注意的是,后者的 $p$ 应是关于 $p\in\mathbb{N}$ 一致成立,即
   \[
     \{x_n\}\text{ 收敛}
     \iff
@@ -385,7 +385,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
   \[
     \text{数列 }\{a_n\}\text{ 存在极限 }\lim\limits_{n\to\infty}a_n=a
     \iff
-    \forall p\in\mathbb N,\ \lim\limits_{n\to\infty}|a_{n+p}-a_n|=0.
+    \forall p\in\mathbb{N},\ \lim\limits_{n\to\infty}|a_{n+p}-a_n|=0.
   \]
 \end{example}
 \exampleblank
@@ -393,7 +393,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 \begin{solution}
   命题的充分性错误,必要性正确.
 
-  若 $a_n\to a$,则对任意固定的 $p\in\mathbb N$,
+  若 $a_n\to a$,则对任意固定的 $p\in\mathbb{N}$,
   \[
     |a_{n+p}-a_n|
     \leq|a_{n+p}-a|+|a_n-a|\longrightarrow0.
@@ -451,7 +451,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 \methodsection{(C) Toeplitz 定理}
 
 \begin{theorem}[\markstar\ Toeplitz 定理]
-  设对 $n,k\in\mathbb Z^+$,有 $t_{nk}\geq0$,又
+  设对 $n,k\in\mathbb{Z}^+$,有 $t_{nk}\geq0$,又
   \[
     \sum\limits_{k=1}^n t_{nk}=1,
     \qquad
@@ -459,7 +459,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
   \]
   若已知 $\displaystyle \lim\limits_{n\to\infty}a_n=a$,定义
   \[
-    x_n=\sum\limits_{k=1}^n t_{nk}a_k,\qquad n\in\mathbb Z^+,
+    x_n=\sum\limits_{k=1}^n t_{nk}a_k,\qquad n\in\mathbb{Z}^+,
   \]
   则
   \[
@@ -761,7 +761,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 
   \begin{theorem}[Dirichlet 逼近定理]
     设 $\alpha$ 为无理数,则存在无穷多个互不相同的有理数 $\dfrac{p}{q}$
-    ($p\in\mathbb Z$,$q\in\mathbb Z^+$),使得
+    ($p\in\mathbb{Z}$,$q\in\mathbb{Z}^+$),使得
     \[
       \left|\alpha-\dfrac{p}{q}\right|<\dfrac{1}{q^2}.
     \]
@@ -1709,8 +1709,8 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \noindent\textbf{(\markstar)} 单调有界原理是最常见也最常用的方法,要分别证明单调性与有界性.单调性通常有以下几种判断方法:
 
 \begin{enumerate}
-  \item 对任意 $n\in\mathbb N$,若 $x_{n+1}-x_n\geq0$,则 $x_n$ 单增;若 $x_{n+1}-x_n\leq0$,则 $x_n$ 单减;
-  \item 对任意 $n\in\mathbb N$,若 $\dfrac{x_{n+1}}{x_n}\geq1$,则 $x_n$ 单增;若 $\dfrac{x_{n+1}}{x_n}\leq1$,则 $x_n$ 单减;
+  \item 对任意 $n\in\mathbb{N}$,若 $x_{n+1}-x_n\geq0$,则 $x_n$ 单增;若 $x_{n+1}-x_n\leq0$,则 $x_n$ 单减;
+  \item 对任意 $n\in\mathbb{N}$,若 $\dfrac{x_{n+1}}{x_n}\geq1$,则 $x_n$ 单增;若 $\dfrac{x_{n+1}}{x_n}\leq1$,则 $x_n$ 单减;
   \item 若 $x_{n+1}=f(x_n)$,$f'(x)\geq0$,则若 $x_1\leq x_2$,则 $x_n$ 单增;若 $x_1\geq x_2$,则 $x_n$ 单减.
 \end{enumerate}
 
@@ -1927,7 +1927,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \subsection{压缩映像原理}
 
 \begin{theorem}[\markstar]
-  对于任一数列 $\{x_n\}$ 而言,若存在常数 $r$,使得对任意 $n\in\mathbb N$,恒有
+  对于任一数列 $\{x_n\}$ 而言,若存在常数 $r$,使得对任意 $n\in\mathbb{N}$,恒有
   \[
     |x_{n+1}-x_n|\leq r|x_n-x_{n-1}|,
     \qquad 0<r<1,
@@ -1936,7 +1936,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \end{theorem}
 
 \begin{corollary}[\markstar]
-  设 $I\subseteq\mathbb R$ 为闭区间,$f:I\to I$ 在 $I$ 上连续,在 $I$ 的内部可微.
+  设 $I\subseteq\mathbb{R}$ 为闭区间,$f:I\to I$ 在 $I$ 上连续,在 $I$ 的内部可微.
   若存在常数 $0<r<1$,使得
   \[
     |f'(x)|\leq r

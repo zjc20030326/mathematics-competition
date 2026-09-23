@@ -51,7 +51,7 @@
               故一致收敛.
         \item 极限函数为零,且
               \[
-                  \sup_{x\in\mathbb R}\dfrac{|x|}{1+nx^2}=\dfrac{1}{2\sqrt n}\longrightarrow0,
+                  \sup_{x\in\mathbb{R}}\dfrac{|x|}{1+nx^2}=\dfrac{1}{2\sqrt n}\longrightarrow0,
               \]
               故一致收敛.
         \item 当 $\alpha<0$ 时,$0\leq f_n(x)\leq n^\alpha\to0$,故一致收敛于零.当 $\alpha=0$ 时,逐点极限在 $x=0$ 处为 $1$,在 $x>0$ 处为零,不连续,故不一致收敛;当 $\alpha>0$ 时,$f_n(0)=n^\alpha$,连逐点有限收敛也不成立.
@@ -73,7 +73,7 @@
     \begin{enumerate}
         \item 极限为 $\sin(x/2)$,且由正弦函数的 Lipschitz 性,
               \[
-                  \sup_{x\in\mathbb R}\left|f_n(x)-\sin\dfrac{x}{2}\right|\leq\dfrac{1}{2n},
+                  \sup_{x\in\mathbb{R}}\left|f_n(x)-\sin\dfrac{x}{2}\right|\leq\dfrac{1}{2n},
               \]
               故一致收敛.
         \item 极限为 $1/x$.由 $|\sin t-t|\leq|t|^3/6$,
@@ -717,7 +717,7 @@
     $\sigma_N=\sum_{n=1}^{N}F_n$ 单调增加到连续函数 $\sigma$,故由 Dini 定理一致收敛.因此
     \[
         \sup_{x\in[a,b]}\sum\limits_{n=N+1}^{\infty}|f_n(x)|
-        \leq\sup_{x\in[a,b]}\bigl(\sigma(x)-\sigma_N(x)\bigr)\longrightarrow0.
+        \leq\sup_{x\in[a,b]}\left(\sigma(x)-\sigma_N(x)\right)\longrightarrow0.
     \]
     所以 $\sum f_n$ 一致收敛,其和函数连续.
 \end{solution}
@@ -735,8 +735,8 @@
     故双向级数在 $K$ 上一致收敛,和函数在每个非整数点连续.换指标
     $m=n-1$ 得
     \[
-        S(x+1)=\sum\limits_{n\in\mathbb Z}\dfrac{1}{(n-x-1)^2}
-        =\sum\limits_{m\in\mathbb Z}\dfrac{1}{(m-x)^2}=S(x),
+        S(x+1)=\sum\limits_{n\in\mathbb{Z}}\dfrac{1}{(n-x-1)^2}
+        =\sum\limits_{m\in\mathbb{Z}}\dfrac{1}{(m-x)^2}=S(x),
     \]
     故周期为 $1$.
 \end{solution}
@@ -1094,12 +1094,12 @@
 \end{solution}
 
 \begin{example}
-    若实系数多项式序列 $\{p_n(x)\}$ 在 $\mathbb R$ 上一致收敛于函数 $f(x)$,证明:$f(x)$ 必是多项式函数.
+    若实系数多项式序列 $\{p_n(x)\}$ 在 $\mathbb{R}$ 上一致收敛于函数 $f(x)$,证明:$f(x)$ 必是多项式函数.
 \end{example}
 \exampleblank
 
 \begin{solution}
-    一致收敛使 $\{p_n\}$ 在 $\mathbb R$ 上一致 Cauchy.故充分大的 $m,n$ 满足
+    一致收敛使 $\{p_n\}$ 在 $\mathbb{R}$ 上一致 Cauchy.故充分大的 $m,n$ 满足
     $p_n-p_m$ 在整个实轴上有界.非恒定实多项式在实轴上无界,所以
     $p_n-p_m$ 必为常数.固定一个充分大的 $N$,便有 $p_n=p_N+c_n$,且
     $c_n$ 收敛.因此 $f=p_N+\lim c_n$,仍为多项式.
@@ -2576,7 +2576,7 @@
 \begin{example}
     \begin{enumerate}
         \item 设 $f(x)$ 在 $\lbrack 0,\pi\rbrack$ 上有连续导数,且 $f'(x)$ 在 $\lbrack 0,\pi\rbrack$ 上分段光滑,$\displaystyle\int_0^\pi f(x)\,\mathrm{d}x=0$.证明相应 Wirtinger 型不等式;
-        \item 设 $f(x)$ 在 $\mathbb R$ 上有连续导数,周期为 $l>0$,且 $\displaystyle\int_0^lf(x)\,\mathrm{d}x=0$.证明
+        \item 设 $f(x)$ 在 $\mathbb{R}$ 上有连续导数,周期为 $l>0$,且 $\displaystyle\int_0^lf(x)\,\mathrm{d}x=0$.证明
               \[
                   \int_0^l|f'(x)|^2\,\mathrm{d}x
                   \geq\dfrac{4\pi^2}{l^2}\int_0^l|f(x)|^2\,\mathrm{d}x.

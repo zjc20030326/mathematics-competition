@@ -48,7 +48,7 @@
     \begin{enumerate}
         \item $\displaystyle
                   \lim\limits_{n\to\infty}
-                  \dfrac{n^3\sqrt[n]{2\left(1-\cos\dfrac{1}{n^2}\right)}}{\sqrt{n^2+1}-n}$;
+                  \dfrac{n^3\sqrt[n]{2}\left(1-\cos\dfrac{1}{n^2}\right)}{\sqrt{n^2+1}-n}$;
         \item $\displaystyle
                   \lim\limits_{x\to0}
                   \dfrac{x(1-\cos x)}{(1-e^x)\sin x^2}$;
@@ -64,18 +64,30 @@
     \begin{enumerate}
         \item 因为
               \[
-                  2\left(1-\cos\dfrac{1}{n^2}\right)\sim\dfrac{1}{n^4},
+                  1-\cos\dfrac{1}{n^2}\sim\dfrac{1}{2n^4},
                   \qquad
                   \sqrt{n^2+1}-n
-                  =\dfrac{1}{\sqrt{n^2+1}+n}\sim\dfrac{1}{2n},
+                  =\dfrac{1}{\sqrt{n^2+1}+n}
+                  \sim\dfrac{1}{2n},
+                  \qquad
+                  \sqrt[n]{2}\to1,
               \]
-              且
+              所以
               \[
-                  \sqrt[n]{2\left(1-\cos\dfrac{1}{n^2}\right)}
-                  =\exp\left\{\dfrac{1}{n}\ln\left[2\left(1-\cos\dfrac{1}{n^2}\right)\right]\right\}
-                  \longrightarrow 1,
+                  \dfrac{
+                      n^3\sqrt[n]{2}\left(1-\cos\dfrac{1}{n^2}\right)
+                  }{
+                      \sqrt{n^2+1}-n
+                  }
+                  \sim
+                  \dfrac{
+                      n^3\cdot\dfrac{1}{2n^4}
+                  }{
+                      \dfrac{1}{2n}
+                  }
+                  =1.
               \]
-              故原极限为 $+\infty$.
+              故原极限为 $1$.
         \item 当 $x\to0$ 时,
               \[
                   x(1-\cos x)\sim\dfrac{x^3}{2},
@@ -97,7 +109,7 @@
 \exampleblank
 
 \begin{solution}
-    该和式是区间 $\lbrack 1,2\rbrack$ 上函数 $1/x$ 的 Riemann 和:
+    该和式是区间 $\lbrack 1,2\rbrack$ 上函数 $\dfrac{1}{x}$ 的 Riemann 和:
     \[
         \sum\limits_{k=1}^{n}\dfrac{1}{n+k}
         =\dfrac{1}{n}\sum\limits_{k=1}^{n}\dfrac{1}{1+\dfrac{k}{n}}
@@ -178,7 +190,7 @@
                   =\dfrac{e}{2}x+O(x^2),
               \]
               而 $\sin x\sim x$,故极限为 $\dfrac{e}{2}$.
-        \item 令 $t=1/x$,则
+        \item 令 $t=\dfrac{1}{x}$,则
               \[
                   \dfrac{1}{e}\left(1+\dfrac{1}{x}\right)^x
                   =1-\dfrac{1}{2x}+\dfrac{11}{24x^2}+O\left(\dfrac{1}{x^3}\right).
@@ -308,7 +320,7 @@
 
 \begin{solution}
     \begin{enumerate}
-        \item 因 $1/x\to0$,故极限为 $\cos0+\sin0=1$.
+        \item 因 $\dfrac{1}{x}\to0$,故极限为 $\cos0+\sin0=1$.
         \item 设极限为 $A$,则
               \[
                   \ln A
@@ -331,7 +343,7 @@
 \begin{example}[\markstar]
     已知函数 $f(x)$ 可导,且
     \[
-        \lim\limits_{x\to+\infty}\bigl[f(x)+f'(x)\bigr]=k,
+        \lim\limits_{x\to+\infty}\left[f(x)+f'(x)\right]=k,
     \]
     证明:
     \[
@@ -543,7 +555,7 @@
 \begin{solution}
     使用不等式 $y-1<[y]\leq y$.
     \begin{enumerate}
-        \item 令 $y=1/x$.由 $0\leq y-[y]<1$,有
+        \item 令 $y=\dfrac{1}{x}$.由 $0\leq y-[y]<1$,有
               \[
                   \left|\dfrac{[y]}{y}-1\right|
                   =\dfrac{|[y]-y|}{|y|}<\dfrac{1}{|y|}.
@@ -623,7 +635,7 @@
 
 \begin{solution}
     \begin{enumerate}
-        \item 令 $t=1/n$,则
+        \item 令 $t=\dfrac{1}{n}$,则
               \[
                   n\left(e^{\frac{1}{n}}-1\right)=\dfrac{e^t-1}{t}\longrightarrow1,
               \]
@@ -651,7 +663,7 @@
 \exampleblank
 
 \begin{solution}
-    当 $n\leq k\leq2n$ 时,$\pi/k\to0$ 是一致的,故
+    当 $n\leq k\leq2n$ 时,$\dfrac{\pi}{k}\to0$ 是一致的,故
     \[
         \sin\dfrac{\pi}{k}=\dfrac{\pi}{k}+O\left(\dfrac{1}{k^3}\right).
     \]
@@ -752,12 +764,12 @@
                   \qquad(n\to\infty),
               \]
               因为 $x^{a^n}\to+\infty$;若 $0<x<1$,则 $x^{a^n}\to0^+$,同样有 $f(x)=f(1)$.
-              当 $0<a<1$ 时,将关系反向写成 $f(x)=f\left(x^{1/a}\right)$,再作相同迭代即可.
+              当 $0<a<1$ 时,将关系反向写成 $f(x)=f\left(x^{\frac{1}{a}}\right)$,再作相同迭代即可.
         \item 若 $a>1$,则
               \[
                   f(x)=f(a^nx)=f(a^{-n}x).
               \]
-              根据已知存在的是无穷远处极限还是右端点极限,分别令 $n\to\infty$,即知所有 $f(x)$ 均等于同一极限.$0<a<1$ 时交换 $a$ 与 $1/a$ 即可.
+              根据已知存在的是无穷远处极限还是右端点极限,分别令 $n\to\infty$,即知所有 $f(x)$ 均等于同一极限.$0<a<1$ 时交换 $a$ 与 $\dfrac{1}{a}$ 即可.
     \end{enumerate}
 \end{solution}
 
@@ -823,12 +835,12 @@
                   =\prod\limits_{k=0}^{j-1}\dfrac{f(2^{k+1}t)}{f(2^kt)}
                   \longrightarrow1.
               \]
-              由迫敛性知中间项趋于 $1$.当 $0<m<1$ 时,对 $1/m>1$ 使用已证结论并取倒数即可.
+              由迫敛性知中间项趋于 $1$.当 $0<m<1$ 时,对 $\dfrac{1}{m}>1$ 使用已证结论并取倒数即可.
         \item 记
               \[
                   h(x)=\dfrac{f(x)-f\left(\dfrac{x}{2}\right)}{x},
               \]
-              则 $h(x)\to0$.由 $f(x/2^N)\to0$,可得
+              则 $h(x)\to0$.由 $f\left(\dfrac{x}{2^N}\right)\to0$,可得
               \[
                   f(x)=\sum\limits_{k=0}^{\infty}
                   \left[f\left(\dfrac{x}{2^k}\right)-f\left(\dfrac{x}{2^{k+1}}\right)\right].
@@ -839,7 +851,7 @@
                   =\sum\limits_{k=0}^{\infty}\dfrac{1}{2^k}h\left(\dfrac{x}{2^k}\right).
               \]
               给定 $\varepsilon>0$,当 $|x|$ 足够小时,对所有 $k\geq0$ 都有
-              $\left|h\left(x/2^k\right)\right|<\varepsilon$,于是
+              $\left|h\left(\dfrac{x}{2^k}\right)\right|<\varepsilon$,于是
               \[
                   \left|\dfrac{f(x)}{x}\right|
                   \leq\varepsilon\sum\limits_{k=0}^{\infty}\dfrac{1}{2^k}
@@ -892,7 +904,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
     \[
         x=1.
     \]
-    当 $x\to\pm\infty$ 时,$-1/(x-1)\to0$,故斜渐近线为
+    当 $x\to\pm\infty$ 时,$-\dfrac{1}{x-1}\to0$,故斜渐近线为
     \[
         y=-\dfrac{x}{4}-\dfrac{3}{4}.
     \]
@@ -1007,13 +1019,13 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 \exampleblank
 
 \begin{solution}
-    固定 $x_0\in\lbrack0,1\rbrack$.给定 $\varepsilon>0$,取正整数 $N$ 使 $1/N<\varepsilon$.
+    固定 $x_0\in\lbrack0,1\rbrack$.给定 $\varepsilon>0$,取正整数 $N$ 使 $\dfrac{1}{N}<\varepsilon$.
     在 $\lbrack0,1\rbrack$ 中,既约分母不超过 $N$ 的有理数只有有限个.选取 $\delta>0$,使穿孔邻域
     \[
         0<|x-x_0|<\delta
     \]
     不含这些有限个有理数.若该邻域中的 $x$ 为无理数,则 $R(x)=0$;若
-    $x=p/q$ 为既约分数,则 $q>N$,从而
+    $x=\dfrac{p}{q}$ 为既约分数,则 $q>N$,从而
     \[
         0<R(x)=\dfrac{1}{q}<\dfrac{1}{N}<\varepsilon.
     \]
@@ -1104,9 +1116,9 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 
     在右侧令
     \[
-        B=\inf\limits_{x\in\mathring{U}_{+}(x_0)}f(x)
+        B=\inf\limits_{x\in\mathring{U}_{+}(x_0)}f(x).
     \]
-    .若 $B$ 有限,给定 $\varepsilon>0$,取 $x_2>x_0$ 使
+    若 $B$ 有限,给定 $\varepsilon>0$,取 $x_2>x_0$ 使
     \[
         B\leq f(x_2)<B+\varepsilon.
     \]
@@ -1308,7 +1320,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
         \int_0^x f(t)\,\mathrm{d}t
         =n\int_0^T f(t)\,\mathrm{d}t+\int_0^r f(t)\,\mathrm{d}t.
     \]
-    因 $f$ 连续且周期,后一积分关于 $r$ 一致有界.又有 $nT/x\to1$,故
+    因 $f$ 连续且周期,后一积分关于 $r$ 一致有界.又有 $\dfrac{nT}{x}\to1$,故
     \[
         \dfrac{1}{x}\int_0^x f(t)\,\mathrm{d}t
         =\dfrac{nT}{x}\cdot\dfrac{1}{T}\int_0^T f(t)\,\mathrm{d}t
@@ -1471,7 +1483,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
         \qquad
         f(1)<1,
     \]
-    $g$ 连续,且 $f+g=x+1/2$ 严格递增;但 $f(x)$ 在 $\lbrack0,1\rbrack$ 上恒不为 $0$.因此需要核对原题缺失的条件或结论.
+    $g$ 连续,且 $f+g=x+\dfrac{1}{2}$ 严格递增;但 $f(x)$ 在 $\lbrack0,1\rbrack$ 上恒不为 $0$.因此需要核对原题缺失的条件或结论.
 \end{solution}
 
 \begin{example}

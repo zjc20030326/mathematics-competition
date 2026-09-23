@@ -125,8 +125,8 @@
     对于 (1),按题面直接交换积分,左端等于
     \[
         -\int_0^1\sqrt{x}\,\dfrac{\ln x}{e^x}\,\mathrm{d}x
-        +\int_1^2\bigl(e^x-\sqrt{x}\bigr)\dfrac{\ln x}{e^x}\,\mathrm{d}x
-        +\int_2^{e^2}\bigl(e-\sqrt{x}\bigr)\dfrac{\ln x}{e^x}\,\mathrm{d}x.
+        +\int_1^2\left(e^x-\sqrt{x}\right)\dfrac{\ln x}{e^x}\,\mathrm{d}x
+        +\int_2^{e^2}\left(e-\sqrt{x}\right)\dfrac{\ln x}{e^x}\,\mathrm{d}x.
     \]
     其数值约为 $0.7421142902$,而右端为 $2\ln2-1\approx0.3862943611$,故 (1) 按现有题面不成立,原始资料中的积分限或被积函数需要核对.
 
@@ -179,7 +179,7 @@
 \begin{example}
     计算积分
     \[
-        I=\iint\limits_Dx\bigl(1+yf(x^2+y^2)\bigr)\,\mathrm{d}x\,\mathrm{d}y,
+        I=\iint\limits_Dx\left(1+yf(x^2+y^2)\right)\,\mathrm{d}x\,\mathrm{d}y,
     \]
     其中 $D$ 是由 $y=x^3,y=1,x=-1$ 所围成的区域, $f(x)$ 是实值连续函数.
 \end{example}
@@ -188,7 +188,7 @@
 \begin{solution}
     写成累次积分并把关于 $x$ 的对称项配对:
     \[
-        I=\int_{-1}^1\!\mathrm{d}x\int_{x^3}^1x\bigl(1+yf(x^2+y^2)\bigr)\,\mathrm{d}y.
+        I=\int_{-1}^1\!\mathrm{d}x\int_{x^3}^1x\left(1+yf(x^2+y^2)\right)\,\mathrm{d}y.
     \]
     其中
     \[
@@ -306,7 +306,7 @@
     若 $f(x,y)$ 在 $D$ 上可积, 则
     \[
         \iint\limits_Df(x,y)\,\mathrm{d}x\,\mathrm{d}y
-        =\iint\limits_{\widetilde D}f\bigl(x(u,v),y(u,v)\bigr)|J(u,v)|\,\mathrm{d}u\,\mathrm{d}v.
+        =\iint\limits_{\widetilde D}f\left(x(u,v),y(u,v)\right)|J(u,v)|\,\mathrm{d}u\,\mathrm{d}v.
     \]
 \end{theorem}
 
@@ -416,7 +416,7 @@
               确定的区域;
         \item
               \[
-                  \iint\limits_D\bigl(3x^3+x^2+y^2+2x-2y+1\bigr)\,\mathrm{d}x\,\mathrm{d}y,
+                  \iint\limits_D\left(3x^3+x^2+y^2+2x-2y+1\right)\,\mathrm{d}x\,\mathrm{d}y,
               \]
               其中
               \[
@@ -581,7 +581,7 @@
 \begin{solution}
     先把内层积分写成差分:
     \[
-        F'(x)=\dfrac{1}{h^2}\int_0^h\bigl[f(x+y+h)-f(x+y)\bigr]\,\mathrm{d}y.
+        F'(x)=\dfrac{1}{h^2}\int_0^h\left[f(x+y+h)-f(x+y)\right]\,\mathrm{d}y.
     \]
     再次使用微积分基本定理,得到
     \[
@@ -896,7 +896,7 @@
 \begin{solution}
     直接对 $z$ 积分:
     \[
-        V=\int_0^1\!\mathrm{d}x\int_0^x\bigl(e^{x+y}-x-y\bigr)\,\mathrm{d}y
+        V=\int_0^1\!\mathrm{d}x\int_0^x\left(e^{x+y}-x-y\right)\,\mathrm{d}y
         =\dfrac{(e-1)^2}{2}-\dfrac{1}{2}
         =\dfrac{e(e-2)}{2}.
     \]
@@ -994,7 +994,7 @@
     \[
         \iiint\limits_\Omega f(x,y,z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z
         =\iiint\limits_{\widetilde\Omega}
-        f\bigl(x(u,v,w),y(u,v,w),z(u,v,w)\bigr)|J|\,\mathrm{d}u\,\mathrm{d}v\,\mathrm{d}w.
+        f\left(x(u,v,w),y(u,v,w),z(u,v,w)\right)|J|\,\mathrm{d}u\,\mathrm{d}v\,\mathrm{d}w.
     \]
 \end{theorem}
 
@@ -1123,7 +1123,7 @@
 \begin{solution}
     用柱坐标.两个球的公共部分满足 $0\leq z\leq a$;在 $0\leq z\leq a/2$ 时截面半径平方为 $a^2-(z-a)^2$,在 $a/2\leq z\leq a$ 时为 $a^2-z^2$.因此
     \[
-        I=\pi\int_0^{\frac{a}{2}}z^2\bigl[a^2-(z-a)^2\bigr]\,\mathrm{d}z
+        I=\pi\int_0^{\frac{a}{2}}z^2\left[a^2-(z-a)^2\right]\,\mathrm{d}z
         +\pi\int_{\frac{a}{2}}^{a}z^2(a^2-z^2)\,\mathrm{d}z
         =\dfrac{59\pi a^5}{480}.
     \]
@@ -1168,7 +1168,7 @@
     \begin{enumerate}
         \item 大球在 $z\geq0$ 内的部分减去内切小球,按水平截面积分可得
               \[
-                  \dfrac{\pi}{2}\int_0^4\left(\bigl[9-(z-1)^2\bigr]^2-\bigl[4-(z-2)^2\bigr]^2\right)\mathrm{d}z
+                  \dfrac{\pi}{2}\int_0^4\left(\left[9-(z-1)^2\right]^2-\left[4-(z-2)^2\right]^2\right)\mathrm{d}z
                   =\dfrac{256\pi}{3}.
               \]
         \item 球坐标中边界为 $\rho^2=a^2\sin^2\varphi\cos\theta\sin\theta$.在第一卦限积分得到

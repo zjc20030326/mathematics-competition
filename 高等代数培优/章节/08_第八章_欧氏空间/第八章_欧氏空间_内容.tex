@@ -92,7 +92,7 @@ P_{W_1}:W_2\to W_1.
 
 
 \begin{example}
-在 $\mathbb R^4$ 中,令
+在 $\mathbb{R}^4$ 中,令
 \[
 V_1=\Span\{(1,0,1,-2),(1,2,-1,0),(1,1,0,-1)\},
 \]
@@ -310,7 +310,7 @@ c_i(-c_j)(\alpha_i,\alpha_j)
 
 
 \begin{example}
-称 $\mathbb R^n$ 中非零向量为正向量,如果它的第一个非零分量为正数.
+称 $\mathbb{R}^n$ 中非零向量为正向量,如果它的第一个非零分量为正数.
 设 $\alpha_1,\ldots,\alpha_p$ 都是正向量,并且
 \[
 (\alpha_i,\alpha_j)\le0
@@ -580,7 +580,7 @@ E^2x=Ew=w=Ex,
 \[
 \|\alpha+t\beta\|\ge\|\alpha\|
 \qquad
-(\forall t\in\mathbb R).
+(\forall t\in\mathbb{R}).
 \]
 \end{example}
 \exampleblank
@@ -627,7 +627,7 @@ u\in\operatorname{Im}\sigma,
 \qquad
 v\in\ker\sigma.
 \]
-则对任意 $t\in\mathbb R$,
+则对任意 $t\in\mathbb{R}$,
 \[
 \sigma(u+tv)=u.
 \]
@@ -715,13 +715,13 @@ P_W\alpha
 
 
 \begin{example}
-设 $A\in M_{m,n}(\mathbb R)$ 列满秩,$m>n$,$W$ 为 $A$ 的列空间.定义
+设 $A\in M_{m,n}(\mathbb{R})$ 列满秩,$m>n$,$W$ 为 $A$ 的列空间.定义
 \[
 P=A(A^{\mathsf T}A)^{-1}A^{\mathsf T},
 \qquad
 \varphi(x)=Px.
 \]
-证明 $\varphi$ 是 $\mathbb R^m$ 到 $W$ 的正交投影.
+证明 $\varphi$ 是 $\mathbb{R}^m$ 到 $W$ 的正交投影.
 \end{example}
 \exampleblank
 
@@ -789,7 +789,7 @@ y=y_W+y_\perp,
 
 
 \begin{example}
-在酉空间 $M_n(\mathbb C)$ 上取 Frobenius 内积
+在酉空间 $M_n(\mathbb{C})$ 上取 Frobenius 内积
 \[
 \langle A,B\rangle
 =
@@ -822,7 +822,7 @@ T_M(A)=MA.
 
 
 \begin{example}
-在 $\mathbb C^2$ 上取内积
+在 $\mathbb{C}^2$ 上取内积
 \[
 \langle x,y\rangle=\overline{x}^{\mathsf T}y.
 \]
@@ -954,7 +954,7 @@ r+(s-1)m.
 \[
 \boxed{
 \det(AA^{\mathsf T})
-=(r-m)^{s-1}\bigl(r+(s-1)m\bigr).
+=(r-m)^{s-1}\left(r+(s-1)m\right).
 }
 \]
 
@@ -1143,7 +1143,7 @@ S=I.
 \begin{solution}
 把 $V$ 复化.正规算子 $\varphi$ 可酉对角化,因此
 \[
-V_{\mathbb C}
+V_{\mathbb{C}}
 =
 \bigoplus_{\lambda}E_\lambda,
 \]
@@ -1255,7 +1255,7 @@ A^{\mathsf T}=-A,
 \[
 x^{\mathsf T}Ax=0
 \qquad
-(\forall x\in\mathbb R^n).
+(\forall x\in\mathbb{R}^n).
 \]
 \end{proposition}
 
@@ -1263,7 +1263,7 @@ x^{\mathsf T}Ax=0
 \begin{example}
 \begin{enumerate}
     \item 设 $A$ 为实反称矩阵,$B$ 为正定矩阵,证明 $AB$ 的全部特征值实部为 $0$;
-    \item 若 $\lambda_0\neq0$ 是实反称矩阵 $A$ 的特征值,证明存在两个正交单位向量 $\alpha,\beta\in\mathbb R^n$,使
+    \item 若 $\lambda_0\neq0$ 是实反称矩阵 $A$ 的特征值,证明存在两个正交单位向量 $\alpha,\beta\in\mathbb{R}^n$,使
     \[
     \alpha+i\beta
     \]
@@ -1289,7 +1289,7 @@ x^{\mathsf T}Ax=0
     \item 设
     \[
     \lambda_0=i\mu,
-    \qquad \mu\in\mathbb R\setminus\{0\}.
+    \qquad \mu\in\mathbb{R}\setminus\{0\}.
     \]
     取对应复特征向量
     \[
@@ -1455,14 +1455,14 @@ J(a_i)^2=-a_i^2I_2.
 \]
 Pfaffian 是矩阵上三角元素的整系数多项式,因此当所有元素为整数时
 \[
-\operatorname{Pf}(A)\in\mathbb Z.
+\operatorname{Pf}(A)\in\mathbb{Z}.
 \]
 奇阶时行列式为 $0=0^2$.故第二问成立.
 \end{solution}
 
 
 \begin{example}
-设 $A$ 为 $n$ 阶实反称矩阵,$b\in\mathbb R^n$,并且
+设 $A$ 为 $n$ 阶实反称矩阵,$b\in\mathbb{R}^n$,并且
 \[
 r(A)=r(A,b).
 \]
@@ -1521,7 +1521,7 @@ A&0\\
 \subsection{正交矩阵}
 
 \begin{theorem}[\markstar]
-奇异值分解:设 $A\in M_{m,n}(\mathbb R)$,$r(A)=r$,则存在 $m$ 阶正交矩阵 $U$ 与 $n$ 阶正交矩阵 $V$,使
+奇异值分解:设 $A\in M_{m,n}(\mathbb{R})$,$r(A)=r$,则存在 $m$ 阶正交矩阵 $U$ 与 $n$ 阶正交矩阵 $V$,使
 \[
 UAV=
 \begin{pmatrix}
@@ -1856,7 +1856,7 @@ PAQ=\diag(1,\sqrt3,\sqrt3).
 \[
 x=x_1+ix_2
 \]
-是相应复特征向量,其中 $x_1,x_2\in\mathbb R^n$.
+是相应复特征向量,其中 $x_1,x_2\in\mathbb{R}^n$.
 
 原 PDF 写作``证明 $|\alpha|=|\beta|,(\alpha,\beta)=0$''.结合符号与标准结论,这里应核对为
 \[
@@ -1989,7 +1989,7 @@ e^{-i\theta}.
 
 若 $A$ 正交,则 Frobenius 范数在左右乘正交矩阵时保持不变,因此第三式成立.
 
-反之,取任意 $x\in\mathbb R^n$,令
+反之,取任意 $x\in\mathbb{R}^n$,令
 \[
 B=xx^{\mathsf T}.
 \]
@@ -2026,7 +2026,7 @@ AA^{\mathsf T}=I,
 \[
 \det A+\det B=0.
 \]
-证明存在非零 $\xi\in\mathbb R^n$,使
+证明存在非零 $\xi\in\mathbb{R}^n$,使
 \[
 A\xi=-B\xi.
 \]
@@ -2204,7 +2204,7 @@ H(1,-2,0)^{\mathsf T}=(2,0,1)^{\mathsf T}.
 
 
 \begin{example}
-设 $\alpha\in\mathbb R^n$,且
+设 $\alpha\in\mathbb{R}^n$,且
 \[
 \|\alpha\|=1.
 \]

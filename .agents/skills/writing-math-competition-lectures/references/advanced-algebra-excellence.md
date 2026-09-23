@@ -163,6 +163,8 @@ xelatex.exe: fatal: putenv(TEXMF_OUTPUT_DIRECTORY=...).
 - 转置使用 `\mathsf T`, 例如 `A^{\mathsf T}`.
 - 数学算子使用共享 `preamble.tex` 中声明的 `\Tr`, `\tr`, `\rank`, `\diag`, `\Ree`, `\Imm`, `\Ker`, `\Span`.
 - 组合数使用 `C_{n}^{k}`, 不使用 `\binom`.
+- 集合记号使用带花括号的 `\mathbb{R}`, `\mathbb{C}`, `\mathbb{N}`, `\mathbb{Q}`, `\mathbb{Z}`. 不使用 `\mathbb R` 这类不带花括号的写法.
+- 定界符统一使用自动定尺的 `\left` 和 `\right`. 不使用 `\bigl`, `\bigr` 以及同族的 `\Bigl`, `\Bigr`, `\biggl`, `\biggr`. 定界符内需要跨 `\\` 换行时改用普通 `\lbrack`, `\rbrack`.
 
 ## 11. 同章和同书关联
 

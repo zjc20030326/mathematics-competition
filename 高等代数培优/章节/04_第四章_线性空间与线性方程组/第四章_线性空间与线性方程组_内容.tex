@@ -197,24 +197,24 @@ $\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关.
 \begin{example}
 设
 \[
-V=\{(a+ib,c+id)\mid a,b,c,d\in\mathbb R\}.
+V=\{(a+ib,c+id)\mid a,b,c,d\in\mathbb{R}\}.
 \]
-分别把它看作复数域和实数域上的线性空间 $V_{\mathbb C},V_{\mathbb R}$,求其维数.又设 $M_2(\mathbb C)$ 分别按复数域和实数域看作线性空间 $U_{\mathbb C},U_{\mathbb R}$,求其维数.
+分别把它看作复数域和实数域上的线性空间 $V_{\mathbb{C}},V_{\mathbb{R}}$,求其维数.又设 $M_2(\mathbb{C})$ 分别按复数域和实数域看作线性空间 $U_{\mathbb{C}},U_{\mathbb{R}}$,求其维数.
 \end{example}
 \exampleblank
 
 \begin{solution}
-显然 $V\cong\mathbb C^2$,故
+显然 $V\cong\mathbb{C}^2$,故
 \[
- \dim_{\mathbb C}V_{\mathbb C}=2,
+ \dim_{\mathbb{C}}V_{\mathbb{C}}=2,
  \qquad
- \dim_{\mathbb R}V_{\mathbb R}=4.
+ \dim_{\mathbb{R}}V_{\mathbb{R}}=4.
 \]
-同理 $M_2(\mathbb C)\cong\mathbb C^4$,故
+同理 $M_2(\mathbb{C})\cong\mathbb{C}^4$,故
 \[
- \dim_{\mathbb C}U_{\mathbb C}=4,
+ \dim_{\mathbb{C}}U_{\mathbb{C}}=4,
  \qquad
- \dim_{\mathbb R}U_{\mathbb R}=8.
+ \dim_{\mathbb{R}}U_{\mathbb{R}}=8.
 \]
 \end{solution}
 
@@ -242,7 +242,7 @@ V=\{(a+ib,c+id)\mid a,b,c,d\in\mathbb R\}.
 \[
 k\circ(a,b)=\left(ka,kb+\dfrac{k(k-1)}{2}a^2\right).
 \]
-证明这构成 $\mathbb R$ 上的线性空间,并讨论 $\alpha_1=(1,1),\alpha_2=(a,b)$ 的线性相关性.
+证明这构成 $\mathbb{R}$ 上的线性空间,并讨论 $\alpha_1=(1,1),\alpha_2=(a,b)$ 的线性相关性.
 \end{example}
 \exampleblank
 
@@ -257,7 +257,7 @@ k\circ(a,b)=\left(ka,kb+\dfrac{k(k-1)}{2}a^2\right).
  \qquad
  \Phi(k\circ u)=k\Phi(u),
 \]
-故 $V$ 与通常的 $\mathbb R^2$ 线性同构,从而确为线性空间.
+故 $V$ 与通常的 $\mathbb{R}^2$ 线性同构,从而确为线性空间.
 
 又
 \[
@@ -322,9 +322,9 @@ k\circ(a,b)=\left(ka,kb+\dfrac{k(k-1)}{2}a^2\right).
 \begin{example}
 设
 \[
-W=\{f(x)\in\mathbb R[x]_n\mid f(1)=0\},
+W=\{f(x)\in\mathbb{R}[x]_n\mid f(1)=0\},
 \]
-其中 $\mathbb R[x]_n$ 表示次数小于 $n$ 的多项式及零多项式.证明 $W$ 是子空间,并求其维数和一组基.
+其中 $\mathbb{R}[x]_n$ 表示次数小于 $n$ 的多项式及零多项式.证明 $W$ 是子空间,并求其维数和一组基.
 \end{example}
 \exampleblank
 
@@ -335,7 +335,7 @@ W=\{f(x)\in\mathbb R[x]_n\mid f(1)=0\},
 \]
 故
 \[
- W=(x-1)\mathbb R[x]_{n-1},
+ W=(x-1)\mathbb{R}[x]_{n-1},
  \qquad \dim W=n-1,
 \]
 可取基
@@ -367,7 +367,7 @@ W=\{f(x)\in\mathbb R[x]_n\mid f(1)=0\},
 \begin{example}
 设 $A=J_n(\lambda)$ 为一个 $n$ 阶 Jordan 块,
 \[
-V=\{B\in M_n(\mathbb R)\mid BA=AB\}.
+V=\{B\in M_n(\mathbb{R})\mid BA=AB\}.
 \]
 证明 $V$ 是线性空间,并求 $\dim V$.
 \end{example}
@@ -752,7 +752,7 @@ $A$ 在 $\operatorname{Im}(BC)$ 上仍单射,故
 \]
 即第一式.
 
-令 $k=\lfloor n/2\rfloor$,按分解 $\mathbb F^n=U\oplus W$,其中 $\dim U=k$.取
+令 $k=\lfloor n/2\rfloor$,按分解 $\mathbb{F}^n=U\oplus W$,其中 $\dim U=k$.取
 \[
  B=\begin{pmatrix}E_k&O\\O&O\end{pmatrix},
  \qquad
@@ -858,7 +858,7 @@ $A$ 在 $\operatorname{Im}(BC)$ 上仍单射,故
 \[
  r(A-E)+r(A^2+A+E)=n.
 \]
-进一步,若 $A\in M_n(\mathbb C)$,$f,g\in\mathbb C[x]$ 且 $(f,g)=1$,证明
+进一步,若 $A\in M_n(\mathbb{C})$,$f,g\in\mathbb{C}[x]$ 且 $(f,g)=1$,证明
 \[
  n=r(f(A))+r(g(A))-r(f(A)g(A)).
 \]
@@ -866,13 +866,13 @@ $A$ 在 $\operatorname{Im}(BC)$ 上仍单射,故
 \exampleblank
 
 \begin{solution}
-先证推广式.由 Bézout 恒等式,存在 $u,v\in\mathbb C[x]$ 使
+先证推广式.由 Bézout 恒等式,存在 $u,v\in\mathbb{C}[x]$ 使
 \[
  u(A)f(A)+v(A)g(A)=E.
 \]
 于是
 \[
- \operatorname{Im}f(A)+\operatorname{Im}g(A)=\mathbb C^n.
+ \operatorname{Im}f(A)+\operatorname{Im}g(A)=\mathbb{C}^n.
 \]
 又因为 $f(A),g(A)$ 可交换,若
 \[
@@ -1101,7 +1101,7 @@ L(\alpha_1,\ldots,\alpha_r)\cap L(\beta_1,\ldots,\beta_s)
 \end{solution}
 
 \begin{example}
-在 $\mathbb R^4$ 中,令
+在 $\mathbb{R}^4$ 中,令
 \[
 \alpha_1=(1,2,1,0),\quad
 \alpha_2=(-1,1,1,1),\quad
@@ -1173,7 +1173,7 @@ B_2=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
 \end{solution}
 
 \begin{example}
-设 $W$ 为 $\mathbb R^n$ 的子空间,且 $W$ 中每个非零向量的零分量个数不超过 $r$.证明
+设 $W$ 为 $\mathbb{R}^n$ 的子空间,且 $W$ 中每个非零向量的零分量个数不超过 $r$.证明
 \[
 \dim W\leq r+1.
 \]
@@ -2532,7 +2532,7 @@ AA^*=O,
 \subsection{对角占优矩阵}
 
 \begin{proposition}[\markstar]
-设 $A=(a_{ij})\in M_n(\mathbb R)$.
+设 $A=(a_{ij})\in M_n(\mathbb{R})$.
 \begin{enumerate}
   \item 若
   \[
@@ -2725,7 +2725,7 @@ f_i(\alpha_j)=\delta_{ij},
 \alpha_2=(1,0,2),\quad
 \alpha_3=(0,3,-5)
 \]
-是 $\mathbb R^3$ 的一组基.求其对偶基.
+是 $\mathbb{R}^3$ 的一组基.求其对偶基.
 \end{example}
 \exampleblank
 
@@ -2761,13 +2761,13 @@ f_3(x)&=-2x_1+2x_2+x_3.
 \end{solution}
 
 \begin{example}
-设 $a_1,\ldots,a_n\in\mathbb R$ 两两不同,令
+设 $a_1,\ldots,a_n\in\mathbb{R}$ 两两不同,令
 \[
 f_i(x)=\prod_{j\neq i}(x-a_j),
 \qquad i=1,\ldots,n.
 \]
 \begin{enumerate}
-  \item 证明 $f_1,\ldots,f_n$ 是 $\mathbb R[x]_n$ 的一组基;
+  \item 证明 $f_1,\ldots,f_n$ 是 $\mathbb{R}[x]_n$ 的一组基;
   \item 求由基 $f_1,\ldots,f_n$ 到基 $1,x,\ldots,x^{n-1}$ 的过渡矩阵;
   \item 求 $f_1,\ldots,f_n$ 的对偶基.
 \end{enumerate}
@@ -2783,7 +2783,7 @@ f_i(x)=\prod_{j\neq i}(x-a_j),
 \[
 c_kf_k(a_k)=0.
 \]
-因 $a_i$ 两两不同,$f_k(a_k)\neq0$,故所有 $c_k=0$.又共有 $n$ 个向量,故构成 $\mathbb R[x]_n$ 的一组基.
+因 $a_i$ 两两不同,$f_k(a_k)\neq0$,故所有 $c_k=0$.又共有 $n$ 个向量,故构成 $\mathbb{R}[x]_n$ 的一组基.
 
 设
 \[
@@ -2800,13 +2800,13 @@ f_i(x)
 \]
 因此过渡矩阵第 $i$ 列为
 \[
-\bigl(
+\left(
 (-1)^{n-1}e_{n-1}^{(i)},
 (-1)^{n-2}e_{n-2}^{(i)},
 \ldots,
 -e_1^{(i)},
 1
-\bigr)^{\mathsf T}.
+\right)^{\mathsf T}.
 \]
 
 对偶基最简洁地写成评价泛函:
@@ -3024,7 +3024,7 @@ A/(A\cap B)\oplus B/(A\cap B)
 \]
 为
 \[
-\Psi\bigl(a+(A\cap B),b+(A\cap B)\bigr)
+\Psi\left(a+(A\cap B),b+(A\cap B)\right)
 =a+b+(A\cap B).
 \]
 它良定义且显然满射.若其像为零,则 $a+b\in A\cap B$.因为 $a\in A,b\in B$,由此推出 $a,b\in A\cap B$,故核为零.因此 $\Psi$ 为同构.

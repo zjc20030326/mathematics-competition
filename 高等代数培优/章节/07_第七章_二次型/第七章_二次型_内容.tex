@@ -125,9 +125,9 @@ Q(\alpha)=g(\alpha,\alpha)
 g(\alpha,\beta)
 =
 \dfrac12
-\bigl(
+\left(
 Q(\alpha+\beta)-Q(\alpha)-Q(\beta)
-\bigr).
+\right).
 \]
 
 若实对称双线性型满足
@@ -140,11 +140,11 @@ g(\alpha,\alpha)>0
 
 
 \begin{example}
-设 $\mathbb R[x]$ 为实多项式空间.对 $f,g\in\mathbb R[x]$ 定义
+设 $\mathbb{R}[x]$ 为实多项式空间.对 $f,g\in\mathbb{R}[x]$ 定义
 \[
 \varphi(f,g)=f(x)g'(x).
 \]
-证明 $\varphi$ 是 $\mathbb R[x]$ 上的双线性映射.
+证明 $\varphi$ 是 $\mathbb{R}[x]$ 上的双线性映射.
 \end{example}
 \exampleblank
 
@@ -460,7 +460,7 @@ W=\ker A.
 \[
 f(x,y)=x^{\mathsf T}Ay,
 \qquad
-x,y\in\mathbb R^{2n+1},
+x,y\in\mathbb{R}^{2n+1},
 \]
 其中
 \[
@@ -474,7 +474,7 @@ A=
 令
 \[
 C=
-\{X\in M_{2n+1}(\mathbb R):
+\{X\in M_{2n+1}(\mathbb{R}):
 f(Xu,v)=-f(u,Xv),\ \forall u,v\}.
 \]
 证明 $C$ 是维数
@@ -517,7 +517,7 @@ X=
 \end{pmatrix},
 }
 \]
-其中 $p,q\in\mathbb R^n$,$B$ 任意,而 $C_1,D$ 反对称.
+其中 $p,q\in\mathbb{R}^n$,$B$ 任意,而 $C_1,D$ 反对称.
 
 自由参数个数为
 \[
@@ -865,7 +865,7 @@ r(A^{\mathsf T}A)=r(A).
 \[
 f(x)=x^{\mathsf T}Ax
 \]
-是实二次型,并存在 $x_1,x_2\in\mathbb R^n$ 使
+是实二次型,并存在 $x_1,x_2\in\mathbb{R}^n$ 使
 \[
 x_1^{\mathsf T}Ax_1>0,
 \qquad
@@ -961,7 +961,7 @@ Ax=0.
 \begin{proposition}[\markstar]
 设
 \[
-V_0=\{x\in\mathbb R^n:x^{\mathsf T}Ax=0\}.
+V_0=\{x\in\mathbb{R}^n:x^{\mathsf T}Ax=0\}.
 \]
 则 $V_0$ 是线性子空间的充分必要条件是二次型半正定或半负定.
 此时
@@ -980,13 +980,13 @@ x_2^{\mathsf T}Ax_2<0.
 \]
 令
 \[
-W=\{x\in\mathbb R^n:x^{\mathsf T}Ax=0\}.
+W=\{x\in\mathbb{R}^n:x^{\mathsf T}Ax=0\}.
 \]
 原题进一步提出:
 \begin{enumerate}
-    \item 证明 $W\cap\mathbb R^n=\{0\}$;
+    \item 证明 $W\cap\mathbb{R}^n=\{0\}$;
     \item 确定 $W$ 中一个极大线性无关组;
-    \item 判断 $W$ 是否为 $\mathbb R^n$ 的线性子空间.
+    \item 判断 $W$ 是否为 $\mathbb{R}^n$ 的线性子空间.
 \end{enumerate}
 \end{example}
 \exampleblank
@@ -994,11 +994,11 @@ W=\{x\in\mathbb R^n:x^{\mathsf T}Ax=0\}.
 \begin{solution}
 第一问按原题字面明显不成立,因为
 \[
-W\subseteq\mathbb R^n,
+W\subseteq\mathbb{R}^n,
 \]
 所以
 \[
-W\cap\mathbb R^n=W.
+W\cap\mathbb{R}^n=W.
 \]
 并且由二次型既取正值又取负值,可知存在非零零点,故 $W\neq\{0\}$.
 此处原题存在印刷问题.
@@ -1072,7 +1072,7 @@ f(w)=\sum c_i^2-\sum c_i^2=0,
 
 
 \begin{example}
-设 $A\in M_n(\mathbb R)$ 为对称矩阵,令
+设 $A\in M_n(\mathbb{R})$ 为对称矩阵,令
 \[
 T_1=\{x:x^{\mathsf T}Ax=0\},
 \qquad
@@ -1082,7 +1082,7 @@ T_2=\{x:Ax=0\}.
 \[
 T_1=T_2
 \iff
-T_1\text{ 是 }\mathbb R^n\text{ 的线性子空间}.
+T_1\text{ 是 }\mathbb{R}^n\text{ 的线性子空间}.
 \]
 \end{example}
 \exampleblank
@@ -1446,9 +1446,9 @@ A=
 
 
 \begin{example}
-设 $A\in M_n(\mathbb R)$ 为实对称矩阵,其中心化子为
+设 $A\in M_n(\mathbb{R})$ 为实对称矩阵,其中心化子为
 \[
-C(A)=\{X\in M_n(\mathbb R):AX=XA\}.
+C(A)=\{X\in M_n(\mathbb{R}):AX=XA\}.
 \]
 证明
 \[
@@ -1477,7 +1477,7 @@ m_1+\cdots+m_s=n.
 \[
 \diag(X_1,\ldots,X_s),
 \qquad
-X_i\in M_{m_i}(\mathbb R).
+X_i\in M_{m_i}(\mathbb{R}).
 \]
 因此
 \[
@@ -1584,7 +1584,7 @@ A=3I
 \begin{solution}
 第一问因为 $S$ 为实对称矩阵,所以全部特征值均为实数.
 
-设 $z\in\mathbb C^n$ 为 $\lambda$ 的特征向量:
+设 $z\in\mathbb{C}^n$ 为 $\lambda$ 的特征向量:
 \[
 Az=\lambda z.
 \]
@@ -1703,7 +1703,7 @@ S_1=S^{1/2}.
 
 
 \begin{example}[\markstar]
-设 $A\in M_n(\mathbb R)$ 可逆.证明存在正定矩阵 $P$ 与正交矩阵 $U$,
+设 $A\in M_n(\mathbb{R})$ 可逆.证明存在正定矩阵 $P$ 与正交矩阵 $U$,
 使
 \[
 A=PU.
@@ -1885,7 +1885,7 @@ P^{\mathsf T}BP
 的全部根.证明:
 \begin{enumerate}
     \item $\lambda_i$ 全为实数;
-    \item 存在 $\mathbb R^n$ 的一组基
+    \item 存在 $\mathbb{R}^n$ 的一组基
     \[
     \varepsilon_1,\ldots,\varepsilon_n
     \]
@@ -1936,7 +1936,7 @@ q_i^{\mathsf T}q_j
 
 
 \begin{example}
-设 $f,g$ 为 $\mathbb R^n$ 上的实二次型,并且 $f$ 正定.证明方程组
+设 $f,g$ 为 $\mathbb{R}^n$ 上的实二次型,并且 $f$ 正定.证明方程组
 \[
 \begin{cases}
 f(x)=1,\\
@@ -2054,10 +2054,10 @@ C=A^{-1/2}BA^{-1/2}>0
 
 
 \begin{example}
-设 $A\in M_n(\mathbb R)$ 为实对称矩阵,$B\in M_m(\mathbb R)$ 正定.
+设 $A\in M_n(\mathbb{R})$ 为实对称矩阵,$B\in M_m(\mathbb{R})$ 正定.
 证明存在非零矩阵
 \[
-H\in M_{m,n}(\mathbb R)
+H\in M_{m,n}(\mathbb{R})
 \]
 使
 \[
@@ -2070,7 +2070,7 @@ B-HAH^{\mathsf T}
 \begin{solution}
 任取非零
 \[
-H_0\in M_{m,n}(\mathbb R),
+H_0\in M_{m,n}(\mathbb{R}),
 \]
 并令
 \[
@@ -2223,9 +2223,9 @@ A=(B,C)
 \]
 是 $n$ 阶实方阵,其中
 \[
-B\in M_{n,m}(\mathbb R),
+B\in M_{n,m}(\mathbb{R}),
 \qquad
-C\in M_{n,n-m}(\mathbb R).
+C\in M_{n,n-m}(\mathbb{R}).
 \]
 证明
 \[
@@ -2266,7 +2266,7 @@ C^{\mathsf T}B&C^{\mathsf T}C
 \det(S+T)
 \ge
 \dfrac12
-\bigl(\det S+\det T\bigr).
+\left(\det S+\det T\right).
 \]
 \end{example}
 \exampleblank
@@ -2292,7 +2292,7 @@ C^{\mathsf T}B&C^{\mathsf T}C
 \[
 S=\dfrac12(A^{\mathsf T}+A),
 \]
-并且对任意非零 $x\in\mathbb R^n$,
+并且对任意非零 $x\in\mathbb{R}^n$,
 \[
 x^{\mathsf T}Ax>0.
 \]
@@ -2569,7 +2569,7 @@ B_2^{1/2}B_1B_2^{1/2}.
 \begin{example}
 设 $B$ 为 $n$ 阶正定矩阵,
 \[
-C\in M_{n,m}(\mathbb R),
+C\in M_{n,m}(\mathbb{R}),
 \qquad
 n>m,\qquad r(C)=m.
 \]
@@ -2636,7 +2636,7 @@ b+8&3\boldsymbol{1}^{\mathsf T}\\
 3\boldsymbol{1}&D
 \end{pmatrix},
 \]
-其中 $\boldsymbol{1}\in\mathbb R^{n-1}$,
+其中 $\boldsymbol{1}\in\mathbb{R}^{n-1}$,
 \[
 D=(b-1)I_{n-1}+J_{n-1}.
 \]
@@ -2748,7 +2748,7 @@ x^{\mathsf T}C^{\mathsf T}A^{-1}Cx
 
 
 \begin{example}
-设 $A$ 为 $n$ 阶正定矩阵,$\alpha\in\mathbb R^n$.
+设 $A$ 为 $n$ 阶正定矩阵,$\alpha\in\mathbb{R}^n$.
 证明:若
 \[
 \det(A-\alpha\alpha^{\mathsf T})=\det A,
@@ -2934,7 +2934,7 @@ x^{\mathsf T}Cx
 \begin{example}[\markstar]
 设 $A$ 为 $n$ 阶实方阵.
 \begin{enumerate}
-    \item 证明对任意非零 $x\in\mathbb R^n$,
+    \item 证明对任意非零 $x\in\mathbb{R}^n$,
     \[
     x^{\mathsf T}Ax>0
     \iff
@@ -2999,7 +2999,7 @@ A_i=O
 \exampleblank
 
 \begin{solution}
-对任意 $x\in\mathbb R^n$,
+对任意 $x\in\mathbb{R}^n$,
 \[
 0
 =

@@ -19,6 +19,20 @@ CHINESE_PUNCTUATION = "，。；：！？（）【】“”‘’、…—"
 GENERIC_PATTERNS = {
     "LATEX002": re.compile(r"\\binom\b"),
     "LATEX003": re.compile(r"\\tfrac\b"),
+    "LATEX006": re.compile(
+        r"\\bigl\b|\\bigr\b|\\Bigl\b|\\Bigr\b|"
+        r"\\biggl\b|\\biggr\b|\\Biggl\b|\\Biggr\b"
+    ),
+    "LATEX007": re.compile(r"\\mathbb\s+[A-Za-z]"),
+}
+GENERIC_REPLACEMENTS = {
+    "LATEX002": (
+        "C_n^k for a binomial coefficient, or a pmatrix "
+        "environment for a stacked column vector"
+    ),
+    "LATEX003": "dfrac or frac",
+    "LATEX006": "left and right for auto-sized delimiters",
+    "LATEX007": "mathbb{R} with braces",
 }
 DOUBLE_DOLLAR_RE = re.compile(r"\$\$")
 UNRESOLVED_MARKERS = ("T" + "ODO", "T" + "BD", "FIX" + "ME")
@@ -506,13 +520,7 @@ def check_text_file(
             )
         for rule_id, pattern in GENERIC_PATTERNS.items():
             if pattern.search(check_line):
-                if rule_id == "LATEX002":
-                    replacement = (
-                        "C_n^k for a binomial coefficient, or a pmatrix "
-                        "environment for a stacked column vector"
-                    )
-                else:
-                    replacement = "dfrac or frac"
+                replacement = GENERIC_REPLACEMENTS[rule_id]
                 diagnostics.append(
                     _diagnostic(
                         path,

@@ -270,6 +270,19 @@ $$...$$
 
 普通一维定积分不要机械添加 `\limits`。
 
+左右定界符统一使用自动定尺的 `\left` 和 `\right`：
+
+```latex
+\left( ... \right)
+\left[ ... \right]
+```
+
+不使用 `\bigl`、`\bigr`，以及 `\Bigl`、`\Bigr`、`\biggl`、`\biggr`
+等同族的固定尺寸定界符命令。
+
+例外：定界符内部需要跨 `aligned` 等环境的 `\\` 换行时，`\left` 和 `\right`
+无法跨越断行，此时改用普通的 `\lbrack` 和 `\rbrack`，或改写为不跨行的形式。
+
 ### 6.3 微分、组合数与列向量
 
 微分符号使用直立体：
@@ -308,6 +321,18 @@ C_{n}^{k}
 ```latex
 \tfrac
 ```
+
+集合记号统一带花括号：
+
+```latex
+\mathbb{R}
+\mathbb{C}
+\mathbb{N}
+\mathbb{Q}
+\mathbb{Z}
+```
+
+不写 `\mathbb R` 这类不带花括号的形式。
 
 ### 6.4 数学省略号
 
@@ -746,6 +771,9 @@ source/高代培优下打印版.pdf
   不使用 `\pmatrix{...}`，该写法会被 amsmath 拒绝。
 - 转置使用 `\mathsf T`，例如 `A^{\mathsf T}`。
 - 组合数使用 `C_{n}^{k}`，不使用 `\binom`。
+- 集合记号使用带花括号的 `\mathbb{R}`、`\mathbb{C}`、`\mathbb{N}`、
+  `\mathbb{Q}`、`\mathbb{Z}`，不写 `\mathbb R`。
+- 定界符使用自动定尺的 `\left` 和 `\right`，不使用 `\bigl`、`\bigr`。
 - 数学算子统一在共享 `preamble.tex` 中声明。
 
 高等代数培优的完整专属规则见：

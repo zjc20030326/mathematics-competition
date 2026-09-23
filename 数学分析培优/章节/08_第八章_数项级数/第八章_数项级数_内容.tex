@@ -1516,7 +1516,7 @@
         \item 数列 $a_n$ 递减至零.令 $u_n=a_n^{-\alpha}$,则
               \[
                   u_{n+1}-u_n
-                  =a_n^{-\alpha}\bigl[(1+a_n^\alpha)^\alpha-1\bigr]\longrightarrow\alpha.
+                  =a_n^{-\alpha}\left[(1+a_n^\alpha)^\alpha-1\right]\longrightarrow\alpha.
               \]
               由 Stolz 定理,$u_n/n\to\alpha$,故
               $a_n\sim(\alpha n)^{-1/\alpha}$.因 $0<\alpha<1$,有 $1/\alpha>1$,所以 $\displaystyle \sum a_n$ 收敛.
@@ -1835,12 +1835,12 @@
 \exampleblank
 
 \begin{solution}
-    记 $H_n=1+1/2+\cdots+1/n$.数列 $H_n/n$ 从某项起单调递减且趋于零.若 $x\notin2\pi\mathbb Z$,则
+    记 $H_n=1+1/2+\cdots+1/n$.数列 $H_n/n$ 从某项起单调递减且趋于零.若 $x\notin2\pi\mathbb{Z}$,则
     \[
         \sum\limits_{k=1}^{N}\sin(kx)
         =\dfrac{\sin(Nx/2)\sin((N+1)x/2)}{\sin(x/2)}
     \]
-    一致有界,故由 Dirichlet 判别法原级数收敛;若 $x\in2\pi\mathbb Z$,各项均为零.因此对每个实数 $x$,该级数都收敛.
+    一致有界,故由 Dirichlet 判别法原级数收敛;若 $x\in2\pi\mathbb{Z}$,各项均为零.因此对每个实数 $x$,该级数都收敛.
 \end{solution}
 
 \begin{example}
@@ -2020,7 +2020,7 @@
 
 \begin{solution}
     \begin{enumerate}
-        \item 当 $p>0$ 时,$n^{-p}$ 单调趋零,而 $\displaystyle \sum\cos(nx)$,$\displaystyle \sum\sin(nx)$ 的部分和在 $x\notin\pi\mathbb Z$ 时有界,故两级数收敛.它们在 $p>1$ 时绝对收敛,在 $0<p\leq1$ 时条件收敛;$p\leq0$ 时一般不收敛.
+        \item 当 $p>0$ 时,$n^{-p}$ 单调趋零,而 $\displaystyle \sum\cos(nx)$,$\displaystyle \sum\sin(nx)$ 的部分和在 $x\notin\pi\mathbb{Z}$ 时有界,故两级数收敛.它们在 $p>1$ 时绝对收敛,在 $0<p\leq1$ 时条件收敛;$p\leq0$ 时一般不收敛.
         \item 因
               \[
                   (-1)^n\sin n=\sin(n(1+\pi)),
@@ -2482,7 +2482,7 @@
                   -\dfrac{1}{2}\ln\left(1+\dfrac{1}{n^2}\right)\sim-\dfrac{1}{2n^2},
               \]
               故对数级数收敛,原乘积收敛到正数.
-        \item 对任意固定 $p\in\mathbb R$,
+        \item 对任意固定 $p\in\mathbb{R}$,
               \[
                   p\ln\dfrac{n^2-1}{n^2+1}
                   =-\dfrac{2p}{n^2}+O(n^{-4}).
