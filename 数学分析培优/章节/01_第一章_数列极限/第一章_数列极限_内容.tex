@@ -2120,22 +2120,39 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \exampleblank
 
 \begin{solution}
+
   令
   \[
     f(x)=\dfrac{c(1+x)}{c+x}.
   \]
-  对 $x\geq0$,
+  因 $x_1>0$,由递推式知 $x_n>0$.正不动点满足
   \[
-    0<f'(x)=\dfrac{c(c-1)}{(c+x)^2}\leq\dfrac{c-1}{c}<1.
+    x=\dfrac{c(1+x)}{c+x},
   \]
-  又 $f$ 把 $(0,+\infty)$ 映入自身.其正不动点由
-  $x(c+x)=c(1+x)$ 给出,即 $x^2=c$,所以 $x^*=\sqrt c$.
-  由 Lagrange 中值定理,
+  即 $x^2=c$,故正不动点为 $s=\sqrt c$.
+
+  直接计算得
   \[
-    |x_{n+1}-\sqrt c|
-    \leq\dfrac{c-1}{c}|x_n-\sqrt c|.
+    x_{n+1}-s
+    =\dfrac{s(s-1)}{c+x_n}(x_n-s).
   \]
-  故 $x_n\to\sqrt c$.
+  因此
+  \[
+    |x_{n+1}-s|
+    \leq\dfrac{s-1}{s}|x_n-s|.
+  \]
+  由于 $0<\dfrac{s-1}{s}<1$,反复迭代得
+  \[
+    |x_n-s|
+    \leq
+    \left(\dfrac{s-1}{s}\right)^{n-1}|x_1-s|
+    \longrightarrow0.
+  \]
+  故
+  \[
+    \lim\limits_{n\to\infty}x_n=\sqrt c.
+  \]
+
 \end{solution}
 
 \begin{example}
@@ -2152,22 +2169,41 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \exampleblank
 
 \begin{solution}
-  令 $f(x)=\dfrac{1}{1+x}$.从 $x_2=\dfrac{1}{2}$ 开始,
+
+  令
+  \[
+    f(x)=\dfrac{1}{1+x}.
+  \]
+  从 $x_2=\dfrac{1}{2}$ 开始,
   \[
     \dfrac{1}{2}\leq x_n\leq\dfrac{2}{3},
   \]
-  且该区间在 $f$ 下不变.在此区间上
+  且该区间在 $f$ 下不变.
+
+  正不动点满足
   \[
-    |f'(x)|=\dfrac{1}{(1+x)^2}\leq\dfrac{4}{9}<1.
+    x=\dfrac{1}{1+x},
   \]
-  正不动点满足 $x=\dfrac{1}{1+x}$,故
+  故
   \[
-    c=\dfrac{\sqrt5-1}{2}.
+    \alpha=\dfrac{\sqrt5-1}{2}.
   \]
-  由压缩估计 $|x_{n+1}-c|\leq\dfrac{4}{9}|x_n-c|$,得到
+  由 $\alpha=\dfrac{1}{1+\alpha}$,
   \[
-    \lim\limits_{n\to\infty}x_n=\dfrac{\sqrt5-1}{2}.
+    x_{n+1}-\alpha
+    =-\dfrac{x_n-\alpha}{(1+x_n)(1+\alpha)}.
   \]
+  因此
+  \[
+    |x_{n+1}-\alpha|
+    \leq\dfrac{2}{3}|x_n-\alpha|.
+  \]
+  反复迭代即得
+  \[
+    x_n\longrightarrow\alpha
+    =\dfrac{\sqrt5-1}{2}.
+  \]
+
 \end{solution}
 
 \begin{example}
@@ -2187,28 +2223,57 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \exampleblank
 
 \begin{solution}
-  因为 $f$ 连续且把 $\lbrack a,b\rbrack$ 映为自身,函数 $f(x)-x$ 在
-  $a$ 处非负,在 $b$ 处非正,故至少存在一个不动点 $p\in\lbrack a,b\rbrack$.
-  对任一这样的 $p$,由恒等式
-  \[
-    \left|\dfrac{u+v}{2}\right|^2
-    =\dfrac{|u|^2+|v|^2}{2}-\dfrac{|u-v|^2}{4}
-  \]
-  及 $|f(x_n)-p|\leq|x_n-p|$,得到
-  \[
-    |x_{n+1}-p|^2
-    \leq|x_n-p|^2-|x_{n+1}-x_n|^2.
-  \]
-  因此 $|x_n-p|$ 单调不增,且
-  \[
-    \sum\limits_{n=1}^{\infty}|x_{n+1}-x_n|^2<+\infty.
-  \]
-  从而 $x_{n+1}-x_n\to0$,即 $f(x_n)-x_n\to0$.
 
-  由于 $\{x_n\}\subset\lbrack a,b\rbrack$,它有收敛子列 $x_{n_k}\to x^*$.
-  由 $f$ 的连续性及 $f(x_{n_k})-x_{n_k}\to0$,可得 $f(x^*)=x^*$.
-  再在上面的距离不等式中取 $p=x^*$,知 $|x_n-x^*|$ 有极限;而其子列
-  $|x_{n_k}-x^*|\to0$,故整个数列 $x_n\to x^*$.
+  令
+  \[
+    g(x)=\dfrac{x+f(x)}{2}.
+  \]
+  因 $f$ 把 $\lbrack a,b\rbrack$ 映入自身,故 $g$ 也把
+  $\lbrack a,b\rbrack$ 映入自身.
+
+  对任意 $x<y$,由
+  \[
+    |f(y)-f(x)|\leq y-x
+  \]
+  可得
+  \[
+    f(y)-f(x)\geq-(y-x),
+  \]
+  从而
+  \[
+    g(y)-g(x)
+    =\dfrac{(y-x)+(f(y)-f(x))}{2}\geq0.
+  \]
+  因此 $g$ 单调不减.
+
+  若 $x_2\geq x_1$,则由 $x_{n+1}=g(x_n)$ 及 $g$ 的单调性,
+  归纳可得
+  \[
+    x_1\leq x_2\leq x_3\leq\cdots.
+  \]
+  若 $x_2\leq x_1$,则同理
+  \[
+    x_1\geq x_2\geq x_3\geq\cdots.
+  \]
+  又因为 $x_n\in\lbrack a,b\rbrack$,故无论哪种情形,
+  $\{x_n\}$ 均为有界单调数列,从而存在极限.设
+  \[
+    x_n\to x^*.
+  \]
+
+  由条件知 $f$ 连续,在递推式
+  \[
+    x_{n+1}=\dfrac{x_n+f(x_n)}{2}
+  \]
+  中令 $n\to\infty$,得到
+  \[
+    x^*=\dfrac{x^*+f(x^*)}{2},
+  \]
+  因而
+  \[
+    f(x^*)=x^*.
+  \]
+
 \end{solution}
 
 \begin{example}
@@ -2475,16 +2540,14 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
   \]
   因此
   \[
-    \begin{aligned}
     \varlimsup\limits_{n\to\infty}
     \left|a_n-\dfrac{2l}{3}\right|
-    &\leq\dfrac{1}{2}
+    \leq\dfrac{1}{2}
     \varlimsup\limits_{n\to\infty}
-    \left|a_{2n}-\dfrac{2l}{3}\right|\\
-    &\leq\dfrac{1}{2}
+    \left|a_{2n}-\dfrac{2l}{3}\right|
+    \leq\dfrac{1}{2}
     \varlimsup\limits_{n\to\infty}
     \left|a_n-\dfrac{2l}{3}\right|.
-    \end{aligned}
   \]
   这个有限的非负上极限只能为 $0$,故 $a_n\to\dfrac{2l}{3}$.
 \end{solution}
@@ -2613,30 +2676,91 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
     y_n=px_n+qx_{n+1}\longrightarrow(p+q)X.
   \]
 
-  反之,设 $y_n\to Y$.由于 $|p|<|q|$,有 $p+q\neq0$.由
-  $x_{n+1}=-\dfrac{p}{q}x_n+\dfrac{y_n}{q}$ 迭代可知
+    反之,设 $y_n\to Y$.由于 $|p|<|q|$,有 $q\neq0$ 且 $p+q\neq0$.
+  由
   \[
-    |x_n|\leq\left|\dfrac{p}{q}\right|^{n-1}|x_1|
-    +\dfrac{\displaystyle\sup\limits_k|y_k|}{|q|}
-     \sum\limits_{j=0}^{n-2}\left|\dfrac{p}{q}\right|^j,
+    x_{n+1}=-\dfrac{p}{q}x_n+\dfrac{y_n}{q},
   \]
-  故 $\{x_n\}$ 有界.再由
+  逐次代入得
   \[
-    x_{n+1}-\dfrac{Y}{p+q}
-    =-\dfrac{p}{q}\left(x_n-\dfrac{Y}{p+q}\right)
-    +\dfrac{y_n-Y}{q},
+    x_2=-\dfrac{p}{q}x_1+\dfrac{y_1}{q},
   \]
-  取绝对值的上极限,得到
   \[
-    \varlimsup\limits_{n\to\infty}
-    \left|x_n-\dfrac{Y}{p+q}\right|
-    \leq\left|\dfrac{p}{q}\right|
-    \varlimsup\limits_{n\to\infty}
-    \left|x_n-\dfrac{Y}{p+q}\right|.
+    x_3=
+    \left(-\dfrac{p}{q}\right)^2x_1
+    +\dfrac{1}{q}
+    \left[
+      -\dfrac{p}{q}y_1+y_2
+    \right],
   \]
-  因 $\left|\dfrac{p}{q}\right|<1$,上述有限的非负上极限只能为 $0$,故
-  $x_n\to\dfrac{Y}{p+q}$.
-  因此 $\{x_n\}$ 与 $\{y_n\}$ 同时收敛或同时发散.
+  继续迭代可得
+  \[
+    x_n=
+    \left(-\dfrac{p}{q}\right)^{n-1}x_1
+    +\dfrac{1}{q}
+    \sum\limits_{k=1}^{n-1}
+    \left(-\dfrac{p}{q}\right)^{n-1-k}y_k.
+  \]
+  因 $y_n\to Y$,故 $\{y_n\}$ 有界.于是
+  \[
+    \begin{aligned}
+      |x_n|
+      &\leq
+      \left|\dfrac{p}{q}\right|^{n-1}|x_1|
+      +\dfrac{\displaystyle\sup\limits_k|y_k|}{|q|}
+      \sum\limits_{k=1}^{n-1}
+      \left|\dfrac{p}{q}\right|^{n-1-k} \\
+      &=
+      \left|\dfrac{p}{q}\right|^{n-1}|x_1|
+      +\dfrac{\displaystyle\sup\limits_k|y_k|}{|q|}
+      \sum\limits_{j=0}^{n-2}
+      \left|\dfrac{p}{q}\right|^j.
+    \end{aligned}
+  \]
+   由于 $\left|\dfrac{p}{q}\right|<1$,右端一致有界,故 $\{x_n\}$ 有界.
+  记
+  \[
+    A=\varlimsup\limits_{n\to\infty}x_n,
+    \qquad
+    B=\varliminf\limits_{n\to\infty}x_n,
+    \qquad
+    r=-\dfrac{p}{q}.
+  \]
+  则 $|r|<1$,且
+  \[
+    x_{n+1}=rx_n+\dfrac{y_n}{q},
+    \qquad
+    \dfrac{y_n}{q}\longrightarrow\dfrac{Y}{q}.
+  \]
+
+  若 $r\geq0$,则
+  \[
+    A=rA+\dfrac{Y}{q},
+    \qquad
+    B=rB+\dfrac{Y}{q},
+  \]
+  从而 $A=B$.
+
+  若 $r<0$,则
+  \[
+    A=rB+\dfrac{Y}{q},
+    \qquad
+    B=rA+\dfrac{Y}{q}.
+  \]
+  两式相减得
+  \[
+    (1+r)(A-B)=0.
+  \]
+  由于 $|r|<1$,故 $A=B$.
+
+  因此 $\{x_n\}$ 收敛.设 $x_n\to X$,则
+  \[
+    Y=(p+q)X,
+  \]
+  即
+  \[
+    X=\dfrac{Y}{p+q}.
+  \]
 \end{solution}
 
 
@@ -2759,26 +2883,34 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 
 
 \begin{example}
+
   证明下列命题:
+
   \begin{enumerate}
-    \item 设 $\{a_n\}$ 是正数列,则
-          \[
-            \varlimsup\limits_{n\to\infty}
-            \left(\dfrac{a_1+a_{n+1}}{a_n}\right)^n
-            \geq e;
-          \]
+
     \item 设 $\{a_n\}$ 是正数列,则
           \[
             \varlimsup\limits_{n\to\infty}
             n\left(\dfrac{1+a_{n+1}}{a_n}-1\right)
-            \geq1.
+            \geq1;
           \]
+
+    \item 设 $\{a_n\}$ 是正数列,则
+          \[
+            \varlimsup\limits_{n\to\infty}
+            \left(\dfrac{a_1+a_{n+1}}{a_n}\right)^n
+            \geq e.
+          \]
+
   \end{enumerate}
+
 \end{example}
+
 \exampleblank
 
 \begin{solution}
-  先证 (2).若结论不成立,则可取 $q<1$,使得当 $n$ 充分大时
+
+  (1) 若结论不成立,则可取 $q<1$,使得当 $n$ 充分大时
   \[
     n\left(\dfrac{1+a_{n+1}}{a_n}-1\right)\leq q.
   \]
@@ -2793,14 +2925,14 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
     \dfrac{a_{m+1}}{m+1}
     <\dfrac{a_N}{N}-\sum\limits_{n=N}^m\dfrac{1}{n+1}.
   \]
-  右端最终为负,与 $a_{m+1}>0$ 矛盾,故 (2) 成立.
+  右端最终为负,与 $a_{m+1}>0$ 矛盾,故 (1) 成立.
 
-  对正数列 $\dfrac{a_n}{a_1}$ 应用 (2),得到
+  (2) 对正数列 $\dfrac{a_n}{a_1}$ 应用 (1),得到
   \[
     \varlimsup\limits_{n\to\infty}
     n\left(\dfrac{a_1+a_{n+1}}{a_n}-1\right)\geq1.
   \]
-  若 (1) 左端小于 $e$,则存在 $c<1$,使得当 $n$ 充分大时
+  若 (2) 左端小于 $e$,则存在 $c<1$,使得当 $n$ 充分大时
   \[
     \left(\dfrac{a_1+a_{n+1}}{a_n}\right)^n\leq e^c.
   \]
@@ -2809,5 +2941,6 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
     n\left(\dfrac{a_1+a_{n+1}}{a_n}-1\right)
     \leq n\left(e^{\frac{c}{n}}-1\right)\longrightarrow c<1,
   \]
-  与前式矛盾.故 (1) 也成立.
+  与前式矛盾.故 (2) 成立.
+
 \end{solution}
