@@ -203,7 +203,7 @@ preamble.tex
 
 各本之间互相独立的只有书名、章节列表、正文学术内容与问题记录。
 
-改动 `elegantbook.cls`、`preamble.tex` 或任一主文件后，两本都需要重新编译验证。
+改动 `elegantbook.cls`、`preamble.tex` 或任一主文件后，两本需要同步修改；是否编译验证按 AGENTS.md §15 执行。
 
 不要维护普通版和答案版两套数学正文。
 
