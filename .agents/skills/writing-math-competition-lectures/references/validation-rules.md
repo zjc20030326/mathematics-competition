@@ -49,7 +49,7 @@ warning 不等于自动修复请求. 先判断是否为允许的代码,路径,�
 - `PUNC001`: 所选自然语言中出现中文标点. Markdown 代码围栏,行内代码和 URL 不检查.
 - `TEXT001`: 存在未解决的待办标记.
 - `LATEX001`: `.tex` 中使用 double-dollar 行间公式.
-- `LATEX002`: 使用 `\binom`. 组合数改用 `C_k^n`; 上下堆叠的列向量改用 `\begin{pmatrix}` 环境 (`\pmatrix{...}` 是 amsmath 不接受的旧写法).
+- `LATEX002`: 使用 `\binom`. 组合数改用 `C_n^k`; 上下堆叠的列向量改用 `\begin{pmatrix}` 环境 (`\pmatrix{...}` 是 amsmath 不接受的旧写法).
 - `LATEX003`: 使用 `\tfrac`.
 - `LATEX004`: `\begin` 和 `\end` 环境不匹配.
 - `LATEX005`: 花括号,数学定界符或 `\left` 和 `\right` 不匹配.

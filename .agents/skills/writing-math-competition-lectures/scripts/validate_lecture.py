@@ -508,7 +508,7 @@ def check_text_file(
             if pattern.search(check_line):
                 if rule_id == "LATEX002":
                     replacement = (
-                        "C_k^n for a binomial coefficient, or a pmatrix "
+                        "C_n^k for a binomial coefficient, or a pmatrix "
                         "environment for a stacked column vector"
                     )
                 else:

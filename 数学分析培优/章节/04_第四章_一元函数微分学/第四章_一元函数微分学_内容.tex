@@ -321,7 +321,7 @@
     由 Leibniz 公式,对 $0\leq j\leq n$ 有
     \[
         |(f_1f_2)^{(j)}(x_0)|
-        \leq\sum\limits_{k=0}^{j}C_{k}^{j}
+        \leq\sum\limits_{k=0}^{j}C_{j}^{k}
         |f_1^{(k)}(x_0)|\,|f_2^{(j-k)}(x_0)|.
     \]
     因此
@@ -371,7 +371,7 @@
         \begin{aligned}
             \dfrac{\mathrm{d}^n}{\mathrm{d}x^n}
             \bigl(e^{ax}\sin bx\bigr)
-             & =\sum\limits_{i=0}^{n}C_{i}^{n}
+             & =\sum\limits_{i=0}^{n}C_{n}^{i}
             a^{n-i}e^{ax}b^i
             \sin\left(bx+\dfrac{\pi i}{2}\right).
         \end{aligned}
@@ -440,8 +440,8 @@
     \[
         \begin{aligned}
             (vu_k)^{(n)}
-             & =\sum\limits_{s=0}^{n}C_{s}^{n}v^{(s)}u_k^{(n-s)} \\
-             & =\sum\limits_{s=0}^{n}C_{s}^{n}
+             & =\sum\limits_{s=0}^{n}C_{n}^{s}v^{(s)}u_k^{(n-s)} \\
+             & =\sum\limits_{s=0}^{n}C_{n}^{s}
             \sum\limits_{r_1+\cdots+r_{k-1}=s}
             \dfrac{s!}{r_1!\cdots r_{k-1}!}
             u_1^{(r_1)}\cdots u_{k-1}^{(r_{k-1})}u_k^{(n-s)}.
@@ -449,7 +449,7 @@
     \]
     令 $r_k=n-s$,并利用
     \[
-        C_s^n\dfrac{s!}{r_1!\cdots r_{k-1}!}
+        C_n^s\dfrac{s!}{r_1!\cdots r_{k-1}!}
         =\dfrac{n!}{r_1!\cdots r_k!},
     \]
     即得题设公式.
@@ -705,9 +705,9 @@
         \item 对 $(1+x)^n$ 求导一次,两次,并在 $x=1$ 处取值,得
               \[
                   \begin{aligned}
-                      \sum\limits_{k=1}^{n}C_k^n k^2
-                       & =\sum\limits_{k=1}^{n}C_k^n k(k-1)
-                      +\sum\limits_{k=1}^{n}C_k^n k         \\
+                      \sum\limits_{k=1}^{n}C_n^k k^2
+                       & =\sum\limits_{k=1}^{n}C_n^k k(k-1)
+                      +\sum\limits_{k=1}^{n}C_n^k k         \\
                        & =n(n-1)2^{n-2}+n2^{n-1}            \\
                        & =n(n+1)2^{n-2}.
                   \end{aligned}

@@ -281,7 +281,7 @@ $$...$$
 组合数统一使用：
 
 ```latex
-C_{k}^{n}
+C_{n}^{k}
 ```
 
 一律不使用：
@@ -745,7 +745,7 @@ source/高代培优下打印版.pdf
 - 矩阵和向量用 `\begin{pmatrix}`，行列式用 `\begin{vmatrix}`；
   不使用 `\pmatrix{...}`，该写法会被 amsmath 拒绝。
 - 转置使用 `\mathsf T`，例如 `A^{\mathsf T}`。
-- 组合数使用 `C_{k}^{n}`，不使用 `\binom`。
+- 组合数使用 `C_{n}^{k}`，不使用 `\binom`。
 - 数学算子统一在共享 `preamble.tex` 中声明。
 
 高等代数培优的完整专属规则见：

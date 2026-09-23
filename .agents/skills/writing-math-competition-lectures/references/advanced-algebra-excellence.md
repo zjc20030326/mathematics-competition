@@ -162,7 +162,7 @@ xelatex.exe: fatal: putenv(TEXMF_OUTPUT_DIRECTORY=...).
 - 矩阵和向量使用 `\begin{pmatrix}`, 行列式使用 `\begin{vmatrix}`. 不使用 `\pmatrix{...}`, 该写法会被 amsmath 拒绝.
 - 转置使用 `\mathsf T`, 例如 `A^{\mathsf T}`.
 - 数学算子使用共享 `preamble.tex` 中声明的 `\Tr`, `\tr`, `\rank`, `\diag`, `\Ree`, `\Imm`, `\Ker`, `\Span`.
-- 组合数使用 `C_{k}^{n}`, 不使用 `\binom`.
+- 组合数使用 `C_{n}^{k}`, 不使用 `\binom`.
 
 ## 11. 同章和同书关联
 
