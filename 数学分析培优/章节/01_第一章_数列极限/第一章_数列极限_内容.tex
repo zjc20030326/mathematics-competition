@@ -1221,8 +1221,11 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 
 \methodsection{(C) 利用级数性质}
 
-主要有两个运用: (1) 收敛级数通项趋于零;(2)
-$\{x_n-x_{n-1}\}$ 绝对收敛 $\Rightarrow \displaystyle \lim\limits_{n\to\infty}x_n$ 存在.
+主要有两个运用: (1) 收敛级数的通项趋于零;(2) 
+$\sum\limits_{n=1}^{\infty}(x_{n+1}-x_{n})$
+绝对收敛$\Rightarrow $
+$\displaystyle \lim\limits_{n\to\infty}x_n$
+存在.
 
 %例题1.2.33
 \begin{example}
@@ -1988,20 +1991,22 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \end{theorem}
 
 \begin{corollary}[\markstar]
-  设 $I\subseteq\mathbb{R}$ 为闭区间,$f:I\to I$ 在 $I$ 上连续,在 $I$ 的内部可微.
-  若存在常数 $0<r<1$,使得
-  \[
-    |f'(x)|\leq r
-  \]
-  对一切 $I$ 的内点 $x$ 成立,则 $f$ 在 $I$ 上存在唯一不动点 $x^*$,且对任意
-  $x_1\in I$,由
-  \[
-    x_{n+1}=f(x_n)
-  \]
-  定义的数列满足
-  \[
-    x_n\to x^*.
-  \]
+
+    设 $I\subseteq\mathbb{R}$ 为非空闭集,$f:I\to I$.
+
+    若存在常数 $0<r<1$,使得
+    \[
+        |f(x)-f(y)|\leq r|x-y|,
+        \qquad x,y\in I,
+    \]
+    则 $f$ 在 $I$ 上存在唯一不动点 $x^*$.
+
+    若进一步 $f$ 在 $I$ 的内部可微且
+    \[
+        |f'(x)|\leq r,
+    \]
+    则上述条件成立.
+
 \end{corollary}
 
 %例题1.3.8

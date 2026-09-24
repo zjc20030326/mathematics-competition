@@ -151,34 +151,65 @@
     求
     \[
         \lim\limits_{n\to\infty}
-        \sqrt[n]{
-            \prod\limits_{i=1}^{n}
-            \dfrac{e^{1-\frac{1}{i}}}{\left(1+\dfrac{1}{i}\right)^i}
-        }.
+        \sqrt{n}
+        \prod\limits_{i=1}^{n}
+        \dfrac{e^{1-\frac{1}{i}}}{\left(1+\dfrac{1}{i}\right)^i}.
     \]
 \end{example}
 \exampleblank
 
 \begin{solution}
-    记原式为 $A_n$.取对数得
+    记原式为 $A_n$.由
     \[
-        \ln A_n
-        =\dfrac{1}{n}\sum\limits_{i=1}^{n}
-        \left[1-\dfrac{1}{i}-i\ln\left(1+\dfrac{1}{i}\right)\right].
+        \sum\limits_{i=1}^{n}\left(1-\dfrac{1}{i}\right)
+        =n-H_n,
+        \qquad
+        H_n=\sum\limits_{i=1}^{n}\dfrac{1}{i},
     \]
-    由
+    且
     \[
-        i\ln\left(1+\dfrac{1}{i}\right)
-        =1-\dfrac{1}{2i}+O\left(\dfrac{1}{i^2}\right),
+        \prod\limits_{i=1}^{n}
+        \left(\dfrac{i}{i+1}\right)^i
+        =\dfrac{n!}{(n+1)^n},
     \]
     可得
     \[
-        \ln A_n
-        =-\dfrac{1}{2n}\sum\limits_{i=1}^{n}\dfrac{1}{i}
-        +O\left(\dfrac{1}{n}\sum\limits_{i=1}^{n}\dfrac{1}{i^2}\right)
-        \longrightarrow0.
+        A_n
+        =\sqrt{n}\,e^{n-H_n}\dfrac{n!}{(n+1)^n}.
     \]
-    因此 $A_n\to e^0=1$.
+    由
+    \[
+        H_n=\ln n+\gamma+o(1)
+    \]
+    及 Stirling 公式
+    \[
+        n!\sim\sqrt{2\pi n}\left(\dfrac{n}{e}\right)^n,
+    \]
+    有
+    \[
+        \begin{aligned}
+            A_n
+            &\sim
+            \sqrt{n}\,e^{n-H_n}
+            \dfrac{\sqrt{2\pi n}\left(\dfrac{n}{e}\right)^n}{(n+1)^n}\\
+            &=
+            \sqrt{2\pi}\,
+            ne^{-H_n}
+            \left(\dfrac{n}{n+1}\right)^n.
+        \end{aligned}
+    \]
+    又
+    \[
+        ne^{-H_n}\longrightarrow e^{-\gamma},
+        \qquad
+        \left(\dfrac{n}{n+1}\right)^n
+        =\left(1+\dfrac{1}{n}\right)^{-n}
+        \longrightarrow e^{-1},
+    \]
+    故
+    \[
+        A_n\longrightarrow\sqrt{2\pi}\,e^{-\gamma-1}.
+    \]
 \end{solution}
 
 %例题2.1.4
@@ -284,52 +315,88 @@
     \begin{enumerate}
         \item 通分后应用洛必达法则:
               \[
-                  \lim\limits_{x\to0}
-                  \dfrac{x-\ln(1+x)}{x\ln(1+x)}
-                  =\lim\limits_{x\to0}\dfrac{\dfrac{x}{1+x}}{\ln(1+x)+\dfrac{x}{1+x}}
-                  =\dfrac{1}{2}.
+                  \begin{aligned}
+                      \lim\limits_{x\to0}
+                      \dfrac{x-\ln(1+x)}{x\ln(1+x)}
+                      &=
+                      \lim\limits_{x\to0}
+                      \dfrac{\dfrac{x}{1+x}}
+                      {\ln(1+x)+\dfrac{x}{1+x}}\\
+                      &=
+                      \lim\limits_{x\to0}
+                      \dfrac{\dfrac{x}{1+x}}
+                      {x+\dfrac{x}{1+x}}
+                      =\dfrac{1}{2},
+                  \end{aligned}
               \]
+              其中第二步使用了 $\ln(1+x)\sim x$.
         \item 设极限为 $A$,则
               \[
-                  \ln A
-                  =\lim\limits_{x\to0}
-                  \dfrac{\ln\left(\dfrac{\sin x}{x}\right)}{1-\cos x}
-                  =\lim\limits_{x\to0}\dfrac{-\dfrac{x^2}{6}+O(x^4)}{\dfrac{x^2}{2}+O(x^4)}
-                  =-\dfrac{1}{3},
+                  \begin{aligned}
+                      \ln A
+                      &=
+                      \lim\limits_{x\to0}
+                      \dfrac{\ln\left(\dfrac{\sin x}{x}\right)}{1-\cos x}\\
+                      &=
+                      \lim\limits_{x\to0}
+                      \dfrac{x\cos x-\sin x}{x\sin^2x}\\
+                      &=
+                      \lim\limits_{x\to0}
+                      \dfrac{-x\sin x}{\sin^2x+2x\sin x\cos x}\\
+                      &=
+                      \lim\limits_{x\to0}
+                      \dfrac{-x}{\sin x+2x\cos x}
+                      =-\dfrac{1}{3}.
+                  \end{aligned}
               \]
-              因而 $A=e^{-\frac{1}{3}}$.
-        \item 注意到
+              因而
               \[
-                  \sec^2x-2\tan x=(\tan x-1)^2,
-                  \qquad
-                  1+\cos4x=2\cos^22x.
+                  A=e^{-\frac{1}{3}}.
               \]
-              又
+        \item 连续两次应用洛必达法则:
               \[
-                  \tan x-1=-\dfrac{\cos2x}{\cos x(\sin x+\cos x)},
+                  \begin{aligned}
+                      &\lim\limits_{x\to\frac{\pi}{4}}
+                      \dfrac{\sec^2x-2\tan x}{1+\cos4x}\\
+                      &=
+                      \lim\limits_{x\to\frac{\pi}{4}}
+                      \dfrac{2\sec^2x(\tan x-1)}{-4\sin4x}\\
+                      &=
+                      \lim\limits_{x\to\frac{\pi}{4}}
+                      \dfrac{
+                          4\sec^2x\tan x(\tan x-1)+2\sec^4x
+                      }{-16\cos4x}
+                      =\dfrac{1}{2}.
+                  \end{aligned}
               \]
-              故原式趋于
+        \item 直接应用洛必达法则:
               \[
-                  \dfrac{1}{2\cos^2\dfrac{\pi}{4}
-                      \left(\sin\dfrac{\pi}{4}+\cos\dfrac{\pi}{4}\right)^2}
-                  =\dfrac{1}{2}.
+                  \begin{aligned}
+                      \lim\limits_{x\to+\infty}
+                      \dfrac{\left(\int_0^x e^{t^2}\,\mathrm{d}t\right)^2}
+                      {\int_0^x e^{2t^2}\,\mathrm{d}t}
+                      &=
+                      \lim\limits_{x\to+\infty}
+                      \dfrac{
+                          2\left(\int_0^x e^{t^2}\,\mathrm{d}t\right)e^{x^2}
+                      }{e^{2x^2}}\\
+                      &=
+                      \lim\limits_{x\to+\infty}
+                      \dfrac{2\int_0^x e^{t^2}\,\mathrm{d}t}{e^{x^2}}\\
+                      &=
+                      \lim\limits_{x\to+\infty}
+                      \dfrac{2e^{x^2}}{2xe^{x^2}}
+                      =0.
+                  \end{aligned}
               \]
-        \item 记
-              \[
-                  F(x)=\int_0^x e^{t^2}\,\mathrm{d}t,
-                  \qquad
-                  G(x)=\int_0^x e^{2t^2}\,\mathrm{d}t.
-              \]
-              连续使用洛必达法则可得
-              \[
-                  \lim\limits_{x\to+\infty}\dfrac{F(x)^2}{G(x)}
-                  =\lim\limits_{x\to+\infty}\dfrac{2F(x)}{e^{x^2}}
-                  =\lim\limits_{x\to+\infty}\dfrac{2e^{x^2}}{2xe^{x^2}}=0.
-              \]
-        \item 取对数,
+        \item 取对数并应用洛必达法则:
               \[
                   \lim\limits_{x\to+\infty}\ln\sqrt[x]{x}
-                  =\lim\limits_{x\to+\infty}\dfrac{\ln x}{x}=0,
+                  =
+                  \lim\limits_{x\to+\infty}\dfrac{\ln x}{x}
+                  =
+                  \lim\limits_{x\to+\infty}\dfrac{1}{x}
+                  =0.
               \]
               故原极限为 $1$.
     \end{enumerate}
@@ -387,34 +454,53 @@
 \exampleblank
 
 \begin{solution}
-    令
+    写成
     \[
-        h(x)=f(x)+f'(x)-k,
+        f(x)=\dfrac{e^xf(x)}{e^x}.
     \]
-    则 $h(x)\to0$.给定 $\varepsilon>0$,取 $A$ 使 $x>A$ 时 $|h(x)|<\varepsilon$.令
+    对分子,分母应用洛必达法则,有
     \[
-        F(x)=e^x[f(x)-k].
+        \begin{aligned}
+            \lim\limits_{x\to+\infty}f(x)
+            &=
+            \lim\limits_{x\to+\infty}
+            \dfrac{e^xf(x)}{e^x}\\
+            &=
+            \lim\limits_{x\to+\infty}
+            \dfrac{e^x[f(x)+f'(x)]}{e^x}\\
+            &=
+            \lim\limits_{x\to+\infty}[f(x)+f'(x)]
+            =k.
+        \end{aligned}
     \]
-    对任意 $x>A$,在 $\lbrack A,x\rbrack$ 上对 $F(t)$ 与 $e^t$ 使用 Cauchy 中值定理,存在 $\xi\in(A,x)$,使
-    \[
-        \dfrac{F(x)-F(A)}{e^x-e^A}
-        =\dfrac{F'(\xi)}{e^\xi}
-        =h(\xi).
-    \]
-    整理得
-    \[
-        f(x)-k=e^{A-x}[f(A)-k]+(1-e^{A-x})h(\xi).
-    \]
-    因此
-    \[
-        |f(x)-k|\leq e^{A-x}|f(A)-k|+\varepsilon.
-    \]
-    先令 $x\to+\infty$,再令 $\varepsilon\to0$,即得 $f(x)\to k$.
 \end{solution}
 
-
-
 \subsection{Taylor 公式}
+
+当 $x\to0$ 时,常用的 Taylor 公式有
+\[
+    \begin{aligned}
+        e^x
+        &=1+x+\dfrac{x^2}{2!}+\cdots+\dfrac{x^n}{n!}+O(x^{n+1}),\\
+        \sin x
+        &=x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}+O(x^7),\\
+        \cos x
+        &=1-\dfrac{x^2}{2!}+\dfrac{x^4}{4!}+O(x^6),\\
+        \ln(1+x)
+        &=x-\dfrac{x^2}{2}+\dfrac{x^3}{3}-\cdots
+        +(-1)^{n-1}\dfrac{x^n}{n}+O(x^{n+1}),\\
+        (1+x)^\alpha
+        &=1+\alpha x+\dfrac{\alpha(\alpha-1)}{2!}x^2+\cdots
+        +\dfrac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}x^n
+        +O(x^{n+1}),\\
+        \tan x
+        &=x+\dfrac{x^3}{3}+\dfrac{2x^5}{15}+O(x^7),\\
+        \arctan x
+        &=x-\dfrac{x^3}{3}+\dfrac{x^5}{5}+O(x^7),\\
+        \arcsin x
+        &=x+\dfrac{x^3}{6}+\dfrac{3x^5}{40}+O(x^7).
+    \end{aligned}
+\]
 
 事实上,Taylor 公式作为一元微分学巅峰,从证明过程来看,洛必达法则能求的极限,理论上 Taylor 公式都能求,但也仅限于理论上,因为实际计算中有时确实洛必达法则会更好算,这需根据具体情况而定.一个简单的判别方法(但不绝对):若所给函数求导后的结果相当复杂,就应优先 Taylor 公式,如复合了一堆函数.
 
@@ -543,36 +629,86 @@
 \begin{solution}
     使用 Taylor 展开.
     \begin{enumerate}
-        \item
+        \item 由
               \[
-                  \tan(\tan x)=x+\dfrac{2}{3}x^3+O(x^5),
-                  \qquad
-                  \sin(\sin x)=x-\dfrac{1}{3}x^3+O(x^5),
+                  \tan x=x+\dfrac{x^3}{3}+O(x^5),
+              \]
+              有
+              \[
+                  \begin{aligned}
+                      \tan(\tan x)
+                      &=
+                      \tan x+\dfrac{1}{3}\tan^3x+O(\tan^5x)\\
+                      &=
+                      x+\dfrac{2}{3}x^3+O(x^5).
+                  \end{aligned}
+              \]
+              同理,
+              \[
+                  \begin{aligned}
+                      \sin(\sin x)
+                      &=
+                      \sin x-\dfrac{1}{6}\sin^3x+O(\sin^5x)\\
+                      &=
+                      x-\dfrac{1}{3}x^3+O(x^5).
+                  \end{aligned}
+              \]
+              因此
+              \[
+                  \tan(\tan x)-\sin(\sin x)
+                  =x^3+O(x^5),
               \]
               故极限为 $1$.
-        \item
+        \item 由
               \[
-                  \tan(\tan^2x)=x^2+\dfrac{2}{3}x^4+O(x^6),
-                  \qquad
-                  x\sin(\sin x)=x^2-\dfrac{1}{3}x^4+O(x^6),
+                  \tan^2x
+                  =\left(x+\dfrac{x^3}{3}+O(x^5)\right)^2
+                  =x^2+\dfrac{2}{3}x^4+O(x^6),
+              \]
+              且 $\tan u=u+O(u^3)$,得
+              \[
+                  \tan(\tan^2x)
+                  =x^2+\dfrac{2}{3}x^4+O(x^6).
+              \]
+              又由第 (1) 问中的展开,
+              \[
+                  x\sin(\sin x)
+                  =x^2-\dfrac{1}{3}x^4+O(x^6).
+              \]
+              因此
+              \[
+                  \tan(\tan^2x)-x\sin(\sin x)
+                  =x^4+O(x^6),
               \]
               故极限为 $1$.
-        \item
+        \item 将展开提高到六阶.由
               \[
-                  x\sin(\sin x)=x^2-\dfrac{x^4}{3}+\dfrac{x^6}{10}+O(x^8),
+                  \sin(\sin x)
+                  =x-\dfrac{x^3}{3}+\dfrac{x^5}{10}+O(x^7),
               \]
+              有
               \[
-                  \sin^2x=x^2-\dfrac{x^4}{3}+\dfrac{2x^6}{45}+O(x^8).
+                  x\sin(\sin x)
+                  =x^2-\dfrac{x^4}{3}+\dfrac{x^6}{10}+O(x^8).
               \]
-              两式相减后,$x^6$ 的系数为
+              另一方面,
               \[
-                  \dfrac{1}{10}-\dfrac{2}{45}=\dfrac{1}{18},
+                  \sin^2x
+                  =\dfrac{1-\cos2x}{2}
+                  =x^2-\dfrac{x^4}{3}+\dfrac{2x^6}{45}+O(x^8).
               \]
-              因此极限为 $\dfrac{1}{18}$.
+              因此
+              \[
+                  x\sin(\sin x)-\sin^2x
+                  =
+                  \left(\dfrac{1}{10}-\dfrac{2}{45}\right)x^6
+                  +O(x^8)
+                  =
+                  \dfrac{x^6}{18}+O(x^8),
+              \]
+              故极限为 $\dfrac{1}{18}$.
     \end{enumerate}
 \end{solution}
-
-
 
 \subsection{迫敛性}
 
@@ -730,7 +866,7 @@
               \]
         \item 设
               \[
-                  f(x)=\sum\limits_{k=1}^n a_k\ln(1+\ln x)
+                  f(x)=\sum\limits_{k=1}^n a_k\ln(1+kx)
               \]
               满足 $|f(x)|\leq|x|$,且 $x>0$,证明:
               \[
@@ -756,28 +892,26 @@
                   f'(0)=\sum\limits_{k=1}^{n}ka_k,
               \]
               故结论成立.
-        \item 原式中 $\ln(1+\ln x)$ 作为实值函数只在 $x>e^{-1}$ 时有定义,
-              因而``$x>0$''这一定义域本身已需要核对.即使把定义域改为 $x>e^{-1}$,题设仍不能推出所要求的结论.事实上,按当前题面,
+        \item 当 $x>0$ 时,
               \[
-                  f(x)=\left(\sum\limits_{k=1}^{n}a_k\right)\ln(1+\ln x),
+                  \left|\dfrac{f(x)}{x}\right|\leq1.
               \]
-              求和项中并未出现能够产生系数 $k$ 的结构.例如取
+              令 $x\to0^+$,由
               \[
-                  n=2,
-                  \qquad
-                  a_1=2,
-                  \qquad
-                  a_2=-2,
+                  \lim\limits_{x\to0^+}\dfrac{\ln(1+kx)}{x}=k,
               \]
-              则在原式的自然定义域上 $f(x)\equiv0$,满足 $|f(x)|\leq|x|$,但
+              得
               \[
-                  |a_1+2a_2|=2>1.
+                  \lim\limits_{x\to0^+}\dfrac{f(x)}{x}
+                  =
+                  \sum\limits_{k=1}^{n}ka_k.
               \]
-              因此本小题按原始 PDF 的现有题面不成立,需核对求和项或右侧估计式.
+              因此
+              \[
+                  \left|\sum\limits_{k=1}^{n}ka_k\right|\leq1.
+              \]
     \end{enumerate}
 \end{solution}
-
-
 
 \subsection{递推法}
 
@@ -830,17 +964,70 @@
 \exampleblank
 
 \begin{solution}
-    先由 $f(0)=bf(0)$ 及 $b>1$ 得 $f(0)=0$.取 $\delta>0$ 与 $M>0$,使得 $|x|<\delta$ 时 $|f(x)|\leq M$.
+    由 $f(0)=bf(0)$ 及 $b>1$,可得 $f(0)=0$.又因 $f$ 在 $x=0$ 的某邻域有界,存在 $\delta>0$ 与 $M>0$,使得
+    \[
+        |f(x)|\leq M,
+        \qquad
+        |x|<\delta.
+    \]
 
-    对任意充分小的 $x\neq0$,可取整数 $n\geq0$,使得
+    下面用数学归纳法证明:对任意正整数 $n$,当
     \[
-        \dfrac{\delta}{a}\leq |a^nx|<\delta.
+        |x|<\dfrac{\delta}{a^n}
     \]
-    由函数方程反复迭代,
+    时,都有
     \[
-        |f(x)|=b^{-n}|f(a^nx)|\leq Mb^{-n}.
+        |f(x)|\leq\dfrac{M}{b^n}.
     \]
-    当 $x\to0$ 时必有 $n\to\infty$,故 $f(x)\to0$.
+
+    当 $n=1$ 时,若 $|x|<\dfrac{\delta}{a}$,则 $|ax|<\delta$,由函数方程
+    \[
+        f(ax)=bf(x)
+    \]
+    得
+    \[
+        |f(x)|
+        =\dfrac{1}{b}|f(ax)|
+        \leq\dfrac{M}{b}.
+    \]
+    故结论对 $n=1$ 成立.
+
+    假设结论对某个正整数 $n$ 成立.当
+    \[
+        |x|<\dfrac{\delta}{a^{n+1}}
+    \]
+    时,有
+    \[
+        |ax|<\dfrac{\delta}{a^n}.
+    \]
+    由归纳假设,
+    \[
+        |f(ax)|\leq\dfrac{M}{b^n},
+    \]
+    从而
+    \[
+        |f(x)|
+        =\dfrac{1}{b}|f(ax)|
+        \leq\dfrac{M}{b^{n+1}}.
+    \]
+    因此结论对任意正整数 $n$ 均成立.
+
+    给定 $\varepsilon>0$,由于 $b>1$,可取正整数 $n$ 使
+    \[
+        \dfrac{M}{b^n}<\varepsilon.
+    \]
+    再令
+    \[
+        \eta=\dfrac{\delta}{a^n}.
+    \]
+    当 $|x|<\eta$ 时,
+    \[
+        |f(x)|\leq\dfrac{M}{b^n}<\varepsilon.
+    \]
+    故
+    \[
+        \lim\limits_{x\to0}f(x)=0.
+    \]
 \end{solution}
 
 %例题2.1.19
@@ -1333,22 +1520,50 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 \exampleblank
 
 \begin{solution}
-    设 $T_f,T_g>0$ 分别是 $f,g$ 的周期,并记 $h=f-g$.固定 $x$ 与整数 $m$.由
+    设 $T_f,T_g>0$ 分别是 $f,g$ 的周期,并记
     \[
-        h(x+nT_f)\to0,
+        h(x)=f(x)-g(x).
+    \]
+    固定 $x\in\mathbb{R}$ 与整数 $m$.当 $n\to\infty$ 时,
+    \[
+        h(x+nT_f)\longrightarrow0,
         \qquad
-        h(x+nT_f+mT_g)\to0
+        h(x+nT_f+mT_g)\longrightarrow0.
     \]
-    以及 $f(x+nT_f)=f(x)$,$g(x+nT_f+mT_g)=g(x+nT_f)$,两式相减可得
+    利用周期性,
     \[
-        f(x+mT_g)-f(x)=0.
+        h(x+nT_f)
+        =f(x)-g(x+nT_f),
     \]
-    故 $T_g$ 也是 $f$ 的周期.交换 $f,g$ 的地位,同理可知 $T_f$ 也是 $g$ 的周期.
-    于是 $h$ 以 $T_f$ 为周期,因而
+    而
+    \[
+        \begin{aligned}
+            h(x+nT_f+mT_g)
+            &=
+            f(x+nT_f+mT_g)-g(x+nT_f+mT_g)\\
+            &=
+            f(x+mT_g)-g(x+nT_f).
+        \end{aligned}
+    \]
+    因此
+    \[
+        h(x+nT_f+mT_g)-h(x+nT_f)
+        =f(x+mT_g)-f(x).
+    \]
+    令 $n\to\infty$,左端趋于 $0$,故
+    \[
+        f(x+mT_g)=f(x).
+    \]
+    取 $m=1$,可知 $T_g$ 也是 $f$ 的周期.
+
+    交换 $f,g$ 的地位,同理可知 $T_f$ 也是 $g$ 的周期.于是 $h=f-g$ 以 $T_f$ 为周期,从而对任意 $x\in\mathbb{R}$,
     \[
         h(x)=h(x+nT_f)\longrightarrow0.
     \]
-    所以 $h(x)=0$,即 $f(x)=g(x)$.
+    因此 $h(x)=0$,即
+    \[
+        f(x)=g(x).
+    \]
 \end{solution}
 
 %例题2.2.11
@@ -1389,6 +1604,75 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 \newpage
 
 \section{实数基本定理 *}
+
+\begin{theorem}[确界存在定理]
+    非空实数集 $E$ 若有上界,则必有上确界 $\sup E$;若有下界,则必有下确界 $\inf E$.
+\end{theorem}
+
+\begin{theorem}[单调有界原理]
+
+    单调有界数列必收敛.
+
+    具体地,若实数列 $\{x_n\}$ 单调递增且有上界,则存在
+    \[
+        \lim\limits_{n\to\infty}x_n=\sup\{x_n:n\in\mathbb{N}\};
+    \]
+    若实数列 $\{x_n\}$ 单调递减且有下界,则存在
+    \[
+        \lim\limits_{n\to\infty}x_n=\inf\{x_n:n\in\mathbb{N}\}.
+    \]
+
+\end{theorem}
+
+\begin{theorem}[闭区间套定理]
+    设闭区间列
+    \[
+        I_n=\lbrack a_n,b_n\rbrack
+    \]
+    满足
+    \[
+        I_1\supseteq I_2\supseteq\cdots\supseteq I_n\supseteq\cdots,
+    \]
+    则
+    \[
+        \bigcap\limits_{n=1}^{\infty}I_n\neq\varnothing.
+    \]
+    若进一步有
+    \[
+        b_n-a_n\longrightarrow0,
+    \]
+    则存在唯一的 $\xi\in\mathbb{R}$,使
+    \[
+        \bigcap\limits_{n=1}^{\infty}I_n=\{\xi\},
+    \]
+    且 $a_n\to\xi,b_n\to\xi$.
+\end{theorem}
+
+\begin{theorem}[Bolzano--Weierstrass 定理]
+    任意有界实数列都存在收敛子列.
+\end{theorem}
+
+\begin{theorem}[Cauchy 收敛准则]
+    实数列 $\{x_n\}$ 收敛的充分必要条件是:对任意 $\varepsilon>0$,存在正整数 $N$,使得当 $m,n>N$ 时,
+    \[
+        |x_n-x_m|<\varepsilon.
+    \]
+\end{theorem}
+
+\begin{theorem}[Heine--Borel 有限覆盖定理]
+    设开区间族 $\{O_\alpha\}$ 覆盖闭区间 $\lbrack a,b\rbrack$,即
+    \[
+        \lbrack a,b\rbrack
+        \subseteq
+        \bigcup\limits_{\alpha}O_\alpha.
+    \]
+    则其中必存在有限个开区间 $O_{\alpha_1},\ldots,O_{\alpha_m}$,仍能覆盖 $\lbrack a,b\rbrack$:
+    \[
+        \lbrack a,b\rbrack
+        \subseteq
+        \bigcup\limits_{i=1}^{m}O_{\alpha_i}.
+    \]
+\end{theorem}
 
 %例题2.3.1
 \begin{example}
@@ -1454,7 +1738,23 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 
 %例题2.3.4
 \begin{example}
-    设 $f(x)$ 在 $(a,b)$ 内有定义,对任意 $\xi\in(a,b)$,存在 $\delta>0$,当 $x\in(\xi-\delta,\xi+\delta)\cap(a,b)$ 时,有 $f(x)<f(\xi)$ 当 $x<\xi$ 时,$f(x)>f(\xi)$ 当 $x>\xi$ 时.求证:$f(x)$ 在 $(a,b)$ 内严格递增.
+    设 $f(x)$ 在 $(a,b)$ 内有定义.对任意 $\xi\in(a,b)$,存在
+    \[
+        0<\delta<\min\{\xi-a,b-\xi\},
+    \]
+    使得
+    \[
+        f(x)<f(\xi),
+        \qquad
+        \xi-\delta<x<\xi,
+    \]
+    且
+    \[
+        f(x)>f(\xi),
+        \qquad
+        \xi<x<\xi+\delta.
+    \]
+    求证:$f(x)$ 在 $(a,b)$ 内严格递增.
 \end{example}
 \exampleblank
 
@@ -1496,7 +1796,15 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 
 %例题2.3.5
 \begin{example}
-    设 $f(x)$ 在 $\lbrack 0,1\rbrack$ 上递增,$f(a)>a,f(b)>b$,证明:
+    设 $f(x)$ 在 $\lbrack0,1\rbrack$ 上递增,且
+    \[
+        0\leq a<b\leq1,
+        \qquad
+        f(a)>a,
+        \qquad
+        f(b)<b^2.
+    \]
+    证明:
     \begin{enumerate}
         \item 存在 $x_0\in(a,b)$,使得 $f(x_0)=x_0$;
         \item 存在 $x_1\in(a,b)$,使得 $f(x_1)=x_1^2$.
@@ -1505,84 +1813,288 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 \exampleblank
 
 \begin{solution}
-    本题按原始 PDF 与当前源码的现有题面不成立.取
-    \[
-        f(x)=x+1,
-        \qquad
-        x\in\lbrack0,1\rbrack,
-    \]
-    并取任意 $0<a<b<1$,则 $f$ 递增,且
-    \[
-        f(a)>a,
-        \qquad
-        f(b)>b.
-    \]
-    但是对 $x\in(a,b)$,既有 $f(x)=x+1\neq x$,又因 $x^2\leq x<x+1$ 而有 $f(x)\neq x^2$.因此第 (1),(2) 问的结论均不能由当前条件推出,需核对题设中的第二个边界不等式或函数取值范围.
+    \begin{enumerate}
+        \item 由于 $0\leq b\leq1$,有 $b^2\leq b$,故
+              \[
+                  f(a)>a,
+                  \qquad
+                  f(b)<b.
+              \]
+              令
+              \[
+                  E=\{x\in\lbrack a,b\rbrack\mid f(x)>x\}.
+              \]
+              则 $a\in E$,而 $b\notin E$.由确界存在定理,可令
+              \[
+                  x_0=\sup E.
+              \]
+              先说明 $x_0\in(a,b)$.由 $f(a)>a$,可取 $y\in(a,b)$ 且充分接近 $a$,使 $y<f(a)$.由递增性,
+              \[
+                  f(y)\geq f(a)>y,
+              \]
+              故 $y\in E$,从而 $x_0>a$.若 $x_0=b$,由 $f(b)<b$,可取 $x<b$ 且充分接近 $b$,使 $x>f(b)$.由递增性,
+              \[
+                  f(x)\leq f(b)<x,
+              \]
+              这与 $x_0=b=\sup E$ 矛盾.故 $x_0<b$.
+
+              若 $f(x_0)>x_0$,取 $y>x_0$ 且充分接近 $x_0$,使
+              \[
+                  y<f(x_0).
+              \]
+              由递增性,
+              \[
+                  f(y)\geq f(x_0)>y,
+              \]
+              从而 $y\in E$,与 $x_0=\sup E$ 矛盾.故
+              \[
+                  f(x_0)\leq x_0.
+              \]
+
+              若 $f(x_0)<x_0$,则可取 $\eta>0$,使
+              \[
+                  f(x_0)<x_0-\eta.
+              \]
+              对任意 $x\in(x_0-\eta,x_0)$,由递增性,
+              \[
+                  f(x)\leq f(x_0)<x_0-\eta<x,
+              \]
+              因而 $(x_0-\eta,x_0)\cap E=\varnothing$,这与 $x_0=\sup E$ 矛盾.故
+              \[
+                  f(x_0)\geq x_0.
+              \]
+              因此
+              \[
+                  f(x_0)=x_0.
+              \]
+
+        \item 由 $f(a)>a\geq0$ 及 $f$ 递增,可知 $f(x)>0$ 对所有 $x\in\lbrack a,b\rbrack$ 成立.令
+              \[
+                  g(x)=\sqrt{f(x)}.
+              \]
+              则 $g$ 在 $\lbrack a,b\rbrack$ 上递增.又因为 $0\leq a<b\leq1$,
+              \[
+                  f(a)>a\geq a^2,
+              \]
+              故
+              \[
+                  g(a)>a.
+              \]
+              同时由 $f(b)<b^2$ 得
+              \[
+                  g(b)<b.
+              \]
+              对 $g$ 重复第 (1) 问的确界论证,存在 $x_1\in(a,b)$,使
+              \[
+                  g(x_1)=x_1.
+              \]
+              即
+              \[
+                  f(x_1)=x_1^2.
+              \]
+    \end{enumerate}
 \end{solution}
 
 %例题2.3.6
 \begin{example}
-    设定义在 $\lbrack 0,1\rbrack$ 上的 $f(x),g(x)$ 满足
+    设定义在 $\lbrack0,1\rbrack$ 上的 $f(x),g(x)$ 满足
     \[
-        f(0)>0,\qquad f(1)<1,\qquad g\in C(\lbrack 0,1\rbrack).
+        f(0)>0,
+        \qquad
+        f(1)<0,
+        \qquad
+        g\in C(\lbrack0,1\rbrack).
     \]
-    若 $f+g$ 在 $\lbrack 0,1\rbrack$ 上递增,则存在 $\xi\in\lbrack 0,1\rbrack$,使得 $f(\xi)=0$.
+    若 $f+g$ 在 $\lbrack0,1\rbrack$ 上递增,则存在 $\xi\in(0,1)$,使得
+    \[
+        f(\xi)=0.
+    \]
 \end{example}
 \exampleblank
 
 \begin{solution}
-    本题按原始 PDF 与当前源码的现有题面不成立.例如取
+    记
     \[
-        f(x)=\dfrac{1}{2},
-        \qquad
-        g(x)=x,
-        \qquad
-        x\in\lbrack0,1\rbrack.
+        h(x)=f(x)+g(x).
     \]
-    则
+    则 $h$ 在 $\lbrack0,1\rbrack$ 上递增.令
     \[
-        f(0)>0,
-        \qquad
-        f(1)<1,
+        E=\{x\in\lbrack0,1\rbrack\mid f(x)>0\}.
     \]
-    $g$ 连续,且 $f+g=x+\dfrac{1}{2}$ 严格递增;但 $f(x)$ 在 $\lbrack0,1\rbrack$ 上恒不为 $0$.因此需要核对原题缺失的条件或结论.
+    由 $f(0)>0$,知 $E\neq\varnothing$;由 $f(1)<0$,知 $1\notin E$.
+
+    先说明 $E$ 中有正数.由 $g$ 在 $0$ 点连续,当 $x>0$ 且充分小时,
+    \[
+        g(x)-g(0)<f(0).
+    \]
+    又由 $h(x)\geq h(0)$,
+    \[
+        f(x)
+        =h(x)-g(x)
+        \geq h(0)-g(x)
+        =f(0)+g(0)-g(x)>0.
+    \]
+    因此 $\sup E>0$.
+
+    同理,由 $g$ 在 $1$ 点连续,当 $x<1$ 且充分接近 $1$ 时,
+    \[
+        g(1)-g(x)<-f(1).
+    \]
+    又由 $h(x)\leq h(1)$,
+    \[
+        f(x)
+        =h(x)-g(x)
+        \leq h(1)-g(x)
+        =f(1)+g(1)-g(x)<0.
+    \]
+    因而 $E$ 与 $1$ 之间存在正距离,故 $\sup E<1$.
+
+    由确界存在定理,令
+    \[
+        \xi=\sup E,
+        \qquad
+        0<\xi<1.
+    \]
+    由 $\xi=\sup E$,可取数列 $\{x_n\}\subseteq E$,使
+    \[
+        x_n\leq\xi,
+        \qquad
+        x_n\to\xi.
+    \]
+    由于 $h$ 递增,
+    \[
+        h(\xi)\geq h(x_n),
+    \]
+    从而
+    \[
+        f(\xi)
+        \geq f(x_n)+g(x_n)-g(\xi).
+    \]
+    由 $f(x_n)>0$ 及 $g(x_n)\to g(\xi)$,可得
+    \[
+        f(\xi)\geq0.
+    \]
+
+    若 $f(\xi)>0$,由 $g$ 在 $\xi$ 点连续,可取 $y>\xi$ 且充分接近 $\xi$,使
+    \[
+        g(y)-g(\xi)<f(\xi).
+    \]
+    又因 $h(y)\geq h(\xi)$,
+    \[
+        f(y)
+        =h(y)-g(y)
+        \geq h(\xi)-g(y)
+        =f(\xi)+g(\xi)-g(y)>0.
+    \]
+    于是 $y\in E$,与 $\xi=\sup E$ 矛盾.故
+    \[
+        f(\xi)\leq0.
+    \]
+    因此
+    \[
+        f(\xi)=0.
+    \]
 \end{solution}
 
 %例题2.3.7
 \begin{example}
-    设定义在 $(-\infty,+\infty)$ 上的 $f(x)$ 满足:对任意 $x_0\in(-\infty,+\infty)$,存在 $\delta>0$,使得
+    设定义在 $(-\infty,+\infty)$ 上的 $f(x)$ 满足:对任意 $x_0\in\mathbb{R}$,存在 $\delta>0$,使得
     \[
-        f(x_0)\geq f(x),
-        \qquad x\in(x_0-\delta,x_0+\delta).
+        f(x)\leq f(x_0),
+        \qquad
+        x\in(x_0-\delta,x_0+\delta).
     \]
-    证明:存在区间 $I$,使得 $f(x)$ 在 $I$ 上是常数.
+    证明:存在 $u<v$,使得 $f(x)$ 在 $\lbrack u,v\rbrack$ 上为常数.
 \end{example}
 \exampleblank
 
 \begin{solution}
-    题设说明 $f$ 在每一点 $x_0$ 都满足:某邻域内 $f(x)\leq f(x_0)$.因此 $f$ 是上半连续函数.
+    先证明 $f$ 在任意非退化闭区间上都能取得最大值.任取闭区间
+    \[
+        K=\lbrack\alpha,\beta\rbrack,
+        \qquad
+        \alpha<\beta.
+    \]
+    对每个 $x\in K$,由题设可取开区间
+    \[
+        U_x=(x-\delta_x,x+\delta_x),
+    \]
+    使得
+    \[
+        f(y)\leq f(x),
+        \qquad
+        y\in U_x.
+    \]
+    开区间族 $\{U_x\}_{x\in K}$ 覆盖 $K$.由 Heine--Borel 有限覆盖定理,可从中取出有限个
+    \[
+        U_{x_1},U_{x_2},\ldots,U_{x_m}
+    \]
+    仍覆盖 $K$.令
+    \[
+        M=\max\{f(x_1),f(x_2),\ldots,f(x_m)\}.
+    \]
+    对任意 $y\in K$,存在某个 $i$ 使 $y\in U_{x_i}$,故
+    \[
+        f(y)\leq f(x_i)\leq M.
+    \]
+    又 $M=f(x_j)$ 对某个 $j$ 成立,因此 $f$ 在 $K$ 上取得最大值.
 
-    任取一个非退化闭区间 $K_0$.上半连续函数在紧区间上取得最大值.递归地,设已取非退化闭区间 $K_n$,记
+    下面使用闭区间套.任取非退化闭区间 $K_0$.设已经取到非退化闭区间 $K_n$.由上面的结论,$f$ 在 $K_n$ 上取得最大值,记
     \[
         M_n=\max\limits_{x\in K_n}f(x),
         \qquad
         A_n=\{x\in K_n\mid f(x)=M_n\}.
     \]
-    $A_n$ 是非空闭集.若 $A_n$ 含有非退化区间,则 $f$ 在该区间上恒等于 $M_n$,结论成立.
+    先说明 $A_n$ 为闭集.若
+    \[
+        x_j\in A_n,
+        \qquad
+        x_j\to x\in K_n,
+    \]
+    则由题设在 $x$ 点存在邻域 $U$,使 $f(y)\leq f(x)$ 对 $y\in U$ 成立.当 $j$ 充分大时,$x_j\in U$,故
+    \[
+        M_n=f(x_j)\leq f(x)\leq M_n.
+    \]
+    因而 $f(x)=M_n$,即 $x\in A_n$.故 $A_n$ 为闭集.
 
-    否则,$K_n\setminus A_n$ 是非空相对开集,可在其中选取非退化闭区间
-    $K_{n+1}$,并使
+    若 $A_n$ 含有非退化闭区间,则 $f$ 在该区间上恒等于 $M_n$,结论成立.
+
+    否则,$K_n\setminus A_n$ 是非空的相对开集,故可在其中选取非退化闭区间 $K_{n+1}$,使
     \[
         K_{n+1}\subseteq K_n\setminus A_n,
         \qquad
         |K_{n+1}|<\dfrac{1}{n+1}.
     \]
-    若上述过程永不终止,则闭区间套定理给出唯一一点
+    若这一过程永不终止,则得到闭区间套
+    \[
+        K_0\supseteq K_1\supseteq K_2\supseteq\cdots,
+        \qquad
+        |K_n|\longrightarrow0.
+    \]
+    由闭区间套定理,存在唯一的 $x_*$,使
     \[
         \{x_*\}=\bigcap\limits_{n=0}^{\infty}K_n.
     \]
-    由题设,存在 $x_*$ 的邻域 $U$,使 $f(x)\leq f(x_*)$ 对 $x\in U$ 成立.对充分大的 $n$,有 $K_n\subseteq U$,于是 $x_*$ 是 $f$ 在 $K_n$ 上的最大值点,即 $x_*\in A_n$.但同时
-    $x_*\in K_{n+1}\subseteq K_n\setminus A_n$,矛盾.
 
-    故递归必在有限步终止,从而存在非退化区间 $I$,使 $f$ 在 $I$ 上为常数.
+    由题设,存在 $x_*$ 的邻域 $U_*$,使
+    \[
+        f(x)\leq f(x_*),
+        \qquad
+        x\in U_*.
+    \]
+    由于 $|K_n|\to0$ 且 $x_*\in K_n$,当 $n$ 充分大时有
+    \[
+        K_n\subseteq U_*.
+    \]
+    因此 $x_*$ 是 $f$ 在 $K_n$ 上的最大值点,即
+    \[
+        x_*\in A_n.
+    \]
+    但另一方面,
+    \[
+        x_*\in K_{n+1}\subseteq K_n\setminus A_n,
+    \]
+    矛盾.
+
+    因此上述递归必在有限步终止,从而存在 $u<v$,使 $f$ 在 $\lbrack u,v\rbrack$ 上为常数.
 \end{solution}
