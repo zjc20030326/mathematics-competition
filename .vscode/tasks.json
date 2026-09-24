@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "编译当前章节普通版",
+      "type": "process",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-Command",
+        "$base='${fileBasenameNoExtension}'; if ($base -notmatch '_内容$') { Write-Error '当前文件不是 *_内容.tex，取消编译'; exit 1 }; $target=($base -replace '_内容$','')+'.tex'; Write-Host ('编译: '+$target); & latexmk -xelatex -synctex=1 -interaction=nonstopmode -file-line-error $target; exit $LASTEXITCODE"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "编译当前章节答案版",
+      "type": "process",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-Command",
+        "$base='${fileBasenameNoExtension}'; if ($base -notmatch '_内容$') { Write-Error '当前文件不是 *_内容.tex，取消编译'; exit 1 }; $target=($base -replace '_内容$','')+'(答案版).tex'; Write-Host ('编译: '+$target); & latexmk -xelatex -synctex=1 -interaction=nonstopmode -file-line-error $target; exit $LASTEXITCODE"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": false
+      },
+      "problemMatcher": []
+    }
+  ]
+}

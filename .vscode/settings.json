@@ -1,0 +1,19 @@
+{
+  "latex-workshop.latex.autoClean.run": "never",
+
+  "files.exclude": {
+    "**/*.aux": true,
+    "**/*.bbl": true,
+    "**/*.bcf": true,
+    "**/*.blg": true,
+    "**/*.fdb_latexmk": true,
+    "**/*.fls": true,
+    "**/*.log": true,
+    "**/*.out": true,
+    "**/*.run.xml": true,
+    "**/*.toc": true,
+    "**/*.lof": true,
+    "**/*.lot": true,
+    "**/*.xdv": true
+  }
+}
