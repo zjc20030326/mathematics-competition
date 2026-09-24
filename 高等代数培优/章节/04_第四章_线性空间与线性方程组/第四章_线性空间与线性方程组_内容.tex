@@ -5,6 +5,7 @@
 
 \section{线性空间与向量组的线性相关性}
 
+%例题4.1.1
 \begin{example}[\markstar]
 若向量组 $\alpha_1,\alpha_2,\ldots,\alpha_m$ 线性无关,而
 $\beta,\alpha_1,\alpha_2,\ldots,\alpha_m$ 线性相关,证明:$\beta$ 可由
@@ -24,6 +25,7 @@ $\alpha_1,\ldots,\alpha_m$ 线性表示,且表示式唯一.
 若还有另一表示,两式相减即得到 $\alpha_1,\ldots,\alpha_m$ 的非平凡线性关系,故表示唯一.
 \end{solution}
 
+%例题4.1.2
 \begin{example}[\markstar]
 证明:若 $\alpha_1,\ldots,\alpha_r$ 线性相关,则
 $\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关.
@@ -34,6 +36,7 @@ $\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关.
 在 $\alpha_1,\ldots,\alpha_r$ 的非平凡线性关系后补零系数即可得到扩大向量组的非平凡线性关系.
 \end{solution}
 
+%例题4.1.3
 \begin{example}[\markstar]
 证明:若一组 $r$ 维向量线性无关,则给每个向量添加相同位置的 $n-r$ 个分量后所得的 $n$ 维向量组仍线性无关.
 \end{example}
@@ -47,6 +50,7 @@ $\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关.
 只看原来的前 $r$ 个分量,就有 $\sum_i c_i\alpha_i=0$.原向量组线性无关,故所有 $c_i=0$.
 \end{solution}
 
+%例题4.1.4
 \begin{example}
 设 $\alpha_1,\ldots,\alpha_m$ 线性无关,$\beta_1$ 可由它们线性表示,而 $\beta_2$ 不能由它们线性表示.证明:对任意常数 $l$,
 \[
@@ -60,6 +64,7 @@ $\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关.
 若该组线性相关,则因 $\alpha_1,\ldots,\alpha_m$ 线性无关,最后一个向量必可由它们线性表示.又 $l\beta_1$ 已可由它们表示,因此 $\beta_2$ 也可由它们表示,矛盾.
 \end{solution}
 
+%例题4.1.5
 \begin{example}
 设 $\alpha_1,\ldots,\alpha_m$ 线性无关,而 $\alpha_2,\ldots,\alpha_{m+1}$ 线性相关.证明:$\alpha_1$ 不能由 $\alpha_2,\ldots,\alpha_{m+1}$ 线性表出.
 \end{example}
@@ -69,6 +74,7 @@ $\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关.
 若 $\alpha_1$ 可由 $\alpha_2,\ldots,\alpha_{m+1}$ 表出,而 $\alpha_2,\ldots,\alpha_{m+1}$ 线性相关,则去掉其中一个可由其余向量表示的向量,可推出 $\alpha_1,\ldots,\alpha_m$ 线性相关,矛盾.等价地,也可将两条线性关系消元得到 $\alpha_1,\ldots,\alpha_m$ 的非平凡关系.
 \end{solution}
 
+%例题4.1.6
 \begin{example}
 设 $\alpha_1,\ldots,\alpha_s$ 线性无关.判断
 \[
@@ -93,6 +99,7 @@ $\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关.
 \]
 \end{solution}
 
+%例题4.1.7
 \begin{example}[\markstar]
 设 $\alpha_1,\ldots,\alpha_r$ 线性无关,且
 \[
@@ -111,6 +118,7 @@ $\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关.
 因 $\alpha_j$ 线性无关,左端为零当且仅当 $K^{\mathsf T}c=0$.存在非零 $c$ 当且仅当 $K$ 不可逆.
 \end{solution}
 
+%例题4.1.8
 \begin{example}[\markstar]
 设 $\alpha_1,\ldots,\alpha_m$ 线性无关,
 \[
@@ -128,6 +136,7 @@ $\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关.
 因 $\alpha_j$ 线性无关而为单射.$\beta_i$ 的坐标行正是 $A$ 的各行,因此这些向量之间的线性关系与 $A$ 的行向量之间的线性关系完全一致,故秩相等.
 \end{solution}
 
+%例题4.1.9
 \begin{example}
 设 $\alpha_1,\ldots,\alpha_s,\beta$ 为 $s+1$ 个向量,$s>1$,且
 \[
@@ -167,6 +176,7 @@ $\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关.
 等价向量组具有相同的秩;任一向量组的任意两个极大无关组所含向量个数相同.
 \end{corollary}
 
+%例题4.1.10
 \begin{example}[\markstar]
 设 $\alpha_1,\ldots,\alpha_s$ 线性无关,并且可由 $\beta_1,\ldots,\beta_t$ 线性表示.证明:必存在某个 $\beta_j$,使
 \[
@@ -180,6 +190,7 @@ $\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关.
 若对所有 $j$,$\beta_j,\alpha_2,\ldots,\alpha_s$ 都线性相关,则每个 $\beta_j$ 都可由 $\alpha_2,\ldots,\alpha_s$ 线性表示.于是由 $\beta_j$ 可表示的 $\alpha_1$ 也可由 $\alpha_2,\ldots,\alpha_s$ 表示,矛盾.
 \end{solution}
 
+%例题4.1.11
 \begin{example}
 设 $A=(\alpha_1,\ldots,\alpha_r)$ 为 $n\times r$ 矩阵,$B=(\beta_1,\ldots,\beta_s)$ 为 $n\times s$ 矩阵,且 $r(A)=r,r(B)=s$.证明:若 $r+s>n$,则存在非零向量 $\xi$,既可由 $\alpha_i$ 线性表示,也可由 $\beta_j$ 线性表示.
 \end{example}
@@ -194,6 +205,7 @@ $\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关.
 故 $U\cap W$ 中存在非零向量 $\xi$.
 \end{solution}
 
+%例题4.1.12
 \begin{example}
 设
 \[
@@ -218,6 +230,7 @@ V=\{(a+ib,c+id)\mid a,b,c,d\in\mathbb{R}\}.
 \]
 \end{solution}
 
+%例题4.1.13
 \begin{example}
 设 $V_1,V_2$ 是数域 $P$ 上的线性空间,在 $V_1\times V_2$ 上按分量定义加法与数乘.证明它构成线性空间;若 $\dim V_1=m,\dim V_2=n$,求 $\dim(V_1\times V_2)$.
 \end{example}
@@ -234,6 +247,7 @@ V=\{(a+ib,c+id)\mid a,b,c,d\in\mathbb{R}\}.
 \]
 \end{solution}
 
+%例题4.1.14
 \begin{example}
 在二维实向量集合 $V$ 上规定
 \[
@@ -275,6 +289,7 @@ k\circ(a,b)=\left(ka,kb+\dfrac{k(k-1)}{2}a^2\right).
 \]
 \end{solution}
 
+%例题4.1.15
 \begin{example}
 已知
 \[
@@ -319,6 +334,7 @@ k\circ(a,b)=\left(ka,kb+\dfrac{k(k-1)}{2}a^2\right).
 \]
 \end{solution}
 
+%例题4.1.16
 \begin{example}
 设
 \[
@@ -344,6 +360,7 @@ W=\{f(x)\in\mathbb{R}[x]_n\mid f(1)=0\},
 \]
 \end{solution}
 
+%例题4.1.17
 \begin{example}
 设 $M_n(K)$ 为数域 $K$ 上的 $n$ 阶方阵空间,$U$ 为全体循环矩阵组成的集合.证明 $U$ 是 $M_n(K)$ 的子空间,并求一组基和维数.
 \end{example}
@@ -364,6 +381,7 @@ W=\{f(x)\in\mathbb{R}[x]_n\mid f(1)=0\},
 \]
 \end{solution}
 
+%例题4.1.18
 \begin{example}
 设 $A=J_n(\lambda)$ 为一个 $n$ 阶 Jordan 块,
 \[
@@ -401,6 +419,7 @@ V=\{B\in M_n(\mathbb{R})\mid BA=AB\}.
 初等行变换不改变列向量之间的线性关系,因此也可据此求向量的线性表示坐标.极大无关组通常不唯一.
 \end{remark}
 
+%例题4.2.1
 \begin{example}
 求下列向量组的秩,并给出一个极大无关组:
 \begin{enumerate}
@@ -423,6 +442,7 @@ V=\{B\in M_n(\mathbb{R})\mid BA=AB\}.
 对应原向量即为所求极大无关组.
 \end{solution}
 
+%例题4.2.2
 \begin{example}
 设向量组
 \[
@@ -518,6 +538,7 @@ V=\{B\in M_n(\mathbb{R})\mid BA=AB\}.
 \]
 \end{proposition}
 
+%例题4.2.3
 \begin{example}
 设 $A_{m\times n},B_{s\times n}$,证明
 \[
@@ -535,6 +556,7 @@ V=\{B\in M_n(\mathbb{R})\mid BA=AB\}.
 \]
 \end{solution}
 
+%例题4.2.4
 \begin{example}
 设 $A_{m\times n},B_{m\times s}$,证明
 \[
@@ -550,6 +572,7 @@ V=\{B\in M_n(\mathbb{R})\mid BA=AB\}.
 \]
 \end{solution}
 
+%例题4.2.5
 \begin{example}
 设 $A,B$ 为 $n$ 阶幂等矩阵,且 $E-A-B$ 可逆.证明
 \[
@@ -573,6 +596,7 @@ V=\{B\in M_n(\mathbb{R})\mid BA=AB\}.
 \]
 \end{solution}
 
+%例题4.2.6
 \begin{example}
 设 $A,B$ 为 $n$ 阶方阵,证明
 \[
@@ -594,6 +618,7 @@ V=\{B\in M_n(\mathbb{R})\mid BA=AB\}.
 \]
 \end{solution}
 
+%例题4.2.7
 \begin{example}
 设 $A,B$ 为 $n$ 阶方阵,证明:
 \begin{enumerate}
@@ -633,6 +658,7 @@ V=\{B\in M_n(\mathbb{R})\mid BA=AB\}.
 \]
 \end{solution}
 
+%例题4.2.8
 \begin{example}
 设 $A,D$ 分别为 $m,n$ 阶可逆矩阵,$B,C$ 分别为 $m\times n,n\times m$ 矩阵.证明
 \[
@@ -666,6 +692,7 @@ V=\{B\in M_n(\mathbb{R})\mid BA=AB\}.
 \]
 \end{corollary}
 
+%例题4.2.9
 \begin{example}[\markstar]
 设 $A$ 为 $m\times n$ 矩阵,$B$ 为 $n\times s$ 矩阵,且
 \[
@@ -697,6 +724,7 @@ $A$ 在 $\operatorname{Im}(BC)$ 上仍单射,故
 \]
 \end{proposition}
 
+%例题4.2.10
 \begin{example}
 设 $A$ 为 $n$ 阶实方阵,满足
 \[
@@ -723,6 +751,7 @@ $A$ 在 $\operatorname{Im}(BC)$ 上仍单射,故
 而 $y\in\operatorname{Im}(E-Q)\cap\ker(E-Q)$,故 $y=0$.于是 $(E-Q)x=0$,两核相同,因此两矩阵秩相同.
 \end{solution}
 
+%例题4.2.11
 \begin{example}
 \begin{enumerate}
   \item 设 $A,B$ 都是 $n$ 阶方阵且 $AB=O$,证明
@@ -764,6 +793,7 @@ $A$ 在 $\operatorname{Im}(BC)$ 上仍单射,故
 \]
 \end{solution}
 
+%例题4.2.12
 \begin{example}[\markstar\ Sylvester 不等式]
 设 $A_{m\times n},B_{n\times s}$,证明
 \[
@@ -790,6 +820,7 @@ $A$ 在 $\operatorname{Im}(BC)$ 上仍单射,故
 \]
 \end{solution}
 
+%例题4.2.13
 \begin{example}[\markstar\ Frobenius 不等式]
 设 $A_{m\times n},B_{n\times s},C_{s\times t}$,证明
 \[
@@ -818,6 +849,7 @@ $A$ 在 $\operatorname{Im}(BC)$ 上仍单射,故
 \]
 \end{solution}
 
+%例题4.2.14
 \begin{example}
 设 $A$ 为 $n$ 阶方阵,证明:
 \begin{enumerate}
@@ -853,6 +885,7 @@ $A$ 在 $\operatorname{Im}(BC)$ 上仍单射,故
 知秩和至少为 $n$;若 $A(E-A)=O$ 则至多为 $n$.反过来若秩和恰为 $n$,两像空间交为零,而 $A(E-A)$ 的像属于二者之交,故 $A(E-A)=O$,即 $A^2=A$.
 \end{solution}
 
+%例题4.2.15
 \begin{example}
 设 $A^3=E$,证明
 \[
@@ -915,6 +948,7 @@ $A$ 在 $\operatorname{Im}(BC)$ 上仍单射,故
 转置后得到行满秩矩阵的对应结论.
 \end{theorem}
 
+%例题4.2.16
 \begin{example}
 设 $A_{3\times2},B_{2\times3}$,且
 \[
@@ -956,6 +990,7 @@ AB=
 \]
 \end{solution}
 
+%例题4.2.17
 \begin{example}
 设 $A$ 为 $n\times m$ 实矩阵,$r(A)=m$,$n\geq m$,且
 \[
@@ -995,6 +1030,7 @@ AB=
 \end{enumerate}
 \end{theorem}
 
+%例题4.2.18
 \begin{example}
 设 $A$ 为 $n$ 阶不可逆矩阵,$A^*$ 为伴随矩阵,且
 \[
@@ -1018,6 +1054,7 @@ AB=
 \]
 \end{solution}
 
+%例题4.2.19
 \begin{example}
 设 $A$ 为二阶方阵,且存在正整数 $k\geq2$ 使
 \[
@@ -1078,6 +1115,7 @@ V_1\oplus V_2
 这里``数域''按通常高等代数约定为特征零的无限域.对有限域,该结论一般不成立.
 \end{remark}
 
+%例题4.3.1
 \begin{example}
 设 $\alpha_1,\ldots,\alpha_r$ 与 $\beta_1,\ldots,\beta_s$ 分别是 $K^n$ 中的线性无关向量组.证明:
 \[
@@ -1100,6 +1138,7 @@ L(\alpha_1,\ldots,\alpha_r)\cap L(\beta_1,\ldots,\beta_s)
 所得向量属于两子空间之交.由于两组向量各自线性无关,该映射既单射又满射,因此解空间与交空间线性同构,维数相同.
 \end{solution}
 
+%例题4.3.2
 \begin{example}
 在 $\mathbb{R}^4$ 中,令
 \[
@@ -1141,6 +1180,7 @@ V_1\cap V_2=L((-5,2,3,4)).
 \]
 \end{solution}
 
+%例题4.3.3
 \begin{example}
 设 $M_2(K)$ 的子空间
 \[
@@ -1172,6 +1212,7 @@ B_2=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
 并且 $A_1,A_2,B_1,B_2$ 就是和空间的一组基.
 \end{solution}
 
+%例题4.3.4
 \begin{example}
 设 $W$ 为 $\mathbb{R}^n$ 的子空间,且 $W$ 中每个非零向量的零分量个数不超过 $r$.证明
 \[
@@ -1184,6 +1225,7 @@ B_2=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
 若 $\dim W\geq r+2$,任选 $r+1$ 个坐标位置,令这些坐标都等于零,相当于在 $W$ 上施加至多 $r+1$ 个齐次线性条件.由于 $\dim W>r+1$,必存在非零解,即存在 $W$ 中非零向量至少有 $r+1$ 个零分量,矛盾.
 \end{solution}
 
+%例题4.3.5
 \begin{example}
 证明:子空间 $L_1,L_2$ 的和 $S=L_1+L_2$ 是直和,当且仅当至少存在一个向量 $x\in S$ 能唯一写成
 \[
@@ -1202,6 +1244,7 @@ x=(x_1+u)+(x_2-u),
 且两项仍分别属于 $L_1,L_2$,所以没有任何向量的分解是唯一的.故只要存在一个唯一分解,就必有交为零.
 \end{solution}
 
+%例题4.3.6
 \begin{example}
 设 $W,W_1,W_2$ 都是 $V$ 的子空间,$W_1\subseteq W$,且
 \[
@@ -1222,6 +1265,7 @@ W=W_1\oplus(W\cap W_2),
 取维数即得结论.
 \end{solution}
 
+%例题4.3.7
 \begin{example}
 设 $V$ 为 $n$ 维线性空间,$V_1$ 为其子空间,且
 \[
@@ -1259,6 +1303,7 @@ W_2=L(f_1+e_1,\ldots,f_m+e_m).
 故不可能交为零.
 \end{solution}
 
+%例题4.3.8
 \begin{example}
 设 $A,B,C,D$ 为两两可交换的 $n$ 阶矩阵,满足
 \[
@@ -1289,6 +1334,7 @@ y=(AC+BD)y=0.
 故交为零.
 \end{solution}
 
+%例题4.3.9
 \begin{example}[\markstar]
 设 $M\in P^{n\times n}$,$f,g\in P[x]$ 且 $(f,g)=1$.令
 \[
@@ -1313,6 +1359,7 @@ x=u(M)Ax+v(M)Bx,
 其中两项分别属于 $W_2,W_1$,且交空间为零,故结论成立.
 \end{solution}
 
+%例题4.3.10
 \begin{example}
 设 $m<n$,$A\in P^{m\times n}$,$B\in P^{(n-m)\times n}$.令 $V_1,V_2$ 分别为 $Ax=0,Bx=0$ 的解空间.证明
 \[
@@ -1345,6 +1392,7 @@ r(A)\leq m,\qquad r(B)\leq n-m,
 反之若 $P^n=V_1\oplus V_2$,则交为零,因此块方程只有零解.
 \end{solution}
 
+%例题4.3.11
 \begin{example}[\markstar]
 设 $V$ 为数域 $F$ 上全体 $n$ 阶对称矩阵组成的线性空间,
 \[
@@ -1389,6 +1437,7 @@ A=
 \]
 \end{solution}
 
+%例题4.3.12
 \begin{example}[\markstar]
 设 $\mathfrak s$ 是 $M_n(F)$ 中由所有交换子
 \[
@@ -1425,6 +1474,7 @@ E_{ii}-E_{nn}=[E_{in},E_{ni}].
 \]
 \end{solution}
 
+%例题4.3.13
 \begin{example}[\markstar]
 设 $\mathfrak{gl}(n,F)=M_n(F)$,定义
 \[
@@ -1470,6 +1520,7 @@ A=
 第四问由上一题中基向量均可写成交换子立即得到.
 \end{solution}
 
+%例题4.3.14
 \begin{example}
 设 $W_1,\ldots,W_s$ 是 $V$ 的子空间.证明
 \[
@@ -1498,6 +1549,7 @@ w_s\in W_s\cap(W_1+\cdots+W_{s-1})=\{0\}.
 依次倒推得到所有 $w_i=0$,故分解唯一,即为直和.
 \end{solution}
 
+%例题4.3.15
 \begin{example}
 设 $U_1,U_2$ 是 $n$ 维空间 $V$ 的子空间,且
 \[
@@ -1521,6 +1573,7 @@ U_i+L(w_1,\ldots,w_k)
 最后令 $W=L(w_1,\ldots,w_{n-m})$.构造保证 $w_i$ 线性无关,且 $W$ 与两个 $U_i$ 的交都为零.
 \end{solution}
 
+%例题4.3.16
 \begin{example}
 证明:$V$ 的两个子空间 $V_1,V_2$ 的并集 $V_1\cup V_2$ 是子空间,当且仅当
 \[
@@ -1541,6 +1594,7 @@ y\in V_2\setminus V_1.
 若并集是子空间,则 $x+y\in V_1\cup V_2$.若 $x+y\in V_1$,则 $y=(x+y)-x\in V_1$,矛盾;另一种情形同理.
 \end{solution}
 
+%例题4.3.17
 \begin{example}
 设 $V$ 为数域 $K$ 上的 $n$ 维线性空间.证明:对任意自然数 $m>n$,存在 $V$ 中 $m$ 个向量,使其中任意 $n$ 个都构成 $V$ 的一组基.
 \end{example}
@@ -1576,6 +1630,7 @@ x=k_1\xi_1+\cdots+k_{n-r}\xi_{n-r}.
 \]
 \end{theorem}
 
+%例题4.4.1
 \begin{example}
 求 $\lambda$,使齐次方程组
 \[
@@ -1614,6 +1669,7 @@ x=t(-1,2,1)^{\mathsf T}.
 \]
 \end{solution}
 
+%例题4.4.2
 \begin{example}
 设齐次方程组
 \[
@@ -1660,6 +1716,7 @@ bc-ad-e=0.
 \]
 \end{solution}
 
+%例题4.4.3
 \begin{example}
 设四元齐次方程组 $(I)$ 为
 \[
@@ -1701,6 +1758,7 @@ L((-1,1,1,1)^{\mathsf T}).
 \]
 \end{solution}
 
+%例题4.4.4
 \begin{example}
 设四元齐次方程组 $(I)$ 为
 \[
@@ -1743,6 +1801,7 @@ $(I)$ 的基础解系可取
 \]
 \end{solution}
 
+%例题4.4.5
 \begin{example}
 已知齐次方程组
 \[
@@ -1790,6 +1849,7 @@ L((-1,-1,1)^{\mathsf T}).
 \]
 \end{solution}
 
+%例题4.4.6
 \begin{example}
 已知齐次线性方程组
 \[
@@ -1847,6 +1907,7 @@ A\boldsymbol{1}=0,
 \]
 \end{solution}
 
+%例题4.4.7
 \begin{example}
 设 $A,B$ 为 $n$ 阶方阵,且
 \[
@@ -1869,6 +1930,7 @@ r(A)+r(B)<n.
 故存在非零公共解.
 \end{solution}
 
+%例题4.4.8
 \begin{example}
 设 $AB=BA$,证明
 \[
@@ -1897,6 +1959,7 @@ r(A+B)
 \]
 \end{solution}
 
+%例题4.4.9
 \begin{example}
 设 $\eta_1,\ldots,\eta_{n-r}$ 是 $Ax=0$ 的基础解系,
 \[
@@ -1921,6 +1984,7 @@ $AC=O$ 表明 $C$ 的每一列都属于 $\ker A$.由于 $B$ 的列向量是 $\ke
 \end{enumerate}
 \end{proposition}
 
+%例题4.4.10
 \begin{example}
 设 $V_0=\ker(AB)$,求
 \[
@@ -1947,6 +2011,7 @@ V_0\cap\ker B=\ker B,
 \]
 \end{solution}
 
+%例题4.4.11
 \begin{example}
 设
 \[
@@ -1990,6 +2055,7 @@ P^n=V_1\oplus V_2,
 此时因 $A$ 的 $n$ 行线性无关,自然有 $r(A_1)=k,r(A_2)=n-k$,从而右端秩等式也成立.
 \end{solution}
 
+%例题4.4.12
 \begin{example}
 设 $A$ 为 $(n-1)\times n$ 矩阵,划去第 $j$ 列所得的 $(n-1)$ 阶子式为 $\mu_j$.证明:
 \begin{enumerate}
@@ -2013,6 +2079,7 @@ P^n=V_1\oplus V_2,
 若 $r(A)=n-1$,则至少有一个 $\mu_j\neq0$,所以 $\eta\neq0$;同时 $\ker A$ 为一维,故所有解都是 $\eta$ 的倍数.
 \end{solution}
 
+%例题4.4.13
 \begin{example}
 设 $A,B$ 都是数域 $F$ 上的 $(n-1)\times n$ 行满秩矩阵.记 $a_i,b_i$ 为分别划去第 $i$ 列所得的 $(n-1)$ 阶子式.若 $Ax=0$ 与 $Bx=0$ 同解,证明向量
 \[
@@ -2036,6 +2103,7 @@ P^n=V_1\oplus V_2,
 张成.两核相同且均为一维,因此两个向量成比例.消去相同的交替符号,即得 $(a_i)$ 与 $(b_i)$ 对应分量成比例.
 \end{solution}
 
+%例题4.4.14
 \begin{example}
 设 $(n-1)\times n$ 矩阵 $A$ 的每个行向量都满足
 \[
@@ -2101,6 +2169,7 @@ x=\eta_0+k_1\xi_1+\cdots+k_{n-r}\xi_{n-r}.
 \]
 \end{theorem}
 
+%例题4.4.15
 \begin{example}
 求解下列方程组:
 \begin{enumerate}
@@ -2173,6 +2242,7 @@ x_2+2x_3+2x_4+6x_5=5,\\
 \end{enumerate}
 \end{solution}
 
+%例题4.4.16
 \begin{example}
 设 $\alpha_1,\alpha_2,\alpha_3$ 是方程组
 \[
@@ -2199,6 +2269,7 @@ x-3y+z=2,\\2x+y+tz=-1,\\7x-2z=-1\end{cases}
 此时系数矩阵秩为 $2$,导出齐次方程组解空间维数为 $1$.任意两个特解之差都属于这一维空间,因此 $\alpha_1-\alpha_2$ 与 $\alpha_1-\alpha_3$ 必线性相关.
 \end{solution}
 
+%例题4.4.17
 \begin{example}
 讨论参数 $a,b$,使方程组
 \[
@@ -2257,6 +2328,7 @@ a x_1=\dfrac{4-b}{b+2}.
 其余 $a=0$ 的情形无解.
 \end{solution}
 
+%例题4.4.18
 \begin{example}
 设 $A$ 为三对角矩阵
 \[
@@ -2307,6 +2379,7 @@ x_2=1,\quad x_3=\cdots=x_n=0,
 \]
 \end{solution}
 
+%例题4.4.19
 \begin{example}
 讨论参数 $a,b$,使方程组
 \[
@@ -2352,6 +2425,7 @@ x_2+2x_3+2x_4+6x_5=3,\\
 \]
 \end{solution}
 
+%例题4.4.20
 \begin{example}
 已知
 \[
@@ -2396,6 +2470,7 @@ x_2+2x_3+2x_4+6x_5=3,\\
 \]
 \end{solution}
 
+%例题4.4.21
 \begin{example}
 设 $A=(\alpha_1,\ldots,\alpha_n)$ 的前 $n-1$ 个列向量线性相关,而后 $n-1$ 个列向量线性无关,令
 \[
@@ -2433,6 +2508,7 @@ A\boldsymbol{1}=\beta,
 \]
 \end{solution}
 
+%例题4.4.22
 \begin{example}
 设 $A=(A_1,\ldots,A_n)$,方程 $Ax=b$ 的通解为
 \[
@@ -2475,6 +2551,7 @@ Bx=A(Tx).
 \]
 \end{solution}
 
+%例题4.4.23
 \begin{example}
 设 $A$ 为 $n$ 阶方阵,$A^*=(A_{ij})$ 为伴随矩阵且 $A_{11}\neq0$,又设 $b\neq0$.证明:
 \[
@@ -2501,6 +2578,7 @@ A^*A=|A|E=O
 结合 $\operatorname{Im}A\subseteq\ker A^*$ 得二者相等,所以 $b\in\operatorname{Im}A$,方程有解;又 $\ker A$ 一维,故有无穷多解.
 \end{solution}
 
+%例题4.4.24
 \begin{example}
 设 $A$ 为 $n$ 阶方阵,$A^*$ 为伴随矩阵,且存在非零列向量 $\alpha$ 满足
 \[
@@ -2572,6 +2650,7 @@ A(t)=D+t(A-D),\qquad 0\leq t\leq1,
 
 \subsection{行(列)和相等}
 
+%例题4.4.25
 \begin{example}
 设 $A$ 为可逆矩阵,且每行元素之和均为 $a$.证明对任意正整数 $k$,$A^{-k}$ 的每行元素之和均为 $a^{-k}$.
 \end{example}
@@ -2593,6 +2672,7 @@ A^{-k}\boldsymbol{1}=a^{-k}\boldsymbol{1}.
 这正表示每行元素之和为 $a^{-k}$.
 \end{solution}
 
+%例题4.4.26
 \begin{example}
 设 $A$ 为行等和矩阵.证明:
 \begin{enumerate}
@@ -2614,6 +2694,7 @@ A^{-1}\boldsymbol{1}=a^{-1}\boldsymbol{1}.
 故结论成立.
 \end{solution}
 
+%例题4.4.27
 \begin{example}
 证明:若可逆矩阵 $A$ 的各行元素之和相等,则 $A$ 中各列元素的代数余子式之和也相等.
 \end{example}
@@ -2635,6 +2716,7 @@ A^*\boldsymbol{1}=|A|a^{-1}\boldsymbol{1}.
 $A^*$ 的第 $i$ 行正由 $A$ 的第 $i$ 列代数余子式组成,因此上式恰说明各列代数余子式之和相等.
 \end{solution}
 
+%例题4.4.28
 \begin{example}
 设 $A=(a_{ij})_{n\times n}$ 且每行元素之和为零,即
 \[
@@ -2718,6 +2800,7 @@ f_i(\alpha_j)=\delta_{ij},
 是自然同构.
 \end{theorem}
 
+%例题4.5.1
 \begin{example}
 设
 \[
@@ -2760,6 +2843,7 @@ f_3(x)&=-2x_1+2x_2+x_3.
 \]
 \end{solution}
 
+%例题4.5.2
 \begin{example}
 设 $a_1,\ldots,a_n\in\mathbb{R}$ 两两不同,令
 \[
@@ -2822,6 +2906,7 @@ f_i(x)
 显然 $\phi_i(f_j)=\delta_{ij}$.
 \end{solution}
 
+%例题4.5.3
 \begin{example}
 设 $V$ 为 $n$ 维线性空间.证明:$n$ 个线性函数 $f_1,\ldots,f_n$ 构成 $V^*$ 的一组基,当且仅当不存在非零向量 $x\in V$ 使
 \[
@@ -2916,6 +3001,7 @@ V_1/\ker\psi\cong\operatorname{Im}\psi,
 \]
 \end{theorem}
 
+%例题4.5.4
 \begin{example}
 设 $V$ 为数域 $F$ 上的线性空间,$W$ 为其子空间,$V^*$ 为对偶空间,
 \[
@@ -2941,6 +3027,7 @@ R(f)=f|_W.
 \]
 \end{solution}
 
+%例题4.5.5
 \begin{example}
 设
 \[
@@ -2986,6 +3073,7 @@ F[x]/U\cong F[x]/(x+3)
 \]
 \end{solution}
 
+%例题4.5.6
 \begin{example}
 设 $A,B$ 是有限维向量空间 $V$ 的两个子空间.
 \begin{enumerate}

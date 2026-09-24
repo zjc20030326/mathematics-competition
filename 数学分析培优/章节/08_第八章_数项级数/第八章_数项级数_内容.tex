@@ -23,6 +23,7 @@
 
 \subsection{裂项相消法}
 
+%例题8.1.1
 \begin{example}
     设 $0<x<1$,求如下级数之和:
     \[
@@ -45,6 +46,7 @@
     按当前题面,该和通常不能再化为初等闭式;上式即其 Lambert 级数表示.
 \end{solution}
 
+%例题8.1.2
 \begin{example}
     求下列级数之和:
     \begin{enumerate}
@@ -83,6 +85,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.1.3
 \begin{example}
     求下列级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 之和:
     \begin{enumerate}
@@ -127,6 +130,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.1.4
 \begin{example}
     已知级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n=A$,$\displaystyle\lim\limits_{n\to\infty}na_n=0$,求级数
     \[
@@ -149,6 +153,7 @@
     由 $na_n\to0$,右端趋于 $A$,故所求和为 $\boxed A$.
 \end{solution}
 
+%例题8.1.5
 \begin{example}
     设 $a_n>0$ 且 $\displaystyle\sum\limits_{n=1}^{\infty}a_n=S$,若记
     \[
@@ -173,6 +178,7 @@
     \]
 \end{solution}
 
+%例题8.1.6
 \begin{example}
     设数列 $\{a_n\}$ 满足
     \[
@@ -203,6 +209,7 @@
     而原题写的是 $\displaystyle \sum P_n=l$.例如取 $a_n=0$,则 $l=+\infty$,但左端为 $0$,右端为 $1$.故条件中的求和号应核对原始资料.
 \end{solution}
 
+%例题8.1.7
 \begin{example}
     设 $a_1>1$,$a_{n+1}=a_n^2-a_n+1$,则
     \[
@@ -233,6 +240,7 @@
 
 易知,若 $\{S_{2n}\}$ 与 $\{S_{2n+1}\}$ 有相同极限 $S$,则 $\displaystyle\lim\limits_{n\to\infty}S_n=S$.因此若通项 $a_n\to0$,则可由 $S_{2n}\to S$ 得到 $S_{2n+1}\to S$,进而 $\displaystyle\sum\limits_{n=1}^{\infty}a_n=S$.更一般地,若 $a_n\to0$ 且 $\{S_{pn}\}\to S$($p$ 是某个正整数),则 $\displaystyle\sum\limits_{n=1}^{\infty}a_n=S$.我们称这种方法为子列方法.
 
+%例题8.1.8
 \begin{example}
     计算
     \[
@@ -252,6 +260,7 @@
     由 $H_N=\ln N+\gamma+o(1)$,所求和为 $\boxed{\ln3}$.
 \end{solution}
 
+%例题8.1.9
 \begin{example}
     计算
     \[
@@ -270,6 +279,7 @@
     因此所求和为交错调和级数之和的一半,即 $\boxed{\dfrac{1}{2}\ln2}$.
 \end{solution}
 
+%例题8.1.10
 \begin{example}
     将级数 $\displaystyle1-\dfrac{1}{2}+\dfrac{1}{3}-\dfrac{1}{4}+\dfrac{1}{5}-\cdots$ 的各项重新安排,使先依次出现 $p$ 个正项,再出现 $q$ 个负项,然后如此交替.试证新级数的和为
     \[
@@ -298,6 +308,7 @@
     一个组内尚未取完的项总和趋于零,故所有部分和具有同一极限.
 \end{solution}
 
+%例题8.1.11
 \begin{example}
     证明:若删去调和级数中所有分母含有数字 $9$ 的项,则新级数收敛,且和小于 $80$.
 \end{example}
@@ -323,6 +334,7 @@
 
 \subsection{发散级数}
 
+%例题8.1.12
 \begin{example}
     试证明下列级数的发散性:
     \begin{enumerate}
@@ -355,6 +367,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.1.13
 \begin{example}
     设 $a_n>0$,$\displaystyle\sum\limits_{n=1}^{\infty}a_n=+\infty$,试证:
     \[
@@ -379,6 +392,7 @@
     故原级数发散.
 \end{solution}
 
+%例题8.1.14
 \begin{example}
     如果
     \[
@@ -400,6 +414,7 @@
     即可满足全部极限条件,但调和级数发散.
 \end{solution}
 
+%例题8.1.15
 \begin{example}
     设 $\{a_n\}$ 是递减正数列,且 $\displaystyle\sum\limits_{n=1}^{\infty}a_n=+\infty$,证明:
     \[
@@ -428,6 +443,7 @@
     \]
 \end{solution}
 
+%例题8.1.16
 \begin{example}
     证明下列级数发散:
     \begin{enumerate}
@@ -502,6 +518,7 @@
     因此定理 8.2.1及推论 8.2.1的核心在于利用不等式估计与已知敛散性的级数进而比较,这就要求不等式基础了.
 \end{remark}
 
+%例题8.2.1
 \begin{example}
     判断级数 $\displaystyle I=\sum\limits_{n=3}^{\infty}a_n$ 的敛散性:
     \begin{enumerate}
@@ -530,6 +547,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.2.2
 \begin{example}
     判断级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 的敛散性:
     \begin{enumerate}
@@ -559,6 +577,7 @@
     故通项与 $1/(\pi n)$ 等价,级数发散.
 \end{solution}
 
+%例题8.2.3
 \begin{example}
     试证明下列命题:
     \begin{enumerate}
@@ -590,6 +609,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.2.4
 \begin{example}
     设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 是正项发散级数,试判断下列级数的敛散性:
     \begin{enumerate}
@@ -613,6 +633,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.2.5
 \begin{example}
     设 $a_n\neq0$,且 $a_n\to a\neq0$,则
     \[
@@ -641,6 +662,7 @@
     有限个首项不影响敛散性,故两级数同敛散.原题下标需要核对.
 \end{solution}
 
+%例题8.2.6
 \begin{example}[\markstar\ Sapagof 判别法]
     设正数数列 $\{a_n\}$ 单调递减,则 $\displaystyle\lim\limits_{n\to\infty}a_n=0$ 的充分必要条件是正项级数
     \[
@@ -683,6 +705,7 @@
     由证明过程可知,任意正项级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$,当 $p>1$ 时,必有 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{S_n^p}$ 收敛.并且由上述命题,我们可知没有最小的发散级数,也没有最大的发散级数,因此没有所谓的``最完美''的判别法.
 \end{remark}
 
+%例题8.2.7
 \begin{example}[\markstar]
     证明如下问题:
     \begin{enumerate}
@@ -727,6 +750,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.2.8
 \begin{example}[\markstar]
     举例说明下列命题中的存在性:
     \begin{enumerate}
@@ -758,6 +782,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.2.9
 \begin{example}
     设 $0<p_1<p_2<\cdots<p_n<\cdots$,求证:
     \[
@@ -789,6 +814,7 @@
     事实上,必要性证明可舍去单调性条件.
 \end{remark}
 
+%例题8.2.10
 \begin{example}
     证明下列不等式:
     \begin{enumerate}
@@ -841,6 +867,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.2.11
 \begin{example}
     研究
     \[
@@ -858,6 +885,7 @@
     与 $p$ 级数比较可知原级数收敛.
 \end{solution}
 
+%例题8.2.12
 \begin{example}
     设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 为收敛的正项级数,求证:
     \[
@@ -884,6 +912,7 @@
     比较可知题中级数收敛.
 \end{solution}
 
+%例题8.2.13
 \begin{example}
     已知 $\varphi(x)$ 是 $(-\infty,+\infty)$ 上周期为 $1$ 的连续函数,满足 $\displaystyle\int_0^1\varphi(x)\,\mathrm{d}x=0$.设
     \[
@@ -910,6 +939,7 @@
     $\displaystyle \sum a_n^2$ 由 $\displaystyle \sum C^2/n^2$ 控制而收敛.
 \end{solution}
 
+%例题8.2.14
 \begin{example}[\markstar]
     设
     \[
@@ -936,6 +966,7 @@
     其中最后一步由部分和裂项后令上限趋于无穷得到.
 \end{solution}
 
+%例题8.2.15
 \begin{example}[\markstar]
     \begin{enumerate}
         \item 求证:当 $s>0$ 时,$\displaystyle\int_1^{+\infty}\dfrac{x-[x]}{x^{s+1}}\,\mathrm{d}x$ 收敛;
@@ -963,6 +994,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.2.16
 \begin{example}
     设 $k>0,a>0$,证明:
     \begin{enumerate}
@@ -992,6 +1024,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.2.17
 \begin{example}
     判别
     \[
@@ -1028,6 +1061,7 @@
     则当 $l>0$ 时,级数 $(A)$ 与 $(B)$ 同敛散.
 \end{theorem}
 
+%例题8.2.18
 \begin{example}
     判别级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 的敛散性:
     \begin{enumerate}
@@ -1060,6 +1094,7 @@
     $0<p\leq1$ 时发散.
 \end{solution}
 
+%例题8.2.19
 \begin{example}
     判断级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 的敛散性:
     \begin{enumerate}
@@ -1091,6 +1126,7 @@
     因此该级数发散;$p=0$ 时各项为零.
 \end{solution}
 
+%例题8.2.20
 \begin{example}
     设正数列 $\{a_n\}$ 满足
     \[
@@ -1153,6 +1189,7 @@
     反常积分亦有类似结论,甚至证明方法都完全相似.
 \end{remark}
 
+%例题8.2.21
 \begin{example}
     设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 是正项收敛级数,若 $\{na_n\}$ 为单调数列,则
     \[
@@ -1174,6 +1211,7 @@
     $b_n\ln n=na_n\ln n\to0$.
 \end{solution}
 
+%例题8.2.22
 \begin{example}
     判别下列级数的敛散性:
     \begin{enumerate}
@@ -1194,6 +1232,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.2.23
 \begin{example}
     试证明下列命题:
     \begin{enumerate}
@@ -1221,6 +1260,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.2.24
 \begin{example}[\markstar\ 推广的 Cauchy 凝聚定理]
     设 $\{a_n\}$ 是严格递减的正数列,若存在严格递增的正整数列 $\{m_k\}$ 和 $M>0$,使得
     \[
@@ -1265,6 +1305,7 @@
     \]
 \end{remark}
 
+%例题8.2.25
 \begin{example}
     试证明下列命题:
     \begin{enumerate}
@@ -1293,6 +1334,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.2.26
 \begin{example}
     设 $\{a_n\}$ 递减于零,若 $b_n=a_n-2a_{n+1}+a_{n+2}\geq0$($n\in\mathbb{N}$),则
     \[
@@ -1320,6 +1362,7 @@
 
 \methodsection{(B) 比式判别法}
 
+%例题8.2.27
 \begin{example}
     讨论级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 的敛散性:
     \begin{enumerate}
@@ -1345,6 +1388,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.2.28
 \begin{example}
     设 $a_1\geq a_2\geq\cdots\geq a_n\geq\cdots>0$,$\displaystyle\lim\limits_{n\to\infty}\dfrac{a_{2n}}{a_n}=\lambda$,则级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 在 $\lambda<\dfrac{1}{2}$ 时收敛,在 $\lambda>\dfrac{1}{2}$ 时发散.
 \end{example}
@@ -1359,6 +1403,7 @@
     故 $\lambda<1/2$ 时凝聚级数收敛,$\lambda>1/2$ 时发散.
 \end{solution}
 
+%例题8.2.29
 \begin{example}
     \begin{enumerate}
         \item 设 $a_n>0$,$\displaystyle\lim\limits_{n\to\infty}\dfrac{a_{2n}}{a_{2n-1}}=\alpha$,$\displaystyle\lim\limits_{n\to\infty}\dfrac{a_{2n+1}}{a_{2n}}=\beta$,若 $\alpha\beta<1$,则 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 收敛;
@@ -1384,6 +1429,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.2.30
 \begin{example}[\markstar\ 比式判别法推广]
     设 $a_n>0$,$k_0$ 是固定正整数,若
     \[
@@ -1397,6 +1443,7 @@
     将级数按模 $k_0$ 分为 $k_0$ 个子级数.对每个余数类,其相邻项之比均趋于 $\lambda$.若 $\lambda<1$,每个子级数均由比式判别收敛;若 $\lambda>1$,每个余数类上的项最终递增,原通项不能趋于零,故级数发散.
 \end{solution}
 
+%例题8.2.31
 \begin{example}
     设 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 是正项级数,若
     \[
@@ -1420,6 +1467,7 @@
     $-\ln\lambda<1$,即 $\lambda>e^{-1}$,则发散.
 \end{solution}
 
+%例题8.2.32
 \begin{example}
     判别下列级数的敛散性:
     \begin{enumerate}
@@ -1440,6 +1488,7 @@
 
 \methodsection{(C) 根式判别法}
 
+%例题8.2.33
 \begin{example}
     判别级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 的敛散性:
     \begin{enumerate}
@@ -1475,6 +1524,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.2.34
 \begin{example}
     设 $\{a_n\},\{b_n\}$ 为正数列,若有
     \[
@@ -1498,6 +1548,7 @@
 
 \methodsection{(D) Cauchy 积分判别法}
 
+%例题8.2.35
 \begin{example}
     证明下列命题:
     \begin{enumerate}
@@ -1530,6 +1581,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.2.36
 \begin{example}
     设
     \[
@@ -1557,6 +1609,7 @@
     单调有界性给出 $a_n\to l$,且 $1\leq l\leq2$.
 \end{solution}
 
+%例题8.2.37
 \begin{example}
     设 $f(x)$ 于 $\lbrack 1,+\infty)$ 上可导,$f'(x)$ 单调递增,且 $f(x)\to A$($x\to+\infty$),证明:
     \[
@@ -1581,6 +1634,7 @@
 
 \subsection{其他比较判别 *}
 
+%例题8.2.38
 \begin{example}[比值对数判别法]
     设有正项级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$,且存在
     \[
@@ -1600,6 +1654,7 @@
     $l<p<1$,同理有 $a_n\geq cn^{-p}$,故级数发散.
 \end{solution}
 
+%例题8.2.39
 \begin{example}[Rabbe 判别法]
     设有正项级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 满足
     \[
@@ -1618,6 +1673,7 @@
     与 $n^{-p}$ 作比式比较即得收敛;若 $l<1$,取 $l<p<1$ 作反向比较,得到发散.无穷极限情形同理.
 \end{solution}
 
+%例题8.2.40
 \begin{example}[\markstar\ Kummer 判别法]
     设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n,\sum\limits_{n=1}^{\infty}b_n$ 是正项级数,$\displaystyle\sum\limits_{n=1}^{\infty}b_n$ 发散,若有
     \[
@@ -1644,6 +1700,7 @@
     $\displaystyle \sum b_n$ 发散,$\displaystyle \sum a_n$ 也发散.
 \end{solution}
 
+%例题8.2.41
 \begin{example}
     设
     \[
@@ -1666,6 +1723,7 @@
     当 $\alpha>0$ 时级数绝对收敛;当 $-1<\alpha<0$ 时它是最终单调的交错级数,条件收敛;$\alpha=0$ 时各项均为零.由二项式展开的 Abel 极限定理,其和为 $2^\alpha-1$.因此题中级数恰在 $\alpha>-1$ 时收敛.
 \end{solution}
 
+%例题8.2.42
 \begin{example}[对数判别法]
     设 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 是正项级数,若存在
     \[
@@ -1724,6 +1782,7 @@
     \end{enumerate}
 \end{proposition}
 
+%例题8.3.1
 \begin{example}
     证明级数
     \[
@@ -1744,6 +1803,7 @@
     因为 $H_n/(2n-1)\to0$,且该数列从某项起单调递减,所以由 Leibniz 判别法,原级数收敛.
 \end{solution}
 
+%例题8.3.2
 \begin{example}[\markstar]
     \begin{enumerate}
         \item 证明 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{(-1)^{[\sqrt n]}}{n}$ 收敛;
@@ -1769,6 +1829,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.3.3
 \begin{example}
     讨论级数
     \[
@@ -1791,6 +1852,7 @@
     $p\neq q$ 且至少一个不超过 $1$,分组通项最终由较小指数对应的项支配,部分和趋于 $+\infty$ 或 $-\infty$.因此条件收敛恰在 $p=q\leq1$ 时发生.
 \end{solution}
 
+%例题8.3.4
 \begin{example}
     研究
     \[
@@ -1808,6 +1870,7 @@
     当 $p>0$ 时该正数列最终递减至零,故原交错级数收敛;其绝对值级数恰在 $p>1$ 时收敛.因此 $p>1$ 时绝对收敛,$0<p\leq1$ 时条件收敛;$p\leq0$ 时通项不趋于零.
 \end{solution}
 
+%例题8.3.5
 \begin{example}
     设 $f(x)$ 在区间 $\lbrack -1,1\rbrack$ 上有二阶连续导数,且 $\displaystyle\lim\limits_{x\to0}\dfrac{f(x)}{x}=0$,证明:
     \[
@@ -1825,6 +1888,7 @@
     由于 $f''$ 在紧区间上有界,故 $|f(1/n)|\leq C/n^2$,从而题中级数绝对收敛.
 \end{solution}
 
+%例题8.3.6
 \begin{example}
     讨论级数
     \[
@@ -1843,6 +1907,7 @@
     一致有界,故由 Dirichlet 判别法原级数收敛;若 $x\in2\pi\mathbb{Z}$,各项均为零.因此对每个实数 $x$,该级数都收敛.
 \end{solution}
 
+%例题8.3.7
 \begin{example}
     设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 收敛,$\displaystyle\sum\limits_{n=1}^{\infty}(a_n+b_n)$ 绝对收敛,试证:$\displaystyle\sum\limits_{n=1}^{\infty}a_nb_n$ 也收敛.
 \end{example}
@@ -1861,6 +1926,7 @@
     发散.因此题目还缺少条件,需要核对原始资料.
 \end{solution}
 
+%例题8.3.8
 \begin{example}
     判别下列级数的敛散性:
     \begin{enumerate}
@@ -1887,6 +1953,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.3.9
 \begin{example}
     判断下列级数的敛散性:
     \begin{enumerate}
@@ -1916,6 +1983,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.3.10
 \begin{example}
     判断下列级数的敛散性:
     \begin{enumerate}
@@ -1969,6 +2037,7 @@
     由此可得条件收敛级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 收敛的原因在于其中正项与负项大部分抵消了.
 \end{remark}
 
+%例题8.3.11
 \begin{example}
     判别级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 的收敛性:
     \begin{enumerate}
@@ -2010,6 +2079,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.3.12
 \begin{example}
     \begin{enumerate}
         \item 设 $x\neq k\pi$($k\in\mathbb{Z}$),讨论 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{\cos nx}{n^p}$ 与 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{\sin nx}{n^p}$ 的条件收敛性与绝对收敛性;
@@ -2051,6 +2121,7 @@
 
 \subsection{与极限的联系}
 
+%例题8.4.1
 \begin{example}
     设
     \[
@@ -2068,6 +2139,7 @@
     可知 $x_n\to\boxed0$.
 \end{solution}
 
+%例题8.4.2
 \begin{example}
     设 $a_n>0$,$\displaystyle\sum\limits_{n=1}^{\infty}a_n=1$,$\displaystyle A_n=\sum\limits_{k=1}^na_k$,求极限
     \[
@@ -2085,6 +2157,7 @@
     因 $A_n\to1$,有 $\xi_n,\eta_n\to1$,故所求极限为 $\boxed1$.
 \end{solution}
 
+%例题8.4.3
 \begin{example}
     设数列 $\{a_n\}$ 满足条件:
     \begin{enumerate}
@@ -2103,6 +2176,7 @@
     右端是收敛级数的尾和,趋于零,所以 $na_n\to0$.
 \end{solution}
 
+%例题8.4.4
 \begin{example}[\markstar]
     设正项级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 收敛,试证:
     \[
@@ -2122,6 +2196,7 @@
     $\displaystyle \sum_{k=N+1}^{\infty}a_k$.再令 $N\to\infty$,即得极限为零.
 \end{solution}
 
+%例题8.4.5
 \begin{example}
     设 $\displaystyle S_n=\sum\limits_{k=1}^n\dfrac{\sin k}{k}=S_n^++S_n^-$,其中 $S_n^+$ 和 $S_n^-$ 分别是正项之和和负项之和.证明:$\displaystyle\lim\limits_{n\to\infty}\dfrac{S_n^+}{S_n^-}$ 存在并求其值.
 \end{example}
@@ -2160,6 +2235,7 @@
     \]
 \end{remark}
 
+%例题8.4.6
 \begin{example}
     求下列级数的 Cesaro 和:
     \begin{enumerate}
@@ -2184,6 +2260,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.4.7
 \begin{example}[\markstar\ 可以 Cesaro 求和的必要条件]
     设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 可以 Cesaro 求和,则
     \[
@@ -2205,6 +2282,7 @@
     \]
 \end{solution}
 
+%例题8.4.8
 \begin{example}[\markstar]
     设 $\displaystyle\lim\limits_{n\to\infty}na_n=0$,则
     \[
@@ -2224,6 +2302,7 @@
     $S_n\to s$,即通常收敛.
 \end{solution}
 
+%例题8.4.9
 \begin{example}[\markstar]
     设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 可以 Cesaro 求和,证明:
     \[
@@ -2270,6 +2349,7 @@
     设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$,$\displaystyle\sum\limits_{n=1}^{\infty}b_n$ 与它们的 Cauchy 乘积 $\displaystyle\sum\limits_{n=1}^{\infty}c_n$ 都收敛,且和分别为 $A,B,C$,则 $C=AB$.
 \end{theorem}
 
+%例题8.4.10
 \begin{example}[\markstar]
     设 $|x|<1$,则
     \[
@@ -2295,6 +2375,7 @@
     从而得到第一式.再取 $a_n=1$,系数即为 $n+1$,得到第二式.
 \end{solution}
 
+%例题8.4.11
 \begin{example}
     证明:$\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a^n}{n!}$ 与 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{b^n}{n!}$ 绝对收敛,且它们的 Cauchy 乘积等于
     \[
@@ -2313,6 +2394,7 @@
     故乘积正是题中级数.
 \end{solution}
 
+%例题8.4.12
 \begin{example}
     求 $\displaystyle\sum\limits_{n=1}^{\infty}nx^{n-1}$ 与 $\displaystyle\sum\limits_{n=1}^{\infty}(-1)^{n-1}nx^{n-1}$ 的 Cauchy 乘积.
 \end{example}
@@ -2333,6 +2415,7 @@
     即奇次幂系数为零,$x^{2m}$ 的系数为 $m+1$.
 \end{solution}
 
+%例题8.4.13
 \begin{example}
     求下列级数 $S=\sum c_n$ 的和:
     \begin{enumerate}
@@ -2410,6 +2493,7 @@
     如果 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 收敛,设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n^2$ 发散,那么 $\displaystyle\prod\limits_{n=1}^{\infty}(1+a_n)$ 发散到 $0$.
 \end{theorem}
 
+%例题8.4.14
 \begin{example}
     证明下列等式:
     \begin{enumerate}
@@ -2439,6 +2523,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.4.15
 \begin{example}
     讨论下列无穷乘积的敛散性:
     \begin{enumerate}
@@ -2466,6 +2551,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题8.4.16
 \begin{example}
     讨论下列无穷乘积的敛散性:
     \begin{enumerate}

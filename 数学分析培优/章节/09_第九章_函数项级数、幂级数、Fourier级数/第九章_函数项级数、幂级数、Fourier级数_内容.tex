@@ -31,6 +31,7 @@
     函数列 $\{f_n(x)\}$ 的问题可通过考虑 $\displaystyle\sum\limits_n[f_{n+1}(x)-f_n(x)]$ 转化为函数项级数问题,而函数项级数可通过考虑前 $n$ 项和 $\{s_n(x)\}$ 转化为函数列问题.
 \end{remark}
 
+%例题9.1.1
 \begin{example}
     试判断下列函数列在指定区间上的一致收敛性:
     \begin{enumerate}
@@ -58,6 +59,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.1.2
 \begin{example}
     试判断下列函数列在指定区间上的一致收敛性:
     \begin{enumerate}
@@ -93,6 +95,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.1.3
 \begin{example}
     证明下列函数列在指定区间上的非一致收敛性:
     \begin{enumerate}
@@ -117,6 +120,7 @@
     甚至趋于 $+\infty$.因此都不一致收敛.
 \end{solution}
 
+%例题9.1.4
 \begin{example}
     试判断下列级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}f_n(x)$ 在指定区间上的一致收敛性:
     \begin{enumerate}
@@ -152,6 +156,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.1.5
 \begin{example}
     试判断下列级数在指定区间上的一致收敛性:
     \begin{enumerate}
@@ -182,6 +187,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.1.6
 \begin{example}
     试判断下列级数在指定区间上的非一致收敛性:
     \begin{enumerate}
@@ -209,6 +215,7 @@
     四者均违反一致 Cauchy 准则.
 \end{solution}
 
+%例题9.1.7
 \begin{example}
     试用 Cauchy 收敛准则判别下列级数在指定区间上的非一致收敛性:
     \begin{enumerate}
@@ -235,6 +242,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.1.8
 \begin{example}
     试用端点法判别下列级数在指定区间上的非一致收敛性:
     \begin{enumerate}
@@ -255,6 +263,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.1.9
 \begin{example}
     试用 Abel--Dirichlet 判别法判别下列级数在指定区间上的一致收敛性:
     \begin{enumerate}
@@ -281,6 +290,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.1.10
 \begin{example}
     试由和函数的不连续性判别下列级数在指定区间上的非一致收敛性:
     \begin{enumerate}
@@ -302,6 +312,7 @@
     各项均连续,而和函数不连续,所以均不一致收敛.
 \end{solution}
 
+%例题9.1.11
 \begin{example}
     设 $f(x)$ 是 $(-\infty,+\infty)$ 上的连续函数,
     \[
@@ -320,6 +331,7 @@
     且误差由 $f$ 在 $[a,b+1]$ 上的连续模一致控制.
 \end{solution}
 
+%例题9.1.12
 \begin{example}
     设函数 $f(x)$ 在 $(-\infty,+\infty)$ 上有连续导函数 $f'(x)$,
     \[
@@ -341,6 +353,7 @@
     \]
 \end{solution}
 
+%例题9.1.13
 \begin{example}[Heine 定理的推广]
     试证:$x\to a$ 时 $f(x,y)\rightrightarrows\varphi(y)$ 的充要条件是对任意 $\{x_n\}\to a$,有 $f(x_n,y)\rightrightarrows\varphi(y)$ $(n\to\infty)$.
 \end{example}
@@ -354,6 +367,7 @@
     这与题设对任意点列均一致收敛矛盾,故条件充分.
 \end{solution}
 
+%例题9.1.14
 \begin{example}
     若 $f_n(x)$ 在 $\lbrack a,b\rbrack$ 上可积,$f(x)$ 与 $g(x)$ 在 $\lbrack a,b\rbrack$ 上都可积,且
     \[
@@ -386,6 +400,7 @@
     故题面需要核对.
 \end{solution}
 
+%例题9.1.15
 \begin{example}
     设 $f_1(x)$ 在 $\lbrack a,b\rbrack$ 上正常可积,
     \[
@@ -405,6 +420,7 @@
     右端趋于零且与 $x$ 无关,故 $f_n$ 一致收敛于零.
 \end{solution}
 
+%例题9.1.16
 \begin{example}
     \begin{enumerate}
         \item 设 $f_n(x)$ 在 $\lbrack a,b\rbrack$ 上可微,且存在 $M>0$,使 $|f_n'(x)|\leq M$.若 $f_n(x)$ 在 $\lbrack a,b\rbrack$ 上逐点收敛于 $f(x)$,则必一致收敛;
@@ -422,6 +438,7 @@
     故两列均一致收敛.
 \end{solution}
 
+%例题9.1.17
 \begin{example}
     设 $\{f_n(x)\}$ 是 $\lbrack 0,1\rbrack$ 上由递增函数组成的序列,若存在 $f\in C\lbrack 0,1\rbrack$ 使得 $\displaystyle\lim\limits_{n\to\infty}f_n(x)=f(x)$,则 $f_n(x)$ 在 $\lbrack 0,1\rbrack$ 上一致收敛于 $f(x)$.
 \end{example}
@@ -438,6 +455,7 @@
     结合 $f$ 的振幅估计得到 $|f_n(x)-f(x)|<2\varepsilon$,故一致收敛.
 \end{solution}
 
+%例题9.1.18
 \begin{example}
     设 $\{a_n\}$ 是单调收敛于 $0$ 的数列,则
     \begin{enumerate}
@@ -459,6 +477,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.1.19
 \begin{example}
     \begin{enumerate}
         \item 若 $\{na_n\}$ 是单调收敛于 $0$ 的数列,则 $\displaystyle\sum\limits_{n=1}^{\infty}a_n\sin nx$ 在 $(-\infty,+\infty)$ 上一致收敛;
@@ -478,6 +497,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.1.20
 \begin{example}
     设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 收敛,且 $\{f_n(x)\}$ 满足
     \[
@@ -497,6 +517,7 @@
     由于 $\sum a_n$ 的尾部分和一致小,而 $f_k$ 的总变差不超过 $M$,右端一致趋于零,故级数一致收敛.
 \end{solution}
 
+%例题9.1.21
 \begin{example}
     设定义在区间 $I$ 上的 $\{f_n(x)\},\{g_n(x)\}$ 满足:
     \begin{enumerate}
@@ -547,6 +568,7 @@
     \end{enumerate}
 \end{theorem}
 
+%例题9.1.22
 \begin{example}
     设 $\{f_n(x)\}$ 是区间 $(a,b)$ 内的连续函数序列,并且对任意 $x_0\in(a,b)$,$\{f_n(x_0)\}$ 都是有界的.证明:$\{f_n(x)\}$ 在 $(a,b)$ 的某一非空子区间上一致有界.
 \end{example}
@@ -560,6 +582,7 @@
     各 $E_m$ 为相对闭集,且由逐点有界性有 $(a,b)=\bigcup_{m=1}^{\infty}E_m$.由 Baire 类定理,某个 $E_m$ 在 $(a,b)$ 中有非空内点;在该开子区间上,全体 $f_n$ 一致有界于 $m$.
 \end{solution}
 
+%例题9.1.23
 \begin{example}
     设 $\{f_n(x)\}$ 在区间 $\lbrack 0,1\rbrack$ 上一致有界,试证存在一子列,其在 $\lbrack 0,1\rbrack$ 的一切有理点上收敛.
 \end{example}
@@ -569,6 +592,7 @@
     将 $[0,1]$ 内有理数排列为 $r_1,r_2,\ldots$.由一致有界性,先选子列使其在 $r_1$ 处收敛,再从中选子列使其在 $r_2$ 处收敛,如此继续.取对角子列 $f_{n_k}$,则对每个固定 $j$,它从某项起属于第 $j$ 次所选子列,故在 $r_j$ 处收敛.
 \end{solution}
 
+%例题9.1.24
 \begin{example}
     设 $\mathscr R$ 是区间 $I$ 上的函数族,对任意 $f\in\mathscr R$ 都在 $I$ 上可微,且 $\{f'(x)\mid f\in\mathscr R\}$ 在 $I$ 上一致有界.证明:$\mathscr R$ 在 $I$ 上等度连续.
 \end{example}
@@ -582,6 +606,7 @@
     给定 $\varepsilon>0$,统一取 $\delta=\varepsilon/M$ 即得等度连续性.
 \end{solution}
 
+%例题9.1.25
 \begin{example}
     \begin{enumerate}
         \item 设 $\{f_n(x)\}$ 是 $\lbrack 0,1\rbrack$ 上二次可导的函数列,且 $f_n(0)=f_n'(0)=0$.若 $|f_n''(x)|\leq1$,则存在子列 $\{f_{n_k}(x)\}$ 在 $\lbrack 0,1\rbrack$ 上一致收敛;
@@ -630,6 +655,7 @@
     一致收敛是和函数连续的充分不必要条件.例如 $\lbrack 0,1\rbrack$ 上的 $f_n(x)=nxe^{-nx^2}$ 收敛到 $f(x)=0$,但非一致收敛.
 \end{remark}
 
+%例题9.2.1
 \begin{example}
     判别下列级数 $\displaystyle S(x)=\sum\limits_{n=1}^{\infty}f_n(x)$ 在指定区间上的连续性:
     \begin{enumerate}
@@ -655,6 +681,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.2.2
 \begin{example}
     试求下列极限值:
     \begin{enumerate}
@@ -686,6 +713,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.2.3
 \begin{example}
     设 $g_n,h_n\in C\lbrack a,b\rbrack$,且 $g_n(x)\leq g_{n+1}(x)$,$h_n(x)\geq h_{n+1}(x)$,
     \[
@@ -703,6 +731,7 @@
     故 $g_n\rightrightarrows f$.连续函数的一致极限仍连续,因而 $f\in C[a,b]$.
 \end{solution}
 
+%例题9.2.4
 \begin{example}
     设 $f_n,F_n\in C\lbrack a,b\rbrack$ 且 $|f_n(x)|\leq F_n(x)$.若
     \[
@@ -722,6 +751,7 @@
     所以 $\sum f_n$ 一致收敛,其和函数连续.
 \end{solution}
 
+%例题9.2.5
 \begin{example}
     证明:$\displaystyle\sum\limits_{n=-\infty}^{+\infty}\dfrac{1}{(n-x)^2}$ 当 $x$ 不为整数时收敛,周期为 $1$,并且当 $x$ 非整数时和函数连续.
 \end{example}
@@ -741,6 +771,7 @@
     故周期为 $1$.
 \end{solution}
 
+%例题9.2.6
 \begin{example}[\markstar]
     设 $\{x_n\}$ 是 $(0,1)$ 内的一个序列:$0<x_n<1$ 且 $x_i\neq x_j$ $(i\neq j)$.试讨论函数
     \[
@@ -771,6 +802,7 @@
     \end{aligned}
 \]
 
+%例题9.2.7
 \begin{example}
     设 $f\in C^{\infty}(-\infty,+\infty)$,函数列 $\{f^{(n)}(x)\}$ 在任意区间 $\lbrack a,b\rbrack$ 上一致收敛于 $g(x)$,则 $g(x)=Ce^x$.
 \end{example}
@@ -788,6 +820,7 @@
     于是 $g'=g$,故 $g(x)=Ce^x$.
 \end{solution}
 
+%例题9.2.8
 \begin{example}
     证明下列命题:
     \begin{enumerate}
@@ -827,6 +860,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.2.9
 \begin{example}
     证明下列命题:
     \begin{enumerate}
@@ -857,6 +891,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.2.10
 \begin{example}
     设 $f,g\in C(-\infty,+\infty)$,且 $f(x+1)=f(x)$,$g(x+1)=g(x)$.证明:
     \[
@@ -876,6 +911,7 @@
     方括号内的 Riemann 和关于 $t\in[0,1]$ 一致趋于 $\int_0^1f$,故可取极限,得到题中乘积.
 \end{solution}
 
+%例题9.2.11
 \begin{example}
     设 $h(x),f_n'(x)$ 在 $\lbrack a,b\rbrack$ 上连续,又对 $\lbrack a,b\rbrack$ 中任意 $x_1,x_2$ 和正整数 $n$,有
     \[
@@ -901,6 +937,7 @@
     \]
 \end{solution}
 
+%例题9.2.12
 \begin{example}
     设 $g(x),f_n(x)$ 在 $\lbrack a,b\rbrack$ 上有界可积,且对任意 $c\in(a,b)$,$f_n(x)\rightrightarrows0$ 于 $\lbrack c,b\rbrack$ 上,
     \[
@@ -921,6 +958,7 @@
     若补充 $f_n\geq0$(或 $\int|f_n|$ 一致有界),则任取 $c>a$,把积分分为 $[a,c]$ 与 $[c,b]$.前一段用 $g(x)\to A$ 控制,后一段用 $f_n\rightrightarrows0$ 控制,再令 $c\to a^+$,即可得到极限 $A$.故原题需要补充条件.
 \end{solution}
 
+%例题9.2.13
 \begin{example}
     设 $\{f_n(x)\}$ 是定义在 $\lbrack -1,1\rbrack$ 上的连续函数序列,在原点附近一致有界.若对任意 $0<\delta<1$,$f_n(x)$ 在 $\lbrack -1,-\delta\rbrack\cup\lbrack \delta,1\rbrack$ 上一致收敛于零,且 $g\in C\lbrack -1,1\rbrack$, $g(0)=0$,证明:
     \[
@@ -945,6 +983,7 @@
 
 一致收敛对于微分性质的传递只是充分不必要条件.例如 $\displaystyle f(x)=\sum\limits_{n=1}^{\infty}ne^{-nx}$ 在 $(0,+\infty)$ 上非一致收敛,但和函数在其上无穷次可微.
 
+%例题9.2.14
 \begin{example}
     讨论下列级数 $\displaystyle S(x)=\sum\limits_{n=1}^{\infty}f_n(x)$ 在指定区域的可微性:
     \begin{enumerate}
@@ -967,6 +1006,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.2.15
 \begin{example}
     设 $f(x)$ 在 $(-\infty,+\infty)$ 内有任意阶导数,级数
     \[
@@ -991,6 +1031,7 @@
     \]
 \end{solution}
 
+%例题9.2.16
 \begin{example}
     证明:存在 $\xi\in(0,1)$,使得
     \[
@@ -1008,6 +1049,7 @@
     $F(x)=[-\ln(1-x)-x]/x^2\to+\infty$($x\to1^-$).由介值定理,存在唯一 $\xi\in(0,1)$ 使 $F(\xi)=1$.
 \end{solution}
 
+%例题9.2.17
 \begin{example}[\markstar]
     设 $f_n$ 均在 $\lbrack a,b\rbrack$ 上有原函数,且在 $\lbrack a,b\rbrack$ 上一致收敛于 $f(x)$,则 $f(x)$ 在 $\lbrack a,b\rbrack$ 上也有原函数.
 \end{example}
@@ -1021,6 +1063,7 @@
     故 $F_n$ 一致收敛于某个 $F$.再由导数一致收敛定理,$F'=f$,所以 $f$ 有原函数.
 \end{solution}
 
+%例题9.2.18
 \begin{example}[\markstar]
     设 $f_n$ 在 $\lbrack a,b\rbrack$ 上可积,且在 $\lbrack a,b\rbrack$ 上 $f_n(x)\rightrightarrows f(x)$,则 $f(x)$ 在 $\lbrack a,b\rbrack$ 上可积.
 \end{example}
@@ -1056,6 +1099,7 @@
     使得 $|f(x)-S_n(x)|<\varepsilon$.
 \end{proposition}
 
+%例题9.3.1
 \begin{example}
     设 $f\in C\lbrack a,b\rbrack$,且对每个非负整数 $n$,满足
     \[
@@ -1077,6 +1121,7 @@
     $x^{n_0+1}f(x)\equiv0$;由连续性仍有 $f\equiv0$.
 \end{solution}
 
+%例题9.3.2
 \begin{example}
     \begin{enumerate}
         \item 设 $f\in C\lbrack -1,1\rbrack$,且对每个非负整数 $n$ 满足 $\displaystyle\int_{-1}^{1}x^{2n}f(x)\,\mathrm{d}x=0$,则 $f$ 必为奇函数;
@@ -1093,6 +1138,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.3.3
 \begin{example}
     若实系数多项式序列 $\{p_n(x)\}$ 在 $\mathbb{R}$ 上一致收敛于函数 $f(x)$,证明:$f(x)$ 必是多项式函数.
 \end{example}
@@ -1105,6 +1151,7 @@
     $c_n$ 收敛.因此 $f=p_N+\lim c_n$,仍为多项式.
 \end{solution}
 
+%例题9.3.4
 \begin{example}
     设 $f\in R\lbrack a,b\rbrack$,则对于每个 $\varepsilon>0$,存在两个多项式 $p(x)$ 和 $P(x)$,使得
     \begin{enumerate}
@@ -1123,6 +1170,7 @@
     $\int(P-p)<\varepsilon$.
 \end{solution}
 
+%例题9.3.5
 \begin{example}
     设 $f\in C\lbrack 0,1\rbrack$,证明:存在每项为奇数项的多项式序列在 $\lbrack 0,1\rbrack$ 上一致收敛于 $f$ 的充分必要条件为 $f(0)=0$.
 \end{example}
@@ -1138,6 +1186,7 @@
     故这些单项式的线性张成在所有满足 $f(0)=0$ 的 $C[0,1]$ 函数中稠密.因此存在只含奇次幂的多项式序列一致逼近 $f$.
 \end{solution}
 
+%例题9.3.6
 \begin{example}
     设 $f\in R\lbrack a,b\rbrack$,且对每个非负整数 $n$ 满足 $\displaystyle\int_a^bx^nf(x)\,\mathrm{d}x=0$,证明:$f$ 在每个连续点上等于 $0$.
 \end{example}
@@ -1151,6 +1200,7 @@
     矛盾;$f(c)<0$ 同理.因此每个连续点处都有 $f(c)=0$.
 \end{solution}
 
+%例题9.3.7
 \begin{example}
     设 $f\in C\lbrack 0,1\rbrack$,若
     \[
@@ -1170,6 +1220,7 @@
     $\int_0^1f^2=0$,即 $f\equiv0$.
 \end{solution}
 
+%例题9.3.8
 \begin{example}
     \begin{enumerate}
         \item 设 $f$ 在 $\lbrack a,b\rbrack$ 上有界且有原函数,$g\in C\lbrack a,b\rbrack$,则 $f(x)g(x)$ 在 $\lbrack a,b\rbrack$ 上有原函数;
@@ -1248,6 +1299,7 @@
     设 $\displaystyle\sum\limits_{n=0}^{\infty}a_nx^n$ 的收敛半径为 $R$,则 $\displaystyle\sum\limits_{n=0}^{\infty}a_n^kx^n$ 的收敛半径为 $R^k$,而 $\displaystyle\sum\limits_{n=0}^{\infty}a_nx^{kn}$ 的收敛半径为 $\sqrt[k]{R}$.
 \end{proposition}
 
+%例题9.4.1
 \begin{example}
     试求下列幂级数的收敛半径 $R$:
     \begin{enumerate}
@@ -1271,6 +1323,7 @@
     $\ln\frac{3n-2}{3n+2}\sim-\frac{4}{3n}$,$\ln(\cos\frac{1}{3n})\sim-\frac{1}{18n^2}$;第 (4)(5) 问用 Stirling 公式.第 (6) 问需假定 $a,b$ 不同时为零.
 \end{solution}
 
+%例题9.4.2
 \begin{example}
     试求下列幂级数的收敛半径 $R$:
     \begin{enumerate}
@@ -1289,6 +1342,7 @@
     后两式分别利用 $(n^n)^{1/n^2}=n^{1/n}\to1$ 与 $(n!)^{1/n!}\to1$.
 \end{solution}
 
+%例题9.4.3
 \begin{example}
     若存在 $\alpha>0,l>0$,使得
     \[
@@ -1307,6 +1361,7 @@
     故 Cauchy--Hadamard 公式给出 $R=1$.
 \end{solution}
 
+%例题9.4.4
 \begin{example}
     设 $a_n>0$, $S_n=\displaystyle\sum\limits_{k=0}^{n}a_k$.若
     \[
@@ -1328,6 +1383,7 @@
     $\sum a_n=+\infty$,故 $R\leq1$.所以 $R=1$.
 \end{solution}
 
+%例题9.4.5
 \begin{example}
     设 $a_n>0$, $\displaystyle\sum\limits_{n=0}^{\infty}a_nx^n$ 的收敛半径是 $1$,则
     \[
@@ -1350,6 +1406,7 @@
     $\limsup\sqrt[n]{S_n}\geq1$,故半径不超过 $1$.于是仍为 $1$.
 \end{solution}
 
+%例题9.4.6
 \begin{example}
     证明:
     \[
@@ -1371,6 +1428,7 @@
     \]
 \end{solution}
 
+%例题9.4.7
 \begin{example}
     试求下列幂级数的收敛域:
     \begin{enumerate}
@@ -1391,6 +1449,7 @@
     可再按 $\alpha$ 的取值判别端点:$x=1$ 在 $\alpha>-1$ 时收敛,$x=-1$ 在 $\alpha>0$ 时收敛;临界值需直接按有限项或调和型级数处理.
 \end{solution}
 
+%例题9.4.8
 \begin{example}
     试求下列幂级数的收敛区域:
     \begin{enumerate}
@@ -1416,6 +1475,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.4.9
 \begin{example}
     试用变量替换,并借助幂级数法求下列函数项级数的收敛域:
     \begin{enumerate}
@@ -1441,6 +1501,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.4.10
 \begin{example}
     设 $a_0=0,a_1=1,a_{n+1}=a_{n-1}+a_n$,则 $\displaystyle\sum\limits_{n=0}^{\infty}a_nx^n$ 在 $|x|<\dfrac{1}{2}$ 时收敛.
 \end{example}
@@ -1455,6 +1516,7 @@
     事实上母函数为 $x/(1-x-x^2)$,精确收敛半径为 $(\sqrt5-1)/2$.
 \end{solution}
 
+%例题9.4.11
 \begin{example}
     若 $\displaystyle\sum\limits_{n=0}^{\infty}a_n^2x^n$ 的收敛域为 $\lbrack -1,1\rbrack$,则 $\displaystyle\sum\limits_{n=0}^{\infty}\dfrac{a_n}{n}x^n$ 的收敛域为 $\lbrack -1,1\rbrack$.
 \end{example}
@@ -1474,6 +1536,7 @@
     故在 $x=\pm1$ 均绝对收敛,收敛域为 $\lbrack-1,1\rbrack$.
 \end{solution}
 
+%例题9.4.12
 \begin{example}
     若 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 在 Cesaro 意义下可求和,则 $\displaystyle\sum\limits_{n=1}^{\infty}a_nx^n$ 在 $(-1,1)$ 收敛.
 \end{example}
@@ -1516,6 +1579,7 @@
 
 幂级数的求和方法主要有两种:逐项积分与求导,Abel 第二定理.
 
+%例题9.4.13
 \begin{example}
     设 $a_n>0$.若
     \[
@@ -1534,6 +1598,7 @@
     $\sum a_n\leq S$.反向不等式由 $x^n\leq1$ 得到,故 $\sum a_n=S$.
 \end{solution}
 
+%例题9.4.14
 \begin{example}[Tauber 定理的推广 $*$]
     设 $f(x)=\displaystyle\sum\limits_{n=0}^{\infty}a_nx^n$ 的收敛半径为 $1$.若
     \[
@@ -1559,6 +1624,7 @@
     若将 $\displaystyle\dfrac{1}{n}\sum\limits_{k=1}^{n}ka_k\to0$ 换成 $\displaystyle\sum\limits_{n=1}^{\infty}na_n^2$ 收敛,结论依旧成立.
 \end{remark}
 
+%例题9.4.15
 \begin{example}
     求下列幂级数的和 $S(x)$:
     \begin{enumerate}
@@ -1585,6 +1651,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.4.16
 \begin{example}
     求下列幂级数的和 $S(x)$:
     \begin{enumerate}
@@ -1608,6 +1675,7 @@
     最后一式可对左端求导并在 $x=1/2$ 处定常数.
 \end{solution}
 
+%例题9.4.17
 \begin{example}
     试用幂级数法求下列常数项级数的和 $S$:
     \begin{enumerate}
@@ -1630,6 +1698,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.4.18
 \begin{example}
     试用公式
     \[
@@ -1654,6 +1723,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.4.19
 \begin{example}
     计算极限
     \[
@@ -1676,6 +1746,7 @@
     \]
 \end{solution}
 
+%例题9.4.20
 \begin{example}
     设 $\displaystyle\lim\limits_{n\to\infty}a_n=l$,则 $\displaystyle S(x)=\sum\limits_{n=1}^{\infty}a_nx^n$ 在 $(-1,1)$ 上收敛,且
     \[
@@ -1694,6 +1765,7 @@
     有限个首项乘 $1-x$ 后趋于零,故结论成立.
 \end{solution}
 
+%例题9.4.21
 \begin{example}
     设 $a_n>0,b_n>0$,且
     \[
@@ -1724,6 +1796,7 @@
     因 $S_2(x)\to+\infty$,有限个首项除以 $S_2(x)$ 后趋于零.令 $x\to1^-$ 再令 $\varepsilon\to0$ 即得比值极限为 $l$.
 \end{solution}
 
+%例题9.4.22
 \begin{example}[\markstar]
     设幂级数 $\displaystyle\sum\limits_{n=0}^{\infty}a_nx^n$ 的系数满足
     \[
@@ -1745,6 +1818,7 @@
     若分母为零,则左端恒等式同时迫使分子为零,需另行按收敛条件讨论;在题设公式有意义时相除即得结论.
 \end{solution}
 
+%例题9.4.23
 \begin{example}[\markstar\ 母函数法]
     设 $a_0=1,a_1=0,a_2=-5$,
     \[
@@ -1794,6 +1868,7 @@
     即为 Taylor 级数.幂级数展开常见方法有三种:分解合成法,微分积分法,待定系数法.
 \end{remark}
 
+%例题9.4.24
 \begin{example}
     求下列函数在 $x=0$ 处的 Taylor 级数展式:
     \begin{enumerate}
@@ -1822,6 +1897,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.4.25
 \begin{example}
     求下列函数的 Maclaurin 展开式:
     \begin{enumerate}
@@ -1846,6 +1922,7 @@
     上述展开在 $|x|<1$ 成立.
 \end{solution}
 
+%例题9.4.26
 \begin{example}
     利用待定系数法求下列函数的 Maclaurin 级数展开式:
     \begin{enumerate}
@@ -1867,6 +1944,7 @@
     前两式由几何级数和 $(\arcsin x)^2$ 的展开求导得到;第三式正是 Legendre 多项式的生成函数,均在距最近奇点以内成立.
 \end{solution}
 
+%例题9.4.27
 \begin{example}
     利用微分积分法求下列函数的 Maclaurin 级数展开式:
     \begin{enumerate}
@@ -1896,6 +1974,7 @@
 
 \methodsection{(A) 求级数的和}
 
+%例题9.4.28
 \begin{example}
     试求下列级数的和:
     \begin{enumerate}
@@ -1915,6 +1994,7 @@
     \]
 \end{solution}
 
+%例题9.4.29
 \begin{example}
     设 $\dfrac{1}{1-x-x^2}$ 的 Maclaurin 级数为 $\displaystyle\sum\limits_{n=0}^{\infty}a_nx^n$,试证明:
     \[
@@ -1937,6 +2017,7 @@
 
 \methodsection{(B) 求积分值}
 
+%例题9.4.30
 \begin{example}
     求下列积分值:
     \begin{enumerate}
@@ -1958,6 +2039,7 @@
     \end{enumerate}
 \end{solution}
 
+%例题9.4.31
 \begin{example}
     证明下列等式:
     \begin{enumerate}
@@ -1987,6 +2069,7 @@
 
 \methodsection{(C) 求导数 \texorpdfstring{$f^{(n)}(0)$}{f(n)(0)}}
 
+%例题9.4.32
 \begin{example}
     设
     \[
@@ -2072,6 +2155,7 @@
     $f(\pi-x)=-f(x)$ 表明图像关于点 $\left(\dfrac{\pi}{2},0\right)$ 中心对称,$f(\pi-x)=f(x)$ 表明图像关于直线 $x=\dfrac{\pi}{2}$ 轴对称.可用``偶心奇轴皆无偶,奇心偶轴皆无奇''记忆.
 \end{remark}
 
+%例题9.5.1
 \begin{example}
     设
     \[
@@ -2091,6 +2175,7 @@
     故原级数正是 $f$ 的 Fourier 级数.
 \end{solution}
 
+%例题9.5.2
 \begin{example}[\markstar]
     三角多项式
     \[
@@ -2104,6 +2189,7 @@
     三角多项式与任意更高频率的正弦,余弦正交.按 Fourier 系数公式积分可知:次数不超过 $n$ 的系数保持原值,所有更高阶系数均为零.因此它的 Fourier 级数就是它本身.
 \end{solution}
 
+%例题9.5.3
 \begin{example}
     设 $f(x)=\pi-x$, $x\in(0,\pi)$.
     \begin{enumerate}
@@ -2125,6 +2211,7 @@
     该级数不在 $(0,\pi)$ 一致收敛,因为每个部分和在 $x\to0^+$ 时趋于 $0$,而和函数趋于 $\pi$,故一致误差的下确界不小于 $\pi$.
 \end{solution}
 
+%例题9.5.4
 \begin{example}
     试将
     \[
@@ -2155,6 +2242,7 @@
     $\sum_{k=0}^{\infty}(2k+1)^{-2}=\pi^2/8$.
 \end{solution}
 
+%例题9.5.5
 \begin{example}
     求
     \[
@@ -2177,6 +2265,7 @@
     \]
 \end{solution}
 
+%例题9.5.6
 \begin{example}
     求
     \[
@@ -2207,6 +2296,7 @@
     在跳跃点取左右极限的平均值.
 \end{solution}
 
+%例题9.5.7
 \begin{example}
     设 $f(x)=x$, $x\in\lbrack 0,\dfrac{\pi}{2}\rbrack$,试将 $f(x)$ 展开为
     \[
@@ -2229,6 +2319,7 @@
     \]
 \end{solution}
 
+%例题9.5.8
 \begin{example}
     已知 $f(x)=x$ 在 $(-\pi,\pi)$ 上的 Fourier 级数展开式为
     \[
@@ -2247,6 +2338,7 @@
     \]
 \end{solution}
 
+%例题9.5.9
 \begin{example}
     设 $f(x)$ 有 Fourier 系数
     \[
@@ -2268,6 +2360,7 @@
     $A_n=(b_{n+1}-b_{n-1})/2$,$B_n=(a_{n-1}-a_{n+1})/2$.
 \end{solution}
 
+%例题9.5.10
 \begin{example}[\markstar]
     \begin{enumerate}
         \item 设 $f(x)$ 以 $2\pi$ 为周期,在 $(0,2\pi)$ 内有界.若 $f(x)$ 单调递减,试证 $b_n\geq0$;若单调递增,则 $b_n\leq0$;
@@ -2305,6 +2398,7 @@
     \]
 \end{proposition}
 
+%例题9.5.11
 \begin{example}
     设 $f$ 是以 $2\pi$ 为周期的函数且存在 $\alpha\in(0,1\rbrack$,使 $f$ 满足 $\alpha$ 阶 Lipschitz 条件
     \[
@@ -2362,6 +2456,7 @@
     \]
 \end{remark}
 
+%例题9.5.12
 \begin{example}
     证明:若 $f(x)$ 是周期为 $2\pi$ 的连续函数,在 $\lbrack -\pi,\pi\rbrack$ 上分段光滑,则 $f(x)$ 的 Fourier 级数一致收敛于 $f(x)$.
 \end{example}
@@ -2377,6 +2472,7 @@
     分段光滑性给出统一的 Lipschitz 控制,故小 $t$ 部分一致小;远离零点的部分由分部积分或 Riemann--Lebesgue 引理一致趋零.因此 $S_n\rightrightarrows f$.
 \end{solution}
 
+%例题9.5.13
 \begin{example}
     构造两个以 $2\pi$ 为周期的连续函数,使得其 Fourier 级数在 $\lbrack 0,\pi\rbrack$ 上一致收敛于 $0$.
 \end{example}
@@ -2394,6 +2490,7 @@
     并作 $2\pi$ 周期延拓.二者连续且分段光滑,故 Fourier 级数一致收敛于自身;在 $\lbrack0,\pi\rbrack$ 上两者都恒为零.
 \end{solution}
 
+%例题9.5.14
 \begin{example}
     设 $f\in C\lbrack 0,1\rbrack$ 且 $f(0)=0$.若
     \[
@@ -2407,6 +2504,7 @@
     题面应理解为等式对所有正整数 $n$ 成立.正弦系 $\{\sin(n\pi x)\}$ 在 $L^2(0,1)$ 中完备,故所有正弦 Fourier 系数为零推出 $f=0$ 几乎处处.又 $f$ 连续,因此 $f\equiv0$.若题面只指某个固定的 $n$,结论显然不成立.
 \end{solution}
 
+%例题9.5.15
 \begin{example}
     设 $f(x)$ 是以 $2\pi$ 为周期的函数,在 $\lbrack -\pi,\pi\rbrack$ 上可积.已知其 Fourier 级数部分和可表示为 Dirichlet 积分
     \[
@@ -2480,6 +2578,7 @@
     \]
 \end{theorem}
 
+%例题9.5.16
 \begin{example}
     求
     \[
@@ -2503,6 +2602,7 @@
     \]
 \end{solution}
 
+%例题9.5.17
 \begin{example}
     已知
     \[
@@ -2526,6 +2626,7 @@
     \]
 \end{solution}
 
+%例题9.5.18
 \begin{example}
     \begin{enumerate}
         \item 证明 $\displaystyle\sum\limits_{n=2}^{\infty}\dfrac{1}{\ln n}\sin nx$ 不可能为某函数的 Fourier 级数;
@@ -2547,6 +2648,7 @@
 
 \subsection{Parseval 等式}
 
+%例题9.5.19
 \begin{example}
     求函数
     \[
@@ -2573,6 +2675,7 @@
     $\sum n^{-4}=\pi^4/90$.
 \end{solution}
 
+%例题9.5.20
 \begin{example}
     \begin{enumerate}
         \item 设 $f(x)$ 在 $\lbrack 0,\pi\rbrack$ 上有连续导数,且 $f'(x)$ 在 $\lbrack 0,\pi\rbrack$ 上分段光滑,$\displaystyle\int_0^\pi f(x)\,\mathrm{d}x=0$.证明相应 Wirtinger 型不等式;
