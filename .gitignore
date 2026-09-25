@@ -20,3 +20,6 @@ __pycache__/
 *.synctex(busy)
 *.toc
 *.xdv
+
+# Original reference material (third-party, copyrighted); kept locally only.
+source/
