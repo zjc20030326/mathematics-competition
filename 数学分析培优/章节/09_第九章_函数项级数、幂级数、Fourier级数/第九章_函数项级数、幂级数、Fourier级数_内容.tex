@@ -44,6 +44,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 极限函数为零,且
               \[
@@ -73,6 +74,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 极限为 $\sin(x/2)$,且由正弦函数的 Lipschitz 性,
               \[
@@ -134,6 +136,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 当 $\alpha>0$ 时,
               \[
@@ -170,6 +173,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 当前题面在 $x=-n^{-\alpha}$ 处分母为零,故函数甚至未在整个实轴上定义,无法讨论该区间上的一致收敛性;区间或分母符号需要核对.
         \item
@@ -201,6 +205,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 几何级数的余项为 $(1+x^3)^{-N}$,其在 $x>0$ 上的上确界为 $1$,故不一致收敛.
         \item 取 $x=1/N$,则从 $n=N$ 到 $2N$ 的尾和为
@@ -229,6 +234,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 取 $x=N^2$ 并令 $N\leq n\leq2N$,则尾和
               $\displaystyle\sum(n/N^2)e^{-n^2/N^2}$ 有固定正下界.
@@ -256,6 +262,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 当 $x\to0^+$ 时,各项趋于 $1$,相应和函数无界,故不可能是一致极限.
         \item 对每个 $x<1$ 级数收敛,但 $x\to1^-$ 时第 $n$ 项趋于 $\ln n$,端点处连通项趋零条件都失败,故不一致收敛.
@@ -277,6 +284,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 分解为 $x^2\displaystyle\sum(-1)^n/n^2+\sum(-1)^n/n$;前者由 M 判别,后者与 $x$ 无关,故一致收敛.
         \item $e^{-nx}/\sqrt{n+x^2}$ 关于 $n$ 递减,且其关于 $x\geq0$ 的上确界为 $1/\sqrt n\to0$,故一致收敛.
@@ -304,6 +312,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 当 $x>0$ 时和为 $1+x^4$,而 $x=0$ 时和为 $0$,在零点不连续.
         \item 当 $0\leq x<1$ 时和为 $1$,而 $x=1$ 时和为 $0$,在右端点不连续.
@@ -467,6 +476,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item $(-1)^{n-1}\cos(nx)$ 的部分和在给定闭区间上一致有界,故由一致 Dirichlet 判别法收敛.
         \item 由三角和公式,
@@ -488,6 +498,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 这是 Chaundy--Jolliffe 判别.令 $m=[1/|x|]$:在 $n\leq m$ 的部分使用 $|\sin(nx)|\leq n|x|$,在 $n>m$ 的部分使用 Abel 变换与三角和估计;两部分均由 $\sup_{k\geq N}k|a_k|$ 控制,故尾和在全实轴上一致趋零.
         \item 由一致 Cauchy 准则,取 $x=1/n$ 并考察 $n\leq k\leq2n$,有
@@ -555,6 +566,7 @@
 \end{theorem}
 
 \begin{theorem}[\markstar]
+    \leavevmode
     \begin{enumerate}
         \item 若 $\lbrack a,b\rbrack$ 上连续函数列 $\{f_n(x)\}$ 一致收敛,则 $\{f_n(x)\}$ 等度连续;
         \item 若 $\lbrack a,b\rbrack$ 上等度连续函数列 $\{f_n(x)\}$ 满足 $f_n(x)\to f(x)$ $(n\to\infty)$,则 $f_n(x)\rightrightarrows f(x)$ $(n\to\infty)$.
@@ -617,6 +629,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 由初值与二阶导数界,$|f_n'(x)|\leq1$ 且 $|f_n(x)|\leq1/2$.故函数族一致有界且等度连续,由 Arzel\`a--Ascoli 定理存在一致收敛子列.
         \item 对 $0\leq x<y\leq1$,
@@ -669,6 +682,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 因 $|\ln x|\leq1$,通项绝对值由 $1/n^2$ 控制,故和函数连续.
         \item 分成
@@ -839,6 +853,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 因
               \[
@@ -872,6 +887,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 被积函数逐点趋于 $1/(1+e^x)$ 且由 $1$ 控制,故
               \[
@@ -996,6 +1012,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item
               \[
@@ -1132,6 +1149,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 令 $f_e(x)=[f(x)+f(-x)]/2$ 为偶部.题设等价于
               $\displaystyle\int_{-1}^{1}x^{2n}f_e(x)\,\mathrm{d}x=0$.偶连续函数可由 $x^2$ 的多项式一致逼近,故与上一题同理得到 $f_e=0$,即 $f$ 为奇函数.
@@ -1231,6 +1249,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 设 $F'=f$.用多项式 $q_m$ 一致逼近 $g$.对每个多项式 $q$,
               \[
@@ -1278,6 +1297,7 @@
 \end{theorem}
 
 \begin{proposition}[\markstar]
+    \leavevmode
     \begin{enumerate}
         \item 设 $\{a_n\}$ 是有界列,则 $\displaystyle\sum\limits_{n=0}^{\infty}a_nx^n$ 的收敛半径 $R\geq1$.设该幂级数收敛半径 $R>0$,则对于 $|A|>R$,数列 $\{a_nA^n\}$ 无界;
         \item

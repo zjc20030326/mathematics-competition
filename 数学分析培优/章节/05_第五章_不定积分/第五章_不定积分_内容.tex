@@ -11,6 +11,7 @@
 \subsection{基本方法}
 
 \begin{theorem}[\markstar\ 常见三角函数公式]
+    \leavevmode
     \begin{enumerate}[label=\arabic*.]
         \item 积化和差公式
               \begin{align*}
@@ -68,11 +69,12 @@
 \end{theorem}
 
 \begin{theorem}[\markstar\ 部分初等函数积分公式]
+    \leavevmode
     \begin{enumerate}
-        \item $\displaystyle\int x^\alpha\,\mathrm{d}x=\dfrac{x^{\alpha+1}}{\alpha+1}+C\quad(\alpha\neq-1)$;
+        \item $\displaystyle\int x^\alpha\,\mathrm{d}x=\dfrac{x^{\alpha+1}}{\alpha+1}+C\,(\alpha\neq-1)$;
         \item $\displaystyle\int\dfrac{1}{x}\,\mathrm{d}x=\ln|x|+C$;
         \item $\displaystyle\int e^x\,\mathrm{d}x=e^x+C$;
-        \item $\displaystyle\int a^x\,\mathrm{d}x=\dfrac{a^x}{\ln a}+C\quad(a>0,a\neq1)$;
+        \item $\displaystyle\int a^x\,\mathrm{d}x=\dfrac{a^x}{\ln a}+C\,(a>0,a\neq1)$;
         \item $\displaystyle\int\cos x\,\mathrm{d}x=\sin x+C$;
         \item $\displaystyle\int\sin x\,\mathrm{d}x=-\cos x+C$;
         \item $\displaystyle\int\tan x\,\mathrm{d}x=-\ln|\cos x|+C$;
@@ -163,9 +165,9 @@
 \begin{example}
     求下列不定积分:
     \begin{enumerate}
-        \item $\displaystyle I=\int\dfrac{a^x-a^{-x}}{a^x+a^{-x}}\,\mathrm{d}x\quad(a>0)$;
+        \item $\displaystyle I=\int\dfrac{a^x-a^{-x}}{a^x+a^{-x}}\,\mathrm{d}x\,(a>0)$;
         \item $\displaystyle I=\int\dfrac{\ln x+1}{1+x\ln x}\,\mathrm{d}x$;
-        \item $\displaystyle I=\int\dfrac{\sin2x}{a^2\sin^2x+b^2\cos^2x}\,\mathrm{d}x\quad(a^2\neq b^2)$;
+        \item $\displaystyle I=\int\dfrac{\sin2x}{a^2\sin^2x+b^2\cos^2x}\,\mathrm{d}x\,(a^2\neq b^2)$;
         \item $\displaystyle I=\int(3x-1)\sqrt{3x^2-2x+7}\,\mathrm{d}x$.
     \end{enumerate}
 \end{example}
@@ -236,6 +238,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 由
               \[
@@ -255,7 +258,7 @@
                   =\dfrac{\sqrt{1+x^2}}{x}
                   -\dfrac{1}{3}\left(\dfrac{\sqrt{1+x^2}}{x}\right)^3+C.
               \]
-        \item $\displaystyle I=\arccos\dfrac{1}{|x|}+C\quad(|x|>1)$.
+        \item $\displaystyle I=\arccos\dfrac{1}{|x|}+C\,(|x|>1)$.
     \end{enumerate}
 \end{solution}
 
@@ -270,6 +273,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item $\displaystyle I=\ln|\ln x|+C$.
         \item 利用
@@ -300,6 +304,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item $\displaystyle I=\ln\left|\tan\dfrac{x}{2}\right|+C$.
         \item $\displaystyle I=\ln|\sec x+\tan x|+C$.
@@ -437,6 +442,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 将本积分与分子为 $\cos x$ 的积分配对,得到
               \[
@@ -497,7 +503,7 @@
 
 \methodsection{(B) 递推法}
 
-为了计算 $\displaystyle I_n=\int f^n(x)\,\mathrm{d}x$,可以用各种方法将它化成参数值较小的 $\displaystyle I_{n-k}=\int f^{n-k}(x)\\mathrm{d}x$其中$0<k\leq n$,并且如此进行下去,直到最后把问题化为参数值最小的一个或几个积分.
+为了计算 $\displaystyle I_n=\int f^n(x)\,\mathrm{d}x$,可以用各种方法将它化成参数值较小的 $\displaystyle I_{n-k}=\int f^{n-k}(x)\mathrm{d}x$ 其中 $0<k\leq n$,并且如此进行下去,直到最后把问题化为参数值最小的一个或几个积分.
 
 \begin{proposition}[\markstar]
     设
@@ -524,6 +530,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 由 $\tan^n x=\tan^{n-2}x(\sec^2x-1)$,
               \[
@@ -560,6 +567,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 分部积分可得
               \[
@@ -639,6 +647,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 令 $u=x^3$,则
               \[
@@ -722,6 +731,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 令 $t=\sqrt[6]{x}$,化简后
               \[
@@ -763,6 +773,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 使用 Euler 代换
               \[
@@ -805,6 +816,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 令 $u=x^3$,再令 $v=a^3+u$,得
               \[
@@ -854,6 +866,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item
               \[

@@ -60,6 +60,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 因 $k=i+j$,
               \[
@@ -99,6 +100,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 由积化和差,
               \[
@@ -348,6 +350,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 因
               \[
@@ -455,6 +458,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 两两分组后第 $k$ 组为
               \[
@@ -523,7 +527,7 @@
 \begin{example}
     判断级数 $\displaystyle I=\sum\limits_{n=3}^{\infty}a_n$ 的敛散性:
     \begin{enumerate}
-        \item $\displaystyle a_n=\dfrac{1}{\sqrt[r]{\ln n}}\quad(r>0)$;
+        \item $\displaystyle a_n=\dfrac{1}{\sqrt[r]{\ln n}}\,(r>0)$;
         \item $\displaystyle a_n=\dfrac{1}{(\ln n)^{\ln n}}$;
         \item $\displaystyle a_n=\dfrac{1}{(\ln\ln n)^{\ln n}}$;
         \item $\displaystyle a_n=\dfrac{1}{n^{1+\frac{1}{\ln\ln n}}}$.
@@ -532,6 +536,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 对充分大的 $n$,$(\ln n)^{1/r}<n$,故 $a_n>1/n$,级数发散.
         \item
@@ -552,7 +557,7 @@
 \begin{example}
     判断级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 的敛散性:
     \begin{enumerate}
-        \item $\displaystyle a_n=\dfrac{1}{\ln(n!)}\quad(n\geq2)$;
+        \item $\displaystyle a_n=\dfrac{1}{\ln(n!)}\,(n\geq2)$;
         \item $\displaystyle a_n=\dfrac{\ln(n!)}{n^p}$;
         \item $\displaystyle a_n=\dfrac{\displaystyle\sum\limits_{k=1}^n\ln^2k}{n^p}$;
         \item $\displaystyle a_n=\left[\dfrac{(2n-1)!!}{(2n)!!}\right]^2$.
@@ -593,6 +598,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 由 Cauchy--Schwarz 不等式,
               \[
@@ -623,6 +629,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 恒发散.若有无穷多个 $a_n\geq1$,相应通项至少为 $1/2$;否则最终有 $a_n<1$,相应通项至少为 $a_n/2$.
         \item 不能确定.取 $a_n=1/n$ 时所得级数发散;若 $a_{2^k}=1$,其余项取 $a_n=1/n^2$,则 $\displaystyle \sum a_n$ 发散,而所得级数收敛.
@@ -696,6 +703,7 @@
 \end{remark}
 
 \begin{proposition}[\markstar]
+    \leavevmode
     \begin{enumerate}
         \item 设正项级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 收敛,记 $\displaystyle R_n=\sum\limits_{k=n}^{\infty}a_k$,则级数 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{R_n^p}$ 在 $p<1$ 时收敛,$p\geq1$ 时发散;
         \item 设正项级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 发散,记 $\displaystyle S_n=\sum\limits_{k=1}^na_k$,则级数 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{S_n^p}$ 在 $p\leq1$ 时发散,$p>1$ 时收敛.
@@ -719,6 +727,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 记 $\displaystyle S_n=\sum_{k=1}^{n}a_k$.与前题相同,$\displaystyle \sum a_n/S_n$ 发散;又
               \[
@@ -764,6 +773,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 取子列 $n_k$ 使 $b_{n_k}\geq2^k$,并令
               \[
@@ -841,6 +851,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 由 $nA_n=(n-1)A_{n-1}+a_n$ 及凸函数 $x^p$ 的切线不等式,
               \[
@@ -981,6 +992,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 因 $0\leq x-[x]<1$,被积函数绝对值不超过 $x^{-s-1}$,故 $s>0$ 时绝对收敛.
         \item 当 $s>1$ 时,利用上一题的恒等式,
@@ -1006,6 +1018,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 对任意固定正整数 $n$,分部积分给出
               \[
@@ -1069,7 +1082,7 @@
         \item $\displaystyle a_n=\dfrac{1}{n^{1+\frac{1}{n}}}$;
         \item $\displaystyle a_n=\dfrac{\sqrt[n]{2}-1}{n^p}$;
         \item $\displaystyle a_n=\dfrac{\sqrt{n+1}-\sqrt n}{n^p}$;
-        \item $\displaystyle a_n=\left(1-\sqrt[3]{\dfrac{n-1}{n+1}}\right)^p\quad(p>0)$;
+        \item $\displaystyle a_n=\left(1-\sqrt[3]{\dfrac{n-1}{n+1}}\right)^p\,(p>0)$;
         \item $\displaystyle a_n=\left[e-\left(1+\dfrac{1}{n}\right)^n\right]^p$.
     \end{enumerate}
 \end{example}
@@ -1099,9 +1112,9 @@
 \begin{example}
     判断级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 的敛散性:
     \begin{enumerate}
-        \item $\displaystyle a_n=\left(\dfrac{1}{n}-\sin\dfrac{1}{n}\right)^p\quad(p>0)$;
+        \item $\displaystyle a_n=\left(\dfrac{1}{n}-\sin\dfrac{1}{n}\right)^p\,(p>0)$;
         \item $\displaystyle a_n=\left(e^{\frac{1}{n}}-\sin\dfrac{1}{n}\right)^{np}-1$;
-        \item $\displaystyle a_n=\ln\left(\dfrac{1}{\cos\dfrac{2\pi}{n}}\right)\quad(n>4)$.
+        \item $\displaystyle a_n=\ln\left(\dfrac{1}{\cos\dfrac{2\pi}{n}}\right)\,(n>4)$.
     \end{enumerate}
 \end{example}
 \exampleblank
@@ -1248,6 +1261,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 在区间 $2^k\leq n<2^{k+1}$ 上,
               \[
@@ -1317,6 +1331,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 交换非负项的求和次序,
               \[
@@ -1370,8 +1385,8 @@
         \item $\displaystyle a_n=\dfrac{3^n n!}{n^n}$;
         \item $\displaystyle a_n=\dfrac{(2n-1)!!}{3^n n!}$;
         \item $\displaystyle a_n=\dfrac{(n!)^3}{3^{n^4/3}}$;
-        \item $\displaystyle a_n=\dfrac{(\alpha+1)(2\alpha+1)\cdots(n\alpha+1)}{(\beta+1)(2\beta+1)\cdots(n\beta+1)}\quad(\alpha>0,\beta>0)$;
-        \item $\displaystyle a_n=\dfrac{n^\alpha}{\beta^n}\quad(\beta>0)$.
+        \item $\displaystyle a_n=\dfrac{(\alpha+1)(2\alpha+1)\cdots(n\alpha+1)}{(\beta+1)(2\beta+1)\cdots(n\beta+1)}\,(\alpha>0,\beta>0)$;
+        \item $\displaystyle a_n=\dfrac{n^\alpha}{\beta^n}\,(\beta>0)$.
     \end{enumerate}
 \end{example}
 \exampleblank
@@ -1414,6 +1429,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 有
               \[
@@ -1479,6 +1495,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 通项为 $2^{n-1}/(1+a^{2^{n-1}})$.当 $a>1$ 时其根式判别上极限为 $1/a<1$,故收敛;当 $0<a\leq1$ 时通项不趋于零.故恰在 $a>1$ 时收敛.
         \item 通项为 $2^{n-1}a^{2^{n-1}}/(1+a^{2^{n-1}})$.当 $0<a<1$ 时根式判别给出收敛;当 $a\geq1$ 时通项不趋于零.故恰在 $0<a<1$ 时收敛.
@@ -1497,7 +1514,7 @@
         \item $\displaystyle a_n=\left(\dfrac{n}{n+1}\right)^{n(n+1)}$;
         \item $\displaystyle a_n=\left(\dfrac{1+\cos n}{2+\cos n}\right)^{2n-\ln n}$;
         \item $\displaystyle a_n=\dfrac{n^3}{(\sqrt2+(-1)^n)^n3^n}$;
-        \item $\displaystyle a_n=\dfrac{\ln(1+\alpha^n)}{n^\beta}\quad(\alpha\geq0)$.
+        \item $\displaystyle a_n=\dfrac{\ln(1+\alpha^n)}{n^\beta}\,(\alpha\geq0)$.
     \end{enumerate}
 \end{example}
 \exampleblank
@@ -1564,6 +1581,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 数列 $a_n$ 递减至零.令 $u_n=a_n^{-\alpha}$,则
               \[
@@ -1765,6 +1783,7 @@
 \end{proposition}
 
 \begin{proposition}[\markstar]
+    \leavevmode
     \begin{enumerate}
         \item
               \[
@@ -1814,6 +1833,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 按 $k^2\leq n<(k+1)^2$ 分块.第 $k$ 块同号,且其和
               \[
@@ -1938,6 +1958,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 展开得
               \[
@@ -1965,6 +1986,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item
               \[
@@ -1996,6 +2018,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 通项化为
               \[
@@ -2090,6 +2113,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 当 $p>0$ 时,$n^{-p}$ 单调趋零,而 $\displaystyle \sum\cos(nx)$,$\displaystyle \sum\sin(nx)$ 的部分和在 $x\notin\pi\mathbb{Z}$ 时有界,故两级数收敛.它们在 $p>1$ 时绝对收敛,在 $0<p\leq1$ 时条件收敛;$p\leq0$ 时一般不收敛.
         \item 因
@@ -2247,6 +2271,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 部分和以 $1,1,0$ 为周期,故其算术平均趋于 $\boxed{2/3}$.
         \item 由
@@ -2427,6 +2452,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 这是两个几何级数的 Cauchy 乘积,故
               \[
@@ -2505,6 +2531,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 前 $N$ 项乘积为
               \[
@@ -2536,6 +2563,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 部分乘积为 $1/N!\to0$,故按非零有限极限的定义,该无穷乘积发散.
         \item 裂项相消得
@@ -2557,12 +2585,13 @@
     讨论下列无穷乘积的敛散性:
     \begin{enumerate}
         \item $\displaystyle\prod\limits_{n=1}^{\infty}\dfrac{n}{\sqrt{n^2+1}}$;
-        \item $\displaystyle\prod\limits_{n=2}^{\infty}\left(\dfrac{n^2-1}{n^2+1}\right)^p\quad(p\in\mathbb{R})$.
+        \item $\displaystyle\prod\limits_{n=2}^{\infty}\left(\dfrac{n^2-1}{n^2+1}\right)^p\,(p\in\mathbb{R})$.
     \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 取对数后通项为
               \[

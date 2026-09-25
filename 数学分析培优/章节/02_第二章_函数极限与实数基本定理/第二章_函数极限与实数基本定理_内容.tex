@@ -313,6 +313,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 通分后应用洛必达法则:
               \[
@@ -420,6 +421,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 因 $\dfrac{1}{x}\to0$,故极限为 $\cos0+\sin0=1$.
         \item 设极限为 $A$,则
@@ -525,6 +527,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 展开各因子:
               \[
@@ -740,7 +743,7 @@
 
 %例题2.1.13
 \begin{example}
-    已知 $a_i>0\ (i=1,2,\ldots,n)$,求
+    已知 $a_i>0\,(i=1,2,\ldots,n)$,求
     \[
         \displaystyle\lim\limits_{p\to+\infty}
         \left[
@@ -793,12 +796,13 @@
                   \dfrac{(e-1)e^{\frac{1}{n}}}{n\left(e^{\frac{1}{n}}-1\right)}$;
         \item $\displaystyle
                   \lim\limits_{n\to\infty}
-                  n\left(x^{\frac{1}{n}}-x^{\frac{1}{2n}}\right)\quad(x>0)$.
+                  n\left(x^{\frac{1}{n}}-x^{\frac{1}{2n}}\right)\,(x>0)$.
     \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 令 $t=\dfrac{1}{n}$,则
               \[
@@ -866,6 +870,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 由 $|f(x)|\leq|\sin x|$ 可知 $f(0)=0$.当 $x\neq0$ 时,
               \[
@@ -923,6 +928,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 先设 $a>1$.若 $x>1$,则
               \[
@@ -960,9 +966,7 @@
         |x|<\delta.
     \]
 
-    下面用数学归纳法证明(也可由$f(x)=\dfrac{1}{b^n}f(a^n x)$得到):
-    
-    对任意正整数 $n$,当 $|x|<\dfrac{\delta}{a^n}$ 时,都有 $|f(x)|\leq\dfrac{M}{b^n}$.
+    下面用数学归纳法证明(也可由 $f(x)=\dfrac{1}{b^n}f(a^n x)$ 得到):对任意正整数 $n$,当 $|x|<\dfrac{\delta}{a^n}$ 时,都有 $|f(x)|\leq\dfrac{M}{b^n}$.
 
     当 $n=1$ 时,若 $|x|<\dfrac{\delta}{a}$,则 $|ax|<\delta$,由函数方程 $f(ax)=bf(x)$ 得 $|f(x)|
         =\dfrac{1}{b}|f(ax)| \leq\dfrac{M}{b}$. 故结论对 $n=1$ 成立.
@@ -1003,6 +1007,7 @@
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 先设 $m>1$,取整数 $r$ 使 $2^r\leq m<2^{r+1}$.由单调性,
               \[
@@ -1110,6 +1115,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 当 $x\to+\infty$ 时,
               \[
@@ -1325,7 +1331,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
     设 $f(x),g(x)$ 在 $\lbrack a,+\infty)$ 上有定义,$T$ 是一个正常数,且满足:
     \begin{enumerate}
         \item $f(x),g(x)$ 在任一区间 $\lbrack a,b\rbrack$ 上有界;
-        \item 对任意 $x>a$,有 $g(x+T)>g(x)$ 且 $g(x)\to+\infty\ (x\to+\infty)$.
+        \item 对任意 $x>a$,有 $g(x+T)>g(x)$ 且 $g(x)\to+\infty\,(x\to+\infty)$.
     \end{enumerate}
     若存在极限
     \[
@@ -1395,6 +1401,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 在函数版本 Stolz 定理中取 $g(x)=x$ 与 $T=1$,则
               \[
@@ -1511,7 +1518,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 
 %例题2.2.11
 \begin{example}
-    设 $f(x)$ 是周期为 $T\ (T>0)$ 的连续周期函数,则
+    设 $f(x)$ 是周期为 $T\,(T>0)$ 的连续周期函数,则
     \[
         \displaystyle\lim\limits_{x\to+\infty}
         \dfrac{1}{x}\int_0^x f(t)\,\mathrm{d}t
@@ -1568,7 +1575,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 \end{theorem}
 
 \begin{theorem}[闭区间套定理]
-    设闭区间列$I_n=\lbrack a_n,b_n\rbrack$
+    设闭区间列 $I_n=\lbrack a_n,b_n\rbrack$
     满足
     \[
         I_1\supseteq I_2\supseteq\cdots\supseteq I_n\supseteq\cdots,
@@ -1623,6 +1630,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 对每个 $x\in\lbrack a,b\rbrack$,取题设给出的邻域 $U_x$,并取常数 $M_x$,使
               \[
@@ -1751,6 +1759,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 \exampleblank
 
 \begin{solution}
+    \leavevmode
     \begin{enumerate}
         \item 由于 $0\leq b\leq1$,有 $b^2\leq b$,故
               \[

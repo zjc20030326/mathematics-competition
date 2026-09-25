@@ -111,7 +111,6 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 \exampleblank
 
 \begin{solution}
-  依次证明三问.
 
   (1) 显然 $\sqrt[n]{n+1}>1$.任给 $\varepsilon>0$,当 $n\geq2$ 时,由二项式展开有
   \[
@@ -180,7 +179,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 
 %例题1.2.3
 \begin{example}
-  证明:若 $p_k>0\ (k=1,2,\ldots)$,且
+  证明:若 $p_k>0\,(k=1,2,\ldots)$,且
   \[
     \displaystyle\lim\limits_{n\to\infty}\dfrac{p_n}{p_1+p_2+\cdots+p_n}=0,
     \qquad
@@ -297,7 +296,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
   \[
     \displaystyle\lim\limits_{x\to0}\dfrac{f(x)}{g(x)}=1,
   \]
-  且 $n\to\infty$ 时,$\alpha_{mn}\rightrightarrows0\ (m=1,2,\ldots,n)$,亦即对任意
+  且 $n\to\infty$ 时,$\alpha_{mn}\rightrightarrows0\,(m=1,2,\ldots,n)$,亦即对任意
   $\varepsilon>0$,存在 $N(\varepsilon)>0$,当 $n>N(\varepsilon)$ 时,对一切
   $m=1,2,\ldots,n$,有 $|\alpha_{mn}|<\varepsilon$.另设 $\alpha_{mn}\neq0$,试证:
   \[
@@ -338,7 +337,6 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 =\dfrac{3}{(1+x)^{\frac{2}{3}}+(1+x)^{\frac{1}{3}}+1}
 \longrightarrow 1 \qquad (x\to 0).
 \]
-
   在本题中取
   \[
     f(x)=\sqrt[3]{1+x}-1,
@@ -360,7 +358,6 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 
 
 \methodsection{(B) Cauchy 收敛准则}
-
 再回顾一下 Cauchy 收敛准则:
 \[
   \{x_n\}\text{ 收敛}
@@ -780,13 +777,13 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 
 \begin{solution}
 
-  \begin{theorem}[Dirichlet 逼近定理]
+  \begin{theorem*}[Dirichlet 逼近定理]
     设 $\alpha$ 为无理数,则存在无穷多个互不相同的有理数 $\dfrac{p}{q}$
     ($p\in\mathbb{Z}$,$q\in\mathbb{Z}^+$),使得
     \[
       \left|\alpha-\dfrac{p}{q}\right|<\dfrac{1}{q^2}.
     \]
-  \end{theorem}
+  \end{theorem*}
   
 
   取 $\alpha=\dfrac{1}{2\pi}$,由上述定理可选出 $q$ 严格递增的一列
@@ -949,6 +946,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 \exampleblank
 
 \begin{solution}
+  
   (1) 因为 $1\leq2\sin^2n+\cos^2n\leq2$,所以
   \[
     1\leq\sqrt[n]{2\sin^2n+\cos^2n}\leq\sqrt[n]{2}\longrightarrow1.
@@ -975,13 +973,14 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 \begin{example}
   求下列数列 $\{a_n\}$ 的极限 $\displaystyle \lim\limits_{n\to\infty}a_n$:
   \begin{enumerate}
-    \item $\displaystyle a_n=\sqrt[n]{1+b^n}\quad(b>0)$;
-    \item $\displaystyle a_n=\sqrt[n]{1+b^n+\left(\dfrac{b^2}{2}\right)^n}\quad(b>0)$.
+    \item $\displaystyle a_n=\sqrt[n]{1+b^n}\,(b>0)$;
+    \item $\displaystyle a_n=\sqrt[n]{1+b^n+\left(\dfrac{b^2}{2}\right)^n}\,(b>0)$.
   \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
+
   (1) 若 $0<b\leq1$,则
   \[
     1\leq\sqrt[n]{1+b^n}\leq\sqrt[n]{2}\longrightarrow1.
@@ -1108,6 +1107,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 \exampleblank
 
 \begin{solution}
+
   (1) 下界由和式最后一项给出:
   \[
     \dfrac{1}{n^n}\sum\limits_{k=1}^n k^k\geq1.
@@ -1159,6 +1159,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 \exampleblank
 
 \begin{solution}
+
   (1) 写成 Riemann 和:
   \[
     \displaystyle\sum\limits_{k=1}^n\dfrac{1}{n+k}
@@ -1196,6 +1197,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 \exampleblank
 
 \begin{solution}
+
   (1) 取对数后得到
   \[
     \dfrac{1}{n}\sum\limits_{k=1}^n\ln\left(1+\dfrac{k}{n}\right)
@@ -1224,7 +1226,7 @@ $x_n$ 的表达式化简.但有时 $x_n$ 虽然不能化简,$A$ 反而可以化�
 
 主要有两个运用: (1) 收敛级数的通项趋于零;(2) 
 $\displaystyle\sum\limits_{n=1}^{\infty}(x_{n+1}-x_{n})$
-绝对收敛$\Rightarrow $
+绝对收敛 $\Rightarrow$
 $\displaystyle \lim\limits_{n\to\infty}x_n$
 存在.
 
@@ -1239,7 +1241,8 @@ $\displaystyle \lim\limits_{n\to\infty}x_n$
 \exampleblank
 
 \begin{solution}
-  由 Stirling 公式 $n!\sim\sqrt{2\pi n}\left(\dfrac{n}{e}\right)^n$,有
+
+  (1) 由 Stirling 公式 $n!\sim\sqrt{2\pi n}\left(\dfrac{n}{e}\right)^n$,有
   \[
     x_n\sim\sqrt{2\pi n}\left(\dfrac{5}{2e}\right)^n\longrightarrow0,
   \]
@@ -1381,17 +1384,18 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
   \begin{enumerate}
     \item $\displaystyle
             I=\lim\limits_{n\to\infty}\dfrac{1}{\sqrt n}\sum\limits_{k=1}^n\dfrac{a_k}{\sqrt k}
-            \quad\text{(其中 }a_k\to a\ (k\to\infty)\text{)}$;
+            \,\text{(其中 }a_k\to a\,(k\to\infty)\text{)}$;
     \item $\displaystyle
             I=\lim\limits_{n\to\infty}\dfrac{\displaystyle\sum\limits_{k=1}^n\dfrac{1}{k}}{\ln n}$;
     \item $\displaystyle
             I=\lim\limits_{n\to\infty}\dfrac{1+a+2a^2+\cdots+na^n}{na^{n+2}}
-            \quad(a>1)$.
+            \,(a>1)$.
   \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
+
   (1) 令 $S_n=\displaystyle \sum\limits_{k=1}^n \dfrac{a_k}{\sqrt k}$.因 $\sqrt n\to+\infty$,由 Stolz 定理,
   \[
     \displaystyle\lim\limits_{n\to\infty}\dfrac{S_n}{\sqrt n}
@@ -1534,9 +1538,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 
 \begin{solution}
   由递推式 $a_{n+1}>a_n>0$,故 $\{a_n\}$ 单调递增.若它有有限极限 $L>0$,
-  则令 $n\to\infty$ 会得到 $L=L+\dfrac{1}{L}$,矛盾.所以 $a_n\to+\infty$.
-
-  平方递推式得
+  则令 $n\to\infty$ 会得到 $L=L+\dfrac{1}{L}$,矛盾.所以 $a_n\to+\infty$.平方递推式得
   \[
     a_{n+1}^2-a_n^2=2+\dfrac{1}{a_n^2}\longrightarrow2.
   \]
@@ -1566,9 +1568,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \begin{solution}
   在 $\left(0,\dfrac{\pi}{2}\right)$ 上有 $0<\sin x<x$,故 $0<a_{n+1}<a_n$.于是
   $a_n\to L\geq0$,而 $L=\sin L$ 迫使 $L=0$,从而 $\dfrac{1}{a_n^2}$ 严格递增且
-  趋于 $+\infty$.
-
-  要证的结论等价于 $na_n^2\to3$,而
+  趋于 $+\infty$.要证的结论等价于 $na_n^2\to3$,而
   \[
     na_n^2=\dfrac{n}{\dfrac{1}{a_n^2}}.
   \]
@@ -1646,7 +1646,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
     \dfrac{\dfrac{1}{a_n}-n}{\ln n},
   \]
   第一个因子 $\dfrac{n}{\dfrac{1}{a_n}}=na_n$ 由 (1) 趋于 $1$,第二个因子用
-  Stolz 定理,分母$\ln n$单调递增趋于 $+\infty$.由
+  Stolz 定理,分母 $\ln n$ 单调递增趋于 $+\infty$.由
   \[
     \left(\dfrac{1}{a_{n+1}}-(n+1)\right)-\left(\dfrac{1}{a_n}-n\right)
     =\dfrac{1}{1-a_n}-1=\dfrac{a_n}{1-a_n},
@@ -1682,9 +1682,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \begin{solution}
   因为 $0<\ln(1+x)<x$ 对 $x>0$ 成立,所以
   $0<a_{n+1}<a_n$,从而 $a_n\to L\geq0$.由 $L=\ln(1+L)$ 得 $L=0$,
-  于是 $\dfrac{1}{a_n}$ 严格递增且趋于 $+\infty$.
-
-  先把 $na_n$ 写成商
+  于是 $\dfrac{1}{a_n}$ 严格递增且趋于 $+\infty$.先把 $na_n$ 写成商
   \[
     na_n=\dfrac{n}{\dfrac{1}{a_n}},
   \]
@@ -1707,7 +1705,6 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
     \dfrac{1}{\dfrac{1}{a_{n+1}}-\dfrac{1}{a_n}}
     =2.
   \]
-
   再把所求表达式写成两个因子之积
   \[
     \dfrac{n(na_n-2)}{\ln n}
@@ -1813,6 +1810,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \end{solution}
 
 \begin{remark}
+  \leavevmode
   \begin{enumerate}
     \item 取 $f(x)=\dfrac{1}{x}$,则有
           \[
@@ -1991,23 +1989,25 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
   则数列 $\{x_n\}$ 收敛.
 \end{theorem}
 
-\begin{corollary}[\markstar]
-
-    设 $I\subseteq\mathbb{R}$ 为非空闭集,$f:I\to I$.
-
-    若存在常数 $0<r<1$,使得
+\begin{corollary}
+    设 $I\subseteq\mathbb{R}$ 为非空连通闭集,$f:I\to I$.
+    若存在常数 $0<r<1$,使得对任意 $x,y\in I$,
     \[
         |f(x)-f(y)|\leq r|x-y|,
-        \qquad x,y\in I,
     \]
-    则 $f$ 在 $I$ 上存在唯一不动点 $x^*$.
-
-    若进一步 $f$ 在 $I$ 的内部可微且
+    则 $f$ 在 $I$ 上存在唯一不动点 $x^*$,且对任意 $x_0\in I$,
+    由
     \[
-        |f'(x)|\leq r,
+        x_{n+1}=f(x_n),\qquad n=0,1,2,\ldots
     \]
-    则上述条件成立.
+    定义的数列 $\{x_n\}$ 均收敛于 $x^*$.
 
+    特别地,若 $f\in C(I)$,且 $f$ 在 $I$ 的内部可微,并存在常数
+    $0<r<1$,使得
+    \[
+        |f'(x)|\leq r,\qquad x\in I^\circ,
+    \]
+    则上述结论成立.
 \end{corollary}
 
 %例题1.3.8
@@ -2022,6 +2022,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \exampleblank
 
 \begin{solution}
+
   (1) 令 $h(x)=x-e^{-x}$.则
   \[
     h(0)=-1<0,
@@ -2294,9 +2295,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
     g(x)=\dfrac{x+f(x)}{2}.
   \]
   因 $f$ 把 $\lbrack a,b\rbrack$ 映入自身,故 $g$ 也把
-  $\lbrack a,b\rbrack$ 映入自身.
-
-  对任意 $x<y$,由
+  $\lbrack a,b\rbrack$ 映入自身.对任意 $x<y$,由
   \[
     |f(y)-f(x)|\leq y-x
   \]
@@ -2310,9 +2309,8 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
     =\dfrac{(y-x)+(f(y)-f(x))}{2}\geq0.
   \]
   因此 $g$ 单调不减.
-
-  若 $x_2\geq x_1$,则由 $x_{n+1}=g(x_n)$ 及 $g$ 的单调性,
-  归纳可得
+  
+  若 $x_2\geq x_1$,则由 $x_{n+1}=g(x_n)$ 及 $g$ 的单调性,归纳可得
   \[
     x_1\leq x_2\leq x_3\leq\cdots.
   \]
@@ -2325,7 +2323,6 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
   \[
     x_n\to x^*.
   \]
-
   由条件知 $f$ 连续,在递推式
   \[
     x_{n+1}=\dfrac{x_n+f(x_n)}{2}
@@ -2526,6 +2523,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \exampleblank
 
 \begin{solution}
+
   (1) 当 $n$ 为偶数时,
   \[
     a_n=\sqrt[n]{1+2^n}\longrightarrow2;
@@ -2635,9 +2633,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 
 \begin{solution}
   由 $0<a_1<b$ 得 $0<a_2<1$.当 $0<a_n<1$ 时,因 $b>\sqrt2>1$,
-  仍有 $0<a_{n+1}<1$.故从第二项起数列位于 $(0,1)$ 内.
-
-  记
+  仍有 $0<a_{n+1}<1$.故从第二项起数列位于 $(0,1)$ 内.记
   \[
     \alpha=\varliminf\limits_{n\to\infty}a_n,
     \qquad
@@ -2665,13 +2661,14 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
 \begin{example}
   讨论下列数列 $\{a_n\}$ 的敛散性:
   \begin{enumerate}
-    \item $\displaystyle a_{n+1}=\sqrt[3]{a_n+6}\quad(a_1>-6)$;
-    \item $\displaystyle a_{n+1}=A\sqrt{a_n}+B\quad(A,B>0,\ a_1>0)$.
+    \item $\displaystyle a_{n+1}=\sqrt[3]{a_n+6}\,(a_1>-6)$;
+    \item $\displaystyle a_{n+1}=A\sqrt{a_n}+B\,(A,B>0,\,a_1>0)$.
   \end{enumerate}
 \end{example}
 \exampleblank
 
 \begin{solution}
+
   (1) $a_2=\sqrt[3]{a_1+6}>0$.取 $M=\max\{a_2,2\}$.因为
   \[
     0<\sqrt[3]{x+6}\leq M\qquad(0\leq x\leq M),
@@ -2748,7 +2745,6 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
   \[
     y_n=px_n+qx_{n+1}\longrightarrow(p+q)X.
   \]
-
     反之,设 $y_n\to Y$.由于 $|p|<|q|$,有 $q\neq0$ 且 $p+q\neq0$.
   由
   \[
@@ -2805,7 +2801,6 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
     \qquad
     \dfrac{y_n}{q}\longrightarrow\dfrac{Y}{q}.
   \]
-
   若 $r\geq0$,则
   \[
     A=rA+\dfrac{Y}{q},
@@ -2872,7 +2867,6 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
   \[
     \varliminf\limits_{n\to\infty}\dfrac{a_n}{n}\geq\alpha.
   \]
-
   固定正整数 $k$.将 $n$ 写成
   \[
     n=qk+r,\qquad 0\leq r<k.
@@ -2926,7 +2920,6 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
   \[
     \displaystyle\lim\limits_{n\to\infty}\sqrt[n]{a_n}=0.
   \]
-
   以下设 $a_n>0$ 对所有正整数 $n$ 成立.令
   \[
     b_n=\ln a_n.
@@ -2943,9 +2936,7 @@ Stolz 可以视为数列版本的洛必达法则,在解决和式及 $\dfrac{0}{0
   \[
     \displaystyle\lim\limits_{n\to\infty}\dfrac{b_n}{n}
   \]
-  存在.
-
-  又因为
+  存在.又因为
   \[
     \sqrt[n]{a_n}
     =a_n^{\frac{1}{n}}

@@ -65,30 +65,23 @@
 \exampleblank
 
 \begin{solution}
-    设 $x_0$ 为无理数.给定 $\varepsilon>0$,只有有限多个分母 $q<1/\varepsilon$ 的既约分数落在任意有界区间中.取 $x_0$ 的一个充分小邻域避开这些点,则其中有理点 $p/q$ 均满足 $1/q<\varepsilon$,无理点上函数值为 $0$,故 $R(x)\to0=R(x_0)$.
+    设 $x_0$ 为无理数.给定 $\varepsilon>0$,只有有限多个分母 $q<\dfrac{1}{\varepsilon}$ 的既约分数落在任意有界区间中.取 $x_0$ 的一个充分小邻域避开这些点,则其中有理点 $\dfrac{p}{q}$ 均满足 $\dfrac{1}{q}<\varepsilon$,无理点上函数值为 $0$,故 $R(x)\to0=R(x_0)$.
 
-    若 $x_0=p_0/q_0$ 为既约分数,取无理数列 $x_n\to x_0$,则 $R(x_n)=0$,但 $R(x_0)=1/q_0>0$,故在 $x_0$ 间断.
+    若 $x_0=\dfrac{p_0}{q_0}$ 为既约分数,取无理数列 $x_n\to x_0$,则 $R(x_n)=0$,但 $R(x_0)=\dfrac{1}{q_0}>0$,故在 $x_0$ 间断.
 \end{solution}
 
 %例题3.1.3
 \begin{example}
     讨论函数
     \[
-        f(x)=
-        \begin{cases}
-            x(1-x), & x\text{ 为有理数}, \\
-            x(1+x), & x\text{ 为无理数},
-        \end{cases}
+        f(x)= \begin{cases} x(1-x), & x\text{ 为有理数}, \\ x(1+x), & x\text{ 为无理数}, \end{cases}
     \]
     的连续性.
 \end{example}
 \exampleblank
 
 \begin{solution}
-    分别沿有理数列和无理数列趋于 $x_0$,所得极限分别为
-    \[
-        x_0(1-x_0),\qquad x_0(1+x_0).
-    \]
+    分别沿有理数列和无理数列趋于 $x_0$,所得极限分别为 $x_0(1-x_0),\,x_0(1+x_0)$.
     二者相等当且仅当 $x_0=0$.此时 $|f(x)|\leq |x|(1+|x|)\to0=f(0)$,故 $f$ 仅在 $x=0$ 连续.
 \end{solution}
 
@@ -96,12 +89,7 @@
 \begin{example}
     设
     \[
-        f(x)=
-        \begin{cases}
-            1,  & x\geq0, \\
-            -1, & x<0,
-        \end{cases}
-        \qquad g(x)=\sin x,
+        f(x)= \begin{cases} 1,  & x\geq0, \\ -1, & x<0, \end{cases} \qquad g(x)=\sin x,
     \]
     讨论 $f(g(x))$ 的连续性.
 \end{example}
@@ -118,10 +106,7 @@
 \exampleblank
 
 \begin{solution}
-    由 $e^{-f(x)}$ 单调不减知 $f$ 单调不增,故任一点 $x_0$ 的左右极限存在,且
-    \[
-        f(x_0-)\geq f(x_0)\geq f(x_0+).
-    \]
+    由 $e^{-f(x)}$ 单调不减知 $f$ 单调不增,故任一点 $x_0$ 的左右极限存在,且 $f(x_0-)\geq f(x_0)\geq f(x_0+)$.
     另一方面,$e^xf(x)$ 单调不减,令 $x\to x_0-$ 和 $x\to x_0+$ 得
     \[
         e^{x_0}f(x_0-)\leq e^{x_0}f(x_0)\leq e^{x_0}f(x_0+).
@@ -150,9 +135,7 @@
     \begin{enumerate}
         \item 证明:若函数 $g(x),f(x)$ 连续,则函数
               \[
-                  \varphi(x)=\min\{f(x),g(x)\},
-                  \qquad
-                  \psi(x)=\max\{f(x),g(x)\}
+                  \varphi(x)=\min\{f(x),g(x)\}, \qquad \psi(x)=\max\{f(x),g(x)\}
               \]
               连续;
         \item 设 $f_1(x),f_2(x),f_3(x)$ 在 $\lbrack a,b\rbrack$ 上连续,令函数 $f$ 的值等于三值 $f_1(x),f_2(x),f_3(x)$ 中介于其它两值之间的那个值,证明:$f$ 在 $\lbrack a,b\rbrack$ 上连续.
@@ -163,8 +146,7 @@
 \begin{solution}
     由恒等式
     \[
-        \min\{f,g\}=\dfrac{f+g-|f-g|}{2},\qquad
-        \max\{f,g\}=\dfrac{f+g+|f-g|}{2}
+        \min\{f,g\}=\dfrac{f+g-|f-g|}{2},\qquad \max\{f,g\}=\dfrac{f+g+|f-g|}{2}
     \]
     可知两者连续.三个数的中间值可写为
     \[
@@ -190,10 +172,7 @@
 \exampleblank
 
 \begin{solution}
-    对单调函数,任一点的左,右极限都可以分别用趋近该点的有理数列计算.由 $f(r)=g(r)$ 对所有有理数 $r$ 成立,得
-    \[
-        f(x-)=g(x-),\qquad f(x+)=g(x+).
-    \]
+    对单调函数,任一点的左,右极限都可以分别用趋近该点的有理数列计算.由 $f(r)=g(r)$ 对所有有理数 $r$ 成立,得 $f(x-)=g(x-),f(x+)=g(x+)$.
     若 $f$ 在 $x$ 连续,两个单侧极限相等;单调性又迫使 $g(x)$ 等于该共同极限,故 $g$ 也连续且 $f(x)=g(x)$.交换 $f,g$ 即得逆命题.
 \end{solution}
 
@@ -201,18 +180,14 @@
 \begin{example}
     设 $f(x)$ 定义在 $(a,b)$ 上,且对 $(a,b)$ 中任一点 $x_0$,均存在极限 $\displaystyle\lim\limits_{x\to x_0}f(x)$.若令
     \[
-        g(x)=\lim\limits_{t\to x}f(t),
-        \qquad x\in(a,b),
+        g(x)=\lim\limits_{t\to x}f(t), \qquad x\in(a,b),
     \]
     则 $g(x)\in C((a,b))$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-    记 $L=g(x_0)=\displaystyle\lim\limits_{t\to x_0}f(t)$.给定 $\varepsilon>0$,取 $\delta>0$,使 $0<|t-x_0|<2\delta$ 时 $|f(t)-L|<\varepsilon$.当 $|x-x_0|<\delta$ 时,令 $t\to x$ 且始终保持 $0<|t-x_0|<2\delta$,得
-    \[
-        |g(x)-L|\leq\varepsilon.
-    \]
+    记 $L=g(x_0)=\displaystyle\lim\limits_{t\to x_0}f(t)$.给定 $\varepsilon>0$,取 $\delta>0$,使 $0<|t-x_0|<2\delta$ 时 $|f(t)-L|<\varepsilon$.当 $|x-x_0|<\delta$ 时,令 $t\to x$ 且始终保持 $0<|t-x_0|<2\delta$,得 $|g(x)-L|\leq\varepsilon$.
     因而 $g(x)\to g(x_0)$,$g$ 在 $(a,b)$ 上连续.
 \end{solution}
 
@@ -224,9 +199,7 @@
 \begin{example}
     设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上有界,函数
     \[
-        M(x)=\sup\limits_{a\leq t\leq x}f(t),
-        \qquad
-        m(x)=\inf\limits_{a\leq t\leq x}f(t).
+        M(x)=\sup\limits_{a\leq t\leq x}f(t), \qquad m(x)=\inf\limits_{a\leq t\leq x}f(t).
     \]
     则:
     \begin{enumerate}
@@ -237,7 +210,7 @@
 \exampleblank
 
 \begin{solution}
-    第 (1) 问按现有题面不成立.例如取 $f(1/2)=1$,其余点 $f=0$,则 $M$ 在 $1/2$ 处不左连续;取 $f(1/2)=-1$,其余点 $f=0$,则 $m$ 在该点不左连续.因此``$f$ 仅有界''不足以推出所述结论,需核对原始资料是否漏了单侧连续条件.
+    第 (1) 问按现有题面不成立.例如取 $f\left(\dfrac{1}{2}\right)=1$,其余点 $f=0$,则 $M$ 在 $\dfrac{1}{2}$ 处不左连续;取 $f\left(\dfrac{1}{2}\right)=-1$,其余点 $f=0$,则 $m$ 在该点不左连续.因此``$f$ 仅有界''不足以推出所述结论,需核对原始资料是否漏了单侧连续条件.
 
     对第 (2) 问,$f$ 在紧区间上一致连续.若 $x<y$ 且 $y-x$ 足够小,则新增区间 $\lbrack x,y\rbrack$ 上的 $f(t)$ 与 $f(x)$ 任意接近,而 $f(x)\leq M(x)$,故 $0\leq M(y)-M(x)$ 任意小.因此 $M$ 连续;对 $-f$ 应用同一结论即得 $m$ 连续.
 \end{solution}
@@ -257,11 +230,7 @@
 \begin{solution}
     由 $f>0$ 且 $f(x)\leq R(x)$,
     \[
-        G(x)=
-        \begin{cases}
-            1, & f(x)=R(x), \\
-            0, & f(x)<R(x).
-        \end{cases}
+        G(x)= \begin{cases} 1, & f(x)=R(x), \\ 0, & f(x)<R(x). \end{cases}
     \]
     若 $f$ 单调不减,则 $R=f$,故 $G\equiv1$.反之,若 $G$ 连续,由区间的连通性及 $G$ 只取 $0,1$ 两值,$G$ 必为常值.又 $G(0)=1$,故 $G\equiv1$,从而 $f(x)=R(x)$ 对所有 $x$ 成立,这正表明 $f$ 单调不减.
 \end{solution}
@@ -288,16 +257,9 @@
 \begin{solution}
     直接由定义分段讨论得
     \[
-        g(y)=
-        \begin{cases}
-            y,                & 0\leq y<1, \\
-            \lfloor y\rfloor, & y\geq1.
-        \end{cases}
+        g(y)= \begin{cases} y,                & 0\leq y<1, \\ \lfloor y\rfloor, & y\geq1. \end{cases}
     \]
-    特别地,$g(1)=1$,故在 $y=1$ 连续.在每个整数 $m\geq2$ 处,
-    \[
-        g(m-)=m-1,\qquad g(m)=g(m+)=m,
-    \]
+    特别地,$g(1)=1$,故在 $y=1$ 连续.在每个整数 $m\geq2$ 处, $g(m-)=m-1,\,g(m)=g(m+)=m$,
     因而右连续但不左连续;其余点连续.
 \end{solution}
 
@@ -338,9 +300,7 @@
 \begin{example}
     设 $f(x)$ 在 $(-\infty,+\infty)$ 上有定义,证明:$f(x)$ 连续 $\Longleftrightarrow$ 对任意 $c\in(-\infty,+\infty)$,集合
     \[
-        \{x\mid f(x)>c\}
-        \quad\text{与}\quad
-        \{x\mid f(x)<c\}
+        \{x\mid f(x)>c\} \quad\text{与}\quad \{x\mid f(x)<c\}
     \]
     为开集.
 \end{example}
@@ -365,13 +325,9 @@
 \begin{solution}
     本题按现有题面不成立.例如
     \[
-        f(x)=
-        \begin{cases}
-            0, & 0\leq x<1/2,   \\
-            1, & 1/2\leq x\leq1
-        \end{cases}
+        f(x)= \begin{cases} 0, & 0\leq x<\dfrac{1}{2},   \\ 1, & \dfrac{1}{2}\leq x\leq1 \end{cases}
     \]
-    单调不减,且 $f(\lbrack0,1\rbrack)=\{0,1\}$ 是闭集,但 $f$ 在 $1/2$ 处不连续.若把条件改为``$f(\lbrack0,1\rbrack)$ 是区间''或``$f$ 具有介值性'',则可由单调函数的跳跃间断会漏掉一段值域推出连续.
+    单调不减,且 $f(\lbrack0,1\rbrack)=\{0,1\}$ 是闭集,但 $f$ 在 $\dfrac{1}{2}$ 处不连续.若把条件改为``$f(\lbrack0,1\rbrack)$ 是区间''或``$f$ 具有介值性'',则可由单调函数的跳跃间断会漏掉一段值域推出连续.
 \end{solution}
 
 %例题3.1.17
@@ -385,10 +341,7 @@
 \exampleblank
 
 \begin{solution}
-    任取 $x_n\to x$.由 $f(x_n)\in\lbrack0,1\rbrack$ 的紧致性,任意子列都有收敛子子列 $f(x_{n_k})\to y$.此时
-    \[
-        (x_{n_k},f(x_{n_k}))\to(x,y).
-    \]
+    任取 $x_n\to x$.由 $f(x_n)\in\lbrack0,1\rbrack$ 的紧致性,任意子列都有收敛子子列 $f(x_{n_k})\to y$.此时 $(x_{n_k},f(x_{n_k}))\to(x,y)$.
     因图像 $E$ 闭,必有 $(x,y)\in E$,即 $y=f(x)$.因而 $f(x_n)$ 的每个收敛子列都只能收敛到 $f(x)$,故 $f(x_n)\to f(x)$.由序列判别法,$f$ 连续.
 \end{solution}
 
@@ -399,10 +352,7 @@
 \exampleblank
 
 \begin{solution}
-    因 $F$ 闭,$Y\setminus F$ 开.连续性给出 $f^{-1}(Y\setminus F)$ 为开集,而
-    \[
-        X\setminus f^{-1}(F)=f^{-1}(Y\setminus F).
-    \]
+    因 $F$ 闭,$Y\setminus F$ 开.连续性给出 $f^{-1}(Y\setminus F)$ 为开集,而 $X\setminus f^{-1}(F)=f^{-1}(Y\setminus F)$.
     故 $f^{-1}(F)$ 为闭集.
 \end{solution}
 
@@ -419,12 +369,12 @@
     \begin{enumerate}
         \item 若 $g(x)$ 为单射,则 $f(x)$ 为单射;
         \item 若 $f(x)$ 为单调函数,则 $g(x)$ 一定为单调递增函数;
-        \item 更一般地,若 $g(x)$ 为单射,且 $f(x)$ 具有介值性,则 $g(x)$ 一定为单调递增函数.
+        \item 更一般地,若 $g(x)$ 为单射,且 $f(x)$ 具有介值性,则 $g(x)$ 一定为(严格)单调递增函数.
     \end{enumerate}
 \end{proposition}
 
 \begin{corollary}[\markstar]
-    若 $g(x)$ 为单射,且 $f(x)$ 为连续函数,仍有 $g(x)$ 为单调递增函数.
+    若 $g(x)$ 为单射,且 $f(x)$ 为连续函数,仍有 $g(x)$ 为(严格)单调递增函数.
 \end{corollary}
 
 %例题3.2.1
@@ -468,22 +418,15 @@
 \begin{example}
     设 $f$ 是从 $\mathbb{R}$ 到 $\mathbb{R}$ 的一对一连续映射,有不动点,且满足
     \[
-        f(2x-f(x))\equiv x,
-        \qquad \forall x\in\mathbb{R}.
+        f(2x-f(x))\equiv x, \qquad \forall x\in\mathbb{R}.
     \]
-    试证:$f(x)\equiv x\ (\forall x\in\mathbb{R})$.
+    试证:$f(x)\equiv x\,(\forall x\in\mathbb{R})$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-    由题设,$f^{-1}(x)=2x-f(x)$.若 $f$ 递减,左边递减而右边严格递增,矛盾;故 $f$ 递增.把 $x$ 换成 $f(x)$ 得
-    \[
-        f(f(x))=2f(x)-x.
-    \]
-    归纳得对任意整数 $n$,
-    \[
-        f^n(x)=x+n(f(x)-x).
-    \]
+    由题设,$f^{-1}(x)=2x-f(x)$.若 $f$ 递减,左边递减而右边严格递增,矛盾;故 $f$ 递增.把 $x$ 换成 $f(x)$ 得 $f(f(x))=2f(x)-x$.
+    归纳得对任意整数 $n$, $f^n(x)=x+n(f(x)-x)$.
     设 $c$ 为不动点.若 $x>c$ 且 $f(x)\ne x$,取适当正或负的 $n$,上式右边将小于 $c$;但递增性要求 $f^n(x)>f^n(c)=c$,矛盾.$x<c$ 同理,故 $f\equiv\operatorname{id}$.
 \end{solution}
 
@@ -491,18 +434,14 @@
 \begin{example}
     设 $f\in C(( -\infty,+\infty))$ 且
     \[
-        f(f(f(x)))=x,
-        \qquad x\in(-\infty,+\infty),
+        f(f(f(x)))=x, \qquad x\in(-\infty,+\infty),
     \]
     则 $f(x)\equiv x$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-    由 $f^3=\operatorname{id}$ 知 $f$ 单射,因而严格单调.若 $f$ 递减,则 $f^3$ 递减,与恒等函数递增矛盾;故 $f$ 递增.若 $f(x)>x$,则
-    \[
-        x<f(x)<f^2(x)<f^3(x)=x,
-    \]
+    由 $f^3=\operatorname{id}$ 知 $f$ 单射,因而严格单调.若 $f$ 递减,则 $f^3$ 递减,与恒等函数递增矛盾;故 $f$ 递增.若 $f(x)>x$,则 $x<f(x)<f^2(x)<f^3(x)=x$,
     矛盾;$f(x)<x$ 同理.故 $f(x)=x$.
 \end{solution}
 
@@ -510,18 +449,14 @@
 \begin{example}
     设 $f:\lbrack 0,1\rbrack\to\lbrack 0,1\rbrack$ 连续,且 $f(0)=0,f(1)=1$,定义
     \[
-        f^n(x)\overset{\triangle}{=}(f\circ f\circ\cdots\circ f)(x)
-        \quad(n\text{ 次复合}).
+        f^n(x)\overset{\triangle}{=}(f\circ f\circ\cdots\circ f)(x) \quad(n\text{ 次复合}).
     \]
-    若存在 $n_0$,使得 $f^{n_0}(x)=x\ (0\leq x\leq1)$,则 $f(x)=x$.
+    若存在 $n_0$,使得 $f^{n_0}(x)=x\,(0\leq x\leq1)$,则 $f(x)=x$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-    由 $f^{n_0}=\operatorname{id}$ 知 $f$ 单射,故 $f$ 严格单调.由 $f(0)=0,f(1)=1$ 知 $f$ 递增.若 $f(x)>x$,则递增性给出
-    \[
-        x<f(x)<f^2(x)<\cdots<f^{n_0}(x)=x,
-    \]
+    由 $f^{n_0}=\operatorname{id}$ 知 $f$ 单射,故 $f$ 严格单调.由 $f(0)=0,f(1)=1$ 知 $f$ 递增.若 $f(x)>x$,则递增性给出 $x<f(x)<f^2(x)<\cdots<f^{n_0}(x)=x$,
     矛盾;$f(x)<x$ 同理.因而 $f(x)=x$.
 \end{solution}
 
@@ -538,8 +473,7 @@
 \begin{solution}
     连续函数 $f(x)-x$ 无零点,故在连通集 $\mathbb{R}$ 上恒正或恒负.因而迭代列 $x_{n+1}=f(x_n)$ 严格单调.若它有界,则存在有限极限 $L$,由连续性
     \[
-        L=\lim\limits_{n\to\infty}x_{n+1}
-        =\lim\limits_{n\to\infty}f(x_n)=f(L),
+        L=\lim\limits_{n\to\infty}x_{n+1} =\lim\limits_{n\to\infty}f(x_n)=f(L),
     \]
     这与无不动点矛盾.故迭代列无界.
 \end{solution}
@@ -574,6 +508,7 @@
 \end{proposition}
 
 \begin{corollary}[\markstar]
+    \leavevmode
     \begin{enumerate}
         \item 若 $f$(非常数)是连续函数,有最小正周期 $T_0$,则对任意 $T\in\{f\text{ 的正周期}\}$,必存在 $n\in\mathbb{N}$,使得 $T=nT_0$;
         \item 设 $f$(非常数)是连续函数,有周期 $T>0$,若 $\alpha T$ 也是 $f$ 的周期,则 $\alpha\in\mathbb{Q}$.
@@ -607,10 +542,7 @@
 \exampleblank
 
 \begin{solution}
-    因 $T_1/T_2$ 为无理数,集合
-    \[
-        \{mT_1+nT_2:m,n\in\mathbb{Z}\}
-    \]
+    因 $\dfrac{T_1}{T_2}$ 为无理数,集合 $\{mT_1+nT_2:m,n\in\mathbb{Z}\}$
     在 $\mathbb{R}$ 中稠密.任取 $x,y$,可取 $m_k,n_k$ 使 $x+m_kT_1+n_kT_2\to y$.利用周期性和连续性得
     \[
         f(y)=\lim\limits_{k\to\infty}f(x+m_kT_1+n_kT_2)=f(x).
@@ -627,9 +559,9 @@
 \begin{solution}
     本题缺少``$f,g$ 均非常值且 $T_1,T_2$ 为最小正周期''等必要条件,按现有题面不成立.例如取
     \[
-        f(x)\equiv0,\qquad g(x)=\sin x,qquad T_1=\sqrt2,quad T_2=2\pi.
+        f(x)\equiv0,\qquad g(x)=\sin x,\qquad T_1=\sqrt{2},\qquad T_2=2\pi.
     \]
-    则 $T_1/T_2\notin\mathbb{Q}$,但 $h(x)=\sin x$ 显然是周期函数.
+    则 $\dfrac{T_1}{T_2}\notin\mathbb{Q}$,但 $h(x)=\sin x$ 显然是周期函数.
 \end{solution}
 
 
@@ -639,8 +571,7 @@
 \begin{proposition}[\markstar]
     设 $f(x)$ 定义在 $(-\infty,+\infty)$ 上满足 Cauchy 方程
     \[
-        f(x+y)=f(x)+f(y),
-        \qquad x,y\in(-\infty,+\infty).
+        f(x+y)=f(x)+f(y), \qquad x,y\in(-\infty,+\infty).
     \]
     则 $f(x)=f(1)x$ 对任意 $x\in\mathbb{Q}$ 成立.进一步,若 $f$ 还满足如下条件之一:
     \begin{enumerate}
@@ -659,18 +590,14 @@
 \begin{example}
     设 $f\in C(( -\infty,+\infty))$,且
     \[
-        f(x+y)=f(x)+f(y),
-        \qquad \forall x,y\in\mathbb{R},
+        f(x+y)=f(x)+f(y), \qquad \forall x,y\in\mathbb{R},
     \]
     证明:这个函数方程除零解外只有解 $f(x)=ax$,其中 $a=f(1)>0$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-    令 $y=0$ 得 $f(0)=0$,再由方程得 $f(-x)=-f(x)$.归纳得 $f(nx)=nf(x)$,进而对有理数 $r$ 有 $f(rx)=rf(x)$.取 $x=1$,记 $a=f(1)$,由有理数的稠密性和 $f$ 的连续性,
-    \[
-        f(x)=ax,qquad x\in\mathbb{R}.
-    \]
+    令 $y=0$ 得 $f(0)=0$,再由方程得 $f(-x)=-f(x)$.归纳得 $f(nx)=nf(x)$,进而对有理数 $r$ 有 $f(rx)=rf(x)$.取 $x=1$,记 $a=f(1)$,由有理数的稠密性和 $f$ 的连续性, $f(x)=ax,\,x\in\mathbb{R}$.
     题面中``非零解时 $a>0$''不正确;$a$ 可为任意非零实数,例如 $f(x)=-x$ 也是解.
 \end{solution}
 
@@ -678,8 +605,7 @@
 \begin{example}
     设 $f\in C(( -\infty,+\infty))$,且
     \[
-        f\left(\dfrac{x+y}{2}\right)=\dfrac{1}{2}[f(x)+f(y)],
-        \qquad \forall x,y\in\mathbb{R},
+        f\left(\dfrac{x+y}{2}\right)=\dfrac{1}{2}[f(x)+f(y)], \qquad \forall x,y\in\mathbb{R},
     \]
     证明:
     \[
@@ -689,10 +615,7 @@
 \exampleblank
 
 \begin{solution}
-    令 $g(x)=f(x)-f(0)$.在原式中依次取 $y=0$,$y=-x$ 并反复使用中点关系,可得对任意二进有理数 $r$,
-    \[
-        g(rx)=rg(x).
-    \]
+    令 $g(x)=f(x)-f(0)$.在原式中依次取 $y=0$,$y=-x$ 并反复使用中点关系,可得对任意二进有理数 $r$, $g(rx)=rg(x)$.
     再由连续性把 $r$ 推广到任意实数.取 $x=1$,得 $g(x)=xg(1)$,即
     \[
         f(x)=[f(1)-f(0)]x+f(0).
@@ -703,18 +626,14 @@
 \begin{example}
     证明:满足方程
     \[
-        f(x+y)=f(x)+f(y),
-        \qquad \forall x,y>0,
+        f(x+y)=f(x)+f(y), \qquad \forall x,y>0,
     \]
-    的唯一非零解为 $f(x)=b\log_a x\ (a>0,a,b\text{ 为常数})$.
+    的唯一非零解为 $f(x)=b\log_a x\,(a>0,a,b\text{ 为常数})$.
 \end{example}
 \exampleblank
 
 \begin{solution}
-    本题题面与结论不匹配.方程 $f(x+y)=f(x)+f(y)$ 是加法 Cauchy 方程;在连续条件下,其在正半轴上的解为
-    \[
-        f(x)=cx,qquad x>0,
-    \]
+    本题题面与结论不匹配.方程 $f(x+y)=f(x)+f(y)$ 是加法 Cauchy 方程;在连续条件下,其在正半轴上的解为 $f(x)=cx,\,x>0$,
     而不是对数函数.例如 $f(x)=x$ 满足方程,却不能写成题述的 $b\log_a x$.对数结论应对应于 $f(xy)=f(x)+f(y)$.
 \end{solution}
 
@@ -722,21 +641,17 @@
 \begin{example}
     函数方程
     \[
-        f(x+y)+f(x-y)=2f(x)f(y),
-        \qquad \forall x,y\in\mathbb{R},
+        f(x+y)+f(x-y)=2f(x)f(y), \qquad \forall x,y\in\mathbb{R},
     \]
     在实轴 $\mathbb{R}$ 上的非零连续解为 $f(x)=\cos ax$ 或 $f(x)=\operatorname{ch}ax$($a$ 为常数).
 \end{example}
 \exampleblank
 
 \begin{solution}
-    非零解满足 $f(0)=1$ 且 $f(-x)=f(x)$.固定 $y$,序列 $u_n=f(x+ny)$ 满足
-    \[
-        u_{n+1}-2f(y)u_n+u_{n-1}=0.
-    \]
+    非零解满足 $f(0)=1$ 且 $f(-x)=f(x)$.固定 $y$,序列 $u_n=f(x+ny)$ 满足 $u_{n+1}-2f(y)u_n+u_{n-1}=0$.
     解这个二阶常系数差分方程,再利用 $f$ 的连续性和加法公式的相容性,得两类实值解
     \[
-        f(x)=\cos(ax),\qquad f(x)=\operatorname{ch}(ax),qquad a\in\mathbb{R}.
+        f(x)=\cos(ax),\qquad f(x)=\operatorname{ch}(ax),\qquad a\in\mathbb{R}.
     \]
     直接代入并用三角函数或双曲函数的和差化积公式,可验证它们均满足原方程.
 \end{solution}
@@ -760,10 +675,7 @@
 \exampleblank
 
 \begin{solution}
-    由连续性,$|f|$ 在紧区间上取到最小值 $m\geq0$.在最小点 $x$ 应用题设,存在 $x'$ 使
-    \[
-        m\leq |f(x')|\leq\dfrac{m}{2}.
-    \]
+    由连续性,$|f|$ 在紧区间上取到最小值 $m\geq0$.在最小点 $x$ 应用题设,存在 $x'$ 使 $m\leq |f(x')|\leq\dfrac{m}{2}$.
     因而 $m=0$,最小点即为所求零点.
 \end{solution}
 
@@ -803,12 +715,12 @@
 \begin{solution}
     对第 (1) 问,单调函数若在某点不连续,必有跳跃,并漏掉左,右极限之间的所有值,这与介值性矛盾,故 $f$ 连续.
 
-    第 (2) 问只能推出 $f$ 在 $(a,b)$ 内连续:若 $L=\displaystyle\lim\limits_{t\to x}f(t)\ne f(x)$,介值性将迫使靠近 $x$ 的函数值取到 $L$ 与 $f(x)$ 之间的值,与极限定义矛盾.但题面并未给出端点的单侧极限,故``在闭区间上连续''不能推出.例如令 $f(0)=0$,$f(x)=\sin(1/x)$ $(0<x\leq1)$,它具有介值性且每个内点的极限存在,但在 $0$ 不连续.
+    第 (2) 问只能推出 $f$ 在 $(a,b)$ 内连续:若 $L=\displaystyle\lim\limits_{t\to x}f(t)\ne f(x)$,介值性将迫使靠近 $x$ 的函数值取到 $L$ 与 $f(x)$ 之间的值,与极限定义矛盾.但题面并未给出端点的单侧极限,故``在闭区间上连续''不能推出.例如令 $f(0)=0$,$f(x)=\sin\dfrac{1}{x}$ $(0<x\leq1)$,它具有介值性且每个内点的极限存在,但在 $0$ 不连续.
 \end{solution}
 
 %例题3.3.5
 \begin{example}
-    设 $f\in C(\lbrack a,b\rbrack)$,$x_i\in\lbrack a,b\rbrack\ (i=1,2,\ldots,n)$,则存在 $\xi\in\lbrack a,b\rbrack$,使得
+    设 $f\in C(\lbrack a,b\rbrack)$,$x_i\in\lbrack a,b\rbrack\,(i=1,2,\ldots,n)$,则存在 $\xi\in\lbrack a,b\rbrack$,使得
     \[
         f(\xi)=\dfrac{1}{n}\sum\limits_{i=1}^n f(x_i).
     \]
@@ -824,8 +736,7 @@
     \begin{enumerate}
         \item 设 $f\in C(\lbrack 0,1\rbrack)$,若 $f(0)=f(1)$,则存在 $\alpha,\beta$ 满足
               \[
-                  0\leq\alpha<\beta\leq1,
-                  \qquad \beta-\alpha=\dfrac{1}{5},
+                  0\leq\alpha<\beta\leq1, \qquad \beta-\alpha=\dfrac{1}{5},
               \]
               使得 $f(\alpha)=f(\beta)$;
         \item 设 $f(x)$ 在 $(-\infty,+\infty)$ 上以 $T$ 为周期的连续函数,则存在 $\xi\in(-\infty,+\infty)$ 使得
@@ -837,13 +748,13 @@
 \exampleblank
 
 \begin{solution}
-    第 (1) 问令 $h(x)=f(x+1/5)-f(x)$,$0\leq x\leq4/5$.有
+    第 (1) 问令 $h(x)=f\left(x+\dfrac{1}{5}\right)-f(x)$,$0\leq x\leq\dfrac{4}{5}$.有
     \[
         \displaystyle\sum\limits_{k=0}^{4}h\left(\dfrac{k}{5}\right)=f(1)-f(0)=0.
     \]
     因而这些值中要么有零,要么既有正值又有负值;由 $h$ 连续必有零点.
 
-    第 (2) 问令 $h(x)=f(x+T/2)-f(x)$.周期性给出 $h(x+T/2)=-h(x)$,故由介值定理,$h$ 在 $x$ 与 $x+T/2$ 之间必有零点.
+    第 (2) 问令 $h(x)=f\left(x+\dfrac{T}{2}\right)-f(x)$.周期性给出 $h\left(x+\dfrac{T}{2}\right)=-h(x)$,故由介值定理,$h$ 在 $x$ 与 $x+\dfrac{T}{2}$ 之间必有零点.
 \end{solution}
 
 %例题3.3.7
@@ -863,9 +774,10 @@
 \exampleblank
 
 \begin{solution}
-    第 (1) 问中 $\xi_n\in\lbrack0,1/n\rbrack$ 的位置限制按现有题面不成立.例如 $n=3$,取 $f(x)=\sin(2\pi x-2\pi/15)$,则 $f(0)=f(1)$,但 $f(x+1/3)=f(x)$ 在 $\lbrack0,1/3\rbrack$ 内无解.正确的常用结论是存在 $\xi_n\in\lbrack0,1-1/n\rbrack$:对 $h(x)=f(x+1/n)-f(x)$ 使用分点处的望远求和及介值定理即得.
+    
+    第 (1) 问中 $\xi_n\in\lbrack0,\dfrac{1}{n}\rbrack$ 的位置限制按现有题面不成立.例如 $n=3$,取 $f(x)=\sin\left(2\pi x-\dfrac{2\pi}{15}\right)$,则 $f(0)=f(1)$,但 $f\left(x+\dfrac{1}{3}\right)=f(x)$ 在 $\lbrack0,\dfrac{1}{3}\rbrack$ 内无解.正确的常用结论是存在 $\xi_n\in\lbrack0,1-\dfrac{1}{n}\rbrack$:对 $h(x)=f\left(x+\dfrac{1}{n}\right)-f(x)$ 使用分点处的望远求和及介值定理即得.
 
-    第 (2) 问令 $g(x)=f(x)-x$,则 $g(0)=g(1)=0$.对 $g$ 应用上述正确结论,得某个 $\xi_n\in\lbrack0,1-1/n\rbrack$ 满足 $g(\xi_n+1/n)=g(\xi_n)$,这等价于
+    第 (2) 问令 $g(x)=f(x)-x$,则 $g(0)=g(1)=0$.对 $g$ 应用上述正确结论,得某个 $\xi_n\in\lbrack0,1-\dfrac{1}{n}\rbrack$ 满足 $g\left(\xi_n+\dfrac{1}{n}\right)=g(\xi_n)$,这等价于
     \[
         f\left(\xi_n+\dfrac{1}{n}\right)=f(\xi_n)+\dfrac{1}{n}.
     \]
@@ -905,9 +817,7 @@
 \begin{solution}
     记公共最大值为 $M$,并令 $\Phi(t)=e^t+3t$.因 $\Phi'(t)=e^t+3>0$,$\Phi$ 严格递增.若 $a,b$ 分别为 $f,g$ 的最大值点,则
     \[
-        \Phi(f(a))-\Phi(g(a))\geq0,
-        \qquad
-        \Phi(f(b))-\Phi(g(b))\leq0.
+        \Phi(f(a))-\Phi(g(a))\geq0, \qquad \Phi(f(b))-\Phi(g(b))\leq0.
     \]
     对连续函数 $\Phi(f)-\Phi(g)$ 使用介值定理,即得所求 $x_0$.
 \end{solution}
@@ -937,8 +847,7 @@
 \begin{example}
     设
     \[
-        f_n(x)=x+x^2+\cdots+x^n,
-        \qquad n=2,3,\ldots.
+        f_n(x)=x+x^2+\cdots+x^n, \qquad n=2,3,\ldots.
     \]
     \begin{enumerate}
         \item 证明:方程 $f_n(x)=1$ 在 $\lbrack 0,+\infty)$ 上有唯一的实根 $x_n$;
@@ -948,15 +857,9 @@
 \exampleblank
 
 \begin{solution}
-    $f_n$ 在 $\lbrack0,+\infty)$ 上严格递增,且 $f_n(0)=0<1<f_n(1)=n$,故有唯一根 $x_n\in(0,1)$.又
-    \[
-        f_{n+1}(x_n)=1+x_n^{n+1}>1,
-    \]
-    故 $x_{n+1}<x_n$,从而 $x_n\to L\in\lbrack0,1)$.由
-    \[
-        1=\dfrac{x_n(1-x_n^n)}{1-x_n}
-    \]
-    令 $n\to\infty$,得 $1=L/(1-L)$,故 $L=1/2$.
+    $f_n$ 在 $\lbrack0,+\infty)$ 上严格递增,且 $f_n(0)=0<1<f_n(1)=n$,故有唯一根 $x_n\in(0,1)$.又 $f_{n+1}(x_n)=1+x_n^{n+1}>1$,
+    故 $x_{n+1}<x_n$,从而 $x_n\to L\in\lbrack0,1)$.由 $1=\dfrac{x_n(1-x_n^n)}{1-x_n}$
+    令 $n\to\infty$,得 $1=\dfrac{L}{1-L}$,故 $L=\dfrac{1}{2}$.
 \end{solution}
 
 %例题3.3.12
@@ -977,11 +880,8 @@
 \exampleblank
 
 \begin{solution}
-    令 $y=\cos x$.在 $\lbrack0,\pi/3)$ 上,$y$ 由 $1$ 严格减到 $1/2$,方程化为
-    \[
-        y+y^2+\cdots+y^n=1.
-    \]
-    左边对 $y>0$ 严格递增,在 $y=1/2$ 时小于 $1$,在 $y=1$ 时大于 $1$,故唯一根 $y_n\in(1/2,1)$.由上题同样的论证,$y_n\to1/2$,因此 $x_n=\arccos y_n\to\pi/3$.
+    令 $y=\cos x$.在 $\lbrack0,\dfrac{\pi}{3})$ 上,$y$ 由 $1$ 严格减到 $\dfrac{1}{2}$,方程化为 $y+y^2+\cdots+y^n=1$.
+    左边对 $y>0$ 严格递增,在 $y=\dfrac{1}{2}$ 时小于 $1$,在 $y=1$ 时大于 $1$,故唯一根 $y_n\in\left(\dfrac{1}{2},1\right)$.由上题同样的论证,$y_n\to\dfrac{1}{2}$,因此 $x_n=\arccos y_n\to\dfrac{\pi}{3}$.
 \end{solution}
 
 %例题3.3.13
@@ -994,14 +894,8 @@
 \exampleblank
 
 \begin{solution}
-    只需证明 $T>0$ 的情形,$T<0$ 可换向,$T=0$ 显然.若不存在所求子列,则存在 $\varepsilon>0$ 和 $A$,使 $x>A$ 时
-    \[
-        |f(x+T)-f(x)|\geq\varepsilon.
-    \]
-    差函数连续且在连通区间上不为零,故其符号恒定.沿等差数列累加得
-    \[
-        |f(A_0+mT)-f(A_0)|\geq m\varepsilon,
-    \]
+    只需证明 $T>0$ 的情形,$T<0$ 可换向,$T=0$ 显然.若不存在所求子列,则存在 $\varepsilon>0$ 和 $A$,使 $x>A$ 时 $|f(x+T)-f(x)|\geq\varepsilon$.
+    差函数连续且在连通区间上不为零,故其符号恒定.沿等差数列累加得 $|f(A_0+mT)-f(A_0)|\geq m\varepsilon$,
     与 $f$ 有界矛盾.
 \end{solution}
 
@@ -1012,10 +906,7 @@
 \exampleblank
 
 \begin{solution}
-    把 $f$ 以周期 $n$ 连续延拓到实轴.对每个整数 $k=1,\ldots,n$,函数
-    \[
-        h_k(x)=f(x+k)-f(x)
-    \]
+    把 $f$ 以周期 $n$ 连续延拓到实轴.对每个整数 $k=1,\ldots,n$,函数 $h_k(x)=f(x+k)-f(x)$
     为连续周期函数,且一个周期上的积分为零,故必有零点.将零点按周期平移回 $\lbrack0,n\rbrack$,可得 $f(x)=f(y)$ 且 $|x-y|$ 为正整数.对 $k=1,\ldots,n$ 依次选取并利用周期平移,可得至少 $n$ 组不同点对;$k=n$ 时包含 $(0,n)$.
 \end{solution}
 
@@ -1025,19 +916,12 @@
 
 用定义证明 $f$ 在 $I$ 上一致连续,通常的方法是设法证明 $f$ 在 $I$ 满足 Lipschitz 条件:
 \[
-    |f(x')-f(x'')|\leq L|x'-x''|,
-    \qquad \forall x',x''\in I,
+    |f(x')-f(x'')|\leq L|x'-x''|, \qquad \forall x',x''\in I,
 \]
 其中 $L>0$ 为某一常数.特别地,若 $f$ 在 $I$ 上存在有界导函数,则 $f$ 在 $I$ 满足 Lipschitz 条件.
 
-而 $f(x)$ 在 $I$ 上非一致连续 $\Longleftrightarrow$ 存在 $\varepsilon_0>0$,对任意 $\dfrac{1}{n}>0$,存在 $x'_n,x''_n\in I$,虽然
-\[
-    |x'_n-x''_n|<\dfrac{1}{n},
-\]
-但是
-\[
-    |f(x'_n)-f(x''_n)|\geq\varepsilon_0.
-\]
+而 $f(x)$ 在 $I$ 上非一致连续 $\Longleftrightarrow$ 存在 $\varepsilon_0>0$,对任意 $\dfrac{1}{n}>0$,存在 $x'_n,x''_n\in I$,虽然 $|x'_n-x''_n|<\dfrac{1}{n}$,
+但是 $|f(x'_n)-f(x''_n)|\geq\varepsilon_0$.
 因此,常见的证非一致连续方法是取出两个充分靠近的数列($n\to\infty$),使得它们对应函数值并不充分接近.
 
 %例题3.3.15
@@ -1054,20 +938,26 @@
 \exampleblank
 
 \begin{solution}
-    第 (1) 题中 $|f'(x)|=|\sin2x|\leq1$,故一致连续.第 (2) 题取
+    第 (1) 题中 $|f'(x)|=|\sin2x|\leq1$,故一致连续.
+    
+    第 (2) 题取
     \[
         x_n=\sqrt{2n\pi},\qquad y_n=\sqrt{2n\pi+\dfrac{\pi}{2}},
     \]
-    则 $|x_n-y_n|\to0$,但函数值之差为 $1$,故非一致连续.第 (3) 题由
-    \[
-        |\sqrt x-\sqrt y|\leq\sqrt{|x-y|}
-    \]
-    知一致连续.第 (4) 题取 $x_n=1/n,y_n=1/(n+1)$;第 (5) 题取 $x_n=n,y_n=n+1/n$,均得自变量之差趋于零而函数值之差不趋于零.故 (4)(5) 非一致连续.
+    则 $|x_n-y_n|\to0$,但函数值之差为 $1$,故非一致连续.
+    
+    第 (3) 题由 $|\sqrt x-\sqrt y|\leq\sqrt{|x-y|}$
+    知一致连续.
+    
+    第 (4) 题取 $x_n=\dfrac{1}{n},y_n=\dfrac{1}{n+1}$ 知非一致连续.
+    
+    第 (5) 题取 $x_n=n,y_n=n+\dfrac{1}{n}$ 知非一致连续.
 \end{solution}
 
 一般地,闭区间 $\lbrack a,b\rbrack$ 上连续函数 $f(x)$,由 Cantor 定理知其必一致连续,自然就产生一个问题,连续函数在开区间及无穷区间的情况呢?
 
 \begin{theorem}[\markstar]
+    \leavevmode
     \begin{enumerate}
         \item 设 $f(x)$ 在 $(a,b)$ 上连续,则
               \[
@@ -1078,15 +968,14 @@
         \item 设 $f\in C(\lbrack a,+\infty))$,$\displaystyle\lim\limits_{x\to+\infty}f(x)=A$(有限),则 $f$ 在 $\lbrack a,+\infty)$ 上一致连续;
         \item 设 $f\in C(( -\infty,+\infty))$,若存在极限
               \[
-                  \displaystyle\lim\limits_{x\to-\infty}f(x)=l,
-                  \qquad
-                  \lim\limits_{x\to+\infty}f(x)=L,
+                  \displaystyle\lim\limits_{x\to-\infty}f(x)=l, \qquad \lim\limits_{x\to+\infty}f(x)=L,
               \]
               则 $f(x)$ 在 $(-\infty,+\infty)$ 上一致连续.
     \end{enumerate}
 \end{theorem}
 
 \begin{remark}
+
     (1) 与 (2)(3) 的区别在于,无穷区间下必要性不再成立,可考虑反例 $f(x)=x,g(x)=\sin x$ 在 $(-\infty,+\infty)$ 上一致连续,但在端点 $\pm\infty$ 无极限.
 \end{remark}
 
@@ -1105,9 +994,9 @@
 \exampleblank
 
 \begin{solution}
-    第 (1) 题在 $0$ 附近无界,故非一致连续.第 (2) 题可在 $0$ 处补值为 $1$,从而在紧区间上一致连续.第 (3) 题取使 $\cos(1/x)$ 分别为 $1,-1$ 的两列点;第 (4) 题同理取使 $\cos(\pi/x)$ 分别为 $1,-1$ 的两列点,均得非一致连续.
+    第 (1) 题在 $0$ 附近无界,故非一致连续.第 (2) 题可在 $0$ 处补值为 $1$,从而在紧区间上一致连续.第 (3) 题取使 $\cos\dfrac{1}{x}$ 分别为 $1,-1$ 的两列点;第 (4) 题同理取使 $\cos\dfrac{\pi}{x}$ 分别为 $1,-1$ 的两列点,均得非一致连续.
 
-    第 (5) 题在 $0$ 处可连续补值,在 $\lbrack1,+\infty)$ 上导数有界,故一致连续.第 (6) 题在 $(0,1)$ 上因 $\sin(1/x)$ 的等幅振荡而非一致连续;在 $(1,+\infty)$ 上导数有界,故一致连续.
+    第 (5) 题在 $0$ 处可连续补值,在 $\lbrack1,+\infty)$ 上导数有界,故一致连续.第 (6) 题在 $(0,1)$ 上因 $\sin\dfrac{1}{x}$ 的等幅振荡而非一致连续;在 $(1,+\infty)$ 上导数有界,故一致连续.
 \end{solution}
 
 \begin{proposition}[\markstar]
@@ -1138,7 +1027,7 @@
 \exampleblank
 
 \begin{solution}
-    第 (1) 题在 $0$ 处可连续补值,且对大 $x$有 $f(x)=x+O(1)$,$f'(x)=1+O(1/x)$;第 (2) 题对大 $|x|$ 有 $f(x)=|x|+O(1/|x|)$,导数有界;第 (3) 题的根式内为 $(x-1)^2(x+1)$,在 $x=\pm1$ 附近分别有 $1/3$ 或 $2/3$ 次 Hölder 估计,在无穷远处为 $x+O(1)$ 且导数有界.将实轴分成根点附近的有界区间与其补集,可知三个函数都一致连续.
+    第 (1) 题在 $0$ 处可连续补值,且对大 $x$ 有 $f(x)=x+O(1)$,$f'(x)=1+O\left(\dfrac{1}{x}\right)$;第 (2) 题对大 $|x|$ 有 $f(x)=|x|+O\left(\dfrac{1}{|x|}\right)$,导数有界;第 (3) 题的根式内为 $(x-1)^2(x+1)$,在 $x=\pm1$ 附近分别有 $\dfrac{1}{3}$ 或 $\dfrac{2}{3}$ 次 Hölder 估计,在无穷远处为 $x+O(1)$ 且导数有界.将实轴分成根点附近的有界区间与其补集,可知三个函数都一致连续.
 \end{solution}
 
 \begin{proposition}[\markstar\ 阶的估计]
@@ -1167,19 +1056,15 @@
 
 %例题3.3.18
 \begin{example}
-    设 $f$ 在 $\lbrack 0,+\infty)$ 上满足 Lipschitz 条件,证明:$f(x^\alpha)\ (0<\alpha<1)$ 在 $\lbrack 0,+\infty)$ 上一致连续.
+    设 $f$ 在 $\lbrack 0,+\infty)$ 上满足 Lipschitz 条件,证明:$f(x^\alpha)\,(0<\alpha<1)$ 在 $\lbrack 0,+\infty)$ 上一致连续.
 \end{example}
 \exampleblank
 
 \begin{solution}
-    设 $f$ 的 Lipschitz 常数为 $L$.对 $x,y\geq0$ 且 $0<\alpha<1$,有
-    \[
-        |x^\alpha-y^\alpha|\leq|x-y|^\alpha.
-    \]
+    设 $f$ 的 Lipschitz 常数为 $L$.对 $x,y\geq0$ 且 $0<\alpha<1$,有 $|x^\alpha-y^\alpha|\leq|x-y|^\alpha$.
     因而
     \[
-        |f(x^\alpha)-f(y^\alpha)|\leq L|x^\alpha-y^\alpha|
-        \leq L|x-y|^\alpha.
+        |f(x^\alpha)-f(y^\alpha)|\leq L|x^\alpha-y^\alpha| \leq L|x-y|^\alpha.
     \]
     右边只依赖于 $|x-y|$,并在其趋于零时趋于零,故复合函数一致连续.
 \end{solution}
@@ -1195,15 +1080,12 @@
 \exampleblank
 
 \begin{solution}
-    第 (1) 问,对给定 $\varepsilon$分别取两侧的一致连续模.若 $x,y$ 位于同侧则直接使用;若 $x<b<y$,则
-    \[
-        |f(x)-f(y)|\leq|f(x)-f(b)|+|f(b)-f(y)|,
-    \]
+    第 (1) 问,对给定 $\varepsilon$ 分别取两侧的一致连续模.若 $x,y$ 位于同侧则直接使用;若 $x<b<y$,则 $|f(x)-f(y)|\leq|f(x)-f(b)|+|f(b)-f(y)|$,
     故在 $(a,c)$ 上一致连续.
 
     第 (2) 问不一定.取 $f=0$ 于 $(a,b)$,$f=1$ 于 $\lbrack b,c)$,两段分别一致连续,但合并后不连续.
 
-    第 (3) 问,该函数在两侧分别可连续延拓到闭区间,故分别一致连续.但取 $x_n=1/n,y_n=-1/n$,则 $|x_n-y_n|\to0$,而
+    第 (3) 问,该函数在两侧分别可连续延拓到闭区间,故分别一致连续.但取 $x_n=\dfrac{1}{n},y_n=-\dfrac{1}{n}$,则 $|x_n-y_n|\to0$,而
     \[
         \left|\dfrac{|\sin x_n|}{x_n}-\dfrac{|\sin y_n|}{y_n}\right|\to2,
     \]
@@ -1214,8 +1096,7 @@
 \begin{example}
     设 $f(x)$ 在 $\lbrack 0,+\infty)$ 上一致连续,且有
     \[
-        \displaystyle\lim\limits_{n\to\infty}f(x+n)=0,
-        \qquad \forall x\in\lbrack 0,+\infty).
+        \displaystyle\lim\limits_{n\to\infty}f(x+n)=0, \qquad \forall x\in\lbrack 0,+\infty).
     \]
     则
     \[
@@ -1236,9 +1117,7 @@
 \begin{example}
     设 $f(x)$ 在区间 $I$ 上有定义,记
     \[
-        w_f(\delta)
-        =\sup\limits_{\substack{x',x''\in I\\|x'-x''|<\delta}}
-        |f(x')-f(x'')|,
+        w_f(\delta) =\sup\limits_{\substack{x',x''\in I\\|x'-x''|<\delta}} |f(x')-f(x'')|,
     \]
     则 $f$ 在 $I$ 上一致连续的充要条件是
     \[
@@ -1248,11 +1127,8 @@
 \exampleblank
 
 \begin{solution}
-    若 $f$ 一致连续,则对任意 $\varepsilon>0$存在 $\delta_0>0$,使 $|x'-x''|<\delta_0$ 时 $|f(x')-f(x'')|<\varepsilon$,故 $w_f(\delta_0)\leq\varepsilon$.又 $w_f$ 随 $\delta$ 单调不减,故 $\delta\to0^+$ 时 $w_f(\delta)\to0$.
+    若 $f$ 一致连续,则对任意 $\varepsilon>0$ 存在 $\delta_0>0$,使 $|x'-x''|<\delta_0$ 时 $|f(x')-f(x'')|<\varepsilon$,故 $w_f(\delta_0)\leq\varepsilon$.又 $w_f$ 随 $\delta$ 单调不减,故 $\delta\to0^+$ 时 $w_f(\delta)\to0$.
 
-    反之,若 $w_f(\delta)\to0$,给定 $\varepsilon>0$,取 $\delta>0$ 使 $w_f(\delta)<\varepsilon$.当 $|x'-x''|<\delta$ 时,根据上确界的定义有
-    \[
-        |f(x')-f(x'')|\leq w_f(\delta)<\varepsilon,
-    \]
+    反之,若 $w_f(\delta)\to0$,给定 $\varepsilon>0$,取 $\delta>0$ 使 $w_f(\delta)<\varepsilon$.当 $|x'-x''|<\delta$ 时,根据上确界的定义有 $|f(x')-f(x'')|\leq w_f(\delta)<\varepsilon$,
     故 $f$ 一致连续.
 \end{solution}
