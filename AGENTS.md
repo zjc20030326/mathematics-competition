@@ -894,7 +894,7 @@ Token not allowed in a PDF string
 
 ---
 
-## 14. 编译环境
+## 14. 编译与运行环境
 
 主要环境：
 
@@ -943,6 +943,26 @@ latexmk -C
 两本讲义的章节入口文件也必须支持独立编译。
 
 本节命令只在用户明确要求编译验证时执行，具体要求见 §15。
+
+### Python 环境
+
+本项目的 Python 运行环境固定使用 Conda 环境 `python_study`。
+
+环境路径：
+
+`D:\Software\Python\anaconda3\envs\python_study`
+
+Python 解释器：
+
+`D:\Software\Python\anaconda3\envs\python_study\python.exe`
+
+运行 Python 脚本、pytest 或其他 Python 工具时，不要使用系统 Python、`py` 启动器、MSYS2 Python 或 `uv` 临时环境。
+
+优先使用以下形式：
+
+```bash
+"D:/Software/Python/anaconda3/envs/python_study/python.exe" -m pytest tests/ -q
+```
 
 ---
 

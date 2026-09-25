@@ -271,6 +271,29 @@ def test_markdown_punctuation_ignores_fenced_and_inline_code(tmp_path):
     ]
 
 
+def test_punctuation_exempt_for_agents_readme_and_skill_docs(tmp_path):
+    validator = load_validator()
+    for name in ("AGENTS.md", "README.md"):
+        source = tmp_path / name
+        source.write_text("正文，使用中文标点.\n", encoding="utf-8")
+        assert validator.check_text_file(source, None) == []
+
+    skill = tmp_path / ".agents" / "skills" / "demo" / "SKILL.md"
+    skill.parent.mkdir(parents=True)
+    skill.write_text("正文，使用中文标点.\n", encoding="utf-8")
+    assert validator.check_text_file(skill, None) == []
+
+
+def test_punctuation_still_reports_other_markdown(tmp_path):
+    validator = load_validator()
+    source = tmp_path / "解答问题记录.md"
+    source.write_text("正文，使用中文标点.\n", encoding="utf-8")
+
+    assert [
+        (item.rule_id, item.line) for item in validator.check_text_file(source, None)
+    ] == [("PUNC001", 1)]
+
+
 @pytest.mark.parametrize(
     ("source_text", "rule_id"),
     [

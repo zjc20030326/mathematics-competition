@@ -54,7 +54,7 @@
                   {2\sin\dfrac{x}{2}}.
               \]
               \[
-                  \sum\limits_{k=1}^n\cos kx
+                  \displaystyle\sum\limits_{k=1}^n\cos kx
                   =\dfrac{\cos\left(n+\dfrac{1}{2}\right)x-\sin\dfrac{x}{2}}
                   {2\sin\dfrac{x}{2}}.
               \]
@@ -97,12 +97,12 @@
 \begin{theorem}[第一积分换元法]
     若 $f(u)$ 在区间 $J$ 上有原函数 $F(u)$,即
     \[
-        \int f(u)\,\mathrm{d}u=F(u)+C,
+        \displaystyle\int f(u)\,\mathrm{d}u=F(u)+C,
         \qquad u\in J,
     \]
     则 $F(\varphi(x))$ 是 $f(\varphi(x))\varphi'(x)$ 在区间 $I$ 上的原函数:
     \[
-        \int f(\varphi(x))\varphi'(x)\,\mathrm{d}x
+        \displaystyle\int f(\varphi(x))\varphi'(x)\,\mathrm{d}x
         =F(\varphi(x))+C,
         \qquad x\in I,
     \]
@@ -119,7 +119,7 @@
         \item $\displaystyle\int\dfrac{f'(x)}{f(x)}\,\mathrm{d}x=\ln|f(x)|+C$;
         \item 若 $f(x)>0$($x\in I$),则
               \[
-                  \int\dfrac{f'(x)}{\sqrt{f(x)}}\,\mathrm{d}x=2\sqrt{f(x)}+C,
+                  \displaystyle\int\dfrac{f'(x)}{\sqrt{f(x)}}\,\mathrm{d}x=2\sqrt{f(x)}+C,
                   \qquad
                   \int f'(x)\sqrt{f(x)}\,\mathrm{d}x
                   =\dfrac{2}{3}f^{\frac{3}{2}}(x)+C.
@@ -130,11 +130,11 @@
 \begin{theorem}[第二积分换元法]
     设 $G(t)$ 是 $f(\varphi(t))\varphi'(t)$ 在区间 $I$ 的原函数,
     \[
-        \int f(\varphi(t))\varphi'(t)\,\mathrm{d}t=G(t)+C.
+        \displaystyle\int f(\varphi(t))\varphi'(t)\,\mathrm{d}t=G(t)+C.
     \]
     则 $G(\varphi^{-1}(x))$ 是 $f(x)$ 在区间 $J$ 上的原函数:
     \[
-        \int f(x)\,\mathrm{d}x=G(\varphi^{-1}(x))+C,
+        \displaystyle\int f(x)\,\mathrm{d}x=G(\varphi^{-1}(x))+C,
         \qquad x\in J.
     \]
 \end{theorem}
@@ -326,7 +326,7 @@
 \begin{theorem}[\marktwostar\ 分部积分法]
     设 $u(x),v(x)$ 在区间 $I$ 上可微,若 $v(x),u'(x)$ 在 $I$ 上有原函数,则 $u(x),v'(x)$ 在 $I$ 上也有原函数,而且
     \[
-        \int u(x)v'(x)\,\mathrm{d}x
+        \displaystyle\int u(x)v'(x)\,\mathrm{d}x
         =u(x)v(x)-\int v(x)u'(x)\,\mathrm{d}x.
     \]
 \end{theorem}
@@ -420,7 +420,7 @@
     \]
     更进一步,类似上述方法可解所有形如
     \[
-        \int\dfrac{p\sin x+q\cos x+s}{a\sin x+b\cos x+c}\,\mathrm{d}x
+        \displaystyle\int\dfrac{p\sin x+q\cos x+s}{a\sin x+b\cos x+c}\,\mathrm{d}x
     \]
     的不定积分.
 \end{proposition}
@@ -604,16 +604,16 @@
 \begin{enumerate}
     \item
           \[
-              \int\dfrac{A}{x-a}\,\mathrm{d}x=A\ln|x-a|+C.
+              \displaystyle\int\dfrac{A}{x-a}\,\mathrm{d}x=A\ln|x-a|+C.
           \]
     \item
           \[
-              \int\dfrac{A}{(x-a)^k}\,\mathrm{d}x
+              \displaystyle\int\dfrac{A}{(x-a)^k}\,\mathrm{d}x
               =\dfrac{A(x-a)^{1-k}}{1-k}+C.
           \]
     \item
           \begin{align*}
-              \int\dfrac{Ax+B}{x^2+px+q}\,\mathrm{d}x
+              \displaystyle\int\dfrac{Ax+B}{x^2+px+q}\,\mathrm{d}x
                & =\dfrac{A}{2}\int\dfrac{2x+p}{x^2+px+q}\,\mathrm{d}x
               +\left(B-\dfrac{Ap}{2}\right)\int\dfrac{\mathrm{d}x}{x^2+px+q}          \\
                & =\dfrac{A}{2}\ln|x^2+px+q|
@@ -826,7 +826,7 @@
 \begin{proposition}[\markstar]
     由万能公式,令 $t=\tan\dfrac{x}{2}$ 可得
     \[
-        \int R(\cos x,\sin x)\,\mathrm{d}x
+        \displaystyle\int R(\cos x,\sin x)\,\mathrm{d}x
         =\int R\left(\dfrac{1-t^2}{1+t^2},\dfrac{2t}{1+t^2}\right)
         \dfrac{2}{1+t^2}\,\mathrm{d}t.
     \]

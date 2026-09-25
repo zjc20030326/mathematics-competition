@@ -28,7 +28,7 @@
 \begin{example}
     设 $0<x<1$,求如下级数之和:
     \[
-        \sum\limits_{n=0}^{\infty}\dfrac{x^{2n}}{1-x^{2n+1}}.
+        \displaystyle\sum\limits_{n=0}^{\infty}\dfrac{x^{2n}}{1-x^{2n+1}}.
     \]
 \end{example}
 \exampleblank
@@ -135,7 +135,7 @@
 \begin{example}
     已知级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n=A$,$\displaystyle\lim\limits_{n\to\infty}na_n=0$,求级数
     \[
-        \sum\limits_{n=1}^{\infty}n(a_n-a_{n+1})
+        \displaystyle\sum\limits_{n=1}^{\infty}n(a_n-a_{n+1})
     \]
     之和.
 \end{example}
@@ -183,11 +183,11 @@
 \begin{example}
     设数列 $\{a_n\}$ 满足
     \[
-        \sum\limits_{n=1}^{\infty}(a_1+1)(a_2+1)\cdots(a_n+1)=l,
+        \displaystyle\sum\limits_{n=1}^{\infty}(a_1+1)(a_2+1)\cdots(a_n+1)=l,
     \]
     其中 $l>0$ 或 $l=+\infty$.试证明:
     \[
-        \sum\limits_{n=1}^{\infty}
+        \displaystyle\sum\limits_{n=1}^{\infty}
         \dfrac{a_n}{(a_1+1)(a_2+1)\cdots(a_n+1)}
         =1-\dfrac{1}{l}.
     \]
@@ -205,7 +205,7 @@
     \]
     因此若正确条件是 $P_n\to l$,结论才由裂项相消得到
     \[
-        \sum\limits_{n=1}^{\infty}\dfrac{a_n}{P_n}=1-\dfrac{1}{l}.
+        \displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{P_n}=1-\dfrac{1}{l}.
     \]
     而原题写的是 $\displaystyle \sum P_n=l$.例如取 $a_n=0$,则 $l=+\infty$,但左端为 $0$,右端为 $1$.故条件中的求和号应核对原始资料.
 \end{solution}
@@ -297,7 +297,7 @@
     \]
     利用
     \[
-        \sum\limits_{k=1}^{m}\dfrac{1}{2k-1}=H_{2m}-\dfrac{1}{2}H_m,
+        \displaystyle\sum\limits_{k=1}^{m}\dfrac{1}{2k-1}=H_{2m}-\dfrac{1}{2}H_m,
         \qquad
         \sum\limits_{k=1}^{m}\dfrac{1}{2k}=\dfrac{1}{2}H_m,
     \]
@@ -362,7 +362,7 @@
               $\cos(2n\alpha)=2\cos^2(n\alpha)-1$ 又给出该子列趋于 $-1$,矛盾.
         \item 由分组估计
               \[
-                  \sum\limits_{n=2^{m-1}+1}^{2^m}\dfrac{1}{n}\geq\dfrac{1}{2},
+                  \displaystyle\sum\limits_{n=2^{m-1}+1}^{2^m}\dfrac{1}{n}\geq\dfrac{1}{2},
               \]
               调和级数发散.
     \end{enumerate}
@@ -372,7 +372,7 @@
 \begin{example}
     设 $a_n>0$,$\displaystyle\sum\limits_{n=1}^{\infty}a_n=+\infty$,试证:
     \[
-        \sum\limits_{n=1}^{\infty}\dfrac{a_n}{S_n}
+        \displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{S_n}
     \]
     发散.
 \end{example}
@@ -387,7 +387,7 @@
     \]
     求和后得到
     \[
-        \sum\limits_{n=N}^{m}\dfrac{a_n}{S_n}
+        \displaystyle\sum\limits_{n=N}^{m}\dfrac{a_n}{S_n}
         \geq\dfrac{1}{2}\ln\dfrac{S_m}{S_{N-1}}\longrightarrow+\infty,
     \]
     故原级数发散.
@@ -397,7 +397,7 @@
 \begin{example}
     如果
     \[
-        \lim\limits_{n\to\infty}a_{n+1}=0,
+        \displaystyle\lim\limits_{n\to\infty}a_{n+1}=0,
         \quad
         \lim\limits_{n\to\infty}(a_{n+1}+a_{n+2})=0,
         \quad\ldots,\quad
@@ -419,7 +419,7 @@
 \begin{example}
     设 $\{a_n\}$ 是递减正数列,且 $\displaystyle\sum\limits_{n=1}^{\infty}a_n=+\infty$,证明:
     \[
-        \lim\limits_{n\to\infty}
+        \displaystyle\lim\limits_{n\to\infty}
         \dfrac{a_1+a_3+\cdots+a_{2n-1}}{a_2+a_4+\cdots+a_{2n}}=1.
     \]
 \end{example}
@@ -554,7 +554,7 @@
     \begin{enumerate}
         \item $\displaystyle a_n=\dfrac{1}{\ln(n!)}\quad(n\geq2)$;
         \item $\displaystyle a_n=\dfrac{\ln(n!)}{n^p}$;
-        \item $\displaystyle a_n=\dfrac{\sum\limits_{k=1}^n\ln^2k}{n^p}$;
+        \item $\displaystyle a_n=\dfrac{\displaystyle\sum\limits_{k=1}^n\ln^2k}{n^p}$;
         \item $\displaystyle a_n=\left[\dfrac{(2n-1)!!}{(2n)!!}\right]^2$.
     \end{enumerate}
 \end{example}
@@ -584,7 +584,7 @@
     \begin{enumerate}
         \item 设 $a_n>0$,若 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 收敛,则
               \[
-                  \sum\limits_{n=1}^{\infty}\dfrac{\sqrt{a_n}}{n^p}
+                  \displaystyle\sum\limits_{n=1}^{\infty}\dfrac{\sqrt{a_n}}{n^p}
               \]
               在 $p>\dfrac{1}{2}$ 时收敛;
         \item 若 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 是正项收敛级数,则 $\displaystyle J=\sum\limits_{n=1}^{\infty}\sqrt{a_na_{n+1}}$ 收敛,反之不然.
@@ -596,7 +596,7 @@
     \begin{enumerate}
         \item 由 Cauchy--Schwarz 不等式,
               \[
-                  \sum\limits_{n=1}^{\infty}\dfrac{\sqrt{a_n}}{n^p}
+                  \displaystyle\sum\limits_{n=1}^{\infty}\dfrac{\sqrt{a_n}}{n^p}
                   \leq
                   \left(\sum\limits_{n=1}^{\infty}a_n\right)^{1/2}
                   \left(\sum\limits_{n=1}^{\infty}\dfrac{1}{n^{2p}}\right)^{1/2}<\infty
@@ -638,11 +638,11 @@
 \begin{example}
     设 $a_n\neq0$,且 $a_n\to a\neq0$,则
     \[
-        \sum\limits_{n=1}^{\infty}|a_{n+1}-a_n|
+        \displaystyle\sum\limits_{n=1}^{\infty}|a_{n+1}-a_n|
     \]
     与
     \[
-        \sum\limits_{n=1}^{\infty}\left|\dfrac{1}{a_{n+1}}-\dfrac{1}{a_m}\right|
+        \displaystyle\sum\limits_{n=1}^{\infty}\left|\dfrac{1}{a_{n+1}}-\dfrac{1}{a_m}\right|
     \]
     同敛散.
 \end{example}
@@ -667,7 +667,7 @@
 \begin{example}[\markstar\ Sapagof 判别法]
     设正数数列 $\{a_n\}$ 单调递减,则 $\displaystyle\lim\limits_{n\to\infty}a_n=0$ 的充分必要条件是正项级数
     \[
-        \sum\limits_{n=1}^{\infty}\left(1-\dfrac{a_{n+1}}{a_n}\right)
+        \displaystyle\sum\limits_{n=1}^{\infty}\left(1-\dfrac{a_{n+1}}{a_n}\right)
     \]
     发散.
 \end{example}
@@ -680,7 +680,7 @@
     \]
     正项无穷乘积的基本判别说明
     \[
-        \prod\limits_{n=1}^{\infty}r_n>0
+        \displaystyle\prod\limits_{n=1}^{\infty}r_n>0
         \quad\Longleftrightarrow\quad
         \sum\limits_{n=1}^{\infty}(1-r_n)<\infty;
     \]
@@ -740,11 +740,11 @@
         \item 此处同样应为极限 $a_n/b_n\to0$.可取整数
               $1=N_1<N_2<\cdots$ 使
               \[
-                  \sum\limits_{n=N_j}^{\infty}a_n<\dfrac{2^{-j}}{j},
+                  \displaystyle\sum\limits_{n=N_j}^{\infty}a_n<\dfrac{2^{-j}}{j},
               \]
               并在 $N_j\leq n<N_{j+1}$ 上置 $b_n=ja_n$.于是 $b_n>0$,$a_n/b_n=1/j\to0$,且
               \[
-                  \sum\limits_{n=1}^{\infty}b_n
+                  \displaystyle\sum\limits_{n=1}^{\infty}b_n
                   \leq\sum\limits_{j=1}^{\infty}j\sum\limits_{n=N_j}^{\infty}a_n
                   <\sum\limits_{j=1}^{\infty}2^{-j}<\infty.
               \]
@@ -777,7 +777,7 @@
         \item 可递归构造相邻区间 $I_k$ 与递减高度 $\alpha_k,\beta_k$:在奇数块令
               $a_n=\alpha_k,b_n=\beta_k$ 且 $|I_k|\alpha_k\geq1$,$|I_k|\beta_k\leq2^{-k}$;在偶数块交换两者的角色.每次先把新高度取得比上一块两高度都小,再把块长取得足够大,即可同时满足这些条件.所得两列均递减趋零,$\displaystyle \sum a_n$ 与 $\displaystyle \sum b_n$ 因交替出现质量至少为 $1$ 的块而发散,而
               \[
-                  \sum\limits_n\min\{a_n,b_n\}\leq\sum\limits_k2^{-k}<\infty.
+                  \displaystyle\sum\limits_n\min\{a_n,b_n\}\leq\sum\limits_k2^{-k}<\infty.
               \]
         \item 采用贪心选取:依次考察 $a_n$,只要加入后不超过 $C$ 就选取该项.所得子级数和不超过 $C$.若其和为 $L<C$,由 $a_n\to0$,充分靠后的每项均小于 $C-L$;又原级数发散,之后必还能选入一项,矛盾.因此所选子列之和恰为 $C$.
     \end{enumerate}
@@ -787,7 +787,7 @@
 \begin{example}
     设 $0<p_1<p_2<\cdots<p_n<\cdots$,求证:
     \[
-        \sum\limits_{n=1}^{\infty}\dfrac{1}{p_n}\text{ 收敛}
+        \displaystyle\sum\limits_{n=1}^{\infty}\dfrac{1}{p_n}\text{ 收敛}
         \quad\Longleftrightarrow\quad
         \sum\limits_{n=1}^{\infty}\dfrac{n}{p_1+p_2+\cdots+p_n}\text{ 收敛}.
     \]
@@ -821,19 +821,19 @@
     \begin{enumerate}
         \item
               \[
-                  \sum\limits_{n=1}^m A_n^p
+                  \displaystyle\sum\limits_{n=1}^m A_n^p
                   <\dfrac{p}{p-1}\sum\limits_{n=1}^mA_n^{p-1}a_n,
                   \qquad p>1,
               \]
               其中 $\{a_n\}$ 单调递增,$\displaystyle A_n=\dfrac{a_1+a_2+\cdots+a_n}{n}$;
         \item (Hardy-Landan 不等式)设 $p>1$,$\{a_n\}$ 同 (1),则
               \[
-                  \sum\limits_{n=1}^m\left(\dfrac{a_1+a_2+\cdots+a_n}{n}\right)^p
+                  \displaystyle\sum\limits_{n=1}^m\left(\dfrac{a_1+a_2+\cdots+a_n}{n}\right)^p
                   <\left(\dfrac{p}{p-1}\right)^p\sum\limits_{n=1}^ma_n^p;
               \]
         \item (Cauleman 不等式)设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 是正项收敛级数,则
               \[
-                  \sum\limits_{n=1}^{\infty}\sqrt[n]{a_1a_2\cdots a_n}
+                  \displaystyle\sum\limits_{n=1}^{\infty}\sqrt[n]{a_1a_2\cdots a_n}
                   \leq e\sum\limits_{n=1}^{\infty}a_n.
               \]
     \end{enumerate}
@@ -850,7 +850,7 @@
               对 $n=1,\ldots,m$ 求和并移项,即得题中不等式.
         \item 对 (1) 的右端使用 H\"older 不等式:
               \[
-                  \sum\limits_{n=1}^{m}A_n^{p-1}a_n
+                  \displaystyle\sum\limits_{n=1}^{m}A_n^{p-1}a_n
                   \leq
                   \left(\sum\limits_{n=1}^{m}A_n^p\right)^{\frac{p-1}{p}}
                   \left(\sum\limits_{n=1}^{m}a_n^p\right)^{\frac{1}{p}}.
@@ -858,7 +858,7 @@
               与 (1) 合并并约去公共因子,得到所述 Hardy--Landau 不等式.
         \item 在 (2) 中以 $a_n^{1/p}$ 代替 $a_n$,得到
               \[
-                  \sum\limits_{n=1}^{m}
+                  \displaystyle\sum\limits_{n=1}^{m}
                   \left(\dfrac{a_1^{1/p}+\cdots+a_n^{1/p}}n\right)^p
                   \leq\left(\dfrac{p}{p-1}\right)^p\sum\limits_{n=1}^{m}a_n.
               \]
@@ -872,7 +872,7 @@
 \begin{example}
     研究
     \[
-        \sum\limits_{n=1}^{\infty}\dfrac{1}{x_n^2}
+        \displaystyle\sum\limits_{n=1}^{\infty}\dfrac{1}{x_n^2}
     \]
     的敛散性,这里 $x_n$ 是方程 $x=\tan x$ 的正根,并且按递增的顺序编号.
 \end{example}
@@ -890,7 +890,7 @@
 \begin{example}
     设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 为收敛的正项级数,求证:
     \[
-        \sum\limits_{n=1}^{\infty}a_n^{1-\frac{1}{n}}
+        \displaystyle\sum\limits_{n=1}^{\infty}a_n^{1-\frac{1}{n}}
     \]
     收敛.
 \end{example}
@@ -973,7 +973,7 @@
         \item 求证:当 $s>0$ 时,$\displaystyle\int_1^{+\infty}\dfrac{x-[x]}{x^{s+1}}\,\mathrm{d}x$ 收敛;
         \item 求证:当 $s>1$ 时,
               \[
-                  \int_1^{+\infty}\dfrac{x-[x]}{x^{s+1}}\,\mathrm{d}x
+                  \displaystyle\int_1^{+\infty}\dfrac{x-[x]}{x^{s+1}}\,\mathrm{d}x
                   =\dfrac{1}{s-1}-\dfrac{1}{s}\sum\limits_{n=1}^{\infty}\dfrac{1}{n^s}.
               \]
     \end{enumerate}
@@ -1018,7 +1018,7 @@
               右端在 $R\to\infty$ 时有极限,故积分收敛.
         \item 记上述反常积分为 $I_n$.同一公式给出 $|I_n|\leq C/n$,其中 $C$ 与 $n$ 无关.因此
               \[
-                  \sum\limits_{n=1}^{\infty}\dfrac{|I_n|}{n}
+                  \displaystyle\sum\limits_{n=1}^{\infty}\dfrac{|I_n|}{n}
                   \leq C\sum\limits_{n=1}^{\infty}\dfrac{1}{n^2}<\infty.
               \]
               原题第二式把积分变量 $x$ 留在了求和号内;按``先取该反常积分再对 $n$ 求和''的自然理解,结论如上.
@@ -1029,7 +1029,7 @@
 \begin{example}
     判别
     \[
-        \sum\limits_{k=1}^{\infty}\left[e-\left(1+\dfrac{1}{1!}+\dfrac{1}{2!}+\cdots+\dfrac{1}{n!}\right)\right]
+        \displaystyle\sum\limits_{k=1}^{\infty}\left[e-\left(1+\dfrac{1}{1!}+\dfrac{1}{2!}+\cdots+\dfrac{1}{n!}\right)\right]
     \]
     的敛散性.
 \end{example}
@@ -1057,7 +1057,7 @@
 \begin{theorem}
     设 $\displaystyle(A)\sim\sum\limits_{n=1}^{\infty}a_n$,$\displaystyle(B)\sim\sum\limits_{n=1}^{\infty}b_n$ 是两个正项级数,若存在极限
     \[
-        \lim\limits_{n\to\infty}\dfrac{a_n}{b_n}=l,
+        \displaystyle\lim\limits_{n\to\infty}\dfrac{a_n}{b_n}=l,
     \]
     则当 $l>0$ 时,级数 $(A)$ 与 $(B)$ 同敛散.
 \end{theorem}
@@ -1131,11 +1131,11 @@
 \begin{example}
     设正数列 $\{a_n\}$ 满足
     \[
-        \lim\limits_{n\to\infty}a_n\sum\limits_{i=1}^na_i^2=1.
+        \displaystyle\lim\limits_{n\to\infty}a_n\sum\limits_{i=1}^na_i^2=1.
     \]
     试证明:
     \[
-        \lim\limits_{n\to\infty}\sqrt[3]{3na_n}=1,
+        \displaystyle\lim\limits_{n\to\infty}\sqrt[3]{3na_n}=1,
     \]
     且 $\displaystyle\sum\limits_{n=1}^{\infty}a_n^3$ 发散.
 \end{example}
@@ -1173,7 +1173,7 @@
 \begin{theorem}[\markstar\ Cauchy 凝聚判别法]
     设 $\{a_n\}$ 是递减正数列,则
     \[
-        \sum\limits_{n=1}^{\infty}a_n\text{ 收敛}
+        \displaystyle\sum\limits_{n=1}^{\infty}a_n\text{ 收敛}
         \quad\Longleftrightarrow\quad
         \sum\limits_{n=0}^{\infty}2^na_{2^n}\text{ 收敛}.
     \]
@@ -1182,7 +1182,7 @@
 \begin{proposition}[\markstar]
     设 $\{a_n\}$ 是递减正数列,若 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 收敛,则
     \[
-        \lim\limits_{n\to\infty}na_n=0.
+        \displaystyle\lim\limits_{n\to\infty}na_n=0.
     \]
 \end{proposition}
 
@@ -1194,7 +1194,7 @@
 \begin{example}
     设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 是正项收敛级数,若 $\{na_n\}$ 为单调数列,则
     \[
-        \lim\limits_{n\to\infty}na_n\ln n=0.
+        \displaystyle\lim\limits_{n\to\infty}na_n\ln n=0.
     \]
 \end{example}
 \exampleblank
@@ -1204,7 +1204,7 @@
     $a_n=b_n/n\geq c/n$,与级数收敛矛盾.因此 $b_n$ 必单调递减.
     对充分大的 $n$,
     \[
-        \sum\limits_{k=\lceil\sqrt n\rceil}^{n}a_k
+        \displaystyle\sum\limits_{k=\lceil\sqrt n\rceil}^{n}a_k
         =\sum\limits_{k=\lceil\sqrt n\rceil}^{n}\dfrac{b_k}{k}
         \geq b_n\sum\limits_{k=\lceil\sqrt n\rceil}^{n}\dfrac{1}{k}.
     \]
@@ -1251,7 +1251,7 @@
     \begin{enumerate}
         \item 在区间 $2^k\leq n<2^{k+1}$ 上,
               \[
-                  \sum\limits_{n=2^k}^{2^{k+1}-1}\dfrac{a_n}{n}
+                  \displaystyle\sum\limits_{n=2^k}^{2^{k+1}-1}\dfrac{a_n}{n}
                   \geq\dfrac{1}{2}a_{2^{k+1}}.
               \]
               右侧分块和发散,故原级数发散.
@@ -1270,7 +1270,7 @@
     \]
     则级数
     \[
-        \sum\limits_{n=1}^{\infty}a_n
+        \displaystyle\sum\limits_{n=1}^{\infty}a_n
         \quad\text{与}\quad
         \sum\limits_{k=1}^{\infty}(m_{k+1}-m_k)a_{m_k}
     \]
@@ -1296,7 +1296,7 @@
 \begin{remark}
     因此若 $\{a_n\}$ 是递减正数列,则 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 与下列之一同敛散:
     \[
-        \sum\limits_{n=1}^{\infty}3^na_{3^n},
+        \displaystyle\sum\limits_{n=1}^{\infty}3^na_{3^n},
         \qquad
         \sum\limits_{n=1}^{\infty}na_{n^2},
         \qquad
@@ -1320,14 +1320,14 @@
     \begin{enumerate}
         \item 交换非负项的求和次序,
               \[
-                  \sum\limits_{n=1}^{\infty}R_n
+                  \displaystyle\sum\limits_{n=1}^{\infty}R_n
                   =\sum\limits_{n=1}^{\infty}\sum\limits_{k=n+1}^{\infty}a_k
                   =\sum\limits_{k=2}^{\infty}(k-1)a_k<\infty.
               \]
               因而正项级数 $\displaystyle \sum(k-1)a_k$ 的通项趋于零,即 $na_n\to0$.
         \item 由单调性,
               \[
-                  \sum\limits_{k=\lceil n/2\rceil}^{n}\dfrac{a_k}{\sqrt k}
+                  \displaystyle\sum\limits_{k=\lceil n/2\rceil}^{n}\dfrac{a_k}{\sqrt k}
                   \geq\dfrac{n}{2}\dfrac{a_n}{\sqrt n}=\dfrac{1}{2}\sqrt n,a_n.
               \]
               左端是收敛级数的尾和,故 $\sqrt n,a_n\to0$.最终有
@@ -1339,7 +1339,7 @@
 \begin{example}
     设 $\{a_n\}$ 递减于零,若 $b_n=a_n-2a_{n+1}+a_{n+2}\geq0$($n\in\mathbb{N}$),则
     \[
-        \sum\limits_{n=1}^{\infty}nb_n=a_1.
+        \displaystyle\sum\limits_{n=1}^{\infty}nb_n=a_1.
     \]
 \end{example}
 \exampleblank
@@ -1434,7 +1434,7 @@
 \begin{example}[\markstar\ 比式判别法推广]
     设 $a_n>0$,$k_0$ 是固定正整数,若
     \[
-        \lim\limits_{n\to\infty}\dfrac{a_{n+k_0}}{a_n}=\lambda,
+        \displaystyle\lim\limits_{n\to\infty}\dfrac{a_{n+k_0}}{a_n}=\lambda,
     \]
     则 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 在 $\lambda<1$ 时收敛,在 $\lambda>1$ 时发散.
 \end{example}
@@ -1448,7 +1448,7 @@
 \begin{example}
     设 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 是正项级数,若
     \[
-        \lim\limits_{n\to\infty}\left(\dfrac{a_{n+1}}{a_n}\right)^n=\lambda,
+        \displaystyle\lim\limits_{n\to\infty}\left(\dfrac{a_{n+1}}{a_n}\right)^n=\lambda,
     \]
     则 $I$ 在 $\lambda<e^{-1}$ 时收敛,$\lambda>e^{-1}$ 时发散.
 \end{example}
@@ -1509,7 +1509,7 @@
         \item $\sqrt[n]{a_n}=(n/(n+1))^{n+1}\to e^{-1}$,故收敛.
         \item
               \[
-                  \limsup\sqrt[n]{a_n}
+                  \displaystyle\limsup\sqrt[n]{a_n}
                   \leq\max_{-1\leq t\leq1}\left(\dfrac{1+t}{2+t}\right)^2
                   =\dfrac{4}{9}<1,
               \]
@@ -1529,7 +1529,7 @@
 \begin{example}
     设 $\{a_n\},\{b_n\}$ 为正数列,若有
     \[
-        \lim\limits_{n\to\infty}\dfrac{a_{n+1}}{a_n}=\alpha,
+        \displaystyle\lim\limits_{n\to\infty}\dfrac{a_{n+1}}{a_n}=\alpha,
         \qquad
         \lim\limits_{n\to\infty}\sqrt[n]{b_n}=\beta,
     \]
@@ -1556,7 +1556,7 @@
         \item 设 $a_1>1$,$\displaystyle a_{n+1}=\dfrac{a_n}{1+a_n^\alpha}$,$0<\alpha<1$,则 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 收敛;
         \item 设 $a_n>0$,$\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a_n}{n}$ 收敛,则
               \[
-                  \sum\limits_{n=1}^{\infty}\left(\sum\limits_{k=1}^{\infty}\dfrac{a_n}{n^2+k^2}\right)
+                  \displaystyle\sum\limits_{n=1}^{\infty}\left(\sum\limits_{k=1}^{\infty}\dfrac{a_n}{n^2+k^2}\right)
               \]
               收敛.
     \end{enumerate}
@@ -1574,7 +1574,7 @@
               $a_n\sim(\alpha n)^{-1/\alpha}$.因 $0<\alpha<1$,有 $1/\alpha>1$,所以 $\displaystyle \sum a_n$ 收敛.
         \item 当前内层求和的分子为 $a_n$.利用积分比较,
               \[
-                  \sum\limits_{k=1}^{\infty}\dfrac{1}{n^2+k^2}
+                  \displaystyle\sum\limits_{k=1}^{\infty}\dfrac{1}{n^2+k^2}
                   \leq\int_0^{+\infty}\dfrac{\mathrm{d}x}{n^2+x^2}
                   =\dfrac{\pi}{2n}.
               \]
@@ -1614,7 +1614,7 @@
 \begin{example}
     设 $f(x)$ 于 $\lbrack 1,+\infty)$ 上可导,$f'(x)$ 单调递增,且 $f(x)\to A$($x\to+\infty$),证明:
     \[
-        \sum\limits_{n=1}^{\infty}f'(n)
+        \displaystyle\sum\limits_{n=1}^{\infty}f'(n)
     \]
     收敛.
 \end{example}
@@ -1624,7 +1624,7 @@
     先证 $f'(x)\leq0$.若某点 $f'(x_0)>0$,由 $f'$ 单调递增,之后恒有
     $f'(x)\geq f'(x_0)>0$,这与 $f(x)$ 有有限极限矛盾.因此 $-f'(x)$ 是非负单调递减函数.由积分比较,
     \[
-        \sum\limits_{n=2}^{\infty}|f'(n)|
+        \displaystyle\sum\limits_{n=2}^{\infty}|f'(n)|
         \leq\int_1^{+\infty}|f'(x)|\,\mathrm{d}x
         =f(1)-A<\infty.
     \]
@@ -1639,7 +1639,7 @@
 \begin{example}[比值对数判别法]
     设有正项级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$,且存在
     \[
-        \lim\limits_{n\to\infty}\left(n\ln\dfrac{a_n}{a_{n+1}}\right)=l,
+        \displaystyle\lim\limits_{n\to\infty}\left(n\ln\dfrac{a_n}{a_{n+1}}\right)=l,
         \qquad -\infty\leq l\leq+\infty.
     \]
     若 $l>1$,则级数收敛;若 $l<1$,则级数发散.
@@ -1659,7 +1659,7 @@
 \begin{example}[Rabbe 判别法]
     设有正项级数 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 满足
     \[
-        \lim\limits_{n\to\infty}n\left(\dfrac{a_n}{a_{n+1}}-1\right)=l,
+        \displaystyle\lim\limits_{n\to\infty}n\left(\dfrac{a_n}{a_{n+1}}-1\right)=l,
         \qquad -\infty\leq l\leq+\infty.
     \]
     若 $l>1$,则 $I$ 收敛;若 $l<1$,则 $I$ 发散.
@@ -1678,7 +1678,7 @@
 \begin{example}[\markstar\ Kummer 判别法]
     设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n,\sum\limits_{n=1}^{\infty}b_n$ 是正项级数,$\displaystyle\sum\limits_{n=1}^{\infty}b_n$ 发散,若有
     \[
-        \lim\limits_{n\to\infty}\left(\dfrac{1}{b_n}\dfrac{a_n}{a_{n+1}}-\dfrac{1}{b_{n+1}}\right)=\lambda,
+        \displaystyle\lim\limits_{n\to\infty}\left(\dfrac{1}{b_n}\dfrac{a_n}{a_{n+1}}-\dfrac{1}{b_{n+1}}\right)=\lambda,
     \]
     则 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 在 $\lambda>0$ 时收敛,在 $\lambda<0$ 时发散.
 \end{example}
@@ -1728,7 +1728,7 @@
 \begin{example}[对数判别法]
     设 $\displaystyle I=\sum\limits_{n=1}^{\infty}a_n$ 是正项级数,若存在
     \[
-        \lim\limits_{n\to\infty}\dfrac{\ln\dfrac{1}{a_n}}{\ln n}=l,
+        \displaystyle\lim\limits_{n\to\infty}\dfrac{\ln\dfrac{1}{a_n}}{\ln n}=l,
     \]
     则当 $l>1$ 时,$I$ 收敛;当 $l<1$ 时,$I$ 发散.
 \end{example}
@@ -1753,12 +1753,12 @@
     \begin{enumerate}
         \item
               \[
-                  \sum\limits_{k=1}^na_kb_k
+                  \displaystyle\sum\limits_{k=1}^na_kb_k
                   =a_nB_n+\sum\limits_{k=1}^{n-1}(a_k-a_{k+1})B_k;
               \]
         \item
               \[
-                  \sum\limits_{k=n+1}^ma_kb_k
+                  \displaystyle\sum\limits_{k=n+1}^ma_kb_k
                   =-A_nb_{n+1}+\sum\limits_{k=n+1}^{m-1}A_k(b_k-b_{k+1})+A_mb_m.
               \]
     \end{enumerate}
@@ -1834,7 +1834,7 @@
 \begin{example}
     讨论级数
     \[
-        \sum\limits_{n=1}^{\infty}a_n
+        \displaystyle\sum\limits_{n=1}^{\infty}a_n
         =\dfrac{1}{1^p}-\dfrac{1}{2^q}+\dfrac{1}{3^p}-\dfrac{1}{4^q}+
         \cdots+\dfrac{1}{(2n-1)^p}-\dfrac{1}{(2n)^q}+\cdots,
     \]
@@ -1857,7 +1857,7 @@
 \begin{example}
     研究
     \[
-        \sum\limits_{n=1}^{\infty}\dfrac{(-1)^{n-1}}{n^{p+\frac{1}{n}}}
+        \displaystyle\sum\limits_{n=1}^{\infty}\dfrac{(-1)^{n-1}}{n^{p+\frac{1}{n}}}
     \]
     的绝对收敛与条件收敛性.
 \end{example}
@@ -1875,7 +1875,7 @@
 \begin{example}
     设 $f(x)$ 在区间 $\lbrack -1,1\rbrack$ 上有二阶连续导数,且 $\displaystyle\lim\limits_{x\to0}\dfrac{f(x)}{x}=0$,证明:
     \[
-        \sum\limits_{n=1}^{\infty}f\left(\dfrac{1}{n}\right)
+        \displaystyle\sum\limits_{n=1}^{\infty}f\left(\dfrac{1}{n}\right)
     \]
     绝对收敛.
 \end{example}
@@ -1893,7 +1893,7 @@
 \begin{example}
     讨论级数
     \[
-        \sum\limits_{n=1}^{\infty}\left(1+\dfrac{1}{2}+\dfrac{1}{3}+\cdots+\dfrac{1}{n}\right)\dfrac{\sin nx}{n}
+        \displaystyle\sum\limits_{n=1}^{\infty}\left(1+\dfrac{1}{2}+\dfrac{1}{3}+\cdots+\dfrac{1}{n}\right)\dfrac{\sin nx}{n}
     \]
     的敛散性.
 \end{example}
@@ -1902,7 +1902,7 @@
 \begin{solution}
     记 $H_n=1+1/2+\cdots+1/n$.数列 $H_n/n$ 从某项起单调递减且趋于零.若 $x\notin2\pi\mathbb{Z}$,则
     \[
-        \sum\limits_{k=1}^{N}\sin(kx)
+        \displaystyle\sum\limits_{k=1}^{N}\sin(kx)
         =\dfrac{\sin(Nx/2)\sin((N+1)x/2)}{\sin(x/2)}
     \]
     一致有界,故由 Dirichlet 判别法原级数收敛;若 $x\in2\pi\mathbb{Z}$,各项均为零.因此对每个实数 $x$,该级数都收敛.
@@ -1922,7 +1922,7 @@
     \]
     则 $\displaystyle \sum a_n$ 收敛,且 $\displaystyle \sum(a_n+b_n)=0$ 绝对收敛;但
     \[
-        \sum\limits_{n=1}^{\infty}a_nb_n=-\sum\limits_{n=1}^{\infty}\dfrac{1}{n}
+        \displaystyle\sum\limits_{n=1}^{\infty}a_nb_n=-\sum\limits_{n=1}^{\infty}\dfrac{1}{n}
     \]
     发散.因此题目还缺少条件,需要核对原始资料.
 \end{solution}
@@ -2028,7 +2028,7 @@
 \begin{corollary}[\markstar]
     若 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 条件收敛,则
     \[
-        \sum\limits_{n=1}^{\infty}a_n^+=+\infty,
+        \displaystyle\sum\limits_{n=1}^{\infty}a_n^+=+\infty,
         \qquad
         \sum\limits_{n=1}^{\infty}a_n^-=+\infty.
     \]
@@ -2144,7 +2144,7 @@
 \begin{example}
     设 $a_n>0$,$\displaystyle\sum\limits_{n=1}^{\infty}a_n=1$,$\displaystyle A_n=\sum\limits_{k=1}^na_k$,求极限
     \[
-        \lim\limits_{n\to\infty}\dfrac{e^{A_n}-e^{A_{n-1}}}{A_n^e-A_{n-1}^e}.
+        \displaystyle\lim\limits_{n\to\infty}\dfrac{e^{A_n}-e^{A_{n-1}}}{A_n^e-A_{n-1}^e}.
     \]
 \end{example}
 \exampleblank
@@ -2181,7 +2181,7 @@
 \begin{example}[\markstar]
     设正项级数 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 收敛,试证:
     \[
-        \lim\limits_{n\to\infty}\dfrac{\sum\limits_{k=1}^nka_k}{n}=0.
+        \displaystyle\lim\limits_{n\to\infty}\dfrac{\displaystyle\sum\limits_{k=1}^nka_k}{n}=0.
     \]
 \end{example}
 \exampleblank
@@ -2224,7 +2224,7 @@
     \]
     其中 $S_n$ 为前 $n$ 项和.若 $\{\sigma_n\}$ 收敛,即 $\displaystyle\lim\limits_{n\to\infty}\sigma_n=\sigma$,则称 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 在 Cesaro 意义下收敛,$\sigma$ 称为该级数的 Cesaro 和,记为
     \[
-        \sum\limits_{n=1}^{\infty}a_n=\sigma(C).
+        \displaystyle\sum\limits_{n=1}^{\infty}a_n=\sigma(C).
     \]
     此时称级数可以 Cesaro 求和.
 \end{definition}
@@ -2232,7 +2232,7 @@
 \begin{remark}
     若 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 收敛,即 $\displaystyle\lim\limits_{n\to\infty}S_n=S$,则 $\displaystyle\lim\limits_{n\to\infty}\sigma_n=S$.由此可以看出 Cesaro 和为更广义的和,能保证原来收敛的级数仍可求 Cesaro 和,部分发散的级数在 Cesaro 意义下亦可求和,例如
     \[
-        \sum\limits_{n=1}^{\infty}(-1)^{n-1}=\dfrac{1}{2}(C).
+        \displaystyle\sum\limits_{n=1}^{\infty}(-1)^{n-1}=\dfrac{1}{2}(C).
     \]
 \end{remark}
 
@@ -2251,7 +2251,7 @@
         \item 部分和以 $1,1,0$ 为周期,故其算术平均趋于 $\boxed{2/3}$.
         \item 由
               \[
-                  \sum\limits_{k=1}^{N}\sin(kx)
+                  \displaystyle\sum\limits_{k=1}^{N}\sin(kx)
                   =\dfrac{\cos(x/2)-\cos((N+1/2)x)}{2\sin(x/2)},
               \]
               对 $N=1,ldots,n$ 再取平均.振荡余项的平均趋于零,故 Cesaro 和为
@@ -2265,7 +2265,7 @@
 \begin{example}[\markstar\ 可以 Cesaro 求和的必要条件]
     设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 可以 Cesaro 求和,则
     \[
-        \lim\limits_{n\to\infty}\dfrac{S_n}{n}=0,
+        \displaystyle\lim\limits_{n\to\infty}\dfrac{S_n}{n}=0,
         \qquad
         \lim\limits_{n\to\infty}\dfrac{a_n}{n}=0.
     \]
@@ -2287,7 +2287,7 @@
 \begin{example}[\markstar]
     设 $\displaystyle\lim\limits_{n\to\infty}na_n=0$,则
     \[
-        \sum\limits_{n=1}^{\infty}a_n\text{ 在通常意义下收敛}
+        \displaystyle\sum\limits_{n=1}^{\infty}a_n\text{ 在通常意义下收敛}
         \quad\Longleftrightarrow\quad
         \sum\limits_{n=1}^{\infty}a_n\text{ 可以 Cesaro 求和}.
     \]
@@ -2307,7 +2307,7 @@
 \begin{example}[\markstar]
     设 $\displaystyle\sum\limits_{n=1}^{\infty}a_n$ 可以 Cesaro 求和,证明:
     \[
-        \sum\limits_{n=1}^{\infty}a_n\text{ 在通常意义下收敛}
+        \displaystyle\sum\limits_{n=1}^{\infty}a_n\text{ 在通常意义下收敛}
         \quad\Longleftrightarrow\quad
         \lim\limits_{n\to\infty}\dfrac{a_1+2a_2+\cdots+na_n}{n}=0.
     \]
@@ -2371,7 +2371,7 @@
 \begin{solution}
     两级数在 $|x|<1$ 时绝对收敛,故可作 Cauchy 乘积.$x^n$ 的系数为
     \[
-        \sum\limits_{k=0}^{n}a_k=a_0+a_1+\cdots+a_n,
+        \displaystyle\sum\limits_{k=0}^{n}a_k=a_0+a_1+\cdots+a_n,
     \]
     从而得到第一式.再取 $a_n=1$,系数即为 $n+1$,得到第二式.
 \end{solution}
@@ -2380,7 +2380,7 @@
 \begin{example}
     证明:$\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{a^n}{n!}$ 与 $\displaystyle\sum\limits_{n=1}^{\infty}\dfrac{b^n}{n!}$ 绝对收敛,且它们的 Cauchy 乘积等于
     \[
-        \sum\limits_{n=0}^{\infty}\dfrac{(a+b)^n}{n!}.
+        \displaystyle\sum\limits_{n=0}^{\infty}\dfrac{(a+b)^n}{n!}.
     \]
 \end{example}
 \exampleblank
@@ -2388,7 +2388,7 @@
 \begin{solution}
     比式判别给出两个指数级数均绝对收敛.其 Cauchy 乘积中 $n$ 次项系数为
     \[
-        \sum\limits_{k=0}^{n}\dfrac{a^k}{k!}\dfrac{b^{n-k}}{(n-k)!}
+        \displaystyle\sum\limits_{k=0}^{n}\dfrac{a^k}{k!}\dfrac{b^{n-k}}{(n-k)!}
         =\dfrac{1}{n!}\sum\limits_{k=0}^{n}C_n^ka^kb^{n-k}
         =\dfrac{(a+b)^n}{n!}.
     \]
@@ -2418,7 +2418,7 @@
 
 %例题8.4.13
 \begin{example}
-    求下列级数 $S=\sum c_n$ 的和:
+    求下列级数 $S=\displaystyle\sum c_n$ 的和:
     \begin{enumerate}
         \item $\displaystyle\sum\limits_{n=0}^{\infty}c_n$,其中 $\displaystyle c_n=\sum\limits_{k=0}^nx^ky^{n-k}$,$|x|<1,|y|<1$;
         \item $\displaystyle\sum\limits_{n=1}^{\infty}c_n$,其中 $\displaystyle c_n=\sum\limits_{k=1}^{\infty}\dfrac{1}{k(k+1)(n-k+1)!}$.
@@ -2462,13 +2462,13 @@
 \begin{theorem}[\markstar]
     无穷乘积 $\displaystyle\prod\limits_{n=1}^{\infty}p_n$ 收敛的必要条件是
     \[
-        \lim\limits_{n\to\infty}p_n=1.
+        \displaystyle\lim\limits_{n\to\infty}p_n=1.
     \]
 \end{theorem}
 
 \begin{theorem}[\markstar]
     \[
-        \prod\limits_{n=1}^{\infty}(1+a_n)\text{ 收敛}
+        \displaystyle\prod\limits_{n=1}^{\infty}(1+a_n)\text{ 收敛}
         \quad\Longleftrightarrow\quad
         \sum\limits_{n=1}^{\infty}\ln(1+a_n)\text{ 收敛}.
     \]
@@ -2518,7 +2518,7 @@
               \]
         \item 恒等式
               \[
-                  \prod\limits_{n=0}^{N}(1+x^{2^n})=\dfrac{1-x^{2^{N+1}}}{1-x}
+                  \displaystyle\prod\limits_{n=0}^{N}(1+x^{2^n})=\dfrac{1-x^{2^{N+1}}}{1-x}
               \]
               在 $x=1/2$ 时给出极限 $2$.
     \end{enumerate}
@@ -2540,13 +2540,13 @@
         \item 部分乘积为 $1/N!\to0$,故按非零有限极限的定义,该无穷乘积发散.
         \item 裂项相消得
               \[
-                  \prod\limits_{n=1}^{N}\dfrac{(n+1)^2}{n(n+2)}
+                  \displaystyle\prod\limits_{n=1}^{N}\dfrac{(n+1)^2}{n(n+2)}
                   =\dfrac{2(N+1)}{N+2}\longrightarrow2,
               \]
               故收敛.
         \item 取对数后,
               \[
-                  \sum\limits_{n=1}^{\infty}\dfrac{1}{n}\ln\left(1+\dfrac{1}{n}\right)
+                  \displaystyle\sum\limits_{n=1}^{\infty}\dfrac{1}{n}\ln\left(1+\dfrac{1}{n}\right)
               \]
               的通项与 $1/n^2$ 等价,故对数级数收敛,原无穷乘积收敛到正数.
     \end{enumerate}

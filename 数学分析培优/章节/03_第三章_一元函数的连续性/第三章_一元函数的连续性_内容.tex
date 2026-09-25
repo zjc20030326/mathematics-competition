@@ -548,11 +548,11 @@
 \begin{example}
     设 $f(x)$ 是 $\mathbb{R}$ 上连续函数,且
     \[
-        \lim\limits_{x\to\infty}f(f(x))=\infty,
+        \displaystyle\lim\limits_{x\to\infty}f(f(x))=\infty,
     \]
     证明:
     \[
-        \lim\limits_{x\to\infty}f(x)=\infty.
+        \displaystyle\lim\limits_{x\to\infty}f(x)=\infty.
     \]
 \end{example}
 \exampleblank
@@ -803,7 +803,7 @@
 \begin{solution}
     对第 (1) 问,单调函数若在某点不连续,必有跳跃,并漏掉左,右极限之间的所有值,这与介值性矛盾,故 $f$ 连续.
 
-    第 (2) 问只能推出 $f$ 在 $(a,b)$ 内连续:若 $L=\lim\limits_{t\to x}f(t)\ne f(x)$,介值性将迫使靠近 $x$ 的函数值取到 $L$ 与 $f(x)$ 之间的值,与极限定义矛盾.但题面并未给出端点的单侧极限,故``在闭区间上连续''不能推出.例如令 $f(0)=0$,$f(x)=\sin(1/x)$ $(0<x\leq1)$,它具有介值性且每个内点的极限存在,但在 $0$ 不连续.
+    第 (2) 问只能推出 $f$ 在 $(a,b)$ 内连续:若 $L=\displaystyle\lim\limits_{t\to x}f(t)\ne f(x)$,介值性将迫使靠近 $x$ 的函数值取到 $L$ 与 $f(x)$ 之间的值,与极限定义矛盾.但题面并未给出端点的单侧极限,故``在闭区间上连续''不能推出.例如令 $f(0)=0$,$f(x)=\sin(1/x)$ $(0<x\leq1)$,它具有介值性且每个内点的极限存在,但在 $0$ 不连续.
 \end{solution}
 
 %例题3.3.5
@@ -839,7 +839,7 @@
 \begin{solution}
     第 (1) 问令 $h(x)=f(x+1/5)-f(x)$,$0\leq x\leq4/5$.有
     \[
-        \sum\limits_{k=0}^{4}h\left(\dfrac{k}{5}\right)=f(1)-f(0)=0.
+        \displaystyle\sum\limits_{k=0}^{4}h\left(\dfrac{k}{5}\right)=f(1)-f(0)=0.
     \]
     因而这些值中要么有零,要么既有正值又有负值;由 $h$ 连续必有零点.
 
@@ -883,7 +883,7 @@
 \begin{solution}
     令 $h(x)=f(x+\pi)-f(x)$.由 $f$ 为 $1$ 周期函数,$h$ 也为 $1$ 周期函数,且
     \[
-        \int_0^1h(x)\,\mathrm{d}x
+        \displaystyle\int_0^1h(x)\,\mathrm{d}x
         =\int_0^1f(x+\pi)\,\mathrm{d}x-\int_0^1f(x)\,\mathrm{d}x=0.
     \]
     连续函数 $h$ 若无零点,则在 $\lbrack0,1\rbrack$ 上恒正或恒负,与积分为零矛盾.故存在 $\xi$ 使 $h(\xi)=0$.
@@ -916,7 +916,7 @@
 \begin{example}
     设函数 $f(x)$ 在 $(-\infty,+\infty)$ 上连续,$n$ 为奇数,若
     \[
-        \lim\limits_{x\to+\infty}\dfrac{f(x)}{x^n}
+        \displaystyle\lim\limits_{x\to+\infty}\dfrac{f(x)}{x^n}
         =\lim\limits_{x\to-\infty}\dfrac{f(x)}{x^n}=1,
     \]
     试证:方程 $f(x)+x^n=0$ 有实根.
@@ -926,7 +926,7 @@
 \begin{solution}
     令 $F(x)=f(x)+x^n$.由题设及 $n$ 为奇数,
     \[
-        \lim\limits_{x\to+\infty}\dfrac{F(x)}{x^n}=2,
+        \displaystyle\lim\limits_{x\to+\infty}\dfrac{F(x)}{x^n}=2,
         \qquad
         \lim\limits_{x\to-\infty}\dfrac{F(x)}{x^n}=2.
     \]
@@ -970,7 +970,7 @@
         \item 对任意 $n$,$f_n(x)=1$ 在 $\left[0,\dfrac{\pi}{3}\right)$ 内有且仅有一根;
         \item 若 $x_n\in\left[0,\dfrac{\pi}{3}\right)$ 是 $f_n(x)=1$ 的根,则
               \[
-                  \lim\limits_{n\to\infty}x_n=\dfrac{\pi}{3}.
+                  \displaystyle\lim\limits_{n\to\infty}x_n=\dfrac{\pi}{3}.
               \]
     \end{enumerate}
 \end{example}
@@ -988,7 +988,7 @@
 \begin{example}
     设 $f(x)$ 在 $(0,+\infty)$ 连续有界,试证:对任意 $T$,存在 $x_n\to+\infty$,使得
     \[
-        \lim\limits_{n\to\infty}[f(x_n+T)-f(x_n)]=0.
+        \displaystyle\lim\limits_{n\to\infty}[f(x_n+T)-f(x_n)]=0.
     \]
 \end{example}
 \exampleblank
@@ -1078,7 +1078,7 @@
         \item 设 $f\in C(\lbrack a,+\infty))$,$\displaystyle\lim\limits_{x\to+\infty}f(x)=A$(有限),则 $f$ 在 $\lbrack a,+\infty)$ 上一致连续;
         \item 设 $f\in C(( -\infty,+\infty))$,若存在极限
               \[
-                  \lim\limits_{x\to-\infty}f(x)=l,
+                  \displaystyle\lim\limits_{x\to-\infty}f(x)=l,
                   \qquad
                   \lim\limits_{x\to+\infty}f(x)=L,
               \]
@@ -1113,7 +1113,7 @@
 \begin{proposition}[\markstar]
     设 $f(x)$ 在 $\lbrack a,+\infty)$ 上一致连续,且 $g\in C(\lbrack a,+\infty))$,若有
     \[
-        \lim\limits_{x\to+\infty}[f(x)-g(x)]=0,
+        \displaystyle\lim\limits_{x\to+\infty}[f(x)-g(x)]=0,
     \]
     则 $g(x)$ 在 $\lbrack a,+\infty)$ 上一致连续.
 \end{proposition}
@@ -1214,12 +1214,12 @@
 \begin{example}
     设 $f(x)$ 在 $\lbrack 0,+\infty)$ 上一致连续,且有
     \[
-        \lim\limits_{n\to\infty}f(x+n)=0,
+        \displaystyle\lim\limits_{n\to\infty}f(x+n)=0,
         \qquad \forall x\in\lbrack 0,+\infty).
     \]
     则
     \[
-        \lim\limits_{x\to+\infty}f(x)=0.
+        \displaystyle\lim\limits_{x\to+\infty}f(x)=0.
     \]
 \end{example}
 \exampleblank
@@ -1242,7 +1242,7 @@
     \]
     则 $f$ 在 $I$ 上一致连续的充要条件是
     \[
-        \lim\limits_{\delta\to0^+}w_f(\delta)=0.
+        \displaystyle\lim\limits_{\delta\to0^+}w_f(\delta)=0.
     \]
 \end{example}
 \exampleblank

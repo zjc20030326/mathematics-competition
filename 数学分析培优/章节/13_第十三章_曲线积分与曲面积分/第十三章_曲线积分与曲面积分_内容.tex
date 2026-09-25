@@ -13,7 +13,7 @@
 \begin{theorem}[\markstar\ 计算公式]
     设 $L:\bm r=\bm r(t)$, $t\in\lbrack\alpha,\beta\rbrack$ 是一条连续可微的参数曲线, 满足 $\bm r'(t)\ne\bm0$ $(t\in(\alpha,\beta))$, 并设 $f$ 在 $L$ 上连续, 则 $f$ 沿 $L$ 的第一型曲线积分存在, 且
     \[
-        \int\limits_L f(P)\,\mathrm{d}s
+        \displaystyle\int\limits_L f(P)\,\mathrm{d}s
         =\int_\alpha^\beta f\left(x(t),y(t),z(t)\right)
         \sqrt{[x'(t)]^2+[y'(t)]^2+[z'(t)]^2}\,\mathrm{d}t.
     \]
@@ -56,7 +56,7 @@
 \begin{solution}
     曲线 $L$ 是半径为 $a$ 的大圆,长度为 $2\pi a$.由坐标置换对称性,
     \[
-        \int_Lx^2\,\mathrm{d}s=\dfrac{1}{3}\int_L(x^2+y^2+z^2)\,\mathrm{d}s=\dfrac{2\pi a^3}{3}.
+        \displaystyle\int_Lx^2\,\mathrm{d}s=\dfrac{1}{3}\int_L(x^2+y^2+z^2)\,\mathrm{d}s=\dfrac{2\pi a^3}{3}.
     \]
     又因 $x+y+z=0$,有 $xy+yz+zx=-a^2/2$,故第二个积分为 $-\pi a^3$.
 \end{solution}
@@ -85,7 +85,7 @@
 \begin{example}
     计算
     \[
-        \int\limits_L(x+y)\,\mathrm{d}s,
+        \displaystyle\int\limits_L(x+y)\,\mathrm{d}s,
     \]
     其中 $L$ 为顶点 $(0,0),(1,0),(0,1)$ 的三角形边界.
 \end{example}
@@ -137,7 +137,7 @@
 \begin{example}
     求曲线积分
     \[
-        \int\limits_C e^{-(x^2+y^2)}\left\lbrack \cos(2xy)\,\mathrm{d}x+\sin(2xy)\,\mathrm{d}y\right\rbrack,
+        \displaystyle\int\limits_C e^{-(x^2+y^2)}\left\lbrack \cos(2xy)\,\mathrm{d}x+\sin(2xy)\,\mathrm{d}y\right\rbrack,
     \]
     其中 $C:x^2+y^2=1$, 方向为逆时针.
 \end{example}
@@ -169,7 +169,7 @@
 \begin{example}
     计算积分
     \[
-        \int\limits_{ABC}\dfrac{\mathrm{d}x+\mathrm{d}y}{|x|+|y|},
+        \displaystyle\int\limits_{ABC}\dfrac{\mathrm{d}x+\mathrm{d}y}{|x|+|y|},
     \]
     其中 $ABC$ 为三点 $A(1,0),B(0,1),C(-1,0)$ 连成的折线.
 \end{example}
@@ -183,7 +183,7 @@
 \begin{example}
     计算
     \[
-        \int\limits_L y\,\mathrm{d}x+z\,\mathrm{d}y+x\,\mathrm{d}z,
+        \displaystyle\int\limits_L y\,\mathrm{d}x+z\,\mathrm{d}y+x\,\mathrm{d}z,
     \]
     其中
     \[
@@ -202,7 +202,7 @@
     \]
     代入并逐项积分,得到
     \[
-        \int_Ly\,\mathrm{d}x+z\,\mathrm{d}y+x\,\mathrm{d}z
+        \displaystyle\int_Ly\,\mathrm{d}x+z\,\mathrm{d}y+x\,\mathrm{d}z
         =\dfrac{ac}{2}-\dfrac{\sqrt{2}\pi b(a+c)}{8}.
     \]
 \end{solution}
@@ -211,7 +211,7 @@
 \begin{example}
     计算第一型曲线积分
     \[
-        \int\limits_C\left(
+        \displaystyle\int\limits_C\left(
         \dfrac{xy}{ab}+\dfrac{\sqrt{2}yz}{b\sqrt{a^2+b^2}}+
         \dfrac{\sqrt{2}zx}{a\sqrt{a^2+b^2}}
         \right)\,\mathrm{d}s,
@@ -241,7 +241,7 @@
 \begin{example}
     证明
     \[
-        \lim\limits_{R\to+\infty}
+        \displaystyle\lim\limits_{R\to+\infty}
         \int\limits_{x^2+y^2=R^2}
         \dfrac{y\,\mathrm{d}x-x\,\mathrm{d}y}{|x^2+xy+y^2|^2}=0.
     \]
@@ -256,7 +256,7 @@
 \begin{example}
     计算
     \[
-        \int\limits_{\widehat{OA}}(x^2+y^2)\,\mathrm{d}x+4xy\,\mathrm{d}y,
+        \displaystyle\int\limits_{\widehat{OA}}(x^2+y^2)\,\mathrm{d}x+4xy\,\mathrm{d}y,
     \]
     其中:
     \begin{enumerate}
@@ -270,7 +270,7 @@
     记 $O=(0,0),A=(a,0)$,方向均为 $O$ 到 $A$.
     \begin{enumerate}
         \item 将上半圆弧与线段 $AO$ 合成顺时针闭曲线,用 Green 公式得弧上积分为 $a^3/6$.
-        \item 在线段 $OA$ 上 $y=0$,故积分为 $\int_0^ax^2\,\mathrm{d}x=a^3/3$.
+        \item 在线段 $OA$ 上 $y=0$,故积分为 $\displaystyle\int_0^ax^2\,\mathrm{d}x=a^3/3$.
     \end{enumerate}
 \end{solution}
 
@@ -295,7 +295,7 @@
 \begin{example}
     计算
     \[
-        \int\limits_{L^+}x\,\mathrm{d}y-y\,\mathrm{d}x,
+        \displaystyle\int\limits_{L^+}x\,\mathrm{d}y-y\,\mathrm{d}x,
     \]
     其中
     \[
@@ -326,7 +326,7 @@
     \leavevmode\par\noindent
     设 $\Omega\subset\mathbb{R}^2$ 是由有限条分段连续可微曲线围成的闭区域, $P(x,y),Q(x,y)$ 在 $\Omega$ 上连续并具有所需偏导数, 则
     \[
-        \int\limits_{\partial\Omega}P\,\mathrm{d}x+Q\,\mathrm{d}y
+        \displaystyle\int\limits_{\partial\Omega}P\,\mathrm{d}x+Q\,\mathrm{d}y
         =\iint\limits_\Omega\left(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}\right)\,\mathrm{d}x\,\mathrm{d}y.
     \]
     $\partial\Omega$ 取正向, 即沿边界前进时区域位于左侧.
@@ -355,7 +355,7 @@
 \begin{solution}
     用 Green 公式.
     \begin{enumerate}
-        \item 面积分为 $\iint_{x^2+y^2\leq a^2}(x^2+y^2)\,\mathrm{d}x\,\mathrm{d}y=\pi a^4/2$.
+        \item 面积分为 $\displaystyle\iint_{x^2+y^2\leq a^2}(x^2+y^2)\,\mathrm{d}x\,\mathrm{d}y=\pi a^4/2$.
         \item 旋度为 $-2$,椭圆面积为 $\pi ab$,故积分为 $-2\pi ab$.
     \end{enumerate}
 \end{solution}
@@ -390,7 +390,7 @@
 \begin{example}
     计算
     \[
-        \int\limits_C\dfrac{e^y}{x^2+y^2}
+        \displaystyle\int\limits_C\dfrac{e^y}{x^2+y^2}
         \left\lbrack (x\sin x+y\cos x)\,\mathrm{d}x+(y\sin x-x\cos x)\,\mathrm{d}y\right\rbrack,
     \]
     其中 $C:x^2+y^2=1$, 按逆时针方向.
@@ -402,14 +402,14 @@
     \[
         -\int_0^{2\pi}e^{\sin t}\cos(\cos t)\,\mathrm{d}t.
     \]
-    它是 $-\operatorname{Re}\int_0^{2\pi}e^{i e^{-it}}\,\mathrm{d}t=-2\pi$.
+    它是 $-\operatorname{Re}\displaystyle\int_0^{2\pi}e^{i e^{-it}}\,\mathrm{d}t=-2\pi$.
 \end{solution}
 
 %例题13.1.16
 \begin{example}
     设 $C$ 为对称于坐标轴的光滑曲线, 证明
     \[
-        \int\limits_C(x^3y+e^y)\,\mathrm{d}x+(xy^3+xe^y-\cos x)\,\mathrm{d}y=0.
+        \displaystyle\int\limits_C(x^3y+e^y)\,\mathrm{d}x+(xy^3+xe^y-\cos x)\,\mathrm{d}y=0.
     \]
 \end{example}
 \exampleblank
@@ -417,7 +417,7 @@
 \begin{solution}
     由 Green 公式,积分等于
     \[
-        \iint_D(y^3-x^3+\sin x)\,\mathrm{d}x\,\mathrm{d}y.
+        \displaystyle\iint_D(y^3-x^3+\sin x)\,\mathrm{d}x\,\mathrm{d}y.
     \]
     区域关于两坐标轴对称,三个被积项均为相应的奇函数,故积分为 $0$.
 \end{solution}
@@ -426,7 +426,7 @@
 \begin{example}
     设 $D$ 为第一象限内由 $y=x$, $y=4x$, $xy=1$, $xy=4$ 所围区域, $F'(x)=f(x)$, 证明
     \[
-        \int\limits_{\partial D}\dfrac{F(xy)}{y}\,\mathrm{d}y
+        \displaystyle\int\limits_{\partial D}\dfrac{F(xy)}{y}\,\mathrm{d}y
         =\ln2\int_1^4f(u)\,\mathrm{d}u,
     \]
     其中 $\partial D$ 取逆时针方向.
@@ -434,9 +434,9 @@
 \exampleblank
 
 \begin{solution}
-    Green 公式给出左端为 $\iint_Df(xy)\,\mathrm{d}x\,\mathrm{d}y$.令 $u=xy,v=y/x$,则 $1\leq u,v\leq4$,Jacobian 为 $1/(2v)$,所以
+    Green 公式给出左端为 $\displaystyle\iint_Df(xy)\,\mathrm{d}x\,\mathrm{d}y$.令 $u=xy,v=y/x$,则 $1\leq u,v\leq4$,Jacobian 为 $1/(2v)$,所以
     \[
-        \iint_Df(xy)\,\mathrm{d}x\,\mathrm{d}y
+        \displaystyle\iint_Df(xy)\,\mathrm{d}x\,\mathrm{d}y
         =\dfrac{1}{2}\int_1^4f(u)\,\mathrm{d}u\int_1^4\dfrac{\mathrm{d}v}{v}
         =\ln2\int_1^4f(u)\,\mathrm{d}u.
     \]
@@ -463,7 +463,7 @@
 \begin{example}
     设 $L$ 为平面上逐段光滑闭曲线, $D$ 为 $L$ 所围区域, $u=u(x,y)$ 在 $D$ 内直到边界有二阶连续偏导数, 试证
     \[
-        \int\limits_L\dfrac{\partial u}{\partial\bm n}\,\mathrm{d}s
+        \displaystyle\int\limits_L\dfrac{\partial u}{\partial\bm n}\,\mathrm{d}s
         =\iint\limits_D\left(\dfrac{\partial^2u}{\partial x^2}+\dfrac{\partial^2u}{\partial y^2}\right)\,\mathrm{d}x\,\mathrm{d}y,
     \]
     其中 $\bm n$ 为 $L$ 的外法向量.
@@ -473,7 +473,7 @@
 \begin{solution}
     正向边界上 $\bm n\,\mathrm{d}s=(\mathrm{d}y,-\mathrm{d}x)$.因此
     \[
-        \int_Lu_{\bm n}\,\mathrm{d}s=\int_Lu_x\,\mathrm{d}y-u_y\,\mathrm{d}x
+        \displaystyle\int_Lu_{\bm n}\,\mathrm{d}s=\int_Lu_x\,\mathrm{d}y-u_y\,\mathrm{d}x
         =\iint_D(u_{xx}+u_{yy})\,\mathrm{d}x\,\mathrm{d}y
     \]
     即为 Green 公式.
@@ -492,7 +492,7 @@
 \exampleblank
 
 \begin{solution}
-    取单位圆正向一周并令被积函数为 $-y\,\mathrm{d}x$.此时 $\int_C\mathrm{d}x=0$,但 $\int_C-y\,\mathrm{d}x=\pi$,不可能写成某个函数中值乘以 $\int_C\mathrm{d}x$.
+    取单位圆正向一周并令被积函数为 $-y\,\mathrm{d}x$.此时 $\displaystyle\int_C\mathrm{d}x=0$,但 $\displaystyle\int_C-y\,\mathrm{d}x=\pi$,不可能写成某个函数中值乘以 $\displaystyle\int_C\mathrm{d}x$.
 \end{solution}
 
 %例题13.1.21
@@ -520,7 +520,7 @@
 \begin{example}
     证明
     \[
-        \int\limits_L\cos(\bm l,\bm n)\,\mathrm{d}s=0,
+        \displaystyle\int\limits_L\cos(\bm l,\bm n)\,\mathrm{d}s=0,
     \]
     其中 $L$ 为逐段光滑封闭曲线, $\bm l$ 为任意给定方向, $\bm n$ 是 $L$ 的外法线方向.
 \end{example}
@@ -534,7 +534,7 @@
 \begin{example}
     计算 Gauss 积分
     \[
-        \int\limits_L\dfrac{\cos(\bm r,\bm n)}{r}\,\mathrm{d}s,
+        \displaystyle\int\limits_L\dfrac{\cos(\bm r,\bm n)}{r}\,\mathrm{d}s,
     \]
     其中 $r=\sqrt{(\xi-x)^2+(\eta-y)^2}$, $\bm r$ 为从点 $A(x,y)$ 指向封闭光滑曲线 $L$ 上动点 $M(\xi,\eta)$ 的向量.
 \end{example}
@@ -548,7 +548,7 @@
 \begin{example}[\markstar]
     设 $\bm F=P\bm i+Q\bm j$ 在开区域 $D$ 内处处连续可微, 在 $D$ 内任一圆周 $C$ 上有
     \[
-        \int\limits_C\bm F\cdot\bm n\,\mathrm{d}s=0,
+        \displaystyle\int\limits_C\bm F\cdot\bm n\,\mathrm{d}s=0,
     \]
     其中 $\bm n$ 为圆周的单位外法向量, 试证
     \[
@@ -571,7 +571,7 @@
 \begin{example}[\markstar]
     设 $P,Q$ 在全平面上有连续偏导数, 且以任意点 $(x_0,y_0)$ 为中心,任意 $r>0$ 为半径的上半圆 $C$ 上恒有
     \[
-        \int\limits_C P(x,y)\,\mathrm{d}x+Q(x,y)\,\mathrm{d}y=0,
+        \displaystyle\int\limits_C P(x,y)\,\mathrm{d}x+Q(x,y)\,\mathrm{d}y=0,
     \]
     证明
     \[
@@ -585,14 +585,14 @@
 \begin{solution}
     按通常的``上半圆弧''参数化 $x=x_0+r\cos t,y=y_0+r\sin t$,$0\leq t\leq\pi$.除以 $r$ 后令 $r\to0$,得到 $P(x_0,y_0)=0$.再展开到下一阶则得到 $Q_x(x_0,y_0)=0$.
 
-    题面所写 $Q_y\equiv0$ 不成立.例如 $P=0,Q=y$ 时任意上半圆弧上 $\int Q\,\mathrm{d}y=\frac{1}{2}[y^2]_{y_0}^{y_0}=0$,但 $Q_y=1$.因此原结论应核对,按现有题面正确条件是 $P\equiv0,Q_x\equiv0$.
+    题面所写 $Q_y\equiv0$ 不成立.例如 $P=0,Q=y$ 时任意上半圆弧上 $\displaystyle\int Q\,\mathrm{d}y=\frac{1}{2}[y^2]_{y_0}^{y_0}=0$,但 $Q_y=1$.因此原结论应核对,按现有题面正确条件是 $P\equiv0,Q_x\equiv0$.
 \end{solution}
 
 %例题13.1.26
 \begin{example}
     计算
     \[
-        \int\limits_{x^2+y^2=R^2}\ln\sqrt{(x-a)^2+(y-b)^2}\,\mathrm{d}s.
+        \displaystyle\int\limits_{x^2+y^2=R^2}\ln\sqrt{(x-a)^2+(y-b)^2}\,\mathrm{d}s.
     \]
 \end{example}
 \exampleblank
@@ -600,7 +600,7 @@
 \begin{solution}
     记 $\rho=\sqrt{a^2+b^2}$.圆周上对数势的平均值给出
     \[
-        \int_{x^2+y^2=R^2}\ln\sqrt{(x-a)^2+(y-b)^2}\,\mathrm{d}s
+        \displaystyle\int_{x^2+y^2=R^2}\ln\sqrt{(x-a)^2+(y-b)^2}\,\mathrm{d}s
         =2\pi R\ln\max\{R,\rho\}.
     \]
     当 $\rho=R$ 时按反常积分理解,仍取同一值.
@@ -632,11 +632,11 @@
 \begin{theorem}[\markstar]
     设闭区域 $D$ 由有限条逐段光滑曲线围成, $u,v\in C^{(2)}(D)$, 则
     \[
-        \iint\limits_D\Delta u\,\mathrm{d}x\,\mathrm{d}y
+        \displaystyle\iint\limits_D\Delta u\,\mathrm{d}x\,\mathrm{d}y
         =\int\limits_{\partial D}\dfrac{\partial u}{\partial\bm n}\,\mathrm{d}s,
     \]
     \[
-        \iint\limits_Dv\Delta u\,\mathrm{d}x\,\mathrm{d}y
+        \displaystyle\iint\limits_Dv\Delta u\,\mathrm{d}x\,\mathrm{d}y
         =-\iint\limits_D\left(
         \dfrac{\partial u}{\partial x}\dfrac{\partial v}{\partial x}
         +\dfrac{\partial u}{\partial y}\dfrac{\partial v}{\partial y}
@@ -645,7 +645,7 @@
     \]
     以及 Green 第二公式
     \[
-        \iint\limits_D(v\Delta u-u\Delta v)\,\mathrm{d}x\,\mathrm{d}y
+        \displaystyle\iint\limits_D(v\Delta u-u\Delta v)\,\mathrm{d}x\,\mathrm{d}y
         =\int\limits_{\partial D}\left(v\dfrac{\partial u}{\partial\bm n}-u\dfrac{\partial v}{\partial\bm n}\right)\,\mathrm{d}s.
     \]
 \end{theorem}
@@ -654,7 +654,7 @@
 \begin{example}
     设 $L$ 为平面上一条自身不相交的光滑曲线, 起点 $(1,0)$, 终点 $(0,2)$, 除起终点外全部位于第一象限, 计算
     \[
-        \int\limits_L\dfrac{\partial\ln r}{\partial\bm n}\,\mathrm{d}s,
+        \displaystyle\int\limits_L\dfrac{\partial\ln r}{\partial\bm n}\,\mathrm{d}s,
     \]
     其中 $r$ 表示 $L$ 上动点到原点的距离.
 \end{example}
@@ -673,7 +673,7 @@
 \begin{example}
     设 $\Omega$ 为 $xOy$ 平面上具有光滑边界的有界闭区域, $u$ 在 $\Omega$ 内有二阶连续偏导数, 直到边界有一阶连续偏导数, 且 $u|_{\partial\Omega}=0$, $u$ 非常值, 证明
     \[
-        \iint\limits_\Omega u\left(\dfrac{\partial^2u}{\partial x^2}+\dfrac{\partial^2u}{\partial y^2}\right)\,\mathrm{d}x\,\mathrm{d}y<0.
+        \displaystyle\iint\limits_\Omega u\left(\dfrac{\partial^2u}{\partial x^2}+\dfrac{\partial^2u}{\partial y^2}\right)\,\mathrm{d}x\,\mathrm{d}y<0.
     \]
 \end{example}
 \exampleblank
@@ -681,7 +681,7 @@
 \begin{solution}
     Green 第一恒等式给出
     \[
-        \iint_\Omega u\Delta u\,\mathrm{d}A
+        \displaystyle\iint_\Omega u\Delta u\,\mathrm{d}A
         =\int_{\partial\Omega}u\dfrac{\partial u}{\partial\bm n}\,\mathrm{d}s
         -\iint_\Omega|\nabla u|^2\,\mathrm{d}A
         =-\iint_\Omega|\nabla u|^2\,\mathrm{d}A<0,
@@ -693,7 +693,7 @@
 \begin{example}
     设 $u(x,y)$ 有二阶连续偏导数, 证明: $u$ 为调和函数当且仅当对任意逐段光滑闭曲线 $C$,
     \[
-        \int\limits_C\dfrac{\partial u}{\partial\bm n}\,\mathrm{d}s=0,
+        \displaystyle\int\limits_C\dfrac{\partial u}{\partial\bm n}\,\mathrm{d}s=0,
     \]
     其中 $\bm n$ 为外法线方向.
 \end{example}
@@ -745,7 +745,7 @@
 \begin{example}
     设 $f(x,y,z)$ 为 $n$ 次齐次函数, $f\in C^{(2)}(\mathbb{R}^3)$, 若对任意球面 $S$ 都有
     \[
-        \iint\limits_Sf(x,y,z)\,\mathrm{d}S=0,
+        \displaystyle\iint\limits_Sf(x,y,z)\,\mathrm{d}S=0,
     \]
     证明 $\Delta f=0$.
 \end{example}
@@ -761,7 +761,7 @@
 \begin{example}
     设 $\Sigma$ 是 $\mathbb{R}^3$ 第一卦限内任意光滑闭曲面, 所围立体为 $\Omega$, $f(x,y,z)$ 在第一卦限上具有一阶偏导数, 给出
     \[
-        \iint\limits_\Sigma f(x,y,z)(x\,\mathrm{d}y\,\mathrm{d}z+y\,\mathrm{d}z\,\mathrm{d}x+z\,\mathrm{d}x\,\mathrm{d}y)=0
+        \displaystyle\iint\limits_\Sigma f(x,y,z)(x\,\mathrm{d}y\,\mathrm{d}z+y\,\mathrm{d}z\,\mathrm{d}x+z\,\mathrm{d}x\,\mathrm{d}y)=0
     \]
     的充要条件.
 \end{example}
@@ -770,7 +770,7 @@
 \begin{solution}
     由 Gauss 公式,题给积分等于
     \[
-        \iiint_\Omega\left(xf_x+yf_y+zf_z+3f\right)\,\mathrm{d}V.
+        \displaystyle\iiint_\Omega\left(xf_x+yf_y+zf_z+3f\right)\,\mathrm{d}V.
     \]
     它对第一卦限内任意光滑闭区域都为零的充要条件是
     \[
@@ -814,7 +814,7 @@
 \begin{example}
     计算
     \[
-        \int\limits_{\widehat{AB}}(x^2+2xy-y^2)\,\mathrm{d}x+(x^2-2xy-y^2)\,\mathrm{d}y,
+        \displaystyle\int\limits_{\widehat{AB}}(x^2+2xy-y^2)\,\mathrm{d}x+(x^2-2xy-y^2)\,\mathrm{d}y,
     \]
     其中 $A=(0,0)$, $B=(2,1)$, $\widehat{AB}$ 为任意连接 $A,B$ 的光滑曲线.
 \end{example}
@@ -832,7 +832,7 @@
 \begin{example}
     设 $f(x)$ 在 $(-\infty,+\infty)$ 上有连续导函数, 求
     \[
-        \int\limits_L
+        \displaystyle\int\limits_L
         \dfrac{1+y^2f(x,y)}{y}\,\mathrm{d}x
         +\dfrac{x}{y^2}\left\lbrack y^2f(x,y)-1\right\rbrack\,\mathrm{d}y,
     \]
@@ -852,7 +852,7 @@
 \begin{example}
     求
     \[
-        \int\limits_L[ e^x\sin y-3(x+y)]\,\mathrm{d}x+(e^x\cos y-ax)\,\mathrm{d}y,
+        \displaystyle\int\limits_L[ e^x\sin y-3(x+y)]\,\mathrm{d}x+(e^x\cos y-ax)\,\mathrm{d}y,
         \qquad a>0,
     \]
     其中 $L$ 从 $A=(2a,0)$ 沿 $y=\sqrt{2ax-x^2}$ 到 $B=(0,0)$.
@@ -874,7 +874,7 @@
 \begin{example}
     计算
     \[
-        \int\limits_Lx\ln(x^2+y^2-1)\,\mathrm{d}x+y\ln(x^2+y^2-1)\,\mathrm{d}y,
+        \displaystyle\int\limits_Lx\ln(x^2+y^2-1)\,\mathrm{d}x+y\ln(x^2+y^2-1)\,\mathrm{d}y,
     \]
     其中 $L$ 是从 $A(2,0)$ 到 $B(0,2)$ 的逐段光滑曲线.
 \end{example}
@@ -979,7 +979,7 @@
     \begin{enumerate}
         \item 设 $S:z=z(x,y)$, $\Delta$ 为 $S$ 在 $xOy$ 平面的投影, 则
               \[
-                  \iint\limits_S f(x,y,z)\,\mathrm{d}S
+                  \displaystyle\iint\limits_S f(x,y,z)\,\mathrm{d}S
                   =\iint\limits_\Delta f(x,y,z(x,y))\sqrt{1+z_x^2+z_y^2}\,\mathrm{d}x\,\mathrm{d}y.
               \]
         \item 设
@@ -998,7 +998,7 @@
               \]
               则
               \[
-                  \iint\limits_Sf(x,y,z)\,\mathrm{d}S
+                  \displaystyle\iint\limits_Sf(x,y,z)\,\mathrm{d}S
                   =\iint\limits_\Delta f(x(u,v),y(u,v),z(u,v))\sqrt{A^2+B^2+C^2}\,\mathrm{d}u\,\mathrm{d}v.
               \]
     \end{enumerate}
@@ -1056,7 +1056,7 @@
 \begin{example}
     计算
     \[
-        \iint\limits_S|z|\,\mathrm{d}S,
+        \displaystyle\iint\limits_S|z|\,\mathrm{d}S,
     \]
     其中 $S$ 为柱体 $x^2+y^2\leq ax$ 被球体 $x^2+y^2+z^2\leq a^2$ 截取部分的表面.
 \end{example}
@@ -1065,7 +1065,7 @@
 \begin{solution}
     若 $S$ 指被球截取的圆柱侧面,参数化底圆并先对 $z$ 积分可得
     \[
-        \iint_S|z|\,\mathrm{d}S=\dfrac{\pi a^3}{2}.
+        \displaystyle\iint_S|z|\,\mathrm{d}S=\dfrac{\pi a^3}{2}.
     \]
     若``表面''指两个实体交集的整个边界,还需加上球面部分;球面部分同样为 $\pi a^3/2$,此时总值为 $\pi a^3$.原题措辞需据原始资料确定.
 \end{solution}
@@ -1074,7 +1074,7 @@
 \begin{example}
     计算
     \[
-        \iint\limits_Sz\,\mathrm{d}S,
+        \displaystyle\iint\limits_Sz\,\mathrm{d}S,
     \]
     其中 $S$ 是曲面 $x^2+z^2=2az$ $(a>0)$ 被曲面 $z=\sqrt{x^2+y^2}$ 所截取的有限部分.
 \end{example}
@@ -1118,7 +1118,7 @@
 \begin{example}
     计算
     \[
-        \iint\limits_\Sigma\dfrac{\mathrm{d}S}{\sqrt{x^2+y^2+(z+a)^2}},
+        \displaystyle\iint\limits_\Sigma\dfrac{\mathrm{d}S}{\sqrt{x^2+y^2+(z+a)^2}},
     \]
     其中 $\Sigma$ 为以原点为中心,$a$ 为半径的上半球面.
 \end{example}
@@ -1136,7 +1136,7 @@
 \begin{example}
     已知 $S=\{(x,y,z)\mid x^2+y^2+z^2=1\}$, 试用 $\Gamma$ 函数表示
     \[
-        \iint\limits_S(x^2+y^2)^\beta\,\mathrm{d}S,
+        \displaystyle\iint\limits_S(x^2+y^2)^\beta\,\mathrm{d}S,
         \qquad \beta>-1.
     \]
 \end{example}
@@ -1154,7 +1154,7 @@
 \begin{example}
     设 $f$ 连续, 证明 Poisson 公式
     \[
-        \int_0^{2\pi}\int_0^\pi
+        \displaystyle\int_0^{2\pi}\int_0^\pi
         f(a\sin\varphi\cos\theta+b\sin\varphi\sin\theta+c\cos\varphi)
         \sin\varphi\,\mathrm{d}\varphi\,\mathrm{d}\theta
         =2\pi\int_{-1}^1f(kz)\,\mathrm{d}z,
@@ -1166,7 +1166,7 @@
 \begin{solution}
     作正交旋转,使向量 $(a,b,c)$ 变为 $(0,0,k)$.球面面积元及积分域不变,左端成为
     \[
-        \int_0^{2\pi}\!\mathrm{d}\theta\int_0^\pi f(k\cos\varphi)\sin\varphi\,\mathrm{d}\varphi
+        \displaystyle\int_0^{2\pi}\!\mathrm{d}\theta\int_0^\pi f(k\cos\varphi)\sin\varphi\,\mathrm{d}\varphi
         =2\pi\int_{-1}^1f(kz)\,\mathrm{d}z.
     \]
 \end{solution}
@@ -1185,7 +1185,7 @@
 \exampleblank
 
 \begin{solution}
-    由上一题及旋转不变性,左端绝对值不超过 $2\pi\int_{-1}^1|f(t)|\,\mathrm{d}t$.端点为零及中值定理给出 $|f(t)|\leq M(1-|t|)$,而其积分为 $M$,故所求不超过 $2\pi M$.
+    由上一题及旋转不变性,左端绝对值不超过 $2\pi\displaystyle\int_{-1}^1|f(t)|\,\mathrm{d}t$.端点为零及中值定理给出 $|f(t)|\leq M(1-|t|)$,而其积分为 $M$,故所求不超过 $2\pi M$.
 \end{solution}
 
 %例题13.2.10
@@ -1224,10 +1224,10 @@
     \]
     因此
     \[
-        \iint_S\rho\,\mathrm{d}S=4\pi abc,
+        \displaystyle\iint_S\rho\,\mathrm{d}S=4\pi abc,
     \]
     \[
-        \iint_S\dfrac{1}{\rho}\,\mathrm{d}S
+        \displaystyle\iint_S\dfrac{1}{\rho}\,\mathrm{d}S
         =\dfrac{4\pi abc}{3}\left(\dfrac{1}{a^2}+\dfrac{1}{b^2}+\dfrac{1}{c^2}\right).
     \]
 \end{solution}
@@ -1240,7 +1240,7 @@
 
 \begin{theorem}[\markstar]
     \[
-        \iint\limits_{S^+}P\,\mathrm{d}y\,\mathrm{d}z+Q\,\mathrm{d}z\,\mathrm{d}x+R\,\mathrm{d}x\,\mathrm{d}y
+        \displaystyle\iint\limits_{S^+}P\,\mathrm{d}y\,\mathrm{d}z+Q\,\mathrm{d}z\,\mathrm{d}x+R\,\mathrm{d}x\,\mathrm{d}y
         =\iint\limits_S(P\cos\alpha+Q\cos\beta+R\cos\gamma)\,\mathrm{d}S,
     \]
     其中单位法向量 $\bm n=(\cos\alpha,\cos\beta,\cos\gamma)$.
@@ -1283,7 +1283,7 @@
     \]
     取上侧, 计算
     \[
-        \iint\limits_{S^+}x^2\,\mathrm{d}y\,\mathrm{d}z+y^2\,\mathrm{d}z\,\mathrm{d}x+(x-a)y z\,\mathrm{d}x\,\mathrm{d}y.
+        \displaystyle\iint\limits_{S^+}x^2\,\mathrm{d}y\,\mathrm{d}z+y^2\,\mathrm{d}z\,\mathrm{d}x+(x-a)y z\,\mathrm{d}x\,\mathrm{d}y.
     \]
 \end{example}
 \exampleblank
@@ -1342,7 +1342,7 @@
 \begin{example}
     求
     \[
-        \iint\limits_Sz^2\cos\gamma\,\mathrm{d}S,
+        \displaystyle\iint\limits_Sz^2\cos\gamma\,\mathrm{d}S,
     \]
     其中 $S$ 为上半球面 $x^2+y^2+z^2=1$, $z\geq0$, $\gamma$ 为球面外法线与 $z$ 轴的夹角.
 \end{example}
@@ -1401,7 +1401,7 @@
 \begin{example}
     若 $S$ 为封闭光滑曲面, $\bm l$ 为任意固定方向, 证明
     \[
-        \iint\limits_S\cos(\bm n,\bm l)\,\mathrm{d}S=0.
+        \displaystyle\iint\limits_S\cos(\bm n,\bm l)\,\mathrm{d}S=0.
     \]
 \end{example}
 \exampleblank
@@ -1437,7 +1437,7 @@
     \]
     计算
     \[
-        \iint\limits_\Sigma f\left(\sqrt{x^2+y^2+z^2}\right)\cos(\bm r,\bm n)\,\mathrm{d}S.
+        \displaystyle\iint\limits_\Sigma f\left(\sqrt{x^2+y^2+z^2}\right)\cos(\bm r,\bm n)\,\mathrm{d}S.
     \]
 \end{example}
 \exampleblank
@@ -1445,7 +1445,7 @@
 \begin{solution}
     按题面,$f'(t)+2f(t)-1=0$ 给出 $f(t)=1/2+Ce^{-2t}$.而所给曲面积分是径向场 $f(r)\bm e_r$ 的通量,Gauss 公式实际给出
     \[
-        \iiint_V\left(f'(r)+\dfrac{2f(r)}{r}\right)\mathrm{d}V,
+        \displaystyle\iiint_V\left(f'(r)+\dfrac{2f(r)}{r}\right)\mathrm{d}V,
     \]
     它不能由题给常微分方程化为与区域无关的常数.若原方程应为 $f'(t)+2f(t)/t=1$,则答案才是 $V$ 的体积.故此题现有题面缺少因子 $1/t$,需要核对原始资料.
 \end{solution}
@@ -1454,7 +1454,7 @@
 \begin{example}
     计算
     \[
-        \iint\limits_S\dfrac{\cos(\bm n,\bm r)}{r^2}\,\mathrm{d}S,
+        \displaystyle\iint\limits_S\dfrac{\cos(\bm n,\bm r)}{r^2}\,\mathrm{d}S,
     \]
     其中 $S$ 是光滑封闭曲面, 原点不在 $S$ 上, $r$ 为动点到原点的距离.
 \end{example}
@@ -1468,7 +1468,7 @@
 \begin{example}
     计算
     \[
-        \iint\limits_{S_{\text{外}}}\dfrac{x\,\mathrm{d}y\,\mathrm{d}z+y\,\mathrm{d}z\,\mathrm{d}x+z\,\mathrm{d}x\,\mathrm{d}y}{(x^2+y^2+z^2)^{\frac{3}{2}}},
+        \displaystyle\iint\limits_{S_{\text{外}}}\dfrac{x\,\mathrm{d}y\,\mathrm{d}z+y\,\mathrm{d}z\,\mathrm{d}x+z\,\mathrm{d}x\,\mathrm{d}y}{(x^2+y^2+z^2)^{\frac{3}{2}}},
     \]
     其中 $S$ 是立方体 $|x|\leq2$, $|y|\leq2$, $|z|\leq2$ 的表面.
 \end{example}
@@ -1482,7 +1482,7 @@
 \begin{example}
     设 $V\subset\mathbb{R}^3$ 是其内任一封闭曲面均可在 $V$ 内连续收缩至一点的区域, $P,Q,R$ 在 $V$ 上有连续偏导数. 证明: 对 $V$ 内任一不自交光滑封闭曲面 $S$,
     \[
-        \iint\limits_S\left\lbrack P\cos(\bm n,x)+Q\cos(\bm n,y)+R\cos(\bm n,z)\right\rbrack\,\mathrm{d}S=0
+        \displaystyle\iint\limits_S\left\lbrack P\cos(\bm n,x)+Q\cos(\bm n,y)+R\cos(\bm n,z)\right\rbrack\,\mathrm{d}S=0
     \]
     当且仅当
     \[
@@ -1508,7 +1508,7 @@
     \]
     上的积分
     \[
-        \iint\limits_S
+        \displaystyle\iint\limits_S
         P\,\mathrm{d}y\,\mathrm{d}z
         +Q\,\mathrm{d}z\,\mathrm{d}x
         +R\,\mathrm{d}x\,\mathrm{d}y=0.
@@ -1530,7 +1530,7 @@
 \begin{example}
     计算
     \[
-        \int\limits_{L^+}(z-y)\,\mathrm{d}x+(x-z)\,\mathrm{d}y+(y-x)\,\mathrm{d}z,
+        \displaystyle\int\limits_{L^+}(z-y)\,\mathrm{d}x+(x-z)\,\mathrm{d}y+(y-x)\,\mathrm{d}z,
     \]
     其中 $L^+$ 从 $A(a,0,0)$ 经 $B(0,a,0)$ 到 $C(0,0,a)$ 再回到 $A$.
 \end{example}
@@ -1548,7 +1548,7 @@
 \begin{example}
     计算
     \[
-        \int\limits_{L^+}(y^2+z^2)\,\mathrm{d}x+(x^2+z^2)\,\mathrm{d}y+(x^2+y^2)\,\mathrm{d}z,
+        \displaystyle\int\limits_{L^+}(y^2+z^2)\,\mathrm{d}x+(x^2+z^2)\,\mathrm{d}y+(x^2+y^2)\,\mathrm{d}z,
     \]
     其中 $L$ 是曲面 $x^2+y^2+z^2=4x$ 与 $x^2+y^2=2x$ 的交线中 $z\geq0$ 的部分, 积分方向从原点进入第一卦限.
 \end{example}
@@ -1566,7 +1566,7 @@
 \begin{example}
     计算
     \[
-        \int\limits_{L^+}y\,\mathrm{d}x+z\,\mathrm{d}y+x\,\mathrm{d}z,
+        \displaystyle\int\limits_{L^+}y\,\mathrm{d}x+z\,\mathrm{d}y+x\,\mathrm{d}z,
     \]
     其中 $L^+$ 为圆周 $x^2+y^2+z^2=a^2$, $x+y+z=0$, 从 $z$ 轴正方向看为逆时针.
 \end{example}
@@ -1583,7 +1583,7 @@
 \begin{example}
     计算
     \[
-        \int\limits_{L^+}(x^2-yz)\,\mathrm{d}x+(y^2-xz)\,\mathrm{d}y+(z^2-xy)\,\mathrm{d}z,
+        \displaystyle\int\limits_{L^+}(x^2-yz)\,\mathrm{d}x+(y^2-xz)\,\mathrm{d}y+(z^2-xy)\,\mathrm{d}z,
     \]
     其中 $L^+$ 是从 $A(1,0,0)$ 到 $B(1,0,2)$ 的光滑曲线.
 \end{example}
@@ -1618,7 +1618,7 @@
 \exampleblank
 
 \begin{solution}
-    由 Stokes 公式,左端等于 $\iint_S(\nabla\times\bm F)\cdot\bm n\,\mathrm{d}S$.逐点使用 Cauchy--Schwarz 不等式,再以旋度模的最大值控制,便有
+    由 Stokes 公式,左端等于 $\displaystyle\iint_S(\nabla\times\bm F)\cdot\bm n\,\mathrm{d}S$.逐点使用 Cauchy--Schwarz 不等式,再以旋度模的最大值控制,便有
     \[
         \left|\int_L\bm F\cdot\mathrm{d}\bm r\right|
         \leq\max_S|\nabla\times\bm F|\iint_S\mathrm{d}S,
@@ -1660,11 +1660,11 @@
 \begin{remark}
     若 $\mathrm{d}\bm S=\bm n\,\mathrm{d}S$, $\mathrm{d}\bm r=(\mathrm{d}x,\mathrm{d}y,\mathrm{d}z)$, 则 Gauss 公式和 Stokes 公式可分别写为
     \[
-        \iint\limits_S\bm A\cdot\mathrm{d}\bm S
+        \displaystyle\iint\limits_S\bm A\cdot\mathrm{d}\bm S
         =\iiint\limits_V\operatorname{div}\bm A\,\mathrm{d}V,
     \]
     \[
-        \int\limits_L\bm A\cdot\mathrm{d}\bm r
+        \displaystyle\int\limits_L\bm A\cdot\mathrm{d}\bm r
         =\iint\limits_S(\operatorname{rot}\bm A)\cdot\mathrm{d}\bm S.
     \]
 \end{remark}
@@ -1735,7 +1735,7 @@
 \begin{definition}
     设 $\bm F$ 是定义在区域 $D\subseteq\mathbb{R}^3$ 上的向量场. 若对 $D$ 中任意封闭曲线 $\Gamma$ 都有
     \[
-        \int\limits_\Gamma\bm F\cdot\mathrm{d}\bm r=0,
+        \displaystyle\int\limits_\Gamma\bm F\cdot\mathrm{d}\bm r=0,
     \]
     则称 $\bm F$ 为 $D$ 上的保守场.
 \end{definition}

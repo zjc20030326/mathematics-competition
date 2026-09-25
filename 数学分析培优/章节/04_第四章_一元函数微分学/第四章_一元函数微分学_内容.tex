@@ -50,7 +50,7 @@
     \]
     特别地,$f''(0)=0$.但
     \[
-        \lim\limits_{h\to0^+}\dfrac{f''(h)-f''(0)}{h}=6,
+        \displaystyle\lim\limits_{h\to0^+}\dfrac{f''(h)-f''(0)}{h}=6,
         \qquad
         \lim\limits_{h\to0^-}\dfrac{f''(h)-f''(0)}{h}=-6.
     \]
@@ -75,18 +75,18 @@
 \begin{solution}
     可导必连续.由左右极限
     \[
-        \lim\limits_{x\to0^-}x^2\sin\dfrac{\pi}{x}=0,
+        \displaystyle\lim\limits_{x\to0^-}x^2\sin\dfrac{\pi}{x}=0,
         \qquad
         \lim\limits_{x\to0^+}(ax^2+b)=b,
     \]
     可知连续性要求且只要求 $A=b=0$.此时
     \[
-        \lim\limits_{x\to0^-}\dfrac{f(x)-f(0)}{x}
+        \displaystyle\lim\limits_{x\to0^-}\dfrac{f(x)-f(0)}{x}
         =\lim\limits_{x\to0^-}x\sin\dfrac{\pi}{x}=0,
     \]
     而
     \[
-        \lim\limits_{x\to0^+}\dfrac{f(x)-f(0)}{x}
+        \displaystyle\lim\limits_{x\to0^+}\dfrac{f(x)-f(0)}{x}
         =\lim\limits_{x\to0^+}ax=0.
     \]
     因而 $a$ 可取任意实数,$A=b=0$,且 $f'(0)=0$.
@@ -131,7 +131,7 @@
     \begin{enumerate}
         \item 若 $f(x)$ 在 $x_0$ 处可导,试证
               \[
-                  \lim\limits_{h\to0}
+                  \displaystyle\lim\limits_{h\to0}
                   \dfrac{f(x_0+h)-f(x_0-h)}{2h}=f'(x_0);
               \]
         \item 反之,若上式左端极限存在,是否能推出 $f'(x_0)$ 存在?若结论成立,请证明;不成立请给出反例.
@@ -423,7 +423,7 @@
 
     对任意正整数 $m$,都有
     \[
-        \lim\limits_{x\to0}|x|^{-m}e^{-\frac{1}{x^2}}=0.
+        \displaystyle\lim\limits_{x\to0}|x|^{-m}e^{-\frac{1}{x^2}}=0.
     \]
     因而若已知 $f^{(n)}(0)=0$,则
     \[
@@ -708,7 +708,7 @@
               \]
         \item 由
               \[
-                  \sum\limits_{k=1}^{n}kx^k
+                  \displaystyle\sum\limits_{k=1}^{n}kx^k
                   =\dfrac{x-(n+1)x^{n+1}+nx^{n+2}}{(1-x)^2},
               \]
               两端对 $x$ 求导得,当 $x\neq1$ 时
@@ -948,7 +948,7 @@
 \begin{example}
     设函数 $f$ 在 $(0,1)$ 有界,可导,但 $\displaystyle\lim\limits_{x\to0^+}f(x)$ 不存在,试证存在数列 $x_n\to0^+\ (n\to\infty)$,使得
     \[
-        \lim\limits_{n\to+\infty}f'(x_n)=0.
+        \displaystyle\lim\limits_{n\to+\infty}f'(x_n)=0.
     \]
 \end{example}
 \exampleblank
@@ -973,15 +973,15 @@
     \begin{enumerate}
         \item 设 $f(x)$ 在 $(a,b)$ 上可导,且有 $x_i\in(a,b),\lambda_i>0\ (i=1,2,\ldots,n)$,
               \[
-                  \sum\limits_{i=1}^n\lambda_i=1,
+                  \displaystyle\sum\limits_{i=1}^n\lambda_i=1,
               \]
               则存在 $\xi\in(a,b)$,使得
               \[
-                  \sum\limits_{i=1}^n\lambda_i f'(x_i)=f'(\xi);
+                  \displaystyle\sum\limits_{i=1}^n\lambda_i f'(x_i)=f'(\xi);
               \]
         \item 设 $f(x)$ 在 $(a,b)$ 上可导,且有 $x_i<y_i$,$x_i,y_i\in(a,b)\ (i=1,2,\ldots,n)$,则存在 $\xi\in(a,b)$,使得
               \[
-                  \sum\limits_{i=1}^n[f(y_i)-f(x_i)]
+                  \displaystyle\sum\limits_{i=1}^n[f(y_i)-f(x_i)]
                   =f'(\xi)\sum\limits_{i=1}^n(y_i-x_i).
               \]
     \end{enumerate}
@@ -1138,7 +1138,7 @@
 \begin{example}
     若 $f(x)$ 在 $\lbrack a,b\rbrack$ 上连续,$f(a)<f(b)$,又设对一切 $x\in(a,b)$,
     \[
-        \lim\limits_{t\to0}\dfrac{f(x+t)-f(x-t)}{t}
+        \displaystyle\lim\limits_{t\to0}\dfrac{f(x+t)-f(x-t)}{t}
     \]
     存在,用 $g(x)$ 表示这一极限值,则存在 $c\in(a,b)$,使得 $g(c)\geq0$.
 \end{example}
@@ -1401,7 +1401,7 @@ $\displaystyle f(x)e^{\int g(x)\,\mathrm{d}x}$,这是因为
     \[
         H(x)=(1-x)^2f'(x).
     \]
-    则 $H(c)=0$,且 $\lim\limits_{x\to1^-}H(x)=0$.将 $H$ 连续补定义到 $x=1$ 后,再用 Rolle 定理,存在 $\xi\in(c,1)$ 使
+    则 $H(c)=0$,且 $\displaystyle\lim\limits_{x\to1^-}H(x)=0$.将 $H$ 连续补定义到 $x=1$ 后,再用 Rolle 定理,存在 $\xi\in(c,1)$ 使
     \[
         0=H'(\xi)
         =(1-\xi)[(1-\xi)f''(\xi)-2f'(\xi)].
@@ -1494,7 +1494,7 @@ $\displaystyle f(x)e^{\int g(x)\,\mathrm{d}x}$,这是因为
 \begin{example}
     若存在 $f''(0)$,则
     \[
-        \lim\limits_{h\to0}
+        \displaystyle\lim\limits_{h\to0}
         \dfrac{f(2h)-2f(0)+f(-2h)}{4h^2}
         =f''(0).
     \]
@@ -1612,7 +1612,7 @@ $\displaystyle f(x)e^{\int g(x)\,\mathrm{d}x}$,这是因为
 \begin{solution}
     对函数 $g=f'$ 使用梯形公式的中值型余项.由于
     \[
-        \int_a^b g(x)\,\mathrm{d}x=f(b)-f(a),
+        \displaystyle\int_a^b g(x)\,\mathrm{d}x=f(b)-f(a),
     \]
     存在 $\xi\in(a,b)$ 使
     \[
@@ -1655,7 +1655,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
 \begin{example}
     设 $f(x)$ 在区间 $\lbrack 0,1\rbrack$ 上可微,$f(0)=0,f(1)=1$,$k_1,k_2,\ldots,k_n$ 为 $n$ 个正数,证明在区间 $\lbrack 0,1\rbrack$ 上存在一组互不相等的数 $x_1,x_2,\ldots,x_n$,使得
     \[
-        \sum\limits_{i=1}^n\dfrac{k_i}{f'(x_i)}
+        \displaystyle\sum\limits_{i=1}^n\dfrac{k_i}{f'(x_i)}
         =\sum\limits_{i=1}^n k_i.
     \]
 \end{example}
@@ -1670,7 +1670,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
 
     可在该区间内选取互不相同的正数 $r_1,\ldots,r_n$,使
     \[
-        \sum\limits_{i=1}^{n}\dfrac{k_i}{r_i}
+        \displaystyle\sum\limits_{i=1}^{n}\dfrac{k_i}{r_i}
         =\sum\limits_{i=1}^{n}k_i.
     \]
     例如先在 $1$ 附近任取互不相同的 $r_1,ldots,r_{n-1}$,再由连续性调节 $r_n$;取值充分接近 $1$ 时仍落在上述区间内.分别取 $x_i$ 使 $f'(x_i)=r_i$.因 $r_i$ 互不相同,$x_i$ 也互不相同,代入即得所证等式.
@@ -1923,7 +1923,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
 
     又因 $x\to+\infty$ 时 $f(x)$ 与 $x$ 都趋于 $+\infty$,由 Cauchy 中值定理或 L'Hospital 法则,
     \[
-        \lim\limits_{x\to+\infty}\dfrac{f(x)}{x}
+        \displaystyle\lim\limits_{x\to+\infty}\dfrac{f(x)}{x}
         =\lim\limits_{x\to+\infty}f'(x)=B.
     \]
     因此 $f(x)\sim Bx$.
@@ -1933,7 +1933,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
 \begin{example}[\markstar]
     设 $f\in C^{(1)}((a,+\infty))$,若 $f'(x)$ 在 $(a,+\infty)$ 上一致连续,且存在 $\displaystyle\lim\limits_{x\to+\infty}f(x)$,则
     \[
-        \lim\limits_{x\to+\infty}f'(x)=0.
+        \displaystyle\lim\limits_{x\to+\infty}f'(x)=0.
     \]
 \end{example}
 \exampleblank
@@ -1952,13 +1952,13 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
 \begin{example}[\markstar]
     设 $f(x)$ 在 $\lbrack 0,+\infty)$ 上三阶可导,且有
     \[
-        \lim\limits_{x\to+\infty}f(x)=A,
+        \displaystyle\lim\limits_{x\to+\infty}f(x)=A,
         \qquad
         \lim\limits_{x\to+\infty}f'''(x)=0,
     \]
     则
     \[
-        \lim\limits_{x\to+\infty}f'(x)
+        \displaystyle\lim\limits_{x\to+\infty}f'(x)
         =\lim\limits_{x\to+\infty}f''(x)=0.
     \]
 \end{example}
@@ -1986,27 +1986,27 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
     \begin{enumerate}
         \item 设 $f(x)$ 在 $(0,+\infty)$ 上可导,$a>0$,若
               \[
-                  \lim\limits_{x\to+\infty}[af(x)+f'(x)]=l,
+                  \displaystyle\lim\limits_{x\to+\infty}[af(x)+f'(x)]=l,
               \]
               则
               \[
-                  \lim\limits_{x\to+\infty}f(x)=\dfrac{l}{a};
+                  \displaystyle\lim\limits_{x\to+\infty}f(x)=\dfrac{l}{a};
               \]
         \item 设 $f(x)$ 在 $(0,+\infty)$ 上可导,$a>0$,若有
               \[
-                  \lim\limits_{x\to+\infty}[af(x)+2\sqrt{x}f'(x)]=l,
+                  \displaystyle\lim\limits_{x\to+\infty}[af(x)+2\sqrt{x}f'(x)]=l,
               \]
               则
               \[
-                  \lim\limits_{x\to+\infty}f(x)=\dfrac{l}{a};
+                  \displaystyle\lim\limits_{x\to+\infty}f(x)=\dfrac{l}{a};
               \]
         \item 设 $f(x)$ 在 $(0,+\infty)$ 上二次可导,若有
               \[
-                  \lim\limits_{x\to+\infty}[f(x)+f'(x)+f''(x)]=l,
+                  \displaystyle\lim\limits_{x\to+\infty}[f(x)+f'(x)+f''(x)]=l,
               \]
               则
               \[
-                  \lim\limits_{x\to+\infty}f(x)=l.
+                  \displaystyle\lim\limits_{x\to+\infty}f(x)=l.
               \]
     \end{enumerate}
 \end{example}
@@ -2057,7 +2057,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
 \begin{example}
     设 $f(x)$ 在 $(0,+\infty)$ 上可导,若 $\displaystyle\lim\limits_{x\to+\infty}f'(x)=l$,则对任意的 $A$ 值,有
     \[
-        \lim\limits_{x\to+\infty}[f(x+A)-f(x)]=lA.
+        \displaystyle\lim\limits_{x\to+\infty}[f(x+A)-f(x)]=lA.
     \]
 \end{example}
 \exampleblank
@@ -2430,7 +2430,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
     \]
     且
     \[
-        \lim\limits_{x\to0^+}\theta(x)=\dfrac{1}{4},
+        \displaystyle\lim\limits_{x\to0^+}\theta(x)=\dfrac{1}{4},
         \qquad
         \lim\limits_{x\to+\infty}\theta(x)=\dfrac{1}{2}.
     \]
@@ -2469,7 +2469,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
     \]
     其中 $h\in(0,\delta)$,$0<\theta<1$.证明:
     \[
-        \lim\limits_{h\to0}\theta=\dfrac{1}{n+2}.
+        \displaystyle\lim\limits_{h\to0}\theta=\dfrac{1}{n+2}.
     \]
 \end{example}
 \exampleblank
@@ -2508,7 +2508,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
     \]
     证明:
     \[
-        \lim\limits_{h\to0}\theta
+        \displaystyle\lim\limits_{h\to0}\theta
         =\sqrt[n-1]{\dfrac{1}{n}}.
     \]
 \end{example}
@@ -2541,7 +2541,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
     \]
     其中 $\theta\in(0,1)$,并且
     \[
-        \lim\limits_{h\to0}\theta=\dfrac{1}{2}.
+        \displaystyle\lim\limits_{h\to0}\theta=\dfrac{1}{2}.
     \]
 \end{example}
 \exampleblank
@@ -3176,7 +3176,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
     \begin{enumerate}
         \item 因 $x^s$ 在 $\lbrack0,+\infty)$ 上严格递增,
               \[
-                  \int_0^n x^s\,\mathrm{d}x
+                  \displaystyle\int_0^n x^s\,\mathrm{d}x
                   <\sum\limits_{k=1}^{n}k^s
                   <\int_1^{n+1}x^s\,\mathrm{d}x
                   <\int_0^{n+1}x^s\,\mathrm{d}x.
@@ -3253,7 +3253,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
               \]
         \item (Holder 不等式)设 $a_i,b_i>0$,$0<p,q<1$,且 $\dfrac{1}{p}+\dfrac{1}{q}=1$,则
               \[
-                  \sum\limits_{i=1}^n a_i b_i
+                  \displaystyle\sum\limits_{i=1}^n a_i b_i
                   \leq
                   \left(\sum\limits_{i=1}^n a_i^p\right)^{\frac{1}{p}}
                   \left(\sum\limits_{i=1}^n b_i^q\right)^{\frac{1}{q}}.
@@ -3284,7 +3284,7 @@ Lagrange 中值定理的几何意义即,曲线上任意两点的弦,必与两点
               \]
               对 $\dfrac{a_i}{A}$ 与 $\dfrac{b_i}{B}$ 使用 Young 不等式并求和,得
               \[
-                  \sum\limits_{i=1}^{n}\dfrac{a_i}{A}\dfrac{b_i}{B}
+                  \displaystyle\sum\limits_{i=1}^{n}\dfrac{a_i}{A}\dfrac{b_i}{B}
                   \leq\dfrac{1}{p}\sum\limits_{i=1}^{n}\dfrac{a_i^p}{A^p}
                   +\dfrac{1}{q}\sum\limits_{i=1}^{n}\dfrac{b_i^q}{B^q}
                   =1.

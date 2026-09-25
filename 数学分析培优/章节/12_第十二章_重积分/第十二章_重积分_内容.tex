@@ -19,7 +19,7 @@
           \]
           (称为 $x$ 型区域)时,
           \[
-              \iint\limits_{D_1}f(x,y)\,\mathrm{d}x\,\mathrm{d}y
+              \displaystyle\iint\limits_{D_1}f(x,y)\,\mathrm{d}x\,\mathrm{d}y
               =\int_a^b\mathrm{d}x\int_{y_1(x)}^{y_2(x)}f(x,y)\,\mathrm{d}y.
           \]
 
@@ -29,7 +29,7 @@
           \]
           (称为 $y$ 型区域)时,
           \[
-              \iint\limits_{D_2}f(x,y)\,\mathrm{d}x\,\mathrm{d}y
+              \displaystyle\iint\limits_{D_2}f(x,y)\,\mathrm{d}x\,\mathrm{d}y
               =\int_c^d\mathrm{d}y\int_{x_1(y)}^{x_2(y)}f(x,y)\,\mathrm{d}x.
           \]
 \end{enumerate}
@@ -53,22 +53,22 @@
     \begin{enumerate}
         \item
               \[
-                  \int_0^{\frac{a}{2}}\!\mathrm{d}x\int_{\frac{x}{2}}^{2x}f(x,y)\,\mathrm{d}y
+                  \displaystyle\int_0^{\frac{a}{2}}\!\mathrm{d}x\int_{\frac{x}{2}}^{2x}f(x,y)\,\mathrm{d}y
                   +\int_{\frac{a}{2}}^{2a}\!\mathrm{d}x\int_{\frac{x}{2}}^{a}f(x,y)\,\mathrm{d}y.
               \]
         \item 令 $x_{\pm}(y)=\dfrac{-1\pm\sqrt{1+4y}}{2}$,则原积分等于
               \[
-                  \int_{-\frac{1}{4}}^{0}\!\mathrm{d}y\int_{x_-(y)}^{x_+(y)}f(x,y)\,\mathrm{d}x
+                  \displaystyle\int_{-\frac{1}{4}}^{0}\!\mathrm{d}y\int_{x_-(y)}^{x_+(y)}f(x,y)\,\mathrm{d}x
                   +\int_0^2\!\mathrm{d}y\int_{y-1}^{x_+(y)}f(x,y)\,\mathrm{d}x.
               \]
         \item
               \[
-                  \int_{-a}^{0}\!\mathrm{d}x\int_{-x}^{a}f(x,y)\,\mathrm{d}y
+                  \displaystyle\int_{-a}^{0}\!\mathrm{d}x\int_{-x}^{a}f(x,y)\,\mathrm{d}y
                   +\int_0^{\sqrt[4]{a}}\!\mathrm{d}x\int_{x^4}^{a}f(x,y)\,\mathrm{d}y.
               \]
         \item 题面给出的上下限在靠近 $x=0$ 时次序相反.按有向积分拆成两个正常区域,原式为
               \[
-                  \int_0^{8a^2}\!\mathrm{d}y\int_{\frac{y}{4a}}^{2a}f(x,y)\,\mathrm{d}x
+                  \displaystyle\int_0^{8a^2}\!\mathrm{d}y\int_{\frac{y}{4a}}^{2a}f(x,y)\,\mathrm{d}x
                   -\int_0^a\!\mathrm{d}y\int_{a-\sqrt{a^2-y^2}}^{a+\sqrt{a^2-y^2}}f(x,y)\,\mathrm{d}x.
               \]
     \end{enumerate}
@@ -90,16 +90,16 @@
     \begin{enumerate}
         \item
               \[
-                  \int_0^{2a}\!\mathrm{d}r\int_0^{\arccos\frac{r}{2a}}f(r,\theta)\,\mathrm{d}\theta.
+                  \displaystyle\int_0^{2a}\!\mathrm{d}r\int_0^{\arccos\frac{r}{2a}}f(r,\theta)\,\mathrm{d}\theta.
               \]
         \item
               \[
-                  \int_0^a\!\mathrm{d}r\int_0^{\frac{\pi}{4}}f(r,\theta)\,\mathrm{d}\theta
+                  \displaystyle\int_0^a\!\mathrm{d}r\int_0^{\frac{\pi}{4}}f(r,\theta)\,\mathrm{d}\theta
                   +\int_a^{\sqrt{2}a}\!\mathrm{d}r\int_{\arccos\frac{a}{r}}^{\frac{\pi}{4}}f(r,\theta)\,\mathrm{d}\theta.
               \]
         \item
               \[
-                  \int_0^{2a}\!\mathrm{d}r
+                  \displaystyle\int_0^{2a}\!\mathrm{d}r
                   \int_{-\arccos\frac{r}{2a}}^{\arccos\frac{r}{2a}}
                   f(r\cos\theta,r\sin\theta)r\,\mathrm{d}\theta.
               \]
@@ -112,13 +112,13 @@
     \begin{enumerate}
         \item
               \[
-                  \int_0^e\mathrm{d}y\int_1^{y^2}\dfrac{\ln x}{e^x}\,\mathrm{d}x
+                  \displaystyle\int_0^e\mathrm{d}y\int_1^{y^2}\dfrac{\ln x}{e^x}\,\mathrm{d}x
                   +\int_e^{e^2}\mathrm{d}y\int_{\ln y}^{2}\dfrac{\ln x}{e^x}\,\mathrm{d}x
                   =\int_1^2\ln x\,\mathrm{d}x;
               \]
         \item
               \[
-                  \int_a^b\mathrm{d}y\int_a^y(y-x)^n f(x)\,\mathrm{d}x
+                  \displaystyle\int_a^b\mathrm{d}y\int_a^y(y-x)^n f(x)\,\mathrm{d}x
                   =\dfrac{1}{n+1}\int_a^b(b-x)^{n+1}f(x)\,\mathrm{d}x.
               \]
     \end{enumerate}
@@ -136,7 +136,7 @@
 
     对于 (2),积分区域为 $a\leq x\leq y\leq b$.交换次序后
     \[
-        \int_a^b f(x)\,\mathrm{d}x\int_x^b(y-x)^n\,\mathrm{d}y
+        \displaystyle\int_a^b f(x)\,\mathrm{d}x\int_x^b(y-x)^n\,\mathrm{d}y
         =\dfrac{1}{n+1}\int_a^b(b-x)^{n+1}f(x)\,\mathrm{d}x.
     \]
 \end{solution}
@@ -148,7 +148,7 @@
                   \item 若 $f(x,y)=-f(x,-y)$, 则 $\displaystyle\iint\limits_Df(x,y)\,\mathrm{d}x\,\mathrm{d}y=0$;
                   \item 若 $f(x,y)=f(x,-y)$, 则
                         \[
-                            \iint\limits_Df(x,y)\,\mathrm{d}x\,\mathrm{d}y
+                            \displaystyle\iint\limits_Df(x,y)\,\mathrm{d}x\,\mathrm{d}y
                             =2\iint\limits_{D\cap\{y\geq0\}}f(x,y)\,\mathrm{d}x\,\mathrm{d}y.
                         \]
               \end{enumerate}
@@ -158,7 +158,7 @@
                   \item 若 $f(x,y)=-f(-x,y)$, 则 $\displaystyle\iint\limits_Df(x,y)\,\mathrm{d}x\,\mathrm{d}y=0$;
                   \item 若 $f(x,y)=f(-x,y)$, 则
                         \[
-                            \iint\limits_Df(x,y)\,\mathrm{d}x\,\mathrm{d}y
+                            \displaystyle\iint\limits_Df(x,y)\,\mathrm{d}x\,\mathrm{d}y
                             =2\iint\limits_{D\cap\{x\geq0\}}f(x,y)\,\mathrm{d}x\,\mathrm{d}y.
                         \]
               \end{enumerate}
@@ -168,7 +168,7 @@
                   \item 若 $f(x,y)=-f(-x,-y)$, 则 $\displaystyle\iint\limits_Df(x,y)\,\mathrm{d}x\,\mathrm{d}y=0$;
                   \item 若 $f(x,y)=f(-x,-y)$, 则
                         \[
-                            \iint\limits_Df(x,y)\,\mathrm{d}x\,\mathrm{d}y
+                            \displaystyle\iint\limits_Df(x,y)\,\mathrm{d}x\,\mathrm{d}y
                             =2\iint\limits_{D_1}f(x,y)\,\mathrm{d}x\,\mathrm{d}y,
                         \]
                         其中 $D_1$ 为区域 $D$ 的一半.
@@ -197,7 +197,7 @@
     \]
     其中
     \[
-        \int_{-1}^1x(1-x^3)\,\mathrm{d}x=-\dfrac{2}{5}.
+        \displaystyle\int_{-1}^1x(1-x^3)\,\mathrm{d}x=-\dfrac{2}{5}.
     \]
     对任意 $x>0$,$x$ 与 $-x$ 对应的含 $f$ 部分之和为
     \[
@@ -212,12 +212,12 @@
     \begin{enumerate}
         \item
               \[
-                  \iint\limits_D\left|xy-\dfrac{1}{4}\right|\,\mathrm{d}x\,\mathrm{d}y,
+                  \displaystyle\iint\limits_D\left|xy-\dfrac{1}{4}\right|\,\mathrm{d}x\,\mathrm{d}y,
                   \qquad D=\lbrack0,1\rbrack\times\lbrack0,1\rbrack;
               \]
         \item
               \[
-                  \iint\limits_{|x|\leq1,\ 0\leq y\leq2}\sqrt{|y-x^2|}\,\mathrm{d}x\,\mathrm{d}y.
+                  \displaystyle\iint\limits_{|x|\leq1,\ 0\leq y\leq2}\sqrt{|y-x^2|}\,\mathrm{d}x\,\mathrm{d}y.
               \]
     \end{enumerate}
 \end{example}
@@ -228,7 +228,7 @@
     \begin{enumerate}
         \item 对 $x\leq\dfrac{1}{4}$ 不变号,对 $x>\dfrac{1}{4}$ 在 $y=\dfrac{1}{4x}$ 处分开,得到
               \[
-                  \iint_D\left|xy-\dfrac{1}{4}\right|\,\mathrm{d}x\,\mathrm{d}y
+                  \displaystyle\iint_D\left|xy-\dfrac{1}{4}\right|\,\mathrm{d}x\,\mathrm{d}y
                   =\dfrac{3}{32}+\dfrac{\ln2}{8}.
               \]
         \item 利用关于 $y$ 轴的对称性,先对 $y$ 积分:
@@ -258,7 +258,7 @@
               \]
         \item 令 $s=x+y$.正方形中截线长度在 $0\leq s\leq2$ 时为 $s$,在 $2\leq s\leq4$ 时为 $4-s$,故
               \[
-                  \int_0^2[s]s\,\mathrm{d}s+\int_2^4[s](4-s)\,\mathrm{d}s=6.
+                  \displaystyle\int_0^2[s]s\,\mathrm{d}s+\int_2^4[s](4-s)\,\mathrm{d}s=6.
               \]
     \end{enumerate}
 \end{solution}
@@ -270,7 +270,7 @@
         \item 设 $D=\{(x,y)\mid a\leq x\leq b,\ c<y\leq d\}$, $f\in C(D)$, 此时累次积分不一定能交换次序;
         \item 存在 $\lbrack0,1\rbrack\times\lbrack0,1\rbrack$ 上非负不可积函数 $f(x,y)$, 使得
               \[
-                  \int_0^1\mathrm{d}x\int_0^1f(x,y)\,\mathrm{d}y
+                  \displaystyle\int_0^1\mathrm{d}x\int_0^1f(x,y)\,\mathrm{d}y
                   =0
                   =\int_0^1\mathrm{d}y\int_0^1f(x,y)\,\mathrm{d}x.
               \]
@@ -286,7 +286,7 @@
               \]
               它在 $D$ 上连续,并且
               \[
-                  \int_0^1\!\mathrm{d}x\int_0^1f(x,y)\,\mathrm{d}y=\dfrac{1}{8},
+                  \displaystyle\int_0^1\!\mathrm{d}x\int_0^1f(x,y)\,\mathrm{d}y=\dfrac{1}{8},
                   \qquad
                   \int_0^1\!\mathrm{d}y\int_0^1f(x,y)\,\mathrm{d}x=-\dfrac{1}{8}.
               \]
@@ -313,7 +313,7 @@
     \]
     若 $f(x,y)$ 在 $D$ 上可积, 则
     \[
-        \iint\limits_Df(x,y)\,\mathrm{d}x\,\mathrm{d}y
+        \displaystyle\iint\limits_Df(x,y)\,\mathrm{d}x\,\mathrm{d}y
         =\iint\limits_{\widetilde D}f\left(x(u,v),y(u,v)\right)|J(u,v)|\,\mathrm{d}u\,\mathrm{d}v.
     \]
 \end{theorem}
@@ -376,17 +376,17 @@
     \begin{enumerate}
         \item
               \[
-                  \iint\limits_D\dfrac{x^2-y^2}{\sqrt{x+y+3}}\,\mathrm{d}x\,\mathrm{d}y,
+                  \displaystyle\iint\limits_D\dfrac{x^2-y^2}{\sqrt{x+y+3}}\,\mathrm{d}x\,\mathrm{d}y,
                   \qquad D=\{(x,y)\mid |x|+|y|\leq1\};
               \]
         \item
               \[
-                  \iint\limits_D\dfrac{(x+y)\ln(1+xy)}{\sqrt{1-x-y}}\,\mathrm{d}x\,\mathrm{d}y,
+                  \displaystyle\iint\limits_D\dfrac{(x+y)\ln(1+xy)}{\sqrt{1-x-y}}\,\mathrm{d}x\,\mathrm{d}y,
                   \qquad D=\left\{(x,y)\mid0\leq y\leq x,\ \dfrac{3}{4}\leq x+y\leq1\right\};
               \]
         \item
               \[
-                  \iint\limits_De^{\frac{x-y}{x+y}}\,\mathrm{d}x\,\mathrm{d}y,
+                  \displaystyle\iint\limits_De^{\frac{x-y}{x+y}}\,\mathrm{d}x\,\mathrm{d}y,
               \]
               其中 $D$ 是 $x=0,y=0,x+y=1$ 所围成的有界闭区域.
     \end{enumerate}
@@ -398,12 +398,12 @@
         \item 区域关于 $x,y$ 互换不变,而被积函数在该变换下变号,故积分为 $0$.
         \item 令 $u=x+y$,$v=x-y$,则 $\dfrac{3}{4}\leq u\leq1$,$0\leq v\leq u$,$\mathrm{d}x\,\mathrm{d}y=\dfrac{1}{2}\mathrm{d}u\,\mathrm{d}v$.先积去 $v$ 后得到精确的一维表示
               \[
-                  \int_{\frac{3}{4}}^{1}\dfrac{u}{\sqrt{1-u}}
+                  \displaystyle\int_{\frac{3}{4}}^{1}\dfrac{u}{\sqrt{1-u}}
                   \left[\sqrt{4+u^2}\operatorname{arctanh}\dfrac{u}{\sqrt{4+u^2}}-u\right]\mathrm{d}u.
               \]
         \item 令 $u=x+y$,$v=(x-y)/(x+y)$,则 $0\leq u\leq1$,$-1\leq v\leq1$,Jacobian 为 $u/2$.故
               \[
-                  \iint_D e^{\frac{x-y}{x+y}}\,\mathrm{d}x\,\mathrm{d}y
+                  \displaystyle\iint_D e^{\frac{x-y}{x+y}}\,\mathrm{d}x\,\mathrm{d}y
                   =\dfrac{1}{4}\int_{-1}^1e^v\,\mathrm{d}v
                   =\dfrac{1}{4}\left(e-e^{-1}\right).
               \]
@@ -417,7 +417,7 @@
         \item $\displaystyle\iint\limits_D(x+y)\,\mathrm{d}x\,\mathrm{d}y$, $D$ 是由曲线 $x^2+y^2=x+y$ 所围成的区域;
         \item
               \[
-                  \iint\limits_D\dfrac{1}{xy}\,\mathrm{d}x\,\mathrm{d}y,
+                  \displaystyle\iint\limits_D\dfrac{1}{xy}\,\mathrm{d}x\,\mathrm{d}y,
               \]
               其中 $D$ 为平面上由
               \[
@@ -427,7 +427,7 @@
               确定的区域;
         \item
               \[
-                  \iint\limits_D\left(3x^3+x^2+y^2+2x-2y+1\right)\,\mathrm{d}x\,\mathrm{d}y,
+                  \displaystyle\iint\limits_D\left(3x^3+x^2+y^2+2x-2y+1\right)\,\mathrm{d}x\,\mathrm{d}y,
               \]
               其中
               \[
@@ -459,12 +459,12 @@
     \begin{enumerate}
         \item
               \[
-                  \iint\limits_{x^2+y^2\leq\frac{3}{16}}
+                  \displaystyle\iint\limits_{x^2+y^2\leq\frac{3}{16}}
                   \min\left\{\sqrt[3]{\dfrac{3}{16}-x^2-y^2},\ 2(x^2+y^2)\right\}\,\mathrm{d}x\,\mathrm{d}y;
               \]
         \item
               \[
-                  \iint\limits_{x^2+y^2\leq1}\left|\dfrac{x+y}{\sqrt{2}}-x^2-y^2\right|\,\mathrm{d}x\,\mathrm{d}y.
+                  \displaystyle\iint\limits_{x^2+y^2\leq1}\left|\dfrac{x+y}{\sqrt{2}}-x^2-y^2\right|\,\mathrm{d}x\,\mathrm{d}y.
               \]
     \end{enumerate}
 \end{example}
@@ -484,7 +484,7 @@
               \]
         \item 旋转坐标后,被积函数为 $|r\cos\theta-r^2|$.对角变量先积分,有
               \[
-                  \int_0^{2\pi}|\cos\theta-r|\,\mathrm{d}\theta
+                  \displaystyle\int_0^{2\pi}|\cos\theta-r|\,\mathrm{d}\theta
                   =4\sqrt{1-r^2}+2\pi r-4r\arccos r.
               \]
               再对 $0\leq r\leq1$ 积分,结果为 $9\pi/16$.
@@ -511,7 +511,7 @@
               \]
         \item 由四象限对称性和 Dirichlet 积分,
               \[
-                  \iint_{x^4+y^4\leq1}(x^2+y^2)\,\mathrm{d}x\,\mathrm{d}y
+                  \displaystyle\iint_{x^4+y^4\leq1}(x^2+y^2)\,\mathrm{d}x\,\mathrm{d}y
                   =\dfrac{1}{2}\Gamma\left(\dfrac{1}{4}\right)\Gamma\left(\dfrac{3}{4}\right)
                   =\dfrac{\pi}{\sqrt2}.
               \]
@@ -522,7 +522,7 @@
 \begin{example}
     计算积分
     \[
-        \iint\limits_D\sqrt{\dfrac{xy}{x+y}}\,\mathrm{d}x\,\mathrm{d}y,
+        \displaystyle\iint\limits_D\sqrt{\dfrac{xy}{x+y}}\,\mathrm{d}x\,\mathrm{d}y,
     \]
     其中 $D$ 是由 $x=0,y=0,x+y=1$ 所围成的区域.
 \end{example}
@@ -546,7 +546,7 @@
 \begin{theorem}[\markstar]
     设 $f(x,y)$ 在有界闭区域 $D$ 上连续, 则存在 $(\xi,\eta)\in D$, 使得
     \[
-        \iint\limits_Df(x,y)\,\mathrm{d}x\,\mathrm{d}y=f(\xi,\eta)|D|.
+        \displaystyle\iint\limits_Df(x,y)\,\mathrm{d}x\,\mathrm{d}y=f(\xi,\eta)|D|.
     \]
     其中 $|D|$ 表示 $D$ 的面积.
 \end{theorem}
@@ -561,7 +561,7 @@
     \begin{enumerate}
         \item
               \[
-                  \iint\limits_D f_{xy}(x,y)\,\mathrm{d}x\,\mathrm{d}y
+                  \displaystyle\iint\limits_D f_{xy}(x,y)\,\mathrm{d}x\,\mathrm{d}y
                   =\iint\limits_D f_{yx}(x,y)\,\mathrm{d}x\,\mathrm{d}y;
               \]
         \item 利用 (1) 证明 $f_{xy}(x,y)=f_{yx}(x,y)$.
@@ -572,14 +572,14 @@
 \begin{solution}
     由微积分基本定理,
     \[
-        \iint_Df_{xy}\,\mathrm{d}x\,\mathrm{d}y
+        \displaystyle\iint_Df_{xy}\,\mathrm{d}x\,\mathrm{d}y
         =f(b,d)-f(a,d)-f(b,c)+f(a,c),
     \]
     而先按相反次序积分,$f_{yx}$ 的积分也是同一边界差,故 (1) 成立.
 
     把上述结论用于任意子矩形 $[x,x+h]\times[y,y+k]\subset D$,可得
     \[
-        \iint_{[x,x+h]\times[y,y+k]}(f_{xy}-f_{yx})\,\mathrm{d}x\,\mathrm{d}y=0.
+        \displaystyle\iint_{[x,x+h]\times[y,y+k]}(f_{xy}-f_{yx})\,\mathrm{d}x\,\mathrm{d}y=0.
     \]
     除以 $hk$ 并令 $h,k\to0$,利用连续性即得 $f_{xy}(x,y)=f_{yx}(x,y)$.
 \end{solution}
@@ -614,7 +614,7 @@
     \]
     试证
     \[
-        \iint\limits_D\left[\left(\dfrac{\partial f}{\partial x}\right)^2+
+        \displaystyle\iint\limits_D\left[\left(\dfrac{\partial f}{\partial x}\right)^2+
             \left(\dfrac{\partial f}{\partial y}\right)^2\right]\mathrm{d}x\,\mathrm{d}y
         =\iint\limits_{D'}\left[\left(\dfrac{\partial f}{\partial u}\right)^2+
             \left(\dfrac{\partial f}{\partial v}\right)^2\right]\mathrm{d}u\,\mathrm{d}v.
@@ -670,11 +670,11 @@
 \begin{solution}
     若 $g(0)=g(1)=0$,两次分部积分给出
     \[
-        \int_0^1g(x)\,\mathrm{d}x=-\dfrac{1}{2}\int_0^1x(1-x)g''(x)\,\mathrm{d}x.
+        \displaystyle\int_0^1g(x)\,\mathrm{d}x=-\dfrac{1}{2}\int_0^1x(1-x)g''(x)\,\mathrm{d}x.
     \]
     分别对 $x,y$ 使用此式,得到
     \[
-        \iint_Df=\dfrac{1}{4}\iint_Dx(1-x)y(1-y)f_{xxyy}(x,y)\,\mathrm{d}x\,\mathrm{d}y.
+        \displaystyle\iint_Df=\dfrac{1}{4}\iint_Dx(1-x)y(1-y)f_{xxyy}(x,y)\,\mathrm{d}x\,\mathrm{d}y.
     \]
     因此
     \[
@@ -800,13 +800,13 @@
 \begin{example}[\markstar]
     用二重积分计算
     \[
-        \int_0^{+\infty}e^{-x^2}\,\mathrm{d}x.
+        \displaystyle\int_0^{+\infty}e^{-x^2}\,\mathrm{d}x.
     \]
 \end{example}
 \exampleblank
 
 \begin{solution}
-    令 $I=\int_0^{+\infty}e^{-x^2}\,\mathrm{d}x$.由 Tonelli 定理与极坐标变换,
+    令 $I=\displaystyle\int_0^{+\infty}e^{-x^2}\,\mathrm{d}x$.由 Tonelli 定理与极坐标变换,
     \[
         I^2=\int_0^{\frac{\pi}{2}}\!\mathrm{d}\theta\int_0^{+\infty}e^{-r^2}r\,\mathrm{d}r
         =\dfrac{\pi}{4}.
@@ -843,18 +843,18 @@
     \begin{enumerate}
         \item
               \[
-                  \int_0^1\!\mathrm{d}z\left[
+                  \displaystyle\int_0^1\!\mathrm{d}z\left[
                       \int_0^z\!\mathrm{d}y\int_{z-y}^{1-y}f\,\mathrm{d}x
                       +\int_z^1\!\mathrm{d}y\int_0^{1-y}f\,\mathrm{d}x\right].
               \]
         \item
               \[
-                  \int_0^1\!\mathrm{d}z\int_{-z}^{z}\!\mathrm{d}y
+                  \displaystyle\int_0^1\!\mathrm{d}z\int_{-z}^{z}\!\mathrm{d}y
                   \int_{-\sqrt{z^2-y^2}}^{\sqrt{z^2-y^2}}f\,\mathrm{d}x.
               \]
         \item
               \[
-                  \int_0^1\!\mathrm{d}z\left[
+                  \displaystyle\int_0^1\!\mathrm{d}z\left[
                       \int_z^{\sqrt z}\!\mathrm{d}y\int_{z/y}^{1}f\,\mathrm{d}x
                       +\int_{\sqrt z}^{1}\!\mathrm{d}y\int_y^1f\,\mathrm{d}x\right].
               \]
@@ -877,12 +877,12 @@
     \begin{enumerate}
         \item
               \[
-                  \iiint\limits_V\dfrac{z\ln(x^2+y^2+z^2+1)}{x^2+y^2+z^2+1}\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z,
+                  \displaystyle\iiint\limits_V\dfrac{z\ln(x^2+y^2+z^2+1)}{x^2+y^2+z^2+1}\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z,
               \]
               其中 $V:x^2+y^2+z^2\leq1$;
         \item
               \[
-                  \iiint\limits_{\substack{x^2+y^2+z^2\leq1\\x^2+y^2-z^2\geq\frac{1}{2}}}z\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z.
+                  \displaystyle\iiint\limits_{\substack{x^2+y^2+z^2\leq1\\x^2+y^2-z^2\geq\frac{1}{2}}}z\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z.
               \]
     \end{enumerate}
 \end{example}
@@ -896,7 +896,7 @@
 \begin{example}
     求积分
     \[
-        \iiint\limits_V(x+y+z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z,
+        \displaystyle\iiint\limits_V(x+y+z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z,
     \]
     其中 $V$ 是由平面 $x+y+z=1$ 以及三个坐标平面所围成的区域.
 \end{example}
@@ -905,7 +905,7 @@
 \begin{solution}
     由对称性,三个坐标的一阶矩相同.四面体体积为 $1/6$,形心为 $(1/4,1/4,1/4)$,所以
     \[
-        \iiint_V(x+y+z)\,\mathrm{d}V
+        \displaystyle\iiint_V(x+y+z)\,\mathrm{d}V
         =\dfrac{1}{6}\left(\dfrac{1}{4}+\dfrac{1}{4}+\dfrac{1}{4}\right)=\dfrac{1}{8}.
     \]
 \end{solution}
@@ -933,7 +933,7 @@
 \begin{example}
     设 $\Omega$ 由 $z^2=x^2+y^2,z=0,xy=1,xy=2,y=3x,y=4x$ 所围成, 求积分
     \[
-        \iiint\limits_\Omega x^2y^2z\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z.
+        \displaystyle\iiint\limits_\Omega x^2y^2z\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z.
     \]
 \end{example}
 \exampleblank
@@ -951,7 +951,7 @@
 \begin{example}
     计算积分
     \[
-        \iiint\limits_V\dfrac{\mathrm{d}V}{y^2+z^2},
+        \displaystyle\iiint\limits_V\dfrac{\mathrm{d}V}{y^2+z^2},
     \]
     其中 $V$ 为一棱台, 其六个顶点为 $A(0,0,1)$, $B(0,1,1)$, $C(1,1,1)$, $D(0,0,2)$, $E(0,2,2)$, $F(2,2,2)$.
 \end{example}
@@ -970,7 +970,7 @@
 \begin{example}
     计算
     \[
-        \iiint\limits_V y\cos(x+z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z,
+        \displaystyle\iiint\limits_V y\cos(x+z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z,
     \]
     其中 $V$ 是由 $y=\sqrt{x},x+z=\dfrac{\pi}{2},y=0,z=0$ 所围成的区域.
 \end{example}
@@ -988,7 +988,7 @@
 \begin{example}
     计算
     \[
-        \iiint\limits_V(xy+yz+zx)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z,
+        \displaystyle\iiint\limits_V(xy+yz+zx)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z,
     \]
     其中 $V:x\geq0,y\geq0,x^2+y^2\leq1,0\leq z\leq1$.
 \end{example}
@@ -1023,7 +1023,7 @@
     \]
     若 $f(x,y,z)$ 在 $\Omega$ 上可积, 则
     \[
-        \iiint\limits_\Omega f(x,y,z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z
+        \displaystyle\iiint\limits_\Omega f(x,y,z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z
         =\iiint\limits_{\widetilde\Omega}
         f\left(x(u,v,w),y(u,v,w),z(u,v,w)\right)|J|\,\mathrm{d}u\,\mathrm{d}v\,\mathrm{d}w.
     \]
@@ -1061,13 +1061,13 @@
     \begin{enumerate}
         \item 证明
               \[
-                  \iint\limits_S f(ax+by)\,\mathrm{d}x\,\mathrm{d}y
+                  \displaystyle\iint\limits_S f(ax+by)\,\mathrm{d}x\,\mathrm{d}y
                   =2\int_{-1}^1\sqrt{1-u^2}\,f\left(u\sqrt{a^2+b^2}\right)\mathrm{d}u,
               \]
               其中 $S:x^2+y^2\leq1,a^2+b^2\ne0$;
         \item 证明
               \[
-                  \iiint\limits_Vf(ax+by+cz)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z
+                  \displaystyle\iiint\limits_Vf(ax+by+cz)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z
                   =\pi\int_{-1}^1(1-u^2)f\left(u\sqrt{a^2+b^2+c^2}\right)\mathrm{d}u,
               \]
               其中 $V:x^2+y^2+z^2\leq1,a^2+b^2+c^2\ne0$.
@@ -1078,7 +1078,7 @@
 \begin{solution}
     分别作正交旋转,使线性函数成为第一坐标的倍数.单位圆在该坐标下仍为单位圆,其固定第一坐标 $u$ 的截线长度为 $2\sqrt{1-u^2}$,故
     \[
-        \iint_Sf(ax+by)\,\mathrm{d}x\,\mathrm{d}y
+        \displaystyle\iint_Sf(ax+by)\,\mathrm{d}x\,\mathrm{d}y
         =2\int_{-1}^1\sqrt{1-u^2}\,f\left(u\sqrt{a^2+b^2}\right)\mathrm{d}u.
     \]
     同理,单位球固定第一坐标 $u$ 的截面面积为 $\pi(1-u^2)$,于是得到第二个等式.
@@ -1088,7 +1088,7 @@
 \begin{example}
     计算积分
     \[
-        \iiint\limits_\Omega x^2\sqrt{x^2+y^2}\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z,
+        \displaystyle\iiint\limits_\Omega x^2\sqrt{x^2+y^2}\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z,
     \]
     其中 $\Omega$ 是曲面 $z=\sqrt{x^2+y^2}$ 与 $z=x^2+y^2$ 围成的有界闭区域.
 \end{example}
@@ -1149,7 +1149,7 @@
 \begin{example}
     计算积分
     \[
-        \iiint\limits_\Omega z^2\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z,
+        \displaystyle\iiint\limits_\Omega z^2\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z,
     \]
     其中 $\Omega$ 是 $x^2+y^2+z^2\leq a^2$ 与 $x^2+y^2+(z-a)^2\leq a^2$ $(a>0)$ 的公共部分.
 \end{example}
@@ -1168,7 +1168,7 @@
 \begin{example}
     计算积分
     \[
-        \iiint\limits_{x^2+y^2+z^2\leq1}\cos(ax+by+cz)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z.
+        \displaystyle\iiint\limits_{x^2+y^2+z^2\leq1}\cos(ax+by+cz)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z.
     \]
 \end{example}
 \exampleblank
@@ -1189,12 +1189,12 @@
         \item $\displaystyle\iiint\limits_V(x^2+y^2)\,\mathrm{d}V$, 其中 $V$ 是由 $x^2+y^2+(z-2)^2\geq4$, $x^2+y^2+(z-1)^2\leq9$, $z\geq0$ 所围成的空心立体;
         \item
               \[
-                  \iiint\limits_V\dfrac{xyz}{x^2+y^2}\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z,
+                  \displaystyle\iiint\limits_V\dfrac{xyz}{x^2+y^2}\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z,
               \]
               其中 $V$ 是曲面 $(x^2+y^2+z^2)^2=a^2xy$ $(a>0)$ 位于第一象限所围立体;
         \item
               \[
-                  \iiint\limits_V(x+y+z)^2\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z,
+                  \displaystyle\iiint\limits_V(x+y+z)^2\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z,
               \]
               其中 $V$ 为 $x^2+y^2\leq2az$, $x^2+y^2+z^2\leq3$ 所围立体.
     \end{enumerate}
@@ -1232,13 +1232,13 @@
     \begin{enumerate}
         \item 设 $a,b,c>0$, 证明
               \[
-                  \iiint\limits_Vx^{a-1}y^{b-1}z^{c-1}\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z
+                  \displaystyle\iiint\limits_Vx^{a-1}y^{b-1}z^{c-1}\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z
                   =\dfrac{1}{a+b+c}\dfrac{\Gamma(a)\Gamma(b)\Gamma(c)}{\Gamma(a+b+c)},
               \]
               其中 $V$ 为四面体 $x\geq0,y\geq0,z\geq0,x+y+z\leq1$;
         \item 计算
               \[
-                  \iiint\limits_Vxy^9z^8w^4\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z,
+                  \displaystyle\iiint\limits_Vxy^9z^8w^4\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z,
                   \qquad w=1-x-y-z,
               \]
               其中 $V:x,y,z\geq0,x+y+z\leq1$.
@@ -1250,13 +1250,13 @@
     \begin{enumerate}
         \item 逐次使用 Beta 积分即得
               \[
-                  \iiint_Vx^{a-1}y^{b-1}z^{c-1}\,\mathrm{d}V
+                  \displaystyle\iiint_Vx^{a-1}y^{b-1}z^{c-1}\,\mathrm{d}V
                   =\dfrac{\Gamma(a)\Gamma(b)\Gamma(c)}{\Gamma(a+b+c+1)}
                   =\dfrac{1}{a+b+c}\dfrac{\Gamma(a)\Gamma(b)\Gamma(c)}{\Gamma(a+b+c)}.
               \]
         \item 把 $w=1-x-y-z$ 看作第四个单纯形坐标,Dirichlet 积分给出
               \[
-                  \iiint_Vxy^9z^8w^4\,\mathrm{d}V
+                  \displaystyle\iiint_Vxy^9z^8w^4\,\mathrm{d}V
                   =\dfrac{\Gamma(2)\Gamma(10)\Gamma(9)\Gamma(5)}{\Gamma(26)}
                   =\dfrac{9!\,8!\,4!}{25!}.
               \]
@@ -1271,7 +1271,7 @@
 \begin{example}
     设 $f(u)$ 在 $\lbrack0,+\infty)$ 上可微, 试求极限
     \[
-        \lim\limits_{t\to0^+}\dfrac{1}{\pi t^4}
+        \displaystyle\lim\limits_{t\to0^+}\dfrac{1}{\pi t^4}
         \iiint\limits_{x^2+y^2+z^2\leq t^2}
         f\left(\sqrt{x^2+y^2+z^2}\right)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z.
     \]
@@ -1291,7 +1291,7 @@
 \begin{example}[\markstar]
     证明
     \[
-        \lim\limits_{n\to\infty}\dfrac{1}{n^4}
+        \displaystyle\lim\limits_{n\to\infty}\dfrac{1}{n^4}
         \iiint\limits_{r\leq n}[r]\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z=\pi,
         \qquad r=\sqrt{x^2+y^2+z^2}.
     \]
@@ -1328,13 +1328,13 @@
 \begin{solution}
     反复使用一维恒等式
     \[
-        \int_0^1g(t)\,\mathrm{d}t=-\dfrac{1}{2}\int_0^1t(1-t)g''(t)\,\mathrm{d}t
+        \displaystyle\int_0^1g(t)\,\mathrm{d}t=-\dfrac{1}{2}\int_0^1t(1-t)g''(t)\,\mathrm{d}t
     \]
     (其中 $g(0)=g(1)=0$),得到
     \[
-        \iiint_Vf=-\dfrac{1}{8}\iiint_Vx(1-x)y(1-y)z(1-z)f_{xxyyzz}\,\mathrm{d}V.
+        \displaystyle\iiint_Vf=-\dfrac{1}{8}\iiint_Vx(1-x)y(1-y)z(1-z)f_{xxyyzz}\,\mathrm{d}V.
     \]
-    取绝对值并用 $\int_0^1t(1-t)\,\mathrm{d}t=1/6$,即得
+    取绝对值并用 $\displaystyle\int_0^1t(1-t)\,\mathrm{d}t=1/6$,即得
     \[
         \left|\iiint_Vf\right|\leq\dfrac{1}{8}\cdot\dfrac{M}{6^3}.
     \]
@@ -1373,7 +1373,7 @@
 \begin{example}[\markstar]
     设
     \[
-        \sum\limits_{i,j=1}^3a_{ij}x_ix_j
+        \displaystyle\sum\limits_{i,j=1}^3a_{ij}x_ix_j
     \]
     表示变量 $(x_1,x_2,x_3)$ 的二次型, 其中 $A=(a_{ij})$ 正定. 证明椭球面
     \[
@@ -1411,7 +1411,7 @@ $n$ 重积分处理技巧基本上类似于二,三重积分, 由于 $n$ 维的�
               \]
               $f$ 在 $V$ 上连续, 则
               \[
-                  \int\cdots\int\limits_V f(x_1,\ldots,x_n)\,\mathrm{d}x_1\cdots\mathrm{d}x_n
+                  \displaystyle\int\cdots\int\limits_V f(x_1,\ldots,x_n)\,\mathrm{d}x_1\cdots\mathrm{d}x_n
                   =\int_{a_1}^{b_1}\mathrm{d}x_1\cdots\int_{a_n}^{b_n}f(x_1,\ldots,x_n)\,\mathrm{d}x_n.
               \]
 
@@ -1477,7 +1477,7 @@ $n$ 重积分处理技巧基本上类似于二,三重积分, 由于 $n$ 维的�
     \]
     令 $t=r^2$,再令 $u=\sqrt{(1-t)/(1+t)}$,可得
     \[
-        \int_0^1r^3\sqrt{\dfrac{1-r^2}{1+r^2}}\,\mathrm{d}r
+        \displaystyle\int_0^1r^3\sqrt{\dfrac{1-r^2}{1+r^2}}\,\mathrm{d}r
         =\dfrac{1}{2}\left(1-\dfrac{\pi}{4}\right).
     \]
     所以结果为
@@ -1552,7 +1552,7 @@ $n$ 重积分处理技巧基本上类似于二,三重积分, 由于 $n$ 维的�
 \begin{example}
     设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上连续, 证明: 对任意 $x\in(a,b)$,
     \[
-        \int_a^x\mathrm{d}x_1\int_a^{x_1}\mathrm{d}x_2\cdots\int_a^{x_n}f(x_{n+1})\,\mathrm{d}x_{n+1}
+        \displaystyle\int_a^x\mathrm{d}x_1\int_a^{x_1}\mathrm{d}x_2\cdots\int_a^{x_n}f(x_{n+1})\,\mathrm{d}x_{n+1}
         =\dfrac{1}{n!}\int_a^x(x-y)^nf(y)\,\mathrm{d}y.
     \]
 \end{example}
@@ -1573,11 +1573,11 @@ $n$ 重积分处理技巧基本上类似于二,三重积分, 由于 $n$ 维的�
 \begin{example}
     设 $f\in C\lbrack0,1\rbrack$, 且
     \[
-        \int_0^1f(x)\,\mathrm{d}x=A,
+        \displaystyle\int_0^1f(x)\,\mathrm{d}x=A,
     \]
     求积分
     \[
-        \int_0^1\cdots\int_0^1
+        \displaystyle\int_0^1\cdots\int_0^1
         \dfrac{x_1+x_2+\cdots+x_k}{x_1+x_2+\cdots+x_n}
         f(x_1)f(x_2)\cdots f(x_n)
         \,\mathrm{d}x_1\cdots\mathrm{d}x_n,
@@ -1589,7 +1589,7 @@ $n$ 重积分处理技巧基本上类似于二,三重积分, 由于 $n$ 维的�
 \begin{solution}
     记所求积分中分子为 $x_j$ 时的值为 $I_j$.由变量的置换对称性,$I_1=\cdots=I_n$,且
     \[
-        \sum_{j=1}^nI_j=\int_{[0,1]^n}\prod_{j=1}^nf(x_j)\,\mathrm{d}x_1\cdots\mathrm{d}x_n=A^n.
+        \displaystyle\sum_{j=1}^nI_j=\int_{[0,1]^n}\prod_{j=1}^nf(x_j)\,\mathrm{d}x_1\cdots\mathrm{d}x_n=A^n.
     \]
     所以原积分为
     \[
@@ -1617,13 +1617,13 @@ $n$ 重积分处理技巧基本上类似于二,三重积分, 由于 $n$ 维的�
 \begin{theorem}[\markstar]
     设 $f(x,y)$ 是无界区域 $D\subseteq\mathbb{R}^2$ 上的非负函数, 且在 $D$ 内的任何可求面积的有界子区域上可积, $D_n$ 是包含 $D\cap B_n$ 的一列可求面积的有界子区域, 则
     \[
-        \iint\limits_D f(x,y)\,\mathrm{d}x\,\mathrm{d}y\text{ 收敛}
+        \displaystyle\iint\limits_D f(x,y)\,\mathrm{d}x\,\mathrm{d}y\text{ 收敛}
         \iff
         \left\{\iint\limits_{D_n}f(x,y)\,\mathrm{d}x\,\mathrm{d}y\right\}\text{ 有界}
     \]
     且等价于
     \[
-        \lim\limits_{n\to+\infty}\iint\limits_{D_n}f(x,y)\,\mathrm{d}x\,\mathrm{d}y
+        \displaystyle\lim\limits_{n\to+\infty}\iint\limits_{D_n}f(x,y)\,\mathrm{d}x\,\mathrm{d}y
     \]
     存在.
 \end{theorem}
@@ -1727,7 +1727,7 @@ $n$ 重积分处理技巧基本上类似于二,三重积分, 由于 $n$ 维的�
 \begin{solution}
     取四分之一圆盘 $D_R$ 截断并使用极坐标,则
     \[
-        \iint_{D_R}\sin(x^2+y^2)\,\mathrm{d}x\,\mathrm{d}y
+        \displaystyle\iint_{D_R}\sin(x^2+y^2)\,\mathrm{d}x\,\mathrm{d}y
         =\dfrac{\pi}{4}\int_0^{R^2}\sin u\,\mathrm{d}u
         =\dfrac{\pi}{4}(1-\cos R^2).
     \]
@@ -1782,13 +1782,13 @@ $n$ 重积分处理技巧基本上类似于二,三重积分, 由于 $n$ 维的�
     \begin{enumerate}
         \item 由 $m\leq|\varphi|\leq M$,绝对收敛性等价于
               \[
-                  \int_1^{+\infty}r^{1-2p}\,\mathrm{d}r<+\infty,
+                  \displaystyle\int_1^{+\infty}r^{1-2p}\,\mathrm{d}r<+\infty,
               \]
               即 $p>1$.若只问非绝对收敛,则现有条件不能控制 $\varphi$ 的符号振荡,无法作统一判断.
         \item 按现有题面,被积函数与 $y$ 无关,而对每个允许的 $x$,$y$ 都延伸到 $+\infty$,故对一切 $p,q>0$ 均发散.若原题预期其他判据,分母很可能漏写了含 $y$ 的项.
         \item 若按通常意图补充 $x,y\geq0$,令 $u=x+y$,则内层积分为
               \[
-                  \int_0^u\sin x\sin(u-x)\,\mathrm{d}x=\dfrac{1}{2}(\sin u-u\cos u).
+                  \displaystyle\int_0^u\sin x\sin(u-x)\,\mathrm{d}x=\dfrac{1}{2}(\sin u-u\cos u).
               \]
               因而积分在 $p>1$ 时收敛,在 $p\leq1$ 时发散;其中 $p>2$ 时绝对收敛,$1<p\leq2$ 时条件收敛.原题若不补充第一象限条件,区域还穿过 $x+y=0$,题意不完整.
     \end{enumerate}
@@ -1806,7 +1806,7 @@ $n$ 重积分处理技巧基本上类似于二,三重积分, 由于 $n$ 维的�
     \]
     则
     \[
-        \iint\limits_D|f(x,y)|^p\,\mathrm{d}x\,\mathrm{d}y\text{ 收敛}
+        \displaystyle\iint\limits_D|f(x,y)|^p\,\mathrm{d}x\,\mathrm{d}y\text{ 收敛}
         \iff1\leq p\leq2.
     \]
 \end{example}
@@ -1819,11 +1819,11 @@ $n$ 重积分处理技巧基本上类似于二,三重积分, 由于 $n$ 维的�
     \]
     因此局部可积性等价于
     \[
-        \int_0^\varepsilon\!\int_0^\varepsilon(u+v)^{-p}\,\mathrm{d}u\,\mathrm{d}v<+\infty,
+        \displaystyle\int_0^\varepsilon\!\int_0^\varepsilon(u+v)^{-p}\,\mathrm{d}u\,\mathrm{d}v<+\infty,
     \]
     其充要条件为 $p<2$.所以在题设 $p\geq1$ 下,正确结论是
     \[
-        \iint_D|f|^p<+\infty\iff1\leq p<2.
+        \displaystyle\iint_D|f|^p<+\infty\iff1\leq p<2.
     \]
     题面把 $p=2$ 误列为收敛端点;该端点实际为对数发散.
 \end{solution}
@@ -1850,7 +1850,7 @@ $n$ 重积分处理技巧基本上类似于二,三重积分, 由于 $n$ 维的�
     \]
     的体积等于常数乘以 $t^s$.按层积分,积分在无穷远处与
     \[
-        \int_1^{+\infty}t^{s-2}\,\mathrm{d}t
+        \displaystyle\int_1^{+\infty}t^{s-2}\,\mathrm{d}t
     \]
     同敛散.区域已避开原点,故没有有限点奇性,于是
     \[

@@ -98,7 +98,7 @@
 \begin{solution}
     使用公式
     \[
-        \int_0^{\frac{\pi}{2}}\sin^m x\cos^n x\,\mathrm{d}x
+        \displaystyle\int_0^{\frac{\pi}{2}}\sin^m x\cos^n x\,\mathrm{d}x
         =\dfrac{1}{2}B\left(\dfrac{m+1}{2},\dfrac{n+1}{2}\right).
     \]
     逐项代入得到
@@ -127,18 +127,18 @@
         \item 令 $x\mapsto\pi-x$,被积函数变号,故积分为 $0$.
         \item 关于 $\dfrac{\pi}{2}$ 对称后,
               \[
-                  \int_0^\pi\cos^4x\sin^3x\,\mathrm{d}x
+                  \displaystyle\int_0^\pi\cos^4x\sin^3x\,\mathrm{d}x
                   =2\int_0^{\frac{\pi}{2}}\cos^4x\sin^3x\,\mathrm{d}x
                   =\boxed{\dfrac{4}{35}}.
               \]
         \item 当 $n$ 为奇数时,由关于 $\dfrac{\pi}{2}$ 的反对称性,积分为 $0$.当 $n=2m$ 时,
               \[
-                  \int_0^\pi\cos^{2m}x\,\mathrm{d}x
+                  \displaystyle\int_0^\pi\cos^{2m}x\,\mathrm{d}x
                   =\boxed{\dfrac{\pi C_m^{2m}}{4^m}}.
               \]
         \item 由对称性及 Wallis 公式,
               \[
-                  \int_0^\pi\sin^n x\,\mathrm{d}x
+                  \displaystyle\int_0^\pi\sin^n x\,\mathrm{d}x
                   =
                   \begin{cases}
                       \dfrac{\pi C_m^{2m}}{4^m},       & n=2m,   \\[6pt]
@@ -167,7 +167,7 @@
         \item 在 $\lbrack0,\pi\rbrack$ 上作代换 $x\mapsto\pi-x$,被积函数变号,故一个周期上的积分为 $\boxed{0}$.
         \item 四个象限贡献相同,因此
               \[
-                  \int_0^{2\pi}\sin^2x\cos^4x\,\mathrm{d}x
+                  \displaystyle\int_0^{2\pi}\sin^2x\cos^4x\,\mathrm{d}x
                   =4\int_0^{\frac{\pi}{2}}\sin^2x\cos^4x\,\mathrm{d}x
                   =\boxed{\dfrac{\pi}{8}}.
               \]
@@ -201,14 +201,14 @@
               \]
               得
               \[
-                  \int_{-\pi}^{\pi}\cos^4x\sin^4x\,\mathrm{d}x
+                  \displaystyle\int_{-\pi}^{\pi}\cos^4x\sin^4x\,\mathrm{d}x
                   =\boxed{\dfrac{3\pi}{64}}.
               \]
         \item 被积函数在平移 $\pi$ 后变号,积分区间包含两个完整的 $2\pi$ 周期,故结果为 $\boxed{0}$.
         \item 由偶性把积分化为 $\displaystyle\int_0^\pi\cos^3x\sin^2x\,\mathrm{d}x$,再关于 $\dfrac{\pi}{2}$ 配对,结果为 $\boxed{0}$.
         \item 关于 $\dfrac{\pi}{2}$ 对称,故
               \[
-                  \int_0^\pi|\cos^5x|\,\mathrm{d}x
+                  \displaystyle\int_0^\pi|\cos^5x|\,\mathrm{d}x
                   =2\int_0^{\frac{\pi}{2}}\cos^5x\,\mathrm{d}x
                   =\boxed{\dfrac{16}{15}}.
               \]
@@ -238,7 +238,7 @@
               \]
         \item 使用 $t=\tan\dfrac{x}{2}$,并把 $0$ 到 $2\pi$ 分成两段,可得标准积分
               \[
-                  \int_0^{2\pi}\dfrac{\mathrm{d}x}{1+a\cos x}
+                  \displaystyle\int_0^{2\pi}\dfrac{\mathrm{d}x}{1+a\cos x}
                   =\boxed{\dfrac{2\pi}{\sqrt{1-a^2}}},
                   \qquad |a|<1.
               \]
@@ -360,12 +360,12 @@
     \begin{enumerate}
         \item
               \[
-                  \int_1^a f\left(x^2+\dfrac{a^2}{x^2}\right)\dfrac{\mathrm{d}x}{x}
+                  \displaystyle\int_1^a f\left(x^2+\dfrac{a^2}{x^2}\right)\dfrac{\mathrm{d}x}{x}
                   =\int_1^a f\left(x+\dfrac{a^2}{x}\right)\dfrac{\mathrm{d}x}{x};
               \]
         \item
               \[
-                  \int_0^{2\pi}f(a\cos x+b\sin x)\,\mathrm{d}x
+                  \displaystyle\int_0^{2\pi}f(a\cos x+b\sin x)\,\mathrm{d}x
                   =2\int_0^\pi f\left(\sqrt{a^2+b^2}\cos x\right)\,\mathrm{d}x.
               \]
     \end{enumerate}
@@ -381,7 +381,7 @@
               \]
               将积分在 $t=a$ 处分开,并在第二段作代换 $t=\dfrac{a^2}{u}$,两段相等,故结果为
               \[
-                  \int_1^a f\left(u+\dfrac{a^2}{u}\right)\dfrac{\mathrm{d}u}{u}.
+                  \displaystyle\int_1^a f\left(u+\dfrac{a^2}{u}\right)\dfrac{\mathrm{d}u}{u}.
               \]
 
         \item 取 $R=\sqrt{a^2+b^2}$ 及角 $\varphi$,使
@@ -390,7 +390,7 @@
               \]
               利用 $2\pi$ 周期性平移积分区间,左端等于
               \[
-                  \int_0^{2\pi}f(R\cos x)\,\mathrm{d}x.
+                  \displaystyle\int_0^{2\pi}f(R\cos x)\,\mathrm{d}x.
               \]
               再把区间分成两个长度为 $\pi$ 的部分,并在后一部分作 $x\mapsto2\pi-x$,得到题设右端.
     \end{enumerate}
@@ -404,7 +404,7 @@
 \begin{example}
     设 $f(x)$ 在 $\lbrack 0,1\rbrack$ 上连续,求证:
     \[
-        \lim\limits_{n\to\infty}\dfrac{1}{n}
+        \displaystyle\lim\limits_{n\to\infty}\dfrac{1}{n}
         \sum\limits_{k=1}^{n-1}(-1)^{k+1}f\left(\dfrac{k}{n}\right)=0.
     \]
 \end{example}
@@ -431,7 +431,7 @@
 \begin{example}
     求极限
     \[
-        \lim\limits_{n\to\infty}
+        \displaystyle\lim\limits_{n\to\infty}
         \left(b^{\frac{1}{n}}-1\right)
         \sum\limits_{i=0}^{n-1}
         b^{\frac{1}{n}}\sin b^{\frac{1}{n}}
@@ -460,7 +460,7 @@
 \begin{example}
     求极限
     \[
-        \lim\limits_{x\to+\infty}\dfrac{1}{x}\int_0^x|\sin t|\,\mathrm{d}t.
+        \displaystyle\lim\limits_{x\to+\infty}\dfrac{1}{x}\int_0^x|\sin t|\,\mathrm{d}t.
     \]
 \end{example}
 \exampleblank
@@ -468,15 +468,15 @@
 \begin{solution}
     写成 $x=k\pi+r$,其中 $k\in\mathbb{N}$,$0\leq r<\pi$.由于
     \[
-        \int_0^\pi|\sin t|\,\mathrm{d}t=2,
+        \displaystyle\int_0^\pi|\sin t|\,\mathrm{d}t=2,
     \]
     故
     \[
-        \int_0^x|\sin t|\,\mathrm{d}t=2k+O(1).
+        \displaystyle\int_0^x|\sin t|\,\mathrm{d}t=2k+O(1).
     \]
     又 $x=k\pi+O(1)$,所以
     \[
-        \lim\limits_{x\to+\infty}\dfrac{1}{x}
+        \displaystyle\lim\limits_{x\to+\infty}\dfrac{1}{x}
         \int_0^x|\sin t|\,\mathrm{d}t
         =\boxed{\dfrac{2}{\pi}}.
     \]
@@ -501,7 +501,7 @@
 
         \item 对 $0\leq x<1$,有 $x^n\to0$,故 $e^{x^n}\to1$;同时 $1\leq e^{x^n}\leq e$.由控制收敛定理,
               \[
-                  \lim\limits_{n\to\infty}\int_0^1e^{x^n}\,\mathrm{d}x
+                  \displaystyle\lim\limits_{n\to\infty}\int_0^1e^{x^n}\,\mathrm{d}x
                   =\int_0^1 1\,\mathrm{d}x=1.
               \]
     \end{enumerate}
@@ -513,13 +513,13 @@
     \begin{enumerate}
         \item
               \[
-                  \lim\limits_{n\to\infty}
+                  \displaystyle\lim\limits_{n\to\infty}
                   \dfrac{\displaystyle\int_\delta^1[f(x)]^n\,\mathrm{d}x}
                   {\displaystyle\int_0^\delta[f(x)]^n\,\mathrm{d}x}=0;
               \]
         \item
               \[
-                  \lim\limits_{n\to\infty}
+                  \displaystyle\lim\limits_{n\to\infty}
                   \dfrac{\displaystyle\int_0^\delta[f(x)]^{n+1}\,\mathrm{d}x}
                   {\displaystyle\int_0^1[f(x)]^n\,\mathrm{d}x}=1.
               \]
@@ -531,12 +531,12 @@
     \begin{enumerate}
         \item 固定 $c\in(0,\delta)$.由严格递减性,
               \[
-                  \int_\delta^1[f(x)]^n\,\mathrm{d}x
+                  \displaystyle\int_\delta^1[f(x)]^n\,\mathrm{d}x
                   \leq(1-\delta)[f(\delta)]^n,
               \]
               而
               \[
-                  \int_0^\delta[f(x)]^n\,\mathrm{d}x
+                  \displaystyle\int_0^\delta[f(x)]^n\,\mathrm{d}x
                   \geq c[f(c)]^n.
               \]
               因 $f(\delta)<f(c)$,两式之比趋于零.
@@ -569,7 +569,7 @@
 \begin{example}[\markstar]
     设 $f(x)\geq0,g(x)>0$,两函数在 $\lbrack a,b\rbrack$ 上连续,求证:
     \[
-        \lim\limits_{n\to\infty}
+        \displaystyle\lim\limits_{n\to\infty}
         \left[\int_a^b[f(x)]^n g(x)\,\mathrm{d}x\right]^{\frac{1}{n}}
         =\max\limits_{a\leq x\leq b}f(x).
     \]
@@ -590,7 +590,7 @@
     \]
     任取 $\varepsilon>0$.由 $f$ 的连续性,在某个正长度闭区间 $J\subseteq\lbrack a,b\rbrack$ 上有 $f(x)\geq M-\varepsilon$.又因 $g>0$ 且连续,
     \[
-        \int_Jg(x)\,\mathrm{d}x>0.
+        \displaystyle\int_Jg(x)\,\mathrm{d}x>0.
     \]
     于是
     \[
@@ -608,7 +608,7 @@
 \begin{example}
     设 $f(x)$ 在 $\lbrack 0,1\rbrack$ 上连续,试证:
     \[
-        \lim\limits_{h\to0^+}\int_0^1\dfrac{h}{h^2+x^2}f(x)\,\mathrm{d}x
+        \displaystyle\lim\limits_{h\to0^+}\int_0^1\dfrac{h}{h^2+x^2}f(x)\,\mathrm{d}x
         =\dfrac{\pi}{2}f(0).
     \]
 \end{example}
@@ -635,7 +635,7 @@
 \begin{example}
     设 $f$ 为连续函数,证明:
     \[
-        \lim\limits_{n\to\infty}\dfrac{2}{\pi}
+        \displaystyle\lim\limits_{n\to\infty}\dfrac{2}{\pi}
         \int_0^1\dfrac{n}{n^2x^2+1}f(x)\,\mathrm{d}x=f(0).
     \]
 \end{example}
@@ -649,7 +649,7 @@
     \]
     与上一题完全相同,先控制核函数在大 $t$ 处的尾积分,再在固定有界区间上使用 $f\left(\dfrac{t}{n}\right)\to f(0)$ 的一致性,得到
     \[
-        \lim\limits_{n\to\infty}\dfrac{2}{\pi}
+        \displaystyle\lim\limits_{n\to\infty}\dfrac{2}{\pi}
         \int_0^n\dfrac{f\left(\frac{t}{n}\right)}{1+t^2}\,\mathrm{d}t
         =\dfrac{2}{\pi}f(0)\int_0^{+\infty}
         \dfrac{\mathrm{d}t}{1+t^2}
@@ -661,7 +661,7 @@
 \begin{example}
     设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上可积,在 $x=b$ 处左连续,求证:
     \[
-        \lim\limits_{n\to\infty}
+        \displaystyle\lim\limits_{n\to\infty}
         \dfrac{n+1}{(b-a)^{n+1}}
         \int_a^b(x-a)^n f(x)\,\mathrm{d}x=f(b).
     \]
@@ -689,7 +689,7 @@
 \begin{example}
     设 $f\in C\lbrack A,B\rbrack$,$A<a<b<B$,试证:
     \[
-        \lim\limits_{h\to0}\int_a^b\dfrac{f(x+h)-f(x)}{h}\,\mathrm{d}x
+        \displaystyle\lim\limits_{h\to0}\int_a^b\dfrac{f(x+h)-f(x)}{h}\,\mathrm{d}x
         =f(b)-f(a).
     \]
 \end{example}
@@ -718,7 +718,7 @@
     \]
     试证:
     \[
-        \lim\limits_{n\to\infty}nA_n
+        \displaystyle\lim\limits_{n\to\infty}nA_n
         =\dfrac{b-a}{2}[f(b)-f(a)].
     \]
 \end{example}
@@ -768,7 +768,7 @@
     \]
     试证:
     \[
-        \lim\limits_{n\to\infty}n^2B_n
+        \displaystyle\lim\limits_{n\to\infty}n^2B_n
         =\dfrac{(b-a)^2}{24}[f'(b)-f'(a)].
     \]
 \end{example}
@@ -777,7 +777,7 @@
 \begin{solution}
     记 $h=\dfrac{b-a}{n}$,并令 $m_i=a+\left(i-\dfrac{1}{2}\right)h$.在每个小区间上使用带积分余项的二阶 Taylor 公式,得到
     \[
-        \int_{m_i-\frac{h}{2}}^{m_i+\frac{h}{2}}f(x)\,\mathrm{d}x
+        \displaystyle\int_{m_i-\frac{h}{2}}^{m_i+\frac{h}{2}}f(x)\,\mathrm{d}x
         -hf(m_i)
         =\dfrac{h^3}{24}f''(m_i)+o(h^3),
     \]
@@ -806,7 +806,7 @@
     \]
     则
     \[
-        \lim\limits_{n\to\infty}n(\ln2-A_n)=\dfrac{1}{4},
+        \displaystyle\lim\limits_{n\to\infty}n(\ln2-A_n)=\dfrac{1}{4},
         \qquad
         \lim\limits_{n\to\infty}n^2(\ln2-B_n)=\dfrac{1}{32}.
     \]
@@ -816,7 +816,7 @@
 \begin{example}[\markstar]
     设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上可积,$g(x)\geq0$,且 $g$ 是以 $T>0$ 为周期,在 $\lbrack 0,T\rbrack$ 上可积的函数.试证:
     \[
-        \lim\limits_{n\to\infty}\int_a^b f(x)g(nx)\,\mathrm{d}x
+        \displaystyle\lim\limits_{n\to\infty}\int_a^b f(x)g(nx)\,\mathrm{d}x
         =\dfrac{1}{T}\int_0^Tg(x)\,\mathrm{d}x\int_a^b f(x)\,\mathrm{d}x.
     \]
 \end{example}
@@ -829,7 +829,7 @@
     \]
     先对区间示性函数证明.任取 $u<v$,作代换 $t=nx$,并把 $\lbrack nu,nv\rbrack$ 分成完整周期与至多两个不足一周期的余段,可得
     \[
-        \int_u^v g(nx)\,\mathrm{d}x
+        \displaystyle\int_u^v g(nx)\,\mathrm{d}x
         =(v-u)\overline g+O\left(\dfrac{1}{n}\right).
     \]
     因此结论对阶梯函数 $f$ 成立.
@@ -841,7 +841,7 @@
     \]
     先选取 $s$ 使右端任意小,再令 $n\to\infty$,便得到
     \[
-        \int_a^b f(x)g(nx)\,\mathrm{d}x
+        \displaystyle\int_a^b f(x)g(nx)\,\mathrm{d}x
         \longrightarrow\overline g\int_a^bf(x)\,\mathrm{d}x.
     \]
 \end{solution}
@@ -850,7 +850,7 @@
 \begin{example}[\markstar\ Riemann 引理]
     若 $f(x)$ 在 $\lbrack a,b\rbrack$ 上可积,$g(x)$ 以 $T$ 为周期,在 $\lbrack 0,T\rbrack$ 上可积,则
     \[
-        \lim\limits_{n\to\infty}\int_a^b f(x)g(nx)\,\mathrm{d}x
+        \displaystyle\lim\limits_{n\to\infty}\int_a^b f(x)g(nx)\,\mathrm{d}x
         =\dfrac{1}{T}\int_0^Tg(x)\,\mathrm{d}x\int_a^b f(x)\,\mathrm{d}x.
     \]
 \end{example}
@@ -863,12 +863,12 @@
     \]
     对任意区间 $\lbrack u,v\rbrack$,周期分割给出
     \[
-        \int_u^v[g(nx)-\overline g]\,\mathrm{d}x
+        \displaystyle\int_u^v[g(nx)-\overline g]\,\mathrm{d}x
         =O\left(\dfrac{1}{n}\right).
     \]
     所以结论先对阶梯函数成立.再用阶梯函数在 $L^1$ 中逼近 Riemann 可积的 $f$,并利用 $g$ 的有界性控制逼近误差,得到
     \[
-        \int_a^b f(x)[g(nx)-\overline g]\,\mathrm{d}x\longrightarrow0.
+        \displaystyle\int_a^b f(x)[g(nx)-\overline g]\,\mathrm{d}x\longrightarrow0.
     \]
     展开 $\overline g$ 即为题设结论.
 \end{solution}
@@ -881,7 +881,7 @@
     \]
     求证:
     \[
-        \lim\limits_{n\to\infty}na_n=0.
+        \displaystyle\lim\limits_{n\to\infty}na_n=0.
     \]
 \end{example}
 \exampleblank
@@ -904,7 +904,7 @@
 \begin{example}
     设 $s(x)=4[x]-2[2x]+1$,$f$ 在 $\lbrack 0,1\rbrack$ 上可积,证明:
     \[
-        \lim\limits_{n\to\infty}\int_0^1 f(x)s(nx)\,\mathrm{d}x=0.
+        \displaystyle\lim\limits_{n\to\infty}\int_0^1 f(x)s(nx)\,\mathrm{d}x=0.
     \]
 \end{example}
 \exampleblank
@@ -920,11 +920,11 @@
     \]
     故
     \[
-        \int_0^1s(x)\,\mathrm{d}x=0.
+        \displaystyle\int_0^1s(x)\,\mathrm{d}x=0.
     \]
     对上一题的 Riemann 引理取 $g=s$,$T=1$,便有
     \[
-        \lim\limits_{n\to\infty}\int_0^1f(x)s(nx)\,\mathrm{d}x
+        \displaystyle\lim\limits_{n\to\infty}\int_0^1f(x)s(nx)\,\mathrm{d}x
         =\left(\int_0^1s(x)\,\mathrm{d}x\right)
         \left(\int_0^1f(x)\,\mathrm{d}x\right)=0.
     \]
@@ -1058,7 +1058,7 @@
 
     因此可作分割,使覆盖上述有限点的小区间对 Darboux 上和的贡献任意小,而其余区间上的振幅不超过 $\varepsilon$.故上,下 Darboux 和之差可以任意小,$R$ 可积;并且由于每个区间都含无理数,下和为零,所以
     \[
-        \int_0^1R(x)\,\mathrm{d}x=0.
+        \displaystyle\int_0^1R(x)\,\mathrm{d}x=0.
     \]
 \end{solution}
 
@@ -1131,7 +1131,7 @@
 \begin{corollary}[\markstar]
     设非负函数 $f\in R\lbrack a,b\rbrack$,则
     \[
-        \int_a^b f(x)\,\mathrm{d}x=0
+        \displaystyle\int_a^b f(x)\,\mathrm{d}x=0
         \quad\Longleftrightarrow\quad
         f\text{ 在连续点上恒为零}.
     \]
@@ -1141,7 +1141,7 @@
 \begin{example}
     设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上可积,试证:对于 $\lbrack a,b\rbrack$ 上任意可积函数 $g(x)$,恒有
     \[
-        \int_a^b g(x)f(x)\,\mathrm{d}x=0,
+        \displaystyle\int_a^b g(x)f(x)\,\mathrm{d}x=0,
     \]
     则函数 $f(x)$ 在连续点上恒为零.
 \end{example}
@@ -1150,11 +1150,11 @@
 \begin{solution}
     在题设中取 $g=f$,得到
     \[
-        \int_a^b f(x)^2\,\mathrm{d}x=0.
+        \displaystyle\int_a^b f(x)^2\,\mathrm{d}x=0.
     \]
     设 $x_0$ 是 $f$ 的连续点.若 $f(x_0)\neq0$,由连续性,存在 $x_0$ 的一个小邻域及常数 $c>0$,使该邻域内 $f(x)^2\geq c$.这将导致
     \[
-        \int_a^b f(x)^2\,\mathrm{d}x>0,
+        \displaystyle\int_a^b f(x)^2\,\mathrm{d}x>0,
     \]
     矛盾.故每个连续点都满足 $f(x_0)=0$.
 \end{solution}
@@ -1163,7 +1163,7 @@
 \begin{example}
     设在 $\lbrack -1,1\rbrack$ 上的连续函数 $f(x)$ 满足如下条件:对 $\lbrack -1,1\rbrack$ 上的任意连续偶函数 $g(x)$,
     \[
-        \int_{-1}^{1}f(x)g(x)\,\mathrm{d}x=0.
+        \displaystyle\int_{-1}^{1}f(x)g(x)\,\mathrm{d}x=0.
     \]
     试证:$f(x)$ 是 $\lbrack -1,1\rbrack$ 上的奇函数.
 \end{example}
@@ -1180,7 +1180,7 @@
     \]
     作代换 $x\mapsto-x$,同一积分也等于
     \[
-        \int_{-1}^{1}f(-x)h(x)\,\mathrm{d}x.
+        \displaystyle\int_{-1}^{1}f(-x)h(x)\,\mathrm{d}x.
     \]
     两式相加得到
     \[
@@ -1194,7 +1194,7 @@
 \begin{example}[特殊函数逼近]
     设 $f\in R(a,b)$,证明:对任意 $\varepsilon>0$,存在函数 $g(x)$,使得
     \[
-        \int_a^b|f(x)-g(x)|\,\mathrm{d}x<\varepsilon,
+        \displaystyle\int_a^b|f(x)-g(x)|\,\mathrm{d}x<\varepsilon,
     \]
     其中的 $g$ 是:
     \begin{enumerate}
@@ -1211,12 +1211,12 @@
     \begin{enumerate}
         \item 由 $f$ 的 Riemann 可积性,可取一个分割及各小区间中的取样点,使相应阶梯函数 $g_1$ 满足
               \[
-                  \int_a^b|f(x)-g_1(x)|\,\mathrm{d}x<\varepsilon.
+                  \displaystyle\int_a^b|f(x)-g_1(x)|\,\mathrm{d}x<\varepsilon.
               \]
 
         \item 阶梯函数只有有限个跳跃点.在每个跳跃点两侧取互不相交,总长度充分小的区间,并在这些区间内用线段连接左右常值,得到折线函数 $g_2$.因各函数有界,可使
               \[
-                  \int_a^b|g_1-g_2|\,\mathrm{d}x
+                  \displaystyle\int_a^b|g_1-g_2|\,\mathrm{d}x
               \]
               任意小.
 
@@ -1224,7 +1224,7 @@
 
         \item 在折线函数的有限个折点附近,用光滑圆弧或三次 Hermite 多项式替换折角,并保持这些小邻域总长度充分小,即得连续可微函数 $g_4$,且
               \[
-                  \int_a^b|g_2-g_4|\,\mathrm{d}x
+                  \displaystyle\int_a^b|g_2-g_4|\,\mathrm{d}x
               \]
               任意小.
     \end{enumerate}
@@ -1315,13 +1315,13 @@
     \begin{enumerate}
         \item 设 $f(x)$ 在 $\lbrack a,b\rbrack$ 上为正值可积函数,则存在 $\xi\in(a,b)$,使得
               \[
-                  \int_a^\xi f(x)\,\mathrm{d}x
+                  \displaystyle\int_a^\xi f(x)\,\mathrm{d}x
                   =\int_\xi^b f(x)\,\mathrm{d}x
                   =\dfrac{1}{2}\int_a^b f(x)\,\mathrm{d}x;
               \]
         \item 设 $f\in C(\lbrack a,b\rbrack)$ 且 $\displaystyle\int_a^b f(x)\,\mathrm{d}x=0$,则存在 $\xi\in(a,b)$,使得
               \[
-                  \int_a^\xi f(x)\,\mathrm{d}x=f(\xi).
+                  \displaystyle\int_a^\xi f(x)\,\mathrm{d}x=f(\xi).
               \]
     \end{enumerate}
 \end{example}
@@ -1361,7 +1361,7 @@
               \]
         \item 设 $f(x),g(x)$ 是 $\lbrack a,b\rbrack$ 上的递增连续函数,则
               \[
-                  \int_a^bf(x)\,\mathrm{d}x\int_a^bg(x)\,\mathrm{d}x
+                  \displaystyle\int_a^bf(x)\,\mathrm{d}x\int_a^bg(x)\,\mathrm{d}x
                   \leq(b-a)\int_a^bf(x)g(x)\,\mathrm{d}x.
               \]
     \end{enumerate}
@@ -1423,7 +1423,7 @@
 \begin{example}
     设 $f\in C^{(1)}(\lbrack 0,a\rbrack)$,$f(0)=0$,则
     \[
-        \int_0^a|f(x)f'(x)|\,\mathrm{d}x
+        \displaystyle\int_0^a|f(x)f'(x)|\,\mathrm{d}x
         \leq\dfrac{a}{2}\int_0^a[f'(x)]^2\,\mathrm{d}x.
     \]
     若条件改为 $f(a)=f(0)=0$ 或 $f\left(\dfrac{a}{2}\right)=0$,不等式右边系数该如何变化?
@@ -1449,9 +1449,9 @@
     \[
         |f(x)|\leq\min\left\{\int_0^xq,\int_x^aq\right\}.
     \]
-    以 $Q(x)=\int_0^xq$ 作变量可得
+    以 $Q(x)=\displaystyle\int_0^xq$ 作变量可得
     \[
-        \int_0^a|ff'|
+        \displaystyle\int_0^a|ff'|
         \leq\dfrac{1}{4}\left(\int_0^aq\right)^2
         \leq\dfrac{a}{4}\int_0^a(f')^2.
     \]
@@ -1533,7 +1533,7 @@
 \begin{example}
     设 $f(x)\in C^1\lbrack 0,a\rbrack$,证明:
     \[
-        \int_0^1|f(x)|\,\mathrm{d}x
+        \displaystyle\int_0^1|f(x)|\,\mathrm{d}x
         \leq\max\left\{\int_0^1|f'(x)|\,\mathrm{d}x+
         \left|\int_0^1f(x)\,\mathrm{d}x\right|\right\}.
     \]
@@ -1608,14 +1608,14 @@
 
         \item 因 $\sin x\leq1$,
               \[
-                  \int_{\frac{\pi}{6}}^{\frac{\pi}{2}}
+                  \displaystyle\int_{\frac{\pi}{6}}^{\frac{\pi}{2}}
                   \dfrac{2x}{\sin x}\,\mathrm{d}x
                   \geq\int_{\frac{\pi}{6}}^{\frac{\pi}{2}}2x\,\mathrm{d}x
                   =\dfrac{2\pi^2}{9}.
               \]
               又因弦估计 $\sin x\geq\dfrac{2x}{\pi}$,
               \[
-                  \int_{\frac{\pi}{6}}^{\frac{\pi}{2}}
+                  \displaystyle\int_{\frac{\pi}{6}}^{\frac{\pi}{2}}
                   \dfrac{2x}{\sin x}\,\mathrm{d}x
                   \leq\int_{\frac{\pi}{6}}^{\frac{\pi}{2}}\pi\,\mathrm{d}x
                   =\dfrac{\pi^2}{3}<\dfrac{4\pi^2}{9}.
@@ -1631,7 +1631,7 @@
 \begin{example}
     证明:
     \[
-        \int_0^{\sqrt{2\pi}}\sin x^2\,\mathrm{d}x>0.
+        \displaystyle\int_0^{\sqrt{2\pi}}\sin x^2\,\mathrm{d}x>0.
     \]
 \end{example}
 \exampleblank
@@ -1639,7 +1639,7 @@
 \begin{solution}
     令 $t=x^2$,则
     \[
-        \int_0^{\sqrt{2\pi}}\sin x^2\,\mathrm{d}x
+        \displaystyle\int_0^{\sqrt{2\pi}}\sin x^2\,\mathrm{d}x
         =\dfrac{1}{2}\int_0^{2\pi}\dfrac{\sin t}{\sqrt t}\,\mathrm{d}t.
     \]
     把后一个积分分成 $\lbrack0,\pi\rbrack$ 与 $\lbrack\pi,2\pi\rbrack$,并在第二段令 $t=u+\pi$,得到
@@ -1654,7 +1654,7 @@
 \begin{example}
     $f\in C(\lbrack a,b\rbrack)$ 且严格递增,则
     \[
-        \int_a^bxf(x)\,\mathrm{d}x
+        \displaystyle\int_a^bxf(x)\,\mathrm{d}x
         >\dfrac{a+b}{2}\int_a^bf(x)\,\mathrm{d}x.
     \]
 \end{example}
@@ -1675,7 +1675,7 @@
 \begin{example}
     证明:
     \[
-        \int_0^{\frac{\pi}{2}}\dfrac{\cos x}{1+x^2}\,\mathrm{d}x
+        \displaystyle\int_0^{\frac{\pi}{2}}\dfrac{\cos x}{1+x^2}\,\mathrm{d}x
         >\int_0^{\frac{\pi}{2}}\dfrac{\sin x}{1+x^2}\,\mathrm{d}x.
     \]
 \end{example}
@@ -1690,11 +1690,11 @@
     \]
     二者都在 $\lbrack0,\dfrac{\pi}{2}\rbrack$ 上严格递减,且
     \[
-        \int_0^{\frac{\pi}{2}}g(x)\,\mathrm{d}x=0.
+        \displaystyle\int_0^{\frac{\pi}{2}}g(x)\,\mathrm{d}x=0.
     \]
     由严格 Chebyshev 积分不等式,
     \[
-        \int_0^{\frac{\pi}{2}}g(x)h(x)\,\mathrm{d}x>0.
+        \displaystyle\int_0^{\frac{\pi}{2}}g(x)h(x)\,\mathrm{d}x>0.
     \]
     展开该式就是题设两个积分之差为正.
 \end{solution}
@@ -1711,7 +1711,7 @@
     \]
     则
     \[
-        \int_a^bf^{(2n)}(x)g(x)\,\mathrm{d}x
+        \displaystyle\int_a^bf^{(2n)}(x)g(x)\,\mathrm{d}x
         =\int_a^bf(x)g^{(2n)}(x)\,\mathrm{d}x.
     \]
 \end{proposition}
@@ -1802,7 +1802,7 @@
     \]
     因 $f'\geq0$,
     \[
-        \int_0^{2\pi}f'(x)\,\mathrm{d}x=f(2\pi)-f(0).
+        \displaystyle\int_0^{2\pi}f'(x)\,\mathrm{d}x=f(2\pi)-f(0).
     \]
     对前式取绝对值便得
     \[
@@ -1839,7 +1839,7 @@
     \]
     但
     \[
-        \int_2^4f(x)\,\mathrm{d}x
+        \displaystyle\int_2^4f(x)\,\mathrm{d}x
         =\int_0^2\left(t-\dfrac{t^4}{8}\right)\mathrm{d}t
         =\dfrac{6}{5}>1.
     \]
@@ -1874,7 +1874,7 @@
 \begin{example}
     已知 $f(x)$ 在 $\lbrack 0,1\rbrack$ 上有二阶连续导数,且 $f(1)=f(0)=0$,证明:
     \[
-        \int_0^1|f'(x)|\,\mathrm{d}x
+        \displaystyle\int_0^1|f'(x)|\,\mathrm{d}x
         \leq\int_0^1|f''(x)|\,\mathrm{d}x+2\int_0^1|f(x)|\,\mathrm{d}x.
     \]
 \end{example}
@@ -1887,7 +1887,7 @@
     \]
     在 $x\in\lbrack0,1\rbrack$ 上积分,得到更强的估计
     \[
-        \int_0^1|f'(x)|\,\mathrm{d}x
+        \displaystyle\int_0^1|f'(x)|\,\mathrm{d}x
         \leq\int_0^1|f''(x)|\,\mathrm{d}x.
     \]
     再在右端增加非负项 $2\displaystyle\int_0^1|f(x)|\,\mathrm{d}x$,即得题设结论.
@@ -1897,7 +1897,7 @@
 \begin{example}
     已知 $f(x)$ 在 $\lbrack 0,1\rbrack$ 上有直到二阶的连续导数,证明:
     \[
-        \int_0^1|f'(x)|\,\mathrm{d}x
+        \displaystyle\int_0^1|f'(x)|\,\mathrm{d}x
         \leq\int_0^1|f''(x)|\,\mathrm{d}x+8\int_0^1|f(x)|\,\mathrm{d}x.
     \]
 \end{example}
@@ -1934,7 +1934,7 @@
     \]
     积分后得到
     \[
-        \int_0^1|f'(x)|\,\mathrm{d}x
+        \displaystyle\int_0^1|f'(x)|\,\mathrm{d}x
         \leq\int_0^1|f''(x)|\,\mathrm{d}x
         +8\int_0^1|f(x)|\,\mathrm{d}x.
     \]
@@ -1944,7 +1944,7 @@
 \begin{example}
     $f(x)$ 在 $\lbrack 0,1\rbrack$ 上有连续二阶导数,$f(0)=f(1)=0$,$f(x)\neq0$(或 $f''(x)<0$),证明:
     \[
-        \int_0^1\left|\dfrac{f''(x)}{f(x)}\right|\,\mathrm{d}x\geq4.
+        \displaystyle\int_0^1\left|\dfrac{f''(x)}{f(x)}\right|\,\mathrm{d}x\geq4.
     \]
 \end{example}
 \exampleblank
@@ -2072,7 +2072,7 @@
 \begin{example}
     设 $f(x)$ 在 $\lbrack 0,1\rbrack$ 上连续,
     \[
-        \int_0^1f(x)\,\mathrm{d}x=0,
+        \displaystyle\int_0^1f(x)\,\mathrm{d}x=0,
         \quad
         \int_0^1xf(x)\,\mathrm{d}x=0,
         \quad\ldots,\quad
@@ -2080,7 +2080,7 @@
     \]
     且
     \[
-        \int_0^1x^n f(x)\,\mathrm{d}x=1.
+        \displaystyle\int_0^1x^n f(x)\,\mathrm{d}x=1.
     \]
     求证:在 $\lbrack 0,1\rbrack$ 的某一部分上
     \[
@@ -2096,7 +2096,7 @@
     \]
     其中 $\deg Q_{n-1}\leq n-1$.由题设各阶矩条件,
     \[
-        \int_0^1P(x)f(x)\,\mathrm{d}x=2^n.
+        \displaystyle\int_0^1P(x)f(x)\,\mathrm{d}x=2^n.
     \]
     若记 $M=\max\limits_{0\leq x\leq1}|f(x)|$,则
     \[
@@ -2117,7 +2117,7 @@
 \begin{example}
     设 $f(x)$ 在 $\lbrack 0,\dfrac{\pi}{2}\rbrack$ 上连续,
     \[
-        \int_0^{\frac{\pi}{2}}f(x)\sin x\,\mathrm{d}x
+        \displaystyle\int_0^{\frac{\pi}{2}}f(x)\sin x\,\mathrm{d}x
         =\int_0^{\frac{\pi}{2}}f(x)\cos x\,\mathrm{d}x=0,
     \]
     证明:$f(x)$ 在 $\left(0,\dfrac{\pi}{2}\right)$ 内至少有两个零点.
@@ -2127,7 +2127,7 @@
 \begin{solution}
     反设 $f$ 在开区间内少于两个零点.若 $f$ 不变号,则因 $\sin x+\cos x>0$,
     \[
-        \int_0^{\frac{\pi}{2}}f(x)(\sin x+\cos x)\,\mathrm{d}x\neq0,
+        \displaystyle\int_0^{\frac{\pi}{2}}f(x)(\sin x+\cos x)\,\mathrm{d}x\neq0,
     \]
     这与两个已知积分之和为零矛盾.
 
@@ -2137,7 +2137,7 @@
     \]
     处处同号,且乘积不恒为零.因此
     \[
-        \int_0^{\frac{\pi}{2}}f(x)\sin(x-c)\,\mathrm{d}x\neq0.
+        \displaystyle\int_0^{\frac{\pi}{2}}f(x)\sin(x-c)\,\mathrm{d}x\neq0.
     \]
     但将 $\sin(x-c)$ 展开后,该积分由题设应为零,仍矛盾.故 $f$ 至少有两个内点零点.
 \end{solution}
@@ -2220,7 +2220,7 @@
     \]
     令 $y=f(x)$,乘以 $p(x)\geq0$ 后积分,得到
     \[
-        \int_a^bp(x)\varphi(f(x))\,\mathrm{d}x
+        \displaystyle\int_a^bp(x)\varphi(f(x))\,\mathrm{d}x
         \geq P\varphi(\mu),
     \]
     因为一次项的积分为零.两端除以 $P$ 即得 Jensen 不等式.
@@ -2249,7 +2249,7 @@
 \begin{theorem}[\markstar\ Holder 不等式]
     设 $f,g\in R\lbrack a,b\rbrack$,$p,q$ 为满足 $\dfrac{1}{p}+\dfrac{1}{q}=1$ 的一对正实数,则
     \[
-        \int_a^b|f(x)g(x)|\,\mathrm{d}x
+        \displaystyle\int_a^b|f(x)g(x)|\,\mathrm{d}x
         \leq
         \left(\int_a^b|f(x)|^p\,\mathrm{d}x\right)^{\frac{1}{p}}
         \left(\int_a^b|g(x)|^q\,\mathrm{d}x\right)^{\frac{1}{q}}.
@@ -2270,7 +2270,7 @@
 \begin{example}
     设 $f\in C\lbrack 0,1\rbrack$,$0\leq f(x)<1$,则
     \[
-        \int_0^1\dfrac{f(x)}{1-f(x)}\,\mathrm{d}x
+        \displaystyle\int_0^1\dfrac{f(x)}{1-f(x)}\,\mathrm{d}x
         \geq
         \dfrac{\displaystyle\int_0^1\sqrt{f(x)}\,\mathrm{d}x}
         {1-\displaystyle\int_0^1f(x)\,\mathrm{d}x}.
@@ -2281,7 +2281,7 @@
 \begin{solution}
     本题按当前题面不成立.取常值函数 $f(x)\equiv\dfrac{1}{4}$,则
     \[
-        \int_0^1\dfrac{f(x)}{1-f(x)}\,\mathrm{d}x
+        \displaystyle\int_0^1\dfrac{f(x)}{1-f(x)}\,\mathrm{d}x
         =\dfrac{1}{3},
     \]
     而题设右端为
@@ -2392,7 +2392,7 @@
 \begin{example}
     设 $a>0$,证明:
     \[
-        \int_0^\pi x^a\sin x\,\mathrm{d}x
+        \displaystyle\int_0^\pi x^a\sin x\,\mathrm{d}x
         \int_0^{\frac{\pi}{2}}a^{-\cos x}\,\mathrm{d}x
         \geq\dfrac{\pi^3}{4}.
     \]
@@ -2402,12 +2402,12 @@
 \begin{solution}
     本题按当前题面不成立.取 $a=1$,则
     \[
-        \int_0^\pi x^a\sin x\,\mathrm{d}x
+        \displaystyle\int_0^\pi x^a\sin x\,\mathrm{d}x
         =\int_0^\pi x\sin x\,\mathrm{d}x=\pi,
     \]
     并且
     \[
-        \int_0^{\frac{\pi}{2}}a^{-\cos x}\,\mathrm{d}x
+        \displaystyle\int_0^{\frac{\pi}{2}}a^{-\cos x}\,\mathrm{d}x
         =\dfrac{\pi}{2}.
     \]
     两者乘积为 $\dfrac{\pi^2}{2}$,而
@@ -2421,7 +2421,7 @@
 \begin{example}
     设 $f(x)\in C^1\lbrack a,b\rbrack$,$f(a)=f(b)=0$,$\displaystyle\int_a^bf^2(x)\,\mathrm{d}x=1$,证明:
     \[
-        \int_a^b[f'(x)]^2\,\mathrm{d}x
+        \displaystyle\int_a^b[f'(x)]^2\,\mathrm{d}x
         \int_a^b[xf(x)]^2\,\mathrm{d}x
         \geq\dfrac{1}{4}.
     \]
@@ -2478,7 +2478,7 @@
 \begin{example}
     设 $f(x)$ 在 $(0,1)$ 上可积,且 $\displaystyle\int_0^1xf(x)\,\mathrm{d}x=0$,证明:
     \[
-        \int_0^1f^2(x)\,\mathrm{d}x
+        \displaystyle\int_0^1f^2(x)\,\mathrm{d}x
         \geq4\left(\int_0^1f(x)\,\mathrm{d}x\right)^2.
     \]
 \end{example}
@@ -2487,7 +2487,7 @@
 \begin{solution}
     由 $\displaystyle\int_0^1xf(x)\,\mathrm{d}x=0$,对任意常数 $c$ 都有
     \[
-        \int_0^1f(x)\,\mathrm{d}x
+        \displaystyle\int_0^1f(x)\,\mathrm{d}x
         =\int_0^1f(x)(1+cx)\,\mathrm{d}x.
     \]
     取 $c=-\dfrac{3}{2}$.由 Cauchy--Schwarz 不等式,
@@ -2498,7 +2498,7 @@
     \]
     而最后一个积分等于 $\dfrac{1}{4}$,故
     \[
-        \int_0^1f(x)^2\,\mathrm{d}x
+        \displaystyle\int_0^1f(x)^2\,\mathrm{d}x
         \geq4\left(\int_0^1f(x)\,\mathrm{d}x\right)^2.
     \]
 \end{solution}
@@ -2513,11 +2513,11 @@
     \begin{enumerate}
         \item (强化形式)存在 $\xi\in(a,b)$,使得
               \[
-                  \int_a^bf(x)\,\mathrm{d}x=f(\xi)(b-a).
+                  \displaystyle\int_a^bf(x)\,\mathrm{d}x=f(\xi)(b-a).
               \]
         \item (推广形式)设 $g(x)$ 在 $\lbrack a,b\rbrack$ 上可积且不变号,则存在 $\xi\in(a,b)$,使得
               \[
-                  \int_a^bf(x)g(x)\,\mathrm{d}x
+                  \displaystyle\int_a^bf(x)g(x)\,\mathrm{d}x
                   =f(\xi)\int_a^bg(x)\,\mathrm{d}x.
               \]
     \end{enumerate}
@@ -2563,7 +2563,7 @@
 \begin{solution}
     令 $C=f(0)=f(1)$.第一个积分条件等价于
     \[
-        \int_0^{\frac{1}{4}}[f(t)-C]\,\mathrm{d}t=0,
+        \displaystyle\int_0^{\frac{1}{4}}[f(t)-C]\,\mathrm{d}t=0,
     \]
     故由连续性,存在 $c_1\in(0,\dfrac{1}{4})$ 使 $f(c_1)=C$.同理,第二个条件给出某个 $c_2\in(\dfrac{1}{4},1)$,使 $f(c_2)=C$.
 
@@ -2581,11 +2581,11 @@
 \begin{example}
     $\lbrack a,b\rbrack$ 上的连续函数序列 $\varphi_1,\varphi_2,\ldots,\varphi_n,\ldots$ 满足
     \[
-        \int_a^b\varphi_n(x)\,\mathrm{d}x=1.
+        \displaystyle\int_a^b\varphi_n(x)\,\mathrm{d}x=1.
     \]
     证明:存在自然数 $N$ 及定数 $c_1,c_2,\ldots,c_N$,使得
     \[
-        \sum\limits_{k=1}^N c_k^2=1,
+        \displaystyle\sum\limits_{k=1}^N c_k^2=1,
         \qquad
         \max\limits_{x\in\lbrack a,b\rbrack}\left|\sum\limits_{k=1}^Nc_k\varphi_k(x)\right|>100.
     \]
@@ -2607,7 +2607,7 @@
     \]
     则
     \[
-        \int_a^bF_N(x)\,\mathrm{d}x
+        \displaystyle\int_a^bF_N(x)\,\mathrm{d}x
         =\sum\limits_{k=1}^{N}c_k=\sqrt N.
     \]
     因此
@@ -2622,7 +2622,7 @@
 \begin{example}
     求
     \[
-        \lim\limits_{x\to+\infty}
+        \displaystyle\lim\limits_{x\to+\infty}
         \int_x^{x+2}t\left(\sin\dfrac{3}{t}\right)f(t)\,\mathrm{d}t,
     \]
     其中 $f(x)$ 可微,且 $\displaystyle\lim\limits_{t\to+\infty}f(t)=1$.
@@ -2638,7 +2638,7 @@
     \]
     因此乘积在滑动区间 $\lbrack x,x+2\rbrack$ 上一致趋于 $3$.于是
     \[
-        \int_x^{x+2}t\sin\dfrac{3}{t}f(t)\,\mathrm{d}t
+        \displaystyle\int_x^{x+2}t\sin\dfrac{3}{t}f(t)\,\mathrm{d}t
         \longrightarrow\int_x^{x+2}3\,\mathrm{d}t
         =\boxed{6}.
     \]
@@ -2680,11 +2680,11 @@
     \begin{enumerate}
         \item 存在 $\theta\in(0,1)$,使得
               \[
-                  \int_0^1f(x)\,\mathrm{d}x=\theta f(0)+(1-\theta)f(1);
+                  \displaystyle\int_0^1f(x)\,\mathrm{d}x=\theta f(0)+(1-\theta)f(1);
               \]
         \item 对任意 $c>f(0)$,存在 $\theta\in(0,1)$,使得
               \[
-                  \int_0^1f(x)\,\mathrm{d}x=\theta c+(1-\theta)f(1).
+                  \displaystyle\int_0^1f(x)\,\mathrm{d}x=\theta c+(1-\theta)f(1).
               \]
     \end{enumerate}
 \end{example}
@@ -2718,7 +2718,7 @@
 \begin{example}
     设 $f:\lbrack a,b\rbrack\to\lbrack 0,1\rbrack$ 可导,$f'(x)$ 在 $\lbrack a,b\rbrack$ 上单调递减,$f'(b)>0$,求证:
     \[
-        \int_a^b\cos f(x)\,\mathrm{d}x\leq\dfrac{2}{f'(b)}.
+        \displaystyle\int_a^b\cos f(x)\,\mathrm{d}x\leq\dfrac{2}{f'(b)}.
     \]
 \end{example}
 \exampleblank
@@ -2750,7 +2750,7 @@
               \]
         \item 设 $e^2<a<b$,证明:
               \[
-                  \int_a^b\dfrac{\mathrm{d}x}{\ln x}<\dfrac{2b}{\ln b};
+                  \displaystyle\int_a^b\dfrac{\mathrm{d}x}{\ln x}<\dfrac{2b}{\ln b};
               \]
         \item 设 $0<a<b$,证明:
               \[
@@ -2776,7 +2776,7 @@
               \]
               因此
               \[
-                  \int_a^b\dfrac{\mathrm{d}x}{\ln x}
+                  \displaystyle\int_a^b\dfrac{\mathrm{d}x}{\ln x}
                   <2\left[\dfrac{x}{\ln x}\right]_a^b
                   <\dfrac{2b}{\ln b}.
               \]
@@ -2844,12 +2844,12 @@
     \]
     由于 $f$ 单调递减,$h(0)=0$ 且 $h$ 单调递减.于是对正整数 $k$,
     \[
-        \int_{-\pi}^{\pi}f(x)\sin kx\,\mathrm{d}x
+        \displaystyle\int_{-\pi}^{\pi}f(x)\sin kx\,\mathrm{d}x
         =\int_0^\pi h(x)\sin kx\,\mathrm{d}x.
     \]
     令正测度 $\mathrm{d}\mu=-\mathrm{d}h$.由 $h(x)=-\mu(\lbrack0,x\rbrack)$ 及换序积分,
     \[
-        \int_0^\pi h(x)\sin kx\,\mathrm{d}x
+        \displaystyle\int_0^\pi h(x)\sin kx\,\mathrm{d}x
         =\dfrac{1}{k}\int_0^\pi[(-1)^k-\cos kt]\,\mathrm{d}\mu(t).
     \]
     因此 $k=2n$ 时该积分非负,$k=2n+1$ 时非正.除以 $\pi$ 即得结论.
@@ -2861,17 +2861,17 @@
     \begin{enumerate}
         \item
               \[
-                  \int_0^1\dfrac{\mathrm{d}x}{1+x^n}
+                  \displaystyle\int_0^1\dfrac{\mathrm{d}x}{1+x^n}
                   =1-\dfrac{k^2}{n}+o(1),
                   \qquad n\to\infty;
               \]
         \item
               \[
-                  \lim\limits_{x\to0}\dfrac{1}{x}\int_x^{2x}\sin\dfrac{1}{t}\,\mathrm{d}t=0;
+                  \displaystyle\lim\limits_{x\to0}\dfrac{1}{x}\int_x^{2x}\sin\dfrac{1}{t}\,\mathrm{d}t=0;
               \]
         \item 当 $\alpha<2$ 时,
               \[
-                  \lim\limits_{x\to0^+}\dfrac{1}{x^\alpha}\int_0^x\sin\dfrac{1}{t}\,\mathrm{d}t=0.
+                  \displaystyle\lim\limits_{x\to0^+}\dfrac{1}{x^\alpha}\int_0^x\sin\dfrac{1}{t}\,\mathrm{d}t=0.
               \]
     \end{enumerate}
 \end{example}
@@ -2881,7 +2881,7 @@
     \begin{enumerate}
         \item 当前题面中的 $k^2$ 未定义.正确的一阶渐近式为
               \[
-                  \int_0^1\dfrac{\mathrm{d}x}{1+x^n}
+                  \displaystyle\int_0^1\dfrac{\mathrm{d}x}{1+x^n}
                   =1-\dfrac{\ln2}{n}+o\left(\dfrac{1}{n}\right).
               \]
               事实上,令 $x=e^{-\frac{t}{n}}$,则
@@ -2899,7 +2899,7 @@
 
         \item 令 $t=xs$,则原式化为
               \[
-                  \int_1^2\sin\dfrac{1}{xs}\,\mathrm{d}s.
+                  \displaystyle\int_1^2\sin\dfrac{1}{xs}\,\mathrm{d}s.
               \]
               令 $\lambda=\dfrac{1}{x}$.由于
               \[
@@ -2920,7 +2920,7 @@
 
         \item 令 $u=\dfrac{1}{t}$,则
               \[
-                  \int_0^x\sin\dfrac{1}{t}\,\mathrm{d}t
+                  \displaystyle\int_0^x\sin\dfrac{1}{t}\,\mathrm{d}t
                   =\int_{\frac{1}{x}}^{+\infty}\dfrac{\sin u}{u^2}\,\mathrm{d}u.
               \]
               分部积分给出

@@ -19,7 +19,7 @@ $\alpha_1,\ldots,\alpha_m$ 线性表示,且表示式唯一.
 \[
  c\beta+\sum\limits_{i=1}^m c_i\alpha_i=0.
 \]
-若 $c=0$,则 $\sum c_i\alpha_i=0$ 与 $\alpha_1,\ldots,\alpha_m$ 线性无关矛盾,故 $c\neq0$,从而
+若 $c=0$,则 $\displaystyle\sum c_i\alpha_i=0$ 与 $\alpha_1,\ldots,\alpha_m$ 线性无关矛盾,故 $c\neq0$,从而
 \[
  \beta=-\sum\limits_{i=1}^m\dfrac{c_i}{c}\alpha_i.
 \]
@@ -46,9 +46,9 @@ $\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关.
 \begin{solution}
 设扩充后的向量为 $\widetilde\alpha_i$.若
 \[
- \sum_i c_i\widetilde\alpha_i=0,
+ \displaystyle\sum_i c_i\widetilde\alpha_i=0,
 \]
-只看原来的前 $r$ 个分量,就有 $\sum_i c_i\alpha_i=0$.原向量组线性无关,故所有 $c_i=0$.
+只看原来的前 $r$ 个分量,就有 $\displaystyle\sum_i c_i\alpha_i=0$.原向量组线性无关,故所有 $c_i=0$.
 \end{solution}
 
 %例题4.1.4
@@ -113,7 +113,7 @@ $\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关.
 \begin{solution}
 若 $c=(c_1,\ldots,c_r)^{\mathsf T}$,则
 \[
- \sum_i c_i\beta_i
+ \displaystyle\sum_i c_i\beta_i
  =\sum_j (K^{\mathsf T}c)_j\alpha_j.
 \]
 因 $\alpha_j$ 线性无关,左端为零当且仅当 $K^{\mathsf T}c=0$.存在非零 $c$ 当且仅当 $K$ 不可逆.
@@ -150,7 +150,7 @@ $\alpha_1,\ldots,\alpha_r,\alpha_{r+1},\ldots,\alpha_n$ 也线性相关.
 \begin{solution}
 记 $\gamma_i=\beta-\alpha_i$.由
 \[
- \sum\limits_{i=1}^s\gamma_i=(s-1)\beta
+ \displaystyle\sum\limits_{i=1}^s\gamma_i=(s-1)\beta
 \]
 得
 \[
@@ -1134,7 +1134,7 @@ L(\alpha_1,\ldots,\alpha_r)\cap L(\beta_1,\ldots,\beta_s)
 \begin{solution}
 把一个解 $(x,y)$ 映到
 \[
-\sum_{i=1}^r x_i\alpha_i=-\sum_{j=1}^s y_j\beta_j.
+\displaystyle\sum_{i=1}^r x_i\alpha_i=-\sum_{j=1}^s y_j\beta_j.
 \]
 所得向量属于两子空间之交.由于两组向量各自线性无关,该映射既单射又满射,因此解空间与交空间线性同构,维数相同.
 \end{solution}
@@ -1525,7 +1525,7 @@ A=
 \begin{example}
 设 $W_1,\ldots,W_s$ 是 $V$ 的子空间.证明
 \[
-\sum\limits_{i=1}^sW_i
+\displaystyle\sum\limits_{i=1}^sW_i
 \]
 为直和的充要条件是
 \[
@@ -1608,7 +1608,7 @@ v(t_j)=(1,t_j,t_j^2,\ldots,t_j^{n-1})^{\mathsf T}.
 \]
 任取其中 $n$ 个向量所成矩阵都是 Vandermonde 矩阵,其行列式为
 \[
-\prod_{i<j}(t_j-t_i)\neq0.
+\displaystyle\prod_{i<j}(t_j-t_i)\neq0.
 \]
 故任意 $n$ 个都为一组基.
 \end{solution}
@@ -1861,7 +1861,7 @@ a_1x_1+(a_2+b)x_2+\cdots+a_nx_n=0,\\
 a_1x_1+a_2x_2+\cdots+(a_n+b)x_n=0,
 \end{cases}
 \]
-其中 $\prod_{i=1}^na_i\neq0$.讨论何时只有零解,何时有非零解,并给出基础解系.
+其中 $\displaystyle\prod_{i=1}^na_i\neq0$.讨论何时只有零解,何时有非零解,并给出基础解系.
 \end{example}
 \exampleblank
 
@@ -1886,7 +1886,7 @@ b+\sum a_i\neq0,
 
 若 $b=0$,方程组退化为
 \[
-\sum a_ix_i=0,
+\displaystyle\sum a_ix_i=0,
 \]
 解空间维数 $n-1$,可取基础解系
 \[
@@ -2114,12 +2114,12 @@ x_1+x_2+\cdots+x_n=0.
 \begin{enumerate}
   \item 证明
   \[
-  \sum\limits_{i=1}^n(-1)^i\mu_i=0
+  \displaystyle\sum\limits_{i=1}^n(-1)^i\mu_i=0
   \]
   当且仅当 $A$ 的行向量不是该超平面的基础解系;
   \item 若
   \[
-  \sum\limits_{i=1}^n(-1)^i\mu_i=1,
+  \displaystyle\sum\limits_{i=1}^n(-1)^i\mu_i=1,
   \]
   求 $\mu_i$.
 \end{enumerate}
@@ -2141,7 +2141,7 @@ A\boldsymbol{1}=0.
 \]
 于是
 \[
-\sum_{i=1}^n(-1)^i\mu_i=-nc\neq0.
+\displaystyle\sum_{i=1}^n(-1)^i\mu_i=-nc\neq0.
 \]
 反之若 $r(A)<n-1$,所有 $\mu_i=0$,该和为零.因此第一问成立.
 
@@ -2721,7 +2721,7 @@ $A^*$ 的第 $i$ 行正由 $A$ 的第 $i$ 列代数余子式组成,因此上式�
 \begin{example}
 设 $A=(a_{ij})_{n\times n}$ 且每行元素之和为零,即
 \[
-\sum\limits_{j=1}^na_{ij}=0,
+\displaystyle\sum\limits_{j=1}^na_{ij}=0,
 \qquad i=1,\ldots,n.
 \]
 证明第一行各元素的代数余子式相等:
@@ -2862,7 +2862,7 @@ f_i(x)=\prod_{j\neq i}(x-a_j),
 \begin{solution}
 若
 \[
-\sum\limits_{i=1}^n c_if_i(x)=0,
+\displaystyle\sum\limits_{i=1}^n c_if_i(x)=0,
 \]
 代入 $x=a_k$ 得
 \[

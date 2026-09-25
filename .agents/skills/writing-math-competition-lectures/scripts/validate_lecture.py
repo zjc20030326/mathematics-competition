@@ -16,6 +16,7 @@ SelectedLines = set[int] | None
 
 SUPPORTED_SUFFIXES = {".tex", ".md", ".yaml", ".yml"}
 CHINESE_PUNCTUATION = "，。；：！？（）【】“”‘’、…—"
+PUNC_EXEMPT_NAMES = {"AGENTS.md", "README.md"}
 GENERIC_PATTERNS = {
     "LATEX002": re.compile(r"\\binom\b"),
     "LATEX003": re.compile(r"\\tfrac\b"),
@@ -480,6 +481,22 @@ def _markdown_prose_lines(lines: list[str]) -> list[str]:
     return visible
 
 
+def punctuation_exempt(path: Path) -> bool:
+    """Return True for documents exempt from the ASCII punctuation rule.
+
+    AGENTS.md section 6.5 keeps AGENTS.md, README.md and the skill documents
+    outside the ASCII punctuation convention. Chapter sources and every other
+    Markdown file, including the per-book problem log, stay subject to PUNC001.
+    """
+    if path.name in PUNC_EXEMPT_NAMES:
+        return True
+    parts = path.parts
+    return any(
+        parts[index] == ".agents" and parts[index + 1] == "skills"
+        for index in range(len(parts) - 1)
+    )
+
+
 def check_text_file(
     path: Path,
     selected_lines: SelectedLines,
@@ -492,13 +509,17 @@ def check_text_file(
         else lines
     )
     diagnostics: list[Diagnostic] = []
+    exempt_from_punctuation = punctuation_exempt(path)
 
     for line_number, line in enumerate(lines, 1):
         if not selected(line_number, selected_lines):
             continue
         prose_line = prose_lines[line_number - 1]
         check_line = prose_line if path.suffix.lower() == ".md" else line
-        if any(character in CHINESE_PUNCTUATION for character in prose_line):
+        if (
+            not exempt_from_punctuation
+            and any(character in CHINESE_PUNCTUATION for character in prose_line)
+        ):
             diagnostics.append(
                 _diagnostic(
                     path,

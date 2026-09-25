@@ -105,7 +105,7 @@
 \begin{example}
     求
     \[
-        \lim\limits_{n\to\infty}
+        \displaystyle\lim\limits_{n\to\infty}
         \left(\dfrac{1}{n+1}+\dfrac{1}{n+2}+\cdots+\dfrac{1}{2n}\right)
     \]
 \end{example}
@@ -116,7 +116,7 @@
     \par\noindent\strongcn{解法一.}
     该和式是区间 $\lbrack 1,2\rbrack$ 上函数 $\dfrac{1}{x}$ 的 Riemann 和:
     \[
-        \sum\limits_{k=1}^{n}\dfrac{1}{n+k}
+        \displaystyle\sum\limits_{k=1}^{n}\dfrac{1}{n+k}
         =\dfrac{1}{n}\sum\limits_{k=1}^{n}
         \dfrac{1}{1+\dfrac{k}{n}}
         \longrightarrow
@@ -151,7 +151,7 @@
 \begin{example}
     求
     \[
-        \lim\limits_{n\to\infty}
+        \displaystyle\lim\limits_{n\to\infty}
         \sqrt{n}
         \prod\limits_{i=1}^{n}
         \dfrac{e^{1-\frac{1}{i}}}{\left(1+\dfrac{1}{i}\right)^i}.
@@ -162,14 +162,14 @@
 \begin{solution}
     记原式为 $A_n$.由
     \[
-        \sum\limits_{i=1}^{n}\left(1-\dfrac{1}{i}\right)
+        \displaystyle\sum\limits_{i=1}^{n}\left(1-\dfrac{1}{i}\right)
         =n-H_n,
         \qquad
         H_n=\sum\limits_{i=1}^{n}\dfrac{1}{i},
     \]
     且
     \[
-        \prod\limits_{i=1}^{n}
+        \displaystyle\prod\limits_{i=1}^{n}
         \left(\dfrac{i}{i+1}\right)^i
         =\dfrac{n!}{(n+1)^n},
     \]
@@ -265,7 +265,7 @@
 \begin{example}
     求
     \[
-        \lim\limits_{n\to\infty}\dfrac{(2n-1)!!}{(2n)!!}.
+        \displaystyle\lim\limits_{n\to\infty}\dfrac{(2n-1)!!}{(2n)!!}.
     \]
 \end{example}
 \exampleblank
@@ -304,8 +304,8 @@
                   \dfrac{\sec^2x-2\tan x}{1+\cos4x}$;
         \item $\displaystyle
                   \lim\limits_{x\to+\infty}
-                  \dfrac{\left(\int_0^x e^{t^2}\,\mathrm{d}t\right)^2}
-                  {\int_0^x e^{2t^2}\,\mathrm{d}t}$;
+                  \dfrac{\displaystyle\left(\int_0^x e^{t^2}\,\mathrm{d}t\right)^2}
+                  {\displaystyle\int_0^x e^{2t^2}\,\mathrm{d}t}$;
         \item $\displaystyle
                   \lim\limits_{x\to+\infty}\sqrt[x]{x}$.
     \end{enumerate}
@@ -373,17 +373,17 @@
         \item 直接应用洛必达法则:
               \[
                   \begin{aligned}
-                      \lim\limits_{x\to+\infty}
-                      \dfrac{\left(\int_0^x e^{t^2}\,\mathrm{d}t\right)^2}
-                      {\int_0^x e^{2t^2}\,\mathrm{d}t}
+                     \lim\limits_{x\to+\infty}
+                      \dfrac{\displaystyle\left(\int_0^x e^{t^2}\,\mathrm{d}t\right)^2}
+                      {\displaystyle\int_0^x e^{2t^2}\,\mathrm{d}t}
                        & =
                       \lim\limits_{x\to+\infty}
                       \dfrac{
-                          2\left(\int_0^x e^{t^2}\,\mathrm{d}t\right)e^{x^2}
+                          \displaystyle 2\left(\int_0^x e^{t^2}\,\mathrm{d}t\right)e^{x^2}
                       }{e^{2x^2}}                                     \\
                        & =
                       \lim\limits_{x\to+\infty}
-                      \dfrac{2\int_0^x e^{t^2}\,\mathrm{d}t}{e^{x^2}} \\
+                      \dfrac{\displaystyle 2\int_0^x e^{t^2}\,\mathrm{d}t}{e^{x^2}} \\
                        & =
                       \lim\limits_{x\to+\infty}
                       \dfrac{2e^{x^2}}{2xe^{x^2}}
@@ -392,7 +392,7 @@
               \]
         \item 取对数并应用洛必达法则:
               \[
-                  \lim\limits_{x\to+\infty}\ln\sqrt[x]{x}
+                  \displaystyle\lim\limits_{x\to+\infty}\ln\sqrt[x]{x}
                   =
                   \lim\limits_{x\to+\infty}\dfrac{\ln x}{x}
                   =
@@ -445,11 +445,11 @@
 \begin{example}[\markstar]
     已知函数 $f(x)$ 可导,且
     \[
-        \lim\limits_{x\to+\infty}\left[f(x)+f'(x)\right]=k,
+        \displaystyle\lim\limits_{x\to+\infty}\left[f(x)+f'(x)\right]=k,
     \]
     证明:
     \[
-        \lim\limits_{x\to+\infty}f(x)=k.
+        \displaystyle\lim\limits_{x\to+\infty}f(x)=k.
     \]
 \end{example}
 \exampleblank
@@ -567,7 +567,7 @@
 \begin{example}
     求
     \[
-        \lim\limits_{n\to\infty}n\sin(2\pi n!e).
+        \displaystyle\lim\limits_{n\to\infty}n\sin(2\pi n!e).
     \]
 \end{example}
 \exampleblank
@@ -754,7 +754,7 @@
 \begin{example}
     已知 $a_i>0\ (i=1,2,\ldots,n)$,求
     \[
-        \lim\limits_{p\to+\infty}
+        \displaystyle\lim\limits_{p\to+\infty}
         \left[
             \left(\sum\limits_{i=1}^n a_i^p\right)^{\frac{1}{p}}
             +
@@ -834,7 +834,7 @@
 \begin{example}
     求极限
     \[
-        \lim\limits_{n\to\infty}
+        \displaystyle\lim\limits_{n\to\infty}
         \sum\limits_{k=n}^{2n}\sin\dfrac{\pi}{k}.
     \]
 \end{example}
@@ -847,7 +847,7 @@
     \]
     于是
     \[
-        \sum\limits_{k=n}^{2n}\sin\dfrac{\pi}{k}
+        \displaystyle\sum\limits_{k=n}^{2n}\sin\dfrac{\pi}{k}
         =\pi\sum\limits_{k=n}^{2n}\dfrac{1}{k}
         +O\left(\sum\limits_{k=n}^{2n}\dfrac{1}{k^3}\right)
         \longrightarrow\pi\ln2.
@@ -899,11 +899,11 @@
               \]
               令 $x\to0^+$,由
               \[
-                  \lim\limits_{x\to0^+}\dfrac{\ln(1+kx)}{x}=k,
+                  \displaystyle\lim\limits_{x\to0^+}\dfrac{\ln(1+kx)}{x}=k,
               \]
               得
               \[
-                  \lim\limits_{x\to0^+}\dfrac{f(x)}{x}
+                  \displaystyle\lim\limits_{x\to0^+}\dfrac{f(x)}{x}
                   =
                   \sum\limits_{k=1}^{n}ka_k.
               \]
@@ -922,7 +922,7 @@
     \begin{enumerate}
         \item 若 $f(x)$ 满足 $f(x^a)=f(x)$,且
               \[
-                  \lim\limits_{x\to0^+}f(x)
+                  \displaystyle\lim\limits_{x\to0^+}f(x)
                   =\lim\limits_{x\to+\infty}f(x)
                   =f(1),
               \]
@@ -959,7 +959,7 @@
     \]
     其中 $a>1,b>1$,证明:
     \[
-        \lim\limits_{x\to0}f(x)=0.
+        \displaystyle\lim\limits_{x\to0}f(x)=0.
     \]
 \end{example}
 \exampleblank
@@ -1027,7 +1027,7 @@
     \]
     故
     \[
-        \lim\limits_{x\to0}f(x)=0.
+        \displaystyle\lim\limits_{x\to0}f(x)=0.
     \]
 \end{solution}
 
@@ -1036,19 +1036,19 @@
     \begin{enumerate}
         \item 设函数 $f:(0,+\infty)\to(0,+\infty)$ 单调递增,且
               \[
-                  \lim\limits_{t\to+\infty}\dfrac{f(2t)}{f(t)}=1,
+                  \displaystyle\lim\limits_{t\to+\infty}\dfrac{f(2t)}{f(t)}=1,
               \]
               证明:对任意 $m>0$,有
               \[
-                  \lim\limits_{t\to+\infty}\dfrac{f(mt)}{f(t)}=1.
+                  \displaystyle\lim\limits_{t\to+\infty}\dfrac{f(mt)}{f(t)}=1.
               \]
         \item 设 $\displaystyle\lim\limits_{x\to0}f(x)=0$,且
               \[
-                  \lim\limits_{x\to0}\dfrac{f(x)-f\left(\dfrac{x}{2}\right)}{x}=0,
+                  \displaystyle\lim\limits_{x\to0}\dfrac{f(x)-f\left(\dfrac{x}{2}\right)}{x}=0,
               \]
               证明:
               \[
-                  \lim\limits_{x\to0}\dfrac{f(x)}{x}=0.
+                  \displaystyle\lim\limits_{x\to0}\dfrac{f(x)}{x}=0.
               \]
     \end{enumerate}
 \end{example}
@@ -1149,12 +1149,12 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
     \begin{enumerate}
         \item 求 $\alpha,\beta$ 值,使得
               \[
-                  \lim\limits_{x\to+\infty}
+                  \displaystyle\lim\limits_{x\to+\infty}
                   \left(\sqrt{4x^2+x+1}-(\alpha x+\beta)\right)=0;
               \]
         \item 求 $\alpha,\beta,\gamma$ 表达式,使得
               \[
-                  \lim\limits_{x\to+\infty}
+                  \displaystyle\lim\limits_{x\to+\infty}
                   [f(x)-(\alpha+\beta x+\gamma x^2)]=0.
               \]
     \end{enumerate}
@@ -1241,7 +1241,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
     \]
     则对任意 $x_0\in\lbrack 0,1\rbrack$,有
     \[
-        \lim\limits_{x\to x_0}R(x)=0.
+        \displaystyle\lim\limits_{x\to x_0}R(x)=0.
     \]
 \end{proposition}
 
@@ -1268,7 +1268,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
     \]
     因此
     \[
-        \lim\limits_{x\to x_0}R(x)=0.
+        \displaystyle\lim\limits_{x\to x_0}R(x)=0.
     \]
 \end{solution}
 
@@ -1347,7 +1347,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
     \]
     故
     \[
-        \lim\limits_{x\to x_0-}f(x)=A
+        \displaystyle\lim\limits_{x\to x_0-}f(x)=A
         =\sup\limits_{x\in\mathring{U}_{-}(x_0)}f(x).
     \]
     若 $A=+\infty$,则对任意 $M>0$,可取 $x_1<x_0$ 使 $f(x_1)>M$.
@@ -1381,12 +1381,12 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
     \end{enumerate}
     若存在极限
     \[
-        \lim\limits_{x\to+\infty}
+        \displaystyle\lim\limits_{x\to+\infty}
         \dfrac{f(x+T)-f(x)}{g(x+T)-g(x)}=A,
     \]
     则有
     \[
-        \lim\limits_{x\to+\infty}\dfrac{f(x)}{g(x)}=A.
+        \displaystyle\lim\limits_{x\to+\infty}\dfrac{f(x)}{g(x)}=A.
     \]
 \end{theorem}
 
@@ -1433,12 +1433,12 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
     \begin{enumerate}
         \item 当右边极限存在时,
               \[
-                  \lim\limits_{x\to+\infty}\dfrac{f(x)}{x}
+                  \displaystyle\lim\limits_{x\to+\infty}\dfrac{f(x)}{x}
                   =\lim\limits_{x\to+\infty}[f(x+1)-f(x)];
               \]
         \item 当右边极限存在时,
               \[
-                  \lim\limits_{x\to+\infty}[f(x)]^{\frac{1}{x}}
+                  \displaystyle\lim\limits_{x\to+\infty}[f(x)]^{\frac{1}{x}}
                   =\lim\limits_{x\to+\infty}\dfrac{f(x+1)}{f(x)},
                   \qquad f(x)\geq c>0.
               \]
@@ -1454,18 +1454,18 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
               \]
               因而当右端极限存在时,
               \[
-                  \lim\limits_{x\to+\infty}\dfrac{f(x)}{x}
+                  \displaystyle\lim\limits_{x\to+\infty}\dfrac{f(x)}{x}
                   =\lim\limits_{x\to+\infty}[f(x+1)-f(x)].
               \]
         \item 因 $f(x)\geq c>0$,可以令 $F(x)=\ln f(x)$.对 $F$ 使用第 (1) 问,得到
               \[
-                  \lim\limits_{x\to+\infty}\dfrac{\ln f(x)}{x}
+                  \displaystyle\lim\limits_{x\to+\infty}\dfrac{\ln f(x)}{x}
                   =\lim\limits_{x\to+\infty}
                   \ln\dfrac{f(x+1)}{f(x)}.
               \]
               两端取指数,即得
               \[
-                  \lim\limits_{x\to+\infty}[f(x)]^{\frac{1}{x}}
+                  \displaystyle\lim\limits_{x\to+\infty}[f(x)]^{\frac{1}{x}}
                   =\lim\limits_{x\to+\infty}\dfrac{f(x+1)}{f(x)}.
               \]
     \end{enumerate}
@@ -1475,12 +1475,12 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 \begin{example}
     设 $f(x)$ 在 $\lbrack a,+\infty)$ 上有定义,且内闭有界,
     \[
-        \lim\limits_{x\to+\infty}
+        \displaystyle\lim\limits_{x\to+\infty}
         \dfrac{f(x+1)-f(x)}{x^n}=l
     \]
     ($l$ 有限),证明:
     \[
-        \lim\limits_{x\to+\infty}\dfrac{f(x)}{x^{n+1}}
+        \displaystyle\lim\limits_{x\to+\infty}\dfrac{f(x)}{x^{n+1}}
         =\dfrac{l}{n+1}.
     \]
 \end{example}
@@ -1501,7 +1501,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
     \]
     从而
     \[
-        \lim\limits_{x\to+\infty}\dfrac{f(x)}{x^{n+1}}
+        \displaystyle\lim\limits_{x\to+\infty}\dfrac{f(x)}{x^{n+1}}
         =\dfrac{l}{n+1}.
     \]
 \end{solution}
@@ -1514,7 +1514,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 \begin{example}
     设 $f,g$ 是 $(-\infty,+\infty)$ 上的周期函数,若
     \[
-        \lim\limits_{x\to+\infty}[f(x)-g(x)]=0,
+        \displaystyle\lim\limits_{x\to+\infty}[f(x)-g(x)]=0,
     \]
     则 $f(x)=g(x)$.
 \end{example}
@@ -1571,7 +1571,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 \begin{example}
     设 $f(x)$ 是周期为 $T\ (T>0)$ 的连续周期函数,则
     \[
-        \lim\limits_{x\to+\infty}
+        \displaystyle\lim\limits_{x\to+\infty}
         \dfrac{1}{x}\int_0^x f(t)\,\mathrm{d}t
         =\dfrac{1}{T}\int_0^T f(t)\,\mathrm{d}t.
     \]
@@ -1589,7 +1589,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
     \]
     利用周期性,
     \[
-        \int_0^x f(t)\,\mathrm{d}t
+        \displaystyle\int_0^x f(t)\,\mathrm{d}t
         =n\int_0^T f(t)\,\mathrm{d}t+\int_0^r f(t)\,\mathrm{d}t.
     \]
     因 $f$ 连续且周期,后一积分关于 $r$ 一致有界.又有 $\dfrac{nT}{x}\to1$,故
@@ -1616,11 +1616,11 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 
     具体地,若实数列 $\{x_n\}$ 单调递增且有上界,则存在
     \[
-        \lim\limits_{n\to\infty}x_n=\sup\{x_n:n\in\mathbb{N}\};
+        \displaystyle\lim\limits_{n\to\infty}x_n=\sup\{x_n:n\in\mathbb{N}\};
     \]
     若实数列 $\{x_n\}$ 单调递减且有下界,则存在
     \[
-        \lim\limits_{n\to\infty}x_n=\inf\{x_n:n\in\mathbb{N}\}.
+        \displaystyle\lim\limits_{n\to\infty}x_n=\inf\{x_n:n\in\mathbb{N}\}.
     \]
 
 \end{theorem}
@@ -1636,7 +1636,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
     \]
     则
     \[
-        \bigcap\limits_{n=1}^{\infty}I_n\neq\varnothing.
+        \displaystyle\bigcap\limits_{n=1}^{\infty}I_n\neq\varnothing.
     \]
     若进一步有
     \[
@@ -1644,7 +1644,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
     \]
     则存在唯一的 $\xi\in\mathbb{R}$,使
     \[
-        \bigcap\limits_{n=1}^{\infty}I_n=\{\xi\},
+        \displaystyle\bigcap\limits_{n=1}^{\infty}I_n=\{\xi\},
     \]
     且 $a_n\to\xi,b_n\to\xi$.
 \end{theorem}
@@ -1716,7 +1716,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 \begin{solution}
     固定 $x_0\in\lbrack a,b\rbrack$,设有限极限
     \[
-        \lim\limits_{x\to x_0}f(x)=A.
+        \displaystyle\lim\limits_{x\to x_0}f(x)=A.
     \]
     取 $\varepsilon=1$,则存在 $\delta>0$,使
     \[
