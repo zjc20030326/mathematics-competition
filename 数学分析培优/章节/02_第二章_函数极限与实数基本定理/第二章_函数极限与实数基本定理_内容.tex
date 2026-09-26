@@ -17,7 +17,7 @@
             x & \sim\sin x\sim\tan x\sim\arcsin x\sim\arctan x\sim\ln(1+x)\sim e^x-1 \\
               & \sim\dfrac{a^x-1}{\ln a}
             \sim\dfrac{(1+x)^b-1}{b},
-            \qquad a>0,\ b\neq0.
+            \qquad a>0,\ a\neq1,\ b\neq0.
         \end{aligned}
     \]
     此外,
@@ -505,7 +505,7 @@
     \end{aligned}
 \]
 
-事实上,Taylor 公式作为一元微分学巅峰,从证明过程来看,洛必达法则能求的极限,理论上 Taylor 公式都能求,但也仅限于理论上,因为实际计算中有时确实洛必达法则会更好算,这需根据具体情况而定.一个简单的判别方法(但不绝对):若所给函数求导后的结果相当复杂,就应优先 Taylor 公式,如复合了一堆函数.
+事实上,在常见的初等函数极限问题中,许多可用洛必达法则处理的问题也可以通过 Taylor 展开解决,但两者的适用条件并不完全相同.实际计算中应根据表达式的结构选择更简洁的方法.一个简单的判别方法(但不绝对):若所给函数求导后的结果相当复杂,就应优先考虑 Taylor 公式,如复合了一堆函数.
 
 %例题2.1.9
 \begin{example}
@@ -516,7 +516,7 @@
                   \dfrac{\dfrac{x^2}{2}+1-\sqrt{1+x^2}}
                   {(\cos x-e^{x^2})\sin x^2}$;
         \item $\displaystyle
-                  \lim\limits_{x\to0}
+                  \lim\limits_{x\to0^+}
                   \dfrac{e^x-1-x}{\sqrt{1-x}-\cos\sqrt{x}}$;
         \item $\displaystyle
                   \lim\limits_{n\to\infty}
@@ -1189,8 +1189,8 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
     \[
         R(x)=
         \begin{cases}
-            \dfrac{1}{q}, & x=\dfrac{p}{q},                     \\
-            0,            & x\text{ 为 }(0,1)\text{ 中的无理数或 }0,1,
+            \dfrac{1}{q}, & x=\dfrac{p}{q}\in(0,1),\ p,q\in\mathbb{N},\ (p,q)=1, \\
+            0,            & x\in\left(\lbrack0,1\rbrack\setminus\mathbb{Q}\right)\cup\{0,1\},
         \end{cases}
     \]
     则对任意 $x_0\in\lbrack 0,1\rbrack$,有
@@ -1290,8 +1290,10 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
     \[
         A=\sup\limits_{x\in\mathring{U}_{-}(x_0)}f(x).
     \]
-    单调性保证 $A$ 存在于广义实数系.给定 $\varepsilon>0$,由上确界定义可取
-    $x_1<x_0$,使
+    先说明 $A$ 为有限实数.任取 $y_0\in\mathring{U}_{+}(x_0)$.对任意
+    $x\in\mathring{U}_{-}(x_0)$,由单调递增性有 $f(x)\leq f(y_0)$,故左侧函数值集合有上界,从而 $A\in\mathbb{R}$.
+
+    给定 $\varepsilon>0$,由上确界定义可取 $x_1<x_0$,使
     \[
         A-\varepsilon<f(x_1)\leq A.
     \]
@@ -1299,28 +1301,30 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
     \[
         A-\varepsilon<f(x_1)\leq f(x)\leq A.
     \]
-    故
+    因此
     \[
         \displaystyle\lim\limits_{x\to x_0-}f(x)=A
         =\sup\limits_{x\in\mathring{U}_{-}(x_0)}f(x).
     \]
-    若 $A=+\infty$,则对任意 $M>0$,可取 $x_1<x_0$ 使 $f(x_1)>M$.
-    当 $x_1<x<x_0$ 时,单调性给出 $f(x)\geq f(x_1)>M$,故此时左极限为 $+\infty$.
 
     在右侧令
     \[
         B=\inf\limits_{x\in\mathring{U}_{+}(x_0)}f(x).
     \]
-    若 $B$ 有限,给定 $\varepsilon>0$,取 $x_2>x_0$ 使
+    任取 $y_1\in\mathring{U}_{-}(x_0)$.对任意 $x\in\mathring{U}_{+}(x_0)$,有 $f(x)\geq f(y_1)$,
+    故右侧函数值集合有下界,从而 $B\in\mathbb{R}$.给定 $\varepsilon>0$,由下确界定义可取 $x_2>x_0$,使
     \[
         B\leq f(x_2)<B+\varepsilon.
     \]
     当 $x_0<x<x_2$ 时,
     \[
-        B\leq f(x)\leq f(x_2)<B+\varepsilon,
+        B\leq f(x)\leq f(x_2)<B+\varepsilon.
     \]
-    因而 $f(x_0+0)=B$.若 $B=-\infty$,则对任意 $M>0$,可取 $x_2>x_0$
-    使 $f(x_2)<-M$;当 $x_0<x<x_2$ 时,$f(x)\leq f(x_2)<-M$,故右极限为 $-\infty$.
+    因此
+    \[
+        f(x_0+0)=B
+        =\inf\limits_{x\in\mathring{U}_{+}(x_0)}f(x).
+    \]
 \end{solution}
 
 
@@ -1331,16 +1335,20 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
     设 $f(x),g(x)$ 在 $\lbrack a,+\infty)$ 上有定义,$T$ 是一个正常数,且满足:
     \begin{enumerate}
         \item $f(x),g(x)$ 在任一区间 $\lbrack a,b\rbrack$ 上有界;
-        \item 对任意 $x>a$,有 $g(x+T)>g(x)$ 且 $g(x)\to+\infty\,(x\to+\infty)$.
+        \item 对任意 $x>a$,有 $g(x+T)>g(x)$,且
+              $\displaystyle\lim\limits_{x\to+\infty}g(x)=+\infty$.
     \end{enumerate}
-    若存在极限
+    若极限
     \[
-        \displaystyle\lim\limits_{x\to+\infty}
-        \dfrac{f(x+T)-f(x)}{g(x+T)-g(x)}=A,
+        \lim\limits_{x\to+\infty}
+        \dfrac{f(x+T)-f(x)}{g(x+T)-g(x)}
+        =A,
+        \qquad
+        A\in\mathbb{R}\cup\{+\infty,-\infty\},
     \]
-    则有
+    则
     \[
-        \displaystyle\lim\limits_{x\to+\infty}\dfrac{f(x)}{g(x)}=A.
+        \lim\limits_{x\to+\infty}\dfrac{f(x)}{g(x)}=A.
     \]
 \end{theorem}
 
@@ -1351,34 +1359,94 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 \exampleblank
 
 \begin{solution}
-    给定 $\varepsilon>0$,取 $X>a$,使 $x>X$ 时
+    先设 $A\in\mathbb{R}$.给定 $\varepsilon>0$,取 $X>a$,使当 $x>X$ 时,
     \[
         A-\varepsilon<
         \dfrac{f(x+T)-f(x)}{g(x+T)-g(x)}
         <A+\varepsilon.
     \]
-    对任意充分大的 $x$,写成
+    对任意充分大的 $x$,可写成
     \[
-        x=y+nT,
-        \qquad
-        y\in\lbrack X,X+T),
-        \qquad
-        n\in\mathbb{N}.
+        x=y+nT,\qquad y\in\lbrack X,X+T),\qquad n\in\mathbb{N}.
     \]
-    将上述不等式在 $y,y+T,\ldots,y+(n-1)T$ 处相加,得到
+    将上述不等式依次用于 $y,y+T,\ldots,y+(n-1)T$,并利用
+    $g(z+T)-g(z)>0$,相加得
     \[
         (A-\varepsilon)[g(x)-g(y)]
         <f(x)-f(y)
         <(A+\varepsilon)[g(x)-g(y)].
     \]
-    由于 $f,g$ 在 $\lbrack X,X+T\rbrack$ 上有界,而 $g(x)\to+\infty$,两端除以 $g(x)$ 后令 $x\to+\infty$,可得
+    因为 $f,g$ 在 $\lbrack X,X+T\rbrack$ 上有界,存在常数 $M>0$,使
+    \[
+        |f(y)|\leq M,\qquad |g(y)|\leq M,
+        \qquad y\in\lbrack X,X+T).
+    \]
+    又因为 $g(x)\to+\infty$,故充分大的 $x$ 满足 $g(x)>0$.将上式除以
+    $g(x)$,再令 $x\to+\infty$,得到
     \[
         A-\varepsilon
-        \leq\liminf\limits_{x\to+\infty}\dfrac{f(x)}{g(x)}
-        \leq\limsup\limits_{x\to+\infty}\dfrac{f(x)}{g(x)}
-        \leq A+\varepsilon.
+        \leq
+        \liminf\limits_{x\to+\infty}\dfrac{f(x)}{g(x)}
+        \leq
+        \limsup\limits_{x\to+\infty}\dfrac{f(x)}{g(x)}
+        \leq
+        A+\varepsilon.
     \]
-    再令 $\varepsilon\to0$,即得结论.
+    再令 $\varepsilon\to0$,即得
+    \[
+        \lim\limits_{x\to+\infty}\dfrac{f(x)}{g(x)}=A.
+    \]
+
+    下面设 $A=+\infty$.任取 $K>0$,存在 $X>a$,使当 $x>X$ 时,
+    \[
+        \dfrac{f(x+T)-f(x)}{g(x+T)-g(x)}>K.
+    \]
+    仍将任意充分大的 $x$ 写成
+    $x=y+nT$,其中 $y\in\lbrack X,X+T)$.
+    对 $y,y+T,\ldots,y+(n-1)T$ 逐项应用上述不等式并相加,得到
+    \[
+        f(x)-f(y)>K[g(x)-g(y)].
+    \]
+    因而
+    \[
+        \dfrac{f(x)}{g(x)}
+        >
+        K
+        +\dfrac{f(y)-Kg(y)}{g(x)}.
+    \]
+    由于 $f(y),g(y)$ 在 $\lbrack X,X+T\rbrack$ 上一致有界,而
+    $g(x)\to+\infty$,故
+    \[
+        \liminf\limits_{x\to+\infty}\dfrac{f(x)}{g(x)}\geq K.
+    \]
+    $K>0$ 任意,所以
+    \[
+        \lim\limits_{x\to+\infty}\dfrac{f(x)}{g(x)}=+\infty.
+    \]
+    最后设 $A=-\infty$.任取 $K>0$,充分大的 $x$ 满足
+    \[
+        \dfrac{f(x+T)-f(x)}{g(x+T)-g(x)}<-K.
+    \]
+    同样逐项相加可得
+    \[
+        f(x)-f(y)<-K[g(x)-g(y)],
+    \]
+    从而
+    \[
+        \dfrac{f(x)}{g(x)}
+        <
+        -K
+        +\dfrac{f(y)+Kg(y)}{g(x)}.
+    \]
+    令 $x\to+\infty$,得到
+    \[
+        \limsup\limits_{x\to+\infty}\dfrac{f(x)}{g(x)}\leq-K.
+    \]
+    因 $K>0$ 任意,故
+    \[
+        \lim\limits_{x\to+\infty}\dfrac{f(x)}{g(x)}=-\infty.
+    \]
+    三种情形均得证.
 \end{solution}
 
 %例题2.2.8
@@ -1433,7 +1501,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
         \displaystyle\lim\limits_{x\to+\infty}
         \dfrac{f(x+1)-f(x)}{x^n}=l
     \]
-    ($l$ 有限),证明:
+    其中 $n$ 为非负整数,$l$ 有限.证明:
     \[
         \displaystyle\lim\limits_{x\to+\infty}\dfrac{f(x)}{x^{n+1}}
         =\dfrac{l}{n+1}.
@@ -1674,7 +1742,7 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
 
 %例题2.3.3
 \begin{example}
-    若 $f(x)$ 在 $\lbrack a,b\rbrack$ 无界,试证明存在 $x_0\in\lbrack a,b\rbrack$,对任意 $\delta>0$,使得 $f(x)$ 在 $(x_0-\delta,x_0+\delta)$ 上无界.
+    若 $f(x)$ 在 $\lbrack a,b\rbrack$ 无界,试证明存在 $x_0\in\lbrack a,b\rbrack$,对任意 $\delta>0$,使得 $f(x)$ 在 $(x_0-\delta,x_0+\delta)\cap\lbrack a,b\rbrack$ 上无界.
 \end{example}
 \exampleblank
 
@@ -1779,18 +1847,22 @@ $\displaystyle\lim\limits_{x\to x_0}[f(x)-g(x)]=0$,则也称 $g(x)$ 为 $f(x)$ �
               \[
                   f(y)\geq f(a)>y,
               \]
-              故 $y\in E$,从而 $x_0>a$.若 $x_0=b$,由 $f(b)<b$,可取 $x<b$ 且充分接近 $b$,使 $x>f(b)$.由递增性,
+              故 $y\in E$,从而 $x_0>a$.若 $x_0=b$,由 $f(b)<b$,可取 $x<b$ 且充分接近 $b$,使 $f(b)<x<b$.
+              对任意 $t\in\lbrack x,b\rbrack$,由递增性,
               \[
-                  f(x)\leq f(b)<x,
+                  f(t)\leq f(b)<x\leq t,
               \]
-              这与 $x_0=b=\sup E$ 矛盾.故 $x_0<b$.
+              因而 $E\cap\lbrack x,b\rbrack=\varnothing$,从而 $\sup E\leq x<b$,与 $x_0=b=\sup E$ 矛盾.故 $x_0<b$.
 
-              若 $f(x_0)>x_0$,取 $y>x_0$ 且充分接近 $x_0$,使 $y<f(x_0)$. 由递增性, $f(y)\geq f(x_0)>y$, 从而
-              $y\in E$,与 $x_0=\sup E$ 矛盾.故 $f(x_0)\leq x_0$.
+              若 $f(x_0)>x_0$,可取 $y\in(x_0,b)$ 且充分接近 $x_0$,使 $y<f(x_0)$.由递增性,
+              $f(y)\geq f(x_0)>y$,从而 $y\in E$,与 $x_0=\sup E$ 矛盾.故 $f(x_0)\leq x_0$.
 
-              若 $f(x_0)<x_0$,则可取 $\eta>0$,使 $f(x_0)<x_0-\eta$. 对任意 $x\in(x_0-\eta,x_0)$,由递增性,
-              $f(x)\leq f(x_0)<x_0-\eta<x$, 因而 $(x_0-\eta,x_0)\cap E=\varnothing$,这与 $x_0=\sup E$
-              矛盾.故 $f(x_0)\geq x_0$. 因此 $f(x_0)=x_0$.
+              若 $f(x_0)<x_0$,则可取 $\eta>0$,使 $\eta<x_0-a$ 且 $f(x_0)<x_0-\eta$.对任意
+              $x\in(x_0-\eta,x_0)$,由递增性,
+              \[
+                  f(x)\leq f(x_0)<x_0-\eta<x,
+              \]
+              因而 $(x_0-\eta,x_0)\cap E=\varnothing$,这与 $x_0=\sup E$ 矛盾.故 $f(x_0)\geq x_0$.因此 $f(x_0)=x_0$.
 
         \item 由 $f(a)>a\geq0$ 及 $f$ 递增,可知 $f(x)>0$ 对所有 $x\in\lbrack a,b\rbrack$ 成立.令
               $g(x)=\sqrt{f(x)}$. 则 $g$ 在 $\lbrack a,b\rbrack$ 上递增.又因为 $0\leq a<b\leq1$, $f(a)>a\geq
